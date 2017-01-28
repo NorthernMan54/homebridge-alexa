@@ -86,18 +86,18 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
 });
 
 dispatcher.onGet("/ifttt/index.php", function(req, res) {
-//    console.log(req);
+    //    console.log(req);
     var aid = req.params.aid;
     var iid = req.params.iid;
     var action = req.params.action;
 
-console.log("Control Attempt",aid, iid, action);
+    console.log("Control Attempt", aid, iid, action);
     hb.control(aid, iid, action, function(err, response) {
 
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
-        console.log("Control Success",json);
+        console.log("Control Success", json);
         res.end();
     })
 
