@@ -5,7 +5,7 @@ var HttpDispatcher = require('httpdispatcher');
 var dispatcher = new HttpDispatcher();
 var fs = require('fs');
 var path = require('path');
-var mdns = require('mdns');
+//var mdns = require('mdns');
 var devices = [];
 var x10 = require('./lib/x10.js');
 var hb = require('./lib/hb.js');
@@ -31,7 +31,7 @@ function init(port) {
     //Lets start our server
     server.listen(port, function() {
         //Callback triggered when server is successfully listening. Hurray!
-        console.log("Web Server listening on: http://localhost:", port);
+        console.log("Web Server listening on: http://localhost:%s", port);
     });
 
 }
