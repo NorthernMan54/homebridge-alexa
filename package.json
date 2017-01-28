@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "request": "^2.65.0",
-    "mdns": ">=2.3.3",
     "httpdispatcher": ">=2.0.1"
   },
   "author": "NorthernMan54",
