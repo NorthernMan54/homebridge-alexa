@@ -1,0 +1,32 @@
+{
+  "name": "alexahome",
+  "version": "0.0.0",
+  "description": "Alexa Skill frontend for Homebridge",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorthernMan54/alexahome.git"
+  },
+  "keywords": [
+    "alexa",
+    "homebridge"
+  ],
+  "engines": {
+    "node": ">=4.4.5"
+
+  },
+  "dependencies": {
+    "request": "^2.65.0",
+    "mdns": ">=2.3.3",
+    "httpdispatcher": ">=2.0.1"
+  },
+  "author": "NorthernMan54",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/NorthernMan54/alexahome/issues"
+  },
+  "homepage": "https://github.com/NorthernMan54/alexahome#readme"
+}
