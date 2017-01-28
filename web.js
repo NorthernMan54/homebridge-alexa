@@ -91,6 +91,7 @@ dispatcher.onGet("/ifttt/index.php", function(req, res) {
     var iid = req.params.iid;
     var action = req.params.action;
 
+console.log("Control Attempt",aid, iid, action);
     hb.control(aid, iid, action, function(err, response) {
 
         res.writeHead(200, {
