@@ -41,50 +41,20 @@ function log(data) {
 }
 
 
-hb.discover( function( err, res){
+hb.discover(function(err, res) {
 
-  devices = res;
-  console.log("Object: %s", JSON.stringify(devices, null, 2));
-  init(8082);
+    devices = res;
+    console.log("Object: %s", JSON.stringify(devices, null, 2));
+    init(8082);
 });
 
 
 
 //For all your static (js/css/images/etc.) set the directory name (relative path).
-dispatcher.setStatic('/static');
-dispatcher.setStaticDirname(__dirname + "/static");
+//dispatcher.setStatic('/static');
+//dispatcher.setStaticDirname(__dirname + "/static");
 
 //A sample GET request
-dispatcher.onGet("/devices.js", function(req, res) {
-    var listOfDevices = [];
-    res.writeHead(200, {
-        'Content-Type': 'application/json'
-    });
-    for (var id in devices) {
-        var item = {};
-        var device = devices[id];
-        //        console.log("Device", device.displayName, device.context.url, device.context);
-        if (!device.displayName.endsWith("LS")) {
-            // skip the fake accessories
-            item["name"] = device.displayName;
-            item["url"] = device.context.url;
-            listOfDevices.push(item);
-        }
-    }
-    //    console.log("Devices", JSON.stringify(listOfDevices));
-    res.end(JSON.stringify(listOfDevices));
-});
-
-dispatcher.onGet("/", function(req, res) {
-    var filePath = path.join(__dirname, "./static/index.html");
-    var stat = fs.statSync(filePath);
-    res.writeHead(200, {
-        'Content-Type': 'text/html',
-        'Content-Length': stat.size
-    });
-    var readStream = fs.createReadStream(filePath);
-    readStream.pipe(res);
-});
 
 dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     var listOfDevices = [];
@@ -115,14 +85,23 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     res.end(JSON.stringify(listOfDevices));
 });
 
+dispatcher.onGet("/ifttt/index.php", function(req, res) {
+//    console.log(req);
+    var aid = req.params.aid;
+    var iid = req.params.iid;
+    var action = req.params.action;
 
-//A sample POST request
-dispatcher.onPost("/post1", function(req, res) {
-    res.writeHead(200, {
-        'Content-Type': 'text/plain'
-    });
-    res.end('Got Post Data');
+    hb.control(aid, iid, action, function(err, response) {
+
+        res.writeHead(200, {
+            'Content-Type': 'application/json'
+        });
+        console.log("Control Success",json);
+        res.end();
+    })
+
 });
+
 
 dispatcher.onError(function(req, res) {
     console.log("ERROR-No dispatcher", req.url);
