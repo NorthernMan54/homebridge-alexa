@@ -41,8 +41,9 @@ function log(data) {
 }
 
 
-hb.discover( function( err, devices){
+hb.discover( function( err, res){
 
+  devices = res;
   console.log("Object: %s", JSON.stringify(devices, null, 2));
   init(8082);
 });
