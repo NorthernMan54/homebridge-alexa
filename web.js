@@ -122,8 +122,8 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     self.log("Control Attempt", device, action);
 
     switch (action) {
-        case "turnOff":
-        case "turnOn":
+        case "TurnOffRequest":
+        case "TurnOnRequest":
 
             self.log("function", device.appliance.additionalApplianceDetails[action]);
             //{"characteristics":[{"aid":2,"iid":9,"value":0}]}
@@ -134,6 +134,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
                 self.log("OK");
             break;
         case "SetPercentageRequest":
+        self.log("%s not implemented", action);
             break;
         default:
             self.log("Unknown Action", action);
