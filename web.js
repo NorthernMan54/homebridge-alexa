@@ -10,7 +10,7 @@ var path = require('path');
 var devices = [];
 var x10 = require('./lib/x10.js');
 var hb = require('./lib/hb.js');
-var devices,self;
+var devices, self;
 
 module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
@@ -31,8 +31,8 @@ function alexahome(log, config, api) {
     hb.discover(function(err, res) {
         devices = res;
 
-//       log("Object: %s", JSON.stringify(devices, null, 2));
-        init(self,self.port);
+        //       log("Object: %s", JSON.stringify(devices, null, 2));
+        init(self, self.port);
     });
     //    if (api) {
     //        this.api = api;
@@ -56,7 +56,7 @@ alexahome.prototype.configureAccessory = function(accessory) {
 
 
 
-function init(self,port) {
+function init(self, port) {
 
     function handleRequest(request, response) {
         try {
@@ -112,22 +112,49 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     res.end(JSON.stringify(listOfDevices));
 });
 
-dispatcher.onGet("/ifttt/index.php", function(req, res) {
+dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     //    console.log(req);
     var aid = req.params.aid;
     var iid = req.params.iid;
+    var device = JSON.parse(decodeURI(req.params.device));
     var action = req.params.action;
 
-    self.log("Control Attempt", aid, iid, action);
-    hb.control(aid, iid, action, function(err, response) {
+    self.log("Control Attempt", device, action);
 
+    switch (action) {
+        case "turnOff":
+        case "turnOn":
+
+            self.log("function", device.appliance.additionalApplianceDetails[action]);
+            //{"characteristics":[{"aid":2,"iid":9,"value":0}]}
+  //          var body = device.appliance.additionalApplianceDetails[action];
+            var body = "{\"characteristics\":["+device.appliance.additionalApplianceDetails[action]+"]";
+
+                self.log("HK",body);
+                self.log("OK");
+            break;
+        case "SetPercentageRequest":
+            break;
+        default:
+            self.log("Unknown Action", action);
+    }
+
+    if (body) {
+        hb.control(body, function(err, response) {
+
+            res.writeHead(200, {
+                'Content-Type': 'application/json'
+            });
+            self.log("Control Success", response.characteristics);
+            res.end();
+        })
+    } else {
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
-        self.log("Control Success", response.characteristics);
+        self.log("Control Failure");
         res.end();
-    })
-
+    }
 });
 
 
