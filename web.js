@@ -112,29 +112,25 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     res.end(JSON.stringify(listOfDevices));
 });
 
-dispatcher.onGet("/ifttt/index.php", function(req, res) {
+dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     //    console.log(req);
     var aid = req.params.aid;
     var iid = req.params.iid;
-    var device = JSON.parse(decodeURI(req.params.device));
+    var payload = JSON.parse(decodeURI(req.params.device));
     var action = req.params.action;
+    var characteristics = payload.appliance.additionalApplianceDetails[action];
 
-    self.log("Control Attempt", device, action);
+    self.log("Control Attempt", action,characteristics);
 
     switch (action) {
         case "TurnOffRequest":
         case "TurnOnRequest":
-
-            self.log("function", device.appliance.additionalApplianceDetails[action]);
-            //{"characteristics":[{"aid":2,"iid":9,"value":0}]}
-            //          var body = device.appliance.additionalApplianceDetails[action];
-            var body = "{\"characteristics\":[" + device.appliance.additionalApplianceDetails[action] + "]";
-
-            self.log("HK", body);
-            self.log("OK");
+            var body = "{ \"characteristics\": [" + characteristics + "] }";
             break;
         case "SetPercentageRequest":
-            self.log("%s not implemented", action);
+            var t = JSON.parse(characteristics);
+            t.value = payload.percentageState.value;
+            var body = "{ \"characteristics\": [" + JSON.stringify(t) + "] }";
             break;
         default:
             self.log("Unknown Action", action);
