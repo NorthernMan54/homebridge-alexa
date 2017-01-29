@@ -1,5 +1,5 @@
 {
-  "name": "alexahome",
+  "name": "homebridge-alexa",
   "version": "0.0.0",
   "description": "Alexa Skill frontend for Homebridge",
   "main": "web.js",
@@ -12,10 +12,11 @@
   },
   "keywords": [
     "alexa",
-    "homebridge"
+    "homebridge-plugin"
   ],
   "engines": {
-    "node": ">=4.4.5"
+    "node": ">=4.4.5",
+    "homebridge": ">=0.4.16"
 
   },
   "dependencies": {

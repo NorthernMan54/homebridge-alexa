@@ -1,5 +1,6 @@
 "use strict";
 
+var Accessory, Service, Characteristic, UUIDGen, CommunityTypes;
 var http = require('http');
 var HttpDispatcher = require('httpdispatcher');
 var dispatcher = new HttpDispatcher();
@@ -9,10 +10,53 @@ var path = require('path');
 var devices = [];
 var x10 = require('./lib/x10.js');
 var hb = require('./lib/hb.js');
-var devices;
+var devices,self;
+
+module.exports = function(homebridge) {
+    Service = homebridge.hap.Service;
+    Characteristic = homebridge.hap.Characteristic;
+    Accessory = homebridge.platformAccessory;
+    UUIDGen = homebridge.hap.uuid;
+
+    homebridge.registerPlatform("homebridge-alexa", "Alexa", alexahome);
+};
+
+function alexahome(log, config, api) {
+    this.log = log;
+    this.config = config;
+
+    this.debug = config['debug'] || false;
+    this.port = config['port'] || 8080;
+    self = this;
+    hb.discover(function(err, res) {
+        devices = res;
+
+//       log("Object: %s", JSON.stringify(devices, null, 2));
+        init(self,self.port);
+    });
+    //    if (api) {
+    //        this.api = api;
+    //        this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
+    //    }
+}
+
+alexahome.prototype = {
+    accessories: function(callback) {
+
+        this.log("accessories");
+        callback();
+    }
+};
+
+alexahome.prototype.configureAccessory = function(accessory) {
+
+    this.log("configureAccessory");
+    callback(accessory);
+}
 
 
-function init(port) {
+
+function init(self,port) {
 
     function handleRequest(request, response) {
         try {
@@ -21,7 +65,7 @@ function init(port) {
             //Disptach
             dispatcher.dispatch(request, response);
         } catch (err) {
-            log(err);
+            self.log(err);
         }
     }
 
@@ -31,24 +75,10 @@ function init(port) {
     //Lets start our server
     server.listen(port, function() {
         //Callback triggered when server is successfully listening. Hurray!
-        console.log("Web Server listening on: http://localhost:%s", port);
+        self.log("Web Server listening on: http://localhost:%s", port);
     });
 
 }
-
-function log(data) {
-    console.log(data);
-}
-
-
-hb.discover(function(err, res) {
-
-    devices = res;
-    console.log("Object: %s", JSON.stringify(devices, null, 2));
-    init(8082);
-});
-
-
 
 //For all your static (js/css/images/etc.) set the directory name (relative path).
 //dispatcher.setStatic('/static');
@@ -72,16 +102,13 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
         item["friendlyName"] = device.friendlyName;
         item["friendlyDescription"] = device.friendlyDescription;
         item["isReachable"] = true;
-        item["actions"] = [
-            "turnOn",
-            "turnOff"
-        ];
-        item["additionalApplianceDetails"] = {};
+        item["actions"] = device.actions;
+        item["additionalApplianceDetails"] = device.additionalApplianceDetails;
         listOfDevices.push(item);
 
     }
     //    console.log("Devices", JSON.stringify(listOfDevices));
-    log(JSON.stringify(listOfDevices));
+    self.log(JSON.stringify(listOfDevices));
     res.end(JSON.stringify(listOfDevices));
 });
 
@@ -91,13 +118,13 @@ dispatcher.onGet("/ifttt/index.php", function(req, res) {
     var iid = req.params.iid;
     var action = req.params.action;
 
-    console.log("Control Attempt", aid, iid, action);
+    self.log("Control Attempt", aid, iid, action);
     hb.control(aid, iid, action, function(err, response) {
 
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
-        console.log("Control Success", json);
+        self.log("Control Success", response.characteristics);
         res.end();
     })
 
@@ -105,7 +132,7 @@ dispatcher.onGet("/ifttt/index.php", function(req, res) {
 
 
 dispatcher.onError(function(req, res) {
-    console.log("ERROR-No dispatcher", req.url);
+    self.log("ERROR-No dispatcher", req.url);
     res.writeHead(404);
     res.end();
 });
