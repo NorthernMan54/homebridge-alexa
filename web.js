@@ -112,7 +112,7 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     res.end(JSON.stringify(listOfDevices));
 });
 
-dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
+dispatcher.onGet("/ifttt/index.php", function(req, res) {
     //    console.log(req);
     var aid = req.params.aid;
     var iid = req.params.iid;
@@ -127,14 +127,14 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
 
             self.log("function", device.appliance.additionalApplianceDetails[action]);
             //{"characteristics":[{"aid":2,"iid":9,"value":0}]}
-  //          var body = device.appliance.additionalApplianceDetails[action];
-            var body = "{\"characteristics\":["+device.appliance.additionalApplianceDetails[action]+"]";
+            //          var body = device.appliance.additionalApplianceDetails[action];
+            var body = "{\"characteristics\":[" + device.appliance.additionalApplianceDetails[action] + "]";
 
-                self.log("HK",body);
-                self.log("OK");
+            self.log("HK", body);
+            self.log("OK");
             break;
         case "SetPercentageRequest":
-        self.log("%s not implemented", action);
+            self.log("%s not implemented", action);
             break;
         default:
             self.log("Unknown Action", action);
