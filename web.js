@@ -28,12 +28,10 @@ function alexahome(log, config, api) {
     this.debug = config['debug'] || false;
     this.port = config['port'] || 8080;
     self = this;
-    hb.discover(function(err, res) {
-        devices = res;
+    hb.discoverHap();
 
-        //       log("Object: %s", JSON.stringify(devices, null, 2));
-        init(self, self.port);
-    });
+    init(self, self.port);
+
     //    if (api) {
     //        this.api = api;
     //        this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
@@ -60,9 +58,6 @@ function init(self, port) {
 
     function handleRequest(request, response) {
         try {
-            //log the request on console
-            //            log(request.url);
-            //Disptach
             dispatcher.dispatch(request, response);
         } catch (err) {
             self.log(err);
@@ -91,36 +86,46 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json'
     });
-    for (var id in devices) {
-        var item = {};
-        var device = devices[id];
+    var haps = hb.discover();
+    for (var id in haps) {
 
-        item["applianceId"] = device.applianceId;
-        item["manufacturerName"] = device.manufacturerName;
-        item["modelName"] = device.modelName;
-        item["version"] = "1.0";
-        item["friendlyName"] = device.friendlyName;
-        item["friendlyDescription"] = device.friendlyDescription;
-        item["isReachable"] = true;
-        item["actions"] = device.actions;
-        item["additionalApplianceDetails"] = device.additionalApplianceDetails;
-        listOfDevices.push(item);
 
+        var devices = haps[id];
+
+        for (var did in devices) {
+            var item = {};
+            var device = devices[did];
+//            console.log("Devices ------------------------------", JSON.stringify(device));
+            item["applianceId"] = device.applianceId;
+            item["manufacturerName"] = device.manufacturerName;
+            item["modelName"] = device.modelName;
+            item["version"] = "1.0";
+            item["friendlyName"] = device.friendlyName;
+            item["friendlyDescription"] = device.friendlyDescription;
+            item["isReachable"] = true;
+            item["actions"] = device.actions;
+            item["additionalApplianceDetails"] = device.additionalApplianceDetails;
+            listOfDevices.push(item);
+
+        }
     }
     //    console.log("Devices", JSON.stringify(listOfDevices));
-    self.log(JSON.stringify(listOfDevices));
+//    self.log(JSON.stringify(listOfDevices));
+    self.log("Discover Returned %s devices",Object.keys(listOfDevices).length)
     res.end(JSON.stringify(listOfDevices));
 });
 
 dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     //    console.log(req);
-    var aid = req.params.aid;
-    var iid = req.params.iid;
+
     var payload = JSON.parse(decodeURI(req.params.device));
     var action = req.params.action;
+    var applianceId = payload.appliance.applianceId.split(":");
     var characteristics = payload.appliance.additionalApplianceDetails[action];
+    var host = applianceId[1];
+    var port = applianceId[2];
 
-    self.log("Control Attempt", action,characteristics);
+    self.log("Control Attempt", host, port, action, characteristics);
 
     switch (action) {
         case "TurnOffRequest":
