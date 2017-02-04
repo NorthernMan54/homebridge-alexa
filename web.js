@@ -122,10 +122,10 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     var action = req.params.action;
     var applianceId = new Buffer(payload.appliance.applianceId, 'base64').toString().split(":");
     var characteristics = payload.appliance.additionalApplianceDetails[action];
-    var host = applianceId[1];
-    var port = applianceId[2];
+    var host = applianceId[0];
+    var port = applianceId[1];
 
-    self.log("Control Attempt", host, port, action, characteristics);
+    self.log("Control Attempt %s:%s", host, port, action, characteristics);
 
     switch (action) {
         case "TurnOffRequest":
@@ -142,7 +142,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     }
 
     if (body) {
-        hb.control(body, function(err, response) {
+        hb.control(host,port,body, function(err, response) {
 
             res.writeHead(200, {
                 'Content-Type': 'application/json'
