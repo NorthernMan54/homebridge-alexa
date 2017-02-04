@@ -70,7 +70,7 @@ function init(self, port) {
     //Lets start our server
     server.listen(port, function() {
         //Callback triggered when server is successfully listening. Hurray!
-        self.log("Web Server listening on: http://localhost:%s", port);
+        self.log("Amazon Alexa interface listening on: http://localhost:%s", port);
     });
 
 }
@@ -111,7 +111,7 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     }
     //    console.log("Devices", JSON.stringify(listOfDevices));
     //    self.log(JSON.stringify(listOfDevices));
-    self.log("Discover Returned %s devices", Object.keys(listOfDevices).length)
+    self.log("Discover devices returned %s devices", Object.keys(listOfDevices).length)
     res.end(JSON.stringify(listOfDevices));
 });
 
