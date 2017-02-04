@@ -125,10 +125,9 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     var characteristics = payload.appliance.additionalApplianceDetails[action];
     var host = applianceId[0];
     var port = applianceId[1];
-    var value = payload.percentageState.value || "";
 
     self.log("Control request from", req.connection.remoteAddress);
-    self.log("Control Attempt %s:%s", host, port, action, characteristics, value);
+    self.log("Control Attempt %s:%s", host, port, action, characteristics);
 
     switch (action) {
         case "TurnOffRequest":
