@@ -73,6 +73,7 @@ npm install -g https://github.com/NorthernMan54/homebridge-alexa
 * Use websockets to avoid making firewall changes to support connectivity from Amazon
 to homebridge
 * Switch to https for communications between Amazon and Homebridge Alexa
+* Cleanup technical debit in Amazon lambda_function.js, and externalize configuration items.
 
 # Credits
 * TheScorpius666
