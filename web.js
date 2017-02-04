@@ -7,10 +7,8 @@ var dispatcher = new HttpDispatcher();
 var fs = require('fs');
 var path = require('path');
 //var mdns = require('mdns');
-var devices = [];
-var x10 = require('./lib/x10.js');
 var hb = require('./lib/hb.js');
-var devices, self;
+var self;
 
 module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
@@ -27,8 +25,10 @@ function alexahome(log, config, api) {
 
     this.debug = config['debug'] || false;
     this.port = config['port'] || 8080;
+    this.pin = config['pin'] || "031-45-154";
     self = this;
-    hb.discoverHap();
+
+    hb.discoverHap(log,this.pin);
 
     init(self, self.port);
 
@@ -125,7 +125,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     var host = applianceId[0];
     var port = applianceId[1];
 
-    self.log("Control Attempt %s:%s", host, port, action, characteristics);
+    self.log("Control Attempt %s:%s", host, port, action, characteristics,payload.percentageState.value);
 
     switch (action) {
         case "TurnOffRequest":
