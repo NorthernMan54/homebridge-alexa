@@ -95,8 +95,8 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
         for (var did in devices) {
             var item = {};
             var device = devices[did];
-//            console.log("Devices ------------------------------", JSON.stringify(device));
-            item["applianceId"] = device.applianceId;
+            //            console.log("Devices ------------------------------", JSON.stringify(device));
+            item["applianceId"] = new Buffer(device.applianceId).toString('base64');
             item["manufacturerName"] = device.manufacturerName;
             item["modelName"] = device.modelName;
             item["version"] = "1.0";
@@ -110,8 +110,8 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
         }
     }
     //    console.log("Devices", JSON.stringify(listOfDevices));
-//    self.log(JSON.stringify(listOfDevices));
-    self.log("Discover Returned %s devices",Object.keys(listOfDevices).length)
+    //    self.log(JSON.stringify(listOfDevices));
+    self.log("Discover Returned %s devices", Object.keys(listOfDevices).length)
     res.end(JSON.stringify(listOfDevices));
 });
 
@@ -120,7 +120,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
 
     var payload = JSON.parse(decodeURI(req.params.device));
     var action = req.params.action;
-    var applianceId = payload.appliance.applianceId.split(":");
+    var applianceId = new Buffer(payload.appliance.applianceId, 'base64').toString().split(":");
     var characteristics = payload.appliance.additionalApplianceDetails[action];
     var host = applianceId[1];
     var port = applianceId[2];
