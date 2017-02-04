@@ -28,7 +28,7 @@ function alexahome(log, config, api) {
     this.pin = config['pin'] || "031-45-154";
     self = this;
 
-    hb.discoverHap(log,this.pin);
+    hb.discoverHap(log, this.pin);
 
     init(self, self.port);
 
@@ -111,6 +111,7 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
     }
     //    console.log("Devices", JSON.stringify(listOfDevices));
     //    self.log(JSON.stringify(listOfDevices));
+    self.log("Discover request from", req.connection.remoteAddress);
     self.log("Discover devices returned %s devices", Object.keys(listOfDevices).length)
     res.end(JSON.stringify(listOfDevices));
 });
@@ -125,7 +126,8 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     var host = applianceId[0];
     var port = applianceId[1];
 
-    self.log("Control Attempt %s:%s", host, port, action, characteristics,payload.percentageState.value);
+    self.log("Control request from", req.connection.remoteAddress);
+    self.log("Control Attempt %s:%s", host, port, action, characteristics, payload.percentageState.value);
 
     switch (action) {
         case "TurnOffRequest":
@@ -142,7 +144,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
     }
 
     if (body) {
-        hb.control(host,port,body, function(err, response) {
+        hb.control(host, port, body, function(err, response) {
 
             res.writeHead(200, {
                 'Content-Type': 'application/json'
