@@ -12,6 +12,8 @@ includes minimal error and status handling.
 brightness is included.
 * This plugin does not have any devices or accessories that are visible from Homekit,
 and does not need to be added on the Home app.
+* The plugin does not need to be installed in your 'main' homebridge instance.  It
+can be installed in a standalone 'Homebridge' instance beside your main instance.
 
 Alexa device names are the same as the homebridge device names.
 
@@ -62,7 +64,7 @@ npm install -g https://github.com/NorthernMan54/homebridge-alexa
 {
 "platform": "Alexa",
      "name": "Alexa",
-"port": 8082
+     "port": 8082
 }
 ```
 
