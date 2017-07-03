@@ -1,8 +1,8 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Alexa Skill frontend for Homebridge",
-  "main": "index.js",
+  "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
