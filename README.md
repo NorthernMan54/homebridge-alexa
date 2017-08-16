@@ -47,6 +47,7 @@ sudo npm install -g https://github.com/NorthernMan54/homebridge
 
 * This only works with Real Amazon Alexa devices, any RaspberryPI based devices like AlexaPI are not supported.
 * If you have hue devices and homebridge-hue, your hue devices will appear twice to Alexa.  If you want to avoid this, setup a second instance of homebridge and move the homebridge-hue plugin to it, and don't enable this feature.
+* Does not work with Amazon Fire TV
 
 # Troubleshooting / Issues
 
@@ -59,3 +60,4 @@ sudo npm install -g https://github.com/NorthernMan54/homebridge
 
 * dsandor/fauxmojs - For the NodeJS UPNP/SSDP module
 * BWS Systems - For the inspiration around the Hue emulation based approach
+* neruve - Testing of Amazon Fire TV
