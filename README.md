@@ -17,7 +17,7 @@ and does not need to be added on the Home app.
 * To enable this capability please install this special version of Homebridge and HAP-NodeJS.
 
 ```
-sudo npm install -g https://github.com/NorthernMan54/homebridge
+sudo npm install -g --unsafe-perm https://github.com/NorthernMan54/homebridge
 ```
 
 # Configuration
