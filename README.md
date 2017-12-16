@@ -11,6 +11,7 @@ leverages the native support of Hue devices by Alexa, and does not require a ski
 * This does not have any devices or accessories that are visible from Homekit,
 and does not need to be added on the Home app.
 * This only works with real Amazon devices, and does not work with faux Amazon devices like Amazon AVS or AlexaPI
+* Please note that this approach does not work the Amazon Echo 2nd generation launched in the fall of 2017.
 
 # Installation
 
@@ -47,7 +48,7 @@ sudo npm install -g --unsafe-perm https://github.com/NorthernMan54/homebridge
 
 * This only works with Real Amazon Alexa devices, any RaspberryPI based devices like AlexaPI are not supported.
 * If you have hue devices and homebridge-hue, your hue devices will appear twice to Alexa.  If you want to avoid this, setup a second instance of homebridge and move the homebridge-hue plugin to it, and don't enable this feature.
-* Does not work with Amazon Fire TV
+* Does not work with Amazon Fire TV or Echo 2nd Generation
 
 # Troubleshooting / Issues
 
