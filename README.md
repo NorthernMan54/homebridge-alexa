@@ -1,7 +1,7 @@
 
 # homebridge-alexa
 
-These are my notes and backlog for the creating of the Skill Based approach for integrating Amazon Alexa with HomeBridge.
+These are my notes and backlog for the creating of the Skill Based approach for integrating Amazon Alexa with HomeBridge.  Also all code for this version will use this branch of the repository.
 
 # Design
 
@@ -21,6 +21,7 @@ These are my notes and backlog for the creating of the Skill Based approach for 
           | HAPNodeJS         |
           ---------------------
 
+My inspiration for the design is based on the work done to create a Alexa Skill for Node Red by Ben Hardill.  You read the details here: http://www.hardill.me.uk/wordpress/2016/11/05/alexa-home-skill-for-node-red/
 
 # backlog
 
@@ -47,3 +48,7 @@ These are my notes and backlog for the creating of the Skill Based approach for 
 ## Accessory Types
 
 * Light
+
+# Credits
+
+* Ben Hardill - For the inspiration behind the design.
