@@ -1,0 +1,413 @@
+<% include ../fragments/header.ejs %>
+<div class="container main">
+    <nav class="side-menu">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#createAccount">Create Account</a></li>
+        <li><a href="#linkAccount">Link Account</a></li>
+        <li><a href="#installNodes">Install Nodes</a></li>
+        <li><a href="#configNodes">Configure Nodes</a></li>
+        <li><a href="#buildFlows">Building Flows</a></li>
+      </ul>
+    </nav>
+
+    <div class="container main-content">
+      <h1>Documentation</h1>
+      <p>Welcome to the Node-RED Alexa Home Skill Bridge documentation</p>
+      
+      <h2 id="createAccount">Create Account</h2>
+      <p>Before you start the first thing that needs to be done is to create an account on this site.
+      You can do this by clicking <a target="_blank" href="/newuser">here</a></p>
+      <p>After you have created an account you need to define some devices to control. Once you are 
+      logged in a "Devices" tab should appear in the menu at the top of the page. From here you can 
+      add new, edit or delete existing devices.</p>
+      <img width="1134" height="388" src="/images/devices.png">
+      <p>The name you give to the device will be how you access it from Alexa, be careful with names
+      like "Livingroom" that may be interpreted as "Livingroom" or "Living room".</p>
+      
+      <h2 id="linkAccount">Link Account</h2>
+      <p>Once you have an account you need to add the Skill to your Alexa powered device. You can do 
+      this from Alexa app on your phone/tablet by searching for 'Node-RED' in the Skills section. Once
+      enabled you will be asked to link your account. This will ask for the same username and password
+      you used when you created the account here.</p>
+      <p>Once the accounts are linked you can discover the devices you declared earlier. You can do 
+      this from within the app or by saying "Alexa, discover devices".</p>
+      
+      <h2 id="installNodes">Install Nodes</h2>
+      <p>Now that the Echo side of things is all setup it's time to set up Node-RED.</p>
+      <p>node-red-contrib-alexa-home-skill provides the end point node to bring your commands into 
+      Node-RED.</p>
+      <p>There are serveral ways to install new nodes into Node-RED. There is detailed documentation
+      on how to install nodes on the Node-RED website 
+      <a href="http://nodered.org/docs/getting-started/adding-nodes">here</a>, but here's a quick 
+      version.</p>
+      <ul>
+      <li><p>The simplest is to use the installer built into the Node-RED admin UI. You do this by clicking 
+      on the menu icon in the top right hand corner, then selecting "Manage pallette". Then on the left 
+      hand side select install, type "node-red-contrib-alexa-home-skill" in the box. Finally click on
+      the install button for the node in the list.</p>
+      </li>
+      <li><p>You can also install the nodes from the command line</p>
+      <pre>
+cd ~/.node-red
+npm install node-red-contrib-alexa-home-skill</pre>
+      </li>
+      <li><p>And finally if you are embedding Node-RED into your own application you can add the node to 
+      the package.json file for your project and it will be included when you do an install.</p>
+      <pre>
+...
+  "dependencies": {
+    "node-red": "~0.15.x",
+    "node-red-contrib-alexa-home-skill": "*",
+...</pre></li>
+    </ul>
+      
+      <h2 id="configNodes">Configure Nodes</h2>
+      <p>You can find the Alexa Home Skill nodes in the alexa section of the Node-RED pallette.</p>
+      <img style="margin-right: auto; margin-left: auto; display: block" src="/images/alexa-nodes.png">
+      <p>Once you've dragged a Alexa Home node on to the canvas, configuring it is relatively simple<p>
+      <ul> 
+        <li>Click on the pencil at the end of the Accounts line to add a new account</li>
+        <li>
+          <p>Enter your username and password</p>
+          <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/user-password.png">
+        </li>
+        <li>Click OK to return to the node config</li>
+        <li>
+          <p>The devices drop down should now be populated with the devices you defined earlier, if 
+          not hit the refresh button at the end.</p>
+          <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/pick-device.png">
+        </li>
+      </ul>
+      <p>To start with leave the Auto Acknoledge checked, this tells Alexa that the command has succeeded as soon
+      as it is received by Node-RED. If you want to report failures then you can uncheck this option and user the
+      Alexa Home Resp node to signal sucess or failure. Details about the Alexa Home Resp node are in the Building
+      Flows section of the documentation.</p>
+
+      <h2 id="buildFlows">Building Flows</h2>
+      <h3>Alexa Home</h3>
+      <!-- <p>The Alexa Home node outputs a message that looks like this:</p>
+      
+    <pre>{
+  _messageId: 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  _applianceId: '3',
+  _confId: 'cc670790.9f0eb8',
+  "command": "TurnOnRequest",
+  "extraInfo": {},
+  payload: true
+}</pre>
+    <p>or</p>
+    <pre>{
+  _messageId: 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  _applianceId: '3',
+  _confId: 'cc670790.9f0eb8',
+  "command": "SetPercentageRequest",
+  "extraInfo": {},
+  payload: 50
+}</pre>
+    <p>or</p>
+    <pre>{
+  _messageId: 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  _applianceId: '3',
+  _confId: 'cc670790.9f0eb8',
+  "command": "DecrementTemperatureRequest",
+  "extraInfo": {},
+  payload: -5
+}</pre>
+      <p>The important bits are the <i>msg.command</i> and the <i>msg.payload</i>. The <i>msg.command</i> will be one of the following list (that corresponds to the capabilities you added to the device when you defined it):</p> -->
+
+      <p>The Alexa Home node supports the following commands, click on the command name to see a sample output message or toggle all by clicking <span data-toggle="collapse" data-target=".collapse" >here</span>:</p>
+      <ul>
+        <li><span class="toggle" data-toggle="collapse" data-target="#TurnOnRequest">TurnOnRequest</span>
+        <div id="TurnOnRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'TurnOnRequest',
+  'extraInfo': {},
+  'payload': true
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#TurnOffRequest">TurnOffRequest</span>
+        <div id="TurnOffRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'TurnOffRequest',
+  'extraInfo': {},
+  'payload': true
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#SetPercentageRequest">SetPercentageRequest</span>
+        <div id="SetPercentageRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'SetPercentageRequest',
+  'extraInfo': {},
+  'payload': 50
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#IncrementPercentageRequest">IncrementPercentageRequest</span>
+        <div id="IncrementPercentageRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'IncrementPercentageRequest',
+  'extraInfo': {},
+  'payload': 10
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#DecrementPercentageRequest">DecrementPercentageRequest</span>
+        <div id="DecrementPercentageRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'DecrementPercentageRequest',
+  'extraInfo': {},
+  'payload': -10
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#SetTargetTemperatureRequest">SetTargetTemperatureRequest<span>
+        <div id="SetTargetTemperatureRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'SetTargetTemperatureRequest',
+  'extraInfo': {},
+  'payload': 22
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#IncrementTargetTemperatureRequest">IncrementTargetTemperatureRequest</span>
+        <div id="IncrementTargetTemperatureRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  _applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'IncrementTargetTemperatureRequest',
+  'extraInfo': {},
+  'payload': 5
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#DecrementTargetTemperatureRequest">DecrementTargetTemperatureRequest</span>
+        <div id="DecrementTargetTemperatureRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'DecrementTargetTemperatureRequest',
+  'extraInfo': {},
+  'payload': -5
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#GetTemperatureReadingRequest">GetTemperatureReadingRequest <sup>2,3</sup></span>
+        <div id="GetTemperatureReadingRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'GetTemperatureReadingRequest',
+  'extraInfo': {}
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#GetTargetTemperatureRequests">GetTargetTemperatureRequests <sup>2,3</sup></span>
+        <div id="GetTargetTemperatureRequests" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'GetTargetTemperatureRequests',
+  'extraInfo': {}
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#SetLockState">SetLockState <sup>1</sup></span>
+        <div id="SetLockState" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'SetLockState',
+  'extraInfo': {},
+  'payload': 'LOCKED'
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#GetLockState">GetLockState <sup>1,3</sup></span>
+        <div id="GetLockState" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'GetLockState',
+  'extraInfo': {}
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#SetColorRequest">SetColorRequest <sup>1</sup></span>
+        <div id="SetColorRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'SetColorRequest',
+  'extraInfo': {},
+  'payload': {
+      'hue': 0.0,
+      'saturation': 1.0000,
+      'brigtness': 1.0000
+  }
+}</pre>
+        </div>
+        </li>
+        <li><span class="toggle" data-toggle="collapse" data-target="#SetColorTemperatureRequest">SetColorTemperatureRequest <sup>1</sup></span>
+        <div id="SetColorTemperatureRequest" class="collapse">
+        <pre>{
+  '_messageId': 'd6734865-6a96-4967-8504-6056e75ba5c3',
+  '_applianceId': '3',
+  '_confId': 'cc670790.9f0eb8',
+  'command': 'SetColorTemperatureRequest',
+  'extraInfo': {},
+  'payload': 2700
+}</pre>
+        </div>
+        </li>
+        <!--
+        <li>IncrementColorTemperatureRequest <sup>1,3</sup></li>
+        <li>DecrementColorTemperatureRequest <sup>1,3</sup></li>
+        -->
+      </ul>
+
+      <ol>
+        <li>Amazon documentation say only available to US users at the moment</li>
+        <li>Amazon documentation say only available to US & UK users at the moment</li>
+        <li>Can not be Auto Acknowledged as they need to return a value</li>
+      </ol>
+
+      <p>The payload field will hold positive numbers for the Set and Increment versions of commands and negative numbers
+      for the Decrement versions. For TurnOn/TurnOff the payload will be true/false</p>
+
+      <p>With this you can build a flow to turn a light on for a specific length of time or until turned off:</p>
+
+      <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/on-for-5min-small.png">
+
+      <p>The Switch node works out which command was used:</p>
+
+      <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/switch-node-small.png">
+
+      <p>The Trigger node sets the length of time the light should be on for:</p>
+
+      <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/trigger-node-small.png">
+
+      <p>The Change node resets the Trigger node by setting the <i>msg.reset</i> and removing <i>msg.payload</i></p>
+
+      <img style="margin-right: auto; margin-left: auto; display: block;" src="/images/change-node-small.png">
+
+      <p>And all this feeds into the WeMo node to control a WeMo light bulb.</p>
+
+      <h3>Alexa Home Response</h3>
+      <p>The Alexa Home Response node is for if you want to have more control over the response sent back to the Alexa service.
+      Messages passed to this node need to have orginated from a Alexa Home node as information required to respond to the
+      specific request are attached to that message. To use this node you need to uncheck <i>Auto Acknowledge</i> check box
+      in the Alexa Home input node.</p>
+
+      <p>Responses need to be sent within 6 seconds of the incoming request or the service will respond to Alexa with a 
+      timeout message.</p>
+
+      <p>For TurnOnRequest/TurnOffRequest and SetPercentageRequest, IncrementPercentageRequest, DecrementPercentageRequest 
+      requests setting the <i>msg.payload</i> of the input message to true/false to signify success or failure.</p>
+
+      <p>For SetTargetTemperatureRequest, IncrementTargetTemperatureRequest, DecrementTargetTemperatureRequest, GetTemperatureReadingRequest, 
+      GetTargetTemperatureRequest, GetLockStateRequest request you can also include a <i>msg.extra</i> object.
+      <p>When the input value is outside the supported range, the <i>msg.extra</i> should look like this:</p>
+      <pre>{
+    min: 10.0,
+    max: 30.0
+}</pre>
+      <p>For a sucessful target temperature change the <i>msg.extra</i> should be simiar to this:</p>
+      <pre>{
+    targetTemperature: { 
+        value: 21.0
+    }
+}</pre>
+      <p>Combining both of these in a single function node to handle the request would look something like the following: </p>
+      <pre>if (msg.payload < 10 || msg.payload > 30) {
+    var range = {
+        min: 10.0,
+        max: 30.0
+    }
+    msg.payload = false;
+    msg.extra = range;
+    
+    return [[],msg];
+} else {
+    var success = RED.util.cloneMessage(msg);
+    success.payload = true;
+    success.extra = {
+        targetTemperature: {
+            value: msg.payload
+        }
+    }
+    return [[msg],success];
+}</pre>
+      <p>This enforces a temperature range between 10&deg;C and 30&deg;C, sending the Alexa response to the second output and 
+      if the input is in range the control message is sent to the first function output. Note: All values are passed in Degrees 
+      C even if the input voice commands are in Degrees F when using Alexa in the US.</p>
+      <p>To query termostat setpoint with GetTargetTemperatureRequest, respond with a msg.extra similar to this.</p>
+      <pre>{
+    targetTemperature: {
+        value: 25.0
+    },
+    temperatureMode: {
+        value: "AUTO"
+    }
+}</pre>
+      <p>temperatureMode values can be AUTO, HEAT, COOL or CUSTOM. When Custom is used then you also need to include a freindlyName.</p>
+      <pre>{
+    targetTemperature: {
+        value: 25.0
+    },
+    temperatureMode: {
+        value: "CUSTOM",
+        friendlyName: "Space Heater"
+    }
+}</pre>
+      <p>For GetTemperatureReadingRequest (the current temperature) a response whould look like this:</p>
+      <pre>msg.extra = {
+    "temperatureReading": {
+        "value": 21.11
+    },
+    "applianceResponseTimestamp": new Date().toISOString()
+};
+msg.payload = true;
+return msg; </pre>
+      <p>The applianceResponseTimestamp can be the set to the last time the sensor was polled or in this case just set to the current time. </p>
+      <p>For Lock device support, both the SetLockState and GetLockState can be answered with a <i>msg.extra.lockState</i> of either "LOCKED" 
+      or "UNLOCKED" as follows:</p>
+      <pre>{
+    lockState: "LOCKED"
+}</pre>
+      <p>Lighting Color (US spelling) needs a msg.extra that contains the hue, saturation and brightness values</p>
+      <pre>{
+    hue: 0.0,
+    saturation: 1.0000
+    brigtness: 1.0000
+}</pre>
+      <p>Where hue is a value between 0.0 and 360.0, and saturation & brightness are between 0.0 and 1.0</p>
+    </div>
+</div>
+<% include ../fragments/footer.ejs %>

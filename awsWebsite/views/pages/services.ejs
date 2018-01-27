@@ -1,0 +1,146 @@
+<% include ../fragments/header.ejs %>
+<div class="container main-content">
+  <h1>Services</h1>
+  <div class="serviceHeader" >
+    <div class="serviceTitle"><strong>Title</strong></div>
+    <div class="serviceId"><strong>oauth_id</strong></div>
+    <div class="serviceSecret"><strong>oauth_secret</strong></div>
+    <div class="serviceDomains"><strong>domains</strong></div>
+  </div>
+
+  <% services.forEach(function(service){ %>
+    <div class="service">
+      <div class="serviceTitle"><%= service.title %></div>
+      <div class="serviceId"><%= service.oauth_id %></div>
+      <div class="serviceSecret"><%= service.oauth_secret %></div>
+      <div class="serviceDomains"><%= service.domains.join(',') %></div>
+      <button onclick="edit('<%= service._id %>')">Edit</button>
+      <button onclick="deleteService('<%= service._id%>')">Delete</button>
+    </div>
+  <% }); %>
+
+
+  <div style="padding-top: 10px;">
+    <button onclick="addService();">New Service</button>
+  </div>
+</div>
+
+  <div id="dialog" hidden>
+    <input id="servID" type="hidden">
+    <label for="title">Title: </label>
+    <input id="title" type="text">
+    <label for="secret">Secret: </label>
+    <input id="secret" type="text">
+    <fieldset>
+      <legend>Domains</legend>
+      <textarea id="domains"></textarea>
+    </fieldset>
+  </div>
+
+  <script>
+  $( "#dialog" ).dialog({
+    autoOpen: false,
+    title: "Add New Service",
+    dialogClass: "no-close",
+    buttons: [
+      {
+        text:"OK",
+        click: function() {
+          var servID = $('#servID').val();
+          if (servID === "") {
+            var service = {};
+            service.title = $('#title').val();
+            service.oauth_secret = $('#secret').val();
+            service.domains = $('#domains').val().split(',');
+            console.log(service);
+            $.ajax({
+              url: '/services',
+              type: 'PUT',
+              data: JSON.stringify(service),
+              contentType: "application/json",
+              success: function(data){
+                console.log("put response");
+                console.log(data);
+                //reload
+                document.location.reload();
+              },
+              dataType   : 'json'
+            }).fail(function(){
+
+            });
+            $(this).dialog( "close" );
+          } else {
+            var service = services[servID];
+            service.title = $('#title').val();
+            service.oauth_secret = $('#secret').val();
+            service.domains = $('#domains').val().split(',');
+            $.ajax({
+              url: '/service/' + servID,
+              type: 'POST',
+              data: JSON.stringify(service),
+              contentType: "application/json",
+              success: function(data){
+                console.log("post response");
+                console.log(data);
+                //reload
+                document.location.reload();
+              },
+              dataType   : 'json'
+            }).fail(function(){
+
+            });
+            $(this).dialog( "close" );
+          }
+        }
+      },
+      {
+        text: "Cancel",
+        click: function(){
+          clearService();
+          $(this).dialog( "close" );
+        }
+      }
+    ]
+  });
+
+  function addService() {
+    clearService();
+    $("#dialog").dialog("open");
+  }
+
+  function clearService(){
+    $('#title').val("");
+    $('#secret').val("");
+    $('#domains').val("");
+  }
+
+  function edit(id) {
+    clearService();
+    $("#dialog").dialog("open");
+    var service = services[id];
+    console.log(service);
+    $('#servID').val(service._id);
+    $('#title').val(service.title);
+    $('#secret').val(service.oauth_secret);
+    $('#domains').val(service.domains.join(','));
+  }
+
+  function deleteService(id) {
+    var answer = confirm("Are you sure you want to delete this service?");
+    if(answer) {
+      $.ajax({
+        url:"/service/" + id,
+        type: 'DELETE',
+        success: function(data){
+          document.location.reload();
+        }
+      });
+    }
+  }
+
+  var services = {};
+  <%- JSON.stringify(services) %>.forEach(function(service){
+    services[service._id] = service;
+  });
+  </script>
+<% include ../fragments/footer.ejs %>

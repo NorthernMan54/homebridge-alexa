@@ -1,0 +1,54 @@
+<% include ../fragments/header.ejs %>
+  <div class="container main-content">
+    <h1>Connect with <%= application.title %></h1>
+    <form action="/auth/finish" method="post">
+        <input type="hidden" name="transaction_id" value="<%= transaction_id %>">
+        <input type="hidden" name="response_type" value="<%= response_type %>">
+        <input type="hidden" name="client_id" value="<%= application.oauth_id %>">
+        <input type="hidden" name="auth_url" value="<%= decodeURIComponent(currentURL) %>">
+        <input type="hidden" name="scope" value="<%= scope.join(',') %>">
+
+        <div class="">
+            <p><%= application.title %> requires permission to:</p>
+            <ul>
+                <% scope.forEach(function(i){ %>
+                    <li><%= map[i] %></li>
+                <% });%>
+            </ul>
+
+            <% if (user) { %>
+                <p>Click <em>Authorise</em> to allow this app access</p>
+            <% } else { %>
+                <p>Please sign in to allow this app access</p>
+            <% } %>
+        <div>
+
+        <% if (user) { %>
+            <% if (errors) { %>
+              <p style="color: red"><%= errors %></p>
+            <% } %>
+            <div class="form-group">
+                <p>Signed in as <strong><%= user.name%></strong>.</p>
+                <a href="/logout?next=<%= currentURL %>">Not </a><%= user.username %>?
+                <input type="submit" value="Authorise">
+            </div>
+        <% } else { %>
+            <% if (errors) { %>
+              <p style="color: red"><%= errors %></p>
+            <% } %>
+            <div class="form-group">
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username"/>
+            </div>
+            <div>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div>
+                <input type="submit" value="Authorise">
+            </div>
+        <% } %>
+
+    </form>
+  </div>
+<% include ../fragments/footer.ejs %>

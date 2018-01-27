@@ -1,0 +1,103 @@
+body {
+  padding-top: 50px;
+}
+
+.main {
+  display: flex;
+}
+
+.login {
+	float: right;
+}
+
+.side-menu {
+  float: left;
+  padding-top: 60px;
+  width: 150px;
+}
+
+.main-content {
+  padding-left: 10px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.devicerow {
+	padding: 5px;
+	margin: 1px;
+	border: 1px solid;
+}
+
+.device {
+	display: flex;
+}
+
+.deviceName {
+	flex-shrink: 0; 
+	flex-basis: 200px;
+	width: 200px;
+	order: 1;
+}
+
+.deviceDescription {
+	flex-shrink: 0;
+	flex-basis: 400px;
+	width: 400px;
+	order: 2;
+}
+
+
+.deviceActions {
+	order: 3;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.action {
+	padding: 1px;
+	margin: 1px;
+	border: 1px solid;
+}
+
+.service {
+	padding: 5px;
+	margin: 1px;
+	border: 1px solid;	
+}
+
+.serviceTitle {
+	float: left;
+	width: 200px;
+}
+
+.serviceId {
+	float: left;
+	width: 100px;
+}
+
+.serviceSecret {
+	float: left;
+	width: 150px;
+}
+
+.serviceDomains {
+}
+
+.pwq {
+	text-align: center;
+	margin-left: 80px;
+	width: 75px;
+	height: 20px;
+}
+
+fieldset.action {
+	border-style: solid;
+	border-width: 1px;
+}
+
+.toggle {
+	cursor: context-menu;
+}

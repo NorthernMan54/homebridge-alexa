@@ -1,0 +1,154 @@
+<% include ../fragments/header.ejs %>
+  <div class="container main-content">
+    <div id="register">
+      <label style="width: 75px" for="username">Username:</label>
+      <input type="text" onchange="validate()" id="username"/>
+      <span>(can contain any utf-8 chars except /, + or # and must not start with $)</span>
+      <div id="usrValid" class="pwq"></div>
+      <label style="width: 75px" for="email">Email:</label>
+      <input type="email" id="email"/>
+      <span>(will only be used to send password resets and notices about the running of the service)</span>
+      <br>
+      <label style="width: 75px" for="password">Password:</label>
+      <input type="password" id="password"/>
+      <div id="pwq" class="pwq"></div>
+      
+      <p>Please enter password again</p>
+      <label style="width: 75px" for="passwordAgain">Password:</label>
+      <input type="password" id="passwordAgain"/>
+      <div id="pwm" class="pwq"></div>
+      <br>
+      <button id="registerButton">Register</button>
+      <script type="text/javascript" src="js/zxcvbn.js"></script>
+      <script type="application/javascript">
+
+        var user = document.getElementById('username');
+        var userChange = function(){
+          var u = user.value.trim();
+          if (u.length != 0) {
+            if (u.indexOf('#') != -1 || 
+                u.indexOf('+') != -1 || 
+                u.indexOf('/') != -1 ||
+                u.indexOf('$') == 0) {
+              document.getElementById('usrValid').style.background = 'red';
+              document.getElementById('usrValid').innerHTML = 'invalid';
+            } else {
+              document.getElementById('usrValid').style.background = 'white';
+              document.getElementById('usrValid').innerHTML = '';
+            }
+          } else {
+            document.getElementById('usrValid').style.background = 'white';
+            document.getElementById('usrValid').innerHTML = '';
+          }
+        }
+        user.addEventListener('keyup',userChange);
+        user.addEventListener('change',userChange);
+
+        var first = document.getElementById('password');
+        var pwChange = function(){
+          var val = document.getElementById('password').value;
+          if (val.length != 0) {
+            var pwQuality = zxcvbn(val);
+            switch (pwQuality.score) {
+              case 0:
+                //break;
+              case 1:
+                //break;
+              case 2:
+                document.getElementById('pwq').style.background = 'red';
+                document.getElementById('pwq').innerHTML = "weak";
+                break;
+              case 3:
+                //break;
+              case 4:
+                document.getElementById('pwq').style.background = 'green';
+                document.getElementById('pwq').innerHTML = "strong";
+                break;
+            }
+          } else {
+            document.getElementById('pwq').style.background = 'white';
+            document.getElementById('pwq').innerHTML = "";
+          }
+        };
+        first.addEventListener('keyup', pwChange);
+        first.addEventListener('change', pwChange);
+
+        var again = document.getElementById('passwordAgain');
+
+        var pwMatch = function(){
+          if (first.value.length != 0) {
+            if (again.value == first.value) {
+              document.getElementById('pwm').style.background = 'green';
+              document.getElementById('pwm').innerHTML = "match";
+            } else {
+              document.getElementById('pwm').style.background = 'red';
+              document.getElementById('pwm').innerHTML = "different";
+            }
+          } else {
+            document.getElementById('pwm').style.background = 'white';
+            document.getElementById('pwm').innerHTML = "";
+          }
+        };
+        again.addEventListener('keyup', pwMatch);
+        again.addEventListener('change', pwMatch);
+
+      	var xhr = new XMLHttpRequest();
+      	var button = document.getElementById('registerButton');
+      	button.onclick = function(){
+      		var username = document.getElementById('username').value.trim();
+      		var password = document.getElementById('password').value.trim();
+          var passwordAgain = document.getElementById('passwordAgain').value;
+
+          if (username.length < 1) {
+            alert("Please enter a valid username");
+            return;
+          }
+
+          if (password !== passwordAgain) {
+            alert("Passwords don't match");
+            return;
+          }
+
+          if (password.length < 1) {
+            alert("Zero length passwords are note really a good idea");
+            return;
+          }
+
+          var email = document.getElementById('email').value;
+          //need to try validate the email address here:
+          if (email.indexOf('@') == -1) {
+            alert("Please enter a valid email address");
+            return;
+          }
+
+      		var params = "username=" + encodeURIComponent(username)
+            + "&password=" + encodeURIComponent(password)
+            + "&email=" + encodeURIComponent(email);
+      		xhr.open('POST', '/newUser',true);
+      		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      		xhr.onreadystatechange = function () {
+      			if( xhr.readyState == 4 && xhr.status == 201) {
+      				//new user created
+      				window.location = '/';
+      			} else if (xhr.readyState == 4 && xhr.status == 400) {
+      				//show error
+      				alert(xhr.responseText);
+      			}
+      		}
+      		
+      		xhr.send(params);
+      	};
+
+        function validate() {
+          var data = $('#username').val();
+          console.log(data);
+          if (data.indexOf('/') > 0 || data.indexOf('#') > 0 || data.indexOf('+') > 0) {
+            alert("invalid username");
+          } else if (data.indexOf('$') == 0) {
+            alert("invalid username");
+          }
+        }
+      </script>
+    </div>
+  </div>
+<% include ../fragments/footer.ejs %>

@@ -1,0 +1,19 @@
+<% include ../fragments/header.ejs %>
+  <div class="container main-content">
+    <% if (message) { %>
+      <p><strong><%= message %></strong></p>
+    <% } %>
+    <div id="login">
+      <form method="POST" action="/login">
+        <label style="width: 75px" for="username">Username:</label>
+        <input type="text" id="username" name="username"/>
+        <br>
+        <label style="width: 75px" for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+        <br>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <p>If you have misplaced your password click <a href="/lostPassword">here</a></p>
+  </div>
+<% include ../fragments/footer.ejs %>

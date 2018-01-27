@@ -1,0 +1,5 @@
+---
+application:
+- name: alexa-node-red
+  memory: 128M
+  host: alexa-node-red

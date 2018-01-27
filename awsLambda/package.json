@@ -1,0 +1,16 @@
+{
+  "name": "home-skill",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "zip -r home-skill.zip index.js node_modules",
+    "publish": "aws lambda update-function-code --function-name Node-RED --zip-file fileb://home-skill-lambda.zip"
+  },
+  "author": "hardillb@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "request": "^2.76.0"
+  }
+}
