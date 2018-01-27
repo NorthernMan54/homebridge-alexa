@@ -1,11 +1,11 @@
 {
   "name": "AlexaHome",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "zip -r homebridge.zip index.js node_modules",
+    "package": "zip -r -u homebridge.zip index.js node_modules",
     "publish": "aws lambda update-function-code --function-name AlexaHome --zip-file fileb://homebridge.zip"
   },
   "author": "NorthernMan54",
