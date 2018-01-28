@@ -2,26 +2,26 @@ var request = require('request');
 
 exports.handler = function(event, context, callback) {
     log("Entry", event);
-    if (event.header.namespace === 'Alexa.ConnectedHome.Discovery') {
+    if (event.directive.header.namespace === 'Alexa.Discovery') {
         discover(event, context, callback);
-    } else if (event.header.namespace === 'Alexa.ConnectedHome.Control') {
+    } else if (event.directive.header.namespace === 'Alexa.ConnectedHome.Control') {
         command(event,context, callback)
-    } else if (event.header.namespace === 'Alexa.ConnectedHome.Query') {
+    } else if (event.directive.header.namespace === 'Alexa.ConnectedHome.Query') {
         command(event, context, callback)
-    } else if (event.header.namespace === 'Alexa.ConnectedHome.System') {
+    } else if (event.directive.header.namespace === 'Alexa.ConnectedHome.System') {
         system(event,context, callback);
     }
 };
 
 function discover(event, context, callback) {
     log("Discover", event);
-    if (event.header.name === 'DiscoverAppliancesRequest') {
+    if (event.directive.header.name === 'Discover') {
         var message_id = createMessageId();
-        var oauth_id = event.payload.accessToken;
+        var oauth_id = event.directive.payload.scope.token;
 
 
         //http request to the database
-        request.get('https://35.169.132.61/api/v1/devices',{
+        request.get('https://homebridge.cloudwatch.net/api/v1/devices',{
             auth: {
                 'bearer': oauth_id
             },
@@ -36,9 +36,9 @@ function discover(event, context, callback) {
                 var response = {
                     header:{
                         messageId: message_id,
-                        name: "DiscoverAppliancesResponse",
-                        namespace: "Alexa.ConnectedHome.Discovery",
-                        payloadVersion: "2"
+                        name: "Discover.Response",
+                        namespace: "Alexa.Discovery",
+                        payloadVersion: "3"
                     },
                     payload: payload
                 };
@@ -62,9 +62,9 @@ function discover(event, context, callback) {
                 var response = {
                     header:{
                         messageId: message_id,
-                        name: "DiscoverAppliancesResponse",
-                        namespace: "Alexa.ConnectedHome.Discovery",
-                        payloadVersion: "2"
+                        name: "Discover.Response",
+                        namespace: "Alexa.Discovery",
+                        payloadVersion: "3"
                     },
                     payload: {
                         discoveredAppliances: []
@@ -90,7 +90,7 @@ function command(event, context, callback) {
     var message_id = createMessageId();
     var oauth_id = event.payload.accessToken;
 
-    var command = event.header.name;
+    var command = event.directive.header.name;
 
     log("Command", event);
 
@@ -154,7 +154,7 @@ function command(event, context, callback) {
             break;
     }
 
-    request.post('https://35.169.132.61/api/v1/command',{
+    request.post('https://homebridge.cloudwatch.net/api/v1/command',{
         json: event,
         auth: {
             bearer: oauth_id
