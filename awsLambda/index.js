@@ -30,17 +30,19 @@ function discover(event, context, callback) {
             log("Discover body", body);
             if (response.statusCode == 200) {
                 var payload = {
-                    discoveredAppliances: JSON.parse(body)
+                    "endpoints": JSON.parse(body)
                 };
 
                 var response = {
-                    header:{
-                        messageId: message_id,
-                        name: "Discover.Response",
-                        namespace: "Alexa.Discovery",
-                        payloadVersion: "3"
+                  "event": {
+                    "header":{
+                        "namespace": "Alexa.Discovery",
+                        "name": "Discover.Response",
+                        "payloadVersion": "3",
+                        "messageId": message_id
                     },
-                    payload: payload
+                    "payload": payload
+                  },
                 };
 
                 log('Discovery', response);

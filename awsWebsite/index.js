@@ -121,11 +121,9 @@ var LostPassword = require('./models/lostPassword');
 
 
 Account.findOne({username: mqtt_user}, function(error, account){
-	console.log("Account.findOne",error,account);
 	if (!error && !account) {
 		Account.register(new Account({username: mqtt_user, email: '', mqttPass: '', superuser: 1}),
 			mqtt_password, function(err, account){
-			console.log("Account.findOne-1",error,account);
 			var topics = new Topics({topics: [
 					'command/' +account.username+'/#',
 					'presence/' + account.username + '/#',
@@ -415,11 +413,9 @@ app.post('/lostPassword', function(req, res, next){
 
 app.get('/auth/start',oauthServer.authorize(function(applicationID, redirectURI, done) {
 	oauthModels.Application.findOne({ oauth_id: applicationID }, function(error, application) {
-		console.log("oauthModels.Application.register",applicationID,redirectURI,application);
 		if (application) {
 			var match = false, uri = url.parse(redirectURI || '');
 			for (var i = 0; i < application.domains.length; i++) {
-				console.log("Match",uri.host,uri.protocol,application.domains[i]);
 				if (uri.host == application.domains[i] || (uri.protocol == application.domains[i] && uri.protocol != 'http' && uri.protocol != 'https')) {
 					match = true;
 					break;
@@ -464,15 +460,15 @@ app.get('/auth/start',oauthServer.authorize(function(applicationID, redirectURI,
 
 app.post('/auth/finish',function(req,res,next) {
 	console.log("/auth/finish user: ", req.user);
-	console.log(req.body);
-	console.log(req.params);
+	//console.log(req.body);
+	//console.log(req.params);
 	if (req.user) {
 		next();
 	} else {
 		passport.authenticate('local', {
 			session: false
 		}, function(error,user,info){
-			console.log("/auth/finish authenting");
+			// console.log("/auth/finish authenting");
 			if (user) {
 				console.log(user.username);
 				req.user = user;
@@ -521,23 +517,104 @@ app.get('/api/v1/devices',
 		var user = req.user.username
 		Devices.find({username: user},function(error, data){
 			if (!error) {
-				var devs = [];
+				var endpoints = [];
 				for (var i=0; i< data.length; i++) {
+					console.log("Device",user,data[i].applianceId,data[i].friendlyName);
 					var dev = {};
 					dev.friendlyName = data[i].friendlyName;
-					dev.friendlyDescription = data[i].friendlyDescription;
-					dev.applianceId = "" + data[i].applianceId;
-					dev.isReachable = data[i].isReachable;
-					dev.actions = data[i].actions;
-					dev.additionalApplianceDetails = data[i].additionalApplianceDetails;
-					dev.modelName = "Node-RED Endpoint";
-					dev.version = "0.0.1";
-					dev.manufacturerName = "Node-RED"
+					dev.description = data[i].friendlyDescription;
+					dev.endpointId = "" + data[i].applianceId;
+					dev.displayCategories = ["LIGHT"];
+					//dev.isReachable = data[i].isReachable;
+					dev.capabilities = data[i].actions;
 
-					devs.push(dev);
+					dev.capabilities = [
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa",
+					                            "version": "3"
+					                        },
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa.PowerController",
+					                            "version": "3",
+					                            "properties": {
+					                                "supported": [
+					                                    {
+					                                        "name": "powerState"
+					                                    }
+					                                ],
+					                                "proactivelyReported": true,
+					                                "retrievable": true
+					                            }
+					                        },
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa.BrightnessController",
+					                            "version": "3",
+					                            "properties": {
+					                                "supported": [
+					                                    {
+					                                        "name": "brightness"
+					                                    }
+					                                ],
+					                                "proactivelyReported": true,
+					                                "retrievable": true
+					                            }
+					                        },
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa.PowerLevelController",
+					                            "version": "3",
+					                            "properties": {
+					                                "supported": [
+					                                    {
+					                                        "name": "powerLevel"
+					                                    }
+					                                ],
+					                                "proactivelyReported": true,
+					                                "retrievable": true
+					                            }
+					                        },
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa.PercentageController",
+					                            "version": "3",
+					                            "properties": {
+					                                "supported": [
+					                                    {
+					                                        "name": "percentage"
+					                                    }
+					                                ],
+					                                "proactivelyReported": true,
+					                                "retrievable": true
+					                            }
+					                        },
+					                        {
+					                            "type": "AlexaInterface",
+					                            "interface": "Alexa.EndpointHealth",
+					                            "version": "3",
+					                            "properties": {
+					                                "supported": [
+					                                    {
+					                                        "name": "connectivity"
+					                                    }
+					                                ],
+					                                "proactivelyReported": true,
+					                                "retrievable": true
+					                            }
+					                        }
+					                    ];
+
+					//dev.additionalApplianceDetails = data[i].additionalApplianceDetails;
+					//dev.modelName = "Node-RED Endpoint";
+					//dev.version = "0.0.1";
+					dev.manufacturerName = "Node-RED";
+
+					endpoints.push(dev);
 				}
 				//console.log(devs)
-				res.send(devs);
+				res.send(endpoints);
 			}
 		});
 	}
