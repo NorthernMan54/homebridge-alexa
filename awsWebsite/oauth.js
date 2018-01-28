@@ -6,7 +6,7 @@ var server = oauth2orize.createServer();
 server.grant(oauth2orize.grant.code({
 	scopeSeparator: [ ' ', ',' ]
 }, function(application, redirectURI, user, ares, done) {
-	//console.log("grant user: ", user);
+	console.log("grant user: ", user);
 	OAuth.GrantCode.findOne({application: application, user: user},function(error,grant){
 		if (!error && grant) {
 			done(null,grant.code);

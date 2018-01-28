@@ -1,10 +1,12 @@
 {
-  "name": "home-skill-web",
+  "name": "homebridgeWeb",
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "zip -r -u homebridgeWeb.zip *js apache models static test views server.key server.crt package.json",
+    "publish": "sftp $KEY -b sftp.batch $LOGON",
     "start": "node index.js"
   },
   "keywords": [
@@ -12,7 +14,7 @@
     "smart",
     "home"
   ],
-  "author": "hardillb@gmail.com",
+  "author": "NorthernMan54",
   "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.15.2",

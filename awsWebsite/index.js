@@ -23,8 +23,8 @@ var host = (process.env.VCAP_APP_HOST || '0.0.0.0');
 var mongo_url = (process.env.MONGO_URL || 'mongodb://localhost/users');
 
 var mqtt_url = (process.env.MQTT_URL || 'mqtt://localhost:1883');
-var mqtt_user = (process.env.MQTT_USER || undefined);
-var mqtt_password = (process.env.MQTT_PASSWORD || undefined);
+var mqtt_user = (process.env.MQTT_USER || 'mqtt_user');
+var mqtt_password = (process.env.MQTT_PASSWORD || 'mqtt_pass');
 console.log(mqtt_url);
 
 var googleAnalyicsTID = process.env.GOOGLE_ANALYTICS_TID;
@@ -98,7 +98,7 @@ mongoose_connection.on('error', function(error) {
 mongoose_connection.on('connected', function() {
     console.log('MongoDB connected!');
 });
-  
+
 mongoose_connection.once('open', function() {
     console.log('MongoDB connection opened!');
 });
@@ -121,12 +121,13 @@ var LostPassword = require('./models/lostPassword');
 
 
 Account.findOne({username: mqtt_user}, function(error, account){
+	console.log("Account.findOne",error,account);
 	if (!error && !account) {
 		Account.register(new Account({username: mqtt_user, email: '', mqttPass: '', superuser: 1}),
 			mqtt_password, function(err, account){
-
+			console.log("Account.findOne-1",error,account);
 			var topics = new Topics({topics: [
-					'command/' +account.username+'/#', 
+					'command/' +account.username+'/#',
 					'presence/' + account.username + '/#',
 					'response/' + account.username + '/#'
 				]});
@@ -139,8 +140,8 @@ Account.findOne({username: mqtt_user}, function(error, account){
 					var mqttPass = "PBKDF2$sha256$901$" + account.salt + "$" + account.hash;
 
 					Account.update(
-						{username: account.username}, 
-						{$set: {mqttPass: mqttPass, topics: topics._id}}, 
+						{username: account.username},
+						{$set: {mqttPass: mqttPass, topics: topics._id}},
 						{ multi: false },
 						function(err, count){
 							if (err) {
@@ -199,7 +200,7 @@ function requireHTTPS(req, res, next) {
         	url += ':' + port;
         }
         url  += req.url;
-        return res.redirect(url); 
+        return res.redirect(url);
     }
     next();
 }
@@ -259,7 +260,7 @@ app.get('/logout', function(req,res){
 	} else {
 		res.redirect('/');
 	}
-	
+
 });
 
 //app.post('/login',passport.authenticate('local', { failureRedirect: '/login', successRedirect: '/2faCheck', failureFlash: true }));
@@ -293,7 +294,7 @@ app.post('/newuser', function(req,res){
 		}
 
 		var topics = new Topics({topics: [
-				'command/' + account.username +'/#', 
+				'command/' + account.username +'/#',
 				'presence/'+ account.username + '/#',
 				'response/' + account.username + '/#'
 			]});
@@ -306,8 +307,8 @@ app.post('/newuser', function(req,res){
 				var mqttPass = "PBKDF2$sha256$901$" + account.salt + "$" + account.hash;
 
 				Account.update(
-					{username: account.username}, 
-					{$set: {mqttPass: mqttPass, topics: topics._id}}, 
+					{username: account.username},
+					{$set: {mqttPass: mqttPass, topics: topics._id}},
 					{ multi: false },
 					function(err, count){
 						if (err) {
@@ -321,8 +322,8 @@ app.post('/newuser', function(req,res){
 		passport.authenticate('local')(req, res, function () {
 			console.log("created new user %s", req.body.username);
 			measurement.send({
-				t:'event', 
-				ec:'System', 
+				t:'event',
+				ec:'System',
 				ea: 'NewUser',
 				uid: req.body.username
 			});
@@ -414,9 +415,11 @@ app.post('/lostPassword', function(req, res, next){
 
 app.get('/auth/start',oauthServer.authorize(function(applicationID, redirectURI, done) {
 	oauthModels.Application.findOne({ oauth_id: applicationID }, function(error, application) {
+		console.log("oauthModels.Application.register",applicationID,redirectURI,application);
 		if (application) {
 			var match = false, uri = url.parse(redirectURI || '');
 			for (var i = 0; i < application.domains.length; i++) {
+				console.log("Match",uri.host,uri.protocol,application.domains[i]);
 				if (uri.host == application.domains[i] || (uri.protocol == application.domains[i] && uri.protocol != 'http' && uri.protocol != 'https')) {
 					match = true;
 					break;
@@ -428,6 +431,13 @@ app.get('/auth/start',oauthServer.authorize(function(applicationID, redirectURI,
 				done(new Error("You must supply a redirect_uri that is a domain or url scheme owned by your app."), false);
 			}
 		} else if (!error) {
+			// Register Application - Should only be done once Server
+			const app = new oauthModels.Application({title: "homebridge-alexa", oauth_id: '1', oauth_secret: '654321', domains: [ "pitangui.amazon.com","layla.amazon.com","alexa.amazon.co.jp"]});
+
+			app.save( function(err, account){
+				console.log("oauthModels.Application.register",error,account,application);
+			});
+
 			done(new Error("There is no app with the client_id you supplied."), false);
 		} else {
 			done(error);
@@ -462,13 +472,13 @@ app.post('/auth/finish',function(req,res,next) {
 		passport.authenticate('local', {
 			session: false
 		}, function(error,user,info){
-			//console.log("/auth/finish authenting");
+			console.log("/auth/finish authenting");
 			if (user) {
-				//console.log(user.username);
+				console.log(user.username);
 				req.user = user;
 				next();
 			} else if (!error){
-				//console.log("not authed");
+				console.log("not authed");
 				req.flash('error', 'Your email or password was incorrect. Please try again.');
 				res.redirect(req.body['auth_url'])
 			}
@@ -502,8 +512,8 @@ app.get('/api/v1/devices',
 
 		//console.log("all good, doing discover devices");
 		measurement.send({
-			t:'event', 
-			ec:'discover', 
+			t:'event',
+			ec:'discover',
 			ea: req.body.header ? req.body.header.name : "Node-RED",
 			uid: req.user.username
 		});
@@ -528,7 +538,7 @@ app.get('/api/v1/devices',
 				}
 				//console.log(devs)
 				res.send(devs);
-			}	
+			}
 		});
 	}
 );
@@ -562,8 +572,8 @@ mqttClient.on('message',function(topic,message){
 			delete onGoingCommands[payload.messageId];
 			// should really parse uid out of topic
 			measurement.send({
-				t:'event', 
-				ec:'command', 
+				t:'event',
+				ec:'command',
 				ea: 'complete',
 				uid: waiting.user
 			});
@@ -584,8 +594,8 @@ var timeout = setInterval(function(){
 				waiting.res.status(504).send('{"error": "timeout"}');
 				delete onGoingCommands[keys[key]];
 				measurement.send({
-					t:'event', 
-					ec:'command', 
+					t:'event',
+					ec:'command',
 					ea: 'timeout',
 					uid: waiting.user
 				});
@@ -600,8 +610,8 @@ app.post('/api/v1/command',
 		console.log(req.user.username);
 		console.log(req.body);
 		measurement.send({
-			e:'event', 
-			ec:'command', 
+			e:'event',
+			ec:'command',
 			ea: req.body.header.name,
 			uid: req.user.username
 		});
@@ -709,7 +719,7 @@ app.post('/api/v1/devices',
 			for (var i=0; i<devices.lenght; i++) {
 				var applianceId = devices[i].applianceId;
 				Devices.update({
-						username: req.user, 
+						username: req.user,
 						applianceId: applianceId
 					},
 					devices[i],
@@ -739,7 +749,7 @@ app.get('/admin',
 });
 
 app.get('/admin/services',
-	ensureAuthenticated, 
+	ensureAuthenticated,
 	function(req,res){
 		if (req.user.username === mqtt_user) {
 			oauthModels.Application.find({}, function(error, data){
@@ -780,7 +790,7 @@ app.put('/services',
 	ensureAuthenticated,
 	function(req,res){
 		if (req.user.username == mqtt_user) {
-			
+
 			var application = oauthModels.Application(req.body);
 			application.save(function(err, application){
 				if (!err) {
@@ -840,7 +850,7 @@ app.delete('/service/:id',
 // 			return res.status(401).send();
 // 		}
 // 	})(req, res, function () {
-		
+
 //     });
 // });
 
@@ -880,7 +890,7 @@ if (app_id.match(/^https:\/\/localhost:/)) {
 		cert: fs.readFileSync('server.crt')
 	};
 	server = https.createServer(options, app);
-} 
+}
 
 
 server.listen(port, host, function(){
@@ -888,9 +898,9 @@ server.listen(port, host, function(){
 	console.log("App_ID -> %s", app_id);
 
 	setTimeout(function(){
-		
+
 	},5000);
-	
-	
-	
+
+
+
 });

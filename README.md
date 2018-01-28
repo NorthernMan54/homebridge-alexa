@@ -33,7 +33,25 @@ Moved to https://github.com/NorthernMan54/homebridge-alexa/issues/47
 
 * Followed this - https://developer.amazon.com/blogs/post/Tx1UE9W1NQ0GYII/Publishing-Your-Skill-Code-to-Lambda-via-the-Command-Line-Interface
 
+## aws LightSail web website
 
+* followed tutorial
+* then used this to link apache to nodejs https://docs.bitnami.com/aws/components/nodejs/
+* Installed MongoDB
+
+```
+sudo apt-get install mongodb mosquitto
+```
+
+* Registered IP Address at freeDNS - homebridge.cloudwatch.net
+*
+
+## Local version of awsWebsite
+
+```
+brew install mongo; brew services start mongodb
+brew install mosquitto; brew services start mosquitto
+```
 # Credits
 
 * Ben Hardill - For the inspiration behind the design.

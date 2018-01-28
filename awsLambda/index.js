@@ -18,10 +18,10 @@ function discover(event, context, callback) {
     if (event.header.name === 'DiscoverAppliancesRequest') {
         var message_id = createMessageId();
         var oauth_id = event.payload.accessToken;
-        
+
 
         //http request to the database
-        request.get('https://alexa-node-red.bm.hardill.me.uk/api/v1/devices',{
+        request.get('https://35.169.132.61/api/v1/devices',{
             auth: {
                 'bearer': oauth_id
             },
@@ -70,7 +70,7 @@ function discover(event, context, callback) {
                         discoveredAppliances: []
                     }
                 };
-    
+
                 //context.succeed(response);
                 callback(null,response);
             }
@@ -78,7 +78,7 @@ function discover(event, context, callback) {
         }).on('error', function(error){
             log('Discovery',"error: " + error);
             //other error
-            
+
             //context.fail(error);
             callback(error, null);
         });
@@ -154,7 +154,7 @@ function command(event, context, callback) {
             break;
     }
 
-    request.post('https://alexa-node-red.bm.hardill.me.uk/api/v1/command',{
+    request.post('https://35.169.132.61/api/v1/command',{
         json: event,
         auth: {
             bearer: oauth_id
@@ -165,13 +165,13 @@ function command(event, context, callback) {
         if(err) {
             log("command error", err);
         }
-        
+
         if (resp.statusCode === 200) {
             var response = {
                 header: header,
                 payload: data
             };
-            
+
             //context.succeed(response);
             callback(null, response);
         } else if (resp.statusCode === 401) {
@@ -185,7 +185,7 @@ function command(event, context, callback) {
                 },
                 payload:{}
             };
-    
+
             //context.succeed(response);
             callback(null,response);
         } else if (resp.statusCode === 404) {
@@ -200,14 +200,14 @@ function command(event, context, callback) {
                 },
                 payload:{}
             };
-    
+
             //context.succeed(response);
             callback(null,response);
         } else if (resp.statusCode === 416) {
             //out of range
             //need to return ranges
             log('command', "Out of Range");
-            
+
             var response = {
                 header:{
                     messageId: message_id,
@@ -220,7 +220,7 @@ function command(event, context, callback) {
                     maximumValue: data.max
                 }
             };
-    
+
             //context.succeed(response);
             callback(null,response);
         } else if (resp.statusCode === 503) {
@@ -235,7 +235,7 @@ function command(event, context, callback) {
                 },
                 payload:{}
             };
-    
+
             //context.succeed(response);
             callback(null,response);
 
@@ -251,12 +251,12 @@ function command(event, context, callback) {
                 },
                 payload:{}
             };
-    
+
             //context.succeed(response);
             callback(null,response);
         }
 
-        
+
     }).on('errror', function(error){
         log("Command",error);
         //context.fail(error);
@@ -287,7 +287,7 @@ function system(event, context, callback) {
 function createMessageId() {
     var d = new Date().getTime();
 
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, 
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
         function(c){
             var r = (d + Math.random()*16)%16 | 0;
             d = Math.floor(d/16);
