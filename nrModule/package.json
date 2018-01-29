@@ -1,0 +1,35 @@
+{
+  "name": "node-red-contrib-alexa-home-skill",
+  "version": "0.1.17",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "alexa",
+    "echo",
+    "skill"
+  ],
+  "bugs": {
+    "url" : "https://github.com/hardillb/node-red-contrib-alexa-home-skill/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardillb/node-red-contrib-alexa-home-skill"
+  },
+  "homepage": "https://alexa-node-red.bm.hardill.me.uk",
+  "node-red": {
+    "nodes": {
+      "alexa": "alexa.js"
+    }
+  },
+  "author": "hardillb@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "mqtt": "^2.0.1",
+    "request": "^2.78.0"
+  }
+}

@@ -1,0 +1,291 @@
+<!--
+  Copyright 2016 IBM Corp.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<script type="text/x-red" data-template-name="alexa-home-conf">
+    <div class="form-row">
+	    <label for="node-config-input-username"><i class="icon-tag"></i> Username</label>
+	    <input type="text" id="node-config-input-username">
+	</div>
+	<div class="form-row">
+	   	<label for="node-config-input-password"><i class="icon-tag"></i> Password</label>
+	    <input type="password" id="node-config-input-password">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="alexa-home-conf">
+	<p>If you don't have an account on the bridge create one 
+    <a target="_blank" href="https://alexa-node-red.bm.hardill.me.uk/">here</a>.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('alexa-home-conf',{
+        category: 'config',
+        defaults: {
+        	username: {}
+        },
+        credentials: {
+            password: {type:"password"}
+        },
+        color: '#D3D3D3',
+        label: function() {
+        	return this.username;
+        },
+        oneditsave: function(){
+        	var node = this;
+        	var user = $('#node-config-input-username').val();
+        	var pass = $('#node-config-input-password').val();
+            console.log("pass: ", pass);
+        	if (pass != '_PWD_') {
+        		var account = {
+        			id: node.id,
+        			user: user,
+        			pass: pass
+        		}
+        		$.ajax({
+        			data: JSON.stringify(account),
+        			url: 'alexa-home/new-account',
+        			contentType: 'application/json',
+        			type: 'POST',
+        			processData: false
+        		});
+        	}
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="alexa-home">
+	<div class="form-row">
+		<label for="node-input-conf"><i class="icon-tag"></i> Account</label>
+		<input type="text" id="node-input-conf">
+	</div>
+	<div class="form-row">
+		<label for="node-input-device"><i class="icon-tag"></i> Device</label>
+		<select id="node-input-device">
+		
+		</select>
+        <a id="node-input-device-refresh" class="btn"><i class="fa fa-refresh"></i></a>
+	</div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-acknoledge" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-acknoledge" style="width: 70%"> Auto Acknowledge</span>
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic">
+    </div>
+    <input type="hidden" id="node-input-name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="alexa-home">
+	<p>This node provides an end point for an Alexa Home Skill.
+    To use this node you will need to create an account and declare some devices 
+    <a target="_blank" href="https://alexa-node-red.bm.hardill.me.uk/">here</a>. 
+    You will also need to add the "Node-RED" skill to your Echo device</p>
+    <p>A full set of setup instrucations can be found 
+    <a target="_blank" href="https://alexa-node-red.bm.hardill.me.uk/docs">here</a></p>
+    <p>The <i>Topic</i> field is optional and will be added to any messages sent from 
+    the node.</p>
+    <p>Auto Acknoledge tells Alexa the command suceeded no matter what. If you untick 
+    this option you will need to add a <i>Alexa Home Response</i> node to the flow.</p>
+    <p>The node outputs a message that looks something like this:</p>
+    <pre>{
+    "command": "TurnOnRequest",
+    "extraInfo": {},
+    "payload": true
+}</pre>
+    <p>or</p>
+    <pre>{
+    "command": "SetPercentageRequest",
+    "extraInfo": {}, 
+    "payload": 50
+}</pre>
+    <p>or</p>
+    <pre>{
+    "command": "DecrementTemperatureRequest",
+    "extraInfo": {}, 
+    "payload": -5
+}</pre>
+<p>or</p>
+    <pre>{
+    "command": "SetLockState",
+    "extraInfo": {}, 
+    "payload": 'LOCKED'
+}</pre>
+    <p>This is a full list of the currently valid commands:</p>
+    <ul>
+        <li>TurnOnRequest</li>
+        <li>TurnOffRequest</li>
+        <li>SetPercentageRequest</li>
+        <li>IncrementPercentageRequest</li>
+        <li>DecrementPercentageRequest</li>
+        <li>SetTemperatureRequest</li>
+        <li>IncrementTemperatureRequest</li>
+        <li>DecrementTemperatureRequest</li>
+        <li>GetTemperatureReadingRequest <sup>1,2</sup></li>
+        <li>GetTemperatureRequest <sup>1,2</sup></li>
+        <li>SetLockState <sup>2</sup></li>
+        <li>GetLockState <sup>1,2</sup></li>
+    </ul>
+    <ol>
+        <li>These actions can not be automatically acknowledged 
+        as they must return values</li>
+        <li>Currently only available to US users.</li>
+    </ol>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('alexa-home',{
+        category: 'alexa',
+        defaults: {
+        	conf: {value: "", type:"alexa-home-conf"},
+        	device: {value: "" },
+            acknoledge: {value: true},
+        	name: {},
+            topic: {}
+        },
+        outputs: 1,
+        inputs: 0,
+        color: '#D3D3D3',
+        icon: 'alexa.png',
+        label: function() {
+        	return this.name || "Alexa Home";
+        },
+        oneditsave: function() {
+             var n = $('#node-input-device option:selected').text();
+            //console.log("selected name " + n);
+            this.name = n;
+            $('#node-input-name').val(n);
+        },
+        oneditprepare: function(){
+            var node = this;
+
+            //console.log("foo " + node.device);
+            if (typeof node.acknoledge === 'undefined') {
+                console.log("ben");
+                $('#node-input-acknoledge').prop('checked', true);
+            }
+
+            $('#node-input-device').change(function(){
+                $('#node-input-name').val($('#node-input-device option:selected').text());
+            });
+
+            var getDevs = function (account){
+                $.getJSON('alexa-home/devices/' + account, function(data){
+                    $('#node-input-device').find('option').remove().end();
+                    for (d in data) {
+                        $('<option/>',{
+                        value: parseInt(data[d].applianceId),
+                            text: data[d].friendlyName
+                        }).appendTo('#node-input-device');
+                    }
+                    if (node.device) {
+                        $('#node-input-device').val(node.device);
+                    }
+                }).fail(function(jqXHR, textStatus, errorThrown){
+                    console.log("problem getting devices");
+                    console.log(textStatus);
+                });
+                
+            }
+
+        	if (node.conf) {
+        		var account = $('#node-input-conf').val();
+                //console.log("account: ", account);
+        		if (account != '_ADD_') {
+	        		getDevs(account);
+        		}
+        	}
+
+        	$('#node-input-conf').change(function(){
+        		var account = $('#node-input-conf').val();
+                //console.log("account changed: ", account);
+                if (account != '_ADD_') {
+            		getDevs(account);
+                } else {
+                    //console.log("new account");
+                    $('#node-input-device').find('option').remove().end();
+                    $('#node-input-device').val("");
+                }
+        	});
+
+            $('#node-input-device-refresh').click(function(){
+                $('#node-input-device-refresh').addClass('disabled');
+                var account = $('#node-input-conf').val();
+                $.ajax({
+                    url: 'alexa-home/refresh/' + account,
+                    type: 'POST'
+                }).done(function(data){
+                    setTimeout(function(){
+                        getDevs(account);
+                        $('#node-input-device-refresh').removeClass('disabled');
+                    },3000);
+                });
+            });
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="alexa-home-resp">
+</script>
+
+<script type="text/x-red" data-help-name="alexa-home">
+    <p>This node sends a response to Alexa to acknoledge if the command
+    succeeded or not. To use this node you will need to un check the 
+    <i>Auto Acknoledge</i> check box in the Alexa Home node that starts
+    the flow. Responses must be sent with in 5 seconds of 
+    receiving the request otherwise a timeout message will be returned
+    to the Alexa sevice.</p>
+    <p>The message must come from the Alexa Home input node and takes a
+    payload of true/false. For Temperature comands extra details can be
+    passed using the <i>msg.extra</i> field.</p>
+    <p> E.g if the value is out of range then the <i>msg.payload</i> 
+    should be <strong>false</strong> and <i>msg.extra</i> should be as 
+    follows:</p>
+    <pre>{
+    min: 10.0,
+    max: 30.0
+}</pre>
+    <p>If the temperatue is in range then <i>msg.payload</i> is 
+    <strong>true</strong> and <i>msg.extra</i> would be like:</p>
+    <pre>{
+    targetTemperature: { 
+        value: 21.0
+    }
+}</pre>
+   <p>For a sucessful SetLockedState request <i>msg.paylaod</i> should
+   be <strong>true</strong> and the <i>msg.extra</i> should look like 
+   this:</p>
+   <pre>{
+   lockState: "LOCKED"
+}</pre>
+   <p>or</p>
+   <pre>{
+   lockState: "UNLOCKED"
+}</pre>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('alexa-home-resp',{
+        category: 'alexa',
+        defaults: {
+        },
+        inputs: 1,
+        outputs: 0,
+        color: '#D3D3D3',
+        icon: 'alexa.png',
+        label: function() {
+            return this.name || "Alexa Home Response";
+        }
+    });
+</script>
