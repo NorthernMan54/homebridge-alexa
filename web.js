@@ -12,8 +12,12 @@ var HttpDispatcher = require('httpdispatcher');
 var dispatcher = new HttpDispatcher();
 var fs = require('fs');
 var path = require('path');
+var debug = require('debug')('Alexa');
 //var mdns = require('mdns');
 var hb = require('./lib/hb.js');
+var mqtt = require('mqtt');
+var alexa = {};
+var options = {};
 var self;
 
 module.exports = function(homebridge) {
@@ -28,15 +32,33 @@ module.exports = function(homebridge) {
 function alexahome(log, config, api) {
   this.log = log;
   this.config = config;
-
-  this.debug = config['debug'] || false;
-  this.port = config['port'] || 8080;
   this.pin = config['pin'] || "031-45-154";
+  this.username = config['username'] || false;
+  this.password = config['username'] || false;
   self = this;
 
-  hb.discoverHap(log, this.pin);
+  // MQTT Options
 
-  init(self, self.port);
+  var options = {
+    username: this.username,
+    password: this.password,
+    clientId: this.username,
+    reconnectPeriod: 5000,
+    servers: [{
+        protocol: 'mqtts',
+        host: 'homebridge.cloudwatch.net',
+        port: 8883
+      },
+      {
+        protocol: 'mqtt',
+        host: 'homebridge.cloudwatch.net',
+        port: 1883
+      }
+    ]
+  };
+
+  hb.discoverHap(log, this.pin);
+  //var hbAccessories = new hb(this.pin, init());
 
   //    if (api) {
   //        this.api = api;
@@ -55,29 +77,45 @@ alexahome.prototype = {
 alexahome.prototype.configureAccessory = function(accessory) {
 
   this.log("configureAccessory");
-  callback(accessory);
+  callback();
 }
 
 
 
-function init(self, port) {
+function init() {
 
-  function handleRequest(request, response) {
-    try {
-      dispatcher.dispatch(request, response);
-    } catch (err) {
-      self.log(err);
-    }
-  }
+  debug("Starting MQTT");
+  alexa.client = mqtt.connect(options);
+  alexa.client.setMaxListeners(0);
 
-  //Create a server
-  var server = http.createServer(handleRequest);
+  alexa.client.on('connect', function() {
+    debug('connect');
+    alexa.client.removeAllListeners('message');
+    alexa.client.subscribe("command/" + node.username + "/#");
+    alexa.client.on('message', function(topic, message) {
+      var msg = JSON.parse(message.toString());
+      debug('message', topic, message);
 
-  //Lets start our server
-  server.listen(port, function() {
-    //Callback triggered when server is successfully listening. Hurray!
-    self.log("Amazon Alexa interface listening on: http://localhost:%s", port);
+      // alexa.discovery
+
+
+
+    });
   });
+
+  alexa.client.on('offline', function() {
+    debug('reconnect');
+  });
+
+  alexa.client.on('reconnect', function() {
+    debug('reconnect');
+  });
+
+  alexa.client.on('error', function(err) {
+
+    debug('error', err);
+  });
+
 
 }
 
