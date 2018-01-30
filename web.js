@@ -58,6 +58,7 @@ function alexahome(log, config, api) {
   };
 
   hb.discoverHap(log, this.pin);
+  init();
   //var hbAccessories = new hb(this.pin, init());
 
   //    if (api) {
@@ -91,7 +92,7 @@ function init() {
   alexa.client.on('connect', function() {
     debug('connect');
     alexa.client.removeAllListeners('message');
-    alexa.client.subscribe("command/" + node.username + "/#");
+    alexa.client.subscribe("command/" + this.username + "/#");
     alexa.client.on('message', function(topic, message) {
       var msg = JSON.parse(message.toString());
       debug('message', topic, message);
