@@ -21,6 +21,14 @@ These are my notes and backlog for the creating of the Skill Based approach for 
           | HAPNodeJS         |
           ---------------------
 
+```
+Alexa --> HomeBridge --(webservice)--> WebSite <--(MQTT)--> HomeBridge --(WebService)--> (HAP-NodeJS)
+          HomeSkill                                         Plugin
+```
+
+HomeBridge HomeSkill sends alexa directives to website, website uses endpoint.scope.token to lookup account, and mqtt topic of account.  Website sends alexa directive to HomeBridge plugin via MQTT.  Plugin uses endpoint.endpointid to determine HAP instance, and create HAP request. 
+
+
 My inspiration for the design is based on the work done to create a Alexa Skill for Node Red by Ben Hardill.  You read the details here: http://www.hardill.me.uk/wordpress/2016/11/05/alexa-home-skill-for-node-red/
 
 # backlog
@@ -91,6 +99,10 @@ $sudo apt-get update
 $sudo apt-get install mosquitto libmosquitto-dev mosquitto-clients
 $sudo service mosquitto status
 ```
+
+Installed mosquitto and mosquitto-auth-plugin from the lastest source
+
+http://mongoc.org/libmongoc/current/installing.html
 
 https://mosquitto.org/2015/12/using-lets-encrypt-certificates-with-mosquitto/
 
