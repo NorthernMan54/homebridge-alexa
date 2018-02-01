@@ -26,8 +26,9 @@ Alexa --> HomeBridge --(webservice)--> WebSite <--(MQTT)--> HomeBridge --(WebSer
           HomeSkill                                         Plugin
 ```
 
-HomeBridge HomeSkill sends alexa directives to website, website uses endpoint.scope.token to lookup account, and mqtt topic of account.  Website sends alexa directive to HomeBridge plugin via MQTT.  Plugin uses endpoint.endpointid to determine HAP instance, and create HAP request. 
+HomeBridge HomeSkill sends alexa directives to website, website uses endpoint.scope.token to lookup account, and mqtt topic of account.  Website sends alexa directive to HomeBridge plugin via MQTT.  Plugin uses endpoint.endpointid to determine HAP instance, and create HAP request.
 
+HomeBridge plugin has a module that generates events for each directive.  Events name based on directive.header.namespace ( ie Alexa.Discovery ), but with 'Alexa.' removed.
 
 My inspiration for the design is based on the work done to create a Alexa Skill for Node Red by Ben Hardill.  You read the details here: http://www.hardill.me.uk/wordpress/2016/11/05/alexa-home-skill-for-node-red/
 
