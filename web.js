@@ -39,7 +39,7 @@ function alexahome(log, config, api) {
 
   // MQTT Options
 
-  var options = {
+  options = {
     username: this.username,
     password: this.password,
     clientId: this.username,
@@ -85,7 +85,7 @@ alexahome.prototype.configureAccessory = function(accessory) {
 
 function init() {
 
-  debug("Starting MQTT");
+  debug("Starting MQTT",options);
   alexa.client = mqtt.connect(options);
   alexa.client.setMaxListeners(0);
 

@@ -37,11 +37,16 @@ Moved to https://github.com/NorthernMan54/homebridge-alexa/issues/47
 
 * followed tutorial
 * then used this to link apache to nodejs https://docs.bitnami.com/aws/components/nodejs/
+
+## MongoDB
+
 * Installed MongoDB
 
 ```
-sudo apt-get install mongodb mosquitto
+sudo apt-get install mongodb
 ```
+
+## Apache SSL Config
 
 * Registered IP Address at freeDNS - homebridge.cloudwatch.net
 * Create SSL at Let's Encrypt
@@ -77,6 +82,19 @@ sudo chown root:root /opt/bitnami/apache2/conf/server*
 sudo chmod 600 /opt/bitnami/apache2/conf/server*
 sudo /opt/bitnami/ctlscript.sh start
 ```
+
+## Mosquito Config
+
+```
+$sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+$sudo apt-get update
+$sudo apt-get install mosquitto libmosquitto-dev mosquitto-clients
+$sudo service mosquitto status
+```
+
+https://mosquitto.org/2015/12/using-lets-encrypt-certificates-with-mosquitto/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04
 
 ## Local version of awsWebsite
 
