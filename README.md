@@ -49,11 +49,8 @@ Moved to https://github.com/NorthernMan54/homebridge-alexa/issues/47
 
 ## MongoDB
 
-* Installed MongoDB
-
-```
-sudo apt-get install mongodb
-```
+* Installed latest version of MongoDB from https://bitnami.com/stack/mongodb
+* Configure MongoDB - https://docs.bitnami.com/virtual-machine/components/mongodb/
 
 ## Apache SSL Config
 
