@@ -44,6 +44,23 @@ Moved to https://github.com/NorthernMan54/homebridge-alexa/issues/47
 
 ## aws LightSail web website
 
+* Selected Ubuntu OS image, and installed nodejs
+
+```
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+* install other packages
+
+```
+sudo apt-get install apache2 mongodb mosquitto mosquitto-auth-plugin
+```
+
+
+
+* Installed Apache
+
 * followed tutorial
 * then used this to link apache to nodejs https://docs.bitnami.com/aws/components/nodejs/
 
