@@ -699,7 +699,7 @@ mqttClient.on('message', function(topic, message) {
       var waiting = onGoingCommands[payload.event.header.messageId];
       console.log("mqtt response: msgId ",payload.event.header.messageId);
       if (waiting) {
-        console.log("mqtt response: " + JSON.stringify(payload, null, " "));
+//        console.log("mqtt response: " + JSON.stringify(payload, null, " "));
         waiting.res.send(payload);
         delete onGoingCommands[payload.event.header.messageId];
         // should really parse uid out of topic

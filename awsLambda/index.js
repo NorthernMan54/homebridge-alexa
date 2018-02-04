@@ -1,11 +1,13 @@
 var request = require('request');
 var oauth_id;
+var messageId;
 
 exports.handler = function(event, context, callback) {
   log("Entry", event);
 
   if (event.directive.header.namespace === 'Alexa' && event.directive.header.payloadVersion === '3') {
-    log("Troubleshoot",event.directive.endpoint);
+    log("Troubleshoot", event.directive.endpoint, event.directive.header);
+    messageId = event.directive.header.messageId;
     oauth_id = event.directive.endpoint.scope.token;
     delete event.directive.endpoint.scope; // Remove oauth token from message body
     sendMessage(event, context, callback);
@@ -23,6 +25,7 @@ exports.handler = function(event, context, callback) {
 function sendMessage(event, context, callback) {
 
   // Pass Alexa Directive to message router
+
   var message_id = createMessageId();
   request.post('https://homebridge.cloudwatch.net/api/v2/messages', {
     auth: {
@@ -38,16 +41,16 @@ function sendMessage(event, context, callback) {
   }, function(err, response, body) {
     log("Response", body);
     if (response.statusCode == 200) {
-
-      callback(null, body);
+      log('Alexa Directive', "success");
+      callback(null, JSON.parse(body));
     } else if (response.statusCode == 401) {
-      log('Discovery', "Auth failure");
+      log('Alexa Directive', "Auth failure");
 
       var response = {
         header: {
           messageId: message_id,
-          name: "Discover.Response",
-          namespace: "Alexa.Discovery",
+          name: "ErrorResponse",
+          namespace: "Alexa",
           payloadVersion: "3"
         },
         payload: {
@@ -63,8 +66,8 @@ function sendMessage(event, context, callback) {
       var response = {
         header: {
           messageId: message_id,
-          name: "Discover.Response",
-          namespace: "Alexa.Discovery",
+          name: "ErrorResponse",
+          namespace: "Alexa",
           payloadVersion: "3"
         },
         payload: {

@@ -32,7 +32,7 @@ module.exports = function(homebridge) {
 function alexahome(log, config, api) {
   this.log = log;
   this.config = config;
-  this.pin = config['pin'] || "031-45-154";
+  this.pin = config['pin'] || "031-45-155";
   this.username = config['username'] || false;
   this.password = config['username'] || false;
   self = this;
@@ -160,7 +160,7 @@ function handleAlexaMessage(message, callback) {
       };
   }
   debug("handleAlexaMessage - response", JSON.stringify(response));
-  callback(null, JSON.stringify(response));
+  callback(null, response);
 }
 
 function endPoints() {
@@ -175,21 +175,21 @@ function endPoints() {
       var device = devices[did];
       //            console.log("Devices ------------------------------", JSON.stringify(device));
       item["endpointId"] = new Buffer(device.applianceId).toString('base64');
+      item["friendlyName"] = device.friendlyName;
+      item["description"] = device.friendlyDescription;
 //      item["applianceId"] = new Buffer(device.applianceId).toString('base64');
       item["manufacturerName"] = device.manufacturerName;
 //      item["modelName"] = device.modelName;
 //      item["version"] = "1.0";
-      item["friendlyName"] = device.friendlyName;
-      item["description"] = device.friendlyDescription;
       item["displayCategories"] = device.displayCategories;
+      item["cookie"] = device.cookie;
 //      item["isReachable"] = true;
       item["capabilities"] = device.capabilities;
-//      item["additionalApplianceDetails"] = device.additionalApplianceDetails;
       listOfDevices.push(item);
 
     }
   }
-  return (JSON.stringify(listOfDevices));
+  return (listOfDevices);
 }
 
 
@@ -222,7 +222,7 @@ dispatcher.onGet("/ifttt/discover.php", function(req, res) {
       item["friendlyDescription"] = device.friendlyDescription;
       item["isReachable"] = true;
       item["actions"] = device.actions;
-      item["additionalApplianceDetails"] = device.additionalApplianceDetails;
+      item["cookie"] = device.cookie;
       listOfDevices.push(item);
 
     }
@@ -240,7 +240,7 @@ dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
   var payload = JSON.parse(decodeURI(req.params.device));
   var action = req.params.action;
   var applianceId = new Buffer(payload.appliance.applianceId, 'base64').toString().split(":");
-  var characteristics = payload.appliance.additionalApplianceDetails[action];
+  var characteristics = payload.appliance.cookie[action];
   var host = applianceId[0];
   var port = applianceId[1];
 
