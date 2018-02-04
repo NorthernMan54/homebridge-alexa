@@ -1,3 +1,3 @@
 npm run-script package
 npm run-script publish
-logon ./deploy.sh
+ssh $KEY $LOGON ./deploy.sh

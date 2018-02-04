@@ -58,7 +58,7 @@ function alexahome(log, config, api) {
   };
 
   hb.discoverHap(log, this.pin);
-  init();
+  init(this);
   //var hbAccessories = new hb(this.pin, init());
 
   //    if (api) {
@@ -83,21 +83,25 @@ alexahome.prototype.configureAccessory = function(accessory) {
 
 
 
-function init() {
+function init(self) {
 
-  debug("Starting MQTT",options);
+  debug("Starting MQTT", options);
   alexa.client = mqtt.connect(options);
   alexa.client.setMaxListeners(0);
 
   alexa.client.on('connect', function() {
-    debug('connect');
+    //    debug("options",options);
+    debug('connect', "command/" + options.username + "/#");
     alexa.client.removeAllListeners('message');
-    alexa.client.subscribe("command/" + this.username + "/#");
+    alexa.client.subscribe("command/" + options.username + "/#");
     alexa.client.on('message', function(topic, message) {
       var msg = JSON.parse(message.toString());
-      debug('message', topic, message);
 
-      // alexa.discovery
+      // handle alexa directive
+
+      handleAlexaMessage(msg, function(err, response) {
+        alexa.client.publish("response/1", JSON.stringify(response));
+      });
 
 
 
@@ -119,6 +123,75 @@ function init() {
 
 
 }
+
+function handleAlexaMessage(message, callback) {
+  debug("handleAlexaMessage", message);
+
+  switch (message.directive.header.namespace.toLowerCase()) {
+    case "alexa.discovery":
+      var response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId
+          },
+          "payload": {
+            "endpoints": endPoints()
+          }
+        }
+      };
+      break;
+    default:
+      console.log("Unhandled Alexa Directive", message.directive.header.namespace);
+      var response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId
+          },
+          "payload": {
+            "endpoints": []
+          }
+        }
+      };
+  }
+  debug("handleAlexaMessage - response", response);
+  callback(null, response);
+}
+
+function endPoints() {
+  var listOfDevices = [];
+  var haps = hb.discover();
+  for (var id in haps) {
+
+    var devices = haps[id];
+
+    for (var did in devices) {
+      var item = {};
+      var device = devices[did];
+      //            console.log("Devices ------------------------------", JSON.stringify(device));
+      item["endpointId"] = new Buffer(device.applianceId).toString('base64');
+//      item["applianceId"] = new Buffer(device.applianceId).toString('base64');
+      item["manufacturerName"] = device.manufacturerName;
+//      item["modelName"] = device.modelName;
+//      item["version"] = "1.0";
+      item["friendlyName"] = device.friendlyName;
+      item["description"] = device.friendlyDescription;
+      item["displayCategories"] = device.displayCategories;
+//      item["isReachable"] = true;
+      item["capabilities"] = device.capabilities;
+//      item["additionalApplianceDetails"] = device.additionalApplianceDetails;
+      listOfDevices.push(item);
+
+    }
+  }
+  return (JSON.stringify(listOfDevices));
+}
+
 
 //For all your static (js/css/images/etc.) set the directory name (relative path).
 //dispatcher.setStatic('/static');

@@ -8,5 +8,5 @@ mkdir awsWeb
 cd awsWeb
 unzip ../homebridgeWeb.zip
 npm install
-sudo /opt/bitnami/ctlscript.sh restart apache
-DEBUG=* node index.js
+sudo systemctl restart apache2
+./startup
