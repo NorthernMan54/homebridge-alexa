@@ -51,28 +51,38 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-* install other packages
+* install mongodb mosquitto mosquitto-auth-plugin
 
 ```
-sudo apt-get install apache2 mongodb mosquitto mosquitto-auth-plugin
+sudo apt-get install apache2 mongodb unzip
 ```
 
+apt-get build-dep mosquitto mosquitto-auth-plugin
+sudo apt-get install dpkg-dev
+sudo apt-get install libmongoc-developer
+sudo apt-get install libbson-dev
 
+Installed from source
 
-* Installed Apache
+mongo-c-driver-1.9.2 - http://mongoc.org/libmongoc/current/installing.html
+mosquitto-1.4.14
+mosquitto-auth-plug-0.1.2
 
-* followed tutorial
-* then used this to link apache to nodejs https://docs.bitnami.com/aws/components/nodejs/
+cd mosquitto-auth-plugin
+vi config.mk - enable mongo and files
+make
+sudo cp auth-plug.so /usr/lib/mosquitto-auth-plugin/auth-plugin.so
 
-## MongoDB
+## mosquitto Config
 
-* Installed latest version of MongoDB from https://bitnami.com/stack/mongodb
-* Configure MongoDB - https://docs.bitnami.com/virtual-machine/components/mongodb/
+cp mosquitto/conf/mosquitto.conf /etc/mosquitto/conf.d/mosquitto.conf
 
 ## Apache SSL Config
 
 * Registered IP Address at freeDNS - homebridge.cloudwatch.net
 * Create SSL at Let's Encrypt
+
+This is wrong
 
 ```
 sudo apt-get update
@@ -95,33 +105,7 @@ sudo certbot certonly
    "certbot renew"
 
 From https://docs.bitnami.com/google/how-to/generate-install-lets-encrypt-ssl/
-
-sudo mv /opt/bitnami/apache2/conf/server.crt /opt/bitnami/apache2/conf/server.crt.old
-sudo mv /opt/bitnami/apache2/conf/server.key /opt/bitnami/apache2/conf/server.key.old
-sudo mv /opt/bitnami/apache2/conf/server.csr /opt/bitnami/apache2/conf/server.csr.old
-sudo ln -s /etc/letsencrypt/live/homebridge.cloudwatch.net/privkey.pem /opt/bitnami/apache2/conf/server.key
-sudo ln -s /etc/letsencrypt/live/homebridge.cloudwatch.net/fullchain.pem /opt/bitnami/apache2/conf/server.crt
-sudo chown root:root /opt/bitnami/apache2/conf/server*
-sudo chmod 600 /opt/bitnami/apache2/conf/server*
-sudo /opt/bitnami/ctlscript.sh start
 ```
-
-## Mosquito Config
-
-```
-$sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
-$sudo apt-get update
-$sudo apt-get install mosquitto libmosquitto-dev mosquitto-clients
-$sudo service mosquitto status
-```
-
-Installed mosquitto and mosquitto-auth-plugin from the lastest source
-
-http://mongoc.org/libmongoc/current/installing.html
-
-https://mosquitto.org/2015/12/using-lets-encrypt-certificates-with-mosquitto/
-
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04
 
 ## Local version of awsWebsite
 
