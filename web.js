@@ -143,13 +143,19 @@ function handleAlexaMessage(message, callback) {
         }
       };
       break;
+    case "alexa.powercontroller":
+      var action = message.directive.header.name;
+      var endpointId = message.directive.endpoint.endpointId;
+      var haAction = message.directive.endpoint.cookie[action];
+      debug("alexa.powercontroller", action,endpointId,haAction);
+    break;
     default:
       console.log("Unhandled Alexa Directive", message.directive.header.namespace);
       var response = {
         "event": {
           "header": {
-            "namespace": "Alexa.Discovery",
-            "name": "Discover.Response",
+            "name": "ErrorResponse",
+            "namespace": "Alexa",
             "payloadVersion": "3",
             "messageId": message.directive.header.messageId
           },

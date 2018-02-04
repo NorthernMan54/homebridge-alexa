@@ -12,8 +12,14 @@ exports.handler = function(event, context, callback) {
     delete event.directive.endpoint.scope; // Remove oauth token from message body
     sendMessage(event, context, callback);
   } else if (event.directive.header.payloadVersion === '3') {
-    oauth_id = event.directive.payload.scope.token;
-    delete event.directive.payload.scope; // Remove oauth token from message body
+    if ( event.directive.endpoint != undefined )
+      {
+        oauth_id = event.directive.endpoint.scope.token;
+        delete event.directive.endpoint.scope;
+      } else if ( event.directive.payload != undefined ) {
+        oauth_id = event.directive.payload.scope.token;
+        delete event.directive.payload.scope; // Remove oauth token from message body
+      }
     sendMessage(event, context, callback);
   } else {
     log("Unexpected playloadversion", event.directive.header.payloadVersion);
