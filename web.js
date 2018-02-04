@@ -159,8 +159,8 @@ function handleAlexaMessage(message, callback) {
         }
       };
   }
-  debug("handleAlexaMessage - response", response);
-  callback(null, response);
+  debug("handleAlexaMessage - response", JSON.stringify(response));
+  callback(null, JSON.stringify(response));
 }
 
 function endPoints() {
