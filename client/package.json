@@ -30,6 +30,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "mqtt": "^2.0.1",
-    "request": "^2.78.0"
+    "request": "^2.78.0",
+    "jsonschema": "^1.2.1"
   }
 }

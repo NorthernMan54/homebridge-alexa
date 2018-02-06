@@ -13,6 +13,10 @@ var dispatcher = new HttpDispatcher();
 var fs = require('fs');
 var path = require('path');
 var debug = require('debug')('Alexa');
+var Validator = require('jsonschema').Validator;
+var v = new Validator();
+var alexaSchema = require('./lib/alexa_smart_home_message_schema.json');
+
 //var mdns = require('mdns');
 var hb = require('./lib/hb.js');
 var mqtt = require('mqtt');
@@ -32,7 +36,7 @@ module.exports = function(homebridge) {
 function alexahome(log, config, api) {
   this.log = log;
   this.config = config;
-  this.pin = config['pin'] || "031-45-155";
+  this.pin = config['pin'] || "031-45-154";
   this.username = config['username'] || false;
   this.password = config['username'] || false;
   self = this;
@@ -100,6 +104,9 @@ function init(self) {
       // handle alexa directive
 
       handleAlexaMessage(msg, function(err, response) {
+
+//        v.addSchema(alexaSchema);
+//        debug(v.validate(response));
         alexa.client.publish("response/1", JSON.stringify(response));
       });
 
@@ -146,8 +153,12 @@ function handleAlexaMessage(message, callback) {
     case "alexa.powercontroller":
       var action = message.directive.header.name;
       var endpointId = message.directive.endpoint.endpointId;
-      var haAction = message.directive.endpoint.cookie[action];
+      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
       debug("alexa.powercontroller", action,endpointId,haAction);
+//      aid: 2, iid: 10, value: 1
+//      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+      var body = { "characteristics": [{ "aid": haAction.aid, "iid": haAction.iid, "value": haAction.value }]};
+      hb.control(haAction.host, haAction.port, JSON.stringify(body), callback);
     break;
     default:
       console.log("Unhandled Alexa Directive", message.directive.header.namespace);

@@ -24,7 +24,8 @@
     "mdns": ">=2.3.3",
     "mqtt": "^2.0.1",
     "body-parser": "^1.15.2",
-    "debug": "^2.2.0"
+    "debug": "^2.2.0",
+    "jsonschema": "^1.2.1"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
