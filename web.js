@@ -176,7 +176,7 @@ function handleAlexaMessage(message, callback) {
       var endpointId = message.directive.endpoint.endpointId;
       var powerLevel = message.directive.payload.powerLevel;
       var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-      debug("alexa.powercontroller", action, endpointId, haAction, powerLevel);
+      debug("alexa.powerlevelcontroller", action, endpointId, haAction, powerLevel);
       //      aid: 2, iid: 10, value: 1
       //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
       var body = {
