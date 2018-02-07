@@ -105,8 +105,8 @@ function init(self) {
 
       handleAlexaMessage(msg, function(err, response) {
 
-//        v.addSchema(alexaSchema);
-//        debug(v.validate(response));
+        //        v.addSchema(alexaSchema);
+        //        debug(v.validate(response));
         alexa.client.publish("response/1", JSON.stringify(response));
       });
 
@@ -154,12 +154,45 @@ function handleAlexaMessage(message, callback) {
       var action = message.directive.header.name;
       var endpointId = message.directive.endpoint.endpointId;
       var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-      debug("alexa.powercontroller", action,endpointId,haAction);
-//      aid: 2, iid: 10, value: 1
-//      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
-      var body = { "characteristics": [{ "aid": haAction.aid, "iid": haAction.iid, "value": haAction.value }]};
-      hb.control(haAction.host, haAction.port, JSON.stringify(body), callback);
-    break;
+      debug("alexa.powercontroller", action, endpointId, haAction);
+      //      aid: 2, iid: 10, value: 1
+      //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": haAction.value
+        }]
+      };
+      hb.control(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        debug("Status", err, status);
+        var response = alexaResponseSuccess(message);
+        callback(null, response);
+      });
+      var response = alexaResponseSuccess(message);
+      break;
+    case "alexa.powerlevelcontroller":
+      var action = message.directive.header.name;
+      var endpointId = message.directive.endpoint.endpointId;
+      var powerLevel = message.directive.payload.powerLevel;
+      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+      debug("alexa.powercontroller", action, endpointId, haAction, powerLevel);
+      //      aid: 2, iid: 10, value: 1
+      //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": powerLevel
+        }]
+      };
+      hb.control(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        debug("Status", err, status);
+        var response = alexaResponseSuccess(message);
+        callback(null, response);
+      });
+      var response = alexaResponseSuccess(message);
+      break;
     default:
       console.log("Unhandled Alexa Directive", message.directive.header.namespace);
       var response = {
@@ -194,13 +227,13 @@ function endPoints() {
       item["endpointId"] = new Buffer(device.applianceId).toString('base64');
       item["friendlyName"] = device.friendlyName;
       item["description"] = device.friendlyDescription;
-//      item["applianceId"] = new Buffer(device.applianceId).toString('base64');
+      //      item["applianceId"] = new Buffer(device.applianceId).toString('base64');
       item["manufacturerName"] = device.manufacturerName;
-//      item["modelName"] = device.modelName;
-//      item["version"] = "1.0";
+      //      item["modelName"] = device.modelName;
+      //      item["version"] = "1.0";
       item["displayCategories"] = device.displayCategories;
       item["cookie"] = device.cookie;
-//      item["isReachable"] = true;
+      //      item["isReachable"] = true;
       item["capabilities"] = device.capabilities;
       listOfDevices.push(item);
 
@@ -302,3 +335,95 @@ dispatcher.onError(function(req, res) {
   res.writeHead(404);
   res.end();
 });
+
+function alexaResponseSuccess(message) {
+      var now = new Date();
+  switch (message.directive.header.namespace.toLowerCase()) {
+    case "alexa.discovery":
+      break;
+    case "alexa.powercontroller":
+
+
+
+      var response = {
+        "context": {
+          "properties": [{
+            "namespace": "Alexa.PowerController",
+            "name": "powerState",
+            "value": message.directive.header.name.substr(4),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          }]
+        },
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken
+          },
+          "endpoint": {
+            "scope": {
+              "type": "BearerToken",
+              "token": "access-token-from-Amazon"
+            },
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        }
+      }
+      break;
+    case "alexa.powerlevelcontroller":
+
+      var response = {
+        "context": {
+          "properties": [{
+            "namespace": "Alexa.PowerLevelController",
+            "name": "powerLevel",
+            "value": message.directive.payload.powerLevel,
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          }]
+        },
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken
+          },
+          "endpoint": {
+            "scope": {
+              "type": "BearerToken",
+              "token": "access-token-from-Amazon"
+            },
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        }
+      }
+
+      break;
+    default:
+      console.log("Unhandled Alexa Directive", message.directive.header.namespace);
+      var response = {
+        "event": {
+          "header": {
+            "name": "ErrorResponse",
+            "namespace": "Alexa",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId
+          },
+          "payload": {
+            "endpoints": []
+          }
+        }
+      };
+
+
+  }
+  debug("Response", response);
+  return response;
+}
