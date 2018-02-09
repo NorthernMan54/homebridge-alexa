@@ -1,0 +1,28 @@
+{
+  "context": {
+    "properties": [{
+      "namespace": "Alexa.PowerController",
+      "name": "powerState",
+      "value": "On",
+      "timeOfSample": "2018-02-07T02:01:19.147Z",
+      "uncertaintyInMilliseconds": 500
+    }]
+  },
+  "event": {
+    "header": {
+      "namespace": "Alexa",
+      "name": "Response",
+      "payloadVersion": "3",
+      "messageId": "569915e1-c500-4aae-beca-1ccbfcf74853",
+      "correlationToken": "AAAAAAAAAABcXFpT0YCY76d7zZVJCI1GBAIAAAAAAADQ1vAbL4fYsrX0K22nA459VXLs5PqigpU+UUK9wBTkcsOsJhoRpdZwX/mQehyXFSLeEtqAGgWJpIAlckgJglAk68O2Q9k1KAEf/+4vMS15BTkFq9m5bYjvvAi5+RaHAHlQEZweUpHEEC3vwEJB5dYxIipxotxcZAD2sZZmb5IzQDtTtKnIt94din6bGYjUlsprLSzFdwplfUnyuvElH3egtmLph61r/8TdTR4+ud4a5CtLe1cR2QrkNr2zBkucYp0aY+E61OSe4RMtyx4x36FP0caSWLcKzGkHrRPWK+uD5zubkJEoef07cfpH1Sb3+VCVhLRY9171nSkf4d0HfZjzT3ok+txVv2p7iybFLfzqv416+ohCUW79G7PdAuqX314FgAsgTZmIBBmNK2jAyBycAThVnWG+ls+vdyA1IgHumG2/sTmw+U9dIhkYbspoUzA7J/khx4vdtN+Y7l48p1SgtQjAFktiaIgsfbSoJE7yLcAoEmb0Psvq2vxAJJ9w+UzFMfIEfs4ZWaQX6Er3WyJ5vAsIgI30daDAYO6DmCwCsMZqhNVGUZBBGrlBOiNkz23wFnnzsE2gz4hPkRULQ6d/5g9mvC1HGvHzbT6YHsp5UccRrYL5RP6NclYbJMndCm40BmLVXOK14Whbzqx0r+WS4ltgV116V3glsLvL7fc/9/OBslg="
+    },
+    "endpoint": {
+      "scope": {
+        "type": "BearerToken",
+        "token": "access-token-from-Amazon"
+      },
+      "endpointId": "aG93YXJkLmxvY2FsLjo1MTgyNjo0"
+    },
+    "payload": {}
+  }
+}
