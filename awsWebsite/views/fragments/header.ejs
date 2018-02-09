@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Node-RED Alexa Home Skill Bridge</title>
+  <title>Homebridge-alexa Home Skill Bridge</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,8 +16,19 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  
+
 </head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113193152-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113193152-1');
+</script>
+
+
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -28,15 +39,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Node-RED Alexa Home Skill Bridge</a>
+        <a class="navbar-brand" href="#">Homebridge-Alexa Home Skill Bridge</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li <% if (locals.home) {%>class="active"<% } %>><a href="/">Home</a></li>
-          <li <% if (locals.docs) {%>class="active"<% } %>><a href="/docs">Documentation</a></li>
-          <% if (user) { %>
-          <li <% if (locals.devs) {%>class="active"<% } %>><a href="/devices">Devices</a></li>
-          <% } %>
+
           <li <% if (locals.about) {%>class="active"<% } %>><a href="/about">About</a></li>
         </ul>
       </div><!--/.nav-collapse -->
