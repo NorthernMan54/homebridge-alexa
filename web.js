@@ -133,8 +133,45 @@ function init(self) {
 
 function handleAlexaMessage(message, callback) {
   debug("handleAlexaMessage", message);
+  var now = new Date();
 
   switch (message.directive.header.namespace.toLowerCase()) {
+    case "alexa":   // aka getStatus
+      var response = {
+        "context": {
+          "properties": [{
+              "namespace": "Alexa.EndpointHealth",
+              "name": "connectivity",
+              "value": {
+                "value": "OK"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 200
+            },
+            {
+              "namespace": "Alexa.PowerController",
+              "name": "powerState",
+              "value": "ON",
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 0
+            }
+          ]
+        },
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "StateReport",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        }
+      };
+      break;
     case "alexa.discovery":
       var response = {
         "event": {
@@ -337,7 +374,7 @@ dispatcher.onError(function(req, res) {
 });
 
 function alexaResponseSuccess(message) {
-      var now = new Date();
+  var now = new Date();
   switch (message.directive.header.namespace.toLowerCase()) {
     case "alexa.discovery":
       break;
@@ -364,10 +401,6 @@ function alexaResponseSuccess(message) {
             "correlationToken": message.directive.header.correlationToken
           },
           "endpoint": {
-            "scope": {
-              "type": "BearerToken",
-              "token": "access-token-from-Amazon"
-            },
             "endpointId": message.directive.endpoint.endpointId
           },
           "payload": {}
@@ -395,10 +428,6 @@ function alexaResponseSuccess(message) {
             "correlationToken": message.directive.header.correlationToken
           },
           "endpoint": {
-            "scope": {
-              "type": "BearerToken",
-              "token": "access-token-from-Amazon"
-            },
             "endpointId": message.directive.endpoint.endpointId
           },
           "payload": {}
