@@ -13,14 +13,14 @@ var dispatcher = new HttpDispatcher();
 var fs = require('fs');
 var path = require('path');
 var debug = require('debug')('Alexa');
-var Validator = require('jsonschema').Validator;
-var v = new Validator();
-var alexaSchema = require('./lib/alexa_smart_home_message_schema.json');
+
+
+var alexaConnection = require('./lib/alexaLocalClient.js').alexaLocalClient;
 
 //var mdns = require('mdns');
 var hb = require('./lib/hb.js');
 var mqtt = require('mqtt');
-var alexa = {};
+var alexa;
 var options = {};
 var self;
 
@@ -38,7 +38,7 @@ function alexahome(log, config, api) {
   this.config = config;
   this.pin = config['pin'] || "031-45-154";
   this.username = config['username'] || false;
-  this.password = config['username'] || false;
+  this.password = config['password'] || false;
   self = this;
 
   // MQTT Options
@@ -89,45 +89,11 @@ alexahome.prototype.configureAccessory = function(accessory) {
 
 function init(self) {
 
-  debug("Starting MQTT", options);
-  alexa.client = mqtt.connect(options);
-  alexa.client.setMaxListeners(0);
+  alexa = new alexaConnection(options);
 
-  alexa.client.on('connect', function() {
-    //    debug("options",options);
-    debug('connect', "command/" + options.username + "/#");
-    alexa.client.removeAllListeners('message');
-    alexa.client.subscribe("command/" + options.username + "/#");
-    alexa.client.on('message', function(topic, message) {
-      var msg = JSON.parse(message.toString());
+  alexa.on('alexa',handleAlexaMessage.bind(this));
 
-      // handle alexa directive
-
-      handleAlexaMessage(msg, function(err, response) {
-
-        //        v.addSchema(alexaSchema);
-        //        debug(v.validate(response));
-        alexa.client.publish("response/1", JSON.stringify(response));
-      });
-
-
-
-    });
-  });
-
-  alexa.client.on('offline', function() {
-    debug('reconnect');
-  });
-
-  alexa.client.on('reconnect', function() {
-    debug('reconnect');
-  });
-
-  alexa.client.on('error', function(err) {
-
-    debug('error', err);
-  });
-
+  alexa.on('alexa.discovery',handleAlexaMessage.bind(this));
 
 }
 
