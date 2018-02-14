@@ -18,7 +18,8 @@ var debug = require('debug')('alexaPlugin');
 var alexaConnection = require('./lib/alexaLocalClient.js').alexaLocalClient;
 
 //var mdns = require('mdns');
-var hb = require('./lib/hb.js');
+var hap = require('./lib/HAPDiscovery.js');
+var translator = require('./lib/AlexaHBTranslator.js');
 var mqtt = require('mqtt');
 var alexa;
 var options = {};
@@ -61,7 +62,7 @@ function alexahome(log, config, api) {
     ]
   };
 
-  hb.discoverHap(log, this.pin);
+  hap.HAPDiscovery({ "pin": this.pin });
 //  init(this);
 
   alexa = new alexaConnection(options);
@@ -100,7 +101,7 @@ function _alexaDiscovery(message, callback) {
         "messageId": message.directive.header.messageId
       },
       "payload": {
-        "endpoints": hb.endPoints()
+        "endpoints": translator.endPoints(hap.HAPs())
       }
     }
   };
