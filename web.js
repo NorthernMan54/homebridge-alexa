@@ -8,18 +8,16 @@
 
 var Accessory, Service, Characteristic, UUIDGen, CommunityTypes;
 var http = require('http');
-var HttpDispatcher = require('httpdispatcher');
-var dispatcher = new HttpDispatcher();
-var fs = require('fs');
-var path = require('path');
+// var HttpDispatcher = require('httpdispatcher');
+// var dispatcher = new HttpDispatcher();
+// var fs = require('fs');
+// var path = require('path');
 var debug = require('debug')('alexaPlugin');
 
-
-var alexaConnection = require('./lib/alexaLocalClient.js').alexaLocalClient;
-
-//var mdns = require('mdns');
+var AlexaConnection = require('./lib/AlexaLocalClient.js').AlexaLocalClient;
 var hap = require('./lib/HAPDiscovery.js');
-var translator = require('./lib/AlexaHBTranslator.js');
+var translator = require('./lib/AlexaHAPTranslator.js');
+
 var mqtt = require('mqtt');
 var alexa;
 var options = {};
@@ -65,7 +63,7 @@ function alexahome(log, config, api) {
   hap.HAPDiscovery({ "pin": this.pin });
 //  init(this);
 
-  alexa = new alexaConnection(options);
+  alexa = new AlexaConnection(options);
 
   alexa.on('alexa', handleAlexaMessage.bind(this));
   alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
