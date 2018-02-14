@@ -166,7 +166,7 @@ function handleAlexaMessage(message, callback) {
           "value": haAction.value
         }]
       };
-      hb.control(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+      hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
         debug("Status", err, status);
         var response = alexaResponseSuccess(message);
         callback(null, response);
@@ -188,7 +188,7 @@ function handleAlexaMessage(message, callback) {
           "value": powerLevel
         }]
       };
-      hb.control(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+      hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
         debug("Status", err, status);
         var response = alexaResponseSuccess(message);
         callback(null, response);
