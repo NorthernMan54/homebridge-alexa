@@ -8,7 +8,11 @@ var fs = require('fs');
 //  schemaId: 'id'
 //}); // options can be passed, e.g. {allErrors: true}
 var schema = require('../lib/alexa_smart_home_message_schema.json');
-console.log(schema);
+
+for (let j = 0; j < process.argv.length; j++) {
+    console.log(j + ' -> ' + (process.argv[j]));
+}
+//console.log(schema);
 console.log('-------------------------1--------------------------------');
 var validate = validator(schema, {
   verbose: true
@@ -17,9 +21,14 @@ var validate = validator(schema, {
 console.log('-------------------------2--------------------------------');
 //var validate = ajv.compile(schema);
 console.log('-------------------------3--------------------------------');
-var alexa = JSON.parse(fs.readFileSync('discovery.json'));
+var alexa;
+try {
+alexa = JSON.parse(fs.readFileSync(process.argv[2]));
+} catch (err) {
+  console.log(err);
+}
 console.log('-------------------------4--------------------------------');
-console.log(alexa);
+//console.log(alexa);
 console.log('-------------------------5--------------------------------');
 validate(alexa);
 console.log('-------------------------6--------------------------------');

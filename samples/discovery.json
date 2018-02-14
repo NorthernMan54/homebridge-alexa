@@ -6,7 +6,7 @@
       "payloadVersion": "3",
       "messageId": "8f7f7760-93df-42c8-b67f-7d2a534a6d4d"
     },
-    "pay-load": {
+    "payload": {
       "endpoints": [{
         "endpointId": "aG93YXJkLmxvY2FsLjo1MTgyNjoz",
         "friendlyName": "Master Bedroom",

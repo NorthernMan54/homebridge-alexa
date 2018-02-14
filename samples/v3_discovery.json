@@ -1,0 +1,58 @@
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "payloadVersion": "3",
+      "messageId": "0a58ace0-e6ab-47de-b6af-b600b5ab8a7a"
+    },
+    "payload": {
+      "endpoints": [{
+          "endpointId": "cGVubnkubG9jYWwuOjUxODI2OjI=",
+          "friendlyName": "Front Porch",
+          "description": "Penny Front Porch Switch",
+          "manufacturerName": "Heyu",
+          "displayCategories": [
+            "SWITCH",
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{ \"host\": \"penny.local.\" , \"port\": 51826, \"aid\":2,\"iid\":11,\"value\":1}",
+            "TurnOff": "{ \"host\": \"penny.local.\" , \"port\": 51826, \"aid\":2,\"iid\":11,\"value\":0}",
+            "SetPowerLevel": "{ \"host\": \"penny.local.\" , \"port\": 51826, \"aid\":2,\"iid\":12,\"value\":1}"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
