@@ -15,7 +15,7 @@ var http = require('http');
 var debug = require('debug')('alexaPlugin');
 
 var AlexaConnection = require('./lib/AlexaLocalClient.js').AlexaLocalClient;
-var hap = require('./lib/HAPDiscovery.js');
+var hap = require('./lib/HAPInterface.js');
 var translator = require('./lib/AlexaHAPTranslator.js');
 
 var mqtt = require('mqtt');
@@ -60,16 +60,16 @@ function alexahome(log, config, api) {
     ]
   };
 
-  hap.HAPDiscovery({ "pin": this.pin });
-//  init(this);
+  hap.HAPDiscovery({
+    "pin": this.pin
+  });
+  //  init(this);
 
   alexa = new AlexaConnection(options);
 
   alexa.on('alexa', handleAlexaMessage.bind(this));
   alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
-  alexa.on('alexa.powercontroller', handleAlexaMessage.bind(this));
-
-
+  alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
 
 }
 
@@ -88,26 +88,35 @@ alexahome.prototype.configureAccessory = function(accessory) {
 }
 
 function _alexaDiscovery(message, callback) {
-  //debug("handleAlexaMessage", message);
-  var now = new Date();
-  var response = {
-    "event": {
-      "header": {
-        "namespace": "Alexa.Discovery",
-        "name": "Discover.Response",
-        "payloadVersion": "3",
-        "messageId": message.directive.header.messageId
-      },
-      "payload": {
-        "endpoints": translator.endPoints(hap.HAPs())
-      }
-    }
-  };
-  debug("_alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
-//  debug("_alexaDiscovery - response", JSON.stringify(response));
-  callback(null, response);
+
+  hap.HAPs(function(endPoints) {
+    var response = translator.endPoints(message, endPoints);
+    debug("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+    callback(null, response);
+  }.bind(this))
+
 }
 
+function _alexaPowerController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  debug("alexa.powercontroller", action, endpointId, haAction);
+  //      aid: 2, iid: 10, value: 1
+  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": haAction.value
+    }]
+  };
+  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    debug("Status", err, status);
+    var response = translator.alexaResponseSuccess(message);
+    callback(null, response);
+  });
+}
 
 function handleAlexaMessage(message, callback) {
   debug("handleAlexaMessage", message);
@@ -150,27 +159,7 @@ function handleAlexaMessage(message, callback) {
         }
       };
       break;
-    case "alexa.powercontroller":
-      var action = message.directive.header.name;
-      var endpointId = message.directive.endpoint.endpointId;
-      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-      debug("alexa.powercontroller", action, endpointId, haAction);
-      //      aid: 2, iid: 10, value: 1
-      //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
-      var body = {
-        "characteristics": [{
-          "aid": haAction.aid,
-          "iid": haAction.iid,
-          "value": haAction.value
-        }]
-      };
-      hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-        debug("Status", err, status);
-        var response = alexaResponseSuccess(message);
-        callback(null, response);
-      });
-      var response = alexaResponseSuccess(message);
-      break;
+
     case "alexa.powerlevelcontroller":
       var action = message.directive.header.name;
       var endpointId = message.directive.endpoint.endpointId;
@@ -209,8 +198,8 @@ function handleAlexaMessage(message, callback) {
         }
       };
   }
-  debug("handleAlexaMessage - response", JSON.stringify(response));
-  callback(null, response);
+//  debug("handleAlexaMessage - response", JSON.stringify(response));
+//  callback(null, response);
 }
 
 function alexaResponseSuccess(message) {
@@ -293,6 +282,6 @@ function alexaResponseSuccess(message) {
 
 
   }
-  debug("Response", response);
+  debug("alexaResponseSuccess", response);
   return response;
 }
