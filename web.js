@@ -70,6 +70,7 @@ function alexahome(log, config, api) {
   alexa.on('alexa', handleAlexaMessage.bind(this));
   alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
   alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
+  alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
 
 }
 
@@ -101,7 +102,6 @@ function _alexaPowerController(message, callback) {
   var action = message.directive.header.name;
   var endpointId = message.directive.endpoint.endpointId;
   var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-  debug("alexa.powercontroller", action, endpointId, haAction);
   //      aid: 2, iid: 10, value: 1
   //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
   var body = {
@@ -111,10 +111,34 @@ function _alexaPowerController(message, callback) {
       "value": haAction.value
     }]
   };
+  debug("alexa.powercontroller", action, haAction.host, haAction.port, body);
   hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-    debug("Status", err, status);
+    debug("Status", action, haAction.host, haAction.port,err, status);
     var response = translator.alexaResponseSuccess(message);
-    callback(null, response);
+    callback(err, response);
+  });
+}
+
+function _alexaPowerLevelController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  var powerLevel = message.directive.payload.powerLevel;
+
+  //      aid: 2, iid: 10, value: 1
+  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": powerLevel
+    }]
+  };
+  debug("alexa.powerlevelcontroller", action, haAction.host, haAction.port, body);
+  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    debug("Status", action, haAction.host, haAction.port, err, status);
+    var response = translator.alexaResponseSuccess(message);
+    callback(err, response);
   });
 }
 
@@ -160,28 +184,6 @@ function handleAlexaMessage(message, callback) {
       };
       break;
 
-    case "alexa.powerlevelcontroller":
-      var action = message.directive.header.name;
-      var endpointId = message.directive.endpoint.endpointId;
-      var powerLevel = message.directive.payload.powerLevel;
-      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-      debug("alexa.powerlevelcontroller", action, endpointId, haAction, powerLevel);
-      //      aid: 2, iid: 10, value: 1
-      //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
-      var body = {
-        "characteristics": [{
-          "aid": haAction.aid,
-          "iid": haAction.iid,
-          "value": powerLevel
-        }]
-      };
-      hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-        debug("Status", err, status);
-        var response = alexaResponseSuccess(message);
-        callback(null, response);
-      });
-      var response = alexaResponseSuccess(message);
-      break;
     default:
       console.log("Unhandled Alexa Directive", message.directive.header.namespace);
       var response = {
