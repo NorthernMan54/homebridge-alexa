@@ -1,6 +1,0 @@
-#! /bin/sh
-
-export MQTT_USER=mqttuser
-export MQTT_PASSWORD=mqttpass
-export GOOGLE_ANALYTICS_TID=UA-113193152-1
-DEBUG=* node index.js

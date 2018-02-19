@@ -1,3 +1,0 @@
-systemctl start mosquitto
-systemctl stop mosquitto
-mosquitto -v -c /etc/mosquitto/mosquitto.conf
