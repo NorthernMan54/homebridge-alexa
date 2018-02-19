@@ -38,7 +38,11 @@ Send me a direct message via slack / Homebridge at NorthernMan54 with your amazo
 The setup of this is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
 1. All homebridge instances that you want to control from Alexa need to run in insecure
-mode with -I included on the command line.
+mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
+
+```
+homebridge -I
+```
 
 2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
 reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
