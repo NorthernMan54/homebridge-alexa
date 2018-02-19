@@ -1,6 +1,6 @@
 # homebridge-alexa
 
-Enable access to you homebridge controlled devices and accessories via Amazon Alexa.  Full support for all Amazon Alexa devices.
+Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.
 
 * Supports multiple homebridge instances running on your network.
 * Autodiscovery of multiple Homebridge's
@@ -23,6 +23,12 @@ accessories are not supported, and can not be supported.
 * Alexa, turn off the _______
 * Alexa, set ______ to number percent
 
+# Alexa Home Skill configuration
+
+1. Create an account for yourself at https://homebridge.cloudwatch.net
+
+2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
+
 # Homebridge Installation
 
 The setup of this is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
@@ -31,16 +37,21 @@ The setup of this is very straight forward, and requires enabling insecure mode 
 mode with -I included on the command line.
 
 2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
-reusing the runtime and configuration file management. Also code management with nodejs
-is easier than apache/php.
+reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
 
 npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
 
-# Alexa Home Skill configuration
+3. Login and password are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
 
-1. Create an account for yourself at https://homebridge.cloudwatch.net
+4. Restart homebridge, and ask Alexa to discovery devices.
 
-2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
+# Upgrading from the previous version of homebridge-alexa
+
+If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
+
+```
+"ssdp": 1900
+```
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
@@ -60,9 +71,19 @@ npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
 
 * pin - If you had changed your pin from the default of "pin": "031-45-154"
 
+# issues
+
+When logging an issue, please include a DEBUG log with your issue.
+
+DEBUG=* homebridge -I
+
+## Known Issues
+
+* Colours not currently supported
+
 # Roadmap
 
-See https://github.com/NorthernMan54/homebridge-alexa/issues#47
+See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 
 # Credits
 
