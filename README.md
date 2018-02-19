@@ -43,7 +43,7 @@ mode with -I included on the command line.
 2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
 reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
 
-npm install -g https://github.com/NorthernMan54/homebridge-alexa/tree/Alexa2ndGen
+npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
 
 3. Login and password are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
 
