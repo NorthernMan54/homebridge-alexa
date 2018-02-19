@@ -1,4 +1,4 @@
-# homebridge-alexa
+# homebridge-alexa 2nd Gen Beta Test
 
 Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.
 
