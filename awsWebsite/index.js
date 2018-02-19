@@ -302,10 +302,11 @@ app.post('/login',
     session: true
   }),
   function(req, res) {
+    lastUsedWebsite(req.user.username);
     if (req.query.next) {
       res.reconnect(req.query.next);
     } else {
-      res.redirect('/devices');
+      res.redirect('/about');
     }
   });
 
@@ -474,7 +475,16 @@ app.post('/lostPassword', function(req, res, next) {
   });
 });
 
-app.get('/auth/start', oauthServer.authorize(function(applicationID, redirectURI, done) {
+app.get('/auth/start', function(req, res, next) {
+  console.log(req.headers);
+  if (req.query.response_type === undefined) {
+    res.end();
+//    res.status(400).send("Bad request");
+    next(new Error("Bad request"));
+  } else {
+    next();
+  }
+}, oauthServer.authorize(function(applicationID, redirectURI, done) {
   oauthModels.Application.findOne({
     oauth_id: applicationID
   }, function(error, application) {
@@ -578,117 +588,6 @@ app.post('/auth/exchange', function(req, res, next) {
   });
 }, oauthServer.token(), oauthServer.errorHandler());
 
-app.get('/api/v1/devices',
-  passport.authenticate(['bearer', 'basic'], {
-    session: false
-  }),
-  function(req, res, next) {
-
-    //console.log("all good, doing discover devices");
-    measurement.send({
-      t: 'event',
-      ec: 'discover',
-      ea: req.body.header ? req.body.header.name : "Node-RED",
-      uid: req.user.username
-    });
-
-    var user = req.user.username
-    Devices.find({
-      username: user
-    }, function(error, data) {
-      if (!error) {
-        var endpoints = [];
-        for (var i = 0; i < data.length; i++) {
-          console.log("Device", user, data[i].applianceId, data[i].friendlyName);
-          var dev = {};
-          dev.friendlyName = data[i].friendlyName;
-          dev.description = data[i].friendlyDescription;
-          dev.endpointId = "" + data[i].applianceId;
-          dev.displayCategories = ["LIGHT"];
-          //dev.isReachable = data[i].isReachable;
-          dev.capabilities = data[i].actions;
-
-          dev.capabilities = [{
-              "type": "AlexaInterface",
-              "interface": "Alexa",
-              "version": "3"
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.PowerController",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "powerState"
-                }],
-                "proactivelyReported": true,
-                "retrievable": true
-              }
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.BrightnessController",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "brightness"
-                }],
-                "proactivelyReported": true,
-                "retrievable": true
-              }
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.PowerLevelController",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "powerLevel"
-                }],
-                "proactivelyReported": true,
-                "retrievable": true
-              }
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.PercentageController",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "percentage"
-                }],
-                "proactivelyReported": true,
-                "retrievable": true
-              }
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.EndpointHealth",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "connectivity"
-                }],
-                "proactivelyReported": true,
-                "retrievable": true
-              }
-            }
-          ];
-
-          //dev.additionalApplianceDetails = data[i].additionalApplianceDetails;
-          //dev.modelName = "Node-RED Endpoint";
-          //dev.version = "0.0.1";
-          dev.manufacturerName = "Node-RED";
-
-          endpoints.push(dev);
-        }
-        //console.log(devs)
-        res.send(endpoints);
-      }
-    });
-  }
-);
-
 var onGoingCommands = {};
 
 mqttClient.on('message', function(topic, message) {
@@ -697,9 +596,9 @@ mqttClient.on('message', function(topic, message) {
       console.log("mqtt response: raw ", topic, message.toString());
       var payload = JSON.parse(message.toString());
       var waiting = onGoingCommands[payload.event.header.messageId];
-      console.log("mqtt response: msgId ",payload.event.header.messageId);
+      console.log("mqtt response: msgId ", payload.event.header.messageId);
       if (waiting) {
-//        console.log("mqtt response: " + JSON.stringify(payload, null, " "));
+        //        console.log("mqtt response: " + JSON.stringify(payload, null, " "));
         waiting.res.send(payload);
         delete onGoingCommands[payload.event.header.messageId];
         // should really parse uid out of topic
@@ -744,12 +643,10 @@ app.post('/api/v2/messages',
     session: false
   }),
   function(req, res, next) {
-    console.log("username", req.user.username);
-    console.log("body", req.body);
     measurement.send({
       e: 'event',
       ec: 'command',
-      //    ea: req.body.header.name,
+      ea: req.body.directive.header.name,
       uid: req.user.username
     });
     var topic = "command/" + req.user.username + "/1";
@@ -758,6 +655,7 @@ app.post('/api/v2/messages',
     try {
       console.log("MQTT Message", topic, message);
       mqttClient.publish(topic, message);
+      lastUsedAlexa(req.user.username);
     } catch (err) {
 
     }
@@ -767,153 +665,6 @@ app.post('/api/v2/messages',
       timestamp: Date.now()
     };
     onGoingCommands[req.body.directive.header.messageId] = command;
-  }
-);
-
-app.post('/api/v1/command',
-  passport.authenticate('bearer', {
-    session: false
-  }),
-  function(req, res, next) {
-    console.log(req.user.username);
-    console.log(req.body);
-    measurement.send({
-      e: 'event',
-      ec: 'command',
-      ea: req.body.header.name,
-      uid: req.user.username
-    });
-    var topic = "command/" + req.user.username + "/" + req.body.payload.appliance.applianceId;
-    delete req.body.payload.accessToken;
-    var message = JSON.stringify(req.body);
-    try {
-      mqttClient.publish(topic, message);
-    } catch (err) {
-
-    }
-    var command = {
-      user: req.user.username,
-      res: res,
-      timestamp: Date.now()
-    };
-    onGoingCommands[req.body.header.messageId] = command;
-  }
-);
-
-app.get('/devices',
-  ensureAuthenticated,
-  function(req, res) {
-    var user = req.user.username;
-
-    Devices.find({
-      username: user
-    }, function(err, data) {
-      if (!err) {
-        console.log(data);
-        res.render('pages/devices', {
-          user: req.user,
-          devices: data,
-          devs: true
-        });
-      }
-    });
-  });
-
-app.put('/devices',
-  ensureAuthenticated,
-  function(req, res) {
-
-    var user = req.user.username;
-    var device = req.body;
-
-    device.username = user;
-    device.isReachable = true;
-
-    var dev = new Devices(device);
-    dev.save(function(err, dev) {
-      if (!err) {
-        res.status(201)
-        res.send(dev);
-      } else {
-        res.status(500);
-        res.send(err);
-      }
-    });
-
-  });
-
-app.post('/device/:dev_id',
-  ensureAuthenticated,
-  function(req, res) {
-    var user = req.user.username;
-    var id = req.params.dev_id;
-    var device = req.body;
-    if (user === device.username) {
-      Devices.findOne({
-          _id: device._id,
-          username: device.username
-        },
-        function(err, data) {
-          if (err) {
-            res.status(500);
-            res.send(err);
-          } else {
-            data.friendlyDescription = device.friendlyDescription;
-            data.actions = device.actions;
-            data.save(function(err, d) {
-              res.status(201);
-              res.send(d);
-            });
-          }
-        });
-    }
-  });
-
-app.delete('/device/:dev_id',
-  ensureAuthenticated,
-  function(req, res) {
-    var user = req.user.username;
-    var id = req.params.dev_id;
-    console.log(id);
-    Devices.remove({
-        _id: id,
-        username: user
-      },
-      function(err) {
-        if (err) {
-          console.log(err);
-          res.status(500);
-          res.send(err);
-        } else {
-          res.status(202);
-          res.send();
-        }
-      });
-  });
-
-app.post('/api/v1/devices',
-  passport.authenticate('bearer', {
-    session: false
-  }),
-  function(req, res, next) {
-    var devices = req.body;
-    if (typeof devices == 'object' && Array.isArray(devices)) {
-      for (var i = 0; i < devices.lenght; i++) {
-        var applianceId = devices[i].applianceId;
-        Devices.update({
-            username: req.user,
-            applianceId: applianceId
-          },
-          devices[i], {
-            upsert: true
-          },
-          function(err) {
-            //log error
-          });
-      }
-    } else {
-      res.error(400);
-    }
   }
 );
 
@@ -1095,3 +846,11 @@ server.listen(port, host, function() {
 
 
 });
+
+function lastUsedAlexa(username) {
+
+}
+
+function lastUsedWebsite(username) {
+
+}
