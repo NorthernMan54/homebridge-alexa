@@ -15,13 +15,17 @@ can be installed in any 'Homebridge' instance in your setup.
 Alexa device names are the same as the homebridge device names.
 
 This only supports accessories connected via a homebridge plugin, any 'Homekit'
-accessories are not supported, and can not be supported.
+accessories are not supported, and will never be supported.
 
 # Voice commands supported
 
 * Alexa, turn on the _______
 * Alexa, turn off the _______
 * Alexa, set ______ to number percent
+
+# Getting access to the Alexa homebridge-alexa homeskill beta
+
+Send me a direct message at NorthernMan54 with your amazon login, via the homebridge slack site.
 
 # Alexa Home Skill configuration
 
@@ -53,10 +57,6 @@ If you had installed the previous version of homebridge-alexa with the special v
 "ssdp": 1900
 ```
 
-# Getting access to the Alexa homebridge-alexa homeskill beta
-
-## Send me a direct message at NorthernMan54 with your amazon login, via the homebridge slack site.
-
 # config.json
 
 ```
@@ -71,7 +71,7 @@ If you had installed the previous version of homebridge-alexa with the special v
 
 * pin - If you had changed your pin from the default of "pin": "031-45-154"
 
-# issues
+# Issues, Questions or Problems
 
 When logging an issue, please include a DEBUG log with your issue.
 
