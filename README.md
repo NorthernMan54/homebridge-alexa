@@ -25,7 +25,7 @@ accessories are not supported, and will never be supported.
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
-Send me a direct message at NorthernMan54 with your amazon login, via the homebridge slack site.
+Send me a direct message via slack / Homebridge at NorthernMan54 with your amazon login.
 
 # Alexa Home Skill configuration
 
