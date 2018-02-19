@@ -1,0 +1,42 @@
+{
+"bridge": {
+"name": "Homebridge",
+"username": "CC:22:3D:E3:CE:30",
+"port":51826,
+"pin": "031-45-154"
+},
+"platforms": [
+{
+"platform": "Nest",
+"token" : "",
+"clientId": "",
+"clientSecret": "",
+"code": "",
+"username" : "",
+"password" : "**"
+},
+{
+"platform": "BelkinWeMo",
+"name": "WeMo Platform",
+"manualDevices": ["http://192.168.1.27:49153/setup.xml",
+"http://192.168.1.27:49153/setup.xml",
+"http://192.168.1.17:49153/setup.xml",
+"http://192.168.1.15:49153/setup.xml",
+"http://192.168.1.19:49153/setup.xml",
+"http://192.168.1.24:49153/setup.xml"],
+"discovery": false,
+"expected_accessories" : "6",
+"timeout" : "25",
+"no_motion_timer": "60",
+"homekit_safe" : "1"
+},
+{
+"platform": "YamahaAVR",
+"play_volume": -48,
+"setMainInputTo": "Airplay",
+"show_input_name": "yes",
+"manual_addresses": {
+"Yamaha": "192.168.1.29"
+},
+]
+}

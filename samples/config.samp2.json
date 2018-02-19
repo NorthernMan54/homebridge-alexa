@@ -1,0 +1,18 @@
+{ "bridge": { "name": "Homebridge", "username": "CC:22:3D:E3:CE:30", "pin": "12345" },
+"accessories": [
+    {
+        "accessory": "MagicHome",
+        "name": "LED Strip",
+        "ip": "192.168.1.111",
+        "setup": "RGBWW",
+        "purewhite": false
+    }
+],
+
+"platforms": [
+    {
+
+    }
+]
+}
+

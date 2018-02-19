@@ -7,7 +7,7 @@ var fs = require('fs');
 //  verbose: false,
 //  schemaId: 'id'
 //}); // options can be passed, e.g. {allErrors: true}
-var schema = require('../lib/alexa_smart_home_message_schema.json');
+var schema = require('./homebridgeConfigSchema.json');
 
 for (let j = 0; j < process.argv.length; j++) {
     console.log(j + ' -> ' + (process.argv[j]));
@@ -26,6 +26,7 @@ try {
 alexa = JSON.parse(fs.readFileSync(process.argv[2]));
 } catch (err) {
   console.log(err);
+  alexa = fs.readFileSync(process.argv[2]);
 }
 console.log('-------------------------4--------------------------------');
 //console.log(alexa);
