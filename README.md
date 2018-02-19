@@ -79,6 +79,7 @@ DEBUG=* homebridge -I
 
 ## Known Issues
 
+* 'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.
 * Colours not currently supported
 
 # Roadmap
