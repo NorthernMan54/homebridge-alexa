@@ -46,8 +46,18 @@ homebridge -I
 
 2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
 reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
+```
+sudo npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+```
 
-npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+In the event of issues or errors during install ie gyp WARN EACCES user "root" does not have permission to access the dev dir
+
+Please try this instead
+
+```
+sudo su
+sudo npm install -g —unsafe-perm https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+```
 
 3. Login and password are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
 
@@ -79,12 +89,13 @@ If you had installed the previous version of homebridge-alexa with the special v
 
 When logging an issue, please include a DEBUG log with your issue.
 
-DEBUG=* homebridge -I
+DEBUG=alexa* homebridge -I
 
 ## Known Issues
 
 * 'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.
 * Colours not currently supported
+* Blinds are not currently supported
 
 # Roadmap
 
