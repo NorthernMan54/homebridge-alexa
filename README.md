@@ -1,6 +1,6 @@
 # homebridge-alexa 2nd Gen Beta Test
 
-Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.
+Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
 
 * Supports multiple homebridge instances running on your network.
 * Autodiscovery of multiple Homebridge's
@@ -47,8 +47,9 @@ homebridge -I
 
 2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
 reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
+
 ```
-sudo npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+sudo npm install -g homebridge-alexa
 ```
 
 In the event of issues or errors during install ie gyp WARN EACCES user "root" does not have permission to access the dev dir
@@ -57,7 +58,7 @@ Please try this instead
 
 ```
 sudo su
-sudo npm install -g —unsafe-perm https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+sudo npm install -g —unsafe-perm homebridge-alexa
 ```
 
 3. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
