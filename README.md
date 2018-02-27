@@ -1,64 +1,123 @@
+# homebridge-alexa 2nd Gen Beta Test
 
-# homebridge-alexa
+Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.
 
-Homebridge-Alexa is not your typical homebridge plugin, but a placeholder for my work to expose
-homebridge controlled accessories to Amazon Alexa. This is a version of homebridge and hap-nodejs that enables
-Amazon Alexa to discover accessories controlled and managed by homebridge. The discovery of homebridge devices
-leverages the native support of Hue devices by Alexa, and does not require a skill to be installed on Alexa.
-
-* Supports devices of homekit type Lightbulb, Outlet, and Switch.  Others are not exposed.
-* If device supports the 'Brightness', then the ability to set brightness is included.
-* This does not have any devices or accessories that are visible from Homekit,
+* Supports multiple homebridge instances running on your network.
+* Autodiscovery of multiple Homebridge's
+* Supports devices of homekit Service type Lightbulb, Outlet, Fan, and Switch
+* If device supports the 'Brightness Characteristic', then the ability to set a
+brightness is included.
+* This plugin does not have any devices or accessories that are visible from Homekit,
 and does not need to be added on the Home app.
-* This only works with real Amazon devices, and does not work with faux Amazon devices like Amazon AVS or AlexaPI
-* Please note that this approach does not work the Amazon Echo 2nd generation launched in the fall of 2017.
+* The plugin does not need to be installed in your 'main' homebridge instance.  It
+can be installed in any 'Homebridge' instance in your setup.
 
-# Installation
+Alexa device names are the same as the homebridge device names.
 
-* To enable this capability please install this special version of Homebridge and HAP-NodeJS.
-
-```
-sudo npm install -g --unsafe-perm https://github.com/NorthernMan54/homebridge
-```
-
-# Configuration
-
-* add a new setting "ssdp" to the bridge section of your homebridge config.json file. Value must be 1900. i.e
-
-```
- "bridge": {
-    "name": "Howard",
-    "username": "CC:22:3D:E3:CE:31",
-    "port": 51826,
-    "pin": "031-45-154",
-    "ssdp": 1900
-},
-```
-* If the setting is not enabled, then your homebridge instance will not be visible to Alexa,  useful when you have devices / plugins that you don't want Alexa to see.  For example, Philips hue or Belkin wemo devices.
-
-* Ask Alexa to Discover Devices.  She take about 20 seconds to discover your devices.
+This only supports accessories connected via a homebridge plugin, any 'Homekit'
+accessories are not supported, and will never be supported.
 
 # Voice commands supported
 
+* Alexa discover devices
 * Alexa, turn on the _______
 * Alexa, turn off the _______
 * Alexa, set ______ to number percent
 
-# Known issues
+# Getting access to the Alexa homebridge-alexa homeskill beta
 
-* This only works with Real Amazon Alexa devices, any RaspberryPI based devices like AlexaPI are not supported.
-* If you have hue devices and homebridge-hue, your hue devices will appear twice to Alexa.  If you want to avoid this, setup a second instance of homebridge and move the homebridge-hue plugin to it, and don't enable this feature.
-* Does not work with Amazon Fire TV or Echo 2nd Generation
+Send me a direct message via slack / Homebridge at NorthernMan54 with your amazon login.  I will then enroll yourself into the beta.
 
-# Troubleshooting / Issues
+# Alexa Home Skill configuration
+
+1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
+
+2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
+
+# Homebridge Installation
+
+The setup of this is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
+
+1. All homebridge instances that you want to control from Alexa need to run in insecure
+mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
+
+```
+homebridge -I
+```
+
+2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
+reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
+```
+sudo npm install -g https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+```
+
+In the event of issues or errors during install ie gyp WARN EACCES user "root" does not have permission to access the dev dir
+
+Please try this instead
+
+```
+sudo su
+sudo npm install -g —unsafe-perm https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
+```
+
+3. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
+
+4. Restart homebridge, and ask Alexa to discovery devices.
+
+# Upgrading from the previous version of homebridge-alexa
+
+If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
+
+```
+"ssdp": 1900
+```
+
+# config.json
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "...."
+  }
+],
+```
+
+## Required parameters
+
+* username - Login created for the skill linking website https://homebridge.cloudwatch.net
+* password - Login created for the skill linking website https://homebridge.cloudwatch.net
+
+## Optional parameters
+
+* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154"
+
+# Issues, Questions or Problems
 
 * I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues.
-* To enable debug mode, please start homebridge in debug mode. ie
-  DEBUG=* homebridge
-* For issues, please use the slack channel and post a debug log
+
+* When logging an issue, please include a DEBUG log with your issue.
+
+```
+DEBUG=alexa* homebridge -I
+```
+
+## Known Issues
+
+* 'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.
+* Colours not currently supported
+* Blinds are not currently supported
+
+# Previous version of homebridge-alexa
+
+* The old version is still available and the instructions for installation can be found  [here.](V1_README.md)
+
+# Roadmap
+
+See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 
 # Credits
 
-* dsandor/fauxmojs - For the NodeJS UPNP/SSDP module
-* BWS Systems - For the inspiration around the Hue emulation based approach
-* neruve - Testing of Amazon Fire TV
+* Ben Hardill - For the inspiration behind the design.

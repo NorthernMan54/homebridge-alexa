@@ -1,169 +1,201 @@
+//  {
+//    "platform": "Alexa",
+//    "name": "Alexa",
+//    "username": "....",
+//    "password": "...."
+//  }
+
 "use strict";
 
 var Accessory, Service, Characteristic, UUIDGen, CommunityTypes;
 var http = require('http');
-var HttpDispatcher = require('httpdispatcher');
-var dispatcher = new HttpDispatcher();
-var fs = require('fs');
-var path = require('path');
-//var mdns = require('mdns');
-var hb = require('./lib/hb.js');
+var debug = require('debug')('alexaPlugin');
+
+var AlexaConnection = require('./lib/AlexaLocalClient.js').AlexaLocalClient;
+var hap = require('./lib/HAPInterface.js');
+var translator = require('./lib/AlexaHAPTranslator.js');
+
+var mqtt = require('mqtt');
+var alexa;
+var options = {};
 var self;
 
 module.exports = function(homebridge) {
-    Service = homebridge.hap.Service;
-    Characteristic = homebridge.hap.Characteristic;
-    Accessory = homebridge.platformAccessory;
-    UUIDGen = homebridge.hap.uuid;
+  Service = homebridge.hap.Service;
+  Characteristic = homebridge.hap.Characteristic;
+  Accessory = homebridge.platformAccessory;
+  UUIDGen = homebridge.hap.uuid;
 
-    homebridge.registerPlatform("homebridge-alexa", "Alexa", alexahome);
+  homebridge.registerPlatform("homebridge-alexa", "Alexa", alexahome);
 };
 
 function alexahome(log, config, api) {
-    this.log = log;
-    this.config = config;
+  this.log = log;
+  this.config = config;
+  this.pin = config['pin'] || "031-45-154";
+  this.username = config['username'] || false;
+  this.password = config['password'] || false;
+  self = this;
 
-    this.debug = config['debug'] || false;
-    this.port = config['port'] || 8080;
-    this.pin = config['pin'] || "031-45-154";
-    self = this;
+  // MQTT Options
 
-    hb.discoverHap(log, this.pin);
+  options = {
+    username: this.username,
+    password: this.password,
+    clientId: this.username,
+    reconnectPeriod: 5000,
+    servers: [{
+        protocol: 'mqtts',
+        host: 'homebridge.cloudwatch.net',
+        port: 8883
+      },
+      {
+        protocol: 'mqtt',
+        host: 'homebridge.cloudwatch.net',
+        port: 1883
+      }
+    ]
+  };
 
-    init(self, self.port);
+  hap.HAPDiscovery({
+    "pin": this.pin
+  });
+  //  init(this);
 
-    //    if (api) {
-    //        this.api = api;
-    //        this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
-    //    }
+  alexa = new AlexaConnection(options);
+
+  alexa.on('alexa', handleAlexaMessage.bind(this));
+  alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
+  alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
+  alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
+
 }
 
 alexahome.prototype = {
-    accessories: function(callback) {
+  accessories: function(callback) {
 
-        this.log("accessories");
-        callback();
-    }
+    this.log("accessories");
+    callback();
+  }
 };
 
 alexahome.prototype.configureAccessory = function(accessory) {
 
-    this.log("configureAccessory");
-    callback(accessory);
+  this.log("configureAccessory");
+  callback();
 }
 
+function _alexaDiscovery(message, callback) {
 
-
-function init(self, port) {
-
-    function handleRequest(request, response) {
-        try {
-            dispatcher.dispatch(request, response);
-        } catch (err) {
-            self.log(err);
-        }
-    }
-
-    //Create a server
-    var server = http.createServer(handleRequest);
-
-    //Lets start our server
-    server.listen(port, function() {
-        //Callback triggered when server is successfully listening. Hurray!
-        self.log("Amazon Alexa interface listening on: http://localhost:%s", port);
-    });
+  hap.HAPs(function(endPoints) {
+    var response = translator.endPoints(message, endPoints);
+    debug("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+    callback(null, response);
+  }.bind(this))
 
 }
 
-//For all your static (js/css/images/etc.) set the directory name (relative path).
-//dispatcher.setStatic('/static');
-//dispatcher.setStaticDirname(__dirname + "/static");
+function _alexaPowerController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  //      aid: 2, iid: 10, value: 1
+  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": haAction.value
+    }]
+  };
+  debug("alexa.powercontroller", action, haAction.host, haAction.port, body);
+  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    debug("Status", action, haAction.host, haAction.port, err, status);
+    var response = translator.alexaResponseSuccess(message);
+    callback(err, response);
+  });
+}
 
-//A sample GET request
+function _alexaPowerLevelController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  var powerLevel = message.directive.payload.powerLevel;
 
-dispatcher.onGet("/ifttt/discover.php", function(req, res) {
-    var listOfDevices = [];
-    res.writeHead(200, {
-        'Content-Type': 'application/json'
-    });
-    var haps = hb.discover();
-    for (var id in haps) {
+  //      aid: 2, iid: 10, value: 1
+  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": powerLevel
+    }]
+  };
+  debug("alexa.powerlevelcontroller", action, haAction.host, haAction.port, body);
+  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    debug("Status", action, haAction.host, haAction.port, err, status);
+    var response = translator.alexaResponseSuccess(message);
+    callback(err, response);
+  });
+}
 
+function handleAlexaMessage(message, callback) {
+  debug("handleAlexaMessage", message);
+  var now = new Date();
 
-        var devices = haps[id];
-
-        for (var did in devices) {
-            var item = {};
-            var device = devices[did];
-            //            console.log("Devices ------------------------------", JSON.stringify(device));
-            item["applianceId"] = new Buffer(device.applianceId).toString('base64');
-            item["manufacturerName"] = device.manufacturerName;
-            item["modelName"] = device.modelName;
-            item["version"] = "1.0";
-            item["friendlyName"] = device.friendlyName;
-            item["friendlyDescription"] = device.friendlyDescription;
-            item["isReachable"] = true;
-            item["actions"] = device.actions;
-            item["additionalApplianceDetails"] = device.additionalApplianceDetails;
-            listOfDevices.push(item);
-
+  switch (message.directive.header.namespace.toLowerCase()) {
+    case "alexa": // aka getStatus
+      var response = {
+        "context": {
+          "properties": [{
+              "namespace": "Alexa.EndpointHealth",
+              "name": "connectivity",
+              "value": {
+                "value": "OK"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 200
+            },
+            {
+              "namespace": "Alexa.PowerController",
+              "name": "powerState",
+              "value": "ON",
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 0
+            }
+          ]
+        },
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "StateReport",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
         }
-    }
-    //    console.log("Devices", JSON.stringify(listOfDevices));
-    //    self.log(JSON.stringify(listOfDevices));
-    self.log("Discover request from", req.connection.remoteAddress);
-    self.log("Discover devices returned %s devices", Object.keys(listOfDevices).length)
-    res.end(JSON.stringify(listOfDevices));
-});
+      };
+      break;
 
-dispatcher.onGet("/ifttt/indexd.php", function(req, res) {
-    //    console.log(req);
+    default:
+      console.log("Unhandled Alexa Directive", message.directive.header.namespace);
+      var response = {
+        "event": {
+          "header": {
+            "name": "ErrorResponse",
+            "namespace": "Alexa",
+            "payloadVersion": "3",
+            "messageId": message.directive.header.messageId
+          },
+          "payload": {
+            "endpoints": []
+          }
+        }
+      };
+  }
 
-    var payload = JSON.parse(decodeURI(req.params.device));
-    var action = req.params.action;
-    var applianceId = new Buffer(payload.appliance.applianceId, 'base64').toString().split(":");
-    var characteristics = payload.appliance.additionalApplianceDetails[action];
-    var host = applianceId[0];
-    var port = applianceId[1];
-
-    self.log("Control request from", req.connection.remoteAddress);
-    self.log("Control Attempt %s:%s", host, port, action, characteristics);
-
-    switch (action) {
-        case "TurnOffRequest":
-        case "TurnOnRequest":
-            var body = "{ \"characteristics\": [" + characteristics + "] }";
-            break;
-        case "SetPercentageRequest":
-            var t = JSON.parse(characteristics);
-            t.value = payload.percentageState.value;
-            var body = "{ \"characteristics\": [" + JSON.stringify(t) + "] }";
-            break;
-        default:
-            self.log("Unknown Action", action);
-    }
-
-    if (body) {
-        hb.control(host, port, body, function(err, response) {
-
-            res.writeHead(200, {
-                'Content-Type': 'application/json'
-            });
-            self.log("Control Success", response.characteristics);
-            res.end();
-        })
-    } else {
-        res.writeHead(200, {
-            'Content-Type': 'application/json'
-        });
-        self.log("Control Failure");
-        res.end();
-    }
-});
-
-
-dispatcher.onError(function(req, res) {
-    self.log("ERROR-No dispatcher", req.url);
-    res.writeHead(404);
-    res.end();
-});
+}
