@@ -19,17 +19,18 @@ accessories are not supported, and will never be supported.
 
 # Voice commands supported
 
+* Alexa discover devices
 * Alexa, turn on the _______
 * Alexa, turn off the _______
 * Alexa, set ______ to number percent
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
-Send me a direct message via slack / Homebridge at NorthernMan54 with your amazon login.
+Send me a direct message via slack / Homebridge at NorthernMan54 with your amazon login.  I will then enroll yourself into the beta.
 
 # Alexa Home Skill configuration
 
-1. Create an account for yourself at https://homebridge.cloudwatch.net
+1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
 
 2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
@@ -59,7 +60,7 @@ sudo su
 sudo npm install -g —unsafe-perm https://github.com/NorthernMan54/homebridge-alexa#Alexa2ndGen
 ```
 
-3. Login and password are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
+3. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
 
 4. Restart homebridge, and ask Alexa to discovery devices.
 
@@ -74,28 +75,44 @@ If you had installed the previous version of homebridge-alexa with the special v
 # config.json
 
 ```
-{
+"platforms": [
+  {
     "platform": "Alexa",
     "name": "Alexa",
     "username": "....",
     "password": "...."
   }
+],
 ```
+
+## Required parameters
+
+* username - Login created for the skill linking website https://homebridge.cloudwatch.net
+* password - Login created for the skill linking website https://homebridge.cloudwatch.net
+
 ## Optional parameters
 
-* pin - If you had changed your pin from the default of "pin": "031-45-154"
+* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154"
 
 # Issues, Questions or Problems
 
-When logging an issue, please include a DEBUG log with your issue.
+* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues.
 
+* When logging an issue, please include a DEBUG log with your issue.
+
+```
 DEBUG=alexa* homebridge -I
+```
 
 ## Known Issues
 
 * 'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.
 * Colours not currently supported
 * Blinds are not currently supported
+
+# Previous version of homebridge-alexa
+
+* The old version is still available and the instructions for installation can be found  [here.](V1_README.md)
 
 # Roadmap
 

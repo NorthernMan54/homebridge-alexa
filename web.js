@@ -1,17 +1,14 @@
-//{
-//"platform": "Alexa",
-//     "name": "Alexa",
-//     "port": 8082
-//}
+//  {
+//    "platform": "Alexa",
+//    "name": "Alexa",
+//    "username": "....",
+//    "password": "...."
+//  }
 
 "use strict";
 
 var Accessory, Service, Characteristic, UUIDGen, CommunityTypes;
 var http = require('http');
-// var HttpDispatcher = require('httpdispatcher');
-// var dispatcher = new HttpDispatcher();
-// var fs = require('fs');
-// var path = require('path');
 var debug = require('debug')('alexaPlugin');
 
 var AlexaConnection = require('./lib/AlexaLocalClient.js').AlexaLocalClient;
@@ -113,7 +110,7 @@ function _alexaPowerController(message, callback) {
   };
   debug("alexa.powercontroller", action, haAction.host, haAction.port, body);
   hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-    debug("Status", action, haAction.host, haAction.port,err, status);
+    debug("Status", action, haAction.host, haAction.port, err, status);
     var response = translator.alexaResponseSuccess(message);
     callback(err, response);
   });
@@ -200,6 +197,5 @@ function handleAlexaMessage(message, callback) {
         }
       };
   }
-//  debug("handleAlexaMessage - response", JSON.stringify(response));
-//  callback(null, response);
+
 }
