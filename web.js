@@ -109,12 +109,11 @@ function _alexaPowerController(message, callback) {
       "value": haAction.value
     }]
   };
-  debug("alexa.powercontroller", action, haAction.host, haAction.port, body);
   hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("Status", action, haAction.host, haAction.port, err, status);
     var response = translator.alexaResponseSuccess(message);
     callback(err, response);
-  });
+  }.bind(this));
 }
 
 function _alexaPowerLevelController(message, callback) {
@@ -132,12 +131,11 @@ function _alexaPowerLevelController(message, callback) {
       "value": powerLevel
     }]
   };
-  debug("alexa.powerlevelcontroller", action, haAction.host, haAction.port, body);
   hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("Status", action, haAction.host, haAction.port, err, status);
     var response = translator.alexaResponseSuccess(message);
     callback(err, response);
-  });
+  }.bind(this));
 }
 
 function handleAlexaMessage(message, callback) {
