@@ -7,7 +7,7 @@
 
 "use strict";
 
-var Accessory, Service, Characteristic, UUIDGen, CommunityTypes;
+var Accessory, Service, Characteristic, UUIDGen;
 var http = require('http');
 var debug = require('debug')('AlexaPlugin');
 
@@ -18,7 +18,6 @@ var translator = require('./lib/AlexaHAPTranslator.js');
 var mqtt = require('mqtt');
 var alexa;
 var options = {};
-var self;
 
 module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
@@ -35,40 +34,11 @@ function alexahome(log, config, api) {
   this.pin = config['pin'] || "031-45-154";
   this.username = config['username'] || false;
   this.password = config['password'] || false;
-  self = this;
 
-  // MQTT Options
-
-  options = {
-    username: this.username,
-    password: this.password,
-    clientId: this.username,
-    reconnectPeriod: 5000,
-    servers: [{
-        protocol: 'mqtts',
-        host: 'homebridge.cloudwatch.net',
-        port: 8883
-      },
-      {
-        protocol: 'mqtt',
-        host: 'homebridge.cloudwatch.net',
-        port: 1883
-      }
-    ]
-  };
-
-  hap.HAPDiscovery({
-    "pin": this.pin
-  });
-  //  init(this);
-
-  alexa = new AlexaConnection(options);
-
-  alexa.on('alexa', handleAlexaMessage.bind(this));
-  alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
-  alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
-  alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
-
+  if (api) {
+    this.api = api;
+    this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
+  }
 }
 
 alexahome.prototype = {
@@ -78,6 +48,39 @@ alexahome.prototype = {
     callback();
   }
 };
+
+alexahome.prototype.didFinishLaunching = function() {
+
+    options = {
+      username: this.username,
+      password: this.password,
+      clientId: this.username,
+      reconnectPeriod: 5000,
+      servers: [{
+          protocol: 'mqtts',
+          host: 'homebridge.cloudwatch.net',
+          port: 8883
+        },
+        {
+          protocol: 'mqtt',
+          host: 'homebridge.cloudwatch.net',
+          port: 1883
+        }
+      ]
+    };
+
+    hap.HAPDiscovery({
+      "pin": this.pin
+    });
+    //  init(this);
+
+    alexa = new AlexaConnection(options);
+
+    alexa.on('alexa', _alexaMessage.bind(this));
+    alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
+    alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
+    alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
+}
 
 alexahome.prototype.configureAccessory = function(accessory) {
 
@@ -90,7 +93,7 @@ function _alexaDiscovery(message, callback) {
   hap.HAPs(function(endPoints) {
     var response = translator.endPoints(message, endPoints);
     this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
-    debug("Discovery Response",JSON.stringify(response, null, 4));
+    debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
   }.bind(this))
 
@@ -138,50 +141,26 @@ function _alexaPowerLevelController(message, callback) {
   }.bind(this));
 }
 
-function handleAlexaMessage(message, callback) {
-  this.log("handleAlexaMessage", message);
+function _alexaMessage(message, callback) {
+  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
   var now = new Date();
 
-  switch (message.directive.header.namespace.toLowerCase()) {
-    case "alexa": // aka getStatus
-      var response = {
-        "context": {
-          "properties": [{
-              "namespace": "Alexa.EndpointHealth",
-              "name": "connectivity",
-              "value": {
-                "value": "OK"
-              },
-              "timeOfSample": now.toISOString(),
-              "uncertaintyInMilliseconds": 200
-            },
-            {
-              "namespace": "Alexa.PowerController",
-              "name": "powerState",
-              "value": "ON",
-              "timeOfSample": now.toISOString(),
-              "uncertaintyInMilliseconds": 0
-            }
-          ]
-        },
-        "event": {
-          "header": {
-            "namespace": "Alexa",
-            "name": "StateReport",
-            "payloadVersion": "3",
-            "messageId": message.directive.header.messageId,
-            "correlationToken": message.directive.header.correlationToken
-          },
-          "endpoint": {
-            "endpointId": message.directive.endpoint.endpointId
-          },
-          "payload": {}
-        }
-      };
+  switch (message.directive.header.name.toLowerCase()) {
+    case "reportstate": // aka getStatus
+      var action = message.directive.header.name;
+      var endpointId = message.directive.endpoint.endpointId;
+      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+      var body = "?id="+haAction.aid+"."+haAction.iid;
+
+      hap.HAPstatus(haAction.host, haAction.port, body, function(err, status) {
+        this.log("Status", action, haAction.host, haAction.port, err, status);
+        var response = translator.alexaStateResponse(message,status);
+        callback(err, response);
+      }.bind(this));
       break;
 
     default:
-      console.log("Unhandled Alexa Directive", message.directive.header.namespace);
+      this.log.error("Unhandled Alexa Directive", message.directive.header.name);
       var response = {
         "event": {
           "header": {
