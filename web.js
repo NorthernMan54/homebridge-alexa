@@ -151,21 +151,25 @@ function _alexaMessage(message, callback) {
       var endpointId = message.directive.endpoint.endpointId;
       var reportState = JSON.parse(message.directive.endpoint.cookie[action]);
       var body = "?id=";
-      var spacer = "";
+      var spacer = "";  // No spacer for first element
+      var host,port;
       reportState.forEach(function(element) {
+        host = element.host;
+        port = element.port;
         body = body + spacer + element.aid+"."+element.iid;
         spacer = ",";
       });
 
-      hap.HAPstatus(haAction.host, haAction.port, body, function(err, status) {
-        this.log("Status", action, haAction.host, haAction.port, err, status);
-        var response = translator.alexaStateResponse(message, reportState, status);
+      // For performance HAP GET Characteristices supports getting multiple in one call
+      hap.HAPstatus(host, port, body, function(err, status) {
+        this.log("reportState", action, host, port, err, status.characteristics);
+        var response = translator.alexaStateResponse(message, reportState, status.characteristics);
         callback(err, response);
       }.bind(this));
       break;
 
     default:
-      this.log.error("Unhandled Alexa Directive", message.directive.header.name);
+      this.log.error("Unhandled _alexaMessage Directive", message.directive.header.name);
       var response = {
         "event": {
           "header": {
