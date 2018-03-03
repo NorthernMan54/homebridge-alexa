@@ -20,19 +20,20 @@ accessories are not supported, and will never be supported.
 # Voice commands supported
 
 * Alexa discover devices
-* Alexa, turn on the _______
-* Alexa, turn off the _______
+* Alexa, turn on _______
+* Alexa, turn off _______
 * Alexa, set ______ to number percent
+* Alexa, what is the temperature in the ______
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
-Send me a direct message via slack / Homebridge at NorthernMan54 with your amazon login.  I will then enroll yourself into the beta.
+Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.  I will then enroll yourself into the beta.
 
 # Alexa Home Skill configuration
 
 1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
 
-2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
+2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.  If you can't find the HomeBridge HomeSkill, you need be setup on the BETA test.  Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.
 
 # Homebridge Installation
 
@@ -107,9 +108,9 @@ DEBUG=alexa* homebridge -I
 
 ## Known Issues
 
-* 'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.
+* ~~'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.~~
 * Colours not currently supported
-* Blinds are not currently supported
+* ~~Blinds are not currently supported~~
 
 # Previous version of homebridge-alexa
 
