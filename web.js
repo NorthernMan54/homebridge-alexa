@@ -149,12 +149,17 @@ function _alexaMessage(message, callback) {
     case "reportstate": // aka getStatus
       var action = message.directive.header.name;
       var endpointId = message.directive.endpoint.endpointId;
-      var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-      var body = "?id="+haAction.aid+"."+haAction.iid;
+      var reportState = JSON.parse(message.directive.endpoint.cookie[action]);
+      var body = "?id=";
+      var spacer = "";
+      reportState.forEach(function(element) {
+        body = body + spacer + element.aid+"."+element.iid;
+        spacer = ",";
+      });
 
       hap.HAPstatus(haAction.host, haAction.port, body, function(err, status) {
         this.log("Status", action, haAction.host, haAction.port, err, status);
-        var response = translator.alexaStateResponse(message,status);
+        var response = translator.alexaStateResponse(message, reportState, status);
         callback(err, response);
       }.bind(this));
       break;
