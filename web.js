@@ -162,8 +162,13 @@ function _alexaMessage(message, callback) {
 
       // For performance HAP GET Characteristices supports getting multiple in one call
       hap.HAPstatus(host, port, body, function(err, status) {
-        this.log("reportState", action, host, port, err, status.characteristics);
-        var response = translator.alexaStateResponse(message, reportState, status.characteristics);
+        this.log("reportState", action, host, port, err, status);
+        if ( !err ) {
+          var response = translator.alexaStateResponse(message, reportState, status.characteristics);
+        } else {
+          this.log.error("HAP Status call failed",err);
+          var response = "";
+        }
         callback(err, response);
       }.bind(this));
       break;
