@@ -4,7 +4,7 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 
 * Supports multiple homebridge instances running on your network.
 * Autodiscovery of multiple Homebridge's
-* Supports devices of homekit Service type Lightbulb, Outlet, Fan, and Switch
+* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Temperature Sensor, Window Coverings and Switch
 * If device supports the 'Brightness Characteristic', then the ability to set a
 brightness is included.
 * This plugin does not have any devices or accessories that are visible from Homekit,
@@ -22,7 +22,7 @@ accessories are not supported, and will never be supported.
 * Alexa discover devices
 * Alexa, turn on _______
 * Alexa, turn off _______
-* Alexa, set ______ to number percent
+* Alexa, set ______ to 50
 * Alexa, what is the temperature in the ______
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
@@ -109,8 +109,10 @@ DEBUG=alexa* homebridge -I
 ## Known Issues
 
 * ~~'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.~~
-* Colours not currently supported
 * ~~Blinds are not currently supported~~
+
+* Colours not currently supported
+* All homebridge PIN's in your setup need to be set to the same value.
 
 # Previous version of homebridge-alexa
 
