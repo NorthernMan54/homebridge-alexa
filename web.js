@@ -93,7 +93,7 @@ function _alexaDiscovery(message, callback) {
   alexaHAP.HAPs(function(endPoints) {
     var response = alexaTranslator.endPoints(message, endPoints);
     this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
-    debug("Discovery Response", JSON.stringify(response, null, 4));
+//    debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
   }.bind(this))
 
