@@ -29,24 +29,38 @@ accessories are not supported, and will never be supported.
 
 Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.  I will then enroll yourself into the beta.
 
-# Alexa Home Skill configuration
+# Installation of homebridge-alexa
+
+Alexa Home Skill configuration
 
 1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
 
 2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.  If you can't find the HomeBridge HomeSkill, you need be setup on the BETA test.  Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.
 
-# Homebridge Installation
+Plugin Installation
 
-The setup of this is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
+The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
-1. All homebridge instances that you want to control from Alexa need to run in insecure
+3. All homebridge instances that you want to control from Alexa need to run in insecure
 mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
 
 ```
 homebridge -I
 ```
 
-2. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
+If your using systemd to manage homebridge, the -I is added to the file /etc/default/homebridge in the line, HOMEBRIDGE_OPTS ie.
+
+```
+# Defaults / Configuration options for homebridge
+# The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
+HOMEBRIDGE_OPTS=-I
+
+# If you uncomment the following line, homebridge will log more
+# You can display this via systemd's journalctl: journalctl -f -u homebridge
+#DEBUG=
+```
+
+4. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
 reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
 
 ```
@@ -62,9 +76,9 @@ sudo su
 sudo npm install -g —unsafe-perm homebridge-alexa
 ```
 
-3. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
+5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
 
-4. Restart homebridge, and ask Alexa to discovery devices.
+6. Restart homebridge, and ask Alexa to discovery devices.
 
 # Upgrading from the previous version of homebridge-alexa
 
@@ -125,3 +139,4 @@ See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 # Credits
 
 * Ben Hardill - For the inspiration behind the design.
+* Chrisx9 - German translation

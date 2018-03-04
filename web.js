@@ -11,9 +11,9 @@ var Accessory, Service, Characteristic, UUIDGen;
 var http = require('http');
 var debug = require('debug')('AlexaPlugin');
 
-var AlexaConnection = require('./lib/AlexaLocalClient.js').AlexaLocalClient;
-var hap = require('./lib/HAPInterface.js');
-var translator = require('./lib/AlexaHAPTranslator.js');
+var alexaLocal = require('./lib/alexaLocal.js').alexaLocal;
+var alexaHAP = require('./lib/alexaHAP.js');
+var alexaTranslator = require('./lib/alexaTranslator.js');
 
 var mqtt = require('mqtt');
 var alexa;
@@ -69,12 +69,12 @@ alexahome.prototype.didFinishLaunching = function() {
     ]
   };
 
-  hap.HAPDiscovery({
+  alexaHAP.HAPDiscovery({
     "pin": this.pin
   });
   //  init(this);
 
-  alexa = new AlexaConnection(options);
+  alexa = new alexaLocal(options);
 
   alexa.on('alexa', _alexaMessage.bind(this));
   alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
@@ -90,8 +90,8 @@ alexahome.prototype.configureAccessory = function(accessory) {
 
 function _alexaDiscovery(message, callback) {
 
-  hap.HAPs(function(endPoints) {
-    var response = translator.endPoints(message, endPoints);
+  alexaHAP.HAPs(function(endPoints) {
+    var response = alexaTranslator.endPoints(message, endPoints);
     this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
     debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
@@ -112,9 +112,9 @@ function _alexaPowerController(message, callback) {
       "value": haAction.value
     }]
   };
-  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("Status", action, haAction.host, haAction.port, err, status);
-    var response = translator.alexaResponseSuccess(message,status,err);
+    var response = alexaTranslator.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
 }
@@ -134,9 +134,9 @@ function _alexaPowerLevelController(message, callback) {
       "value": powerLevel
     }]
   };
-  hap.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("Status", action, haAction.host, haAction.port, err, status);
-    var response = translator.alexaResponseSuccess(message,status,err);
+    var response = alexaTranslator.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
 }
@@ -161,14 +161,9 @@ function _alexaMessage(message, callback) {
       });
 
       // For performance HAP GET Characteristices supports getting multiple in one call
-      hap.HAPstatus(host, port, body, function(err, status) {
+      alexaHAP.HAPstatus(host, port, body, function(err, status) {
         this.log("reportState", action, host, port, err, status);
-        if (!err) {
-          var response = translator.alexaStateResponse(message, reportState, status.characteristics);
-        } else {
-          this.log.error("HAP Status call failed", err);
-          var response = translator.alexaStateErrorResponse(message,err);
-        }
+        var response = alexaTranslator.alexaStateResponse(message, reportState, status, err);
         callback(err, response);
       }.bind(this));
       break;
