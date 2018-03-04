@@ -113,7 +113,7 @@ function _alexaPowerController(message, callback) {
     }]
   };
   alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-    this.log("Status", action, haAction.host, haAction.port, err, status);
+    this.log("PowerController", action, haAction.host, haAction.port, status, err);
     var response = alexaTranslator.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -135,14 +135,14 @@ function _alexaPowerLevelController(message, callback) {
     }]
   };
   alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-    this.log("Status", action, haAction.host, haAction.port, err, status);
+    this.log("PowerLevelController", action, haAction.host, haAction.port, status, err);
     var response = alexaTranslator.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
 }
 
 function _alexaMessage(message, callback) {
-  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
+//  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
   var now = new Date();
 
   switch (message.directive.header.name.toLowerCase()) {
@@ -162,7 +162,7 @@ function _alexaMessage(message, callback) {
 
       // For performance HAP GET Characteristices supports getting multiple in one call
       alexaHAP.HAPstatus(host, port, body, function(err, status) {
-        this.log("reportState", action, host, port, err, status);
+        this.log("reportState", action, host, port, status, err);
         var response = alexaTranslator.alexaStateResponse(message, reportState, status, err);
         callback(err, response);
       }.bind(this));
