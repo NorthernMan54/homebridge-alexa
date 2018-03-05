@@ -93,7 +93,7 @@ function _alexaDiscovery(message, callback) {
   alexaHAP.HAPs(function(endPoints) {
     var response = alexaTranslator.endPoints(message, endPoints);
     this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
-//    debug("Discovery Response", JSON.stringify(response, null, 4));
+    //    debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
   }.bind(this))
 
@@ -102,9 +102,13 @@ function _alexaDiscovery(message, callback) {
 function _alexaPowerController(message, callback) {
   var action = message.directive.header.name;
   var endpointId = message.directive.endpoint.endpointId;
-  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-  //      aid: 2, iid: 10, value: 1
-  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
+  try {
+    var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
   var body = {
     "characteristics": [{
       "aid": haAction.aid,
@@ -120,36 +124,77 @@ function _alexaPowerController(message, callback) {
 }
 
 function _alexaPowerLevelController(message, callback) {
+  debug(JSON.stringify(message, null, 4));
   var action = message.directive.header.name;
   var endpointId = message.directive.endpoint.endpointId;
-  var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
-  var powerLevel = message.directive.payload.powerLevel;
+  var powerLevel, haAction;
+  try {
+    haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
 
-  //      aid: 2, iid: 10, value: 1
-  //      { \"characteristics\": [{ \"aid\": 2, \"iid\": 9, \"value\": 0}] }"
-  var body = {
-    "characteristics": [{
-      "aid": haAction.aid,
-      "iid": haAction.iid,
-      "value": powerLevel
-    }]
-  };
-  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-    this.log("PowerLevelController", action, haAction.host, haAction.port, status, err);
-    var response = alexaTranslator.alexaResponse(message, status, err);
-    callback(err, response);
-  }.bind(this));
+  //debug("haAction", haAction);
+  switch (action.toLowerCase()) {
+    case "adjustpowerlevel":
+      // Need to get current value prior to dimming
+      alexaHAP.HAPstatus(haAction.host, haAction.port, "?id=" + haAction.aid + "." + haAction.iid, function(err, status) {
+        this.log("PowerLevelController-get", action, haAction.host, haAction.port, status, err);
+
+        var powerLevelDelta = message.directive.payload.powerLevelDelta;
+        powerLevel = status.characteristics[0].value + powerLevelDelta > 100 ? 100 : status.characteristics[0].value + powerLevelDelta;
+        powerLevel = powerLevel < 0 ? 0 : powerLevel;
+        var body = {
+          "characteristics": [{
+            "aid": haAction.aid,
+            "iid": haAction.iid,
+            "value": powerLevel
+          }]
+        };
+        alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+          this.log("PowerLevelController-set", action, haAction.host, haAction.port, status, body, err);
+          var response = alexaTranslator.alexaResponse(message, status, err);
+          callback(err, response);
+        }.bind(this));
+      }.bind(this));
+      break;
+    case "setpowerlevel":
+      // No need to do anything
+      powerLevel = message.directive.payload.powerLevel;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": powerLevel
+        }]
+      };
+      alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        this.log("PowerLevelController", action, haAction.host, haAction.port, status, err);
+        var response = alexaTranslator.alexaResponse(message, status, err);
+        callback(err, response);
+      }.bind(this));
+      break;
+  }
+
 }
 
 function _alexaMessage(message, callback) {
-//  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
+  //  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
   var now = new Date();
 
   switch (message.directive.header.name.toLowerCase()) {
     case "reportstate": // aka getStatus
       var action = message.directive.header.name;
       var endpointId = message.directive.endpoint.endpointId;
-      var reportState = JSON.parse(message.directive.endpoint.cookie[action]);
+      try {
+        var reportState = JSON.parse(message.directive.endpoint.cookie[action]);
+      } catch (e) {
+        this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+        callback(e);
+        return;
+      }
       var body = "?id=";
       var spacer = ""; // No spacer for first element
       var host, port;
