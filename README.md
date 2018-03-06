@@ -72,7 +72,6 @@ In the event of issues or errors during install ie gyp WARN EACCES user "root" d
 Please try this instead
 
 ```
-sudo su
 sudo npm install -g —unsafe-perm homebridge-alexa
 ```
 

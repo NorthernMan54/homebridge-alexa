@@ -105,7 +105,7 @@ function _alexaPowerController(message, callback) {
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
-    this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+    this.log.error("_alexaPowerController missing action", action, e.message, message.directive.endpoint.cookie);
     callback(e);
     return;
   }
@@ -124,14 +124,14 @@ function _alexaPowerController(message, callback) {
 }
 
 function _alexaPowerLevelController(message, callback) {
-  debug(JSON.stringify(message, null, 4));
+  //debug(JSON.stringify(message, null, 4));
   var action = message.directive.header.name;
   var endpointId = message.directive.endpoint.endpointId;
   var powerLevel, haAction;
   try {
     haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
-    this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+    this.log.error("_alexaPowerLevelController missing action", action, e.message, message.directive.endpoint.cookie);
     callback(e);
     return;
   }
@@ -155,7 +155,7 @@ function _alexaPowerLevelController(message, callback) {
         };
         alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
           this.log("PowerLevelController-set", action, haAction.host, haAction.port, status, body, err);
-          var response = alexaTranslator.alexaResponse(message, status, err);
+          var response = alexaTranslator.alexaResponse(message, status, err, powerLevel);
           callback(err, response);
         }.bind(this));
       }.bind(this));
@@ -171,8 +171,8 @@ function _alexaPowerLevelController(message, callback) {
         }]
       };
       alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
-        this.log("PowerLevelController", action, haAction.host, haAction.port, status, err);
-        var response = alexaTranslator.alexaResponse(message, status, err);
+        this.log("PowerLevelController", action, haAction.host, haAction.port, status, body, err);
+        var response = alexaTranslator.alexaResponse(message, status, err, powerLevel);
         callback(err, response);
       }.bind(this));
       break;
@@ -191,7 +191,7 @@ function _alexaMessage(message, callback) {
       try {
         var reportState = JSON.parse(message.directive.endpoint.cookie[action]);
       } catch (e) {
-        this.log.error("Message Parsing Error", action, e.message, message.directive.endpoint.cookie);
+        this.log.error("_alexaMessage missing action", action, e.message, message.directive.endpoint.cookie);
         callback(e);
         return;
       }
