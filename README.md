@@ -15,7 +15,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 # Voice commands supported
 
-* Alexa discover devices
+* Alexa, discover devices
 * Alexa, turn on _______
 * Alexa, turn off _______
 * Alexa, set ______ to 50
@@ -71,7 +71,7 @@ Please try this instead
 sudo npm install -g —unsafe-perm homebridge-alexa
 ```
 
-5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.
+5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
 
 6. Restart homebridge, and ask Alexa to discovery devices.
 
@@ -114,6 +114,10 @@ If you had installed the previous version of homebridge-alexa with the special v
 ```
 DEBUG=alexa* homebridge -I
 ```
+
+## Troubleshooting Tips
+
+I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
 ## Known Issues
 
