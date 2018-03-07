@@ -5,17 +5,13 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Supports multiple homebridge instances running on your network.
 * Autodiscovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Temperature Sensor, Window Coverings and Switch
-* If device supports the 'Brightness Characteristic', then the ability to set a
-brightness is included.
-* This plugin does not have any devices or accessories that are visible from Homekit,
-and does not need to be added on the Home app.
-* The plugin does not need to be installed in your 'main' homebridge instance.  It
-can be installed in any 'Homebridge' instance in your setup.
+* If device supports the 'Brightness Characteristic', then the ability to set a brightness is included.
+* This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
+* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
 
 Alexa device names are the same as the homebridge device names.
 
-This only supports accessories connected via a homebridge plugin, any 'Homekit'
-accessories are not supported, and will never be supported.
+This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
 
 # Voice commands supported
 
@@ -24,6 +20,8 @@ accessories are not supported, and will never be supported.
 * Alexa, turn off _______
 * Alexa, set ______ to 50
 * Alexa, what is the temperature in the ______
+* Alexa, dim ________
+* Alexa, brighten ________
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
@@ -41,8 +39,7 @@ Plugin Installation
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
-3. All homebridge instances that you want to control from Alexa need to run in insecure
-mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
+3. All homebridge instances that you want to control from Alexa need to run in insecure mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
 
 ```
 homebridge -I
@@ -60,8 +57,7 @@ HOMEBRIDGE_OPTS=-I
 #DEBUG=
 ```
 
-4. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just
-reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
+4. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
 
 ```
 sudo npm install -g homebridge-alexa
