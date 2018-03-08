@@ -80,6 +80,7 @@ alexahome.prototype.didFinishLaunching = function() {
   alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
   alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
   alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
+  alexa.on('Alexa.colorcontroller', _alexaColorController.bind(this));
 }
 
 alexahome.prototype.configureAccessory = function(accessory) {
@@ -118,6 +119,30 @@ function _alexaPowerController(message, callback) {
   };
   alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("PowerController", action, haAction.host, haAction.port, status, err);
+    var response = alexaTranslator.alexaResponse(message, status, err);
+    callback(err, response);
+  }.bind(this));
+}
+
+function _alexaColorController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  try {
+    var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaColorController missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": haAction.value
+    }]
+  };
+  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    this.log("ColorController", action, haAction.host, haAction.port, status, err);
     var response = alexaTranslator.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
