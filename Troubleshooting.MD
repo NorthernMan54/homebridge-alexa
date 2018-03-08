@@ -7,3 +7,7 @@ Check your hostname for your raspberrypi, it may be already in use.
 ### ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment.  Please note your only need one per home or network.
+
+### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
+
+Your homebridge access pin is incorrect
