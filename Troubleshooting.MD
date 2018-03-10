@@ -11,3 +11,11 @@ Likely cause of this message is having multiple copies of homebridge-alexa in yo
 ### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
 Your homebridge access pin is incorrect
+
+###   alexaHAP HAP Discover failed Bart-Dev http://192.168.1.231:51826 homebridge is not running in insecure mode with -I +6ms
+
+Your homebridge instance is running without the -I option set.
+
+###  alexaHAP HAP Discover failed Homebridge http://undefined:51826 error ENOTFOUND +22ms
+
+Please check that the hostname of your RPI is set properly and not duplicated with other RPI's on your network.
