@@ -6,7 +6,7 @@ Check your hostname for your raspberrypi, it may be already in use.
 
 ### ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
-Likely cause of this message is having multiple copies of homebridge-alexa in your environment.  Please note your only need one per home or network.
+Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one per home or network.
 
 ### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
@@ -27,6 +27,17 @@ Mär 10 19:01:49 homebridge homebridge[8313]: return (config.username)
 Mär 10 19:01:49 homebridge homebridge[8313]: ^
 Mär 10 19:01:49 homebridge homebridge[8313]: TypeError: Cannot read property 'username' of undefined
 Mär 10 19:01:49 homebridge homebridge[8313]: at Object.getHueBridgeMac (/usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216:20)
-Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/hue.js:373:20)```
+Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/hue.js:373:20)
+```
 
 If you have upgraded from the non-skill version to the skill based version you need to tell Alexa to forget all your old devices.
+
+### Mar 10 19:06:15 raspberrypi homebridge[900]: [2018-3-10 19:06:15] ERROR LOADING PLUGIN homebridge-alexa:
+Mar 10 19:06:15 raspberrypi homebridge[900]: [2018-3-10 19:06:15] Error: Cannot find module '../build/Release/dns_sd_bindings'
+
+Please retry the install again
+
+```
+sudo rm -rf /usr/local/lib/node_modules/homebridge-alexa
+sudo npm install -g --unsafe-perm homebridge-alexa
+```
