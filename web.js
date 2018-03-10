@@ -94,7 +94,7 @@ function _alexaDiscovery(message, callback) {
   alexaHAP.HAPs(function(endPoints) {
     var response = alexaTranslator.endPoints(message, endPoints);
     this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
-    //    debug("Discovery Response", JSON.stringify(response, null, 4));
+    debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
   }.bind(this))
 
@@ -161,7 +161,6 @@ function _alexaPowerLevelController(message, callback) {
     return;
   }
 
-  //debug("haAction", haAction);
   switch (action.toLowerCase()) {
     case "adjustpowerlevel":
       // Need to get current value prior to dimming
@@ -206,7 +205,7 @@ function _alexaPowerLevelController(message, callback) {
 }
 
 function _alexaMessage(message, callback) {
-  //  this.log("handleAlexaMessage", JSON.stringify(message, null, 4));
+
   var now = new Date();
 
   switch (message.directive.header.name.toLowerCase()) {
@@ -226,8 +225,15 @@ function _alexaMessage(message, callback) {
       reportState.forEach(function(element) {
         host = element.host;
         port = element.port;
-        body = body + spacer + element.aid + "." + element.iid;
-        spacer = ",";
+        if (element.interface == "Alexa.ColorController") {
+          body = body + spacer + element.hue.aid + "." + element.hue.iid;
+          spacer = ",";
+          body = body + spacer + element.saturation.aid + "." + element.saturation.iid;
+          body = body + spacer + element.brightness.aid + "." + element.brightness.iid;
+        } else {
+          body = body + spacer + element.aid + "." + element.iid;
+          spacer = ",";
+        }
       });
 
       // For performance HAP GET Characteristices supports getting multiple in one call
