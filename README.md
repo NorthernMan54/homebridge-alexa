@@ -132,6 +132,7 @@ I have started recording troubleshooting tips here based on issues seen by the c
 
 * ~~Colours not currently supported~~
 * All homebridge PIN's in your setup need to be set to the same value.
+* Discovery not working when running docker-homebridge on Synology See https://github.com/oznu/docker-homebridge/issues/35#issuecomment-364719736
 
 # Previous version of homebridge-alexa
 
