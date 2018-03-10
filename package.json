@@ -27,8 +27,7 @@
     "mdns": ">=2.3.3",
     "mqtt": "^2.0.1",
     "request": "^2.65.0",
-    "ip": "^=1.1.5",
-    "tcp-ping": "^=0.1.1"
+    "ip": "^=1.1.5"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
