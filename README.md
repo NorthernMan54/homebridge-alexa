@@ -81,13 +81,16 @@ sudo npm install -g —-unsafe-perm homebridge-alexa
 
 6. Restart homebridge, and ask Alexa to discovery devices.
 
-# Upgrading from the previous version of homebridge-alexa
+# Upgrading from the previous, non skill based version of homebridge-alexa
 
 If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
 
 ```
 "ssdp": 1900
 ```
+
+Also please have Alexa forget all your old devices.
+
 
 # config.json
 
