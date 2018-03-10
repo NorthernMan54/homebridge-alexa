@@ -41,3 +41,11 @@ Please retry the install again
 sudo rm -rf /usr/local/lib/node_modules/homebridge-alexa
 sudo npm install -g --unsafe-perm homebridge-alexa
 ```
+
+And if that does not work, try This
+
+```
+cd /usr/local/lib/node_modules/homebridge-alexa
+sudo npm install --unsafe-perm mdns
+sudo npm rebuild --unsafe-perm
+```
