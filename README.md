@@ -74,7 +74,7 @@ In the event of issues or errors during install ie gyp WARN EACCES user "root" d
 Please try this instead
 
 ```
-sudo npm install -g —-unsafe-perm homebridge-alexa
+sudo npm install -g --unsafe-perm homebridge-alexa
 ```
 
 5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
