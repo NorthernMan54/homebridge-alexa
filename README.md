@@ -8,7 +8,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 
 * Supports multiple homebridge instances running on your network.
 * Autodiscovery of multiple Homebridge's
-* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Temperature Sensor, Window Coverings and Switch
+* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Temperature Sensor, Window Coverings and Switch.
+* Support for color lights
 * If device supports the 'Brightness Characteristic', then the ability to set a brightness is included.
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
@@ -26,6 +27,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, what is the temperature in the ______
 * Alexa, dim ________
 * Alexa, brighten ________
+* Alexa, turn _______ red
 
 # Getting access to the Alexa homebridge-alexa homeskill beta
 
@@ -72,7 +74,7 @@ In the event of issues or errors during install ie gyp WARN EACCES user "root" d
 Please try this instead
 
 ```
-sudo npm install -g —unsafe-perm homebridge-alexa
+sudo npm install -g —-unsafe-perm homebridge-alexa
 ```
 
 5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
@@ -128,7 +130,7 @@ I have started recording troubleshooting tips here based on issues seen by the c
 * ~~'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.~~
 * ~~Blinds are not currently supported~~
 
-* Colours not currently supported
+* ~~Colours not currently supported~~
 * All homebridge PIN's in your setup need to be set to the same value.
 
 # Previous version of homebridge-alexa
