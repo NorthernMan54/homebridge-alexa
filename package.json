@@ -25,7 +25,6 @@
     "ip": "^=1.1.5",
     "is-my-json-valid": "^2.17.2",
     "jsonschema": "^1.2.1",
-    "mdns": ">=2.3.3",
     "mdns-js": "^1.0.1",
     "mqtt": "^2.0.1",
     "request": "^2.65.0"

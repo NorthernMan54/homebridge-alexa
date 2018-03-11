@@ -12,7 +12,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for color lights
 * If device supports the 'Brightness Characteristic', then the ability to set a brightness is included.
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
-* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
+* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
+* Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
 Alexa device names are the same as the homebridge device names.
 
