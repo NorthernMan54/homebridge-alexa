@@ -151,3 +151,4 @@ See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 * Ben Hardill - For the inspiration behind the design.
 * Chrisx9 - German translation
 * Tait Brown - HomeSkill Icon
+* ozno - Recommendation for the bonjour MDNS implementation
