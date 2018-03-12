@@ -1,7 +1,7 @@
 var alexaTranslator = require('../lib/alexaTranslator.js');
 var fs = require('fs');
 
-var endPoints = [ { host: "test", port: "12345", HBname: process.argv[2], accessories: JSON.parse(   fs.readFileSync(process.argv[2]).toString()  ) } ];
+var endPoints = [ { host: "test", port: "12345", HBname: "Testing", accessories: JSON.parse(   fs.readFileSync(process.argv[2]).toString()  ) } ];
 
 var message = {
   "directive": {
