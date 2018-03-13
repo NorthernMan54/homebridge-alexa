@@ -1,0 +1,6401 @@
+{
+  "accessories": [{
+    "aid": 1,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Nick Farina",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Homebridge",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Homebridge",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "CC:22:3D:E3:CE:30",
+        "description": "Serial Number"
+      }, {
+        "iid": 11,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.4.38",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 2000000007,
+      "type": "49FB9D4D-0FEA-4BF1-8FA6-E7B18AB86DCE",
+      "characteristics": [{
+        "iid": 8,
+        "type": "77474A2F-FA98-485E-97BE-4762458774D8",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "State",
+        "maxValue": 1,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 9,
+        "type": "FD9FE4CC-D06F-4FFE-96C6-595D464E1026",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Version"
+      }, {
+        "iid": 10,
+        "type": "5819A4C2-E1B0-4C9D-B761-3EB1AFF43073",
+        "perms": ["pr", "pw", "ev"],
+        "format": "data",
+        "value": null,
+        "description": "Control Point"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 104,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "github.com/naofireblade",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Weather Station Extended",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Now",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Now",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 14,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 72,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134d",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Overcast",
+        "description": "Weather Condition"
+      }, {
+        "iid": 13,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134c",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Weather Condition Category",
+        "maxValue": 3,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "10c88f40-7ec4-478c-8d5a-bd0c3cce14b7",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 0,
+        "description": "Rain Last Hour",
+        "unit": "mm",
+        "maxValue": 50,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 15,
+        "type": "ccc04890-565b-4376-b39a-3113341d9e0f",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 3,
+        "description": "Rain All Day",
+        "unit": "mm",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "46f1284c-1912-421b-82f5-eb75008b167e",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "North",
+        "description": "Wind Direction"
+      }, {
+        "iid": 17,
+        "type": "49C8AE5A-A3A5-41AB-BF1F-12D5654F9F41",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Wind Speed",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 18,
+        "type": "6b8861e5-d6f3-425c-83b6-069945ffd1f1",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Wind Speed Max",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 19,
+        "type": "E863F10F-079E-48FF-8F27-9C2605A29F52",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 1033,
+        "description": "Air Pressure",
+        "unit": "hPa",
+        "maxValue": 1100,
+        "minValue": 700,
+        "minStep": 1
+      }, {
+        "iid": 20,
+        "type": "d24ecc1e-6fad-4fb5-8137-5af88bd5e857",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 6,
+        "description": "Visibility",
+        "unit": "km",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 21,
+        "type": "05ba0fe0-b848-4226-906d-5b64272e05ce",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "UV Index",
+        "maxValue": 10,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 22,
+        "type": "1819a23e-ecab-4d39-b29a-7364d299310b",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Solar Radiation",
+        "unit": "W/m²",
+        "maxValue": 2000,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 23,
+        "type": "d1b2787d-1fc4-4345-a20e-7b5a74d693ed",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Steinfurt, Burgsteinfurt, MU",
+        "description": "Station"
+      }, {
+        "iid": 24,
+        "type": "234fd9f1-1d33-4128-b622-d052f0c402af",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "19:32:17",
+        "description": "Observation Time"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 105,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "github.com/naofireblade",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Weather Station Extended",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Today",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Today",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 8,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "57f1d4b2-0e7e-4307-95b5-808750e2c1c7",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Tuesday",
+        "description": "Day"
+      }, {
+        "iid": 12,
+        "type": "707b78ca-51ab-4dc9-8630-80a58f07e419",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 3,
+        "description": "Temperature Min",
+        "unit": "celsius",
+        "maxValue": 50,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 93,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134d",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Chance of Rain",
+        "description": "Weather Condition"
+      }, {
+        "iid": 15,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134c",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Weather Condition Category",
+        "maxValue": 3,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "fc01b24f-cf7e-4a74-90db-1b427af1ffa3",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 80,
+        "description": "Chance Rain",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 17,
+        "type": "ccc04890-565b-4376-b39a-3113341d9e0f",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 4,
+        "description": "Rain All Day",
+        "unit": "mm",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 18,
+        "type": "46f1284c-1912-421b-82f5-eb75008b167e",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "WNW",
+        "description": "Wind Direction"
+      }, {
+        "iid": 19,
+        "type": "49C8AE5A-A3A5-41AB-BF1F-12D5654F9F41",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 21,
+        "description": "Wind Speed",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 20,
+        "type": "6b8861e5-d6f3-425c-83b6-069945ffd1f1",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 32,
+        "description": "Wind Speed Max",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 106,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "github.com/naofireblade",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Weather Station Extended",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 1 Day",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 1 Day",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 8,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "57f1d4b2-0e7e-4307-95b5-808750e2c1c7",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Wednesday",
+        "description": "Day"
+      }, {
+        "iid": 12,
+        "type": "707b78ca-51ab-4dc9-8630-80a58f07e419",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 1,
+        "description": "Temperature Min",
+        "unit": "celsius",
+        "maxValue": 50,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 77,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134d",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Overcast",
+        "description": "Weather Condition"
+      }, {
+        "iid": 15,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134c",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Weather Condition Category",
+        "maxValue": 3,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "fc01b24f-cf7e-4a74-90db-1b427af1ffa3",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Chance Rain",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 17,
+        "type": "ccc04890-565b-4376-b39a-3113341d9e0f",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 0,
+        "description": "Rain All Day",
+        "unit": "mm",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 18,
+        "type": "46f1284c-1912-421b-82f5-eb75008b167e",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "WSW",
+        "description": "Wind Direction"
+      }, {
+        "iid": 19,
+        "type": "49C8AE5A-A3A5-41AB-BF1F-12D5654F9F41",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 6,
+        "description": "Wind Speed",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 20,
+        "type": "6b8861e5-d6f3-425c-83b6-069945ffd1f1",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 8,
+        "description": "Wind Speed Max",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 107,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "github.com/naofireblade",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Weather Station Extended",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 2 Days",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 2 Days",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 12,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "57f1d4b2-0e7e-4307-95b5-808750e2c1c7",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Thursday",
+        "description": "Day"
+      }, {
+        "iid": 12,
+        "type": "707b78ca-51ab-4dc9-8630-80a58f07e419",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 2,
+        "description": "Temperature Min",
+        "unit": "celsius",
+        "maxValue": 50,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 71,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134d",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Clear",
+        "description": "Weather Condition"
+      }, {
+        "iid": 15,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134c",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Weather Condition Category",
+        "maxValue": 3,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "fc01b24f-cf7e-4a74-90db-1b427af1ffa3",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Chance Rain",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 17,
+        "type": "ccc04890-565b-4376-b39a-3113341d9e0f",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 0,
+        "description": "Rain All Day",
+        "unit": "mm",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 18,
+        "type": "46f1284c-1912-421b-82f5-eb75008b167e",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "E",
+        "description": "Wind Direction"
+      }, {
+        "iid": 19,
+        "type": "49C8AE5A-A3A5-41AB-BF1F-12D5654F9F41",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 26,
+        "description": "Wind Speed",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 20,
+        "type": "6b8861e5-d6f3-425c-83b6-069945ffd1f1",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 32,
+        "description": "Wind Speed Max",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 108,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "github.com/naofireblade",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Weather Station Extended",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 3 Days",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "In 3 Days",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 6,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "57f1d4b2-0e7e-4307-95b5-808750e2c1c7",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Friday",
+        "description": "Day"
+      }, {
+        "iid": 12,
+        "type": "707b78ca-51ab-4dc9-8630-80a58f07e419",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": -3,
+        "description": "Temperature Min",
+        "unit": "celsius",
+        "maxValue": 50,
+        "minValue": -50,
+        "minStep": 0.1
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 89,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134d",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Chance of Rain",
+        "description": "Weather Condition"
+      }, {
+        "iid": 15,
+        "type": "cd65a9ab-85ad-494a-b2bd-2f380084134c",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Weather Condition Category",
+        "maxValue": 3,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "fc01b24f-cf7e-4a74-90db-1b427af1ffa3",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 50,
+        "description": "Chance Rain",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 17,
+        "type": "ccc04890-565b-4376-b39a-3113341d9e0f",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 2,
+        "description": "Rain All Day",
+        "unit": "mm",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 18,
+        "type": "46f1284c-1912-421b-82f5-eb75008b167e",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "E",
+        "description": "Wind Direction"
+      }, {
+        "iid": 19,
+        "type": "49C8AE5A-A3A5-41AB-BF1F-12D5654F9F41",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 24,
+        "description": "Wind Speed",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 20,
+        "type": "6b8861e5-d6f3-425c-83b6-069945ffd1f1",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 32,
+        "description": "Wind Speed Max",
+        "unit": "km/h",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 147,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Michael Froehlich",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Calendar Switch",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Events-Kalender",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "98",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.1.4",
+        "description": "Firmware Revision"
+      }, {
+        "iid": 8,
+        "type": "00000053-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.1.4",
+        "description": "Hardware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 9,
+      "type": "00000062-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 10,
+        "type": "00000063-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "bool",
+        "value": true,
+        "description": "Reachable"
+      }, {
+        "iid": 11,
+        "type": "0000009C-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 4,
+        "description": "Link Quality",
+        "maxValue": 4,
+        "minValue": 1,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000057-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Events-Kalender",
+        "description": "Accessory Identifier"
+      }, {
+        "iid": 13,
+        "type": "000000A3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint16",
+        "value": 8,
+        "description": "Category",
+        "maxValue": 16,
+        "minValue": 1,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 14,
+      "type": "00000080-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 15,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Events-Kalender",
+        "description": "Name"
+      }, {
+        "iid": 16,
+        "type": "0000006A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Contact Sensor State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": true,
+      "hidden": false
+    }, {
+      "iid": 17,
+      "type": "00000080-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 18,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Event-1",
+        "description": "Name"
+      }, {
+        "iid": 19,
+        "type": "0000006A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Contact Sensor State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 20,
+      "type": "00000080-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 21,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Event-2",
+        "description": "Name"
+      }, {
+        "iid": 22,
+        "type": "0000006A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Contact Sensor State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 23,
+      "type": "00000080-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 24,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Event-3",
+        "description": "Name"
+      }, {
+        "iid": 25,
+        "type": "0000006A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Contact Sensor State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 155,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 156,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 157,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "5c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 116,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 117,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 118,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "4c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 119,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 120,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 121,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "3a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 122,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 123,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 124,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 125,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1a-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 126,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1b-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 127,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Manufacturer",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1c-funksteckdose",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 128,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 129,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 10.3,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-1",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 100,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 130,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 10,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 93,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 131,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 8.9,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 100,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 132,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-2",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 133,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-3",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 134,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-4",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-4",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-4",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 135,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-5",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-5",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-5",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 136,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-6",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-6",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-6",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 137,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-7",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-7",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-7",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 143,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HttpTemperatureHumidity",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-8",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18981898",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-8",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "ESP_DHT-8",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 138,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AOSONG",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "dht22",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RAS_DHT-4",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Temperatur",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -100,
+        "minStep": 0.1
+      }, {
+        "iid": 11,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 12,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 13,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Luftfeuchtigkeit",
+        "description": "Name"
+      }, {
+        "iid": 14,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 139,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Denon",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-GAME1",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-GAME1",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 15,
+        "type": "0000011A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "Mute"
+      }, {
+        "iid": 16,
+        "type": "00000119-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Volume",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 140,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Denon",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-SAT",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-SAT",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 15,
+        "type": "0000011A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "Mute"
+      }, {
+        "iid": 16,
+        "type": "00000119-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Volume",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 141,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Denon",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-BD",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-BD",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 15,
+        "type": "0000011A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "Mute"
+      }, {
+        "iid": 16,
+        "type": "00000119-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Volume",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 142,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Denon",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-Model",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-GAME2",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Default-SerialNumber",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AVR-GAME2",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 15,
+        "type": "0000011A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "Mute"
+      }, {
+        "iid": 16,
+        "type": "00000119-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Volume",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 90,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo weatherstation (NAMain)",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "70:ee:50:27:b4:5a",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "132",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "B77831FD-D66A-46A4-B66D-FD7EE8DFE3CE",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Air Pressure",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "E863F10F-079E-48FF-8F27-9C2605A29F52",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 997,
+        "description": "Atmospheric Pressure",
+        "unit": "hPA",
+        "maxValue": 2000,
+        "minValue": 500,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "0000008D-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Air Quality",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000095-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Air Quality",
+        "valid-values": [0, 1, 2, 3, 4, 5],
+        "maxValue": 5,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 14,
+      "type": "00000097-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 15,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Carbon Dioxide",
+        "description": "Name"
+      }, {
+        "iid": 16,
+        "type": "00000092-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Carbon Dioxide Detected",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 17,
+        "type": "00000093-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 899,
+        "description": "Carbon Dioxide Level",
+        "maxValue": 100000,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 18,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 19,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Humidity",
+        "description": "Name"
+      }, {
+        "iid": 20,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 42,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 21,
+      "type": "8C85FD40-EB20-45EE-86C5-BCADC773E580",
+      "characteristics": [{
+        "iid": 22,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Noise Level",
+        "description": "Name"
+      }, {
+        "iid": 23,
+        "type": "2CD7B6FD-419A-4740-8995-E3BFE43735AB",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 36,
+        "description": "Noise Level",
+        "unit": "dB",
+        "maxValue": 200,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 24,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 25,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wohnzimmer Temperature",
+        "description": "Name"
+      }, {
+        "iid": 26,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 21.2,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -100,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 91,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo weatherstation (NAModule1)",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Garten",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "02:00:00:27:9d:74",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "45",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000096-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Garten Battery Level",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000068-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 100,
+        "description": "Battery Level",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 11,
+        "type": "0000008F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Charging State",
+        "valid-values": [0, 1, 2],
+        "maxValue": 2,
+        "minValue": 0
+      }, {
+        "iid": 12,
+        "type": "00000079-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Low Battery",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 13,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 14,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Garten Humidity",
+        "description": "Name"
+      }, {
+        "iid": 15,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 94,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 16,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 17,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Garten Temperature",
+        "description": "Name"
+      }, {
+        "iid": 18,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 8.3,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -100,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 92,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo weatherstation (NAModule3)",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Regen",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "05:00:00:03:12:26",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "8",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000096-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Regen Battery Level",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000068-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 100,
+        "description": "Battery Level",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 11,
+        "type": "0000008F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Charging State",
+        "valid-values": [0, 1, 2],
+        "maxValue": 2,
+        "minValue": 0
+      }, {
+        "iid": 12,
+        "type": "00000079-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Low Battery",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 13,
+      "type": "D92D5391-92AF-4824-AF4A-356F25F25EA1",
+      "characteristics": [{
+        "iid": 14,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Regen Rain Level",
+        "description": "Name"
+      }, {
+        "iid": 15,
+        "type": "C53F35CE-C615-4AA4-9112-EBF679C5EB14",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Rain Level",
+        "unit": "mm",
+        "maxValue": 1000,
+        "minValue": 0,
+        "minStep": 0.001
+      }, {
+        "iid": 16,
+        "type": "11646117-878C-456B-A770-3924151F773D",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0,
+        "description": "Rain Level (1 hour)",
+        "unit": "mm",
+        "maxValue": 1000,
+        "minValue": 0,
+        "minStep": 0.001
+      }, {
+        "iid": 17,
+        "type": "E67DDC66-BEB7-4D0C-BD0C-022DB570DABC",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 0.101,
+        "description": "Rain Level (24 hours)",
+        "unit": "mm",
+        "maxValue": 1000,
+        "minValue": 0,
+        "minStep": 0.001
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 93,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo weatherstation (NAModule4)",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "03:00:00:03:fd:7c",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "44",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "0000008D-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche Air Quality",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000095-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Air Quality",
+        "valid-values": [0, 1, 2, 3, 4, 5],
+        "maxValue": 5,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000096-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche Battery Level",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000068-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 100,
+        "description": "Battery Level",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "0000008F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Charging State",
+        "valid-values": [0, 1, 2],
+        "maxValue": 2,
+        "minValue": 0
+      }, {
+        "iid": 15,
+        "type": "00000079-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Low Battery",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 16,
+      "type": "00000097-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 17,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche Carbon Dioxide",
+        "description": "Name"
+      }, {
+        "iid": 18,
+        "type": "00000092-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Carbon Dioxide Detected",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 19,
+        "type": "00000093-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 729,
+        "description": "Carbon Dioxide Level",
+        "maxValue": 100000,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 20,
+      "type": "00000082-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 21,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche Humidity",
+        "description": "Name"
+      }, {
+        "iid": 22,
+        "type": "00000010-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 48,
+        "description": "Current Relative Humidity",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 23,
+      "type": "0000008A-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 24,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Küche Temperature",
+        "description": "Name"
+      }, {
+        "iid": 25,
+        "type": "00000011-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "float",
+        "value": 20.8,
+        "description": "Current Temperature",
+        "unit": "celsius",
+        "maxValue": 100,
+        "minValue": -100,
+        "minStep": 0.1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 94,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Netatmo weatherstation (NAModule2)",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wind",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "06:00:00:01:80:12",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "18",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000096-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wind Battery Level",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000068-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 100,
+        "description": "Battery Level",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 11,
+        "type": "0000008F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Charging State",
+        "valid-values": [0, 1, 2],
+        "maxValue": 2,
+        "minValue": 0
+      }, {
+        "iid": 12,
+        "type": "00000079-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Low Battery",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 13,
+      "type": "2AFB775E-79E5-4399-B3CD-398474CAE86C",
+      "characteristics": [{
+        "iid": 14,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wetter Wind Wind Sensor",
+        "description": "Name"
+      }, {
+        "iid": 15,
+        "type": "9331096F-E49E-4D98-B57B-57803498FA36",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Wind Strength",
+        "unit": "km/h",
+        "maxValue": 200,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 16,
+        "type": "6C3F6DFA-7340-4ED4-AFFD-0E0310ECCD9E",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 161,
+        "description": "Wind Angle",
+        "unit": "deg",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 17,
+        "type": "1B7F2F7B-EABF-4A54-8F9D-ABBEE08E8A64",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 5,
+        "description": "Gust Strength",
+        "unit": "km/h",
+        "maxValue": 200,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 18,
+        "type": "928BD7DE-1CAA-4472-BBEF-0A9166B7949F",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 231,
+        "description": "Gust Angle",
+        "unit": "deg",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 88,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Philips",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "BSB002",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Philips hue",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "001788FFFEAC0A31",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.23.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000012-0000-1000-8000-656261617577",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Philips hue",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000024-0000-1000-8000-656261617577",
+        "perms": ["pr", "ev", "pw"],
+        "format": "uint8",
+        "value": 5,
+        "description": "Heartrate",
+        "unit": "seconds",
+        "maxValue": 30,
+        "minValue": 1,
+        "minStep": 1
+      }, {
+        "iid": 11,
+        "type": "00000023-0000-1000-8000-656261617577",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "Tue Mar 13 2018 03:18:05",
+        "description": "LastUpdated"
+      }, {
+        "iid": 12,
+        "type": "0000002F-0000-1000-8000-656261617577",
+        "perms": ["pr", "ev", "pw"],
+        "format": "float",
+        "value": 0.4,
+        "description": "TransitionTime",
+        "unit": "seconds",
+        "maxValue": 3600,
+        "minValue": 0,
+        "minStep": 0.1
+      }, {
+        "iid": 13,
+        "type": "0000002D-0000-1000-8000-656261617577",
+        "perms": ["pr", "ev", "pw"],
+        "format": "bool",
+        "value": false,
+        "description": "Link"
+      }, {
+        "iid": 14,
+        "type": "0000002E-0000-1000-8000-656261617577",
+        "perms": ["pr", "ev", "pw"],
+        "format": "bool",
+        "value": false,
+        "description": "Touchlink"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 15,
+      "type": "00000089-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 16,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Philips hue",
+        "description": "Name"
+      }, {
+        "iid": 17,
+        "type": "00000073-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": null,
+        "description": "Programmable Switch Event",
+        "valid-values": [0, 1, 2],
+        "maxValue": 0,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 158,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb GU10 W 400lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kleiderschrank",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFE84536E",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kleiderschrank",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 11,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:84:53:6e-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/1",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 159,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb GU10 W 400lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Haustür links",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFE89BB64",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Haustür links",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 30,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:89:bb:64-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/2",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 160,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb GU10 W 400lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Haustür rechts",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFE845988",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Haustür rechts",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 30,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:84:59:88-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/3",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 161,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 CWS opal 600lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 1",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90FD9FFFFE20B569",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.3.002",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 1",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 18,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 27,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 79,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 15,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90:fd:9f:ff:fe:20:b5:69-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 16,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/5",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 162,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 CWS opal 600lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 2",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90FD9FFFFE4D7D5F",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.3.002",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 2",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 18,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 21,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 79,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 15,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90:fd:9f:ff:fe:4d:7d:5f-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 16,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/7",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 163,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 CWS opal 600lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 4",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90FD9FFFFE3E3D62",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.3.002",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 4",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 18,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 22,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 74,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 15,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90:fd:9f:ff:fe:3e:3d:62-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 16,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/8",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 164,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 CWS opal 600lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 3",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90FD9FFFFE64CE1E",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.3.002",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmer Wand 3",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 18,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 14,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 71,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 15,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "90:fd:9f:ff:fe:64:ce:1e-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 16,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/9",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 165,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 W opal 1000lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmertisch",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFEC44A2B",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Wohnzimmertisch",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 80,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:c4:4a:2b-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/11",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 166,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 W opal 1000lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Stehlampe Unten",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFEB9630F",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Stehlampe Unten",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 2,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:b9:63:0f-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/12",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 167,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "IKEA of Sweden",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TRADFRI bulb E27 W opal 1000lm",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Stehlampe Oben",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "000B57FFFE9BE72D",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.2.214",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Stehlampe Oben",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 0,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 13,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:0b:57:ff:fe:9b:e7:2d-01",
+        "description": "UniqueID"
+      }, {
+        "iid": 14,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/13",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 168,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Feibit Inc co.  ",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "FB56-ZCW08KU1.0",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kugel Terrasse",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00124B000BD6764A",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0.2",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kugel Terrasse",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 28,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "000000CE-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint32",
+        "value": 346,
+        "description": "Color Temperature",
+        "maxValue": 500,
+        "minValue": 153,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 313,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 100,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 15,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 16,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:12:4b:00:0b:d6:76:4a-0b",
+        "description": "UniqueID"
+      }, {
+        "iid": 17,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/14",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 169,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Feibit Inc co.  ",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "FB56-ZCW08KU1.0",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kugel Küche",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00124B000ACC8DE0",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0.2",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Kugel Küche",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 28,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "000000CE-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint32",
+        "value": 300,
+        "description": "Color Temperature",
+        "maxValue": 500,
+        "minValue": 153,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 285,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 100,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 15,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 16,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:12:4b:00:0a:cc:8d:e0-0b",
+        "description": "UniqueID"
+      }, {
+        "iid": 17,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/15",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 170,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Feibit Inc co.  ",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "FB56-ZCW08KU1.0",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Extended color light 1",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00124B000AB8A951",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0.2",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Extended color light 1",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 0,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "000000CE-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint32",
+        "value": 153,
+        "description": "Color Temperature",
+        "maxValue": 500,
+        "minValue": 153,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 209,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 100,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 15,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 16,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:12:4b:00:0a:b8:a9:51-0b",
+        "description": "UniqueID"
+      }, {
+        "iid": 17,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/16",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 171,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Feibit Inc co.  ",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "FB56-ZCW08KU1.0",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TV Hintergrund",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00124B000BD549EE",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0.2",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000043-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TV Hintergrund",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }, {
+        "iid": 11,
+        "type": "00000008-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "int",
+        "value": 6,
+        "description": "Brightness",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 12,
+        "type": "000000CE-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint32",
+        "value": 300,
+        "description": "Color Temperature",
+        "maxValue": 500,
+        "minValue": 153,
+        "minStep": 1
+      }, {
+        "iid": 13,
+        "type": "00000013-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 11,
+        "description": "Hue",
+        "unit": "arcdegrees",
+        "maxValue": 360,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 14,
+        "type": "0000002F-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "float",
+        "value": 68,
+        "description": "Saturation",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 15,
+        "type": "00000077-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Status Fault",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 16,
+        "type": "D8B76298-42E7-5FFD-B1D6-1782D9A1F936",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "00:12:4b:00:0b:d5:49:ee-0b",
+        "description": "UniqueID"
+      }, {
+        "iid": 17,
+        "type": "00000021-0000-1000-8000-656261617577",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "/lights/17",
+        "description": "Resource"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }]
+}
