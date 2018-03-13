@@ -1,0 +1,961 @@
+"Front Porch", "Testing Front Porch Light", "Heyu", "StdLM A1", "Alexa, turn on Front Porch; Alexa, turn off Front Porch; Alexa, turn Front Porch to 50; Alexa, dim/brighten Front Porch; Alexa, dim/brighten Front Porch 20"
+"Garden Path", "Testing Garden Path Outlet", "Heyu", "StdAM A2", "Alexa, turn on Garden Path; Alexa, turn off Garden Path"
+"Side Door", "Testing Side Door Light", "Heyu", "StdLM A3", "Alexa, turn on Side Door; Alexa, turn off Side Door; Alexa, turn Side Door to 50; Alexa, dim/brighten Side Door; Alexa, dim/brighten Side Door 20"
+"Rear Door", "Testing Rear Door Light", "Heyu", "SL2LM A4", "Alexa, turn on Rear Door; Alexa, turn off Rear Door; Alexa, turn Rear Door to 50; Alexa, dim/brighten Rear Door; Alexa, dim/brighten Rear Door 20"
+"Family room Pot lights", "Testing Family room Pot lights Light", "Heyu", "SL2LM A5", "Alexa, turn on Family room Pot lights; Alexa, turn off Family room Pot lights; Alexa, turn Family room Pot lights to 50; Alexa, dim/brighten Family room Pot lights; Alexa, dim/brighten Family room Pot lights 20"
+"Family room Lamp", "Testing Family room Lamp Light", "Heyu", "StdLM A6", "Alexa, turn on Family room Lamp; Alexa, turn off Family room Lamp; Alexa, turn Family room Lamp to 50; Alexa, dim/brighten Family room Lamp; Alexa, dim/brighten Family room Lamp 20"
+"Family room outlet", "Testing Family room outlet Outlet", "Heyu", "StdAM A7", "Alexa, turn on Family room outlet; Alexa, turn off Family room outlet"
+"Front Door", "Testing Front Door Light", "Heyu", "SL2LM A8", "Alexa, turn on Front Door; Alexa, turn off Front Door; Alexa, turn Front Door to 50; Alexa, dim/brighten Front Door; Alexa, dim/brighten Front Door 20"
+"Basement Stair", "Testing Basement Stair Light", "Heyu", "SL2LM A9", "Alexa, turn on Basement Stair; Alexa, turn off Basement Stair; Alexa, turn Basement Stair to 50; Alexa, dim/brighten Basement Stair; Alexa, dim/brighten Basement Stair 20"
+"Kitchen Counter", "Testing Kitchen Counter Light", "Heyu", "StdLM A11", "Alexa, turn on Kitchen Counter; Alexa, turn off Kitchen Counter; Alexa, turn Kitchen Counter to 50; Alexa, dim/brighten Kitchen Counter; Alexa, dim/brighten Kitchen Counter 20"
+"Living Room Lamp", "Testing Living Room Lamp Light", "Heyu", "StdLM A13", "Alexa, turn on Living Room Lamp; Alexa, turn off Living Room Lamp; Alexa, turn Living Room Lamp to 50; Alexa, dim/brighten Living Room Lamp; Alexa, dim/brighten Living Room Lamp 20"
+"Staircase Lamp", "Testing Staircase Lamp Outlet", "Heyu", "StdAM A14", "Alexa, turn on Staircase Lamp; Alexa, turn off Staircase Lamp"
+"Powder Room", "Testing Powder Room Light", "Heyu", "StdLM A15", "Alexa, turn on Powder Room; Alexa, turn off Powder Room; Alexa, turn Powder Room to 50; Alexa, dim/brighten Powder Room; Alexa, dim/brighten Powder Room 20"
+"Garage Outlet", "Testing Garage Outlet Outlet", "Heyu", "StdAM A16", "Alexa, turn on Garage Outlet; Alexa, turn off Garage Outlet"
+"Stereo", "Testing Stereo Outlet", "Heyu", "StdAM B9", "Alexa, turn on Stereo; Alexa, turn off Stereo"
+"All Devices", "Testing All Devices Switch", "Heyu", "Macro-allon A", "Alexa, turn on All Devices; Alexa, turn off All Devices"
+"All Lights", "Testing All Lights Switch", "Heyu", "Macro-lightson A", "Alexa, turn on All Lights; Alexa, turn off All Lights"
+"Basement", "Testing Basement Temperature Sensor", "NorthernMan54", "dht22", "Alexa, what is the temperature in the Basement"
+"MCUIOT Reset Switch", "Testing MCUIOT Reset Switch Switch", "MCUIOT", "MCUIOT Reset Switch", "Alexa, turn on MCUIOT Reset Switch; Alexa, turn off MCUIOT Reset Switch"
+"Cold Cellar", "Testing Cold Cellar Temperature Sensor", "MCUIOT", "BME", "Alexa, what is the temperature in the Cold Cellar"
+"Front Porch", "Testing Front Porch Temperature Sensor", "MCUIOT", "BME", "Alexa, what is the temperature in the Front Porch"
+"Inside", "Testing Inside Temperature Sensor", "MCUIOT", "BME-GD", "Alexa, what is the temperature in the Inside"
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxMg==",
+                    "friendlyName": "Front Porch",
+                    "description": "Testing Front Porch Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 2, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 2, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 2, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 2, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":2,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":2,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMsaWlkOiAxMg==",
+                    "friendlyName": "Garden Path",
+                    "description": "Testing Garden Path Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 3, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 3, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDQsaWlkOiAxMg==",
+                    "friendlyName": "Side Door",
+                    "description": "Testing Side Door Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 4, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 4, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 4, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 4, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":4,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":4,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDUsaWlkOiAxMg==",
+                    "friendlyName": "Rear Door",
+                    "description": "Testing Rear Door Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 5, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 5, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 5, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 5, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":5,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":5,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDYsaWlkOiAxMg==",
+                    "friendlyName": "Family room Pot lights",
+                    "description": "Testing Family room Pot lights Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 6, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 6, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 6, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 6, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDcsaWlkOiAxMg==",
+                    "friendlyName": "Family room Lamp",
+                    "description": "Testing Family room Lamp Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 7, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 7, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 7, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 7, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDgsaWlkOiAxMg==",
+                    "friendlyName": "Family room outlet",
+                    "description": "Testing Family room outlet Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 8, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 8, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDksaWlkOiAxMg==",
+                    "friendlyName": "Front Door",
+                    "description": "Testing Front Door Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 9, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 9, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 9, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 9, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":9,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":9,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwLGlpZDogMTI=",
+                    "friendlyName": "Basement Stair",
+                    "description": "Testing Basement Stair Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 30, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 30, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 30, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 30, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":30,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":30,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDExLGlpZDogMTI=",
+                    "friendlyName": "Kitchen Counter",
+                    "description": "Testing Kitchen Counter Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 11, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 11, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 11, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 11, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":11,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":11,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyLGlpZDogMTI=",
+                    "friendlyName": "Living Room Lamp",
+                    "description": "Testing Living Room Lamp Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 12, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 12, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 12, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 12, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":12,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":12,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzLGlpZDogMTI=",
+                    "friendlyName": "Staircase Lamp",
+                    "description": "Testing Staircase Lamp Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 13, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 13, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":13,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE0LGlpZDogMTI=",
+                    "friendlyName": "Powder Room",
+                    "description": "Testing Powder Room Light",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 14, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 14, \"iid\": 11, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 14, \"iid\": 12 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 14, \"iid\": 12 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":14,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":14,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1LGlpZDogMTI=",
+                    "friendlyName": "Garage Outlet",
+                    "description": "Testing Garage Outlet Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 15, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 15, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":15,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE4LGlpZDogMTI=",
+                    "friendlyName": "Stereo",
+                    "description": "Testing Stereo Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 18, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 18, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":18,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE5LGlpZDogMTE=",
+                    "friendlyName": "All Devices",
+                    "description": "Testing All Devices Switch",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 19, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 19, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":19,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIwLGlpZDogMTE=",
+                    "friendlyName": "All Lights",
+                    "description": "Testing All Lights Switch",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 20, \"iid\": 11, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 20, \"iid\": 11, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":20,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIxLGlpZDogMTA=",
+                    "friendlyName": "Basement",
+                    "description": "Testing Basement Temperature Sensor",
+                    "manufacturerName": "NorthernMan54",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":21,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIyLGlpZDogMTA=",
+                    "friendlyName": "MCUIOT Reset Switch",
+                    "description": "Testing MCUIOT Reset Switch Switch",
+                    "manufacturerName": "MCUIOT",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 22, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 22, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":22,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIzLGlpZDogMTI=",
+                    "friendlyName": "Cold Cellar",
+                    "description": "Testing Cold Cellar Temperature Sensor",
+                    "manufacturerName": "MCUIOT",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":23,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDI0LGlpZDogMTI=",
+                    "friendlyName": "Front Porch",
+                    "description": "Testing Front Porch Temperature Sensor",
+                    "manufacturerName": "MCUIOT",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":24,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMyLGlpZDogMTI=",
+                    "friendlyName": "Inside",
+                    "description": "Testing Inside Temperature Sensor",
+                    "manufacturerName": "MCUIOT",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":32,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
