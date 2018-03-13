@@ -1,9 +1,5 @@
 # Troubleshooting Tips
 
-### alexaHAP HAP Discover failed Homebridge http://undefined:51826 error ENOTFOUND +857ms
-
-Check your hostname for your raspberrypi, it may be already in use.
-
 ### ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one per home or network.
@@ -16,10 +12,6 @@ Your homebridge access pin is incorrect
 
 Your homebridge instance is running without the -I option set.
 
-###  alexaHAP HAP Discover failed Homebridge http://undefined:51826 error ENOTFOUND +22ms
-
-Please check that the hostname of your RPI is set properly and not duplicated with other RPI's on your network.
-
 ### Upgraded from old version and am seeing this error message
 
 ```Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
@@ -31,21 +23,3 @@ Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/no
 ```
 
 If you have upgraded from the non-skill version to the skill based version you need to tell Alexa to forget all your old devices.
-
-### Mar 10 19:06:15 raspberrypi homebridge[900]: [2018-3-10 19:06:15] ERROR LOADING PLUGIN homebridge-alexa:
-Mar 10 19:06:15 raspberrypi homebridge[900]: [2018-3-10 19:06:15] Error: Cannot find module '../build/Release/dns_sd_bindings'
-
-Please retry the install again
-
-```
-sudo rm -rf /usr/local/lib/node_modules/homebridge-alexa
-sudo npm install -g --unsafe-perm homebridge-alexa
-```
-
-And if that does not work, try This
-
-```
-cd /usr/local/lib/node_modules/homebridge-alexa
-sudo npm install --unsafe-perm mdns
-sudo npm rebuild --unsafe-perm
-```

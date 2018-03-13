@@ -12,7 +12,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for color lights
 * If device supports the 'Brightness Characteristic', then the ability to set a brightness is included.
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
-* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
+* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
+* Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
 Alexa device names are the same as the homebridge device names.
 
@@ -67,14 +68,6 @@ HOMEBRIDGE_OPTS=-I
 
 ```
 sudo npm install -g homebridge-alexa
-```
-
-In the event of issues or errors during install ie gyp WARN EACCES user "root" does not have permission to access the dev dir
-
-Please try this instead
-
-```
-sudo npm install -g --unsafe-perm homebridge-alexa
 ```
 
 5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
@@ -135,7 +128,7 @@ I have started recording troubleshooting tips here based on issues seen by the c
 
 * ~~Colours not currently supported~~
 * All homebridge PIN's in your setup need to be set to the same value.
-* Discovery not working when running docker-homebridge on Synology See https://github.com/oznu/docker-homebridge/issues/35#issuecomment-364719736
+* ~~Discovery not working when running docker-homebridge on Synology See https://github.com/oznu/docker-homebridge/issues/35#issuecomment-364719736 ~~
 
 # Previous version of homebridge-alexa
 
@@ -150,3 +143,4 @@ See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 * Ben Hardill - For the inspiration behind the design.
 * Chrisx9 - German translation
 * Tait Brown - HomeSkill Icon
+* ozno - Recommendation for the bonjour MDNS implementation
