@@ -4,13 +4,12 @@
 
 ![Icon](https://github.com/NorthernMan54/alexaAwsBackend/blob/master/skillPublish/homebridge-alexa-108.png?raw=true)
 
-Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
+Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
 
 * Supports multiple homebridge instances running on your network.
-* Autodiscovery of multiple Homebridge's
-* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Temperature Sensor, Window Coverings and Switch.
-* Support for color lights
-* If device supports the 'Brightness Characteristic', then the ability to set a brightness is included.
+* Auto-discovery of multiple Homebridge's
+* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
+* Includes support for brightness and colour.
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
@@ -34,7 +33,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 Alexa Home Skill configuration
 
-1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
+1. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
 
 2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
@@ -60,7 +59,13 @@ HOMEBRIDGE_OPTS=-I
 #DEBUG=
 ```
 
-4. Set this up as a usual plugin, except it doesn't have any devices ;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will autodiscover the others.
+If you have multiple homebridge options, the -I should be listed first. ie
+
+```
+HOMEBRIDGE_OPTS=-I -U /var/homebridge
+```
+
+4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to others instances.
 
 ```
 sudo npm install -g homebridge-alexa
@@ -101,34 +106,39 @@ Also please have Alexa forget all your old devices.
 
 ## Optional parameters
 
-* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154"
+* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "pin": "031-45-155"
+  }
+],
+```
 
 # Issues, Questions or Problems
 
-* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues.
+* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
-* When logging an issue, please include a DEBUG log with your issue.
+* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.
+
+* If you need to log an issue, please include a DEBUG log with your issue.
 
 ```
 DEBUG=alexa* homebridge -I
 ```
 
-## Troubleshooting Tips
-
-I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
-
 ## Known Issues
 
-* ~~'There was a problem' displayed in the Amazon Alexa App.  This is a known issue, and will be resolved during the beta.~~
-* ~~Blinds are not currently supported~~
-
-* ~~Colours not currently supported~~
 * All homebridge PIN's in your setup need to be set to the same value.
-* ~~Discovery not working when running docker-homebridge on Synology See https://github.com/oznu/docker-homebridge/issues/35#issuecomment-364719736 ~~
 
 # Previous version of homebridge-alexa
 
-* The old version is still available and the instructions for installation can be found  [here.](V1_README.md)
+* The old version is still available and the instructions for installation can be found [here.](V1_README.md)
 
 # Roadmap
 
