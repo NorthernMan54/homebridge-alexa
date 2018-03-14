@@ -14,6 +14,15 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
+## New features with Version 2
+
+* Support for color bulbs
+* Support for Window coverings/blinds
+* Support for Temperature Sensors
+* Support for Fan2 aka Dyson fans
+* Support for more than 100 accessories
+* Support for generation 2 Echo's and other Alexa devices not supported with the original version
+
 Alexa device names are the same as the homebridge device names.
 
 This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
