@@ -1,4 +1,4 @@
-# homebridge-alexa 2nd Gen Beta Test
+# homebridge-alexa Version 2 - Home Skill Based
 
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
@@ -30,17 +30,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, brighten ________
 * Alexa, turn _______ red
 
-# Getting access to the Alexa homebridge-alexa homeskill beta
-
-Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.  I will then enroll yourself into the beta.
-
 # Installation of homebridge-alexa
 
 Alexa Home Skill configuration
 
 1. To enable Alexa Homeskill account linking you need to create an account for yourself at https://homebridge.cloudwatch.net
 
-2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.  If you can't find the HomeBridge HomeSkill, you need be setup on the BETA test.  Please send me a direct message via the Slack for Homebridge with your Amazon login to be enrolled.
+2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
 Plugin Installation
 
