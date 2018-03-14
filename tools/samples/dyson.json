@@ -1,0 +1,459 @@
+"Raspberry PI Temperatur", "Testing Raspberry PI Temperatur Temperature Sensor", "Raspberry", "BCM2835/a02082", "Alexa, what is the temperature in the Raspberry PI Temperatur"
+"Dyson Pure Cool Link", "Testing Dyson Pure Cool Link Temperature Sensor", "Default-Manufacturer", "Default-Model", "Alexa, what is the temperature in the Dyson Pure Cool Link"
+"Dyson Pure Cool Link Fan", "Testing Dyson Pure Cool Link Fan Fan", "Default-Manufacturer", "Default-Model", "Alexa, turn on Dyson Pure Cool Link Fan; Alexa, turn off Dyson Pure Cool Link Fan; Alexa, turn Dyson Pure Cool Link Fan to 50; Alexa, dim/brighten Dyson Pure Cool Link Fan; Alexa, dim/brighten Dyson Pure Cool Link Fan 20"
+"Night Mode - Dyson Pure Cool Link", "Testing Night Mode - Dyson Pure Cool Link Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on Night Mode - Dyson Pure Cool Link; Alexa, turn off Night Mode - Dyson Pure Cool Link"
+"Wetterstation", "Testing Wetterstation Temperature Sensor", "homebridge-ws", "homebridge-ws", "Alexa, what is the temperature in the Wetterstation"
+"Apple TV", "Testing Apple TV Switch", "Logitech", "Harmony", "Alexa, turn on Apple TV; Alexa, turn off Apple TV"
+"Audio In", "Testing Audio In Switch", "Logitech", "Harmony", "Alexa, turn on Audio In; Alexa, turn off Audio In"
+"Fern-sehen", "Testing Fern-sehen Switch", "Logitech", "Harmony", "Alexa, turn on Fern-sehen; Alexa, turn off Fern-sehen"
+"Fernsehen Schlafzimmer", "Testing Fernsehen Schlafzimmer Switch", "Logitech", "Harmony", "Alexa, turn on Fernsehen Schlafzimmer; Alexa, turn off Fernsehen Schlafzimmer"
+"Musik hören", "Testing Musik hören Switch", "Logitech", "Harmony", "Alexa, turn on Musik hören; Alexa, turn off Musik hören"
+"PlayStation 3 Slim", "Testing PlayStation 3 Slim Switch", "Logitech", "Harmony", "Alexa, turn on PlayStation 3 Slim; Alexa, turn off PlayStation 3 Slim"
+"Raspberry Pi 3", "Testing Raspberry Pi 3 Switch", "Logitech", "Harmony", "Alexa, turn on Raspberry Pi 3; Alexa, turn off Raspberry Pi 3"
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDk4LGlpZDogOQ==",
+                    "friendlyName": "Raspberry PI Temperatur",
+                    "description": "Testing Raspberry PI Temperatur Temperature Sensor",
+                    "manufacturerName": "Raspberry",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":98,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NixpaWQ6IDEw",
+                    "friendlyName": "Dyson Pure Cool Link",
+                    "description": "Testing Dyson Pure Cool Link Temperature Sensor",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NixpaWQ6IDM4",
+                    "friendlyName": "Dyson Pure Cool Link Fan",
+                    "description": "Testing Dyson Pure Cool Link Fan Fan",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 32, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 32, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 34 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 34 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":32},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":34}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NixpaWQ6IDI5",
+                    "friendlyName": "Night Mode - Dyson Pure Cool Link",
+                    "description": "Testing Night Mode - Dyson Pure Cool Link Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 29, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 29, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":29}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDM4MSxpaWQ6IDEx",
+                    "friendlyName": "Wetterstation",
+                    "description": "Testing Wetterstation Temperature Sensor",
+                    "manufacturerName": "homebridge-ws",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":381,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDI5OSxpaWQ6IDk=",
+                    "friendlyName": "Apple TV",
+                    "description": "Testing Apple TV Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 299, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 299, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":299,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwMCxpaWQ6IDk=",
+                    "friendlyName": "Audio In",
+                    "description": "Testing Audio In Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 300, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 300, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":300,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwMSxpaWQ6IDk=",
+                    "friendlyName": "Fern-sehen",
+                    "description": "Testing Fern-sehen Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 301, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 301, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":301,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwMixpaWQ6IDk=",
+                    "friendlyName": "Fernsehen Schlafzimmer",
+                    "description": "Testing Fernsehen Schlafzimmer Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 302, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 302, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":302,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwMyxpaWQ6IDk=",
+                    "friendlyName": "Musik hören",
+                    "description": "Testing Musik hören Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 303, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 303, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":303,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwNCxpaWQ6IDk=",
+                    "friendlyName": "PlayStation 3 Slim",
+                    "description": "Testing PlayStation 3 Slim Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 304, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 304, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":304,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMwNSxpaWQ6IDk=",
+                    "friendlyName": "Raspberry Pi 3",
+                    "description": "Testing Raspberry Pi 3 Switch",
+                    "manufacturerName": "Logitech",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 305, \"iid\": 9, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 305, \"iid\": 9, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":305,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2229 @@
+"Now", "Testing Now Temperature Sensor", "github.com/naofireblade", "Weather Station Extended", "Alexa, what is the temperature in the Now"
+"Today", "Testing Today Temperature Sensor", "github.com/naofireblade", "Weather Station Extended", "Alexa, what is the temperature in the Today"
+"In 1 Day", "Testing In 1 Day Temperature Sensor", "github.com/naofireblade", "Weather Station Extended", "Alexa, what is the temperature in the In 1 Day"
+"In 2 Days", "Testing In 2 Days Temperature Sensor", "github.com/naofireblade", "Weather Station Extended", "Alexa, what is the temperature in the In 2 Days"
+"In 3 Days", "Testing In 3 Days Temperature Sensor", "github.com/naofireblade", "Weather Station Extended", "Alexa, what is the temperature in the In 3 Days"
+"5a-funksteckdose", "Testing 5a-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 5a-funksteckdose; Alexa, turn off 5a-funksteckdose"
+"5b-funksteckdose", "Testing 5b-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 5b-funksteckdose; Alexa, turn off 5b-funksteckdose"
+"5c-funksteckdose", "Testing 5c-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 5c-funksteckdose; Alexa, turn off 5c-funksteckdose"
+"4a-funksteckdose", "Testing 4a-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 4a-funksteckdose; Alexa, turn off 4a-funksteckdose"
+"4b-funksteckdose", "Testing 4b-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 4b-funksteckdose; Alexa, turn off 4b-funksteckdose"
+"4c-funksteckdose", "Testing 4c-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 4c-funksteckdose; Alexa, turn off 4c-funksteckdose"
+"3c-funksteckdose", "Testing 3c-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 3c-funksteckdose; Alexa, turn off 3c-funksteckdose"
+"3b-funksteckdose", "Testing 3b-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 3b-funksteckdose; Alexa, turn off 3b-funksteckdose"
+"3a-funksteckdose", "Testing 3a-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 3a-funksteckdose; Alexa, turn off 3a-funksteckdose"
+"2a-funksteckdose", "Testing 2a-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 2a-funksteckdose; Alexa, turn off 2a-funksteckdose"
+"2b-funksteckdose", "Testing 2b-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 2b-funksteckdose; Alexa, turn off 2b-funksteckdose"
+"2c-funksteckdose", "Testing 2c-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 2c-funksteckdose; Alexa, turn off 2c-funksteckdose"
+"1a-funksteckdose", "Testing 1a-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 1a-funksteckdose; Alexa, turn off 1a-funksteckdose"
+"1b-funksteckdose", "Testing 1b-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 1b-funksteckdose; Alexa, turn off 1b-funksteckdose"
+"1c-funksteckdose", "Testing 1c-funksteckdose Switch", "Default-Manufacturer", "Default-Model", "Alexa, turn on 1c-funksteckdose; Alexa, turn off 1c-funksteckdose"
+"ESP_DHT-1", "Testing ESP_DHT-1 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-1"
+"RAS_DHT-1", "Testing RAS_DHT-1 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the RAS_DHT-1"
+"RAS_DHT-2", "Testing RAS_DHT-2 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the RAS_DHT-2"
+"RAS_DHT-3", "Testing RAS_DHT-3 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the RAS_DHT-3"
+"ESP_DHT-2", "Testing ESP_DHT-2 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-2"
+"ESP_DHT-3", "Testing ESP_DHT-3 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-3"
+"ESP_DHT-4", "Testing ESP_DHT-4 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-4"
+"ESP_DHT-5", "Testing ESP_DHT-5 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-5"
+"ESP_DHT-6", "Testing ESP_DHT-6 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-6"
+"ESP_DHT-7", "Testing ESP_DHT-7 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-7"
+"ESP_DHT-8", "Testing ESP_DHT-8 Temperature Sensor", "HttpTemperatureHumidity", "Default", "Alexa, what is the temperature in the ESP_DHT-8"
+"Temperatur", "Testing Temperatur Temperature Sensor", "AOSONG", "dht22", "Alexa, what is the temperature in the Temperatur"
+"AVR-GAME1", "Testing AVR-GAME1 Switch", "Denon", "Default-Model", "Alexa, turn on AVR-GAME1; Alexa, turn off AVR-GAME1"
+"AVR-SAT", "Testing AVR-SAT Switch", "Denon", "Default-Model", "Alexa, turn on AVR-SAT; Alexa, turn off AVR-SAT"
+"AVR-BD", "Testing AVR-BD Switch", "Denon", "Default-Model", "Alexa, turn on AVR-BD; Alexa, turn off AVR-BD"
+"AVR-GAME2", "Testing AVR-GAME2 Switch", "Denon", "Default-Model", "Alexa, turn on AVR-GAME2; Alexa, turn off AVR-GAME2"
+"Wetter Wohnzimmer Temperature", "Testing Wetter Wohnzimmer Temperature Temperature Sensor", "Netatmo", "Netatmo weatherstation (NAMain)", "Alexa, what is the temperature in the Wetter Wohnzimmer Temperature"
+"Wetter Garten Temperature", "Testing Wetter Garten Temperature Temperature Sensor", "Netatmo", "Netatmo weatherstation (NAModule1)", "Alexa, what is the temperature in the Wetter Garten Temperature"
+"Wetter Küche Temperature", "Testing Wetter Küche Temperature Temperature Sensor", "Netatmo", "Netatmo weatherstation (NAModule4)", "Alexa, what is the temperature in the Wetter Küche Temperature"
+"Kleiderschrank", "Testing Kleiderschrank Light", "IKEA of Sweden", "/lights/1", "Alexa, turn on Kleiderschrank; Alexa, turn off Kleiderschrank; Alexa, turn Kleiderschrank to 50; Alexa, dim/brighten Kleiderschrank; Alexa, dim/brighten Kleiderschrank 20"
+"Haustür links", "Testing Haustür links Light", "IKEA of Sweden", "/lights/2", "Alexa, turn on Haustür links; Alexa, turn off Haustür links; Alexa, turn Haustür links to 50; Alexa, dim/brighten Haustür links; Alexa, dim/brighten Haustür links 20"
+"Haustür rechts", "Testing Haustür rechts Light", "IKEA of Sweden", "/lights/3", "Alexa, turn on Haustür rechts; Alexa, turn off Haustür rechts; Alexa, turn Haustür rechts to 50; Alexa, dim/brighten Haustür rechts; Alexa, dim/brighten Haustür rechts 20"
+"Wohnzimmer Wand 1", "Testing Wohnzimmer Wand 1 Light", "IKEA of Sweden", "/lights/5", "Alexa, turn on Wohnzimmer Wand 1; Alexa, turn off Wohnzimmer Wand 1; Alexa, turn Wohnzimmer Wand 1 to 50; Alexa, dim/brighten Wohnzimmer Wand 1; Alexa, dim/brighten Wohnzimmer Wand 1 20; Alexa, turn Wohnzimmer Wand 1 red"
+"Wohnzimmer Wand 2", "Testing Wohnzimmer Wand 2 Light", "IKEA of Sweden", "/lights/7", "Alexa, turn on Wohnzimmer Wand 2; Alexa, turn off Wohnzimmer Wand 2; Alexa, turn Wohnzimmer Wand 2 to 50; Alexa, dim/brighten Wohnzimmer Wand 2; Alexa, dim/brighten Wohnzimmer Wand 2 20; Alexa, turn Wohnzimmer Wand 2 red"
+"Wohnzimmer Wand 4", "Testing Wohnzimmer Wand 4 Light", "IKEA of Sweden", "/lights/8", "Alexa, turn on Wohnzimmer Wand 4; Alexa, turn off Wohnzimmer Wand 4; Alexa, turn Wohnzimmer Wand 4 to 50; Alexa, dim/brighten Wohnzimmer Wand 4; Alexa, dim/brighten Wohnzimmer Wand 4 20; Alexa, turn Wohnzimmer Wand 4 red"
+"Wohnzimmer Wand 3", "Testing Wohnzimmer Wand 3 Light", "IKEA of Sweden", "/lights/9", "Alexa, turn on Wohnzimmer Wand 3; Alexa, turn off Wohnzimmer Wand 3; Alexa, turn Wohnzimmer Wand 3 to 50; Alexa, dim/brighten Wohnzimmer Wand 3; Alexa, dim/brighten Wohnzimmer Wand 3 20; Alexa, turn Wohnzimmer Wand 3 red"
+"Wohnzimmertisch", "Testing Wohnzimmertisch Light", "IKEA of Sweden", "/lights/11", "Alexa, turn on Wohnzimmertisch; Alexa, turn off Wohnzimmertisch; Alexa, turn Wohnzimmertisch to 50; Alexa, dim/brighten Wohnzimmertisch; Alexa, dim/brighten Wohnzimmertisch 20"
+"Stehlampe Unten", "Testing Stehlampe Unten Light", "IKEA of Sweden", "/lights/12", "Alexa, turn on Stehlampe Unten; Alexa, turn off Stehlampe Unten; Alexa, turn Stehlampe Unten to 50; Alexa, dim/brighten Stehlampe Unten; Alexa, dim/brighten Stehlampe Unten 20"
+"Stehlampe Oben", "Testing Stehlampe Oben Light", "IKEA of Sweden", "/lights/13", "Alexa, turn on Stehlampe Oben; Alexa, turn off Stehlampe Oben; Alexa, turn Stehlampe Oben to 50; Alexa, dim/brighten Stehlampe Oben; Alexa, dim/brighten Stehlampe Oben 20"
+"Kugel Terrasse", "Testing Kugel Terrasse Light", "Feibit Inc co.  ", "/lights/14", "Alexa, turn on Kugel Terrasse; Alexa, turn off Kugel Terrasse; Alexa, turn Kugel Terrasse to 50; Alexa, dim/brighten Kugel Terrasse; Alexa, dim/brighten Kugel Terrasse 20; Alexa, turn Kugel Terrasse red"
+"Kugel Küche", "Testing Kugel Küche Light", "Feibit Inc co.  ", "/lights/15", "Alexa, turn on Kugel Küche; Alexa, turn off Kugel Küche; Alexa, turn Kugel Küche to 50; Alexa, dim/brighten Kugel Küche; Alexa, dim/brighten Kugel Küche 20; Alexa, turn Kugel Küche red"
+"Extended color light 1", "Testing Extended color light 1 Light", "Feibit Inc co.  ", "/lights/16", "Alexa, turn on Extended color light 1; Alexa, turn off Extended color light 1; Alexa, turn Extended color light 1 to 50; Alexa, dim/brighten Extended color light 1; Alexa, dim/brighten Extended color light 1 20; Alexa, turn Extended color light 1 red"
+"TV Hintergrund", "Testing TV Hintergrund Light", "Feibit Inc co.  ", "/lights/17", "Alexa, turn on TV Hintergrund; Alexa, turn off TV Hintergrund; Alexa, turn TV Hintergrund to 50; Alexa, dim/brighten TV Hintergrund; Alexa, dim/brighten TV Hintergrund 20; Alexa, turn TV Hintergrund red"
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEwNCxpaWQ6IDI0",
+                    "friendlyName": "Now",
+                    "description": "Testing Now Temperature Sensor",
+                    "manufacturerName": "github.com/naofireblade",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":104,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEwNSxpaWQ6IDIw",
+                    "friendlyName": "Today",
+                    "description": "Testing Today Temperature Sensor",
+                    "manufacturerName": "github.com/naofireblade",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":105,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEwNixpaWQ6IDIw",
+                    "friendlyName": "In 1 Day",
+                    "description": "Testing In 1 Day Temperature Sensor",
+                    "manufacturerName": "github.com/naofireblade",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":106,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEwNyxpaWQ6IDIw",
+                    "friendlyName": "In 2 Days",
+                    "description": "Testing In 2 Days Temperature Sensor",
+                    "manufacturerName": "github.com/naofireblade",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":107,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEwOCxpaWQ6IDIw",
+                    "friendlyName": "In 3 Days",
+                    "description": "Testing In 3 Days Temperature Sensor",
+                    "manufacturerName": "github.com/naofireblade",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":108,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1NSxpaWQ6IDEw",
+                    "friendlyName": "5a-funksteckdose",
+                    "description": "Testing 5a-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 155, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 155, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":155,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1NixpaWQ6IDEw",
+                    "friendlyName": "5b-funksteckdose",
+                    "description": "Testing 5b-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 156, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 156, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":156,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1NyxpaWQ6IDEw",
+                    "friendlyName": "5c-funksteckdose",
+                    "description": "Testing 5c-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 157, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 157, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":157,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDExNixpaWQ6IDEw",
+                    "friendlyName": "4a-funksteckdose",
+                    "description": "Testing 4a-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 116, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 116, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":116,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDExNyxpaWQ6IDEw",
+                    "friendlyName": "4b-funksteckdose",
+                    "description": "Testing 4b-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 117, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 117, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":117,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDExOCxpaWQ6IDEw",
+                    "friendlyName": "4c-funksteckdose",
+                    "description": "Testing 4c-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 118, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 118, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":118,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDExOSxpaWQ6IDEw",
+                    "friendlyName": "3c-funksteckdose",
+                    "description": "Testing 3c-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 119, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 119, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":119,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyMCxpaWQ6IDEw",
+                    "friendlyName": "3b-funksteckdose",
+                    "description": "Testing 3b-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 120, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 120, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":120,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyMSxpaWQ6IDEw",
+                    "friendlyName": "3a-funksteckdose",
+                    "description": "Testing 3a-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 121, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 121, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":121,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyMixpaWQ6IDEw",
+                    "friendlyName": "2a-funksteckdose",
+                    "description": "Testing 2a-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 122, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 122, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":122,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyMyxpaWQ6IDEw",
+                    "friendlyName": "2b-funksteckdose",
+                    "description": "Testing 2b-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 123, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 123, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":123,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyNCxpaWQ6IDEw",
+                    "friendlyName": "2c-funksteckdose",
+                    "description": "Testing 2c-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 124, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 124, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":124,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyNSxpaWQ6IDEw",
+                    "friendlyName": "1a-funksteckdose",
+                    "description": "Testing 1a-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 125, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 125, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":125,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyNixpaWQ6IDEw",
+                    "friendlyName": "1b-funksteckdose",
+                    "description": "Testing 1b-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 126, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 126, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":126,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyNyxpaWQ6IDEw",
+                    "friendlyName": "1c-funksteckdose",
+                    "description": "Testing 1c-funksteckdose Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 127, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 127, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":127,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyOCxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-1",
+                    "description": "Testing ESP_DHT-1 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":128,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEyOSxpaWQ6IDEw",
+                    "friendlyName": "RAS_DHT-1",
+                    "description": "Testing RAS_DHT-1 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":129,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzMCxpaWQ6IDEw",
+                    "friendlyName": "RAS_DHT-2",
+                    "description": "Testing RAS_DHT-2 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":130,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzMSxpaWQ6IDEw",
+                    "friendlyName": "RAS_DHT-3",
+                    "description": "Testing RAS_DHT-3 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":131,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzMixpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-2",
+                    "description": "Testing ESP_DHT-2 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":132,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzMyxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-3",
+                    "description": "Testing ESP_DHT-3 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":133,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzNCxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-4",
+                    "description": "Testing ESP_DHT-4 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":134,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzNSxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-5",
+                    "description": "Testing ESP_DHT-5 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":135,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzNixpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-6",
+                    "description": "Testing ESP_DHT-6 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":136,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzNyxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-7",
+                    "description": "Testing ESP_DHT-7 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":137,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE0MyxpaWQ6IDEw",
+                    "friendlyName": "ESP_DHT-8",
+                    "description": "Testing ESP_DHT-8 Temperature Sensor",
+                    "manufacturerName": "HttpTemperatureHumidity",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":143,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzOCxpaWQ6IDEx",
+                    "friendlyName": "Temperatur",
+                    "description": "Testing Temperatur Temperature Sensor",
+                    "manufacturerName": "AOSONG",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":138,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzOSxpaWQ6IDE2",
+                    "friendlyName": "AVR-GAME1",
+                    "description": "Testing AVR-GAME1 Switch",
+                    "manufacturerName": "Denon",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 139, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 139, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":139,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE0MCxpaWQ6IDE2",
+                    "friendlyName": "AVR-SAT",
+                    "description": "Testing AVR-SAT Switch",
+                    "manufacturerName": "Denon",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 140, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 140, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":140,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE0MSxpaWQ6IDE2",
+                    "friendlyName": "AVR-BD",
+                    "description": "Testing AVR-BD Switch",
+                    "manufacturerName": "Denon",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 141, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 141, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":141,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE0MixpaWQ6IDE2",
+                    "friendlyName": "AVR-GAME2",
+                    "description": "Testing AVR-GAME2 Switch",
+                    "manufacturerName": "Denon",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 142, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 142, \"iid\": 10, \"value\": 0 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":142,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDkwLGlpZDogMjY=",
+                    "friendlyName": "Wetter Wohnzimmer Temperature",
+                    "description": "Testing Wetter Wohnzimmer Temperature Temperature Sensor",
+                    "manufacturerName": "Netatmo",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":90,\"iid\":26}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDkxLGlpZDogMTg=",
+                    "friendlyName": "Wetter Garten Temperature",
+                    "description": "Testing Wetter Garten Temperature Temperature Sensor",
+                    "manufacturerName": "Netatmo",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":91,\"iid\":18}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDkzLGlpZDogMjU=",
+                    "friendlyName": "Wetter Küche Temperature",
+                    "description": "Testing Wetter Küche Temperature Temperature Sensor",
+                    "manufacturerName": "Netatmo",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":93,\"iid\":25}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1OCxpaWQ6IDE0",
+                    "friendlyName": "Kleiderschrank",
+                    "description": "Testing Kleiderschrank Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 158, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 158, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 158, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 158, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":158,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":158,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE1OSxpaWQ6IDE0",
+                    "friendlyName": "Haustür links",
+                    "description": "Testing Haustür links Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 159, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 159, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 159, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 159, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":159,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":159,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2MCxpaWQ6IDE0",
+                    "friendlyName": "Haustür rechts",
+                    "description": "Testing Haustür rechts Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 160, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 160, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 160, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 160, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":160,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":160,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2MSxpaWQ6IDE2",
+                    "friendlyName": "Wohnzimmer Wand 1",
+                    "description": "Testing Wohnzimmer Wand 1 Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 161, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 161, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 161, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 161, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":161,\"iid\":12},\"saturation\":{\"aid\":161,\"iid\":13},\"brightness\":{\"aid\":161,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":161,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":161,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":161,\"iid\":12},\"saturation\":{\"aid\":161,\"iid\":13},\"brightness\":{\"aid\":161,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2MixpaWQ6IDE2",
+                    "friendlyName": "Wohnzimmer Wand 2",
+                    "description": "Testing Wohnzimmer Wand 2 Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 162, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 162, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 162, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 162, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":162,\"iid\":12},\"saturation\":{\"aid\":162,\"iid\":13},\"brightness\":{\"aid\":162,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":162,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":162,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":162,\"iid\":12},\"saturation\":{\"aid\":162,\"iid\":13},\"brightness\":{\"aid\":162,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2MyxpaWQ6IDE2",
+                    "friendlyName": "Wohnzimmer Wand 4",
+                    "description": "Testing Wohnzimmer Wand 4 Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 163, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 163, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 163, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 163, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":163,\"iid\":12},\"saturation\":{\"aid\":163,\"iid\":13},\"brightness\":{\"aid\":163,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":163,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":163,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":163,\"iid\":12},\"saturation\":{\"aid\":163,\"iid\":13},\"brightness\":{\"aid\":163,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NCxpaWQ6IDE2",
+                    "friendlyName": "Wohnzimmer Wand 3",
+                    "description": "Testing Wohnzimmer Wand 3 Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 164, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 164, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 164, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 164, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":164,\"iid\":12},\"saturation\":{\"aid\":164,\"iid\":13},\"brightness\":{\"aid\":164,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":164,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":164,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":164,\"iid\":12},\"saturation\":{\"aid\":164,\"iid\":13},\"brightness\":{\"aid\":164,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NSxpaWQ6IDE0",
+                    "friendlyName": "Wohnzimmertisch",
+                    "description": "Testing Wohnzimmertisch Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 165, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 165, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 165, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 165, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":165,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":165,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NixpaWQ6IDE0",
+                    "friendlyName": "Stehlampe Unten",
+                    "description": "Testing Stehlampe Unten Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 166, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":166,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2NyxpaWQ6IDE0",
+                    "friendlyName": "Stehlampe Oben",
+                    "description": "Testing Stehlampe Oben Light",
+                    "manufacturerName": "IKEA of Sweden",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 167, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 167, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 167, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 167, \"iid\": 11 }",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":167,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":167,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2OCxpaWQ6IDE3",
+                    "friendlyName": "Kugel Terrasse",
+                    "description": "Testing Kugel Terrasse Light",
+                    "manufacturerName": "Feibit Inc co.  ",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 168, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 168, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 168, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 168, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":168,\"iid\":13},\"saturation\":{\"aid\":168,\"iid\":14},\"brightness\":{\"aid\":168,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":168,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":168,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":168,\"iid\":13},\"saturation\":{\"aid\":168,\"iid\":14},\"brightness\":{\"aid\":168,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE2OSxpaWQ6IDE3",
+                    "friendlyName": "Kugel Küche",
+                    "description": "Testing Kugel Küche Light",
+                    "manufacturerName": "Feibit Inc co.  ",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 169, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 169, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 169, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 169, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":169,\"iid\":13},\"saturation\":{\"aid\":169,\"iid\":14},\"brightness\":{\"aid\":169,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":169,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":169,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":169,\"iid\":13},\"saturation\":{\"aid\":169,\"iid\":14},\"brightness\":{\"aid\":169,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE3MCxpaWQ6IDE3",
+                    "friendlyName": "Extended color light 1",
+                    "description": "Testing Extended color light 1 Light",
+                    "manufacturerName": "Feibit Inc co.  ",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 170, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 170, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 170, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 170, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":170,\"iid\":13},\"saturation\":{\"aid\":170,\"iid\":14},\"brightness\":{\"aid\":170,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":170,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":170,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":170,\"iid\":13},\"saturation\":{\"aid\":170,\"iid\":14},\"brightness\":{\"aid\":170,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDE3MSxpaWQ6IDE3",
+                    "friendlyName": "TV Hintergrund",
+                    "description": "Testing TV Hintergrund Light",
+                    "manufacturerName": "Feibit Inc co.  ",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 171, \"iid\": 10, \"value\": 1 }",
+                        "TurnOff": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 171, \"iid\": 10, \"value\": 0 }",
+                        "AdjustPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 171, \"iid\": 11 }",
+                        "SetPowerLevel": "{ \"host\": \"test\", \"port\": 12345, \"aid\": 171, \"iid\": 11 }",
+                        "SetColor": "{\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":171,\"iid\":13},\"saturation\":{\"aid\":171,\"iid\":14},\"brightness\":{\"aid\":171,\"iid\":11}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":171,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":171,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"test\",\"port\":\"12345\",\"hue\":{\"aid\":171,\"iid\":13},\"saturation\":{\"aid\":171,\"iid\":14},\"brightness\":{\"aid\":171,\"iid\":11}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
