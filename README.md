@@ -147,7 +147,7 @@ DEBUG=alexa* homebridge -I
 
 # Previous version of homebridge-alexa
 
-* The old version is still available and the instructions for installation can be found [here.](V1_README.md)
+* The old version is still available and the instructions for installation can be found [here.](V1_README.md).
 
 # Roadmap
 
