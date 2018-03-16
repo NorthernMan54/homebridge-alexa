@@ -26,7 +26,7 @@
     "is-my-json-valid": "^2.17.2",
     "bonjour": "^=3.5.0",
     "mqtt": "^2.0.1",
-    "request": "^2.65.0"
+    "requestretry": "^=1.13.0"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
