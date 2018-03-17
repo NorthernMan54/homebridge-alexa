@@ -34,6 +34,11 @@ function alexahome(log, config, api) {
   this.pin = config['pin'] || "031-45-154";
   this.username = config['username'] || false;
   this.password = config['password'] || false;
+  this.filter = config['filter'];
+  this.refresh = config['refresh'] || 60*15; // Update every 15 minute's
+
+  if ( !this.username || !this.password )
+    this.log.error("Missing username and password");
 
   if (api) {
     this.api = api;
@@ -70,7 +75,8 @@ alexahome.prototype.didFinishLaunching = function() {
   };
 
   alexaHAP.HAPDiscovery({
-    "pin": this.pin
+    "pin": this.pin,
+    "refresh": this.refresh
   });
   //  init(this);
 
@@ -92,7 +98,7 @@ alexahome.prototype.configureAccessory = function(accessory) {
 function _alexaDiscovery(message, callback) {
 
   alexaHAP.HAPs(function(endPoints) {
-    var response = alexaTranslator.endPoints(message, endPoints);
+    var response = alexaTranslator.endPoints(message, endPoints, this.filter);
     if (response.event.payload.endpoints.length < 1) {
       this.log("ERROR: HAP Discovery failed, please review config");
 

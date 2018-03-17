@@ -14,7 +14,8 @@ Your homebridge instance is running without the -I option set.
 
 ### Upgraded from old version and am seeing this error message
 
-```Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
+```
+Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
 Mär 10 19:01:49 homebridge homebridge[8313]: return (config.username)
 Mär 10 19:01:49 homebridge homebridge[8313]: ^
 Mär 10 19:01:49 homebridge homebridge[8313]: TypeError: Cannot read property 'username' of undefined
@@ -23,3 +24,16 @@ Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/no
 ```
 
 If you have upgraded from the non-skill version to the skill based version you need to tell Alexa to forget all your old devices.
+
+### HAP Discover failed ..... error code 470
+
+These are other HomeKit devices on your network, that are not compatible with homebridge-alexa.  These errors can be ignored.
+
+```
+alexaHAP HAP Discover failed Philips hue - 6C4C68 http://192.168.2.38:8080 error code 470 +282ms
+alexaHAP HAP Discover failed iDevices Switch http://192.168.2.2:80 error code 470 +61ms
+```
+
+### [2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config
+
+Discovery of your homebridge instances failed, please confirm that you have added the -I to the homebridge command line.

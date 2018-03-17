@@ -40,13 +40,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 # Installation of homebridge-alexa
 
-Alexa Home Skill configuration
+**Alexa Home Skill configuration**
 
 1. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
 
 2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
-Plugin Installation
+**Plugin Installation**
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
@@ -74,15 +74,83 @@ If you have multiple homebridge options, the -I should be listed first. ie
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
-4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to others instances.
+4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
 
 ```
 sudo npm install -g homebridge-alexa
 ```
 
-5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+5. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
 
-6. Restart homebridge, and ask Alexa to discovery devices.
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "...."
+  }
+],
+```
+
+**Testing and confirming configuration**
+
+6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
+
+ie
+```
+DEBUG=alexa* homebridge -I
+```
+
+7. Please ensure that homebridge starts without errors, and output should be similar to this.  This is from my setup, and I have several instances of homebridge so you may have a different number of alexaHAP lines.
+
+```
+alexaHAP Starting Homebridge instance discovery +0ms
+alexaLocal Connecting to Homebridge Smart Home Skill +1ms
+[2018-3-17 11:23:57] Homebridge is running on port 51826.
+alexaHAP HAP Device discovered Porch Camera [ '192.168.1.226' ] +87ms
+alexaHAP HAP instance address: Porch Camera -> howard.local -> 192.168.1.226 +1ms
+alexaHAP HAP Device discovered Howard [ '192.168.1.226' ] +4ms
+alexaHAP HAP instance address: Howard -> howard.local -> 192.168.1.226 +0ms
+alexaHAP HAP Device discovered Howard-Hue [ '192.168.1.226' ] +0ms
+alexaHAP HAP instance address: Howard-Hue -> howard.local -> 192.168.1.226 +0ms
+alexaHAP HAP Device discovered Spare Camera [ '192.168.1.226' ] +1ms
+alexaHAP HAP instance address: Spare Camera -> howard.local -> 192.168.1.226 +0ms
+alexaLocal offline +5ms
+alexaHAP HAP Device discovered Penny [ 'fe80::ba27:ebff:febf:bbaa', '192.168.1.4', '169.254.185.85' ] +42ms
+alexaHAP HAP instance address: Penny -> penny.local -> 192.168.1.4 +0ms
+alexaHAP Homebridge instance discovered Howard with 12 accessories +7ms
+alexaHAP Homebridge instance discovered Porch Camera with 1 accessories +11ms
+alexaHAP Homebridge instance discovered Howard-Hue with 5 accessories +1ms
+alexaHAP Homebridge instance discovered Spare Camera with 1 accessories +10ms
+alexaHAP Homebridge instance discovered Penny with 26 accessories +101ms
+alexaHAP HAP Device discovered Bart-Dev [ 'fe80::1c05:2c:5ae4:abdc', '192.168.1.231' ] +662ms
+alexaHAP HAP instance address: Bart-Dev -> Bart.local -> 192.168.1.231 +0ms
+alexaHAP Homebridge instance discovered Bart-Dev with 1 accessories +7ms
+alexaLocal reconnect +4s
+alexaLocal connect command/northernMan/# +174ms
+```
+
+Please note, that if you have other HomeKit devices on your network, like Philip's hue hub's, they will generate a `HAP Discover failed` message that can be ignored.
+
+8. At this point you are ready to have Alexa discover devices.  Once you say Alexa, discover devices, the output will get very verbose for a minute.  After discovery is complete you should see a line showing the number of devices returned to Alexa.
+
+ie
+
+```
+.
+.
+.
+alexaTranslator Alexa Controllable Penny 22 +1ms
+alexaTranslator Alexa Controllable Bart-Dev 0 +0ms
+[2018-3-17 11:01:03] [Alexa] alexaDiscovery - returned 36 devices
+```
+
+In the event you have errors, or no devices returned please review your config.
+
+Please note, as part of the verbose output from discovery devices, all your devices with the Alexa voice commands for each accessory are output in CSV format.  You could grab these, format them into something usable and share.
+
+9. Installation is now complete, good luck and enjoy.
 
 # Upgrading from the previous, non skill based version of homebridge-alexa
 
@@ -129,6 +197,34 @@ Also please have Alexa forget all your old devices.
 ],
 ```
 
+* refresh - Frequency of refreshes of the homebridge accessory cache, in minutes.  Defaults to 15 minutes.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "refresh": 15
+  }
+],
+```
+
+* filter - Limits accessories shared with Alexa to a single accessory.  ( I'm using this setting with Amazon for skill testing. )
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "filter": "Office Light"
+  }
+],
+```
+
 # Issues, Questions or Problems
 
 * I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
@@ -145,7 +241,7 @@ DEBUG=alexa* homebridge -I
 
 * All homebridge PIN's in your setup need to be set to the same value.
 
-# Previous version of homebridge-alexa
+# Previous version of homebridge-alexa ( Version 1 )
 
 * The old version is still available and the instructions for installation can be found [here.](V1_README.md).
 
@@ -158,4 +254,4 @@ See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 * Ben Hardill - For the inspiration behind the design.
 * Chrisx9 - German translation
 * Tait Brown - HomeSkill Icon
-* ozno - Recommendation for the bonjour MDNS implementation
+* ozno - Recommendation for the bonjour MDNS implementation, and testing on RPI 0
