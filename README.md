@@ -84,38 +84,38 @@ sudo npm install -g homebridge-alexa
 
 6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
 
+ie
 ```
 DEBUG=alexa* homebridge -I
 ```
 
-7. Please ensure that homebridge starts without errors, and output should be similar to this.  As this is from my setup, and I have several instances of homebridge.
+7. Please ensure that homebridge starts without errors, and output should be similar to this.  This is from my setup, and I have several instances of homebridge so you may have a different number of alexaHAP lines.
 
 ```
 alexaHAP Starting Homebridge instance discovery +0ms
 alexaLocal Connecting to Homebridge Smart Home Skill +1ms
-[2018-3-17 10:48:19] Homebridge is running on port 51826.
-alexaHAP MDNS Porch Camera [ '192.168.1.226' ] +61ms
-alexaHAP Found HAP device: Porch Camera -> howard.local -> 192.168.1.226 +1ms
-alexaHAP MDNS Howard [ '192.168.1.226' ] +4ms
-alexaHAP Found HAP device: Howard -> howard.local -> 192.168.1.226 +0ms
-alexaHAP MDNS Howard-Hue [ '192.168.1.226' ] +1ms
-alexaHAP Found HAP device: Howard-Hue -> howard.local -> 192.168.1.226 +0ms
-alexaHAP MDNS Spare Camera [ '192.168.1.226' ] +0ms
-alexaHAP Found HAP device: Spare Camera -> howard.local -> 192.168.1.226 +0ms
-alexaHAP MDNS Penny [ 'fe80::ba27:ebff:febf:bbaa', '192.168.1.4', '169.254.185.85' ] +42ms
-alexaHAP Found HAP device: Penny -> penny.local -> 192.168.1.4 +0ms
-alexaHAP HAP Discovered Howard 12 device(s) +13ms
-alexaLocal offline +8ms
-alexaHAP HAP Discovered Porch Camera 1 device(s) +1ms
-alexaHAP HAP Discovered Howard-Hue 5 device(s) +1ms
-alexaHAP HAP Discovered Spare Camera 1 device(s) +1ms
-alexaHAP HAP Discovered Penny 26 device(s) +21ms
-alexaHAP MDNS Bart-Dev [ 'fe80::1c05:2c:5ae4:abdc', '192.168.1.231' ] +730ms
-alexaHAP Found HAP device: Bart-Dev -> Bart.local -> 192.168.1.231 +0ms
-alexaHAP HAP Discovered Bart-Dev 1 device(s) +7ms
-
+[2018-3-17 11:23:57] Homebridge is running on port 51826.
+alexaHAP HAP Device discovered Porch Camera [ '192.168.1.226' ] +87ms
+alexaHAP HAP instance address: Porch Camera -> howard.local -> 192.168.1.226 +1ms
+alexaHAP HAP Device discovered Howard [ '192.168.1.226' ] +4ms
+alexaHAP HAP instance address: Howard -> howard.local -> 192.168.1.226 +0ms
+alexaHAP HAP Device discovered Howard-Hue [ '192.168.1.226' ] +0ms
+alexaHAP HAP instance address: Howard-Hue -> howard.local -> 192.168.1.226 +0ms
+alexaHAP HAP Device discovered Spare Camera [ '192.168.1.226' ] +1ms
+alexaHAP HAP instance address: Spare Camera -> howard.local -> 192.168.1.226 +0ms
+alexaLocal offline +5ms
+alexaHAP HAP Device discovered Penny [ 'fe80::ba27:ebff:febf:bbaa', '192.168.1.4', '169.254.185.85' ] +42ms
+alexaHAP HAP instance address: Penny -> penny.local -> 192.168.1.4 +0ms
+alexaHAP Homebridge instance discovered Howard with 12 accessories +7ms
+alexaHAP Homebridge instance discovered Porch Camera with 1 accessories +11ms
+alexaHAP Homebridge instance discovered Howard-Hue with 5 accessories +1ms
+alexaHAP Homebridge instance discovered Spare Camera with 1 accessories +10ms
+alexaHAP Homebridge instance discovered Penny with 26 accessories +101ms
+alexaHAP HAP Device discovered Bart-Dev [ 'fe80::1c05:2c:5ae4:abdc', '192.168.1.231' ] +662ms
+alexaHAP HAP instance address: Bart-Dev -> Bart.local -> 192.168.1.231 +0ms
+alexaHAP Homebridge instance discovered Bart-Dev with 1 accessories +7ms
 alexaLocal reconnect +4s
-alexaLocal connect command/northernMan/# +103ms
+alexaLocal connect command/northernMan/# +174ms
 ```
 
 Please note, that if you have other HomeKit devices on your network, like Philip's hue hub's, they will generate a `HAP Discover failed` message that can be ignored.

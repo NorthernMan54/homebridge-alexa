@@ -25,7 +25,7 @@ Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/no
 
 If you have upgraded from the non-skill version to the skill based version you need to tell Alexa to forget all your old devices.
 
-### HAP Discover failed with error code 470
+### HAP Discover failed ..... error code 470
 
 These are other HomeKit devices on your network, that are not compatible with homebridge-alexa.  These errors can be ignored.
 
