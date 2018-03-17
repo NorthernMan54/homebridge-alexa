@@ -82,7 +82,62 @@ sudo npm install -g homebridge-alexa
 
 5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
 
-6. Restart homebridge, and ask Alexa to discovery devices.
+6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
+
+```
+DEBUG=alexa* homebridge -I
+```
+
+7. Please ensure that homebridge starts without errors, and output should be similar to this.  As this is from my setup, and I have several instances of homebridge.
+
+```
+alexaHAP Starting Homebridge instance discovery +0ms
+alexaLocal Connecting to Homebridge Smart Home Skill +1ms
+[2018-3-17 10:48:19] Homebridge is running on port 51826.
+alexaHAP MDNS Porch Camera [ '192.168.1.226' ] +61ms
+alexaHAP Found HAP device: Porch Camera -> howard.local -> 192.168.1.226 +1ms
+alexaHAP MDNS Howard [ '192.168.1.226' ] +4ms
+alexaHAP Found HAP device: Howard -> howard.local -> 192.168.1.226 +0ms
+alexaHAP MDNS Howard-Hue [ '192.168.1.226' ] +1ms
+alexaHAP Found HAP device: Howard-Hue -> howard.local -> 192.168.1.226 +0ms
+alexaHAP MDNS Spare Camera [ '192.168.1.226' ] +0ms
+alexaHAP Found HAP device: Spare Camera -> howard.local -> 192.168.1.226 +0ms
+alexaHAP MDNS Penny [ 'fe80::ba27:ebff:febf:bbaa', '192.168.1.4', '169.254.185.85' ] +42ms
+alexaHAP Found HAP device: Penny -> penny.local -> 192.168.1.4 +0ms
+alexaHAP HAP Discovered Howard 12 device(s) +13ms
+alexaLocal offline +8ms
+alexaHAP HAP Discovered Porch Camera 1 device(s) +1ms
+alexaHAP HAP Discovered Howard-Hue 5 device(s) +1ms
+alexaHAP HAP Discovered Spare Camera 1 device(s) +1ms
+alexaHAP HAP Discovered Penny 26 device(s) +21ms
+alexaHAP MDNS Bart-Dev [ 'fe80::1c05:2c:5ae4:abdc', '192.168.1.231' ] +730ms
+alexaHAP Found HAP device: Bart-Dev -> Bart.local -> 192.168.1.231 +0ms
+alexaHAP HAP Discovered Bart-Dev 1 device(s) +7ms
+
+alexaLocal reconnect +4s
+alexaLocal connect command/northernMan/# +103ms
+```
+
+Please note, that if you have other HomeKit devices on your network, like Philip's hue hub's, they will generate a `HAP Discover failed` message that can be ignored.
+
+8. At this point you are ready to have Alexa discover devices.  Once you say discover devices, the output will get very verbose for a minute.  After discovery is complete you should see a line showing the number of devices returned to Alexa.
+
+ie
+
+```
+.
+.
+.
+alexaTranslator Alexa Controllable Penny 22 +1ms
+alexaTranslator Alexa Controllable Bart-Dev 0 +0ms
+[2018-3-17 11:01:03] [Alexa] alexaDiscovery - returned 36 devices
+```
+
+In the event you have errors, or no devices returned please review your config.
+
+Please note, as part of the verbose output from discovery devices, all your devices with the Alexa voice commands for each accessory are output in CSV format.  You could grab these, format them into something usable and share.
+
+9. Installation is complete, good luck and enjoy.
 
 # Upgrading from the previous, non skill based version of homebridge-alexa
 
@@ -125,6 +180,34 @@ Also please have Alexa forget all your old devices.
     "username": "....",
     "password": "....",
     "pin": "031-45-155"
+  }
+],
+```
+
+* refresh - Frequency of refreshes of the homebridge accessory cache, in minutes.  Defaults to 15 minutes.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "refresh": 15
+  }
+],
+```
+
+* filter - Limits accessories shared with Alexa to a single accessory.  ( I'm using this setting with Amazon for skill testing. )
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "filter": "Office Light"
   }
 ],
 ```

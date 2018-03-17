@@ -35,6 +35,7 @@ function alexahome(log, config, api) {
   this.username = config['username'] || false;
   this.password = config['password'] || false;
   this.filter = config['filter'];
+  this.refresh = config['refresh'] || 60*15; // Update every 15 minute's
 
   if ( !this.username || !this.password )
     this.log.error("Missing username and password");
@@ -74,7 +75,8 @@ alexahome.prototype.didFinishLaunching = function() {
   };
 
   alexaHAP.HAPDiscovery({
-    "pin": this.pin
+    "pin": this.pin,
+    "refresh": this.refresh
   });
   //  init(this);
 
