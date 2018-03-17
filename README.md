@@ -74,13 +74,24 @@ If you have multiple homebridge options, the -I should be listed first. ie
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
-4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to others instances.
+4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
 
 ```
 sudo npm install -g homebridge-alexa
 ```
 
-5. Login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+5. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "...."
+  }
+],
+```
 
 6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
 
@@ -228,7 +239,7 @@ DEBUG=alexa* homebridge -I
 
 * All homebridge PIN's in your setup need to be set to the same value.
 
-# Previous version of homebridge-alexa
+# Previous version of homebridge-alexa ( Version 1 )
 
 * The old version is still available and the instructions for installation can be found [here.](V1_README.md).
 
@@ -241,4 +252,4 @@ See https://github.com/NorthernMan54/homebridge-alexa/issues/52
 * Ben Hardill - For the inspiration behind the design.
 * Chrisx9 - German translation
 * Tait Brown - HomeSkill Icon
-* ozno - Recommendation for the bonjour MDNS implementation
+* ozno - Recommendation for the bonjour MDNS implementation, and testing on RPI 0
