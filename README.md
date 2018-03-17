@@ -40,13 +40,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 # Installation of homebridge-alexa
 
-Alexa Home Skill configuration
+**Alexa Home Skill configuration**
 
 1. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
 
 2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
-Plugin Installation
+**Plugin Installation**
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
@@ -93,6 +93,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
+**Testing and confirming configuration**
+
 6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
 
 ie
@@ -131,7 +133,7 @@ alexaLocal connect command/northernMan/# +174ms
 
 Please note, that if you have other HomeKit devices on your network, like Philip's hue hub's, they will generate a `HAP Discover failed` message that can be ignored.
 
-8. At this point you are ready to have Alexa discover devices.  Once you say discover devices, the output will get very verbose for a minute.  After discovery is complete you should see a line showing the number of devices returned to Alexa.
+8. At this point you are ready to have Alexa discover devices.  Once you say Alexa, discover devices, the output will get very verbose for a minute.  After discovery is complete you should see a line showing the number of devices returned to Alexa.
 
 ie
 
@@ -148,7 +150,7 @@ In the event you have errors, or no devices returned please review your config.
 
 Please note, as part of the verbose output from discovery devices, all your devices with the Alexa voice commands for each accessory are output in CSV format.  You could grab these, format them into something usable and share.
 
-9. Installation is complete, good luck and enjoy.
+9. Installation is now complete, good luck and enjoy.
 
 # Upgrading from the previous, non skill based version of homebridge-alexa
 
