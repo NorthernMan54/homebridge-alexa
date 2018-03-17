@@ -93,7 +93,12 @@ function _alexaDiscovery(message, callback) {
 
   alexaHAP.HAPs(function(endPoints) {
     var response = alexaTranslator.endPoints(message, endPoints);
-    this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+    if (response.event.payload.endpoints.length < 1) {
+      this.log("ERROR: HAP Discovery failed, please review config");
+
+    } else {
+      this.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+    }
     //debug("Discovery Response", JSON.stringify(response, null, 4));
     callback(null, response);
   }.bind(this))
@@ -134,23 +139,23 @@ function _alexaColorController(message, callback) {
     callback(e);
     return;
   }
-  debug("action",haAction,message.directive.payload);
+  debug("action", haAction, message.directive.payload);
   var body = {
     "characteristics": [{
       "aid": haAction.hue.aid,
       "iid": haAction.hue.iid,
       "value": message.directive.payload.color.hue
-    },{
+    }, {
       "aid": haAction.saturation.aid,
       "iid": haAction.saturation.iid,
       "value": message.directive.payload.color.saturation * 100
-    },{
+    }, {
       "aid": haAction.brightness.aid,
       "iid": haAction.brightness.iid,
       "value": message.directive.payload.color.brightness * 100
     }]
   };
-  debug("color HB command",body);
+  debug("color HB command", body);
   alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
     this.log("ColorController", action, haAction.host, haAction.port, status, err);
     var response = alexaTranslator.alexaResponse(message, status, err);
