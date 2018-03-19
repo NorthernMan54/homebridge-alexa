@@ -40,17 +40,11 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 # Installation of homebridge-alexa
 
-**Alexa Home Skill configuration**
-
-1. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
-
-2. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
-
 **Plugin Installation**
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
-3. All homebridge instances that you want to control from Alexa need to run in insecure mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
+1. All homebridge instances that you want to control from Alexa need to run in insecure mode with -I included on the command line.  How you make this change will depend on your installation of homebridge, and how you start homebridge.  If you start from the command line, it would look like this:
 
 ```
 homebridge -I
@@ -74,13 +68,21 @@ If you have multiple homebridge options, the -I should be listed first. ie
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
-4. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
+2. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
 
 ```
 sudo npm install -g homebridge-alexa
 ```
 
-5. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.   This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+**Alexa Home Skill configuration**
+
+3. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
+
+4. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
+
+**HomeBridge-alexa plugin configuration**
+
+5. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.  This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
 
 ```
 "platforms": [
