@@ -242,6 +242,7 @@ DEBUG=alexa* homebridge -I
 ## Known Issues
 
 * All homebridge PIN's in your setup need to be set to the same value.
+* Whitelisting/blacklisting of accessories is not supported, but this can be achieved at the plugin level by putting the plugins you don't want exposed to Alexa in their own instance of HomeBridge, and for that instance of Alexa, don't include -I command line option.  Discovery will fail for that instance, and the accessories will not be exposed.
 
 # Previous version of homebridge-alexa ( Version 1 )
 
