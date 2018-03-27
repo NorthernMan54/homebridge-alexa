@@ -4,6 +4,10 @@
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one per home or network.
 
+### ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
+
+The homebridge-alexa plugin is having issues maintaining a connection to homebridge.cloudwatch.net, most likely cause of this message is having multiple copies of homebridge-alexa in your environment.  The plugin has stopped responding to Alexa commands until the issue is resolved.
+
 ### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
 Your homebridge access pin is incorrect
