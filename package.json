@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NorthernMan54/alexahome.git"
+    "url": "git+https://github.com/NorthernMan54/homebridge-alexa.git"
   },
   "keywords": [
     "alexa",
@@ -31,7 +31,7 @@
   "author": "NorthernMan54",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/NorthernMan54/alexahome/issues"
+    "url": "https://github.com/NorthernMan54/homebridge-alexa/issues"
   },
-  "homepage": "https://github.com/NorthernMan54/alexahome#readme"
+  "homepage": "https://github.com/NorthernMan54/homebridge-alexa#readme"
 }
