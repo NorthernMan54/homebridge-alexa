@@ -2,7 +2,7 @@
 
 ### ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
-Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one per home or network.
+Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
 
 ### ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
 
