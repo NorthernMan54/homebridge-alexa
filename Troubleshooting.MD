@@ -10,7 +10,9 @@ The homebridge-alexa plugin is having issues maintaining a connection to homebri
 
 ### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
-Your homebridge access pin is incorrect
+Your homebridge access pin is incorrect, please set the PIN as part of the config.  See here
+
+https://github.com/NorthernMan54/homebridge-alexa#optional-parameters
 
 ###   alexaHAP HAP Discover failed Bart-Dev http://192.168.1.231:51826 homebridge is not running in insecure mode with -I +6ms
 
