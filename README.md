@@ -17,7 +17,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 ## New features with Version 2
 
 * Support for color bulbs
-* Support for Window coverings/blinds
+* Support for Window coverings/blinds ( As Alexa doesn't support window coverings I'm using a light bulb)
+* Support for Garage Doors ( As Alexa doesn't support Garage Doors I'm using a light bulb)
 * Support for Temperature Sensors
 * Support for Fan2 aka Dyson fans
 * Support for more than 100 accessories
@@ -37,6 +38,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, dim ________
 * Alexa, brighten ________
 * Alexa, turn _______ red
+* Alexa, turn on ________ ( Open's a garage door )
+* Alexa, turn off _______ ( Close's a garage door )
 
 # Installation of homebridge-alexa
 
