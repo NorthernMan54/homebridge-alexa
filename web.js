@@ -35,9 +35,9 @@ function alexahome(log, config, api) {
   this.username = config['username'] || false;
   this.password = config['password'] || false;
   this.filter = config['filter'];
-  this.refresh = config['refresh'] || 60*15; // Update every 15 minute's
+  this.refresh = config['refresh'] || 60 * 15; // Update every 15 minute's
 
-  if ( !this.username || !this.password )
+  if (!this.username || !this.password)
     this.log.error("Missing username and password");
 
   if (api) {
@@ -87,6 +87,7 @@ alexahome.prototype.didFinishLaunching = function() {
   alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
   alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
   alexa.on('alexa.colorcontroller', _alexaColorController.bind(this));
+  alexa.on('alexa.colortemperaturecontroller', _alexaColorTemperatureController.bind(this));
 }
 
 alexahome.prototype.configureAccessory = function(accessory) {
@@ -109,6 +110,64 @@ function _alexaDiscovery(message, callback) {
     callback(null, response);
   }.bind(this))
 
+}
+
+function _alexaColorTemperatureController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var colorTemperature;
+
+  try {
+    var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaColorTemperatureController missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+  switch (action.toLowerCase()) {
+    case "decreasecolortemperature":
+    case "increasecolortemperature":
+      // This characteristic describes color temperature which is represented in the reciprocal megakelvin (MK-1) or mirek scale. MK = 1,000,000 / K where MK is the desired mirek value and K is temperature in Kelvins.
+
+      alexaHAP.HAPstatus(haAction.host, haAction.port, "?id=" + haAction.aid + "." + haAction.iid, function(err, status) {
+        this.log("ColorTemperatureController-get", action, haAction.host, haAction.port, status, err);
+
+        var colorTemperatureDelta = 40;
+        if ( action.toLowerCase() = "decreasecolortemperature" )
+          colorTemperatureDelta = -40;
+        colorTemperature = status.characteristics[0].value + colorTemperatureDelta > 500 ? 500 : status.characteristics[0].value + colorTemperatureDelta;
+        colorTemperature = colorTemperature < 140 ? 140 : colorTemperature;
+        var body = {
+          "characteristics": [{
+            "aid": haAction.aid,
+            "iid": haAction.iid,
+            "value": colorTemperature
+          }]
+        };
+        alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+          this.log("ColorTemperatureController-change", action, haAction.host, haAction.port, status, body, err);
+          var response = alexaTranslator.alexaResponse(message, status, err, colorTemperature);
+          callback(err, response);
+        }.bind(this));
+      }.bind(this));
+      break;
+    case "setcolortemperature":
+      // No need to do anything
+      colorTemperature = 1000000/message.directive.payload.colorTemperatureInKelvin;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": colorTemperature
+        }]
+      };
+      alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        this.log("ColorTemperatureController-set", action, haAction.host, haAction.port, status, body, err);
+        var response = alexaTranslator.alexaResponse(message, status, err, colorTemperature);
+        callback(err, response);
+      }.bind(this));
+      break;
+  }
 }
 
 function _alexaPowerController(message, callback) {
