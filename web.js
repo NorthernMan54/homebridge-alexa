@@ -153,7 +153,7 @@ function _alexaColorTemperatureController(message, callback) {
       break;
     case "setcolortemperature":
       // No need to do anything
-      colorTemperature = 1000000/message.directive.payload.colorTemperatureInKelvin;
+      colorTemperature = _round(1000000/message.directive.payload.colorTemperatureInKelvin);
       var body = {
         "characteristics": [{
           "aid": haAction.aid,
@@ -163,7 +163,7 @@ function _alexaColorTemperatureController(message, callback) {
       };
       alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
         this.log("ColorTemperatureController-set", action, haAction.host, haAction.port, status, body, err);
-        var response = alexaTranslator.alexaResponse(message, status, err, colorTemperature);
+        var response = alexaTranslator.alexaResponse(message, status, err, message.directive.payload.colorTemperatureInKelvin);
         callback(err, response);
       }.bind(this));
       break;
@@ -341,4 +341,9 @@ function _alexaMessage(message, callback) {
       };
   }
 
+}
+
+function _round(value, precision) {
+  var multiplier = Math.pow(10, precision || 0);
+  return Math.round(value * multiplier) / multiplier;
 }

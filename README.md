@@ -23,7 +23,7 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for Fan2 aka Dyson fans
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
-* Support for the color temperature of bulbs
+* Support for the color temperature of white bulbs
 
 Alexa device names are the same as the homebridge device names.
 
