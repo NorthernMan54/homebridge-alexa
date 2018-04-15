@@ -146,7 +146,7 @@ function _alexaColorTemperatureController(message, callback) {
         };
         alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
           this.log("ColorTemperatureController-change", action, haAction.host, haAction.port, status, body, err);
-          var response = alexaTranslator.alexaResponse(message, status, err, colorTemperature);
+          var response = alexaTranslator.alexaResponse(message, status, err, _round(1000000/colorTemperature));
           callback(err, response);
         }.bind(this));
       }.bind(this));
