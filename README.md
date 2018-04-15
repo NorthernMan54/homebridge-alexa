@@ -41,8 +41,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn _______ red
 * Alexa, turn on ________ ( Open's a garage door )
 * Alexa, turn off _______ ( Close's a garage door )
-* Alexa, set the _______ cooler/whiter ( Color temperature )
-* Alexa, set the _______ warmer/softer ( Color temperature )
+* Alexa, set/make the _______ cooler/whiter ( Color temperature )
+* Alexa, set/make the _______ warmer/softer ( Color temperature )
 * Alexa, make the _______ warm white ( Color temperature )
 
 ### Color Temperatures ###
