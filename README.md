@@ -32,18 +32,22 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 # Voice commands supported
 
 * Alexa, discover devices
-* Alexa, turn on _______
-* Alexa, turn off _______
-* Alexa, set ______ to 50
-* Alexa, what is the temperature in the ______
-* Alexa, dim ________
-* Alexa, brighten ________
-* Alexa, turn _______ red
-* Alexa, turn on ________ ( Open's a garage door )
-* Alexa, turn off _______ ( Close's a garage door )
-* Alexa, set/make the _______ cooler/whiter ( Color temperature )
-* Alexa, set/make the _______ warmer/softer ( Color temperature )
-* Alexa, make the _______ warm white ( Color temperature )
+* Alexa, turn on  *device*
+* Alexa, turn off  *device*
+* Alexa, set *device* to 50
+* Alexa, what is the temperature in the  *device*
+* Alexa, dim *device*
+* Alexa, brighten *device*
+* Alexa, turn *device* red
+* Alexa, turn on *device* ( Open's a garage door )
+* Alexa, turn off *device* ( Close's a garage door )
+* Alexa, set/make the *device* cooler/whiter ( Color temperature )
+* Alexa, set/make the *device* warmer/softer ( Color temperature )
+* Alexa, make the *device* warm white ( Color temperature )
+* Alexa, pause *device* ( Apple TV )
+* Alexa, resume *device* ( Apple TV )
+* Alexa, play *device* ( Apple TV )
+* Alexa, stop *device* ( Apple TV )
 
 ### Color Temperatures ###
 

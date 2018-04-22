@@ -82,12 +82,13 @@ alexahome.prototype.didFinishLaunching = function() {
 
   alexa = new alexaLocal(options);
 
-  alexa.on('alexa', _alexaMessage.bind(this));
-  alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
-  alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
-  alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
-  alexa.on('alexa.colorcontroller', _alexaColorController.bind(this));
-  alexa.on('alexa.colortemperaturecontroller', _alexaColorTemperatureController.bind(this));
+  alexa.on('Alexa', _alexaMessage.bind(this));
+  alexa.on('Alexa.Discovery', _alexaDiscovery.bind(this));
+  alexa.on('Alexa.PowerController', _alexaPowerController.bind(this));
+  alexa.on('Alexa.PowerLevelController', _alexaPowerLevelController.bind(this));
+  alexa.on('Alexa.ColorController', _alexaColorController.bind(this));
+  alexa.on('Alexa.ColorTemperatureController', _alexaColorTemperatureController.bind(this));
+  alexa.on('Alexa.PlaybackController', _alexaPlaybackController.bind(this));
 }
 
 alexahome.prototype.configureAccessory = function(accessory) {
@@ -168,6 +169,30 @@ function _alexaColorTemperatureController(message, callback) {
       }.bind(this));
       break;
   }
+}
+
+function _alexaPlaybackController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  try {
+    var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaPlaybackController missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": haAction.value
+    }]
+  };
+  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    this.log("PlaybackController", action, haAction.host, haAction.port, status, err);
+    var response = alexaTranslator.alexaResponse(message, status, err);
+    callback(err, response);
+  }.bind(this));
 }
 
 function _alexaPowerController(message, callback) {
