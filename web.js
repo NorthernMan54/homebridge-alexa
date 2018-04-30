@@ -36,6 +36,7 @@ function alexahome(log, config, api) {
   this.password = config['password'] || false;
   this.filter = config['filter'];
   this.refresh = config['refresh'] || 60 * 15; // Update every 15 minute's
+  this.speakers = config['speakers'] || {};    // Array of speaker devices
 
   if (!this.username || !this.password)
     this.log.error("Missing username and password");
@@ -100,7 +101,7 @@ alexahome.prototype.configureAccessory = function(accessory) {
 function _alexaDiscovery(message, callback) {
 
   alexaHAP.HAPs(function(endPoints) {
-    var response = alexaTranslator.endPoints(message, endPoints, this.filter);
+    var response = alexaTranslator.endPoints(message, endPoints, this.filter, this.speakers);
     if (response.event.payload.endpoints.length < 1) {
       this.log("ERROR: HAP Discovery failed, please review config");
 

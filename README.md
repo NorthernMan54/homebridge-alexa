@@ -41,13 +41,26 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn *device* red
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
+
+## Color temperature
+
 * Alexa, set/make the *device* cooler/whiter ( Color temperature )
 * Alexa, set/make the *device* warmer/softer ( Color temperature )
 * Alexa, make the *device* warm white ( Color temperature )
+
+## AppleTV
+
 * Alexa, pause *device* ( Apple TV )
 * Alexa, resume *device* ( Apple TV )
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
+
+## Speakers
+
+* Alexa, volume up 20 on device ( Speakers )
+* Alexa, set the volume of device to 50 ( Speakers )
+* Alexa, mute device ( Speakers )
+* Alexa, unmute device ( Speakers )
 
 ### Color Temperatures ###
 
@@ -115,6 +128,27 @@ sudo npm install -g homebridge-alexa
   }
 ],
 ```
+
+5.1 Optional parameters
+
+* speakers - Devices to configure as speakers
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "speakers": {
+        "Manufacturer": "Name"
+    }
+  }
+],
+```
+
+** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
+** Name - Is the name of the accessory as shown in the Home App
 
 **Testing and confirming configuration**
 
