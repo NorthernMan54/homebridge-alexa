@@ -21,6 +21,7 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for Garage Doors ( As Alexa doesn't support Garage Doors I'm using a light bulb)
 * Support for Temperature Sensors
 * Support for Fan2 aka Dyson fans
+* Support for Valves, Sprinklers and Shower Heads
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for the color temperature of white bulbs
