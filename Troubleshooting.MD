@@ -43,3 +43,7 @@ alexaHAP HAP Discover failed iDevices Switch http://192.168.2.2:80 error code 47
 ### [2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config
 
 Discovery of your homebridge instances failed, please confirm that you have added the -I to the homebridge command line.
+
+### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa 
+
+Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.

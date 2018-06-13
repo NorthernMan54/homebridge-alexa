@@ -108,10 +108,15 @@ sudo npm install -g homebridge-alexa
     "platform": "Alexa",
     "name": "Alexa",
     "username": "....",
-    "password": "...."
+    "password": "....",
+    "pin": "031-45-155",
+    "refresh": 15
   }
 ],
 ```
+
+* pin and refresh are optional parameters, details are below
+
 
 **Testing and confirming configuration**
 
