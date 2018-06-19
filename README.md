@@ -21,6 +21,7 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for Garage Doors ( As Alexa doesn't support Garage Doors I'm using a light bulb)
 * Support for Temperature Sensors
 * Support for Fan2 aka Dyson fans
+* Support for Valves, Sprinklers and Shower Heads
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for the color temperature of white bulbs
@@ -57,10 +58,10 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 ## Speakers
 
-* Alexa, volume up 20 on device ( Speakers )
-* Alexa, set the volume of device to 50 ( Speakers )
-* Alexa, mute device ( Speakers )
-* Alexa, unmute device ( Speakers )
+* Alexa, volume up 20 on *device* ( Speakers )
+* Alexa, set the volume of *device* to 50 ( Speakers )
+* Alexa, mute *device* ( Speakers )
+* Alexa, unmute *device* ( Speakers )
 
 ### Color Temperatures ###
 
@@ -124,10 +125,14 @@ sudo npm install -g homebridge-alexa
     "platform": "Alexa",
     "name": "Alexa",
     "username": "....",
-    "password": "...."
+    "password": "....",
+    "pin": "031-45-155",
+    "refresh": 15
   }
 ],
 ```
+
+* pin and refresh are optional parameters, details are below
 
 5.1 Optional parameters
 
@@ -149,6 +154,8 @@ sudo npm install -g homebridge-alexa
 
 ** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
 ** Name - Is the name of the accessory as shown in the Home App
+
+
 
 **Testing and confirming configuration**
 

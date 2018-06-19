@@ -135,7 +135,7 @@ function _alexaColorTemperatureController(message, callback) {
         this.log("ColorTemperatureController-get", action, haAction.host, haAction.port, status, err);
 
         var colorTemperatureDelta = 40;
-        if ( action.toLowerCase() = "decreasecolortemperature" )
+        if ( action.toLowerCase() == "decreasecolortemperature" )
           colorTemperatureDelta = -40;
         colorTemperature = status.characteristics[0].value + colorTemperatureDelta > 500 ? 500 : status.characteristics[0].value + colorTemperatureDelta;
         colorTemperature = colorTemperature < 140 ? 140 : colorTemperature;
