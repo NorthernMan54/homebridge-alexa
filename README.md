@@ -25,6 +25,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for the color temperature of white bulbs
+* Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
+* Support for Apple TV ( Supports homebridge-apple-tv )
 
 Alexa device names are the same as the homebridge device names.
 
@@ -33,18 +35,33 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 # Voice commands supported
 
 * Alexa, discover devices
-* Alexa, turn on _______
-* Alexa, turn off _______
-* Alexa, set ______ to 50
-* Alexa, what is the temperature in the ______
-* Alexa, dim ________
-* Alexa, brighten ________
-* Alexa, turn _______ red
-* Alexa, turn on ________ ( Open's a garage door )
-* Alexa, turn off _______ ( Close's a garage door )
-* Alexa, set/make the _______ cooler/whiter ( Color temperature )
-* Alexa, set/make the _______ warmer/softer ( Color temperature )
-* Alexa, make the _______ warm white ( Color temperature )
+* Alexa, turn on  *device*
+* Alexa, turn off  *device*
+* Alexa, set *device* to 50
+* Alexa, what is the temperature in the  *device*
+* Alexa, dim *device*
+* Alexa, brighten *device*
+* Alexa, turn *device* red
+* Alexa, turn on *device* ( Open's a garage door )
+* Alexa, turn off *device* ( Close's a garage door )
+
+## Color temperature
+
+* Alexa, set/make the *device* cooler/whiter ( Color temperature )
+* Alexa, set/make the *device* warmer/softer ( Color temperature )
+* Alexa, make the *device* warm white ( Color temperature )
+
+## AppleTV
+
+* Alexa, pause *device* ( Apple TV )
+* Alexa, resume *device* ( Apple TV )
+* Alexa, play *device* ( Apple TV )
+* Alexa, stop *device* ( Apple TV )
+
+## Speakers
+
+* Alexa, volume up 20 on *device* ( Speakers )
+* Alexa, set the volume of *device* to 50 ( Speakers )
 
 ### Color Temperatures ###
 
@@ -117,6 +134,39 @@ sudo npm install -g homebridge-alexa
 
 * pin and refresh are optional parameters, details are below
 
+5.1 Optional parameters
+
+* speakers - Devices to configure as speakers
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "speakers": {
+        "Manufacturer": "Name"
+    }
+  }
+],
+```
+
+** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
+** Name - Is the name of the accessory as shown in the Home App
+
+ie
+```
+{
+    "platform": "Alexa",
+    "username": "...",
+    "password": "...",
+    "name": "Alexa",
+    "speakers": {
+      "HTTP-IRBlaster": "KODI"
+      }
+  }
+```
 
 **Testing and confirming configuration**
 

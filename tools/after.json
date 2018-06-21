@@ -1549,7 +1549,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -1615,7 +1615,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -1681,7 +1681,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -1747,7 +1747,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -1969,7 +1969,7 @@
                                         "name": "colorTemperatureInKelvin"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         },
@@ -1983,7 +1983,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -2052,7 +2052,7 @@
                                         "name": "colorTemperatureInKelvin"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         },
@@ -2066,7 +2066,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -2135,7 +2135,7 @@
                                         "name": "colorTemperatureInKelvin"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         },
@@ -2149,7 +2149,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -2218,7 +2218,7 @@
                                         "name": "colorTemperatureInKelvin"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         },
@@ -2232,7 +2232,7 @@
                                         "name": "color"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }

@@ -36,6 +36,7 @@ function alexahome(log, config, api) {
   this.password = config['password'] || false;
   this.filter = config['filter'];
   this.refresh = config['refresh'] || 60 * 15; // Update every 15 minute's
+  this.speakers = config['speakers'] || {};    // Array of speaker devices
 
   if (!this.username || !this.password)
     this.log.error("Missing username and password");
@@ -82,12 +83,15 @@ alexahome.prototype.didFinishLaunching = function() {
 
   alexa = new alexaLocal(options);
 
-  alexa.on('alexa', _alexaMessage.bind(this));
-  alexa.on('alexa.discovery', _alexaDiscovery.bind(this));
-  alexa.on('alexa.powercontroller', _alexaPowerController.bind(this));
-  alexa.on('alexa.powerlevelcontroller', _alexaPowerLevelController.bind(this));
-  alexa.on('alexa.colorcontroller', _alexaColorController.bind(this));
-  alexa.on('alexa.colortemperaturecontroller', _alexaColorTemperatureController.bind(this));
+  alexa.on('Alexa', _alexaMessage.bind(this));
+  alexa.on('Alexa.Discovery', _alexaDiscovery.bind(this));
+  alexa.on('Alexa.PowerController', _alexaPowerController.bind(this));
+  alexa.on('Alexa.PowerLevelController', _alexaPowerLevelController.bind(this));
+  alexa.on('Alexa.ColorController', _alexaColorController.bind(this));
+  alexa.on('Alexa.ColorTemperatureController', _alexaColorTemperatureController.bind(this));
+  alexa.on('Alexa.PlaybackController', _alexaPlaybackController.bind(this));
+  alexa.on('Alexa.Speaker', _alexaSpeaker.bind(this));
+  //alexa.on('Alexa.StepSpeaker', _alexaStepSpeaker.bind(this));
 }
 
 alexahome.prototype.configureAccessory = function(accessory) {
@@ -99,7 +103,7 @@ alexahome.prototype.configureAccessory = function(accessory) {
 function _alexaDiscovery(message, callback) {
 
   alexaHAP.HAPs(function(endPoints) {
-    var response = alexaTranslator.endPoints(message, endPoints, this.filter);
+    var response = alexaTranslator.endPoints(message, endPoints, this.filter, this.speakers);
     if (response.event.payload.endpoints.length < 1) {
       this.log("ERROR: HAP Discovery failed, please review config");
 
@@ -168,6 +172,30 @@ function _alexaColorTemperatureController(message, callback) {
       }.bind(this));
       break;
   }
+}
+
+function _alexaPlaybackController(message, callback) {
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  try {
+    var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaPlaybackController missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+  var body = {
+    "characteristics": [{
+      "aid": haAction.aid,
+      "iid": haAction.iid,
+      "value": haAction.value
+    }]
+  };
+  alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+    this.log("PlaybackController", action, haAction.host, haAction.port, status, err);
+    var response = alexaTranslator.alexaResponse(message, status, err);
+    callback(err, response);
+  }.bind(this));
 }
 
 function _alexaPowerController(message, callback) {
@@ -277,6 +305,62 @@ function _alexaPowerLevelController(message, callback) {
       alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
         this.log("PowerLevelController", action, haAction.host, haAction.port, status, body, err);
         var response = alexaTranslator.alexaResponse(message, status, err, powerLevel);
+        callback(err, response);
+      }.bind(this));
+      break;
+  }
+
+}
+
+function _alexaSpeaker(message, callback) {
+  //debug(JSON.stringify(message, null, 4));
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var volume, haAction;
+  try {
+    haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaSpeaker missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+
+  switch (action.toLowerCase()) {
+    case "adjustvolume":
+      // Need to get current value prior to dimming
+      alexaHAP.HAPstatus(haAction.host, haAction.port, "?id=" + haAction.aid + "." + haAction.iid, function(err, status) {
+        this.log("Speaker-get", action, haAction.host, haAction.port, status, err);
+
+        var volumeDelta = message.directive.payload.volume;
+        volume = status.characteristics[0].value + volumeDelta > 100 ? 100 : status.characteristics[0].value + volumeDelta;
+        volume = volume < 0 ? 0 : volume;
+        var body = {
+          "characteristics": [{
+            "aid": haAction.aid,
+            "iid": haAction.iid,
+            "value": volume
+          }]
+        };
+        alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+          this.log("Speaker-set", action, haAction.host, haAction.port, status, body, err);
+          var response = alexaTranslator.alexaResponse(message, status, err, volume);
+          callback(err, response);
+        }.bind(this));
+      }.bind(this));
+      break;
+    case "setvolume":
+      // No need to do anything
+      volume = message.directive.payload.volume;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": volume
+        }]
+      };
+      alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        this.log("Speaker", action, haAction.host, haAction.port, status, body, err);
+        var response = alexaTranslator.alexaResponse(message, status, err, volume);
         callback(err, response);
       }.bind(this));
       break;
