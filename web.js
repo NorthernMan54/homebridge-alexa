@@ -90,6 +90,8 @@ alexahome.prototype.didFinishLaunching = function() {
   alexa.on('Alexa.ColorController', _alexaColorController.bind(this));
   alexa.on('Alexa.ColorTemperatureController', _alexaColorTemperatureController.bind(this));
   alexa.on('Alexa.PlaybackController', _alexaPlaybackController.bind(this));
+  alexa.on('Alexa.Speaker', _alexaSpeaker.bind(this));
+  //alexa.on('Alexa.StepSpeaker', _alexaStepSpeaker.bind(this));
 }
 
 alexahome.prototype.configureAccessory = function(accessory) {
@@ -303,6 +305,62 @@ function _alexaPowerLevelController(message, callback) {
       alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
         this.log("PowerLevelController", action, haAction.host, haAction.port, status, body, err);
         var response = alexaTranslator.alexaResponse(message, status, err, powerLevel);
+        callback(err, response);
+      }.bind(this));
+      break;
+  }
+
+}
+
+function _alexaSpeaker(message, callback) {
+  //debug(JSON.stringify(message, null, 4));
+  var action = message.directive.header.name;
+  var endpointId = message.directive.endpoint.endpointId;
+  var volume, haAction;
+  try {
+    haAction = JSON.parse(message.directive.endpoint.cookie[action]);
+  } catch (e) {
+    this.log.error("_alexaSpeaker missing action", action, e.message, message.directive.endpoint.cookie);
+    callback(e);
+    return;
+  }
+
+  switch (action.toLowerCase()) {
+    case "adjustvolume":
+      // Need to get current value prior to dimming
+      alexaHAP.HAPstatus(haAction.host, haAction.port, "?id=" + haAction.aid + "." + haAction.iid, function(err, status) {
+        this.log("Speaker-get", action, haAction.host, haAction.port, status, err);
+
+        var volumeDelta = message.directive.payload.volume;
+        volume = status.characteristics[0].value + volumeDelta > 100 ? 100 : status.characteristics[0].value + volumeDelta;
+        volume = volume < 0 ? 0 : volume;
+        var body = {
+          "characteristics": [{
+            "aid": haAction.aid,
+            "iid": haAction.iid,
+            "value": volume
+          }]
+        };
+        alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+          this.log("Speaker-set", action, haAction.host, haAction.port, status, body, err);
+          var response = alexaTranslator.alexaResponse(message, status, err, volume);
+          callback(err, response);
+        }.bind(this));
+      }.bind(this));
+      break;
+    case "setvolume":
+      // No need to do anything
+      volume = message.directive.payload.volume;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": volume
+        }]
+      };
+      alexaHAP.HAPcontrol(haAction.host, haAction.port, JSON.stringify(body), function(err, status) {
+        this.log("Speaker", action, haAction.host, haAction.port, status, body, err);
+        var response = alexaTranslator.alexaResponse(message, status, err, volume);
         callback(err, response);
       }.bind(this));
       break;

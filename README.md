@@ -25,6 +25,8 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for the color temperature of white bulbs
+* Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
+* Support for Apple TV ( Supports homebridge-apple-tv )
 
 Alexa device names are the same as the homebridge device names.
 
@@ -60,8 +62,6 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 * Alexa, volume up 20 on *device* ( Speakers )
 * Alexa, set the volume of *device* to 50 ( Speakers )
-* Alexa, mute *device* ( Speakers )
-* Alexa, unmute *device* ( Speakers )
 
 ### Color Temperatures ###
 
@@ -155,7 +155,18 @@ sudo npm install -g homebridge-alexa
 ** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
 ** Name - Is the name of the accessory as shown in the Home App
 
-
+ie
+```
+{
+    "platform": "Alexa",
+    "username": "...",
+    "password": "...",
+    "name": "Alexa",
+    "speakers": {
+      "HTTP-IRBlaster": "KODI"
+      }
+  }
+```
 
 **Testing and confirming configuration**
 
