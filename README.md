@@ -32,6 +32,23 @@ Alexa device names are the same as the homebridge device names.
 
 This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
 
+# HomeKit/Homebridge Devices supported
+
+Native Support
+
+* Lightbulbs, outlets and switches
+* Dimmable lightbulbs, outlets and switches
+* Colour lightbulbs
+* Speakers
+* Apple TV
+* Temperature Sensors
+
+Emulating a Light bulb
+
+* Fans - Supported as a light bulb
+* Garage Door - Supported as light bulb
+* Valves, Sprinklers and Shower Heads - Supported as a light bulb
+
 # Voice commands supported
 
 * Alexa, discover devices
