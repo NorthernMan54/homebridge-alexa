@@ -162,9 +162,10 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "speakers": {
-        "Manufacturer": "Name"
-    }
+    "speakers": [{
+        "manufacturer": "...",
+        "name": "..."
+    }]
   }
 ],
 ```
@@ -179,9 +180,19 @@ ie
     "username": "...",
     "password": "...",
     "name": "Alexa",
-    "speakers": {
-      "HTTP-IRBlaster": "KODI"
+    "speakers": [{
+        "manufacturer": "Yamaha",
+        "name": "Front"
+      },
+      {
+        "manufacturer": "Yamaha",
+        "name": "Rear"
+      },
+      {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "Panasonic"
       }
+    ]
   }
 ```
 
