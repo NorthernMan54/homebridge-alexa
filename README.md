@@ -171,6 +171,7 @@ sudo npm install -g homebridge-alexa
 ```
 
 ** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
+
 ** Name - Is the name of the accessory as shown in the Home App
 
 ie
@@ -194,6 +195,25 @@ ie
       }
     ]
   }
+```
+
+* Apple TV
+
+This is the config from my Apple TV after completing the pairing.  Please note, "showDefaultSwitches" is a required parameter.  Please note I blanked out the devices/credentials section with my ATV credentials.
+
+```
+{
+  "platform":"AppleTV",
+  "name":"Apple TV",
+  "devices": [{
+          "id": "Cottage",
+          "name": "TV",
+          "credentials": "...." }
+    ],
+  "showDefaultSwitches": true,
+  "showPairSwitches": false,
+  "hideWelcomeMessage": true
+}
 ```
 
 **Testing and confirming configuration**
