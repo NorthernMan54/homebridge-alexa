@@ -77,8 +77,20 @@ Emulating a Light bulb
 
 ## Speakers
 
+* Alexa, lower the volume on *device*
 * Alexa, volume up 20 on *device* ( Speakers )
 * Alexa, set the volume of *device* to 50 ( Speakers )
+
+## Yamaha/Spotify control
+
+// "Play", "Pause", "Stop", "Next", "Rewind"
+
+* Alexa, pause *device* ( Apple TV )
+* Alexa, play *device* ( Apple TV )
+* Alexa, stop *device* ( Apple TV )
+* Alexa, next song on device
+* Alexa, rewind on device
+
 
 ### Color Temperatures ###
 
