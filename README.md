@@ -27,6 +27,7 @@ Enable Amazon Alexa access to you homebridge controlled devices and accessories.
 * Support for the color temperature of white bulbs
 * Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
 * Support for Apple TV ( Supports homebridge-apple-tv )
+* Support Spotify playback controls via homebridge-yamaha-home
 
 Alexa device names are the same as the homebridge device names.
 
@@ -68,6 +69,16 @@ Emulating a Light bulb
 * Alexa, set/make the *device* warmer/softer ( Color temperature )
 * Alexa, make the *device* warm white ( Color temperature )
 
+### Color Temperatures ###
+
+```
+warm, warm white
+incandescent, soft white
+white
+daylight, daylight white
+cool, cool white
+```
+
 ## AppleTV
 
 * Alexa, pause *device* ( Apple TV )
@@ -81,26 +92,13 @@ Emulating a Light bulb
 * Alexa, volume up 20 on *device* ( Speakers )
 * Alexa, set the volume of *device* to 50 ( Speakers )
 
-## Yamaha/Spotify control
+## Yamaha Receiver/Spotify control
 
-// "Play", "Pause", "Stop", "Next", "Rewind"
-
-* Alexa, pause *device* ( Apple TV )
-* Alexa, play *device* ( Apple TV )
-* Alexa, stop *device* ( Apple TV )
-* Alexa, next song on device
-* Alexa, rewind on device
-
-
-### Color Temperatures ###
-
-```
-warm, warm white
-incandescent, soft white
-white
-daylight, daylight white
-cool, cool white
-```
+* Alexa, pause Stereo
+* Alexa, resume Stereo
+* Alexa, stop Stereo
+* Alexa, next song on Stereo
+* Alexa, rewind on Stereo
 
 # Installation of homebridge-alexa
 
@@ -227,6 +225,10 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
   "hideWelcomeMessage": true
 }
 ```
+
+* Yamaha Spotify Controls
+
+This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
 
 **Testing and confirming configuration**
 
