@@ -88,8 +88,8 @@ Emulating a Light bulb
 * Alexa, pause *device* ( Apple TV )
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
-* Alexa, next song on device
-* Alexa, rewind on device
+* Alexa, next song on *device*
+* Alexa, rewind on *device*
 
 
 ### Color Temperatures ###
@@ -211,7 +211,7 @@ ie
 
 * Apple TV
 
-This is the config from my Apple TV after completing the pairing.  Please note, "showDefaultSwitches" is a required parameter.  Please note I blanked out the devices/credentials section with my ATV credentials.
+This is the config from my Apple TV after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
 
 ```
 {
@@ -223,6 +223,7 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
           "credentials": "...." }
     ],
   "showDefaultSwitches": true,
+  "defaultSwitchesIncludeATVName": true,
   "showPairSwitches": false,
   "hideWelcomeMessage": true
 }
