@@ -1,7 +1,12 @@
 var alexaTranslator = require('../lib/alexaTranslator.js');
 var fs = require('fs');
 
-var endPoints = [ { host: "test", port: "12345", HBname: "Testing", accessories: JSON.parse(   fs.readFileSync(process.argv[2]).toString()  ) } ];
+var endPoints = [{
+  host: "test",
+  port: "12345",
+  HBname: "Testing",
+  accessories: JSON.parse(fs.readFileSync(process.argv[2]).toString())
+}];
 
 var message = {
   "directive": {
@@ -20,6 +25,22 @@ var message = {
   }
 };
 
-var response = alexaTranslator.endPoints(message, endPoints);
+var speakers = [{
+    "manufacturer": "Yamaha",
+    "name": "Front"
+  },
+  {
+    "manufacturer": "Yamaha",
+    "name": "Rear"
+  },
+  {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "Panasonic"
+  }
+];
+
+var filter = "";
+
+var response = alexaTranslator.endPoints(message, endPoints, filter, speakers);
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
