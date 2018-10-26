@@ -20,7 +20,7 @@ Your homebridge instance is running without the -I option set.
 
 ### Upgraded from old version and am seeing this error message
 
-```
+'''
 Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
 Mär 10 19:01:49 homebridge homebridge[8313]: return (config.username)
 Mär 10 19:01:49 homebridge homebridge[8313]: ^
