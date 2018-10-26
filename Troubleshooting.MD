@@ -47,3 +47,22 @@ Discovery of your homebridge instances failed, please confirm that you have adde
 ### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa 
 
 Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
+
+### Device discovery fails and the plugin logs show no issues.
+
+Using just the website/app without an Alexa device does not work.
+
+### This connection refused message for port 8883 is not error, and be ignored
+
+'''
+alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
+at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)
+errno: 'ECONNREFUSED',
+code: 'ECONNREFUSED',
+syscall: 'connect',
+address: '35.169.132.61',
+port: 8883 } +179ms
+alexaLocal offline +8ms
+'''
+
+This is for future feature enhancement, and can be ignored.
