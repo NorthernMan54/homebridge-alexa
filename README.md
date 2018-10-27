@@ -6,6 +6,8 @@
 
 Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
 
+Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  In the near future I will be adding Italian (IT), English (IN),  Spanish (ES), Japanese (JP), Spanish (MX).  If you want early access, contact me thru slack, and I can add yourself to the BETA test.  
+
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
@@ -367,7 +369,7 @@ Also please have Alexa forget all your old devices.
 
 * I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
-* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.
+* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
 
 * If you need to log an issue, please include a DEBUG log with your issue.
 

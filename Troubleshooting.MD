@@ -20,7 +20,7 @@ Your homebridge instance is running without the -I option set.
 
 ### Upgraded from old version and am seeing this error message
 
-'''
+```
 Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
 Mär 10 19:01:49 homebridge homebridge[8313]: return (config.username)
 Mär 10 19:01:49 homebridge homebridge[8313]: ^
@@ -44,7 +44,7 @@ alexaHAP HAP Discover failed iDevices Switch http://192.168.2.2:80 error code 47
 
 Discovery of your homebridge instances failed, please confirm that you have added the -I to the homebridge command line.
 
-### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa 
+### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
 
 Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
 
@@ -54,7 +54,7 @@ Using just the website/app without an Alexa device does not work.
 
 ### This connection refused message for port 8883 is not error, and be ignored
 
-'''
+```
 alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
 at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)
 errno: 'ECONNREFUSED',
@@ -63,6 +63,6 @@ syscall: 'connect',
 address: '35.169.132.61',
 port: 8883 } +179ms
 alexaLocal offline +8ms
-'''
+```
 
-This is for future feature enhancement, and can be ignored.
+This is for a future feature enhancement, and can be ignored.
