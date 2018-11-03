@@ -104,6 +104,12 @@ cool, cool white
 * Alexa, next song on Stereo
 * Alexa, rewind on Stereo
 
+## Unsupported device types
+
+* Thermostats
+* Camera's ( for use with an Alexa show etc )
+* Eve devices
+
 # Installation of homebridge-alexa
 
 **Plugin Installation**
