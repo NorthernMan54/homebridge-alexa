@@ -351,7 +351,7 @@ Also please have Alexa forget all your old devices.
 ],
 ```
 
-* filter - Limits accessories shared with Alexa to a single accessory.  ( I'm using this setting with Amazon for skill testing. )
+* filter - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
 
 ```
 "platforms": [
@@ -360,7 +360,7 @@ Also please have Alexa forget all your old devices.
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "filter": "Office Light"
+    "filter": "192.168.1.122:51826"
   }
 ],
 ```
