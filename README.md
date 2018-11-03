@@ -6,7 +6,9 @@
 
 Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
 
-Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  In the near future I will be adding Italian (IT), English (IN),  Spanish (ES), Japanese (JP), Spanish (MX).  If you want early access, contact me thru slack, and I can add yourself to the BETA test.  
+Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  In the near future I will be adding Italian (IT), English (IN),  Spanish (ES), Japanese (JP), Spanish (MX).  If you want early access, contact me thru slack, and I can add yourself to the BETA test.
+
+**Nov 2 - I have just submitted the skill for certification in Italian (IT), English (IN),  Spanish (ES), Japanese (JP), and Spanish (MX). This should take 5-7 days, fingers crossed.**
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
