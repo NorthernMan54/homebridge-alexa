@@ -7,6 +7,8 @@
 * [ ] Automate SSL Cert renewall process
 * [x] Automate DNS link process
 * [ ] Implement Alexa Events and Proactive reporting for Home Skills
+* [ ] Clean up logging, way too noisy
+* [ ] Move to real DNS name
 
 ## Homebridge-Alexa plugin
 
