@@ -4,6 +4,10 @@
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
 
+### Sun, 04 Nov 2018 23:36:31 GMT alexaLocal error { Error: Connection refused: Not authorized
+
+Not authorized, the username and/or password configured in the plugin is incorrect.
+
 ### ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
 
 The homebridge-alexa plugin is having issues maintaining a connection to homebridge.cloudwatch.net, most likely cause of this message is having multiple copies of homebridge-alexa in your environment.  The plugin has stopped responding to Alexa commands until the issue is resolved.
@@ -42,7 +46,11 @@ alexaHAP HAP Discover failed iDevices Switch http://192.168.2.2:80 error code 47
 
 ### [2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config
 
-Discovery of your homebridge instances failed, please confirm that you have added the -I to the homebridge command line.
+Possible causes:
+
+1 - Discovery of your homebridge instances failed, please confirm that you have added the -I to the homebridge command line.
+
+2 - Discovery is working, but you don't have any devices that are supported by homebridge-alexa.
 
 ### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
 
