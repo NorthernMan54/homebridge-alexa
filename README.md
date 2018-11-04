@@ -397,7 +397,7 @@ DEBUG=alexa* homebridge -I
 
 # Roadmap
 
-See https://github.com/NorthernMan54/homebridge-alexa/issues/52
+See [Roadmap](Roadmap.MD)
 
 # Credits
 

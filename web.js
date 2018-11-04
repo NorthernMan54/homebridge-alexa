@@ -9,7 +9,7 @@
 
 var Accessory, Service, Characteristic, UUIDGen;
 var http = require('http');
-var debug = require('debug')('AlexaPlugin');
+var debug = require('debug')('alexaPlugin');
 
 var alexaLocal = require('./lib/alexaLocal.js').alexaLocal;
 var alexaHAP = require('./lib/alexaHAP.js');
