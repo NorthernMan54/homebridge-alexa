@@ -397,7 +397,7 @@ DEBUG=alexa* homebridge -I
 
 # Roadmap
 
-See [Roadmap](Roadmap.MD)
+See [Roadmap](Roadmap.md)
 
 # Credits
 
