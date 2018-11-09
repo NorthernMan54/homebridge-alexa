@@ -35,7 +35,7 @@ function alexahome(log, config, api) {
   this.username = config['username'] || false;
   this.password = config['password'] || false;
   this.filter = config['filter'];
-  this.refresh = config['refresh'] || 60 * 15; // Update every 15 minute's
+  this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
   this.speakers = config['speakers'] || {};    // Array of speaker devices
 
   if (!this.username || !this.password)

@@ -374,7 +374,7 @@ Also please have Alexa forget all your old devices.
 ],
 ```
 
-* refresh - Frequency of refreshes of the homebridge accessory cache, in minutes.  Defaults to 15 minutes.
+* refresh - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
 
 ```
 "platforms": [
@@ -383,7 +383,7 @@ Also please have Alexa forget all your old devices.
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "refresh": 15
+    "refresh": 900
   }
 ],
 ```
