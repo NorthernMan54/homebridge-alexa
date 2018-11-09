@@ -18,6 +18,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
+# Table of Contents
 <!--ts-->
    * [New features with Version 2](#new-features-with-version-2)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
