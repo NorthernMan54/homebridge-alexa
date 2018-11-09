@@ -1,10 +1,10 @@
 #! /bin/sh
 
 if ~/npm/bin/nsp check --filter 2; then
+  rm *orig* *toc\.*
   npm run-script document
   git add .
   git commit -m "$1"
-  #git push origin master --tags
   npm version patch
   git push origin master --tags
   npm publish
