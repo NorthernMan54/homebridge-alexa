@@ -10,6 +10,8 @@ Country availability - The plugin is available in these countries, English (AU),
 
 **Nov 2 - I have just submitted the skill for certification in Italian (IT), English (IN),  Spanish (ES), Japanese (JP), and Spanish (MX). This should take 5-7 days, fingers crossed.**
 
+**Nov 9 - I just received an email back from Amazon, and they are saying that they have a large number of skills to review, and need a few more days.  Stay tuned.**
+
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
@@ -20,6 +22,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
+   * [Table of Contents](#table-of-contents)
    * [New features with Version 2](#new-features-with-version-2)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
       * [Voice commands supported](#voice-commands-supported)
