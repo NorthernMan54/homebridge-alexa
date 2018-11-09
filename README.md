@@ -19,9 +19,9 @@ Country availability - The plugin is available in these countries, English (AU),
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
 <!--ts-->
-      * [New features with Version 2](#new-features-with-version-2)
-   * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
-   * [Voice commands supported](#voice-commands-supported)
+   * [New features with Version 2](#new-features-with-version-2)
+      * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
+      * [Voice commands supported](#voice-commands-supported)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
       * [AppleTV](#appletv)
@@ -29,10 +29,10 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
-   * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
-   * [config.json](#configjson)
-      * [Required parameters](#required-parameters)
-      * [Optional parameters](#optional-parameters)
+      * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
+      * [config.json](#configjson)
+         * [Required parameters](#required-parameters)
+         * [Optional parameters](#optional-parameters)
    * [Issues, Questions or Problems](#issues-questions-or-problems)
       * [Known Issues](#known-issues)
    * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
@@ -43,7 +43,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 <!--te-->
 
-## New features with Version 2
+# New features with Version 2
 
 * Support for color bulbs
 * Support for Window coverings/blinds ( As Alexa doesn't support window coverings I'm using a light bulb)
@@ -62,7 +62,7 @@ Alexa device names are the same as the homebridge device names.
 
 This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
 
-# HomeKit/Homebridge Devices supported
+## HomeKit/Homebridge Devices supported
 
 Native Support
 
@@ -79,7 +79,7 @@ Emulating a Light bulb
 * Garage Door - Supported as light bulb
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 
-# Voice commands supported
+## Voice commands supported
 
 * Alexa, discover devices
 * Alexa, turn on  *device*
@@ -325,7 +325,7 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 9. Installation is now complete, good luck and enjoy.
 
-# Upgrading from the previous, non skill based version of homebridge-alexa
+## Upgrading from the previous, non skill based version of homebridge-alexa
 
 If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
 
@@ -336,7 +336,7 @@ If you had installed the previous version of homebridge-alexa with the special v
 Also please have Alexa forget all your old devices.
 
 
-# config.json
+## config.json
 
 ```
 "platforms": [
@@ -349,12 +349,12 @@ Also please have Alexa forget all your old devices.
 ],
 ```
 
-## Required parameters
+### Required parameters
 
 * username - Login created for the skill linking website https://homebridge.cloudwatch.net
 * password - Login created for the skill linking website https://homebridge.cloudwatch.net
 
-## Optional parameters
+### Optional parameters
 
 * pin - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
 
