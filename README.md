@@ -1,4 +1,4 @@
-# homebridge-alexa Version 2 - Home Skill Based
+**homebridge-alexa** Version 2 - Home Skill Based
 
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
@@ -17,6 +17,31 @@ Country availability - The plugin is available in these countries, English (AU),
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
+
+<!--ts-->
+      * [New features with Version 2](#new-features-with-version-2)
+   * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
+   * [Voice commands supported](#voice-commands-supported)
+      * [Color temperature](#color-temperature)
+         * [Color Temperatures](#color-temperatures)
+      * [AppleTV](#appletv)
+      * [Speakers](#speakers)
+      * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
+      * [Unsupported device types](#unsupported-device-types)
+   * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
+   * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
+   * [config.json](#configjson)
+      * [Required parameters](#required-parameters)
+      * [Optional parameters](#optional-parameters)
+   * [Issues, Questions or Problems](#issues-questions-or-problems)
+      * [Known Issues](#known-issues)
+   * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
+   * [Roadmap](#roadmap)
+   * [Credits](#credits)
+
+<!-- Added by: sgracey, at:  -->
+
+<!--te-->
 
 ## New features with Version 2
 

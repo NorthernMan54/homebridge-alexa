@@ -1,28 +1,45 @@
-# Troubleshooting Tips
+**Troubleshooting Tips**
 
-### ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
+<!--ts-->
+      * [ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README](#error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
+      * [Sun, 04 Nov 2018 23:36:31 GMT alexaLocal error { Error: Connection refused: Not authorized](#sun-04-nov-2018-233631-gmt-alexalocal-error--error-connection-refused-not-authorized)
+      * [ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
+      * [[2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN](#2018-3-7-195531-alexa-powercontroller-turnoff-1921681226-51826-undefined-error-homebridge-auth-failed-invalid-pin)
+      * [alexaHAP HAP Discover failed Bart-Dev <a href="http://192.168.1.231:51826" rel="nofollow">http://192.168.1.231:51826</a> homebridge is not running in insecure mode with -I  6ms](#alexahap-hap-discover-failed-bart-dev-http192168123151826-homebridge-is-not-running-in-insecure-mode-with--i-6ms)
+      * [Upgraded from old version and am seeing this error message](#upgraded-from-old-version-and-am-seeing-this-error-message)
+      * [HAP Discover failed ..... error code 470](#hap-discover-failed--error-code-470)
+      * [[2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config](#2018-3-17-105903-alexa-error-hap-discovery-failed-please-review-config)
+      * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
+      * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
+      * [This connection refused message for port 8883 is not error, and be ignored](#this-connection-refused-message-for-port-8883-is-not-error-and-be-ignored)
+
+<!-- Added by: sgracey, at:  -->
+
+<!--te-->
+
+## ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
 
-### Sun, 04 Nov 2018 23:36:31 GMT alexaLocal error { Error: Connection refused: Not authorized
+## Sun, 04 Nov 2018 23:36:31 GMT alexaLocal error { Error: Connection refused: Not authorized
 
 Not authorized, the username and/or password configured in the plugin is incorrect.
 
-### ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
+## ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
 
 The homebridge-alexa plugin is having issues maintaining a connection to homebridge.cloudwatch.net, most likely cause of this message is having multiple copies of homebridge-alexa in your environment.  The plugin has stopped responding to Alexa commands until the issue is resolved.
 
-### [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
+## [2018-3-7 19:55:31] [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
 Your homebridge access pin is incorrect, please set the PIN as part of the config.  See here
 
 https://github.com/NorthernMan54/homebridge-alexa#optional-parameters
 
-###   alexaHAP HAP Discover failed Bart-Dev http://192.168.1.231:51826 homebridge is not running in insecure mode with -I +6ms
+##   alexaHAP HAP Discover failed Bart-Dev http://192.168.1.231:51826 homebridge is not running in insecure mode with -I +6ms
 
 Your homebridge instance is running without the -I option set.
 
-### Upgraded from old version and am seeing this error message
+## Upgraded from old version and am seeing this error message
 
 ```
 Mär 10 19:01:49 homebridge homebridge[8313]: /usr/local/lib/node_modules/homebridge/node_modules/hap-nodejs/lib/util/ssdp.js:216
@@ -35,7 +52,7 @@ Mär 10 19:01:49 homebridge homebridge[8313]: at _getUniqueid (/usr/local/lib/no
 
 If you have upgraded from the non-skill version to the skill based version you need to tell Alexa to forget all your old devices.
 
-### HAP Discover failed ..... error code 470
+## HAP Discover failed ..... error code 470
 
 These are other HomeKit devices on your network, that are not compatible with homebridge-alexa.  These errors can be ignored.
 
@@ -44,7 +61,7 @@ alexaHAP HAP Discover failed Philips hue - 6C4C68 http://192.168.2.38:8080 error
 alexaHAP HAP Discover failed iDevices Switch http://192.168.2.2:80 error code 470 +61ms
 ```
 
-### [2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config
+## [2018-3-17 10:59:03] [Alexa] ERROR: HAP Discovery failed, please review config
 
 Possible causes:
 
@@ -52,15 +69,15 @@ Possible causes:
 
 2 - Discovery is working, but you don't have any devices that are supported by homebridge-alexa.
 
-### After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
+## After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
 
 Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
 
-### Device discovery fails and the plugin logs show no issues.
+## Device discovery fails and the plugin logs show no issues.
 
 Using just the website/app without an Alexa device does not work.
 
-### This connection refused message for port 8883 is not error, and be ignored
+## This connection refused message for port 8883 is not error, and be ignored
 
 ```
 alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883

@@ -4,3 +4,7 @@ npm-debug.log
 node_modules
 package-lock.json
 password*
+README.md.toc.*
+README.md.orig.*
+Troubleshooting.md.toc.*
+Troubleshooting.md.orig.*
