@@ -260,6 +260,10 @@ function _alexaColorController(message, callback) {
   debug("action", haAction, message.directive.payload);
   var body = {
     "characteristics": [{
+      "aid": haAction.on.aid,
+      "iid": haAction.on.iid,
+      "value": 1
+    }, {
       "aid": haAction.hue.aid,
       "iid": haAction.hue.iid,
       "value": message.directive.payload.color.hue
@@ -271,10 +275,6 @@ function _alexaColorController(message, callback) {
       "aid": haAction.brightness.aid,
       "iid": haAction.brightness.iid,
       "value": message.directive.payload.color.brightness * 100
-    }, {
-      "aid": haAction.on.aid,
-      "iid": haAction.on.iid,
-      "value": true
     }]
   };
   debug("color HB command", body);

@@ -1,6 +1,6 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.1.60",
+  "version": "0.1.61",
   "description": "Alexa Skill frontend for Homebridge",
   "main": "web.js",
   "scripts": {
