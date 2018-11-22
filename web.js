@@ -271,6 +271,10 @@ function _alexaColorController(message, callback) {
       "aid": haAction.brightness.aid,
       "iid": haAction.brightness.iid,
       "value": message.directive.payload.color.brightness * 100
+    }, {
+      "aid": haAction.on.aid,
+      "iid": haAction.on.iid,
+      "value": true
     }]
   };
   debug("color HB command", body);
@@ -282,7 +286,7 @@ function _alexaColorController(message, callback) {
 }
 
 function _alexaPowerLevelController(message, callback) {
-  //debug(JSON.stringify(message, null, 4));
+  // debug(JSON.stringify(message, null, 4));
   var action = message.directive.header.name;
   var endpointId = message.directive.endpoint.endpointId;
   var powerLevel, haAction;
