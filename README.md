@@ -143,6 +143,8 @@ cool, cool white
 * Thermostats
 * Camera's ( for use with an Alexa show etc )
 * Eve devices
+* Locks
+* Security Systems
 
 # Installation of homebridge-alexa
 
