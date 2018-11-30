@@ -16,6 +16,8 @@ Country availability - The plugin is available in these countries, English (AU),
 
 **Nov 18 - Resubmitted to Amazon for certification.**
 
+**Nov 29 - No response from Amazon yet.**
+
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
@@ -29,6 +31,8 @@ Country availability - The plugin is available in these countries, English (AU),
    * [Table of Contents](#table-of-contents)
    * [New features with Version 2](#new-features-with-version-2)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
+         * [Native Support](#native-support)
+         * [Supported as Other](#supported-as-other)
       * [Voice commands supported](#voice-commands-supported)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
@@ -72,7 +76,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 ## HomeKit/Homebridge Devices supported
 
-Native Support
+### Native Support
 
 * Lightbulbs, outlets and switches
 * Dimmable lightbulbs, outlets and switches
@@ -80,12 +84,13 @@ Native Support
 * Speakers
 * Apple TV
 * Temperature Sensors
+* Door/Garage Door - Supported as a on/off device
 * Thermostat - Partial support only ( Set target Temperature in celsius )
 
-Emulating a Light bulb
+### Supported as Other
 
-* Fans - Supported as a light bulb
-* Garage Door - Supported as light bulb
+* Fans - Supported as Other
+* Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 
 ## Voice commands supported
@@ -140,7 +145,6 @@ cool, cool white
 
 ## Unsupported device types
 
-* Thermostats
 * Camera's ( for use with an Alexa show etc )
 * Eve devices
 * Locks
