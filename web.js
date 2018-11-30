@@ -271,10 +271,6 @@ function _alexaColorController(message, callback) {
       "aid": haAction.saturation.aid,
       "iid": haAction.saturation.iid,
       "value": message.directive.payload.color.saturation * 100
-    }, {
-      "aid": haAction.brightness.aid,
-      "iid": haAction.brightness.iid,
-      "value": message.directive.payload.color.brightness * 100
     }]
   };
   debug("color HB command", body);
