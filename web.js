@@ -14,6 +14,7 @@ var debug = require('debug')('alexaPlugin');
 var alexaLocal = require('./lib/alexaLocal.js').alexaLocal;
 var alexaHAP = require('./lib/alexaHAP.js');
 var alexaTranslator = require('./lib/alexaTranslator.js');
+const packageConfig = require('./package.json');
 
 var mqtt = require('mqtt');
 var alexa;
@@ -45,6 +46,11 @@ function alexahome(log, config, api) {
     this.api = api;
     this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
   }
+
+  this.log.info(
+    '%s v%s, node %s, homebridge v%s',
+    packageConfig.name, packageConfig.version, process.version, api.serverVersion
+  );
 }
 
 alexahome.prototype = {
