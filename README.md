@@ -18,6 +18,8 @@ Country availability - The plugin is available in these countries, English (AU),
 
 **Nov 29 - No response from Amazon yet.**
 
+**Dec 7 - Certification certification failed for Japan and Mexico, see Issue #150**
+
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
