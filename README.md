@@ -47,13 +47,18 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
-      * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
-      * [config.json](#configjson)
+      * [Plugin Installation](#plugin-installation)
+      * [Create homebridge-alexa account](#create-homebridge-alexa-account)
+      * [HomeBridge-alexa plugin configuration](#homebridge-alexa-plugin-configuration)
          * [Required parameters](#required-parameters)
          * [Optional parameters](#optional-parameters)
+      * [Initial Testing and confirming configuration](#initial-testing-and-confirming-configuration)
+      * [Enable Homebridge smarthome skill and link accounts](#enable-homebridge-smarthome-skill-and-link-accounts)
+      * [Discover Devices](#discover-devices)
    * [Issues, Questions or Problems](#issues-questions-or-problems)
       * [Known Issues](#known-issues)
    * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
+      * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
    * [Roadmap](#roadmap)
    * [Credits](#credits)
 
@@ -158,7 +163,7 @@ cool, cool white
 
 # Installation of homebridge-alexa
 
-**Plugin Installation**
+## Plugin Installation
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
@@ -192,15 +197,34 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
 sudo npm install -g homebridge-alexa
 ```
 
-**Alexa Home Skill configuration**
+## Create homebridge-alexa account
 
 3. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
 
-4. Search for the homebridge skill on the Alexa App/Web site, and link you Amazon account to the account you created above.
 
-**HomeBridge-alexa plugin configuration**
+## HomeBridge-alexa plugin configuration
 
-5. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.  This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+4. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.  This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "...."
+  }
+],
+```
+
+### Required parameters
+
+* username - Login created for the skill linking website https://homebridge.cloudwatch.net
+* password - Login created for the skill linking website https://homebridge.cloudwatch.net
+
+### Optional parameters
+
+* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
 
 ```
 "platforms": [
@@ -209,15 +233,38 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "pin": "031-45-155",
-    "refresh": 15
+    "pin": "031-45-155"
   }
 ],
 ```
 
-* pin and refresh are optional parameters, details are below
+* refresh - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
 
-5.1 Optional parameters
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "refresh": 900
+  }
+],
+```
+
+* filter - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "filter": "192.168.1.122:51826"
+  }
+],
+```
 
 * speakers - Devices to configure as speakers
 
@@ -287,16 +334,16 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
 
-**Testing and confirming configuration**
+## Initial Testing and confirming configuration
 
-6. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
+5. Start homebridge in DEBUG mode, to ensure configuration of homebridge-alexa is correct.  This will need to be executed with your implementations configuration options and as the same user as you are running homebridge. If you are homebridge with an autostart script ie systemd, you will need to stop the autostart temporarily.
 
 ie
 ```
 DEBUG=alexa* homebridge -I
 ```
 
-7. Please ensure that homebridge starts without errors, and output should be similar to this.  This is from my setup, and I have several instances of homebridge so you may have a different number of alexaHAP lines.
+6. Please ensure that homebridge starts without errors, and output should be similar to this.  This is from my setup, and I have several instances of homebridge so you may have a different number of alexaHAP lines.
 
 ```
 alexaHAP Starting Homebridge instance discovery +0ms
@@ -327,6 +374,12 @@ alexaLocal connect command/northernMan/# +174ms
 
 Please note, that if you have other HomeKit devices on your network, like Philip's hue hub's, they will generate a `HAP Discover failed` message that can be ignored.
 
+## Enable Homebridge smarthome skill and link accounts
+
+7. In your Amazon Alexa app on your phone, please search for the "Homebridge" skill, and enable the skill.  You will need to Enable and link the skill to the account you created earlier on https://homebridge.cloudwatch.net
+
+## Discover Devices
+
 8. At this point you are ready to have Alexa discover devices.  Once you say Alexa, discover devices, the output will get very verbose for a minute.  After discovery is complete you should see a line showing the number of devices returned to Alexa.
 
 ie
@@ -345,79 +398,6 @@ In the event you have errors, or no devices returned please review your config.
 Please note, as part of the verbose output from discovery devices, all your devices with the Alexa voice commands for each accessory are output in CSV format.  You could grab these, format them into something usable and share.
 
 9. Installation is now complete, good luck and enjoy.
-
-## Upgrading from the previous, non skill based version of homebridge-alexa
-
-If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
-
-```
-"ssdp": 1900
-```
-
-Also please have Alexa forget all your old devices.
-
-
-## config.json
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "...."
-  }
-],
-```
-
-### Required parameters
-
-* username - Login created for the skill linking website https://homebridge.cloudwatch.net
-* password - Login created for the skill linking website https://homebridge.cloudwatch.net
-
-### Optional parameters
-
-* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "pin": "031-45-155"
-  }
-],
-```
-
-* refresh - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "refresh": 900
-  }
-],
-```
-
-* filter - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "filter": "192.168.1.122:51826"
-  }
-],
-```
 
 # Issues, Questions or Problems
 
@@ -439,6 +419,16 @@ DEBUG=alexa* homebridge -I
 * Thermostats - Partial support only ( Set target Temperature in celsius )
 
 # Previous version of homebridge-alexa ( Version 1 )
+
+## Upgrading from the previous, non skill based version of homebridge-alexa
+
+If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
+
+```
+"ssdp": 1900
+```
+
+Also please have Alexa forget all your old devices.
 
 * The old version is still available and the instructions for installation can be found [here.](V1_README.md).
 

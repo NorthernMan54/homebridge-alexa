@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if ~/npm/bin/nsp check --filter 2; then
+if npm audit; then
   rm *orig* *toc\.*
   npm run-script document
   git add .
