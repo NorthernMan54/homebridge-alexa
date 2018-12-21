@@ -2,7 +2,9 @@
 
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
-![Icon](https://github.com/NorthernMan54/alexaAwsBackend/blob/master/skillPublish/homebridge-alexa-108.png?raw=true)
+<p align="center">
+    <img src="https://cl.ly/99e68ac49cef/Logo2x.png" height="200">
+</p>
 
 Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
 
