@@ -6,9 +6,11 @@
     <img src="https://cl.ly/99e68ac49cef/Logo2x.png" height="200">
 </p>
 
-Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.  ( I have stopped using my previous version based on a custom version of HomeBridge, as Amazon is no longer supporting the integration interface I was using on newer Alexa devices, like the Echo 2nd generation. )
+Enable Amazon Alexa access to you homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
-Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  In the near future I will be adding Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).  ~~If you want early access, contact me thru slack, and I can add yourself to the BETA test.~~
+Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  
+
+Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).
 
 **Nov 2 - I have just submitted the skill for certification in Italian (IT), English (IN),  Spanish (ES), Japanese (JP), and Spanish (MX). This should take 5-7 days, fingers crossed.**
 
@@ -112,7 +114,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn on  *device*
 * Alexa, turn off  *device*
 * Alexa, set *device* to 50
-* Alexa, what is the temperature in the  *device*
+* Alexa, what is the temperature in the *device* ( Not supported in Japan )
 * Alexa, dim *device*
 * Alexa, brighten *device*
 * Alexa, turn *device* red
