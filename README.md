@@ -195,7 +195,7 @@ If you have multiple homebridge options, the -I should be listed first. ie
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
-### If you are running with docker, you can add the -I flag following these instructions
+* If you are running with docker, you can add the -I flag following these instructions
 
 https://github.com/oznu/docker-homebridge/issues/79
 
