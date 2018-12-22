@@ -195,6 +195,21 @@ If you have multiple homebridge options, the -I should be listed first. ie
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
+* If you are running with docker, you can add the -I flag following these instructions
+
+https://github.com/oznu/docker-homebridge/issues/79
+
+Variable=HOMEBRIDGE_INSECURE
+Value=1
+
+```
+Go to the Docker app
+Stop the Homebridge container
+Edit the container and go to the Environment tab
+Add environment variable
+Save and start container
+```
+
 2. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
 
 ```
