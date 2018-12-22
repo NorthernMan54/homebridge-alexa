@@ -177,7 +177,7 @@ The setup of the plugin is very straight forward, and requires enabling insecure
 homebridge -I
 ```
 
-If your using systemd to manage homebridge, the -I is added to the file /etc/default/homebridge in the line, HOMEBRIDGE_OPTS ie.
+* If your using systemd to manage homebridge, the -I is added to the file /etc/default/homebridge in the line, HOMEBRIDGE_OPTS ie.
 
 ```
 # Defaults / Configuration options for homebridge
@@ -189,13 +189,13 @@ HOMEBRIDGE_OPTS=-I
 #DEBUG=
 ```
 
-If you have multiple homebridge options, the -I should be listed first. ie
+* If you have multiple homebridge options, the -I should be listed first. ie
 
 ```
 HOMEBRIDGE_OPTS=-I -U /var/homebridge
 ```
 
-* If you are running with docker, you can add the -I flag following these instructions
+* If you are running with a docker container ( Oznu's), you can add the -I flag following these instructions:
 
 https://github.com/oznu/docker-homebridge/issues/79
 
