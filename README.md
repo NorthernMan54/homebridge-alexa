@@ -220,12 +220,12 @@ sudo npm install -g homebridge-alexa
 
 ## Create homebridge-alexa account
 
-3. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://homebridge.cloudwatch.net.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
+3. An account to link your Amazon Alexa to HomeBridge needs to created on this website https://www.homebridge.ca/.  This account will be used when you enable the home skill in the Alexa App on your mobile, and in the configuration of the plugin in homebridge.
 
 
 ## HomeBridge-alexa plugin configuration
 
-4. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://homebridge.cloudwatch.net website.  This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
+4. Add the plugin to your config.json.  The login and password in the config.json, are the credentials you created earlier for the https://www.homebridge.ca/ website.  This only needs to be completed for one instance of homebridge in your environment, it will discover the accessories connected to your other homebridges automatically.
 
 ```
 "platforms": [
@@ -240,8 +240,8 @@ sudo npm install -g homebridge-alexa
 
 ### Required parameters
 
-* username - Login created for the skill linking website https://homebridge.cloudwatch.net
-* password - Login created for the skill linking website https://homebridge.cloudwatch.net
+* username - Login created for the skill linking website https://www.homebridge.ca/
+* password - Login created for the skill linking website https://www.homebridge.ca/
 
 ### Optional parameters
 
@@ -397,7 +397,7 @@ Please note, that if you have other HomeKit devices on your network, like Philip
 
 ## Enable Homebridge smarthome skill and link accounts
 
-7. In your Amazon Alexa app on your phone, please search for the "Homebridge" skill, and enable the skill.  You will need to Enable and link the skill to the account you created earlier on https://homebridge.cloudwatch.net
+7. In your Amazon Alexa app on your phone, please search for the "Homebridge" skill, and enable the skill.  You will need to Enable and link the skill to the account you created earlier on https://www.homebridge.ca/
 
 ## Discover Devices
 
