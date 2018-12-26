@@ -53,7 +53,8 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
-      * [Plugin Installation](#plugin-installation)
+      * [Prepare Homebridge in plugin installation](#prepare-homebridge-in-plugin-installation)
+      * [Install Plugin](#install-plugin)
       * [Create homebridge-alexa account](#create-homebridge-alexa-account)
       * [HomeBridge-alexa plugin configuration](#homebridge-alexa-plugin-configuration)
          * [Required parameters](#required-parameters)
@@ -169,7 +170,7 @@ cool, cool white
 
 # Installation of homebridge-alexa
 
-## Plugin Installation
+## Prepare Homebridge in plugin installation
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
@@ -213,6 +214,8 @@ Edit the container and go to the Environment tab
 Add environment variable
 Save and start container
 ```
+
+## Install Plugin
 
 2. The setup of homebridge-alexa is similar to other plugins, except it doesn't have any devices in the Home app;-)  I'm just reusing the runtime and configuration file management. And it only needs to installed once if you have multiple homeridge's installed.  It will auto-discover and connect to the other instances.
 
