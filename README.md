@@ -28,6 +28,8 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
 
 **Dec 20th - Certification certification failed for Japan and Mexico, see Issue #150**
 
+**Dec 27th - Resubmitted to Amazon for certification.**
+
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
 * Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
