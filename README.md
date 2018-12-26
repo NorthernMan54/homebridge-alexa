@@ -53,7 +53,7 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
-      * [Prepare Homebridge in plugin installation](#prepare-homebridge-in-plugin-installation)
+      * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
       * [Create homebridge-alexa account](#create-homebridge-alexa-account)
       * [HomeBridge-alexa plugin configuration](#homebridge-alexa-plugin-configuration)
@@ -170,7 +170,7 @@ cool, cool white
 
 # Installation of homebridge-alexa
 
-## Prepare Homebridge in plugin installation
+## Prepare Homebridge for plugin installation
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
 
