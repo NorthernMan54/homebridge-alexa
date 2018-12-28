@@ -1,0 +1,1203 @@
+{
+  "accessories": [{
+    "aid": 1,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Nick Farina",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Homebridge",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Maggie-Dev",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "CC:22:3D:F3:CE:35",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.4.44",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 2000000008,
+      "type": "49FB9D4D-0FEA-4BF1-8FA6-E7B18AB86DCE",
+      "characteristics": [{
+        "iid": 9,
+        "type": "77474A2F-FA98-485E-97BE-4762458774D8",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "State",
+        "maxValue": 1,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 10,
+        "type": "FD9FE4CC-D06F-4FFE-96C6-595D464E1026",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Version"
+      }, {
+        "iid": 11,
+        "type": "5819A4C2-E1B0-4C9D-B761-3EB1AFF43073",
+        "perms": ["pr", "pw", "ev"],
+        "format": "data",
+        "value": null,
+        "description": "Control Point"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 2,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pair Netflix (3)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "f1969588-e804-4074-ac41-93f4a5edba35",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pair Netflix (3)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 3,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Menu (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "38e266f1-3205-4153-989e-40e340990cfc",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Menu (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 4,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TV/Home (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "8f82ee59-e06c-46ba-b1cf-e410d11a7daa",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TV/Home (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 5,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Mic/Siri (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "48e93450-919b-4512-adfe-1fe3e329e690",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Mic/Siri (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 6,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Play (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "da664205-04ed-4e5b-8ea4-98bf0ac91e4a",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Play (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 7,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pause (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "fa85576f-1777-488d-8afd-cb622af99b89",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pause (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 8,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Up (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "20418d48-74ab-412d-93cf-abb4b7f4540d",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Up (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 9,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Down (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "61196dd6-12f5-4dfd-b2d8-33c858366004",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Down (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 10,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Left (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "2337d7aa-8914-4df6-b276-2cd80f729c57",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Left (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 11,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Right (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0a3c60e2-da90-4b0c-b091-a55383df79ee",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Right (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 12,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Select (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "a16b627f-ece9-4c3e-bdb1-c1a142d8c7c2",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Select (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 13,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Sleep (TV)",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "c61abfa3-d4ec-414e-8a41-1a2cc3fa6955",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Sleep (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 14,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rugby",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "6e06cb57-ddbf-48d5-8283-f4eb8ad8a09e",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rugby",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 15,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Plex For Mel",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "306b374d-506a-4f39-9fef-2b667825082a",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Plex For Mel",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 16,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Plex For James",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "69d16e69-66ee-4f1e-a580-ab19e6caacdb",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Plex For James",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 17,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Freeview",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "29fb74c3-dd0a-4f6f-95fd-be0cb6e30e46",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Freeview",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }]
+}

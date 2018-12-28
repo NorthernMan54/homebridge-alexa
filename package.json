@@ -27,7 +27,9 @@
     "ip": "^=1.1.5",
     "is-my-json-valid": "^2.19.0",
     "mqtt": "^2.18.8",
-    "requestretry": "^=1.13.0"
+    "npm": "^6.5.0",
+    "requestretry": "^=1.13.0",
+    "update": "^0.7.4"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",

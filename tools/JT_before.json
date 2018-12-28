@@ -1,0 +1,58 @@
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDEzLGlpZDogMTA=",
+                    "friendlyName": "TV",
+                    "description": "Testing TV Apple TV",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "TV"
+                    ],
+                    "cookie": {
+                        "Pair": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":2,\"iid\":10,\"value\":1}",
+                        "Stop": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TV/Home": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":4,\"iid\":10,\"value\":1}",
+                        "Mic/Siri": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":5,\"iid\":10,\"value\":1}",
+                        "Play": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":10,\"value\":1}",
+                        "Pause": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":10,\"value\":1}",
+                        "Up": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":10,\"value\":1}",
+                        "Down": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":9,\"iid\":10,\"value\":1}",
+                        "Left": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":10,\"iid\":10,\"value\":1}",
+                        "Right": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":11,\"iid\":10,\"value\":1}",
+                        "Select": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":12,\"iid\":10,\"value\":1}",
+                        "Sleep": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":13,\"iid\":10,\"value\":1}",
+                        "ReportState": "[{\"interface\":\"Alexa.PlaybackController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":13,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PlaybackController",
+                            "version": "3",
+                            "supportedOperations": [
+                                "Play",
+                                "Pause",
+                                "Stop"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
