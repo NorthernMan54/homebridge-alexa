@@ -659,7 +659,7 @@
                 },
                 {
                     "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDQzLGlpZDogMTI=",
-                    "friendlyName": "Leinwand",
+                    "friendlyName": "",
                     "description": "Testing Leinwand Blinds",
                     "manufacturerName": "Peter Chodyra",
                     "displayCategories": [
@@ -710,7 +710,7 @@
                 },
                 {
                     "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDY1LGlpZDogMTI=",
-                    "friendlyName": "Rollo Rechts",
+                    "friendlyName": "",
                     "description": "Testing Rollo Rechts Blinds",
                     "manufacturerName": "Peter Chodyra",
                     "displayCategories": [
