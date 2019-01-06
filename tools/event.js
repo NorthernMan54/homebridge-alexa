@@ -30,12 +30,18 @@ var options = {
   ]
 };
 
-console.log("Connecting",options);
+console.log("Connecting", options);
 connection.client = mqtt.connect(options);
 // connection.client.setMaxListeners(0);
 
 connection.client.on('connect', function() {
   debug('connect', "command/" + options.username + "/#");
+  sendEvent();
+  setInterval(sendEvent, 60 * 1000);
+});
+
+function sendEvent() {
+  var now = new Date();
   // Send message after Connecting
   var message = {
     "context": {},
@@ -58,8 +64,8 @@ connection.client.on('connect', function() {
             "namespace": "Alexa.MotionSensor",
             "name": "detectionState",
             "value": "DETECTED",
-            "timeOfSample": "2018-02-03T16:20:50.52Z",
-            "uncertaintyInMilliseconds": 0
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
           }]
         }
       }
@@ -75,7 +81,7 @@ connection.client.on('connect', function() {
   var topic = "event/" + process.env.USERNAME + "/1";
   console.log("Sending message");
   connection.client.publish(topic, JSON.stringify(message));
-});
+}
 
 connection.client.on('offline', function() {
   debug('offline');
