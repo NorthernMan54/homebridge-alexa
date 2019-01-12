@@ -1,12 +1,4 @@
-//  {
-//    "platform": "Alexa",
-//    "name": "Alexa",
-//    "username": "....",
-//    "password": "...."
-//  }
-
 "use strict";
-
 var Accessory, Service, Characteristic, UUIDGen;
 var http = require('http');
 var debug = require('debug')('alexaPlugin');
@@ -68,14 +60,10 @@ alexahome.prototype.didFinishLaunching = function() {
     password: this.password,
     clientId: this.username,
     reconnectPeriod: 5000,
-    servers: [{
-        protocol: 'mqtts',
-        host: 'homebridge.cloudwatch.net',
-        port: 8883
-      },
+    servers: [
       {
         protocol: 'mqtt',
-        host: 'homebridge.cloudwatch.net',
+        host: 'homebridgebeta.cloudwatch.net',
         port: 1883
       }
     ]
