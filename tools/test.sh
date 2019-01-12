@@ -17,3 +17,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/mi-light_accessories.jso
 echo "ikea"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/ikea_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/ikea.json after.json
+
+echo "Sensors"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/sensor_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/sensor.json after.json
