@@ -1,4 +1,11 @@
 var alexaTranslator = require('../lib/alexaTranslator.js');
+var Validator = require('is-my-json-valid');
+// var debug = require('debug')('parse');
+var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
+var checkAlexaMessage = Validator(alexaSchema, {
+  verbose: true
+});
+
 var fs = require('fs');
 
 var endPoints = [{
@@ -42,5 +49,16 @@ var speakers = [{
 var filter = "";
 
 var response = alexaTranslator.endPoints(message, endPoints, filter, speakers);
+
+var status = checkAlexaMessage(response);
+if (!status) {
+  console.log("WARNING - Bad message", checkAlexaMessage.errors);
+  console.log("---------------------------- Response -------------------------------");
+  console.log(JSON.stringify(response));
+  console.log("------------------------------------------------------------");
+} else {
+  console.log("Alexa Message Validation Passed!");
+}
+
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
