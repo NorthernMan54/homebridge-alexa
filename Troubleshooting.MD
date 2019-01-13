@@ -21,6 +21,12 @@
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
 
+Known possible causes:
+
+1 - Multiple copies of homebridge-alexa on your network
+2 - Bad login or password in your config.json for https://www.homebridge.ca
+3 - VPN Software interfering with homebridge-alexa to Alexa communications
+
 # alexaLocal error { Error: Connection refused: Not authorized
 
 Not authorized, the username and/or password configured in the plugin is incorrect.
@@ -95,3 +101,12 @@ alexaLocal offline +8ms
 ```
 
 This is for a future feature enhancement, and can be ignored.
+
+# Intermittent connectivity from Alexa to Homebridge
+
+Alexa works intermittently, and the logs have offline/reconnect messages.  Also in your environment your running VPN software on the same machine as homebridge.  The VPN software is interfering with the MQTT connection between homebridge-alexa and https://www.homebridge.ca.  Please move the VPN to a different machine.
+
+```
+alexaLocal offline +35s
+alexaLocal reconnect +5s
+```
