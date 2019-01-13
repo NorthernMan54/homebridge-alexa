@@ -23,6 +23,7 @@
     "body-parser": "^1.18.3",
     "bonjour": "^=3.5.0",
     "debug": "^2.6.9",
+    "express": "^4.16.4",
     "httpdispatcher": ">=2.0.1",
     "ip": "^=1.1.5",
     "is-my-json-valid": "^2.19.0",

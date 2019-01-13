@@ -20,7 +20,7 @@ var message = {
     endpoint: {
       endpointId: 'MTkyLjE2OC4xLjQxOjUxODI2LGFpZDogMyxpaWQ6IDEw',
       cookie: {
-        ReportState: '[{"interface":"Alexa.ContactSensor","host":"192.168.1.41","port":51826,"aid":3,"iid":10}]'
+        ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":3000,"aid":3,"iid":10}]'
       }
     },
     payload: {}
@@ -41,7 +41,7 @@ alexaActions.alexaMessage.call(context, message, function(error, response) {
   }
   var status = checkAlexaMessage(response);
   if (!status) {
-    console.log("WARNING - Bad message", checkAlexaMessage.errors);
+    console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
     console.log("---------------------------- Response -------------------------------");
     console.log(JSON.stringify(response, null, 4));
     console.log("------------------------------------------------------------");
