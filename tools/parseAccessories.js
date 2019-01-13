@@ -1,6 +1,6 @@
 var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
-var debug = require('debug')('parse');
+// var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
 var checkAlexaMessage = Validator(alexaSchema, {
   verbose: true
