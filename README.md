@@ -266,6 +266,20 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
+* debug - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "debug": true
+  }
+],
+```
+
 * refresh - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
 
 ```

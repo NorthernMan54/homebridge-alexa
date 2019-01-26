@@ -30,6 +30,22 @@ function alexaHome(log, config, api) {
   this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
   this.speakers = config['speakers'] || {}; // Array of speaker devices
 
+  // Enable config based DEBUG logging enable
+  this.debug = config['debug'] || false;
+  if (this.debug) {
+    let debugEnable = require('debug');
+    let namespaces = debugEnable.disable();
+
+    // this.log("DEBUG-1", namespaces);
+    if (namespaces) {
+      namespaces = namespaces + ',alexa*';
+    } else {
+      namespaces = 'alexa*';
+    }
+    // this.log("DEBUG-2", namespaces);
+    debugEnable.enable(namespaces);
+  }
+
   if (!this.username || !this.password) {
     this.log.error("Missing username and password");
   }
