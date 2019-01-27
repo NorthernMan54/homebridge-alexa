@@ -27,6 +27,7 @@ function alexaHome(log, config, api) {
   this.password = config['password'] || false;
   this.filter = config['filter'];
   this.beta = config['beta'] || false;
+  this.events = config['events'] || false;
   this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
   this.speakers = config['speakers'] || {}; // Array of speaker devices
 
@@ -85,10 +86,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     }]
   };
 
-  alexaHAP.HAPDiscovery({
-    "pin": this.pin,
-    "refresh": this.refresh
-  });
+  alexaHAP.HAPDiscovery(this);
   //  init(this);
 
   alexa = new AlexaLocal(options);
