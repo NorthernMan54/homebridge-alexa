@@ -39,7 +39,7 @@ Alexa Message Validation Passed!
                                         "name": "detectionState"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -72,7 +72,7 @@ Alexa Message Validation Passed!
                                         "name": "detectionState"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
