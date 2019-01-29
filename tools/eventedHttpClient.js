@@ -1,5 +1,5 @@
 // Monkey patch before you require http for the first time.
-const parser = require('http-message-parser');
+const parser = require('../lib/httpParser.js');
 
 const net = require('net');
 const client = net.createConnection({

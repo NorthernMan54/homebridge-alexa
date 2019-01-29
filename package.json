@@ -32,7 +32,9 @@
     "mqtt": ">=2.18.8",
     "npm": ">6.5.0",
     "requestretry": ">=1.13.0",
-    "update": ">=0.7.4"
+    "update": ">=0.7.4",
+    "buffer": "^4.9.1",
+    "extend": ">=3.0.2"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
