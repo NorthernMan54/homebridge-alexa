@@ -2,12 +2,14 @@
 // var debug = require('debug')('alexaPlugin');
 
 var AlexaLocal = require('./lib/alexaLocal.js').alexaLocal;
-var alexaHAP = require('./lib/alexaHAP.js');
+var AlexaHAP = require('./lib/alexaHAP.js').alexaHAP;
 var alexaActions = require('./lib/alexaActions.js');
+var alexaTranslator = require('./lib/alexaTranslator.js');
+var debug = require('debug')('alexaPlugin');
 
 const packageConfig = require('./package.json');
 
-var alexa;
+var alexa, HbEvents;
 var options = {};
 
 module.exports = function(homebridge) {
@@ -86,8 +88,14 @@ alexaHome.prototype.didFinishLaunching = function() {
     }]
   };
 
-  alexaHAP.HAPDiscovery(this);
-  //  init(this);
+  HbEvents = new AlexaHAP(this);
+
+  HbEvents.on('Ready', function() {
+    // debug("Start events", this);
+    alexaActions.alexaDiscovery.call(this, null, function() {
+      HbEvents.registerEvents(alexaTranslator.hapEndPoints());
+    });
+  }.bind(this));
 
   alexa = new AlexaLocal(options);
 

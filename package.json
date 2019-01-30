@@ -2,7 +2,7 @@
   "name": "homebridge-alexa",
   "version": "0.1.71",
   "description": "Alexa Skill frontend for Homebridge",
-  "main": "web.js",
+  "main": "plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md"
