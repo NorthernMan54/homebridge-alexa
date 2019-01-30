@@ -97,6 +97,10 @@ alexaHome.prototype.didFinishLaunching = function() {
     });
   }.bind(this));
 
+  HbEvents.on('hapEvent', function(event) {
+    alexaActions.alexaEvent.call(this, event);
+  }.bind(this));
+
   alexa = new AlexaLocal(options);
 
   alexa.on('Alexa', alexaActions.alexaMessage.bind(this));
