@@ -2,14 +2,15 @@
 // var debug = require('debug')('alexaPlugin');
 
 var AlexaLocal = require('./lib/alexaLocal.js').alexaLocal;
-var AlexaHAP = require('./lib/alexaHAP.js').alexaHAP;
+var alexaHAP = require('./lib/alexaHAP.js');
 var alexaActions = require('./lib/alexaActions.js');
 var alexaTranslator = require('./lib/alexaTranslator.js');
+var EventEmitter = require('events').EventEmitter;
 var debug = require('debug')('alexaPlugin');
 
 const packageConfig = require('./package.json');
 
-var alexa, HbEvents;
+var alexa;
 var options = {};
 
 module.exports = function(homebridge) {
@@ -23,6 +24,7 @@ module.exports = function(homebridge) {
 
 function alexaHome(log, config, api) {
   this.log = log;
+  this.eventBus = new EventEmitter();
   this.config = config;
   this.pin = config['pin'] || "031-45-154";
   this.username = config['username'] || false;
@@ -77,6 +79,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     host = 'homebridgebeta.cloudwatch.net';
   }
   options = {
+    eventBus: this.eventBus,
     username: this.username,
     password: this.password,
     clientId: this.username,
@@ -88,30 +91,32 @@ alexaHome.prototype.didFinishLaunching = function() {
     }]
   };
 
-  HbEvents = new AlexaHAP(this);
+  alexaHAP.init(this);
 
-  HbEvents.on('Ready', function() {
-    // debug("Start events", this);
+  this.eventBus.on('Ready', function() {
+    // Enable event bus once device discovery is complete
     alexaActions.alexaDiscovery.call(this, null, function() {
-      HbEvents.registerEvents(alexaTranslator.hapEndPoints());
+      alexaHAP.registerEvents(alexaTranslator.hapEndPoints());
     });
-  }.bind(this));
-
-  HbEvents.on('hapEvent', function(event) {
-    alexaActions.alexaEvent.call(this, event);
   }.bind(this));
 
   alexa = new AlexaLocal(options);
 
-  alexa.on('Alexa', alexaActions.alexaMessage.bind(this));
-  alexa.on('Alexa.Discovery', alexaActions.alexaDiscovery.bind(this));
-  alexa.on('Alexa.PowerController', alexaActions.alexaPowerController.bind(this));
-  alexa.on('Alexa.PowerLevelController', alexaActions.alexaPowerLevelController.bind(this));
-  alexa.on('Alexa.ColorController', alexaActions.alexaColorController.bind(this));
-  alexa.on('Alexa.ColorTemperatureController', alexaActions.alexaColorTemperatureController.bind(this));
-  alexa.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
-  alexa.on('Alexa.Speaker', alexaActions.alexaSpeaker.bind(this));
-  alexa.on('Alexa.ThermostatController', alexaActions.alexaThermostatController.bind(this));
+  // Homebridge HAP Node Events
+
+  this.eventBus.on('hapEvent', alexaActions.alexaEvent.bind(this));
+
+  // Alexa mesages
+
+  this.eventBus.on('Alexa', alexaActions.alexaMessage.bind(this));
+  this.eventBus.on('Alexa.Discovery', alexaActions.alexaDiscovery.bind(this));
+  this.eventBus.on('Alexa.PowerController', alexaActions.alexaPowerController.bind(this));
+  this.eventBus.on('Alexa.PowerLevelController', alexaActions.alexaPowerLevelController.bind(this));
+  this.eventBus.on('Alexa.ColorController', alexaActions.alexaColorController.bind(this));
+  this.eventBus.on('Alexa.ColorTemperatureController', alexaActions.alexaColorTemperatureController.bind(this));
+  this.eventBus.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
+  this.eventBus.on('Alexa.Speaker', alexaActions.alexaSpeaker.bind(this));
+  this.eventBus.on('Alexa.ThermostatController', alexaActions.alexaThermostatController.bind(this));
   // alexa.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 };
 
