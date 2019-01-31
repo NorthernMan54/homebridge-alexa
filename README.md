@@ -14,14 +14,15 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
 
 # Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.
 
-# Features
+# Homebridge-Alexa
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
-* Supports devices of homekit Service type Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
+* Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
+* Supports passing of sensor updates in real time to Alexa for use in routines.
 * Includes support for brightness and colour.
 * This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
-* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup
+* The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
 # Table of Contents
@@ -59,17 +60,18 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
 
 <!--te-->
 
-# New features with Version 2
+# Features
 
-* Support for color bulbs
-* Support for Window coverings/blinds ( As Alexa doesn't support window coverings I'm using a light bulb)
-* Support for Garage Doors ( As Alexa doesn't support Garage Doors I'm using a light bulb)
-* Support for Temperature Sensors
+* Support for Light Bulbs, Switches and outlets
+* Support for Color Light Bulbs and Colour Temperature of white Light bulbs
+* Support for Fans (As Alexa doesn't support Fans coverings I'm using Other)
+* Support for Window coverings/blinds (As Alexa doesn't support window coverings I'm using Other)
+* Support for Garage Doors
+* Support for Temperature, Contact and Motion Sensors.  Also supports sending real time updates from these sensors to Alexa, for use in routines.
 * Support for Fan2 aka Dyson fans
-* Support for Valves, Sprinklers and Shower Heads
+* Support for Valves, Sprinklers and Shower Heads (As Alexa doesn't support these, they are Other)
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
-* Support for the color temperature of white bulbs
 * Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
 * Support for Apple TV ( Supports homebridge-apple-tv )
 * Support Spotify playback controls via homebridge-yamaha-home
@@ -88,6 +90,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Speakers
 * Apple TV
 * Temperature Sensors
+* Motion Sensors
+* Contact Sensors
 * Door/Garage Door - Supported as a on/off device
 * Thermostat - Partial support only ( Set target Temperature in celsius )
 
@@ -246,6 +250,20 @@ sudo npm install -g homebridge-alexa
     "username": "....",
     "password": "....",
     "pin": "031-45-155"
+  }
+],
+```
+
+* events - Enables passing to Alexa of support device events for use in routines
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "events": true
   }
 ],
 ```
