@@ -12,7 +12,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).
 
-** Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.
+** Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time. **
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
