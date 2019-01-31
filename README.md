@@ -12,25 +12,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).
 
-**Nov 2 - I have just submitted the skill for certification in Italian (IT), English (IN),  Spanish (ES), Japanese (JP), and Spanish (MX). This should take 5-7 days, fingers crossed.**
-
-**Nov 9 - I just received an email back from Amazon, and they are saying that they have a large number of skills to review, and need a few more days.  Stay tuned.**
-
-**Nov 14 - Received a response from Amazon, and I failed certification due to some text and wording issues.**
-
-**Nov 18 - Resubmitted to Amazon for certification.**
-
-**Nov 29 - No response from Amazon yet.**
-
-**Dec 7 - Certification certification failed for Japan and Mexico, see Issue #150**
-
-**Dec 9 - Resubmitted to Amazon for certification.**
-
-**Dec 20th - Certification certification failed for Japan and Mexico, see Issue #150**
-
-**Dec 27th - Resubmitted to Amazon for certification.**
-
-**Jan 11th - Certification certification failed for Italian and Spanish, see Issue #164**
+** Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
