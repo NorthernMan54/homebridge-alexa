@@ -435,3 +435,41 @@ Alexa Message Validation Passed!
         }
     }
 }
+
+-----------------------------------------------------------
+
+{"host":"test","port":"12345","aid":7,"iid":10}
+Fail
+undefined
+{"host":"test","port":"12345","aid":2,"iid":10}
+Fail
+undefined
+{"host":"test","port":"12345","aid":2,"iid":16}
+{ endpointId: 'dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxNg==',
+  friendlyName: 'Dryer',
+  description: 'Testing Dryer Temperature Sensor',
+  manufacturerName: 'WSSENSOR',
+  displayCategories: [ 'TEMPERATURE_SENSOR' ],
+  cookie: 
+   { ReportState: '[{"interface":"Alexa.TemperatureSensor","host":"test","port":"12345","aid":2,"iid":16}]' },
+  capabilities: 
+   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
+     { type: 'AlexaInterface',
+       interface: 'Alexa.TemperatureSensor',
+       version: '3',
+       properties: [Object] } ] }
+{"host":"test","port":"12345","aid":3,"iid":10}
+Fail
+undefined
+{"host":"test","port":"12345","aid":3,"iid":16}
+Fail
+undefined
+{"host":"test","port":"12345","aid":4,"iid":10}
+Fail
+undefined
+{"host":"test","port":"12345","aid":4,"iid":16}
+Fail
+undefined
+
+-----------------------------------------------------------
+
