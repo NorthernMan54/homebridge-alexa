@@ -21,3 +21,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/ikea_accessories.json > 
 echo "Sensors"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/sensor_accessories.json > ~/Code/alexaAwsBackend/samples/sensor.json
+
+echo "Leonard"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > ~/Code/alexaAwsBackend/samples/leonard.json

@@ -48,7 +48,7 @@ var speakers = [{
 
 var filter = "";
 
-var response = alexaTranslator.endPoints(message, endPoints, filter, speakers);
+var response = alexaTranslator.endPoints(message, endPoints, { "events": true, "speakers": speakers });
 
 var status = checkAlexaMessage(response);
 if (!status) {

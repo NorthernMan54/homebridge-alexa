@@ -13,10 +13,78 @@ Alexa Message Validation Passed!
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxMA==",
-                    "friendlyName": "Motion",
-                    "description": "Testing Motion Motion Sensor",
-                    "manufacturerName": "sensor-stub",
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDcsaWlkOiA5Mw==",
+                    "friendlyName": "Front Porch",
+                    "description": "Testing Front Porch Motion Sensor",
+                    "manufacturerName": "homebridge-rtl_433",
+                    "displayCategories": [
+                        "MOTION_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.MotionSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDU1LGlpZDogMTA=",
+                    "friendlyName": "Bart",
+                    "description": "Testing Bart Switch",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":55,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":55,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":55,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxMw==",
+                    "friendlyName": "Dryer",
+                    "description": "Testing Dryer Motion Sensor",
+                    "manufacturerName": "WSSENSOR",
                     "displayCategories": [
                         "MOTION_SENSOR"
                     ],
@@ -39,22 +107,90 @@ Alexa Message Validation Passed!
                                         "name": "detectionState"
                                     }
                                 ],
-                                "proactivelyReported": false,
+                                "proactivelyReported": true,
                                 "retrievable": true
                             }
                         }
                     ]
                 },
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMsaWlkOiAxMA==",
-                    "friendlyName": "Contact",
-                    "description": "Testing Contact Contact Sensor",
-                    "manufacturerName": "sensor-stub",
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxNg==",
+                    "friendlyName": "Dryer",
+                    "description": "Testing Dryer Temperature Sensor",
+                    "manufacturerName": "WSSENSOR",
                     "displayCategories": [
-                        "CONTACT_SENSOR"
+                        "TEMPERATURE_SENSOR"
                     ],
                     "cookie": {
-                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":10}]"
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":2,\"iid\":16}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMsaWlkOiAxMw==",
+                    "friendlyName": "Garage",
+                    "description": "Testing Garage Temperature Sensor",
+                    "manufacturerName": "WSSENSOR",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMsaWlkOiAyMw==",
+                    "friendlyName": "Garage Door",
+                    "description": "Testing Garage Door Garage Door",
+                    "manufacturerName": "WSSENSOR",
+                    "displayCategories": [
+                        "DOOR"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":17,\"value\":0}",
+                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":17,\"value\":1}",
+                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":16},{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -70,6 +206,223 @@ Alexa Message Validation Passed!
                                 "supported": [
                                     {
                                         "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDQsaWlkOiAxMw==",
+                    "friendlyName": "Test Motion",
+                    "description": "Testing Test Motion Temperature Sensor",
+                    "manufacturerName": "WSSENSOR",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":4,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDQsaWlkOiAxOQ==",
+                    "friendlyName": "Test Motion",
+                    "description": "Testing Test Motion Motion Sensor",
+                    "manufacturerName": "WSSENSOR",
+                    "displayCategories": [
+                        "MOTION_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":4,\"iid\":16}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.MotionSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDUxLGlpZDogMTA=",
+                    "friendlyName": "MCULED Reset Switch",
+                    "description": "Testing MCULED Reset Switch Switch",
+                    "manufacturerName": "MCULED",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":51,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":51,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":51,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDgxLGlpZDogMTE=",
+                    "friendlyName": "Beside Stairs",
+                    "description": "Testing Beside Stairs Light",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":11}",
+                        "SetPowerLevel": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":11}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":81,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDg1LGlpZDogMTE=",
+                    "friendlyName": "Outside Office",
+                    "description": "Testing Outside Office Light",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":11}",
+                        "SetPowerLevel": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":11}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":85,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
                                 ],
                                 "proactivelyReported": false,
