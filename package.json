@@ -20,21 +20,14 @@
     "homebridge": ">=0.4.16"
   },
   "dependencies": {
-    "body-parser": ">=1.18.3",
+    "buffer": "^4.9.1",
+    "is-my-json-valid": ">=2.19.0",
     "bonjour": ">=3.5.0",
     "debug": ">2.6.9",
-    "express": ">=4.16.4",
-    "http-message-parser": "0.0.34",
-    "http-parser-js": "^0.5.0",
-    "httpdispatcher": ">=2.0.1",
+    "extend": ">=3.0.2",
     "ip": ">=1.1.5",
-    "is-my-json-valid": ">=2.19.0",
     "mqtt": ">=2.18.8",
-    "npm": ">6.5.0",
-    "requestretry": ">=1.13.0",
-    "update": ">=0.7.4",
-    "buffer": "^4.9.1",
-    "extend": ">=3.0.2"
+    "once": ">=1.4.0"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
