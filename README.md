@@ -14,6 +14,8 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
 
 # Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.
 
+# IMPORTANT - For existing users, installing an updated version of the plugin after XXXX XX, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.  You will need to manually remove all existing devices after upgrading and setup and groups or routines again.  This would only occur with the first update after this date.
+
 # Homebridge-Alexa
 
 * Supports multiple homebridge instances running on your network.
@@ -254,7 +256,7 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* events - Enables passing to Alexa of support device events for use in routines
+* events - Enables passing to Alexa of support device events for use in routines.  **For users who enrolled prior to XXXXX XX, 2019, you will need to unlink the skill and relink the skill from the Alexa app in order to enable events.**
 
 ```
 "platforms": [
