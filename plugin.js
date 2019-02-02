@@ -6,19 +6,13 @@ var alexaHAP = require('./lib/alexaHAP.js');
 var alexaActions = require('./lib/alexaActions.js');
 var alexaTranslator = require('./lib/alexaTranslator.js');
 var EventEmitter = require('events').EventEmitter;
-var debug = require('debug')('alexaPlugin');
+// var debug = require('debug')('alexaPlugin');
 
 const packageConfig = require('./package.json');
 
-var alexa;
 var options = {};
 
 module.exports = function(homebridge) {
-  // Service = homebridge.hap.Service;
-  // Characteristic = homebridge.hap.Characteristic;
-  // Accessory = homebridge.platformAccessory;
-  // UUIDGen = homebridge.hap.uuid;
-
   homebridge.registerPlatform("homebridge-alexa", "Alexa", alexaHome);
 };
 
@@ -100,7 +94,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     });
   }.bind(this));
 
-  alexa = new AlexaLocal(options);
+  var alexa = new AlexaLocal(options);
 
   // Homebridge HAP Node Events
 
