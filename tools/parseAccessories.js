@@ -55,7 +55,10 @@ var speakers = [{
   {
     "manufacturer": "HTTP-IRBlaster",
     "name": "Panasonic"
-  }
+  },
+  {
+        "manufacturer": "HTTP-IRBlaster", "name": "KODI"
+	}
 ];
 
 var response = alexaTranslator.endPoints(message, endPoints, {

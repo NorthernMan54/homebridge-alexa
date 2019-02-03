@@ -22,6 +22,10 @@ echo "Sensors"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/sensor_accessories.json > ~/Code/alexaAwsBackend/samples/sensor.json
 
-echo "Leonard"
+echo "Leonard - sensors"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > ~/Code/alexaAwsBackend/samples/leonard.json
+
+echo "Howard - Speaker"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json >  ~/Code/alexaAwsBackend/samples/howard.json

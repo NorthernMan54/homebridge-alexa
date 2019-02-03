@@ -375,7 +375,6 @@ sudo npm install -g homebridge-alexa
 ```
 
 ** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
-
 ** Name - Is the name of the accessory as shown in the Home App
 
 ie

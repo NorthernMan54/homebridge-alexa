@@ -25,3 +25,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/sensor_accessories.json 
 echo "Leonard"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > after.json ; diff ~/Code/alexaAwsBackend/samples/leonard.json after.json
+
+echo "Howard"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json > after.json ; diff ~/Code/alexaAwsBackend/samples/howard.json after.json
