@@ -26,6 +26,7 @@ function alexaHome(log, config, api) {
   this.filter = config['filter'];
   this.beta = config['beta'] || false;
   this.events = config['events'] || false;
+  this.combine = config['combine'] || false;
   this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
   this.speakers = config['speakers'] || {}; // Array of speaker devices
 
