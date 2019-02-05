@@ -357,7 +357,24 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* speakers - Devices to configure as speakers
+* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls.  Ymmv
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "combine": {
+        "into": "TV",
+        "from": ["KODI"]
+        },
+  }
+],
+```
+
+* speakers - Devices to configure as speakers as HomeKit currently does not have a Speaker service
 
 ```
 "platforms": [
