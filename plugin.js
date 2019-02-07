@@ -78,6 +78,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     username: this.username,
     password: this.password,
     clientId: this.username,
+    pin: this.pin,
+    refresh: this.refresh,
     reconnectPeriod: 5000,
     servers: [{
       protocol: 'mqtt',
@@ -86,7 +88,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     }]
   };
 
-  alexaHAP.init(this);
+  alexaHAP.init(options);
 
   this.eventBus.on('Ready', function() {
     // Enable event bus once device discovery is complete
