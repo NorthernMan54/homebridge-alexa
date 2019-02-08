@@ -2,9 +2,7 @@
 // var debug = require('debug')('alexaPlugin');
 
 var AlexaLocal = require('./lib/alexaLocal.js').alexaLocal;
-var alexaHAP = require('./lib/alexaHAP.js');
 var alexaActions = require('./lib/alexaActions.js');
-var alexaTranslator = require('./lib/alexaTranslator.js');
 var EventEmitter = require('events').EventEmitter;
 // var debug = require('debug')('alexaPlugin');
 
@@ -78,6 +76,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     username: this.username,
     password: this.password,
     clientId: this.username,
+    events: this.events,
+    log: this.log,
     pin: this.pin,
     refresh: this.refresh,
     reconnectPeriod: 5000,
@@ -88,14 +88,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     }]
   };
 
-  alexaHAP.init(options);
-
-  this.eventBus.on('Ready', function() {
-    // Enable event bus once device discovery is complete
-    alexaActions.alexaDiscovery.call(this, null, function() {
-      alexaHAP.registerEvents(alexaTranslator.hapEndPoints());
-    });
-  }.bind(this));
+  // Initialize HAP Connections
+  alexaActions.hapDiscovery(options);
 
   var alexa = new AlexaLocal(options);
 
