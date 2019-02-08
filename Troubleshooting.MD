@@ -12,7 +12,6 @@
    * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
    * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
    * [This connection refused message for port 8883 is not an error, and can be ignored](#this-connection-refused-message-for-port-8883-is-not-an-error-and-can-be-ignored)
-
 <!-- Added by: sgracey, at:  -->
 
 <!--te-->
@@ -27,6 +26,8 @@ Known possible causes:
 2 - Bad login or password in your config.json for https://www.homebridge.ca
 3 - VPN Software interfering with homebridge-alexa to Alexa communications
 
+Please note, this message appears every 5 times the skill needs to reconnect to the skill cloud backend, so the message may occasionally appear.
+
 # alexaLocal error { Error: Connection refused: Not authorized
 
 Not authorized, the username and/or password configured in the plugin is incorrect.
@@ -34,6 +35,8 @@ Not authorized, the username and/or password configured in the plugin is incorre
 # ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
 
 The homebridge-alexa plugin is having issues maintaining a connection to homebridge.cloudwatch.net, most likely cause of this message is having multiple copies of homebridge-alexa in your environment.  The plugin has stopped responding to Alexa commands until the issue is resolved.
+
+Please note, this message appears after the skill needs to reconnect to the skill cloud backend over 1,000 times.  As this point the plugin has stopped trying to connect to the skill cloud backend.  Restarting homebridge will reset the counter.
 
 # [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
 
@@ -85,7 +88,16 @@ Homebridge-Alexa needs to have a consistent port number for homebridge, please e
 
 # Device discovery fails and the plugin logs show no issues.
 
-Using just the website/app without an Alexa device does not work.
+1 - Using just the website/app without an Alexa device does not work.
+
+2 - If device discovery is not working, and you have no errors.  Trying relinking the skill in the Alexa App.  To relink the skill, first 'Disable Skill', then 'Enable' skill.
+
+In the plugin debug logs, when a discovery request is received by the plugin it looks like this
+
+```
+alexaLocal Emitting alexa.discovery
+[2018-3-12 19:10:33] [Alexa] alexaDiscovery - returned 36 devices
+```
 
 # This connection refused message for port 8883 is not an error, and can be ignored
 
