@@ -12,6 +12,7 @@
    * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
    * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
    * [This connection refused message for port 8883 is not an error, and can be ignored](#this-connection-refused-message-for-port-8883-is-not-an-error-and-can-be-ignored)
+   * [Discovery is not working, and no errors](#Discovery_is_not_working,_and_no_errors)
 
 <!-- Added by: sgracey, at:  -->
 
@@ -95,3 +96,14 @@ alexaLocal offline +8ms
 ```
 
 This is for a future feature enhancement, and can be ignored.
+
+# Discovery is not working, and no errors
+
+If device discovery is not working, and you have no errors.  Trying relinking the skill in the Alexa App.  To relink the skill, first 'Disable Skill', then 'Enable' skill.
+
+In the plugin debug logs, when a discovery request is received by the plugin it looks like this
+
+```
+alexaLocal Emitting alexa.discovery
+[2018-3-12 19:10:33] [Alexa] alexaDiscovery - returned 36 devices
+```
