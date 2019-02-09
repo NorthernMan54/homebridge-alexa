@@ -30,9 +30,11 @@ You will need to manually remove all existing devices after upgrading and setup 
 
 # Table of Contents
 <!--ts-->
+   * [Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.](#jan-31---submitted-skill-for-certification-the-beta-is-closed-for-new-participants-at-this-time--amazon-has-given-a-target-of-feb-18th-to-supply-results-of-the-certification)
+   * [IMPORTANT - For existing users, installing an updated version of the plugin after XXXX XX, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.](#important---for-existing-users-installing-an-updated-version-of-the-plugin-after-xxxx-xx-2019-will-cause-alexa-to-mark-all-your-existing-devices-as-offline-and-create-new-ones)
+   * [Homebridge-Alexa](#homebridge-alexa)
    * [Table of Contents](#table-of-contents)
-   * [BETA Test for Sending Events to Alexa and using in routines](#BETA-Test-for-Sending-Events-to-Alexa-and-using-in-routines)
-   * [New features with Version 2](#new-features-with-version-2)
+   * [Features](#features)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
          * [Native Support](#native-support)
          * [Supported as Other](#supported-as-other)
@@ -43,6 +45,8 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [Speakers](#speakers)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
+   * [BETA Test for Sending Events to Alexa and using in routines](#beta-test-for-sending-events-to-alexa-and-using-in-routines)
+      * [Steps to enable](#steps-to-enable)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
