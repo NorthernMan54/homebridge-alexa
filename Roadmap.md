@@ -6,22 +6,22 @@
 * [ ] Enable MQTTS
 * [ ] Automate SSL Cert renewall process
 * [x] Automate DNS link process
-* [ ] Implement Alexa Events and Proactive reporting for Home Skills
-* [ ] Clean up logging, way too noisy
-* [ ] Move to real DNS name
+* [x] Implement Alexa Events and Proactive reporting for Home Skills
+* [x] Clean up logging, way too noisy
+* [x] Move to real DNS name
 
 ## Homebridge-Alexa plugin
 
 
 ### Other Backlog items
 
-* [ ] Fix endpoint id AID and IID change issues
-* [ ] Increase level of documentation
+* [x] Fix endpoint id AID and IID change issues
+* [x] Increase level of documentation
 
 
 ## HAPNode-JS
 
-* [ ] Determine method for accessing accessories and accessory events in HAPNode-JS
+* [x] Determine method for accessing accessories and accessory events in HAPNode-JS
 
 ### HomeKit Device Support
 
@@ -36,7 +36,7 @@
 * [x] Valve as a sprinkler
 * [x] Yamaha Receiver as a Speaker
 * [x] Apple TV as a PlaybackController
-* [ ] Thermostat
-* [ ] Motion Sensor
-* [ ] Contact Sensor
+* [x] Thermostat
+* [x] Motion Sensor
+* [x] Contact Sensor
 * [ ] Camera - Needs more research and a Echo Show
