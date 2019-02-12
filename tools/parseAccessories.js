@@ -36,6 +36,18 @@ var speakers = [{
   {
     "manufacturer": "HTTP-IRBlaster",
     "name": "Panasonic"
+  },
+  {
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 10"
+  },
+  {
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 20"
+  },
+  {
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 300"
   }
 ];
 

@@ -12,6 +12,7 @@
    * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
    * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
    * [This connection refused message for port 8883 is not an error, and can be ignored](#this-connection-refused-message-for-port-8883-is-not-an-error-and-can-be-ignored)
+
 <!-- Added by: sgracey, at:  -->
 
 <!--te-->

@@ -1,6 +1,6 @@
 echo "dyson_accessories"
 
-node parseAccessories.js ~/Code/alexaAwsBackend/samples/dyson_accessories.json > ~/Code/alexaAwsBackend/samples/dyson.json 
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/dyson_accessories.json > ~/Code/alexaAwsBackend/samples/dyson.json
 
 echo "penny"
 
@@ -17,3 +17,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/mi-light_accessories.jso
 echo "ikea"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/ikea_accessories.json > ~/Code/alexaAwsBackend/samples/ikea.json
+
+echo "bose soundlink"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json 

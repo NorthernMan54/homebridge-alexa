@@ -26,6 +26,8 @@ Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japa
 
 # Table of Contents
 <!--ts-->
+   * [Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.](#jan-31---submitted-skill-for-certification-the-beta-is-closed-for-new-participants-at-this-time--amazon-has-given-a-target-of-feb-18th-to-supply-results-of-the-certification)
+   * [Features](#features)
    * [Table of Contents](#table-of-contents)
    * [New features with Version 2](#new-features-with-version-2)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
