@@ -29,3 +29,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > aft
 echo "Howard"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json > after.json ; diff ~/Code/alexaAwsBackend/samples/howard.json after.json
+
+echo "bose soundlink"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json > after.json ; diff ~/Code/alexaAwsBackend/samples/bose.json after.json

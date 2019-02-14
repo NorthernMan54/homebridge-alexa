@@ -57,8 +57,21 @@ var speakers = [{
     "name": "Panasonic"
   },
   {
-        "manufacturer": "HTTP-IRBlaster", "name": "KODI"
-	}
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 10"
+  },
+  {
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 20"
+  },
+  {
+    "manufacturer": "Bose SoundTouch",
+    "name": "Bose SoundTouch 300"
+  },
+  {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "KODI"
+  }
 ];
 
 var response = alexaTranslator.endPoints(message, endPoints, {

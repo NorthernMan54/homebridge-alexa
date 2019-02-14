@@ -31,7 +31,7 @@
     "is-my-json-valid": ">=2.19.0",
     "debug": ">2.6.9",
     "mqtt": ">=2.18.8",
-    "hap-node-client": ">=0.0.8"
+    "hap-node-client": ">=0.0.9"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",

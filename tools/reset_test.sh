@@ -29,3 +29,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > ~/C
 echo "Howard - Speaker"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json >  ~/Code/alexaAwsBackend/samples/howard.json
+
+echo "bose soundlink"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json 
