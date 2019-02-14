@@ -100,6 +100,9 @@ alexaHome.prototype.didFinishLaunching = function() {
 
   // Alexa mesages
 
+  this.eventBus.on('System', function(message) {
+    this.log.error("ERROR: ", message.directive.header.message);
+  }.bind(this));
   this.eventBus.on('Alexa', alexaActions.alexaMessage.bind(this));
   this.eventBus.on('Alexa.Discovery', alexaActions.alexaDiscovery.bind(this));
   this.eventBus.on('Alexa.PowerController', alexaActions.alexaPowerController.bind(this));
