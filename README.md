@@ -10,9 +10,11 @@ Enable Amazon Alexa access and control your homebridge controlled devices and ac
 
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  
 
-Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).
+Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), French (CA) and Spanish (MX).
 
 # Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.
+
+# Feb 13 - I just received a note from Amazon and my latest submission has been certitfied, and should be generally available shortly.  Thanks everyone for your assistance with the Beta, much appreciated.
 
 # Features
 
