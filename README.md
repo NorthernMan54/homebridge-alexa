@@ -167,7 +167,7 @@ One of my next hopefully high scoring WAF features, will be to enable Alexa Rout
 
 For Garage Door and Blind accessories, the plugin / device would need to be event enabled ie if you open your garage door via the button in the garage the Home app updates in real time with the status change.  Similar for blinds as well.
 
-As testing this Beta may cause your configuration to go unstable, please be ready for a low WAF score incase it goes sideways.
+As testing this Beta may cause your configuration to go unstable, please be ready for a low WAF score incase it goes sideways.  In case of this, you can always reinstall the regular version of the plugin.
 
 Also this will require editing of the config.json and possibly sending log files over with issues.  So please be prepared.
 
