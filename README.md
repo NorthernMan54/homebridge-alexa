@@ -8,11 +8,7 @@
 
 Enable Amazon Alexa access and control your homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
-Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK).  
-
-Currently in beta/certification - Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).
-
-# Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.
+Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).  
 
 # IMPORTANT - For existing users, installing an updated version of the plugin after XXXX XX, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.  
 You will need to manually remove all existing devices after upgrading and setup and groups or routines again.  This would only occur with the first update after this date.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  I made a large change around the device identifiers between homebridge and Alexa, and this should avoid any further duplicate devices.  For reference, I'm using these values to create a unique key for Alexa homebridge name, homebridge username, plugin manufacturer, Service and accessory name.  ( homebridge name and username are from the config.json bridge settings.)  If you never change these values, Alexa should never discover duplicate devices.
@@ -168,7 +164,7 @@ cool, cool white
 
 # BETA Test for Sending Events to Alexa and using in routines
 
-One of my next hopefully high scoring WAF features, will be to enable Alexa Routines to act on events from Contact and Motion sensors.  And prior to making this feature widely available was looking for participants in a BETA of the new feature.  To participate in this, you need to be part of the current BETA for Spanish, Italian, English India and Japanese.  ( Unfortunately adding new participants to the additional language beta is not possible, as the skill is currently in for certification with Amazon).   You would also need to have Motion Sensors, Contact Sensors, Garage Door or Blind accessories.  Events are not support for other device types.
+One of my next hopefully high scoring WAF features, will be to enable Alexa Routines to act on events from Contact and Motion sensors.  And prior to making this feature widely available was looking for participants in a BETA of the new feature. You would also need to have Motion Sensors, Contact Sensors, Garage Door or Blind accessories.  Events are not support for other device types.
 
 For Garage Door and Blind accessories, the plugin / device would need to be event enabled ie if you open your garage door via the button in the garage the Home app updates in real time with the status change.  Similar for blinds as well.
 
@@ -180,7 +176,7 @@ Also this will require editing of the config.json and possibly sending log files
 
 1 - Installing the events beta will cause Alexa to mark all your existing devices offline.  And you will need to manually remove all existing devices after upgrading and setup and groups or routines again.  This should only occur once with the beta.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  
 
-2 - In the Alexa app unlink and relink the Homebridge skill.  This will enable your account to send events to alexaActions
+2 - In the Alexa app unlink and relink the Homebridge skill.  This will enable your account to send events to alexa.  This only apply's to users who last enabled the skill prior to Feb 15, 2019.  If your unsure, you can complete this step.
 
 3 - Install the event beta test version of the plugin
 
