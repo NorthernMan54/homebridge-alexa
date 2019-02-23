@@ -13,6 +13,11 @@
    * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
    * [This connection refused message for port 8883 is not an error, and can be ignored](#this-connection-refused-message-for-port-8883-is-not-an-error-and-can-be-ignored)
    * [Intermittent connectivity from Alexa to Homebridge](#intermittent-connectivity-from-alexa-to-homebridge)
+   * [ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX](#error--error-getaccesstoken-no-data-error-xxxxxxxxxx)
+   * [ERROR:  Error: getAccessToken Token not found](#error--error-getaccesstoken-token-not-found)
+      * [Unsuccessful event message ( No event gateway token )](#unsuccessful-event-message--no-event-gateway-token-)
+      * [Successful event message being sent to Alexa](#successful-event-message-being-sent-to-alexa)
+   * [[Alexa] ERROR:  Event gateway token refresh error: 400](#alexa-error--event-gateway-token-refresh-error-400)
 
 <!-- Added by: sgracey, at:  -->
 
@@ -160,3 +165,7 @@ Feb 16 14:29:05 raj homebridge[2088]: status: true }
 Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.101Z alexaActions Event {"host":"192.168.1.253","port":51826,"aid":13,"iid":16,"status":true}
 Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.107Z alexaLocal Sending message {"context":{},"event":{"header":{"messageId":"6efb7ccb-1720-4f79-9552-9c27f9b27bec","namespace":"Alexa","name":"ChangeReport","payloadVersion":"3"},"endpoint":{"endpointId":"Q0M6MjI6M0Q6RTM6Q0Y6MzItUmFqLVdTU0VOU09SLVBvcmNoIE1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE="},"payload":{"change":{"cause":{"type":"PHYSICAL_INTERACTION"},"properties":[{"namespace":"Alexa.MotionSensor","name":"detectionState","value":"DETECTED","timeOfSample":"2019-02-16T19:29:05.103Z","uncertaintyInMilliseconds":500}]}}}}
 ```
+
+# [Alexa] ERROR:  Event gateway token refresh error: 400
+
+Your event gateway authorization needs a manual refresh.  In the Amazon Alexa app, please "Disable Skill" and "Enable" the skill.

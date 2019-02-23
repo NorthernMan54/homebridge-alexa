@@ -27,9 +27,9 @@ You will need to manually remove all existing devices after upgrading and setup 
 # Table of Contents
 <!--ts-->
    * [IMPORTANT - For existing users, installing an updated version of the plugin after XXXX XX, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.](#important---for-existing-users-installing-an-updated-version-of-the-plugin-after-xxxx-xx-2019-will-cause-alexa-to-mark-all-your-existing-devices-as-offline-and-create-new-ones)
-   * [Homebridge-Alexa](#homebridge-alexa)
-   * [Table of Contents](#table-of-contents)
    * [Features](#features)
+   * [Table of Contents](#table-of-contents)
+   * [Supported devices](#supported-devices)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
          * [Native Support](#native-support)
          * [Supported as Other](#supported-as-other)
