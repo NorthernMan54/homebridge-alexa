@@ -13,122 +13,19 @@ Alexa Message Validation Passed!
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLU1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "Motion",
-                    "description": "parseTest Motion Motion Sensor",
-                    "manufacturerName": "sensor-stub",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Camera",
+                    "description": "parseTest Camera Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "MOTION_SENSOR"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.MotionSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "detectionState"
-                                    }
-                                ],
-                                "proactivelyReported": true,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLUNvbnRhY3QtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Contact",
-                    "description": "parseTest Contact Contact Sensor",
-                    "manufacturerName": "sensor-stub",
-                    "displayCategories": [
-                        "CONTACT_SENSOR"
-                    ],
-                    "cookie": {
-                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":5,\"iid\":10}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.ContactSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "detectionState"
-                                    }
-                                ],
-                                "proactivelyReported": true,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJvc2UgU291bmRUb3VjaC1Cb3NlIFNvdW5kVG91Y2ggMTAtMDAwMDAxMTMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Bose SoundTouch 10",
-                    "description": "parseTest Bose SoundTouch 10 Speaker",
-                    "manufacturerName": "Bose SoundTouch",
-                    "displayCategories": [
-                        "SPEAKER"
-                    ],
-                    "cookie": {
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":17}",
-                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":17}",
-                        "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":17}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "volume"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJvc2UgU291bmRUb3VjaC1Cb3NlIFNvdW5kVG91Y2ggMjAtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Bose SoundTouch 20",
-                    "description": "parseTest Bose SoundTouch 20 Speaker",
-                    "manufacturerName": "Bose SoundTouch",
-                    "displayCategories": [
-                        "SPEAKER"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10,\"value\":0}",
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":11}",
-                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":11}",
-                        "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":11}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":11}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -152,12 +49,26 @@ Alexa Message Validation Passed!
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
+                            "interface": "Alexa.TemperatureSensor",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "volume"
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
                                 ],
                                 "proactivelyReported": false,
@@ -167,20 +78,19 @@ Alexa Message Validation Passed!
                     ]
                 },
                 {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJvc2UgU291bmRUb3VjaC1Cb3NlIFNvdW5kVG91Y2ggMzAwLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "Bose SoundTouch 300",
-                    "description": "parseTest Bose SoundTouch 300 Switch",
-                    "manufacturerName": "Bose SoundTouch",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmV0dGEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Cameretta",
+                    "description": "parseTest Cameretta Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "SWITCH"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16,\"value\":0}",
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}",
-                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}",
-                        "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -204,12 +114,26 @@ Alexa Message Validation Passed!
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
+                            "interface": "Alexa.TemperatureSensor",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "volume"
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
                                 ],
                                 "proactivelyReported": false,
@@ -225,34 +149,6 @@ Alexa Message Validation Passed!
 
 -----------------------------------------------------------
 
-{"host":"127.0.0.1","port":51826,"aid":4,"iid":10}
-{ endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLU1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
-  friendlyName: 'Motion',
-  description: 'parseTest Motion Motion Sensor',
-  manufacturerName: 'sensor-stub',
-  displayCategories: [ 'MOTION_SENSOR' ],
-  cookie: 
-   { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":4,"iid":10}]' },
-  capabilities: 
-   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.MotionSensor',
-       version: '3',
-       properties: [Object] } ] }
-{"host":"127.0.0.1","port":51826,"aid":5,"iid":10}
-{ endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLUNvbnRhY3QtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
-  friendlyName: 'Contact',
-  description: 'parseTest Contact Contact Sensor',
-  manufacturerName: 'sensor-stub',
-  displayCategories: [ 'CONTACT_SENSOR' ],
-  cookie: 
-   { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":5,"iid":10}]' },
-  capabilities: 
-   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.ContactSensor',
-       version: '3',
-       properties: [Object] } ] }
 
 -----------------------------------------------------------
 

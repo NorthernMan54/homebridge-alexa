@@ -33,3 +33,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json > after
 echo "bose soundlink"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json > after.json ; diff ~/Code/alexaAwsBackend/samples/bose.json after.json
+
+echo "Heater Cooler"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/heater_cooler_discovery.json > after.json ; diff ~/Code/alexaAwsBackend/samples/heater.json after.json

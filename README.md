@@ -97,6 +97,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Contact Sensors
 * Door/Garage Door - Supported as a on/off device
 * Thermostat - Partial support only ( Set target Temperature in celsius )
+* Heater/Cooler - Partial support only ( On/Off and Rotation speed )
 
 ### Supported as Other
 
