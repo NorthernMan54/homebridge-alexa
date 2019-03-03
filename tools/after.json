@@ -13,15 +13,19 @@ Alexa Message Validation Passed!
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDIsaWlkOiAxMA==",
-                    "friendlyName": "Motion",
-                    "description": "Testing Motion Motion Sensor",
-                    "manufacturerName": "sensor-stub",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Camera",
+                    "description": "parseTest Camera Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "MOTION_SENSOR"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":2,\"iid\":10}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -31,30 +35,62 @@ Alexa Message Validation Passed!
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.MotionSensor",
+                            "interface": "Alexa.PowerController",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "detectionState"
+                                        "name": "powerState"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
                     ]
                 },
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDMsaWlkOiAxMA==",
-                    "friendlyName": "Contact",
-                    "description": "Testing Contact Contact Sensor",
-                    "manufacturerName": "sensor-stub",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmV0dGEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Cameretta",
+                    "description": "parseTest Cameretta Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "CONTACT_SENSOR"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"test\",\"port\":\"12345\",\"aid\":3,\"iid\":10}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -64,15 +100,43 @@ Alexa Message Validation Passed!
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.ContactSensor",
+                            "interface": "Alexa.PowerController",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "detectionState"
+                                        "name": "powerState"
                                     }
                                 ],
-                                "proactivelyReported": true,
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
                                 "retrievable": true
                             }
                         }
@@ -82,3 +146,9 @@ Alexa Message Validation Passed!
         }
     }
 }
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+

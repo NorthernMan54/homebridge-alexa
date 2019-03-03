@@ -48,4 +48,5 @@ alexaActions.alexaMessage.call(context, message, function(error, response) {
   } else {
     console.log("Alexa Message Validation Passed!");
   }
+  return;
 });

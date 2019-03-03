@@ -21,3 +21,19 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/ikea_accessories.json > 
 echo "Sensors"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/sensor_accessories.json > ~/Code/alexaAwsBackend/samples/sensor.json
+
+echo "Leonard - sensors"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/leonard_51827.json > ~/Code/alexaAwsBackend/samples/leonard.json
+
+echo "Howard - Speaker"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json >  ~/Code/alexaAwsBackend/samples/howard.json
+
+echo "bose soundlink"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json 
+
+echo "Heater Cooler"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/heater_cooler_discovery.json > ~/Code/alexaAwsBackend/samples/heater.json

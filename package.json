@@ -1,10 +1,11 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.1.71",
+  "version": "0.2.2",
   "description": "Alexa Skill frontend for Homebridge",
-  "main": "web.js",
+  "main": "plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
     "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md"
   },
   "repository": {
@@ -19,18 +20,18 @@
     "node": ">=4.4.5",
     "homebridge": ">=0.4.16"
   },
+  "devDependencies": {
+    "ava": "^1.2.1",
+    "coveralls": "3.0.2",
+    "documentation": "8.1.2",
+    "nyc": "13.3.0",
+    "xo": "0.23.0"
+  },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "bonjour": "^=3.5.0",
-    "debug": "^2.6.9",
-    "express": "^4.16.4",
-    "httpdispatcher": ">=2.0.1",
-    "ip": "^=1.1.5",
-    "is-my-json-valid": "^2.19.0",
-    "mqtt": "^2.18.8",
-    "npm": "^6.5.0",
-    "requestretry": "^=1.13.0",
-    "update": "^0.7.4"
+    "is-my-json-valid": ">=2.19.0",
+    "debug": ">2.6.9",
+    "mqtt": ">=2.18.8",
+    "hap-node-client": ">=0.0.14"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
