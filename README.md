@@ -179,7 +179,10 @@ HOMEBRIDGE_OPTS=-I
 pm2 delete homebridge
 pm2 start homebridge -- -I
 pm2 save
+```
+To review your settings, to ensure that they are working correctly.
 
+```
 pm2 show homebridge
 ```
 
