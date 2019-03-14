@@ -8,9 +8,7 @@
 
 Enable Amazon Alexa access and control your homebridge controlled devices and accessories.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
-Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), French (CA) and Spanish (MX).  
-
-# Feb 13 - I just received a note from Amazon and my latest submission has been certitfied, and should be generally available shortly.  Thanks everyone for your assistance with the Beta, much appreciated.
+Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), French (CA) and Spanish (MX).
 
 # Features
 
@@ -24,9 +22,6 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
-   * [Jan 31 - Submitted skill for certification, the beta is closed for new participants at this time.  Amazon has given a target of Feb 18th to supply results of the certification.](#jan-31---submitted-skill-for-certification-the-beta-is-closed-for-new-participants-at-this-time--amazon-has-given-a-target-of-feb-18th-to-supply-results-of-the-certification)
-   * [Features](#features)
-   * [Table of Contents](#table-of-contents)
    * [New features with Version 2](#new-features-with-version-2)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
          * [Native Support](#native-support)
@@ -176,6 +171,16 @@ HOMEBRIDGE_OPTS=-I
 # If you uncomment the following line, homebridge will log more
 # You can display this via systemd's journalctl: journalctl -f -u homebridge
 #DEBUG=
+```
+
+* If your using pm2 to manage the startup of homebridge, you can add the -I option with these steps
+
+```
+pm2 delete homebridge
+pm2 start homebridge -- -I
+pm2 save
+
+pm2 show homebridge
 ```
 
 * If you have multiple homebridge options, the -I should be listed first. ie
