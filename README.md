@@ -269,7 +269,7 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* events - Enables passing to Alexa of support device events for use in routines.  **For users who enrolled prior to March 22, 2019, you will need to unlink the skill and relink the skill in the Alexa app in order to enable events.**
+* Routines - Enables passing to Alexa of support device events for use in routines.  **For users who enrolled prior to March 22, 2019, you will need to unlink the skill and relink the skill in the Alexa app in order to enable events.**
 
 ```
 "platforms": [
@@ -278,7 +278,7 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "events": true
+    "routines": true
   }
 ],
 ```
