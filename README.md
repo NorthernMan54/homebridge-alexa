@@ -93,7 +93,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Temperature Sensors
 * Motion Sensors
 * Contact Sensors
-* Door/Garage Door - Supported as a on/off device
+* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Thermostat - Partial support only ( Set target Temperature in celsius )
 * Heater/Cooler - Partial support only ( On/Off and Rotation speed )
 
@@ -152,6 +152,10 @@ cool, cool white
 * Alexa, stop Stereo
 * Alexa, next song on Stereo
 * Alexa, rewind on Stereo
+
+## Contact and Motion Sensors
+
+* These are only visible to routines, no voice commands are available
 
 ## Unsupported device types
 
