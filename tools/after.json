@@ -1,3 +1,4 @@
+Alexa Message Validation Passed!
 
 -----------------------------------------------------------
 
@@ -12,56 +13,19 @@
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDYsaWlkOiAxNw==",
-                    "friendlyName": "Bose SoundTouch 10",
-                    "description": "Testing Bose SoundTouch 10 Speaker",
-                    "manufacturerName": "Bose SoundTouch",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Camera",
+                    "description": "parseTest Camera Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "SPEAKER"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "AdjustVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":17}",
-                        "SetVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":17}",
-                        "SetMute": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.Speaker\",\"host\":\"test\",\"port\":\"12345\",\"aid\":6,\"iid\":17}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "volume"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDcsaWlkOiAxMQ==",
-                    "friendlyName": "Bose SoundTouch 20",
-                    "description": "Testing Bose SoundTouch 20 Speaker",
-                    "manufacturerName": "Bose SoundTouch",
-                    "displayCategories": [
-                        "SPEAKER"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":10,\"value\":0}",
-                        "AdjustVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":11}",
-                        "SetVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":11}",
-                        "SetMute": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":11}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"host\":\"test\",\"port\":\"12345\",\"aid\":7,\"iid\":11}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -85,12 +49,26 @@
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
+                            "interface": "Alexa.TemperatureSensor",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "volume"
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
                                 ],
                                 "proactivelyReported": false,
@@ -100,20 +78,19 @@
                     ]
                 },
                 {
-                    "endpointId": "dGVzdDoxMjM0NSxhaWQ6IDgsaWlkOiAxNw==",
-                    "friendlyName": "Bose SoundTouch 300",
-                    "description": "Testing Bose SoundTouch 300 Switch",
-                    "manufacturerName": "Bose SoundTouch",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmV0dGEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Cameretta",
+                    "description": "parseTest Cameretta Heater/Cooler",
+                    "manufacturerName": "[object Object]",
                     "displayCategories": [
-                        "SWITCH"
+                        "THERMOSTAT"
                     ],
                     "cookie": {
-                        "TurnOn": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":16,\"value\":1}",
-                        "TurnOff": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":16,\"value\":0}",
-                        "AdjustVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":17}",
-                        "SetVolume": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":17}",
-                        "SetMute": "{\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":16},{\"interface\":\"Alexa.Speaker\",\"host\":\"test\",\"port\":\"12345\",\"aid\":8,\"iid\":17}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}]"
                     },
                     "capabilities": [
                         {
@@ -137,12 +114,26 @@
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
+                            "interface": "Alexa.TemperatureSensor",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "volume"
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
                                 ],
                                 "proactivelyReported": false,
@@ -155,3 +146,9 @@
         }
     }
 }
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+

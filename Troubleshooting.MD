@@ -12,6 +12,12 @@
    * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
    * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
    * [This connection refused message for port 8883 is not an error, and can be ignored](#this-connection-refused-message-for-port-8883-is-not-an-error-and-can-be-ignored)
+   * [Intermittent connectivity from Alexa to Homebridge](#intermittent-connectivity-from-alexa-to-homebridge)
+   * [ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX](#error--error-getaccesstoken-no-data-error-xxxxxxxxxx)
+   * [ERROR:  Error: getAccessToken Token not found](#error--error-getaccesstoken-token-not-found)
+      * [Unsuccessful event message ( No event gateway token )](#unsuccessful-event-message--no-event-gateway-token-)
+      * [Successful event message being sent to Alexa](#successful-event-message-being-sent-to-alexa)
+   * [[Alexa] ERROR:  Event gateway token refresh error: 400](#alexa-error--event-gateway-token-refresh-error-400)
 
 <!-- Added by: sgracey, at:  -->
 
@@ -20,6 +26,12 @@
 # ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README
 
 Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
+
+Known possible causes:
+
+1 - Multiple copies of homebridge-alexa on your network
+2 - Bad login or password in your config.json for https://www.homebridge.ca
+3 - VPN Software interfering with homebridge-alexa to Alexa communications
 
 Please note, this message appears every 5 times the skill needs to reconnect to the skill cloud backend, so the message may occasionally appear.
 
@@ -109,3 +121,51 @@ alexaLocal offline +8ms
 
 This is for a future feature enhancement, and can be ignored.
 
+# Intermittent connectivity from Alexa to Homebridge
+
+Alexa works intermittently, and the logs have offline/reconnect messages.  Also in your environment your running VPN software on the same machine as homebridge.  The VPN software is interfering with the MQTT connection between homebridge-alexa and https://www.homebridge.ca.  Please move the VPN to a different machine.
+
+```
+alexaLocal offline +35s
+alexaLocal reconnect +5s
+```
+
+# ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX
+# ERROR:  Error: getAccessToken Token not found
+
+This occurs if your homebridge-alexa account is not enabled to send events. To enable your account for events, please disable the Alexa Homebridge skill and enable the skill again.  This will register your account for events.
+
+If your homebridge-alexa account was created after Feb 15, 2019, and your receiving this message, please raise an issue.
+
+## Unsuccessful event message ( No event gateway token )
+
+```
+Feb 16 13:19:44 raj homebridge[2088]: 2019-02-16T18:19:44.123Z alexaActions Event {"host":"192.168.1.253","port":51826,"aid":13,"iid":16,"status":false}
+Feb 16 13:19:44 raj homebridge[2088]: 2019-02-16T18:19:44.125Z alexaLocal Sending message {"context":{},"event":{"header":{"messageId":"e53c5dd3-b8a8-45e8-bb9a-b7f78e474baf","namespace":"Alexa","name":"ChangeReport","payloadVersion":"3"},"endpoint":{"endpointId":"Q0M6MjI6M0Q6RTM6Q0Y6MzItUmFqLVdTU0VOU09SLVBvcmNoIE1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE="},"payload":{"change":{"cause":{"type":"PHYSICAL_INTERACTION"},"properties":[{"namespace":"Alexa.MotionSensor","name":"detectionState","value":"NOT_DETECTED","timeOfSample":"2019-02-16T18:19:44.123Z","uncertaintyInMilliseconds":500}]}}}}
+Feb 16 13:19:46 raj homebridge[2088]: 2019-02-16T18:19:46.177Z alexaLocal Emitting System
+Feb 16 13:19:46 raj homebridge[2088]: [2/16/2019, 1:19:46 PM] [Alexa] ERROR:  Error: getAccessToken No data Error: Northern.Man54
+```
+
+## Successful event message being sent to Alexa
+
+This is from my homebridge-wssensor plugin YMMV
+
+```
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT websocket on.message: ::ffff:192.168.1.13 { "Hostname": "NODE-2BA0FF", "Model": "BME-MS", "Version": "2.0", "Firmware": "2.1.0", "Data": { "Temperature": -1.68, "Humidity": 60.978, "Moisture": 0, "Status": 0, "Barometer": 998.206, "Dew": -8.22, "Motion": 1, "MotionStatus": 0  }}
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT EventedHTTPServer [::ffff:192.168.1.65] Sending HTTP event '13.10' with data: {"characteristics":[{"aid":13,"iid":10,"value":-1.6}]}
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT EventedHTTPServer [::ffff:192.168.1.253] Sending HTTP event '13.16' with data: {"characteristics":[{"aid":13,"iid":16,"value":true}]}
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT EventedHTTPServer [::ffff:192.168.1.65] Sending HTTP event '13.16' with data: {"characteristics":[{"aid":13,"iid":16,"value":true}]}
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT EventedHTTPServer [::ffff:192.168.1.70] Sending HTTP event '13.16' with data: {"characteristics":[{"aid":13,"iid":16,"value":true}]}
+Feb 16 14:29:05 raj homebridge[2088]: Sat, 16 Feb 2019 19:29:05 GMT EventedHTTPServer [fe80::cd6:6862:b69f:44d2] Sending HTTP event '13.16' with data: {"characteristics":[{"aid":13,"iid":16,"value":true}]}
+Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.098Z hapClient Event { host: '192.168.1.253',
+Feb 16 14:29:05 raj homebridge[2088]: port: 51826,
+Feb 16 14:29:05 raj homebridge[2088]: aid: 13,
+Feb 16 14:29:05 raj homebridge[2088]: iid: 16,
+Feb 16 14:29:05 raj homebridge[2088]: status: true }
+Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.101Z alexaActions Event {"host":"192.168.1.253","port":51826,"aid":13,"iid":16,"status":true}
+Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.107Z alexaLocal Sending message {"context":{},"event":{"header":{"messageId":"6efb7ccb-1720-4f79-9552-9c27f9b27bec","namespace":"Alexa","name":"ChangeReport","payloadVersion":"3"},"endpoint":{"endpointId":"Q0M6MjI6M0Q6RTM6Q0Y6MzItUmFqLVdTU0VOU09SLVBvcmNoIE1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE="},"payload":{"change":{"cause":{"type":"PHYSICAL_INTERACTION"},"properties":[{"namespace":"Alexa.MotionSensor","name":"detectionState","value":"DETECTED","timeOfSample":"2019-02-16T19:29:05.103Z","uncertaintyInMilliseconds":500}]}}}}
+```
+
+# [Alexa] ERROR:  Event gateway token refresh error: 400
+
+Your event gateway authorization needs a manual refresh.  In the Amazon Alexa app, please "Disable Skill" and "Enable" the skill.
