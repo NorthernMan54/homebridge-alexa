@@ -4,7 +4,7 @@
 
 * [x] Implement message routing to homebridge instance
 * [ ] Enable MQTTS
-* [ ] Automate SSL Cert renewall process
+* [ ] Automate SSL Cert renewal process
 * [x] Automate DNS link process
 * [x] Implement Alexa Events and Proactive reporting for Home Skills
 * [x] Clean up logging, way too noisy

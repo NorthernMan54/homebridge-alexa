@@ -39,6 +39,7 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [AppleTV](#appletv)
       * [Speakers](#speakers)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
+      * [Contact and Motion Sensors](#contact-and-motion-sensors)
       * [Unsupported device types](#unsupported-device-types)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
