@@ -40,8 +40,6 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [Speakers](#speakers)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Unsupported device types](#unsupported-device-types)
-   * [BETA Test for Sending Events to Alexa and using in routines](#beta-test-for-sending-events-to-alexa-and-using-in-routines)
-      * [Steps to enable](#steps-to-enable)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
@@ -162,49 +160,6 @@ cool, cool white
 * Locks
 * Security Systems
 
-# BETA Test for Sending Events to Alexa and using in routines
-
-One of my next hopefully high scoring WAF features, will be to enable Alexa Routines to act on events from Contact and Motion sensors.  And prior to making this feature widely available was looking for participants in a BETA of the new feature. You would also need to have Motion Sensors, Contact Sensors, Garage Door or Blind accessories.  Events are not support for other device types.
-
-For Garage Door and Blind accessories, the plugin / device would need to be event enabled ie if you open your garage door via the button in the garage the Home app updates in real time with the status change.  Similar for blinds as well.
-
-As testing this Beta may cause your configuration to go unstable, please be ready for a low WAF score incase it goes sideways.  In case of this, you can always reinstall the regular version of the plugin.
-
-Also this will require editing of the config.json and possibly sending log files over with issues.  So please be prepared.
-
-## Steps to enable
-
-1 - Installing the events beta will cause Alexa to mark all your existing devices offline.  And you will need to manually remove all existing devices after upgrading and setup and groups or routines again.  This should only occur once with the beta.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  
-
-2 - In the Alexa app unlink and relink the Homebridge skill.  This will enable your account to send events to alexa.  This only apply's to users who last enabled the skill prior to Feb 15, 2019.  If your unsure, you can complete this step.
-
-3 - Install the event beta test version of the plugin
-
-```
-sudo npm install -g https://github.com/NorthernMan54/homebridge-alexa#event
-```
-
-4 - In your config.json file, please add a new option called events.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "debug": true,
-    "events": true
-  }
-],
-```
-
-5 - Restart homebridge
-
-6 - Remove your existing homebridge devices in Alexa and discover again. For myself I used the Alexa website and just 'Forget All', then 'Discover' again.  Then I used the Alexa app to recreate all my groups and existing routines.
-
-7 - Go to Routines in the Alexa app, and select 'When this happens' -> 'Device' and your supported devices should appear.
-
 # Installation of homebridge-alexa
 
 ## Prepare Homebridge for plugin installation
@@ -314,7 +269,7 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* events - Enables passing to Alexa of support device events for use in routines.  **For users who enrolled prior to XXXXX XX, 2019, you will need to unlink the skill and relink the skill in the Alexa app in order to enable events.**
+* events - Enables passing to Alexa of support device events for use in routines.  **For users who enrolled prior to March 22, 2019, you will need to unlink the skill and relink the skill in the Alexa app in order to enable events.**
 
 ```
 "platforms": [
