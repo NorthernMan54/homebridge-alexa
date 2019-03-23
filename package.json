@@ -21,11 +21,7 @@
     "homebridge": ">=0.4.16"
   },
   "devDependencies": {
-    "ava": "^1.2.1",
-    "coveralls": "3.0.2",
-    "documentation": "8.1.2",
-    "nyc": "13.3.0",
-    "xo": "0.23.0"
+    "documentation": "8.1.2"
   },
   "dependencies": {
     "is-my-json-valid": ">=2.19.0",
