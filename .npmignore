@@ -2,4 +2,5 @@ gh-md-toc
 docs
 publish.sh
 README.md.orig.*
-README.md.toc.* 
+README.md.toc.*
+tools/*
