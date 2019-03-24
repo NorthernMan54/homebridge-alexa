@@ -479,7 +479,15 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 9. Installation is now complete, good luck and enjoy.
 
-# Issues, Questions or Problems
+# System Availability and Issues
+
+## Cloud service monitoring ( homebridge.ca )
+
+* Real time monitoring of the cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
+
+* Operational issue reporting is managed by the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance.  And the uptime robot reports events in real time in the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel.
+
+## Raising Issues and Troubleshooting
 
 * I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
