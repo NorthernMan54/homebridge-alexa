@@ -51,8 +51,8 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [Initial Testing and confirming configuration](#initial-testing-and-confirming-configuration)
       * [Enable Homebridge smarthome skill and link accounts](#enable-homebridge-smarthome-skill-and-link-accounts)
       * [Discover Devices](#discover-devices)
-   * [System Availability and Issues](#system-availability-and-issues)
-      * [Cloud service monitoring ( homebridge.ca )](#cloud-service-monitoring--homebridgeca-)
+   * [Service Availability and Issues](#service-availability-and-issues)
+      * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
       * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
       * [Known Issues](#known-issues)
    * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
@@ -481,13 +481,13 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 9. Installation is now complete, good luck and enjoy.
 
-# System Availability and Issues
+# Service Availability and Issues
 
-## Cloud service monitoring ( homebridge.ca )
+## Homebridge cloud service monitoring ( homebridge.ca )
 
-* Real time monitoring of the cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
+* Real time monitoring of the homebridge.ca cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
 
-* Operational issue reporting is managed by the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance.  And the uptime robot reports events in real time in the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel.
+* Operational event reporting and alerting is sent to the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance, and the uptime robot reports events there in real time.
 
 ## Raising Issues and Troubleshooting
 
