@@ -93,7 +93,9 @@ Possible causes:
 
 Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
 
-## This connection refused message for port 8883 is not an error, and can be ignored
+## alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
+
+This error is a future expansion option, and can be ignored
 
 ```
 alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
