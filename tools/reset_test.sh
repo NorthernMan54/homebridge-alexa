@@ -32,8 +32,12 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json >  ~/Co
 
 echo "bose soundlink"
 
-node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json 
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json
 
 echo "Heater Cooler"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/heater_cooler_discovery.json > ~/Code/alexaAwsBackend/samples/heater.json
+
+echo "Nuki Door Lock"
+
+node parseAccessories.js ~/Code/alexaAwsBackend/samples/nuki_smart_lock.json > ~/Code/alexaAwsBackend/samples/nuki.json

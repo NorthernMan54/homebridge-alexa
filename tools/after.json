@@ -1,151 +1,122 @@
-Alexa Message Validation Passed!
+WARNING - Bad message [
+    {
+        "field": "data",
+        "message": "no (or more than one) schemas match",
+        "value": [
+            {
+                "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEtTG9jayBNZWNoYW5pc20=",
+                "friendlyName": "Porta",
+                "description": "parseTest Porta Lock Mechanism",
+                "manufacturerName": "Nuki.io",
+                "displayCategories": [
+                    "OTHER"
+                ],
+                "cookie": {},
+                "capabilities": [
+                    {
+                        "type": "AlexaInterface",
+                        "interface": "Alexa.TemperatureSensor",
+                        "version": "3"
+                    }
+                ]
+            },
+            {
+                "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgVW5sYXRjaC1Mb2NrIE1lY2hhbmlzbQ==",
+                "friendlyName": "Porta Unlatch",
+                "description": "parseTest Porta Unlatch Lock Mechanism",
+                "manufacturerName": "Nuki.io",
+                "displayCategories": [
+                    "OTHER"
+                ],
+                "cookie": {},
+                "capabilities": [
+                    {
+                        "type": "AlexaInterface",
+                        "interface": "Alexa.TemperatureSensor",
+                        "version": "3"
+                    }
+                ]
+            },
+            {
+                "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgQUxXQVlTIFVubGF0Y2gtTG9jayBNZWNoYW5pc20=",
+                "friendlyName": "Porta ALWAYS Unlatch",
+                "description": "parseTest Porta ALWAYS Unlatch Lock Mechanism",
+                "manufacturerName": "Nuki.io",
+                "displayCategories": [
+                    "OTHER"
+                ],
+                "cookie": {},
+                "capabilities": [
+                    {
+                        "type": "AlexaInterface",
+                        "interface": "Alexa.TemperatureSensor",
+                        "version": "3"
+                    }
+                ]
+            }
+        ],
+        "schemaPath": []
+    }
+]
+---------------------------- Response -------------------------------
+[{"endpointId":"Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEtTG9jayBNZWNoYW5pc20=","friendlyName":"Porta","description":"parseTest Porta Lock Mechanism","manufacturerName":"Nuki.io","displayCategories":["OTHER"],"cookie":{},"capabilities":[{"type":"AlexaInterface","interface":"Alexa.TemperatureSensor","version":"3"}]},{"endpointId":"Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgVW5sYXRjaC1Mb2NrIE1lY2hhbmlzbQ==","friendlyName":"Porta Unlatch","description":"parseTest Porta Unlatch Lock Mechanism","manufacturerName":"Nuki.io","displayCategories":["OTHER"],"cookie":{},"capabilities":[{"type":"AlexaInterface","interface":"Alexa.TemperatureSensor","version":"3"}]},{"endpointId":"Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgQUxXQVlTIFVubGF0Y2gtTG9jayBNZWNoYW5pc20=","friendlyName":"Porta ALWAYS Unlatch","description":"parseTest Porta ALWAYS Unlatch Lock Mechanism","manufacturerName":"Nuki.io","displayCategories":["OTHER"],"cookie":{},"capabilities":[{"type":"AlexaInterface","interface":"Alexa.TemperatureSensor","version":"3"}]}]
+------------------------------------------------------------
 
 -----------------------------------------------------------
 
-{
-    "event": {
-        "header": {
-            "namespace": "Alexa.Discovery",
-            "name": "Discover.Response",
-            "payloadVersion": "3",
-            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
-        },
-        "payload": {
-            "endpoints": [
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Camera",
-                    "description": "parseTest Camera Heater/Cooler",
-                    "manufacturerName": "[object Object]",
-                    "displayCategories": [
-                        "THERMOSTAT"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
-                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
-                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.TemperatureSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "temperature"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerLevelController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerLevel"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVtvYmplY3QgT2JqZWN0XS1DYW1lcmV0dGEtMDAwMDAwQkMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Cameretta",
-                    "description": "parseTest Cameretta Heater/Cooler",
-                    "manufacturerName": "[object Object]",
-                    "displayCategories": [
-                        "THERMOSTAT"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
-                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
-                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":13},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":17}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.TemperatureSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "temperature"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerLevelController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerLevel"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
+[
+    {
+        "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEtTG9jayBNZWNoYW5pc20=",
+        "friendlyName": "Porta",
+        "description": "parseTest Porta Lock Mechanism",
+        "manufacturerName": "Nuki.io",
+        "displayCategories": [
+            "OTHER"
+        ],
+        "cookie": {},
+        "capabilities": [
+            {
+                "type": "AlexaInterface",
+                "interface": "Alexa.TemperatureSensor",
+                "version": "3"
+            }
+        ]
+    },
+    {
+        "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgVW5sYXRjaC1Mb2NrIE1lY2hhbmlzbQ==",
+        "friendlyName": "Porta Unlatch",
+        "description": "parseTest Porta Unlatch Lock Mechanism",
+        "manufacturerName": "Nuki.io",
+        "displayCategories": [
+            "OTHER"
+        ],
+        "cookie": {},
+        "capabilities": [
+            {
+                "type": "AlexaInterface",
+                "interface": "Alexa.TemperatureSensor",
+                "version": "3"
+            }
+        ]
+    },
+    {
+        "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgQUxXQVlTIFVubGF0Y2gtTG9jayBNZWNoYW5pc20=",
+        "friendlyName": "Porta ALWAYS Unlatch",
+        "description": "parseTest Porta ALWAYS Unlatch Lock Mechanism",
+        "manufacturerName": "Nuki.io",
+        "displayCategories": [
+            "OTHER"
+        ],
+        "cookie": {},
+        "capabilities": [
+            {
+                "type": "AlexaInterface",
+                "interface": "Alexa.TemperatureSensor",
+                "version": "3"
+            }
+        ]
     }
-}
+]
 
 -----------------------------------------------------------
 
