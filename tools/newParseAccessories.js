@@ -79,7 +79,7 @@ var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers
 });
-debug(hbDevices);
+// debug(hbDevices);
 var response = hbDevices.toAlexa({
   perms: 'pw'
 }, message);

@@ -827,7 +827,7 @@ Alexa Message Validation Passed!
                                         "name": "temperature"
                                     }
                                 ],
-                                "proactivelyReported": false,
+                                "proactivelyReported": true,
                                 "retrievable": true
                             }
                         }
@@ -895,7 +895,7 @@ Alexa Message Validation Passed!
                                         "name": "temperature"
                                     }
                                 ],
-                                "proactivelyReported": false,
+                                "proactivelyReported": true,
                                 "retrievable": true
                             }
                         }
@@ -928,7 +928,7 @@ Alexa Message Validation Passed!
                                         "name": "temperature"
                                     }
                                 ],
-                                "proactivelyReported": false,
+                                "proactivelyReported": true,
                                 "retrievable": true
                             }
                         }
@@ -1010,7 +1010,7 @@ Alexa Message Validation Passed!
                                         "name": "temperature"
                                     }
                                 ],
-                                "proactivelyReported": false,
+                                "proactivelyReported": true,
                                 "retrievable": true
                             }
                         }
