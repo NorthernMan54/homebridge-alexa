@@ -276,9 +276,9 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* routines - Enables passing to Alexa events from Motion and Contact sensors.  For use in the Alexa app to create Routines triggered by these sensors.  
+* routines - Enables passing to Alexa events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.
 
-**For users who enrolled prior to March 22, 2019, you will need to unlink the skill and relink the skill in the Alexa app as part of setup.  If you miss this step, you will see this error `Event Gateway Response Code: 400` in the logs.**
+**For users who enrolled prior to March 22, 2019, you MUST Disable the skill and Enable the skill in the Alexa app as part of setup. If you miss this step, you will see this error `Event Gateway Response Code: 400` in the logs.**
 
 ```
 "platforms": [
