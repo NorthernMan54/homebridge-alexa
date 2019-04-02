@@ -45,11 +45,11 @@ var message = {
 };
 
 var speakers = [{
-    "manufacturer": "Yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Front"
   },
   {
-    "manufacturer": "Yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Rear"
   },
   {
@@ -74,9 +74,15 @@ var speakers = [{
   }
 ];
 
+var combine = {
+  "into": "TV",
+  "from": ["KODI"]
+};
+
 var response = alexaTranslator.endPoints(message, endPoints, {
   "events": true,
-  "speakers": speakers
+  "speakers": speakers,
+  "combine": combine
 });
 
 var eventDevices = alexaTranslator.hapEndPoints();

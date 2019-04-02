@@ -46,11 +46,11 @@ var message = {
 };
 
 var speakers = [{
-    "manufacturer": "Yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Front"
   },
   {
-    "manufacturer": "Yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Rear"
   },
   {
@@ -75,13 +75,22 @@ var speakers = [{
   }
 ];
 
+var combine = {
+  "into": "TV",
+  "from": ["KODI"]
+};
+
 var hbDevices = new Homebridges(endPoints, {
   "events": true,
-  "speakers": speakers
+  "speakers": speakers,
+  "combine": combine
 });
 // debug(hbDevices);
 var response = hbDevices.toAlexa({
-  perms: 'pw'
+  perms: 'pw',
+  "events": true,
+  "speakers": speakers,
+  "combine": combine
 }, message);
 
 // var response = alexaTranslator.endPoints(message, endPoints, {
@@ -93,7 +102,7 @@ var eventDevices = hbDevices.toEvents();
 
 var status = checkAlexaMessage(response);
 if (!status) {
-  console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors,null,4));
+  console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
   console.log("---------------------------- Response -------------------------------");
   console.log(JSON.stringify(response));
   console.log("------------------------------------------------------------");
