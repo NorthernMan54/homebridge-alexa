@@ -89,7 +89,7 @@ var response = hbDevices.toAlexa({
 //   "speakers": speakers
 // });
 
-// var eventDevices = alexaTranslator.hapEndPoints();
+var eventDevices = hbDevices.toEvents();
 
 var status = checkAlexaMessage(response);
 if (!status) {
@@ -104,9 +104,8 @@ if (!status) {
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
 console.log("\n-----------------------------------------------------------\n");
-// console.log(eventDevices);
+// console.log(hbDevices.toEvents());
 
-/*
 for (var key in eventDevices) {
   console.log(key);
   // console.log(eventDevices[key].endpointID);
@@ -116,7 +115,7 @@ for (var key in eventDevices) {
   console.log(findById(response, eventDevices[key].endpointID));
   // console.log(eventDevices.find(eventDevices[key].endpointID));
 }
-*/
+
 
 function findById(o, id) {
   // Early return
