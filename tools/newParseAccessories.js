@@ -75,10 +75,16 @@ var speakers = [{
   }
 ];
 
-var combine = {
+var combine = [{
   "into": "TV",
   "from": ["KODI"]
-};
+}, {
+  "into": "Front",
+  "from": ["Yamaha"]
+}, {
+  "into": "Rear",
+  "from": ["Yamaha"]
+}];
 
 var hbDevices = new Homebridges(endPoints, {
   "events": true,
@@ -101,16 +107,16 @@ var response = hbDevices.toAlexa({
 var eventDevices = hbDevices.toEvents();
 
 var status = checkAlexaMessage(response);
-/*
+
 if (!status) {
   console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
   console.log("---------------------------- Response -------------------------------");
-  console.log(JSON.stringify(response));
+  // console.log(JSON.stringify(response));
   console.log("------------------------------------------------------------");
 } else {
   console.log("Alexa Message Validation Passed!");
 }
-*/
+
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
 console.log("\n-----------------------------------------------------------\n");

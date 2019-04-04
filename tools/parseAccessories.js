@@ -74,10 +74,10 @@ var speakers = [{
   }
 ];
 
-var combine = {
+var combine = [{
   "into": "TV",
   "from": ["KODI"]
-};
+}];
 
 var response = alexaTranslator.endPoints(message, endPoints, {
   "events": true,

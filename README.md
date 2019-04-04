@@ -334,7 +334,7 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls.  Ymmv
+* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
 
 ```
 "platforms": [
@@ -343,10 +343,16 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "combine": {
+    "combine": [{
         "into": "TV",
         "from": ["KODI"]
-        },
+        }, {
+          "into": "Front",
+          "from": ["Yamaha"]
+        }, {
+          "into": "Rear",
+          "from": ["Yamaha"]
+        }],
   }
 ],
 ```
