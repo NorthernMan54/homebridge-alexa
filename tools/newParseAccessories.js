@@ -101,6 +101,7 @@ var response = hbDevices.toAlexa({
 var eventDevices = hbDevices.toEvents();
 
 var status = checkAlexaMessage(response);
+/*
 if (!status) {
   console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
   console.log("---------------------------- Response -------------------------------");
@@ -109,7 +110,7 @@ if (!status) {
 } else {
   console.log("Alexa Message Validation Passed!");
 }
-
+*/
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
 console.log("\n-----------------------------------------------------------\n");

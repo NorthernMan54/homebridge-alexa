@@ -41,3 +41,7 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/heater_cooler_discove
 echo "Nuki Door Lock"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nuki_smart_lock.json > after.json ; diff ~/Code/alexaAwsBackend/samples/nuki.json after.json
+
+echo "Yamaha"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha.json after.json
