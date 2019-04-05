@@ -79,6 +79,7 @@ You will need to manually remove all existing devices after upgrading and setup 
 * Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
 * Support for Apple TV ( Supports homebridge-apple-tv )
 * Support Spotify playback controls via homebridge-yamaha-home
+* Support for door locks
 
 Alexa device names are the same as the homebridge device names.
 
@@ -96,6 +97,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Temperature Sensors
 * Motion Sensors
 * Contact Sensors
+* Door locks
 * Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Thermostat - Partial support only ( Set target Temperature in celsius )
 * Heater/Cooler - Partial support only ( On/Off and Rotation speed )
