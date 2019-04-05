@@ -109,8 +109,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 ## Voice commands supported
 
 * Alexa, discover devices
-* Alexa, turn on  *device*
-* Alexa, turn off  *device*
+* Alexa, turn on *device*
+* Alexa, turn off *device*
 * Alexa, set *device* to 50
 * Alexa, what is the temperature in the *device* ( Not supported in Japan )
 * Alexa, dim *device*
