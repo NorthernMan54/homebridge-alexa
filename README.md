@@ -120,6 +120,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn *device* red
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
+* Alexa, unlock my *device*
+* Alexa, lock my *device*
 
 ## Color temperature
 
@@ -166,7 +168,6 @@ cool, cool white
 
 * Camera's ( for use with an Alexa show etc )
 * Eve devices
-* Locks
 * Security Systems
 
 # Installation of homebridge-alexa
