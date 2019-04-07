@@ -347,8 +347,8 @@ sudo npm install -g homebridge-alexa
     "username": "....",
     "password": "....",
     "combine": [{
-        "into": "TV",
-        "from": ["KODI"]
+          "into": "TV",
+          "from": ["KODI"]
         }, {
           "into": "Front",
           "from": ["Yamaha"]

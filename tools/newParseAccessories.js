@@ -132,7 +132,6 @@ for (var key in eventDevices) {
   // console.log(eventDevices.find(eventDevices[key].endpointID));
 }
 
-
 function findById(o, id) {
   // Early return
   // console.log('o.id', o.id);
