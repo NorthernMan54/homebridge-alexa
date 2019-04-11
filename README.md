@@ -97,7 +97,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Temperature Sensors
 * Motion Sensors
 * Contact Sensors
-* Door locks
+* Door locks ( Lock and status only, Alexa does not support unlocking )
 * Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Thermostat - Partial support only ( Set target Temperature in celsius )
 * Heater/Cooler - Partial support only ( On/Off and Rotation speed )
