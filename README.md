@@ -494,17 +494,21 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ## Raising Issues and Troubleshooting
 
-* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+### I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
-* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
+### Slack Channel
 
-* If you need to log an issue, please include a DEBUG log with your issue.
+I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
+
+### Debug logs
+
+To collect a debug log, please start homebridge with this command line
 
 ```
-DEBUG=alexa* homebridge -I
+DEBUG=* homebridge -I
 ```
 
-* Collecting a homebridge accessory dump
+### Homebridge Accessory Dump
 
 Sometimes during troubleshooting I need a dump of your homebridge accessories. Please use this command to collect it.  If needed you can change the ip address, port or pin to match your environment.
 
