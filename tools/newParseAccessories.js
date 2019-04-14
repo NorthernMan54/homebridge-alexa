@@ -1,6 +1,7 @@
-var alexaTranslator = require('../lib/alexaTranslator.js');
+// var alexaTranslator = require('../lib/alexaTranslator.js');
+var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
 var Validator = require('is-my-json-valid');
-// var debug = require('debug')('parse');
+var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
 var checkAlexaMessage = Validator(alexaSchema, {
   verbose: true
@@ -77,21 +78,40 @@ var speakers = [{
 var combine = [{
   "into": "TV",
   "from": ["KODI"]
+}, {
+  "into": "Front",
+  "from": ["Yamaha"]
+}, {
+  "into": "Rear",
+  "from": ["Yamaha"]
 }];
 
-var response = alexaTranslator.endPoints(message, endPoints, {
+var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers,
   "combine": combine
 });
+// debug(hbDevices);
+var response = hbDevices.toAlexa({
+  perms: 'pw',
+  "events": true,
+  "speakers": speakers,
+  "combine": combine
+}, message);
 
-var eventDevices = alexaTranslator.hapEndPoints();
+// var response = alexaTranslator.endPoints(message, endPoints, {
+//   "events": true,
+//   "speakers": speakers
+// });
+
+var eventDevices = hbDevices.toEvents();
 
 var status = checkAlexaMessage(response);
+
 if (!status) {
-  console.log("WARNING - Bad message", checkAlexaMessage.errors);
+  console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
   console.log("---------------------------- Response -------------------------------");
-  console.log(JSON.stringify(response));
+  // console.log(JSON.stringify(response));
   console.log("------------------------------------------------------------");
 } else {
   console.log("Alexa Message Validation Passed!");
@@ -100,7 +120,7 @@ if (!status) {
 console.log("\n-----------------------------------------------------------\n");
 console.log(JSON.stringify(response, null, 4));
 console.log("\n-----------------------------------------------------------\n");
-// console.log(eventDevices);
+// console.log(hbDevices.toEvents());
 
 for (var key in eventDevices) {
   console.log(key);

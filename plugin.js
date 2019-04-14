@@ -25,8 +25,9 @@ function alexaHome(log, config, api) {
   this.beta = config['beta'] || false;
   this.events = config['routines'] || false;
   this.combine = config['combine'] || false;
+  this.newParser = config['newParser'] || true;
   this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
-  this.speakers = config['speakers'] || {}; // Array of speaker devices
+  this.speakers = config['speakers'] || false; // Array of speaker devices
 
   // Enable config based DEBUG logging enable
   this.debug = config['debug'] || false;
@@ -81,7 +82,10 @@ alexaHome.prototype.didFinishLaunching = function() {
     log: this.log,
     pin: this.pin,
     refresh: this.refresh,
+    newParser: this.newParser,
     reconnectPeriod: 5000,
+    combine: this.combine,
+    speakers: this.speakers,
     servers: [{
       protocol: 'mqtt',
       host: host,
@@ -112,6 +116,7 @@ alexaHome.prototype.didFinishLaunching = function() {
   this.eventBus.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
   this.eventBus.on('Alexa.Speaker', alexaActions.alexaSpeaker.bind(this));
   this.eventBus.on('Alexa.ThermostatController', alexaActions.alexaThermostatController.bind(this));
+  this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(this));
   // alexa.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 };
 

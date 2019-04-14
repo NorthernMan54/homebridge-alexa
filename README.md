@@ -34,6 +34,7 @@ You will need to manually remove all existing devices after upgrading and setup 
          * [Native Support](#native-support)
          * [Supported as Other](#supported-as-other)
       * [Voice commands supported](#voice-commands-supported)
+      * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
       * [AppleTV](#appletv)
@@ -54,7 +55,10 @@ You will need to manually remove all existing devices after upgrading and setup 
    * [Service Availability and Issues](#service-availability-and-issues)
       * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
       * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
-      * [Known Issues](#known-issues)
+         * [Known Issues](#known-issues)
+         * [Slack Channel](#slack-channel)
+         * [Debug logs](#debug-logs)
+         * [Homebridge Accessory Dump](#homebridge-accessory-dump)
    * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
       * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
    * [Roadmap](#roadmap)
@@ -76,9 +80,10 @@ You will need to manually remove all existing devices after upgrading and setup 
 * Support for Valves, Sprinklers and Shower Heads (As Alexa doesn't support these, they are Other)
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
-* Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
+* Support for Speakers ( Tested with homebridge-yamaha-home, homebridge-soundtouch and homebridge-http-irblaster )
 * Support for Apple TV ( Supports homebridge-apple-tv )
-* Support Spotify playback controls via homebridge-yamaha-home
+* Support Spotify playback controls on Yamaha Receivers via homebridge-yamaha-home
+* Support for door locks
 
 Alexa device names are the same as the homebridge device names.
 
@@ -96,12 +101,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Temperature Sensors
 * Motion Sensors
 * Contact Sensors
-* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
-* Thermostat - Partial support only ( Set target Temperature in celsius )
-* Heater/Cooler - Partial support only ( On/Off and Rotation speed )
+* Thermostat
+* Heater/Cooler
+* Door locks ( Lock and status only, Alexa does not support unlocking )
 
 ### Supported as Other
 
+* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Fans - Supported as Other
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
@@ -109,8 +115,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 ## Voice commands supported
 
 * Alexa, discover devices
-* Alexa, turn on  *device*
-* Alexa, turn off  *device*
+* Alexa, turn on *device*
+* Alexa, turn off *device*
 * Alexa, set *device* to 50
 * Alexa, what is the temperature in the *device* ( Not supported in Japan )
 * Alexa, dim *device*
@@ -118,6 +124,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn *device* red
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
+* Alexa, unlock my *device* ( Amazon is blocking this function )
+* Alexa, lock my *device*
+
+## Thermostat's and Heater / Cooler's
+
+* Alexa, set thermostat to 20
+* Alexa, set thermostat to heat/cool/automatic/off
 
 ## Color temperature
 
@@ -164,7 +177,6 @@ cool, cool white
 
 * Camera's ( for use with an Alexa show etc )
 * Eve devices
-* Locks
 * Security Systems
 
 # Installation of homebridge-alexa
@@ -280,7 +292,6 @@ sudo npm install -g homebridge-alexa
 
 **For users who enrolled prior to March 22, 2019, you MUST Disable the skill and Enable the skill in the Alexa app as part of setup. If you miss this step, you will see this error `Event Gateway Response Code: 400` in the logs.**
 
-
 ```
 "platforms": [
   {
@@ -335,7 +346,7 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls.  Ymmv
+* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
 
 ```
 "platforms": [
@@ -344,10 +355,16 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "combine": {
-        "into": "TV",
-        "from": ["KODI"]
-        },
+    "combine": [{
+          "into": "TV",
+          "from": ["KODI"]
+        }, {
+          "into": "Front",
+          "from": ["Yamaha"]
+        }, {
+          "into": "Rear",
+          "from": ["Yamaha"]
+        }],
   }
 ],
 ```
@@ -418,6 +435,14 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
 * Yamaha Spotify Controls
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
+
+* New Parser
+
+As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option newParser to false.  Default is to be enabled.
+
+```
+"newParser": false
+```
 
 ## Initial Testing and confirming configuration
 
@@ -494,7 +519,12 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ## Raising Issues and Troubleshooting
 
-### I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+### Known Issues
+
+* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+* All homebridge PIN's in your setup need to be set to the same value.
+* Whitelisting/blacklisting of accessories is not supported, but this can be achieved at the plugin level by putting the plugins you don't want exposed to Alexa in their own instance of HomeBridge, and for that instance of Alexa, don't include -I command line option.  Discovery will fail for that instance, and the accessories will not be exposed.
+* An Alexa device or a software based Alexa is required. Using just the App or Website does not work, and device discovery will fail to find devices. The Reverb app is a software based Alexa that is known to work.
 
 ### Slack Channel
 
@@ -515,13 +545,6 @@ Sometimes during troubleshooting I need a dump of your homebridge accessories. P
 ```
 curl -X PUT http://127.0.0.1:51826/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
 ```
-
-## Known Issues
-
-* All homebridge PIN's in your setup need to be set to the same value.
-* Whitelisting/blacklisting of accessories is not supported, but this can be achieved at the plugin level by putting the plugins you don't want exposed to Alexa in their own instance of HomeBridge, and for that instance of Alexa, don't include -I command line option.  Discovery will fail for that instance, and the accessories will not be exposed.
-* An Alexa device or a software based Alexa is required. Using just the App or Website does not work, and device discovery will fail to find devices. The Reverb app is a software based Alexa that is known to work.
-* Thermostats - Partial support only ( Set target Temperature in celsius )
 
 # Previous version of homebridge-alexa ( Version 1 )
 
