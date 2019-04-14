@@ -11,7 +11,7 @@ Enable Amazon Alexa access and control your homebridge controlled devices and ac
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).  
 
 # IMPORTANT - For existing users, installing an updated version of the plugin after March 22, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.  
-You will need to manually remove all existing devices after upgrading and setup and groups or routines again.  This would only occur with the first update after this date.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  I made a large change around the device identifiers between homebridge and Alexa, and this should avoid any further duplicate devices.  For reference, I'm using these values to create a unique key for Alexa homebridge name, homebridge username, plugin manufacturer, Service and accessory name.  ( homebridge name and username are from the config.json bridge settings.)  If you never change these values, Alexa should never discover duplicate devices.
+You will need to manually remove all existing devices after upgrading and setup groups and routines again.  This would only occur with the first update after this date.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  I made a large change around the device identifiers between homebridge and Alexa, and this should avoid any further duplicate devices.  For reference, I'm using these values to create a unique key for Alexa homebridge name, homebridge username, plugin manufacturer, Service and accessory name.  ( homebridge name and username are from the config.json bridge settings.)  If you never change these values, Alexa should never discover duplicate devices.
 
 # Features
 
@@ -502,14 +502,26 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ## Raising Issues and Troubleshooting
 
-* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+### I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
 
-* I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
+### Slack Channel
 
-* If you need to log an issue, please include a DEBUG log with your issue.
+I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
+
+### Debug logs
+
+To collect a debug log, please start homebridge with this command line
 
 ```
-DEBUG=alexa* homebridge -I
+DEBUG=* homebridge -I
+```
+
+### Homebridge Accessory Dump
+
+Sometimes during troubleshooting I need a dump of your homebridge accessories. Please use this command to collect it.  If needed you can change the ip address, port or pin to match your environment.
+
+```
+curl -X PUT http://127.0.0.1:51826/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
 ```
 
 ## Known Issues
