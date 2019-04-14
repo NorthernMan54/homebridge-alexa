@@ -76,9 +76,9 @@ You will need to manually remove all existing devices after upgrading and setup 
 * Support for Valves, Sprinklers and Shower Heads (As Alexa doesn't support these, they are Other)
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
-* Support for Speakers ( Tested with homebridge-yamaha-home and homebridge-http-irblaster )
+* Support for Speakers ( Tested with homebridge-yamaha-home, homebridge-soundtouch and homebridge-http-irblaster )
 * Support for Apple TV ( Supports homebridge-apple-tv )
-* Support Spotify playback controls via homebridge-yamaha-home
+* Support Spotify playback controls on Yamaha Receivers via homebridge-yamaha-home
 * Support for door locks
 
 Alexa device names are the same as the homebridge device names.
@@ -97,13 +97,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Temperature Sensors
 * Motion Sensors
 * Contact Sensors
+* Thermostat
+* Heater/Cooler
 * Door locks ( Lock and status only, Alexa does not support unlocking )
-* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
-* Thermostat - Partial support only ( Set target Temperature in celsius )
-* Heater/Cooler - Partial support only ( On/Off and Rotation speed )
 
 ### Supported as Other
 
+* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Fans - Supported as Other
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
@@ -120,8 +120,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, turn *device* red
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
-* Alexa, unlock my *device*
+* Alexa, unlock my *device* ( Amazon is blocking this function )
 * Alexa, lock my *device*
+
+## Thermostat's and Heater / Cooler's
+
+* Alexa, set thermostat to 20
+* Alexa, set thermostat to heat/cool/automatic/off
 
 ## Color temperature
 
@@ -426,6 +431,14 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
 * Yamaha Spotify Controls
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
+
+* New Parser
+
+As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option newParser to false.  Default is to be enabled.
+
+```
+"newParser": false
+```
 
 ## Initial Testing and confirming configuration
 
