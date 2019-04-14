@@ -34,6 +34,7 @@ You will need to manually remove all existing devices after upgrading and setup 
          * [Native Support](#native-support)
          * [Supported as Other](#supported-as-other)
       * [Voice commands supported](#voice-commands-supported)
+      * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
       * [AppleTV](#appletv)
@@ -54,7 +55,10 @@ You will need to manually remove all existing devices after upgrading and setup 
    * [Service Availability and Issues](#service-availability-and-issues)
       * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
       * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
-      * [Known Issues](#known-issues)
+         * [Known Issues](#known-issues)
+         * [Slack Channel](#slack-channel)
+         * [Debug logs](#debug-logs)
+         * [Homebridge Accessory Dump](#homebridge-accessory-dump)
    * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
       * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
    * [Roadmap](#roadmap)
@@ -515,7 +519,12 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ## Raising Issues and Troubleshooting
 
-### I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+### Known Issues
+
+* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+* All homebridge PIN's in your setup need to be set to the same value.
+* Whitelisting/blacklisting of accessories is not supported, but this can be achieved at the plugin level by putting the plugins you don't want exposed to Alexa in their own instance of HomeBridge, and for that instance of Alexa, don't include -I command line option.  Discovery will fail for that instance, and the accessories will not be exposed.
+* An Alexa device or a software based Alexa is required. Using just the App or Website does not work, and device discovery will fail to find devices. The Reverb app is a software based Alexa that is known to work.
 
 ### Slack Channel
 
@@ -536,13 +545,6 @@ Sometimes during troubleshooting I need a dump of your homebridge accessories. P
 ```
 curl -X PUT http://127.0.0.1:51826/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
 ```
-
-## Known Issues
-
-* All homebridge PIN's in your setup need to be set to the same value.
-* Whitelisting/blacklisting of accessories is not supported, but this can be achieved at the plugin level by putting the plugins you don't want exposed to Alexa in their own instance of HomeBridge, and for that instance of Alexa, don't include -I command line option.  Discovery will fail for that instance, and the accessories will not be exposed.
-* An Alexa device or a software based Alexa is required. Using just the App or Website does not work, and device discovery will fail to find devices. The Reverb app is a software based Alexa that is known to work.
-* Thermostats - Partial support only ( Set target Temperature in celsius )
 
 # Previous version of homebridge-alexa ( Version 1 )
 
