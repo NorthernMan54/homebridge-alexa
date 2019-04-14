@@ -46,6 +46,6 @@ echo "Yamaha"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha.json after.json
 
-echo "Yamaha"
+echo "Samsung"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/samsung_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/samsung_tv.json after.json

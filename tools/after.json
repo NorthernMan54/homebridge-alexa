@@ -13,17 +13,17 @@ Alexa Message Validation Passed!
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgQUxXQVlTIFVubGF0Y2gtMDAwMDAwNDUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Porta ALWAYS Unlatch",
-                    "description": "parseTest Porta ALWAYS Unlatch Lock Mechanism",
-                    "manufacturerName": "Nuki.io",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNhbXN1bmcgVFYtTGl2aW5nIFJvb20gVFYtMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Living Room TV",
+                    "description": "parseTest Living Room TV Television",
+                    "manufacturerName": "Samsung TV",
                     "displayCategories": [
-                        "SMARTLOCK"
+                        "TV"
                     ],
                     "cookie": {
-                        "Lock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":19,\"value\":1}",
-                        "Unlock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":19,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.LockController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":18}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13}]"
                     },
                     "capabilities": [
                         {
@@ -33,124 +33,12 @@ Alexa Message Validation Passed!
                         },
                         {
                             "type": "AlexaInterface",
-                            "interface": "Alexa.ContactSensor",
+                            "interface": "Alexa.PowerController",
                             "version": "3",
                             "properties": {
                                 "supported": [
                                     {
-                                        "name": "detectionState"
-                                    }
-                                ],
-                                "proactivelyReported": true,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.LockController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "lockState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgVW5sYXRjaC0wMDAwMDA0NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "Porta Unlatch",
-                    "description": "parseTest Porta Unlatch Lock Mechanism",
-                    "manufacturerName": "Nuki.io",
-                    "displayCategories": [
-                        "SMARTLOCK"
-                    ],
-                    "cookie": {
-                        "Lock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":15,\"value\":1}",
-                        "Unlock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":15,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.LockController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":14}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.ContactSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "detectionState"
-                                    }
-                                ],
-                                "proactivelyReported": true,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.LockController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "lockState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEtMDAwMDAwNDUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Porta",
-                    "description": "parseTest Porta Lock Mechanism",
-                    "manufacturerName": "Nuki.io",
-                    "displayCategories": [
-                        "SMARTLOCK"
-                    ],
-                    "cookie": {
-                        "Lock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":11,\"value\":1}",
-                        "Unlock": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":11,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.LockController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.ContactSensor",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "detectionState"
-                                    }
-                                ],
-                                "proactivelyReported": true,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.LockController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "lockState"
+                                        "name": "powerState"
                                     }
                                 ],
                                 "proactivelyReported": false,
@@ -166,66 +54,6 @@ Alexa Message Validation Passed!
 
 -----------------------------------------------------------
 
-{"host":"127.0.0.1","port":51826,"aid":2,"iid":10}
-{ endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEtMDAwMDAwNDUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
-  friendlyName: 'Porta',
-  description: 'parseTest Porta Lock Mechanism',
-  manufacturerName: 'Nuki.io',
-  displayCategories: [ 'SMARTLOCK' ],
-  cookie: 
-   { Lock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":11,"value":1}',
-     Unlock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":11,"value":0}',
-     ReportState: '[{"interface":"Alexa.LockController","host":"127.0.0.1","port":51826,"aid":2,"iid":10}]' },
-  capabilities: 
-   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.ContactSensor',
-       version: '3',
-       properties: [Object] },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.LockController',
-       version: '3',
-       properties: [Object] } ] }
-{"host":"127.0.0.1","port":51826,"aid":2,"iid":14}
-{ endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgVW5sYXRjaC0wMDAwMDA0NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
-  friendlyName: 'Porta Unlatch',
-  description: 'parseTest Porta Unlatch Lock Mechanism',
-  manufacturerName: 'Nuki.io',
-  displayCategories: [ 'SMARTLOCK' ],
-  cookie: 
-   { Lock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":15,"value":1}',
-     Unlock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":15,"value":0}',
-     ReportState: '[{"interface":"Alexa.LockController","host":"127.0.0.1","port":51826,"aid":2,"iid":14}]' },
-  capabilities: 
-   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.ContactSensor',
-       version: '3',
-       properties: [Object] },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.LockController',
-       version: '3',
-       properties: [Object] } ] }
-{"host":"127.0.0.1","port":51826,"aid":2,"iid":18}
-{ endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU51a2kuaW8tUG9ydGEgQUxXQVlTIFVubGF0Y2gtMDAwMDAwNDUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
-  friendlyName: 'Porta ALWAYS Unlatch',
-  description: 'parseTest Porta ALWAYS Unlatch Lock Mechanism',
-  manufacturerName: 'Nuki.io',
-  displayCategories: [ 'SMARTLOCK' ],
-  cookie: 
-   { Lock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":19,"value":1}',
-     Unlock: '{"host":"127.0.0.1","port":51826,"aid":2,"iid":19,"value":0}',
-     ReportState: '[{"interface":"Alexa.LockController","host":"127.0.0.1","port":51826,"aid":2,"iid":18}]' },
-  capabilities: 
-   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.ContactSensor',
-       version: '3',
-       properties: [Object] },
-     { type: 'AlexaInterface',
-       interface: 'Alexa.LockController',
-       version: '3',
-       properties: [Object] } ] }
 
 -----------------------------------------------------------
 
