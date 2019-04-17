@@ -1,0 +1,2566 @@
+{
+  "accessories": [{
+    "aid": 1,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "yamaha-home",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "RX-V1075",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rear",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0AA88593",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.1.5",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 305,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 306,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Yamaha",
+        "description": "Name"
+      }, {
+        "iid": 307,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": true,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 293,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 294,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Party",
+        "description": "Name"
+      }, {
+        "iid": 295,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "000000D8-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rear",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "000000B0-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Active",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 14,
+        "type": "000000E7-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint32",
+        "value": 18,
+        "description": "Active Identifier"
+      }, {
+        "iid": 15,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "Rear",
+        "description": "Configured Name"
+      }, {
+        "iid": 16,
+        "type": "000000E8-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Sleep Discovery Mode",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 17,
+        "type": "000000E1-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "uint8",
+        "description": "Remote Key",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+        "maxValue": 16,
+        "minValue": 0
+      }, {
+        "iid": 18,
+        "type": "000000E0-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Current Media State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 19,
+        "type": "00000137-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Target Media State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 2,
+        "minValue": 0
+      }, {
+        "iid": 20,
+        "type": "000000E2-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint16",
+        "value": 0,
+        "description": "Picture Mode",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "maxValue": 13,
+        "minValue": 0
+      }, {
+        "iid": 21,
+        "type": "000000DF-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "uint8",
+        "description": "Power Mode Selection",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false,
+      "linked": [22, 30, 38, 46, 54, 62, 70, 78, 86, 94, 102, 110, 118, 126, 134, 142, 150, 158, 166, 174, 182, 190, 198, 206, 214, 222, 230, 238, 246, 254, 262, 270, 278]
+    }, {
+      "iid": 22,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 23,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TUNER",
+        "description": "Name"
+      }, {
+        "iid": 24,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "TUNER",
+        "description": "Configured Name"
+      }, {
+        "iid": 25,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 26,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 27,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 28,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 0,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 29,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 30,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 31,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "MULTI CH",
+        "description": "Name"
+      }, {
+        "iid": 32,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "MULTI CH",
+        "description": "Configured Name"
+      }, {
+        "iid": 33,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 34,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 35,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 36,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 1,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 37,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 38,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 39,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "PHONO",
+        "description": "Name"
+      }, {
+        "iid": 40,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "PHONO",
+        "description": "Configured Name"
+      }, {
+        "iid": 41,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 2,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 42,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 43,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 44,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 2,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 45,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 46,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 47,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI1",
+        "description": "Name"
+      }, {
+        "iid": 48,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI1",
+        "description": "Configured Name"
+      }, {
+        "iid": 49,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 50,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 51,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 52,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 3,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 53,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 54,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 55,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI2",
+        "description": "Name"
+      }, {
+        "iid": 56,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI2",
+        "description": "Configured Name"
+      }, {
+        "iid": 57,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 58,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 59,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 60,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 4,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 61,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 62,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 63,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI3",
+        "description": "Name"
+      }, {
+        "iid": 64,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI3",
+        "description": "Configured Name"
+      }, {
+        "iid": 65,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 66,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 67,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 68,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 5,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 69,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 70,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 71,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI4",
+        "description": "Name"
+      }, {
+        "iid": 72,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI4",
+        "description": "Configured Name"
+      }, {
+        "iid": 73,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 74,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 75,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 76,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 6,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 77,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 78,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 79,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI5",
+        "description": "Name"
+      }, {
+        "iid": 80,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI5",
+        "description": "Configured Name"
+      }, {
+        "iid": 81,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 82,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 83,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 84,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 7,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 85,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 86,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 87,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI6",
+        "description": "Name"
+      }, {
+        "iid": 88,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI6",
+        "description": "Configured Name"
+      }, {
+        "iid": 89,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 90,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 91,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 92,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 8,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 93,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 94,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 95,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "HDMI7",
+        "description": "Name"
+      }, {
+        "iid": 96,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "HDMI7",
+        "description": "Configured Name"
+      }, {
+        "iid": 97,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 98,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 99,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 100,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 9,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 101,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 102,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 103,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV1",
+        "description": "Name"
+      }, {
+        "iid": 104,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV1",
+        "description": "Configured Name"
+      }, {
+        "iid": 105,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 106,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 107,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 108,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 10,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 109,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 110,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 111,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV2",
+        "description": "Name"
+      }, {
+        "iid": 112,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV2",
+        "description": "Configured Name"
+      }, {
+        "iid": 113,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 114,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 115,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 116,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 11,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 117,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 118,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 119,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV3",
+        "description": "Name"
+      }, {
+        "iid": 120,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV3",
+        "description": "Configured Name"
+      }, {
+        "iid": 121,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 122,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 123,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 124,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 12,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 125,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 126,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 127,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV4",
+        "description": "Name"
+      }, {
+        "iid": 128,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV4",
+        "description": "Configured Name"
+      }, {
+        "iid": 129,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 130,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 131,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 132,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 13,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 133,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 134,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 135,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV5",
+        "description": "Name"
+      }, {
+        "iid": 136,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV5",
+        "description": "Configured Name"
+      }, {
+        "iid": 137,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 138,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 139,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 140,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 14,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 141,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 142,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 143,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV6",
+        "description": "Name"
+      }, {
+        "iid": 144,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV6",
+        "description": "Configured Name"
+      }, {
+        "iid": 145,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 146,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 147,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 148,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 15,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 149,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 150,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 151,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AV7",
+        "description": "Name"
+      }, {
+        "iid": 152,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AV7",
+        "description": "Configured Name"
+      }, {
+        "iid": 153,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 7,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 154,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 155,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 156,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 16,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 157,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 158,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 159,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "V-AUX",
+        "description": "Name"
+      }, {
+        "iid": 160,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "V-AUX",
+        "description": "Configured Name"
+      }, {
+        "iid": 161,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 4,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 162,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 163,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 164,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 17,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 165,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 166,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 167,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AUDIO1",
+        "description": "Name"
+      }, {
+        "iid": 168,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AUDIO1",
+        "description": "Configured Name"
+      }, {
+        "iid": 169,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 170,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 171,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 172,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 18,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 173,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 174,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 175,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AUDIO2",
+        "description": "Name"
+      }, {
+        "iid": 176,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AUDIO2",
+        "description": "Configured Name"
+      }, {
+        "iid": 177,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 178,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 179,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 180,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 19,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 181,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 182,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 183,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AUDIO3",
+        "description": "Name"
+      }, {
+        "iid": 184,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AUDIO3",
+        "description": "Configured Name"
+      }, {
+        "iid": 185,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 186,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 187,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 188,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 20,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 189,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 190,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 191,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AUDIO4",
+        "description": "Name"
+      }, {
+        "iid": 192,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AUDIO4",
+        "description": "Configured Name"
+      }, {
+        "iid": 193,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 194,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 195,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 196,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 21,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 197,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 198,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 199,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "USB/NET",
+        "description": "Name"
+      }, {
+        "iid": 200,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "USB/NET",
+        "description": "Configured Name"
+      }, {
+        "iid": 201,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 9,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 202,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 203,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 204,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 22,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 205,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 206,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 207,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rhapsody",
+        "description": "Name"
+      }, {
+        "iid": 208,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "Rhapsody",
+        "description": "Configured Name"
+      }, {
+        "iid": 209,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 210,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 211,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 212,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 23,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 213,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 214,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 215,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Napster",
+        "description": "Name"
+      }, {
+        "iid": 216,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "Napster",
+        "description": "Configured Name"
+      }, {
+        "iid": 217,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 218,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 219,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 220,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 24,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 221,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 222,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 223,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "SiriusXM",
+        "description": "Name"
+      }, {
+        "iid": 224,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "SiriusXM",
+        "description": "Configured Name"
+      }, {
+        "iid": 225,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 226,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 227,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 228,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 25,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 229,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 230,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 231,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pandora",
+        "description": "Name"
+      }, {
+        "iid": 232,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "Pandora",
+        "description": "Configured Name"
+      }, {
+        "iid": 233,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 234,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 235,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 236,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 26,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 237,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 238,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 239,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Spotify",
+        "description": "Name"
+      }, {
+        "iid": 240,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "Spotify",
+        "description": "Configured Name"
+      }, {
+        "iid": 241,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 242,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 243,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 244,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 27,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 245,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 246,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 247,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "AirPlay",
+        "description": "Name"
+      }, {
+        "iid": 248,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "AirPlay",
+        "description": "Configured Name"
+      }, {
+        "iid": 249,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 8,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 250,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 251,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 252,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 28,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 253,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 254,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 255,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "SERVER",
+        "description": "Name"
+      }, {
+        "iid": 256,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "SERVER",
+        "description": "Configured Name"
+      }, {
+        "iid": 257,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 258,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 259,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 260,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 29,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 261,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 262,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 263,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "NET RADIO",
+        "description": "Name"
+      }, {
+        "iid": 264,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "NET RADIO",
+        "description": "Configured Name"
+      }, {
+        "iid": 265,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 10,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 266,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 267,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 268,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 30,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 269,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 270,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 271,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "USB",
+        "description": "Name"
+      }, {
+        "iid": 272,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "USB",
+        "description": "Configured Name"
+      }, {
+        "iid": 273,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 9,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 274,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 275,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 276,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 31,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 277,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 278,
+      "type": "000000D9-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 279,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "iPod (USB)",
+        "description": "Name"
+      }, {
+        "iid": 280,
+        "type": "000000E3-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "string",
+        "value": "iPod (USB)",
+        "description": "Configured Name"
+      }, {
+        "iid": 281,
+        "type": "000000DB-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "Input Source Type",
+        "valid-values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "maxValue": 10,
+        "minValue": 0
+      }, {
+        "iid": 282,
+        "type": "000000D6-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Is Configured",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 283,
+        "type": "00000135-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Current Visibility State",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 284,
+        "type": "000000E6-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "uint32",
+        "value": 32,
+        "description": "Identifier",
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 285,
+        "type": "00000134-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Target Visibility State",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 286,
+      "type": "00000113-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 287,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Rear",
+        "description": "Name"
+      }, {
+        "iid": 288,
+        "type": "0000011A-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "Mute"
+      }, {
+        "iid": 289,
+        "type": "000000B0-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 1,
+        "description": "Active",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }, {
+        "iid": 290,
+        "type": "000000E9-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 3,
+        "description": "Volume Control Type",
+        "valid-values": [0, 1, 2, 3],
+        "maxValue": 3,
+        "minValue": 0
+      }, {
+        "iid": 291,
+        "type": "00000119-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "uint8",
+        "value": 22,
+        "description": "Volume",
+        "unit": "percentage",
+        "maxValue": 100,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 292,
+        "type": "000000EA-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "uint8",
+        "description": "Volume Selector",
+        "valid-values": [0, 1],
+        "maxValue": 1,
+        "minValue": 0
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 296,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 297,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Preset 1",
+        "description": "Name"
+      }, {
+        "iid": 298,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 299,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 300,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Preset 2",
+        "description": "Name"
+      }, {
+        "iid": 301,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }]
+}

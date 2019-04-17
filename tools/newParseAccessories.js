@@ -46,11 +46,11 @@ var message = {
 };
 
 var speakers = [{
-    "manufacturer": "yamaha-home",
+    "manufacturer": "yamaha",
     "name": "Front"
   },
   {
-    "manufacturer": "yamaha-home",
+    "manufacturer": "yamaha",
     "name": "Rear"
   },
   {
@@ -80,10 +80,10 @@ var combine = [{
   "from": ["KODI"]
 }, {
   "into": "Front",
-  "from": ["Yamaha"]
+  "from": ["YamahaT"]
 }, {
   "into": "Rear",
-  "from": ["Yamaha"]
+  "from": ["YamahaT"]
 }];
 
 var hbDevices = new Homebridges(endPoints, {
