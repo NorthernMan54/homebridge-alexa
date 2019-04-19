@@ -91,7 +91,7 @@ var hbDevices = new Homebridges(endPoints, {
   "speakers": speakers,
   "combine": combine
 });
-// debug(hbDevices);
+debug("Homebridges");
 var response = hbDevices.toAlexa({
   perms: 'pw',
   "events": true,
@@ -103,9 +103,9 @@ var response = hbDevices.toAlexa({
 //   "events": true,
 //   "speakers": speakers
 // });
-
+debug("toAlexa");
 var eventDevices = hbDevices.toEvents();
-
+debug("toEvents - complete");
 var status = checkAlexaMessage(response);
 
 if (!status) {
