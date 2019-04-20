@@ -1,0 +1,80 @@
+Alexa Message Validation Passed!
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNhbXN1bmcgVFYtTGl2aW5nIFJvb20gVFYtMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Living Room TV",
+                    "description": "parseTest Living Room TV Television",
+                    "manufacturerName": "Samsung TV",
+                    "displayCategories": [
+                        "TV"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":0}",
+                        "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13}],[{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":20},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":22}]]",
+                        "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":20}",
+                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":22}"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PlaybackController",
+                            "version": "3",
+                            "supportedOperations": [
+                                "Play",
+                                "Pause",
+                                "Stop",
+                                "Next",
+                                "Previous"
+                            ]
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.StepSpeaker",
+                            "version": "3",
+                            "properties": {}
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+

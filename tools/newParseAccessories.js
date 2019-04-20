@@ -80,10 +80,10 @@ var combine = [{
   "from": ["KODI"]
 }, {
   "into": "Front",
-  "from": ["YamahaT"]
+  "from": ["Yamaha"]
 }, {
   "into": "Rear",
-  "from": ["YamahaT"]
+  "from": ["Yamaha"]
 }];
 
 var hbDevices = new Homebridges(endPoints, {
