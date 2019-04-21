@@ -1,4 +1,244 @@
-Alexa Message Validation Passed!
+WARNING - Bad message [
+    {
+        "field": "data",
+        "message": "no (or more than one) schemas match",
+        "value": {
+            "event": {
+                "header": {
+                    "namespace": "Alexa.Discovery",
+                    "name": "Discover.Response",
+                    "payloadVersion": "3",
+                    "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+                },
+                "payload": {
+                    "endpoints": [
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVBhcnR5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Party",
+                            "description": "parseTest Party Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Preset 1",
+                            "description": "parseTest Preset 1 Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Preset 2",
+                            "description": "parseTest Preset 2 Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVJlYXItMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Rear",
+                            "description": "parseTest Rear Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":0}",
+                                "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PlaybackController",
+                                    "version": "3",
+                                    "supportedOperations": [
+                                        "Play",
+                                        "Pause",
+                                        "Stop",
+                                        "Next",
+                                        "Previous"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVJlYXItMDAwMDAxMTMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Rear",
+                            "description": "parseTest Rear Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289,\"value\":0}",
+                                "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+                                "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":307}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.Speaker",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "volume"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "schemaPath": []
+    }
+]
+---------------------------- Response -------------------------------
+------------------------------------------------------------
 
 -----------------------------------------------------------
 
@@ -13,18 +253,123 @@ Alexa Message Validation Passed!
         "payload": {
             "endpoints": [
                 {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNhbXN1bmcgVFYtTGl2aW5nIFJvb20gVFYtMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "Living Room TV",
-                    "description": "parseTest Living Room TV Television",
-                    "manufacturerName": "Samsung TV",
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVBhcnR5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Party",
+                    "description": "parseTest Party Speaker",
+                    "manufacturerName": "yamaha-home",
                     "displayCategories": [
-                        "TV"
+                        "SPEAKER"
                     ],
                     "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":0}",
-                        "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13}]"
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Preset 1",
+                    "description": "parseTest Preset 1 Speaker",
+                    "manufacturerName": "yamaha-home",
+                    "displayCategories": [
+                        "SPEAKER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Preset 2",
+                    "description": "parseTest Preset 2 Speaker",
+                    "manufacturerName": "yamaha-home",
+                    "displayCategories": [
+                        "SPEAKER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVJlYXItMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Rear",
+                    "description": "parseTest Rear Speaker",
+                    "manufacturerName": "yamaha-home",
+                    "displayCategories": [
+                        "SPEAKER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":0}",
+                        "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13}]"
                     },
                     "capabilities": [
                         {
@@ -57,6 +402,71 @@ Alexa Message Validation Passed!
                                 "Next",
                                 "Previous"
                             ]
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVJlYXItMDAwMDAxMTMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Rear",
+                    "description": "parseTest Rear Speaker",
+                    "manufacturerName": "yamaha-home",
+                    "displayCategories": [
+                        "SPEAKER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289,\"value\":0}",
+                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":307}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.Speaker",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "volume"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
                         }
                     ]
                 }

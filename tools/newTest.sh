@@ -42,10 +42,14 @@ echo "Nuki Door Lock"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nuki_smart_lock.json > after.json ; diff ~/Code/alexaAwsBackend/samples/nuki.json after.json
 
-echo "Yamaha"
+echo "Yamaha - home"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha.json after.json
 
 echo "Samsung"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/samsung_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/samsung_tv.json after.json
+
+echo "Yamaha Zone Tv"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json after.json
