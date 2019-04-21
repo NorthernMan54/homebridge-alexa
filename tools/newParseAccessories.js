@@ -46,11 +46,11 @@ var message = {
 };
 
 var speakers = [{
-    "manufacturer": "yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Front"
   },
   {
-    "manufacturer": "yamaha",
+    "manufacturer": "yamaha-home",
     "name": "Rear"
   },
   {

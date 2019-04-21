@@ -77,6 +77,12 @@ var speakers = [{
 var combine = [{
   "into": "TV",
   "from": ["KODI"]
+}, {
+  "into": "Front",
+  "from": ["Yamaha"]
+}, {
+  "into": "Rear",
+  "from": ["Yamaha"]
 }];
 
 var response = alexaTranslator.endPoints(message, endPoints, {

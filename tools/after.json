@@ -24,9 +24,7 @@ Alexa Message Validation Passed!
                         "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":1}",
                         "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13,\"value\":0}",
                         "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
-                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13}],[{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":20},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":22}]]",
-                        "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":20}",
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":22}"
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":13}]"
                     },
                     "capabilities": [
                         {
@@ -59,12 +57,6 @@ Alexa Message Validation Passed!
                                 "Next",
                                 "Previous"
                             ]
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.StepSpeaker",
-                            "version": "3",
-                            "properties": {}
                         }
                     ]
                 }
