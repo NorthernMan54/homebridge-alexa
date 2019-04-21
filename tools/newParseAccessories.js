@@ -118,7 +118,7 @@ if (!status) {
 }
 
 console.log("\n-----------------------------------------------------------\n");
-console.log(JSON.stringify(response, null, 4));
+console.log(JSON.stringify(response, null, 2));
 console.log("\n-----------------------------------------------------------\n");
 // console.log(hbDevices.toEvents());
 

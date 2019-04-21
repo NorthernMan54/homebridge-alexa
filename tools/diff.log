@@ -1,0 +1,692 @@
+dyson_accessories
+penny
+1027c1027,1028
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhleXUtUG9yY2ggTW90aW9uLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhleXUtUG9yY2ggTW90aW9uLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+1032,1034c1033,1036
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":16,"iid":11}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":16,"iid":11}]' },
+>   capabilities:
+1041c1043,1044
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1DVUlPVC1HYXJhZ2UgRG9vci0wMDAwMDA0MS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1DVUlPVC1HYXJhZ2UgRG9vci0wMDAwMDA0MS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+1046,1050c1049,1056
+<   cookie: 
+<    { TurnOn: '{"host":"127.0.0.1","port":51826,"aid":31,"iid":11,"value":0}',
+<      TurnOff: '{"host":"127.0.0.1","port":51826,"aid":31,"iid":11,"value":1}',
+<      ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":31,"iid":10},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":31,"iid":11}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { TurnOn:
+>       '{"host":"127.0.0.1","port":51826,"aid":31,"iid":11,"value":0}',
+>      TurnOff:
+>       '{"host":"127.0.0.1","port":51826,"aid":31,"iid":11,"value":1}',
+>      ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":31,"iid":10},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":31,"iid":11}]' },
+>   capabilities:
+apple_tv
+mi-light
+805c805,806
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJyb2FkbGluay1DdXJ0YWlucy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJyb2FkbGluay1DdXJ0YWlucy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+810,812c811,815
+<   cookie: 
+<    { TurnOn: '{"host":"127.0.0.1","port":51826,"aid":12,"iid":11,"value":100}',
+<      TurnOff: '{"host":"127.0.0.1","port":51826,"aid":12,"iid":11,"value":0}',
+---
+>   cookie:
+>    { TurnOn:
+>       '{"host":"127.0.0.1","port":51826,"aid":12,"iid":11,"value":100}',
+>      TurnOff:
+>       '{"host":"127.0.0.1","port":51826,"aid":12,"iid":11,"value":0}',
+815,816c818,820
+<      ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":12,"iid":10},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":12,"iid":11},{"interface":"Alexa.PowerLevelController","host":"127.0.0.1","port":51826,"aid":12,"iid":11}]' },
+<   capabilities: 
+---
+>      ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":12,"iid":10},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":12,"iid":11},{"interface":"Alexa.PowerLevelController","host":"127.0.0.1","port":51826,"aid":12,"iid":11}]' },
+>   capabilities:
+ikea
+817d816
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":141,\"iid\":16}",
+869d867
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":139,\"iid\":16}",
+921d918
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":142,\"iid\":16}",
+973d969
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":140,\"iid\":16}",
+2450c2446,2447
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50cy1LYWxlbmRlci0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50cy1LYWxlbmRlci0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+2455,2457c2452,2455
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":16}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":16}]' },
+>   capabilities:
+2464c2462,2463
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTEtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTEtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+2469,2471c2468,2471
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":19}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":19}]' },
+>   capabilities:
+2478c2478,2479
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTItMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTItMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+2483,2485c2484,2487
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":22}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":22}]' },
+>   capabilities:
+2492c2494,2495
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTMtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU1pY2hhZWwgRnJvZWhsaWNoLUV2ZW50LTMtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+2497,2499c2500,2503
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":25}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":147,"iid":25}]' },
+>   capabilities:
+Sensors
+89c89,90
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLU1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLU1vdGlvbi0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+94,96c95,98
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":2,"iid":10}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":2,"iid":10}]' },
+>   capabilities:
+103c105,106
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLUNvbnRhY3QtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXNlbnNvci1zdHViLUNvbnRhY3QtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+108,110c111,114
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":3,"iid":10}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":3,"iid":10}]' },
+>   capabilities:
+Leonard
+631d630
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15}",
+770d768
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":15}",
+834c832,833
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhvbWVicmlkZ2UtcnRsXzQzMy1Gcm9udCBQb3JjaC0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhvbWVicmlkZ2UtcnRsXzQzMy1Gcm9udCBQb3JjaC0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+839,841c838,841
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":2,"iid":10}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":2,"iid":10}]' },
+>   capabilities:
+848c848,849
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNlYW4tMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNlYW4tMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+853,855c854,857
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":7,"iid":13}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":7,"iid":13}]' },
+>   capabilities:
+862c864,865
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUFsaWNlLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUFsaWNlLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+867,869c870,873
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":8,"iid":13}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":8,"iid":13}]' },
+>   capabilities:
+876c880,881
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLUdhcmFnZSBEb29yLTAwMDAwMDQxLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLUdhcmFnZSBEb29yLTAwMDAwMDQxLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+881,885c886,893
+<   cookie: 
+<    { TurnOn: '{"host":"127.0.0.1","port":51826,"aid":4,"iid":17,"value":0}',
+<      TurnOff: '{"host":"127.0.0.1","port":51826,"aid":4,"iid":17,"value":1}',
+<      ReportState: '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":4,"iid":16},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":4,"iid":17}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { TurnOn:
+>       '{"host":"127.0.0.1","port":51826,"aid":4,"iid":17,"value":0}',
+>      TurnOff:
+>       '{"host":"127.0.0.1","port":51826,"aid":4,"iid":17,"value":1}',
+>      ReportState:
+>       '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":4,"iid":16},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":4,"iid":17}]' },
+>   capabilities:
+896c904,905
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLVRlc3QgTW90aW9uLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLVRlc3QgTW90aW9uLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+901,903c910,913
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":5,"iid":16}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":5,"iid":16}]' },
+>   capabilities:
+910c920,921
+< { endpointId: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLURyeWVyLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+---
+> { endpointId:
+>    'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLURyeWVyLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+915,917c926,929
+<   cookie: 
+<    { ReportState: '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":6,"iid":10}]' },
+<   capabilities: 
+---
+>   cookie:
+>    { ReportState:
+>       '[{"interface":"Alexa.MotionSensor","host":"127.0.0.1","port":51826,"aid":6,"iid":10}]' },
+>   capabilities:
+Howard
+23a24
+>                         "thermostatMode": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":10,\"iid\":10}",
+bose soundlink
+28d27
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":392,\"iid\":16}",
+80d78
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":389,\"iid\":26}",
+132d129
+<                         "SetMute": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":388,\"iid\":41}",
+Heater Cooler
+Nuki Door Lock
+Yamaha - home
+Samsung
+25a26
+>                         "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":17}",
+46a48,59
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PlaybackController",
+>                             "version": "3",
+>                             "supportedOperations": [
+>                                 "Play",
+>                                 "Pause",
+>                                 "Stop",
+>                                 "Next",
+>                                 "Previous"
+>                             ]
+Yamaha Zone Tv
+0a1,412
+> WARNING - Bad message [
+>     {
+>         "field": "data",
+>         "message": "no (or more than one) schemas match",
+>         "value": {
+>             "event": {
+>                 "header": {
+>                     "namespace": "Alexa.Discovery",
+>                     "name": "Discover.Response",
+>                     "payloadVersion": "3",
+>                     "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+>                 },
+>                 "payload": {
+>                     "endpoints": [
+>                         {
+>                             "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVBhcnR5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                             "friendlyName": "Party",
+>                             "description": "parseTest Party Switch",
+>                             "manufacturerName": "yamaha-zone-tv",
+>                             "displayCategories": [
+>                                 "SWITCH"
+>                             ],
+>                             "cookie": {
+>                                 "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":1}",
+>                                 "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":0}",
+>                                 "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295}]"
+>                             },
+>                             "capabilities": [
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa",
+>                                     "version": "3"
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PowerController",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "powerState"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 }
+>                             ]
+>                         },
+>                         {
+>                             "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                             "friendlyName": "Preset 1",
+>                             "description": "parseTest Preset 1 Switch",
+>                             "manufacturerName": "yamaha-zone-tv",
+>                             "displayCategories": [
+>                                 "SWITCH"
+>                             ],
+>                             "cookie": {
+>                                 "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":1}",
+>                                 "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":0}",
+>                                 "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298}]"
+>                             },
+>                             "capabilities": [
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa",
+>                                     "version": "3"
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PowerController",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "powerState"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 }
+>                             ]
+>                         },
+>                         {
+>                             "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                             "friendlyName": "Preset 2",
+>                             "description": "parseTest Preset 2 Switch",
+>                             "manufacturerName": "yamaha-zone-tv",
+>                             "displayCategories": [
+>                                 "SWITCH"
+>                             ],
+>                             "cookie": {
+>                                 "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":1}",
+>                                 "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":0}",
+>                                 "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301}]"
+>                             },
+>                             "capabilities": [
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa",
+>                                     "version": "3"
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PowerController",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "powerState"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 }
+>                             ]
+>                         },
+>                         {
+>                             "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVJlYXItMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+>                             "friendlyName": "Rear",
+>                             "description": "parseTest Rear Television",
+>                             "manufacturerName": "yamaha-zone-tv",
+>                             "displayCategories": [
+>                                 "TV"
+>                             ],
+>                             "cookie": {
+>                                 "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":1}",
+>                                 "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":0}",
+>                                 "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17}",
+>                                 "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}],{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":307}]",
+>                                 "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+>                                 "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}"
+>                             },
+>                             "capabilities": [
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa",
+>                                     "version": "3"
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PowerController",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "powerState"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PlaybackController",
+>                                     "version": "3",
+>                                     "supportedOperations": [
+>                                         "Play",
+>                                         "Pause",
+>                                         "Stop",
+>                                         "Next",
+>                                         "Previous"
+>                                     ]
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.Speaker",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "volume"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 },
+>                                 {
+>                                     "type": "AlexaInterface",
+>                                     "interface": "Alexa.PowerController",
+>                                     "version": "3",
+>                                     "properties": {
+>                                         "supported": [
+>                                             {
+>                                                 "name": "powerState"
+>                                             }
+>                                         ],
+>                                         "proactivelyReported": false,
+>                                         "retrievable": true
+>                                     }
+>                                 }
+>                             ]
+>                         }
+>                     ]
+>                 }
+>             }
+>         },
+>         "schemaPath": []
+>     }
+> ]
+> ---------------------------- Response -------------------------------
+> ------------------------------------------------------------
+> 
+> -----------------------------------------------------------
+> 
+> {
+>     "event": {
+>         "header": {
+>             "namespace": "Alexa.Discovery",
+>             "name": "Discover.Response",
+>             "payloadVersion": "3",
+>             "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+>         },
+>         "payload": {
+>             "endpoints": [
+>                 {
+>                     "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVBhcnR5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                     "friendlyName": "Party",
+>                     "description": "parseTest Party Switch",
+>                     "manufacturerName": "yamaha-zone-tv",
+>                     "displayCategories": [
+>                         "SWITCH"
+>                     ],
+>                     "cookie": {
+>                         "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":1}",
+>                         "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":0}",
+>                         "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295}]"
+>                     },
+>                     "capabilities": [
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa",
+>                             "version": "3"
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PowerController",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "powerState"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         }
+>                     ]
+>                 },
+>                 {
+>                     "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                     "friendlyName": "Preset 1",
+>                     "description": "parseTest Preset 1 Switch",
+>                     "manufacturerName": "yamaha-zone-tv",
+>                     "displayCategories": [
+>                         "SWITCH"
+>                     ],
+>                     "cookie": {
+>                         "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":1}",
+>                         "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":0}",
+>                         "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298}]"
+>                     },
+>                     "capabilities": [
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa",
+>                             "version": "3"
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PowerController",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "powerState"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         }
+>                     ]
+>                 },
+>                 {
+>                     "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+>                     "friendlyName": "Preset 2",
+>                     "description": "parseTest Preset 2 Switch",
+>                     "manufacturerName": "yamaha-zone-tv",
+>                     "displayCategories": [
+>                         "SWITCH"
+>                     ],
+>                     "cookie": {
+>                         "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":1}",
+>                         "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":0}",
+>                         "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301}]"
+>                     },
+>                     "capabilities": [
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa",
+>                             "version": "3"
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PowerController",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "powerState"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         }
+>                     ]
+>                 },
+>                 {
+>                     "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVJlYXItMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+>                     "friendlyName": "Rear",
+>                     "description": "parseTest Rear Television",
+>                     "manufacturerName": "yamaha-zone-tv",
+>                     "displayCategories": [
+>                         "TV"
+>                     ],
+>                     "cookie": {
+>                         "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":1}",
+>                         "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":0}",
+>                         "PlaybackController": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17}",
+>                         "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}],{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":307}]",
+>                         "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}",
+>                         "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}"
+>                     },
+>                     "capabilities": [
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa",
+>                             "version": "3"
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PowerController",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "powerState"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PlaybackController",
+>                             "version": "3",
+>                             "supportedOperations": [
+>                                 "Play",
+>                                 "Pause",
+>                                 "Stop",
+>                                 "Next",
+>                                 "Previous"
+>                             ]
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.Speaker",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "volume"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         },
+>                         {
+>                             "type": "AlexaInterface",
+>                             "interface": "Alexa.PowerController",
+>                             "version": "3",
+>                             "properties": {
+>                                 "supported": [
+>                                     {
+>                                         "name": "powerState"
+>                                     }
+>                                 ],
+>                                 "proactivelyReported": false,
+>                                 "retrievable": true
+>                             }
+>                         }
+>                     ]
+>                 }
+>             ]
+>         }
+>     }
+> }
+> 
+> -----------------------------------------------------------
+> 
+> 
+> -----------------------------------------------------------
+> 

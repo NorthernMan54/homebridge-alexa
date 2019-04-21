@@ -30,7 +30,7 @@ echo "Howard - Speaker"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/howard_dump.json >  ~/Code/alexaAwsBackend/samples/howard.json
 
-echo "bose soundlink" 
+echo "bose soundlink"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/bose_soundlink.json >  ~/Code/alexaAwsBackend/samples/bose.json
 
@@ -49,3 +49,11 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_accessories.js
 echo "Samsung"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/samsung_tv_accessories.json > ~/Code/alexaAwsBackend/samples/samsung_tv.json
+
+echo "Blinds etc"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/lamp_accessories.json > ~/Code/alexaAwsBackend/samples/lamp.json
+
+echo "Yamaha Zone Tv"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json

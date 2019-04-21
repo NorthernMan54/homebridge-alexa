@@ -50,6 +50,10 @@ echo "Samsung"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/samsung_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/samsung_tv.json after.json
 
+echo "Blinds etc"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/lamp_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/lamp.json after.json
+
 echo "Yamaha Zone Tv"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json after.json
