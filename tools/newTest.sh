@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 echo "dyson_accessories"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/dyson_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/dyson.json after.json

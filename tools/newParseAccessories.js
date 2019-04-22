@@ -113,6 +113,7 @@ if (!status) {
   console.log("---------------------------- Response -------------------------------");
   // console.log(JSON.stringify(response));
   console.log("------------------------------------------------------------");
+  process.exit(1);
 } else {
   console.log("Alexa Message Validation Passed!");
 }

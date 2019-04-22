@@ -117,6 +117,7 @@ alexaHome.prototype.didFinishLaunching = function() {
   this.eventBus.on('Alexa.Speaker', alexaActions.alexaSpeaker.bind(this));
   this.eventBus.on('Alexa.ThermostatController', alexaActions.alexaThermostatController.bind(this));
   this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(this));
+  this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
   // alexa.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 };
 

@@ -161,6 +161,10 @@ cool, cool white
 * Alexa, volume up 20 on *device* ( Speakers )
 * Alexa, set the volume of *device* to 50 ( Speakers )
 
+### Bose SoundLink - Change preset
+
+* Alexa, change channel to 1 on *device*
+
 ## Yamaha Receiver/Spotify control
 
 * Alexa, pause Stereo
