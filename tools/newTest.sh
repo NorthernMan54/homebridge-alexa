@@ -58,6 +58,12 @@ echo "Blinds etc"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/lamp_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/lamp.json after.json
 
+echo "Cookie"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/cookie_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/cookie.json after.json
+
 echo "Yamaha Zone Tv"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json after.json
+
+echo "Test successfully completed"

@@ -57,3 +57,7 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/lamp_accessories.json
 echo "Yamaha Zone Tv"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json
+
+echo "Cookie"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/cookie_accessories.json > ~/Code/alexaAwsBackend/samples/cookie.json
