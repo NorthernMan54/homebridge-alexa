@@ -39,6 +39,7 @@ You will need to manually remove all existing devices after upgrading and setup 
          * [Color Temperatures](#color-temperatures)
       * [AppleTV](#appletv)
       * [Speakers](#speakers)
+         * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Contact and Motion Sensors](#contact-and-motion-sensors)
       * [Unsupported device types](#unsupported-device-types)
