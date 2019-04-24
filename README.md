@@ -33,11 +33,17 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
          * [Native Support](#native-support)
          * [Supported as Other](#supported-as-other)
-      * [Voice commands supported](#voice-commands-supported)
-      * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
+      * [Setup](#setup)
+      * [Light bulbs / Switches / Dimmer Switches](#light-bulbs--switches--dimmer-switches)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
+      * [Garage door](#garage-door)
+      * [Window coverings / blinds](#window-coverings--blinds)
+      * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
+      * [Lock / Unlock Doors](#lock--unlock-doors)
+      * [Temperature sensors](#temperature-sensors)
       * [AppleTV](#appletv)
+      * [HomeKit TV (iOS 12.2)](#homekit-tv-ios-122)
       * [Speakers](#speakers)
          * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
@@ -105,6 +111,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Thermostat
 * Heater/Cooler
 * Door locks ( Lock and status only, Alexa does not support unlocking )
+* HomeKit Television ( Initial support only On/Off and Volume Control )
 
 ### Supported as Other
 
@@ -113,25 +120,20 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 
-## Voice commands supported
+## Setup
 
 * Alexa, discover devices
+
+## Light bulbs / Switches / Dimmer Switches
+
 * Alexa, turn on *device*
 * Alexa, turn off *device*
+
 * Alexa, set *device* to 50
-* Alexa, what is the temperature in the *device* ( Not supported in Japan )
 * Alexa, dim *device*
 * Alexa, brighten *device*
-* Alexa, turn *device* red
-* Alexa, turn on *device* ( Open's a garage door )
-* Alexa, turn off *device* ( Close's a garage door )
-* Alexa, unlock my *device* ( Amazon is blocking this function )
-* Alexa, lock my *device*
 
-## Thermostat's and Heater / Cooler's
-
-* Alexa, set thermostat to 20
-* Alexa, set thermostat to heat/cool/automatic/off
+* Alexa, turn *device* red/green/blue
 
 ## Color temperature
 
@@ -149,12 +151,52 @@ daylight, daylight white
 cool, cool white
 ```
 
+## Garage door
+
+* Alexa, turn on *device* ( Open's a garage door )
+* Alexa, turn off *device* ( Close's a garage door )
+
+## Window coverings / blinds
+
+* Alexa, turn on *device* ( Open's blinds )
+* Alexa, turn off *device* ( Close's blinds )
+* Alexa, set *device* to 50 ( Moves blinds to 50% )
+
+## Thermostat's and Heater / Cooler's
+
+* Alexa, set thermostat to 20
+* Alexa, set thermostat to heat/cool/automatic/off
+
+## Lock / Unlock Doors
+
+* Alexa, unlock my *device* ( Amazon is blocking this function )
+* Alexa, lock my *device*
+
+## Temperature sensors
+
+* Alexa, what is the temperature in the *device* ( Not supported in Japan )
+
 ## AppleTV
 
 * Alexa, pause *device* ( Apple TV )
 * Alexa, resume *device* ( Apple TV )
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
+
+## HomeKit TV (iOS 12.2)
+
+* Alexa, turn on *device*
+* Alexa, turn off *device*
+
+* Alexa, lower the volume on *device*
+* Alexa, volume up 20 on *device*
+* Alexa, set the volume of *device* to 50
+
+* Alexa, pause *device*
+* Alexa, resume *device*
+* Alexa, stop *device*
+* Alexa, next on *device*
+* Alexa, rewind on *device*
 
 ## Speakers
 
@@ -164,7 +206,7 @@ cool, cool white
 
 ### Bose SoundLink - Change preset
 
-* Alexa, change channel to 1 on *device*
+* Alexa, change channel to 1-6 on *device*
 
 ## Yamaha Receiver/Spotify control
 
