@@ -120,6 +120,14 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 
+## Unsupported device types
+
+* Camera's ( for use with an Alexa show etc )
+* Eve devices
+* Security Systems
+
+# Alexa Voice Commands
+
 ## Setup
 
 * Alexa, discover devices
@@ -132,6 +140,8 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Alexa, set *device* to 50
 * Alexa, dim *device*
 * Alexa, brighten *device*
+
+## Color lights
 
 * Alexa, turn *device* red/green/blue
 
@@ -219,12 +229,6 @@ cool, cool white
 ## Contact and Motion Sensors
 
 * These are only visible to routines, no voice commands are available
-
-## Unsupported device types
-
-* Camera's ( for use with an Alexa show etc )
-* Eve devices
-* Security Systems
 
 # Installation of homebridge-alexa
 
