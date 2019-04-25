@@ -47,6 +47,7 @@ You will need to manually remove all existing devices after upgrading and setup 
       * [Temperature sensors](#temperature-sensors)
       * [AppleTV](#appletv)
       * [HomeKit TV (iOS 12.2)](#homekit-tv-ios-122)
+         * [HomeKit TV - Tested plugins](#homekit-tv---tested-plugins)
       * [Speakers](#speakers)
          * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
@@ -209,6 +210,17 @@ cool, cool white
 * Alexa, stop *device*
 * Alexa, next on *device*
 * Alexa, rewind on *device*
+
+### HomeKit TV - Tested plugins
+
+* Panasonic TV: - homebridge-panasonic-viera-tv@4.1.0
+  - Alexa can turn on and off and control volume
+
+* Sony Bravia TV (Android TV) - homebridge-bravia@1.1.0
+  - Alexa can turn on and off and control volume
+  
+* Sky Q decoder - homebridge-sky-q-experimental@1.0.2
+  - Alexa can turn on and off
 
 ## Speakers
 
