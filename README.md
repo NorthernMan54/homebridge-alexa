@@ -201,15 +201,24 @@ cool, cool white
 * Alexa, turn on *device*
 * Alexa, turn off *device*
 
+* Alexa, raise the volume on *device*
 * Alexa, lower the volume on *device*
 * Alexa, volume up 20 on *device*
 * Alexa, set the volume of *device* to 50
 
-* Alexa, pause *device*
-* Alexa, resume *device*
-* Alexa, stop *device*
-* Alexa, next on *device*
-* Alexa, rewind on *device*
+Or
+
+* Alexa, raise the volume on *device*
+* Alexa, lower the volume on *device*
+
+These are the remote buttons
+
+* Alexa, pause *device* ( pause/play )
+* Alexa, resume *device* ( pause/play )
+* Alexa, play *device* ( select )
+* Alexa, stop *device* ( back )
+* Alexa, next on *device* ( right arrow )
+* Alexa, rewind on *device* ( left arrow )
 
 ### HomeKit TV - Tested plugins
 
@@ -218,9 +227,15 @@ cool, cool white
 
 * Sony Bravia TV (Android TV) - homebridge-bravia@1.1.0
   - Alexa can turn on and off and control volume
-  
+
 * Sky Q decoder - homebridge-sky-q-experimental@1.0.2
   - Alexa can turn on and off
+
+* Samsung Tizen - homebridge-samsung-tizen
+  - Alexa can turn on and off and control volume
+
+* Yamaha AVR - homebridge-yamaha-zone-tv
+  - Alexa can turn on and off and control volume. Also control Spotify/Airplay playback
 
 ## Speakers
 
@@ -636,3 +651,6 @@ See [Roadmap](Roadmap.md)
 * Tait Brown - HomeSkill Icon
 * ozno - Recommendation for the bonjour MDNS implementation, and testing on RPI 0 W
 * fazerize - Initial support for Thermostats
+* francescob - Validate TV Integration for homebridge-panasonic-viera-tv@4.1.0, homebridge-bravia@1.1.0 and homebridge-sky-q-experimental@1.0.2
+* jelvs - Validate TV Integration for homebridge-samsung-tizen
+* krocko - bose soundlink preset / channel change
