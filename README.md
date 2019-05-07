@@ -10,6 +10,8 @@ Enable Amazon Alexa access and control your homebridge controlled devices and ac
 
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), and Spanish (MX).  
 
+# I have submitted the skill for certification again ( May 7th ), this time including US Spanish and Door Locks.  I also noticed that Portuguese was available, and if someone is available to provide translation help I should be able to add it as well.
+
 # IMPORTANT - For existing users, installing an updated version of the plugin after March 22, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.  
 You will need to manually remove all existing devices after upgrading and setup groups and routines again.  This would only occur with the first update after this date.  I would strongly recommend making note and recording the devices that are in each of your groups and routines prior to updating so you can recreate them again afterwards.  I made a large change around the device identifiers between homebridge and Alexa, and this should avoid any further duplicate devices.  For reference, I'm using these values to create a unique key for Alexa homebridge name, homebridge username, plugin manufacturer, Service and accessory name.  ( homebridge name and username are from the config.json bridge settings.)  If you never change these values, Alexa should never discover duplicate devices.
 
