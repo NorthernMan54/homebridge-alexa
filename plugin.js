@@ -86,6 +86,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     reconnectPeriod: 5000,
     combine: this.combine,
     speakers: this.speakers,
+    filter: this.filter,
     servers: [{
       protocol: 'mqtt',
       host: host,
