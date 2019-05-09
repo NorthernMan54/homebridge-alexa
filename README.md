@@ -28,6 +28,7 @@ You will need to manually remove all existing devices after upgrading and setup 
 
 # Table of Contents
 <!--ts-->
+   * [I have noticed that Portuguese is now available, and if someone is available to provide translation help I should be able to add it as well.  Please let me know if you can help by raising an issue.](#i-have-noticed-that-portuguese-is-now-available-and-if-someone-is-available-to-provide-translation-help-i-should-be-able-to-add-it-as-well--please-let-me-know-if-you-can-help-by-raising-an-issue)
    * [IMPORTANT - For existing users, installing an updated version of the plugin after March 22, 2019 will cause Alexa to mark all your existing devices as Offline and create new ones.](#important---for-existing-users-installing-an-updated-version-of-the-plugin-after-march-22-2019-will-cause-alexa-to-mark-all-your-existing-devices-as-offline-and-create-new-ones)
    * [Features](#features)
    * [Table of Contents](#table-of-contents)

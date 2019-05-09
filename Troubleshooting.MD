@@ -182,4 +182,4 @@ Feb 16 14:29:05 raj homebridge[2088]: 2019-02-16T19:29:05.107Z alexaLocal Sendin
 
 ## [Alexa] ERROR:  Event gateway token refresh error: 400
 
-Your event gateway authorization needs a manual refresh.  In the Amazon Alexa app, please "Disable Skill" and "Enable" the skill.
+Your event gateway authorization needs a manual refresh, this is required in order to utilize events from Motion and Contact sensors in routines.  In the Amazon Alexa app, please "Disable Skill" and "Enable" the skill, and re-enter your password.
