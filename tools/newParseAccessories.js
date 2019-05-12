@@ -8,6 +8,11 @@ var checkAlexaMessage = Validator(alexaSchema, {
 });
 
 var fs = require('fs');
+// JSON.parse(fs.readFileSync(process.argv[2]).toString())
+var response = fs.readFileSync(process.argv[2]).toString();
+// response = response.replace(/[^\x00-\x7F]/g, "");
+// response = response.replace(/\uFFFD/g, '');
+var accessories = JSON.parse(response.replace(/\uFFFD/g, ''));
 
 var endPoints = [{
   ipAddress: "127.0.0.1",
@@ -25,7 +30,7 @@ var endPoints = [{
       sh: 'kD1sXg=='
     }
   },
-  accessories: JSON.parse(fs.readFileSync(process.argv[2]).toString())
+  accessories: accessories
 }];
 
 var message = {
