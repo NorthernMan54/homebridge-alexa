@@ -262,6 +262,8 @@ These are the remote buttons
 
 # Installation of homebridge-alexa
 
+* If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).
+
 ## Prepare Homebridge for plugin installation
 
 The setup of the plugin is very straight forward, and requires enabling insecure mode of each homebridge instance you want to control from Alexa.
