@@ -1,0 +1,199 @@
+{
+  "pluginAlias": "Alexa",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "An account to link your Amazon Alexa to Homebridge needs to created on https://www.homebridge.ca/. This account will be used when you enable the skill in the Alexa App, and in the configuration below.",
+  "footerDisplay": "See https://github.com/NorthernMan54/homebridge-alexa for more information and instructions.\n\nHomebridge Alex Skill: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "Alexa",
+        "description": "Plugin name as displayed in the Homebridge log"
+      },
+      "username": {
+        "title": "Username",
+        "type": "string",
+        "required": true,
+        "description": "Username for https://www.homebridge.ca/"
+      },
+      "password": {
+        "title": "Password",
+        "type": "string",
+        "required": true,
+        "description": "Password for https://www.homebridge.ca/"
+      },
+      "pin": {
+        "title": "Homebridge Pin",
+        "type": "string",
+        "placeholder": "031-45-154",
+        "description": "This needs to match the Homebridge pin set in your config.json file"
+      },
+      "routines": {
+        "title": " Routines - enables passing to Alexa events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.",
+        "type": "boolean"
+      },
+      "debug": {
+        "title": " Enable Debug Mode",
+        "type": "boolean"
+      },
+      "refresh": {
+        "title": "Refresh Interval",
+        "type": "integer",
+        "placeholder": "900",
+        "description": "Frequency of refreshes of the homebridge accessory cache, in seconds. Defaults to 15 minutes."
+      },
+      "filter": {
+        "title": "Instance Filter",
+        "type": "string",
+        "placeholder": "eg. 192.168.1.122:51826",
+        "description": "Limits accessories shared with Alexa to a single homebridge instance.",
+        "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
+      },
+      "oldParser": {
+        "type": "boolean"
+      },
+      "combine": {
+        "type": "array",
+        "items": {
+          "title": "Combine",
+          "type": "object",
+          "properties": {
+            "into": {
+              "title": "Into",
+              "type": "string"
+            },
+            "from": {
+              "title": "From",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "speakers": {
+        "title": "Speakers",
+        "type": "array",
+        "items": {
+          "title": "Speaker",
+          "type": "object",
+          "properties": {
+            "manufacturer": {
+              "title": "Manufacturer",
+              "type": "string"
+            },
+            "name": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "layout": [
+    "name",
+    {
+      "type": "flex",
+      "flex-flow": "row wrap",
+      "items": [
+        "username",
+        {
+          "key": "password",
+          "type": "password"
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Optional Settings",
+      "expandable": true,
+      "expanded": false,
+      "items": [
+        "pin",
+        "routines",
+        "debug",
+        "refresh",
+        "filter"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Speakers",
+      "description": "Devices to configure as speakers as HomeKit currently does not have a Speaker service.", 
+      "expandable": true,
+      "expanded": false,
+      "items": [
+        {
+          "notitle": true,
+          "key": "speakers",
+          "type": "array",
+          "items": [
+            {
+              "type": "div",
+              "displayFlex": true,
+              "flex-direction": "row",
+              "items": [
+                {
+                  "key": "speakers[].manufacturer",
+                  "flex": "1 1 50px",
+                  "notitle": true,
+                  "placeholder": "Manufacturer"
+                },
+                {
+                  "key": "speakers[].name",
+                  "flex": "4 4 200px",
+                  "notitle": true,
+                  "placeholder": "Name"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Combine Accessories",
+      "description": "Combine disparate accessories into one common device.",
+      "expandable": true,
+      "expanded": false,
+      "items": [
+        {
+          "notitle": true,
+          "key": "combine",
+          "type": "array",
+          "items": [
+            {
+              "type": "div",
+              "items": [
+                {
+                  "key": "combine[].into",
+                  "title": "Into",
+                  "placeholder": "Target Accessory Name"
+                },
+                {
+                  "key": "combine[].from",
+                  "notitle": true,
+                  "items": [
+                    {
+                      "title": "From",
+                      "key": "combine[].from[]",
+                      
+                      "placeholder": "Source Accessory Name"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
