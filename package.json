@@ -21,7 +21,7 @@
     "homebridge": ">=0.4.16"
   },
   "devDependencies": {
-    "documentation": "8.1.2"
+    "documentation": "11.0.0"
   },
   "dependencies": {
     "is-my-json-valid": ">=2.19.0",
