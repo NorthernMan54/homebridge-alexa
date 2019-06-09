@@ -10,6 +10,10 @@ echo "apple_tv"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json >  ~/Code/alexaAwsBackend/samples/apple_tv.json
 
+echo "apple_tv_space"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > ~/Code/alexaAwsBackend/samples/apple_tv_space.json
+
 echo "mi-light"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/mi-light_accessories.json >  ~/Code/alexaAwsBackend/samples/mi-light.json
