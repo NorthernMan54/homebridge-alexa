@@ -1,0 +1,221 @@
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLUZyZWV2aWV3LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Freeview",
+                    "description": "parseTest Freeview Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVBhaXIgTmV0ZmxpeCAoMyktMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Pair Netflix (3)",
+                    "description": "parseTest Pair Netflix (3) Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVBsZXggRm9yIE1lbC0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Plex For Mel",
+                    "description": "parseTest Plex For Mel Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVBsZXggRm9yIEphbWVzLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Plex For James",
+                    "description": "parseTest Plex For James Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVJ1Z2J5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Rugby",
+                    "description": "parseTest Rugby Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "TV",
+                    "description": "parseTest TV Apple TV",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "TV"
+                    ],
+                    "cookie": {
+                        "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "ReportState": "[{\"interface\":\"Alexa.PlaybackController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10}]",
+                        "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":10,\"value\":1}",
+                        "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10,\"value\":1}"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PlaybackController",
+                            "version": "3",
+                            "supportedOperations": [
+                                "Stop",
+                                "Play",
+                                "Pause"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

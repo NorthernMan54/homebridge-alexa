@@ -1,216 +1,1059 @@
-WARNING - Bad message [
-    {
-        "field": "data",
-        "message": "no (or more than one) schemas match",
-        "value": {
-            "event": {
-                "header": {
-                    "namespace": "Alexa.Discovery",
-                    "name": "Discover.Response",
-                    "payloadVersion": "3",
-                    "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+Alexa Message Validation Passed!
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUJhdW0gTGljaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Baum Licht",
+                    "description": "parseTest Baum Licht Lightbulb",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
                 },
-                "payload": {
-                    "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVBvb2wgTGljaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Pool Licht",
+                    "description": "parseTest Pool Licht Lightbulb",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10}]"
+                    },
+                    "capabilities": [
                         {
-                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVBhcnR5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                            "friendlyName": "Party",
-                            "description": "parseTest Party Switch",
-                            "manufacturerName": "yamaha-zone-tv",
-                            "displayCategories": [
-                                "SWITCH"
-                            ],
-                            "cookie": {
-                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":1}",
-                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295,\"value\":0}",
-                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":295}]"
-                            },
-                            "capabilities": [
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa",
-                                    "version": "3"
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PowerController",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "powerState"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
-                                    }
-                                }
-                            ]
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
                         },
                         {
-                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                            "friendlyName": "Preset 1",
-                            "description": "parseTest Preset 1 Switch",
-                            "manufacturerName": "yamaha-zone-tv",
-                            "displayCategories": [
-                                "SWITCH"
-                            ],
-                            "cookie": {
-                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":1}",
-                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298,\"value\":0}",
-                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":298}]"
-                            },
-                            "capabilities": [
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa",
-                                    "version": "3"
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PowerController",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "powerState"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
                                     }
-                                }
-                            ]
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVJHQiBTdHJpcC0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "RGB Strip",
+                    "description": "parseTest RGB Strip Lightbulb",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":11}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":11}",
+                        "BrightnessTurnOn": "true",
+                        "SetColor": "{\"host\":\"127.0.0.1\",\"port\":51826,\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":10}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"host\":\"127.0.0.1\",\"port\":51826,\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":10}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
                         },
                         {
-                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                            "friendlyName": "Preset 2",
-                            "description": "parseTest Preset 2 Switch",
-                            "manufacturerName": "yamaha-zone-tv",
-                            "displayCategories": [
-                                "SWITCH"
-                            ],
-                            "cookie": {
-                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":1}",
-                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301,\"value\":0}",
-                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":301}]"
-                            },
-                            "capabilities": [
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa",
-                                    "version": "3"
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PowerController",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "powerState"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
                                     }
-                                }
-                            ]
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
                         },
                         {
-                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS16b25lLXR2LVJlYXItMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                            "friendlyName": "Rear",
-                            "description": "parseTest Rear Television",
-                            "manufacturerName": "yamaha-zone-tv",
-                            "displayCategories": [
-                                "TV"
-                            ],
-                            "cookie": {
-                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":1}",
-                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13,\"value\":0}",
-                                "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17,\"value\":11}",
-                                "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17,\"value\":8}",
-                                "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17,\"value\":9}",
-                                "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17,\"value\":7}",
-                                "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":17,\"value\":6}",
-                                "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":13}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":289},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":292}],{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":307}]",
-                                "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":292}",
-                                "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":1,\"iid\":291}"
-                            },
-                            "capabilities": [
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa",
-                                    "version": "3"
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PowerController",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "powerState"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
                                     }
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PlaybackController",
-                                    "version": "3",
-                                    "supportedOperations": [
-                                        "Play",
-                                        "Pause",
-                                        "Stop",
-                                        "Next",
-                                        "Previous"
-                                    ]
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.Speaker",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "volume"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
                                     }
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.StepSpeaker",
-                                    "version": "3",
-                                    "properties": {}
-                                },
-                                {
-                                    "type": "AlexaInterface",
-                                    "interface": "Alexa.PowerController",
-                                    "version": "3",
-                                    "properties": {
-                                        "supported": [
-                                            {
-                                                "name": "powerState"
-                                            }
-                                        ],
-                                        "proactivelyReported": false,
-                                        "retrievable": true
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNvbWZ5IC0gMC0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Somfy - 0",
+                    "description": "parseTest Somfy - 0 Window Covering",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "OTHER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10,\"value\":100}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10}",
+                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":9},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ContactSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
                                     }
-                                }
-                            ]
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVdvaG56aW1tZXIgVGVtcGVyYXR1ci0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Wohnzimmer Temperatur",
+                    "description": "parseTest Wohnzimmer Temperatur Temperature Sensor",
+                    "manufacturerName": "Default-Manufacturer",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":5,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBBdGxhbnRpa2JsYXUtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Atlantikblau",
+                    "description": "parseTest My HDMI Switcher Atlantikblau Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":52,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":52,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":52}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBCbGF1LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Blau",
+                    "description": "parseTest My HDMI Switcher Blau Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":58,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":58,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":58}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBCbGl0emxpY2h0LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Blitzlicht",
+                    "description": "parseTest My HDMI Switcher Blitzlicht Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":19,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":19,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":19}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBCbGlua2VuLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Blinken",
+                    "description": "parseTest My HDMI Switcher Blinken Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":16,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":16,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":16}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBDeWFuLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Cyan",
+                    "description": "parseTest My HDMI Switcher Cyan Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":55,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":55,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":55}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBEdW5rZWwgR2VsYi0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "My HDMI Switcher Dunkel Gelb",
+                    "description": "parseTest My HDMI Switcher Dunkel Gelb Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":37,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":37,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":37}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBEdW5rbGVyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Dunkler",
+                    "description": "parseTest My HDMI Switcher Dunkler Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBGYWRlLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Fade",
+                    "description": "parseTest My HDMI Switcher Fade Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":22,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":22,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":22}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBHZWxiLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Gelb",
+                    "description": "parseTest My HDMI Switcher Gelb Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":40,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":40,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":40}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBHcsO8bi0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "My HDMI Switcher Grün",
+                    "description": "parseTest My HDMI Switcher Grün Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":43,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":43,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":43}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBIZWxsYmxhdS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "My HDMI Switcher Hellblau",
+                    "description": "parseTest My HDMI Switcher Hellblau Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":49,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":49,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":49}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBIZWxsZ3LDvG4tMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Hellgrün",
+                    "description": "parseTest My HDMI Switcher Hellgrün Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":46,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":46,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":46}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBIZWxsZXItMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Heller",
+                    "description": "parseTest My HDMI Switcher Heller Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":13,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":13,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":13}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBPcmFuZ2UtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Orange",
+                    "description": "parseTest My HDMI Switcher Orange Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":34,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":34,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":34}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBQaW5rLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Pink",
+                    "description": "parseTest My HDMI Switcher Pink Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":67,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":67,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":67}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBSb3QtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Rot",
+                    "description": "parseTest My HDMI Switcher Rot Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":28,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":28,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":28}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBSb3lhbGJsYXUtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Royalblau",
+                    "description": "parseTest My HDMI Switcher Royalblau Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":61,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":61,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":61}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBTbW9vdGgtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Smooth",
+                    "description": "parseTest My HDMI Switcher Smooth Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":25,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":25,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":25}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBUb21hdG8tMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "My HDMI Switcher Tomato",
+                    "description": "parseTest My HDMI Switcher Tomato Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":31,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":31,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":31}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBUw7xya2lzLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Türkis",
+                    "description": "parseTest My HDMI Switcher Türkis Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":64,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":64,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":64}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBWaW9sZXR0LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "My HDMI Switcher Violett",
+                    "description": "parseTest My HDMI Switcher Violett Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":70,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":70,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":70}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVN3aXRjaGVyb28tTXkgSERNSSBTd2l0Y2hlciBXZWlzcy0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "My HDMI Switcher Weiss",
+                    "description": "parseTest My HDMI Switcher Weiss Switch",
+                    "manufacturerName": "Switcheroo",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":73,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":73,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":9,\"iid\":73}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
                         }
                     ]
                 }
-            }
-        },
-        "schemaPath": []
+            ]
+        }
     }
-]
----------------------------- Response -------------------------------
-------------------------------------------------------------
+}
+
+-----------------------------------------------------------
+
+{"host":"127.0.0.1","port":51826,"aid":7,"iid":9}
+{ endpointId:
+   'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNvbWZ5IC0gMC0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Somfy - 0',
+  description: 'parseTest Somfy - 0 Window Covering',
+  manufacturerName: 'Default-Manufacturer',
+  displayCategories: [ 'OTHER' ],
+  cookie:
+   { TurnOn:
+      '{"host":"127.0.0.1","port":51826,"aid":7,"iid":10,"value":100}',
+     TurnOff:
+      '{"host":"127.0.0.1","port":51826,"aid":7,"iid":10,"value":0}',
+     AdjustPowerLevel: '{"host":"127.0.0.1","port":51826,"aid":7,"iid":10}',
+     SetPowerLevel: '{"host":"127.0.0.1","port":51826,"aid":7,"iid":10}',
+     ReportState:
+      '[{"interface":"Alexa.ContactSensor","host":"127.0.0.1","port":51826,"aid":7,"iid":9},{"interface":"Alexa.PowerController","host":"127.0.0.1","port":51826,"aid":7,"iid":10},{"interface":"Alexa.PowerLevelController","host":"127.0.0.1","port":51826,"aid":7,"iid":10}]' },
+  capabilities:
+   [ { type: 'AlexaInterface', interface: 'Alexa', version: '3' },
+     { type: 'AlexaInterface',
+       interface: 'Alexa.ContactSensor',
+       version: '3',
+       properties: [Object] },
+     { type: 'AlexaInterface',
+       interface: 'Alexa.PowerController',
+       version: '3',
+       properties: [Object] },
+     { type: 'AlexaInterface',
+       interface: 'Alexa.PowerLevelController',
+       version: '3',
+       properties: [Object] } ] }
+
+-----------------------------------------------------------
+
