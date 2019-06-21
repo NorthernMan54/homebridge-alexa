@@ -61,3 +61,7 @@ node parseAccessories.js ~/Code/alexaAwsBackend/samples/lamp_accessories.json > 
 echo "Yamaha Zone Tv"
 
 node parseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json
+
+echo "Nest"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json > ~/Code/alexaAwsBackend/samples/nest.json

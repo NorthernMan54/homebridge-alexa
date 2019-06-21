@@ -70,4 +70,8 @@ echo "Yamaha Zone Tv"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/yamaha_zone_tv.json after.json
 
+echo "Nest"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/nest.json after.json
+
 echo "Test successfully completed"
