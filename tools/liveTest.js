@@ -87,10 +87,10 @@ function alexaDiscovery(message, callback) {
   var alreadySeen = [];
 
   response.event.payload.endpoints.forEach(function(endpoint) {
-    if (alreadySeen[endpoint.endpointId]) {
+    if (alreadySeen[endpoint.friendlyName]) {
       debug("Duplicate name", endpoint.friendlyName);
     } else {
-      alreadySeen[endpoint.endpointId] = true;
+      alreadySeen[endpoint.friendlyName] = true;
     }
   });
   /*
@@ -109,12 +109,13 @@ function alexaDiscovery(message, callback) {
 
   response.event.payload.endpoints.forEach(function(endpoint) {
     if (checkSeen[endpoint.endpointId]) {
-      debug("Check name", endpoint.friendlyName);
+      debug("Check endpointId", endpoint.friendlyName);
     } else {
       checkSeen[endpoint.endpointId] = true;
     }
   });
 
-  debug("Discovery Response", JSON.stringify(response, null, 4));
+  // debug("Discovery Response", JSON.stringify(response, null, 4));
+  debug("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
   callback(null, response);
 }
