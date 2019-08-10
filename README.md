@@ -32,7 +32,7 @@ You will need to manually remove all existing devices after upgrading and setup 
    * [Supported devices](#supported-devices)
       * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
          * [Native Support](#native-support)
-         * [Supported as Other](#supported-as-other)
+         * [Supported as Other Types](#supported-as-other-types)
       * [Unsupported device types](#unsupported-device-types)
    * [Alexa Voice Commands](#alexa-voice-commands)
       * [Setup](#setup)
@@ -85,7 +85,9 @@ You will need to manually remove all existing devices after upgrading and setup 
 * Support for Fans (As Alexa doesn't support Fans coverings I'm using Other)
 * Support for Window coverings/blinds (As Alexa doesn't support window coverings I'm using Other)
 * Support for Garage Doors
-* Support for Temperature, Contact and Motion Sensors.  Also supports sending real time updates from Contact and Motion sensors to Alexa, for use in routines.
+* Support for Temperature, Contact and Motion Sensors.  
+* Support for Occupancy Sensors as a Contact sensor.  
+* Also supports sending real time updates from Contact, Occupancy and Motion sensors to Alexa, for use in routines.
 * Support for Fan2 aka Dyson fans
 * Support for Valves, Sprinklers and Shower Heads (As Alexa doesn't support these, they are Other)
 * Support for more than 100 accessories
@@ -116,12 +118,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Door locks ( Lock and status only, Alexa does not support unlocking )
 * HomeKit Television ( Initial support only On/Off and Volume Control )
 
-### Supported as Other
+### Supported as Other Types
 
 * Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Fans - Supported as Other
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
+* Occupancy Sensors - Supported as a Contact Sensor
 
 ## Unsupported device types
 
