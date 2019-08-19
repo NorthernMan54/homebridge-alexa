@@ -121,7 +121,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 ### Supported as Other Types
 
 * Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
-* Fans - Supported as Other
+* Fans and Air Purifiers - Supported as a Switch
 * Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
