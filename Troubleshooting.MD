@@ -134,6 +134,10 @@ alexaLocal Emitting alexa.discovery
 [2018-3-12 19:10:33] [Alexa] alexaDiscovery - returned 36 devices
 ```
 
+## Device discovery fails, and this message is in the logs `ERROR: Empty accessory name, parsing failed.`
+
+Alexa requires each accessory to have a name, please update your plugin config so that every accessory has a name.
+
 # Controlling devices
 
 ## [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
