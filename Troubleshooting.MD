@@ -14,6 +14,7 @@
       * [Intermittent connectivity from Alexa to Homebridge](#intermittent-connectivity-from-alexa-to-homebridge)
    * [Device Discovery](#device-discovery)
       * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
+      * [Device discovery fails, and this message is in the logs ERROR: Empty accessory name, parsing failed.](#device-discovery-fails-and-this-message-is-in-the-logs-error-empty-accessory-name-parsing-failed)
    * [Controlling devices](#controlling-devices)
       * [[Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN](#alexa-powercontroller-turnoff-1921681226-51826-undefined-error-homebridge-auth-failed-invalid-pin)
    * [Event error messages](#event-error-messages)
