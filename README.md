@@ -292,14 +292,17 @@ HOMEBRIDGE_OPTS=-I
 
 ```
 pm2 delete homebridge
+pm2 cleardump
 pm2 start homebridge -- -I
 pm2 save
 ```
-To review your settings, to ensure that they are working correctly.
+To review your settings, use command below to check if homebridge was sucessfully registered to pm2. After that, you can try to reboot your system and check whether you can control homebridge devices with Alexa app.
+
 
 ```
 pm2 show homebridge
 ```
+
 
 * If you have multiple homebridge options, the -I should be listed first. ie
 
