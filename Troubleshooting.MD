@@ -3,6 +3,9 @@
 <!--ts-->
    * [Initial setup](#initial-setup)
       * [ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
+         * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
+         * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](#--bad-login-or-password-in-your-configjson-for-httpswwwhomebridgeca)
+         * [- VPN Software interfering with homebridge-alexa to Alexa communications](#--vpn-software-interfering-with-homebridge-alexa-to-alexa-communications)
       * [alexaLocal error { Error: Connection refused: Not authorized](#alexalocal-error--error-connection-refused-not-authorized)
       * [ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
       * [alexaHAP HAP Discover failed ... is not running in insecure mode](#alexahap-hap-discover-failed--is-not-running-in-insecure-mode)
@@ -37,9 +40,9 @@ Likely cause of this message is having multiple copies of homebridge-alexa in yo
 
 Known possible causes:
 
-1 - Multiple copies of homebridge-alexa on your network
-2 - Bad login or password in your config.json for https://www.homebridge.ca
-3 - VPN Software interfering with homebridge-alexa to Alexa communications
+### - Multiple copies of homebridge-alexa on your network
+### - Bad login or password in your config.json for https://www.homebridge.ca
+### - VPN Software interfering with homebridge-alexa to Alexa communications
 
 Please note, this message appears every 5 times the skill needs to reconnect to the skill cloud backend, so the message may occasionally appear.
 
