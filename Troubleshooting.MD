@@ -11,7 +11,7 @@
       * [[Alexa] ERROR: HAP Discovery failed, please review config](#alexa-error-hap-discovery-failed-please-review-config)
       * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
       * [alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883](#alexalocal-error--error-connect-econnrefused-35169132618883)
-      * [Intermittent connectivity from Alexa to Homebridge](#intermittent-connectivity-from-alexa-to-homebridge)
+      * [ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme-1)
    * [Device Discovery](#device-discovery)
       * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
       * [Device discovery fails, and this message is in the logs ERROR: Empty accessory name, parsing failed.](#device-discovery-fails-and-this-message-is-in-the-logs-error-empty-accessory-name-parsing-failed)
@@ -113,13 +113,14 @@ alexaLocal offline +8ms
 
 This is for a future feature enhancement, and can be ignored.
 
-## Intermittent connectivity from Alexa to Homebridge
+## ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.
 
 Alexa works intermittently, and the logs have offline/reconnect messages.  Also in your environment your running VPN software on the same machine as homebridge.  The VPN software is interfering with the MQTT connection between homebridge-alexa and https://www.homebridge.ca.  Please move the VPN to a different machine.
 
 ```
 alexaLocal offline +35s
 alexaLocal reconnect +5s
+ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.
 ```
 
 # Device Discovery
