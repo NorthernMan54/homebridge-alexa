@@ -65,6 +65,7 @@ You will need to manually remove all existing devices after upgrading and setup 
    * [Service Availability and Issues](#service-availability-and-issues)
       * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
       * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
+         * [Troubleshooting](#troubleshooting)
          * [Known Issues](#known-issues)
          * [Slack Channel](#slack-channel)
          * [Debug logs](#debug-logs)
@@ -606,6 +607,14 @@ Please note, as part of the verbose output from discovery devices, all your devi
 * Operational event reporting and alerting is sent to the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance, and the uptime robot reports events there in real time.
 
 ## Raising Issues and Troubleshooting
+
+### Troubleshooting ###
+
+To assist troubleshooting setup issues your account, the homebridge.ca website will display your account status and usage statistics.
+
+<p align="center">
+    <img src="docs/AccountStatus.png" height="200">
+</p>
 
 ### Known Issues
 
