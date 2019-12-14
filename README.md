@@ -614,6 +614,8 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 To assist troubleshooting setup issues your account, the homebridge.ca website will display your account status and usage statistics.
 
+From here you should be able to determine if your plugin is communicating with the service and if your Amazon Alexa account has enabled the Homebridge-Alexa skill.
+
 ### Known Issues
 
 * I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
