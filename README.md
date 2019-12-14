@@ -612,7 +612,7 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 <img align="right" src="docs/AccountStatus.png" height="200">
 
-To assist troubleshooting setup issues your account, the homebridge.ca website will display your account status and usage statistics.
+To assist troubleshooting setup issues your account, you can lookup the status of your account.
 
 From here you should be able to determine if your plugin is communicating with the service and if your Amazon Alexa account has enabled the Homebridge-Alexa skill.
 
