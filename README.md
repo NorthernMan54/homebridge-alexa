@@ -610,11 +610,9 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ### Troubleshooting ###
 
-To assist troubleshooting setup issues your account, the homebridge.ca website will display your account status and usage statistics.
+<img align="right" src="docs/AccountStatus.png" height="200">
 
-<p align="center">
-    <img src="docs/AccountStatus.png" height="200">
-</p>
+To assist troubleshooting setup issues your account, the homebridge.ca website will display your account status and usage statistics.
 
 ### Known Issues
 
