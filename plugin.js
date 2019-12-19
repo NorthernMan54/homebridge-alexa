@@ -68,9 +68,9 @@ alexaHome.prototype = {
 };
 
 alexaHome.prototype.didFinishLaunching = function() {
-  var host = 'homebridge.cloudwatch.net';
+  var host = 'alexa.homebridge.ca';
   if (this.beta) {
-    host = 'homebridgebeta.cloudwatch.net';
+    host = 'alexabeta.homebridge.ca';
   }
   options = {
     eventBus: this.eventBus,
