@@ -113,6 +113,39 @@ var eventDevices = hbDevices.toEvents();
 debug("toEvents - complete");
 var status = checkAlexaMessage(response);
 
+var deleteSeen = [];
+
+for (var i = 0; i < response.event.payload.endpoints.length; i++) {
+  var endpoint = response.event.payload.endpoints[i];
+  if (deleteSeen[endpoint.friendlyName]) {
+    console.log("WARNING: Duplicate device name", endpoint.friendlyName);
+    // response.event.payload.endpoints.splice(i, 1);
+  } else {
+    deleteSeen[endpoint.friendlyName] = true;
+  }
+}
+
+deleteSeen = [];
+
+for (i = 0; i < response.event.payload.endpoints.length; i++) {
+  endpoint = response.event.payload.endpoints[i];
+  if (deleteSeen[endpoint.endpointId]) {
+    console.log("ERROR: Parsing failed, duplicate endpointID.", endpoint.friendlyName);
+    // response.event.payload.endpoints.splice(i, 1);
+  } else {
+    deleteSeen[endpoint.endpointId] = true;
+  }
+}
+
+if (response && response.event.payload.endpoints.length < 1) {
+  console.log("ERROR: HAP Discovery failed, please review config");
+} else {
+  console.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+  if (response.event.payload.endpoints.length > 300) {
+    console.log("ERROR: Maximum devices/accessories of 300 exceeded.");
+  }
+}
+
 if (!status) {
   console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
   console.log("---------------------------- Response -------------------------------");

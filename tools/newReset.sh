@@ -10,6 +10,10 @@ echo "apple_tv"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json >  ~/Code/alexaAwsBackend/samples/apple_tv.json
 
+echo "apple_tv_space"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > ~/Code/alexaAwsBackend/samples/apple_tv_space.json
+
 echo "mi-light"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/mi-light_accessories.json >  ~/Code/alexaAwsBackend/samples/mi-light.json
@@ -61,3 +65,11 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/yamaha_zone_tv_access
 echo "Cookie"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/cookie_accessories.json > ~/Code/alexaAwsBackend/samples/cookie.json
+
+echo "Nest"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json > ~/Code/alexaAwsBackend/samples/nest.json
+
+echo "LG TV/Issue #284"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/issue_284.json > ~/Code/alexaAwsBackend/samples/issue_284_alexa.json
