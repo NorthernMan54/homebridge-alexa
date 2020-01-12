@@ -74,4 +74,8 @@ echo "Nest"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/nest.json after.json
 
+echo "LG TV/Issue #284"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/issue_284.json > after.json ; diff ~/Code/alexaAwsBackend/samples/issue_284_alexa.json after.json
+
 echo "Test successfully completed"
