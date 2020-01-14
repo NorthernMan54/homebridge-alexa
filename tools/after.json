@@ -1,23 +1,944 @@
-Alexa Message Validation Passed!
-
------------------------------------------------------------
-
-{
-    "event": {
-        "header": {
-            "namespace": "Alexa.Discovery",
-            "name": "Discover.Response",
-            "payloadVersion": "3",
-            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+WARNING: Duplicate device name Alice
+WARNING: Duplicate device name Sean
+WARNING: Duplicate device name Dryer
+WARNING: Duplicate device name Test Motion
+alexaDiscovery - returned 19 devices
+WARNING - Bad message [
+    {
+        "field": "data",
+        "message": "no (or more than one) schemas match",
+        "value": {
+            "event": {
+                "header": {
+                    "namespace": "Alexa.Discovery",
+                    "name": "Discover.Response",
+                    "payloadVersion": "3",
+                    "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+                },
+                "payload": {
+                    "endpoints": [
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLU1CUm9vbS0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "MBRoom",
+                            "description": "parseTest MBRoom Lightbulb",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":16,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":16,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":17}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":17}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":16},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUFsaWNlLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Alice",
+                            "description": "parseTest Alice Lightbulb",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":16},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUFsaWNlLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Alice",
+                            "description": "parseTest Alice Contact Sensor",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "CONTACT_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":13}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUJhcnQtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Bart",
+                            "description": "parseTest Bart Switch",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":3,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUZIYWxsLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "FHall",
+                            "description": "parseTest FHall Lightbulb",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":16,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":16,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":17}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":17}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":16},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLUZSb29tLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "FRoom",
+                            "description": "parseTest FRoom Lightbulb",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":16,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":16,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":17}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":17}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":16},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNlYW4tMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Sean",
+                            "description": "parseTest Sean Lightbulb",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":16,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":16,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":17}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":17}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":16},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LURlZmF1bHQtTWFudWZhY3R1cmVyLVNlYW4tMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Sean",
+                            "description": "parseTest Sean Contact Sensor",
+                            "manufacturerName": "Default-Manufacturer",
+                            "displayCategories": [
+                                "CONTACT_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":7,\"iid\":13}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLURyeWVyLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Dryer",
+                            "description": "parseTest Dryer Motion Sensor",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "MOTION_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.MotionSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLURyeWVyLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Dryer",
+                            "description": "parseTest Dryer Temperature Sensor",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "TEMPERATURE_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":6,\"iid\":16}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.TemperatureSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "temperature"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLUdhcmFnZS0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Garage",
+                            "description": "parseTest Garage Temperature Sensor",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "TEMPERATURE_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.TemperatureSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "temperature"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLUdhcmFnZSBEb29yLTAwMDAwMDQxLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Garage Door",
+                            "description": "parseTest Garage Door Garage Door Opener",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "DOOR"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":0}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":1}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":16},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ModeController",
+                                    "instance": "GarageDoor.Position",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "mode"
+                                            }
+                                        ],
+                                        "retrievable": true,
+                                        "proactivelyReported": true
+                                    },
+                                    "capabilityResources": {
+                                        "friendlyNames": [
+                                            {
+                                                "@type": "asset",
+                                                "value": {
+                                                    "assetId": "Alexa.Setting.Mode"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "configuration": {
+                                        "ordered": false,
+                                        "supportedModes": [
+                                            {
+                                                "value": "Position.Up",
+                                                "modeResources": {
+                                                    "friendlyNames": [
+                                                        {
+                                                            "@type": "text",
+                                                            "value": {
+                                                                "text": "Open",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        {
+                                                            "@type": "asset",
+                                                            "value": {
+                                                                "assetId": "Alexa.Value.Open"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "value": "Position.Down",
+                                                "modeResources": {
+                                                    "friendlyNames": [
+                                                        {
+                                                            "@type": "text",
+                                                            "value": {
+                                                                "text": "Closed",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        {
+                                                            "@type": "asset",
+                                                            "value": {
+                                                                "assetId": "Alexa.Value.Close"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "semantics": {
+                                        "actionMappings": [
+                                            {
+                                                "@type": "ActionsToDirective",
+                                                "actions": [
+                                                    "Alexa.Actions.Close",
+                                                    "Alexa.Actions.Lower"
+                                                ],
+                                                "directive": {
+                                                    "name": "SetMode",
+                                                    "payload": {
+                                                        "mode": "Position.Down"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "@type": "ActionsToDirective",
+                                                "actions": [
+                                                    "Alexa.Actions.Open",
+                                                    "Alexa.Actions.Raise"
+                                                ],
+                                                "directive": {
+                                                    "name": "SetMode",
+                                                    "payload": {
+                                                        "mode": "Position.Up"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "stateMappings": [
+                                            {
+                                                "@type": "StatesToValue",
+                                                "states": [
+                                                    "Alexa.States.Closed"
+                                                ],
+                                                "value": "Position.Down"
+                                            },
+                                            {
+                                                "@type": "StatesToValue",
+                                                "states": [
+                                                    "Alexa.States.Open"
+                                                ],
+                                                "value": "Position.Up"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLVRlc3QgTW90aW9uLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Test Motion",
+                            "description": "parseTest Test Motion Motion Sensor",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "MOTION_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":5,\"iid\":16}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.MotionSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLVRlc3QgTW90aW9uLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Test Motion",
+                            "description": "parseTest Test Motion Temperature Sensor",
+                            "manufacturerName": "WSSENSOR",
+                            "displayCategories": [
+                                "TEMPERATURE_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":5,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.TemperatureSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "temperature"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhvbWVicmlkZ2UtcnRsXzQzMy1Gcm9udCBQb3JjaC0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Front Porch",
+                            "description": "parseTest Front Porch Motion Sensor",
+                            "manufacturerName": "homebridge-rtl_433",
+                            "displayCategories": [
+                                "MOTION_SENSOR"
+                            ],
+                            "cookie": {
+                                "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":2,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.MotionSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLUZyb250LTAwMDAwMDQwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Front",
+                            "description": "parseTest Front Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":14,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":14,\"value\":0}",
+                                "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15}",
+                                "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":14},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15},{\"interface\":\"Alexa.PlaybackController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":19}]",
+                                "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":10,\"value\":1}",
+                                "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":13,\"value\":1}",
+                                "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":13,\"value\":1}",
+                                "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":16,\"value\":1}",
+                                "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":19,\"value\":1}"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.Speaker",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "volume"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PlaybackController",
+                                    "version": "3",
+                                    "supportedOperations": [
+                                        "Play",
+                                        "Pause",
+                                        "Stop",
+                                        "Next",
+                                        "Previous"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Preset 1",
+                            "description": "parseTest Preset 1 Switch",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVByZXNldCAyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Preset 2",
+                            "description": "parseTest Preset 2 Switch",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LXlhbWFoYS1ob21lLVJlYXItMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Rear",
+                            "description": "parseTest Rear Speaker",
+                            "manufacturerName": "yamaha-home",
+                            "displayCategories": [
+                                "SPEAKER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":14,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":14,\"value\":0}",
+                                "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":15}",
+                                "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":15}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":14},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":15},{\"interface\":\"Alexa.PlaybackController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":19}]",
+                                "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":10,\"value\":1}",
+                                "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":13,\"value\":1}",
+                                "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":13,\"value\":1}",
+                                "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":16,\"value\":1}",
+                                "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":19,\"value\":1}"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.Speaker",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "volume"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PlaybackController",
+                                    "version": "3",
+                                    "supportedOperations": [
+                                        "Play",
+                                        "Pause",
+                                        "Stop",
+                                        "Next",
+                                        "Previous"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
         },
-        "payload": {
-            "endpoints": []
-        }
+        "schemaPath": []
     }
-}
-
------------------------------------------------------------
-
-
------------------------------------------------------------
-
+]
+---------------------------- Response -------------------------------
+------------------------------------------------------------
