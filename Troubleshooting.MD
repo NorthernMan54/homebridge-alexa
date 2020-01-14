@@ -1,27 +1,30 @@
 **Troubleshooting Tips**
 
 <!--ts-->
-   * [Initial setup](#initial-setup)
-      * [ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
-         * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
+   * [Initial Setup](#initial-setup)
+      * [[Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.](#alexa-error--homebridge-alexa-login-to-homebridgeca-failed-please-validate-your-credentials-in-configjson-and-restart-homebridge)
          * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](#--bad-login-or-password-in-your-configjson-for-httpswwwhomebridgeca)
-         * [- VPN Software interfering with homebridge-alexa to Alexa communications](#--vpn-software-interfering-with-homebridge-alexa-to-alexa-communications)
-      * [alexaLocal error { Error: Connection refused: Not authorized](#alexalocal-error--error-connection-refused-not-authorized)
-      * [ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
+      * [[Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#alexa-error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
+         * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
+         * [- VPN Software interfering with homebridge-alexa to homebridge.ca communications](#--vpn-software-interfering-with-homebridge-alexa-to-homebridgeca-communications)
+      * [[Alexa] ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#alexa-error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
+      * [[Alexa] WARNING: Duplicate device name xxxxx](#alexa-warning-duplicate-device-name-xxxxx)
+   * [Initial Setup Messages from DEBUG mode](#initial-setup-messages-from-debug-mode)
       * [alexaHAP HAP Discover failed ... is not running in insecure mode](#alexahap-hap-discover-failed--is-not-running-in-insecure-mode)
       * [HAP Discover failed ..... error code 470](#hap-discover-failed--error-code-470)
       * [Upgraded from old version and am seeing this error message](#upgraded-from-old-version-and-am-seeing-this-error-message)
       * [[Alexa] ERROR: HAP Discovery failed, please review config](#alexa-error-hap-discovery-failed-please-review-config)
-      * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
       * [alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883](#alexalocal-error--error-connect-econnrefused-35169132618883)
    * [Device Discovery](#device-discovery)
       * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
       * [Device discovery fails, and this message is in the logs ERROR: Empty accessory name, parsing failed.](#device-discovery-fails-and-this-message-is-in-the-logs-error-empty-accessory-name-parsing-failed)
       * [Device discovery fails, and this message is in the logs ERROR: Maximum devices/accessories of 300 exceeded.](#device-discovery-fails-and-this-message-is-in-the-logs-error-maximum-devicesaccessories-of-300-exceeded)
       * [Device discovery fails, and this message is in the logs ERROR: Parsing failed, duplicate endpointID.](#device-discovery-fails-and-this-message-is-in-the-logs-error-parsing-failed-duplicate-endpointid)
+      * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
    * [Controlling devices](#controlling-devices)
       * [[Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN](#alexa-powercontroller-turnoff-1921681226-51826-undefined-error-homebridge-auth-failed-invalid-pin)
    * [Event error messages](#event-error-messages)
+      * [[Alexa] WARNING: ( homebridge-alexa) Dropped event message, message rate too high.](#alexa-warning--homebridge-alexa-dropped-event-message-message-rate-too-high)
       * [ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX](#error--error-getaccesstoken-no-data-error-xxxxxxxxxx)
       * [ERROR:  Error: getAccessToken Token not found](#error--error-getaccesstoken-token-not-found)
          * [Unsuccessful event message ( No event gateway token )](#unsuccessful-event-message--no-event-gateway-token-)
@@ -32,27 +35,32 @@
 
 <!--te-->
 
-# Initial setup
+# Initial Setup
 
-## ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.
+## [Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.
 
-Likely cause of this message is having multiple copies of homebridge-alexa in your environment or bad login/password in the config.json.  Please note your only need one installation of homebridge-alexa per home or network.
+### - Bad login or password in your config.json for https://www.homebridge.ca
+
+## [Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.
+
+Likely cause of this message is having multiple copies of homebridge-alexa in your environment.  Please note you only need one installation of homebridge-alexa per home or network.
 
 Known possible causes:
 
 ### - Multiple copies of homebridge-alexa on your network
-### - Bad login or password in your config.json for https://www.homebridge.ca
-### - VPN Software interfering with homebridge-alexa to Alexa communications
+### - VPN Software interfering with homebridge-alexa to homebridge.ca communications
 
 Please note, this message appears every 5 times the skill needs to reconnect to the skill cloud backend, so the message may occasionally appear.
 
-## alexaLocal error { Error: Connection refused: Not authorized
+## [Alexa] ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
 
-Not authorized, the username and/or password configured in the plugin is incorrect.
+Due to configuration or other issues
 
-## ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.
+## [Alexa] WARNING: Duplicate device name xxxxx
 
+Some of your devices have duplicate names, and will need to be edited and the Alexa App before using.
 
+# Initial Setup Messages from DEBUG mode
 
 ## alexaHAP HAP Discover failed ... is not running in insecure mode
 
@@ -92,9 +100,6 @@ Possible causes:
 
 2 - Discovery is working, but you don't have any devices that are supported by homebridge-alexa.
 
-## After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
-
-Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
 
 ## alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
 
@@ -124,7 +129,6 @@ This is for a future feature enhancement, and can be ignored.
 In the plugin debug logs, when a discovery request is received by the plugin it looks like this
 
 ```
-alexaLocal Emitting alexa.discovery
 [2018-3-12 19:10:33] [Alexa] alexaDiscovery - returned 36 devices
 ```
 
@@ -141,6 +145,10 @@ Amazon only supports a maximum of 300 devices per skill.  Please see further det
 
 The likely cause of this error is a duplicate accessory name.  Please adjust your devices names in your plugins config.json.
 
+## After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa
+
+Homebridge-Alexa needs to have a consistent port number for homebridge, please ensure your config.json for each homebridge instance contains a port number.
+
 # Controlling devices
 
 ## [Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN
@@ -150,6 +158,10 @@ Your homebridge access pin is incorrect, please set the PIN as part of the confi
 https://github.com/NorthernMan54/homebridge-alexa#optional-parameters
 
 # Event error messages
+
+##  [Alexa] WARNING: ( homebridge-alexa) Dropped event message, message rate too high.
+
+Events from your contact or motion sensors are sending updates faster than the Alexa backend can handle.  Maximum rate is 1 message every 10 seconds, any faster and the messages will be dropped and forwarded to Alexa.
 
 ## ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX
 ## ERROR:  Error: getAccessToken Token not found
