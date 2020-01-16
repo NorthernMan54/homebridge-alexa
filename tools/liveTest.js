@@ -15,7 +15,7 @@ this.log = console.log;
 this.eventBus = new EventEmitter();
 
 this.pin = "031-45-154";
-this.beta = true;
+this.beta = false;
 this.events = false;
 this.oldParser = false;
 this.refresh = 60 * 15; // Value in seconds, default every 15 minute's
@@ -159,7 +159,7 @@ this.eventBus.on('System', function(message) {
 this.eventBus.on('Alexa', alexaMessage.bind(this));
 this.eventBus.on('Alexa.Discovery', alexaDiscovery.bind(this));
 this.eventBus.on('Alexa.PowerController', alexaActions.alexaPowerController.bind(this));
-this.eventBus.on('Alexa.PowerLevelController', alexaActions.alexaPowerLevelController.bind(this));
+this.eventBus.on('Alexa.PowerLevelController', alexaPowerLevelController.bind(this));
 this.eventBus.on('Alexa.ColorController', alexaActions.alexaColorController.bind(this));
 this.eventBus.on('Alexa.ColorTemperatureController', alexaActions.alexaColorTemperatureController.bind(this));
 this.eventBus.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
@@ -169,6 +169,66 @@ this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(t
 this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 this.eventBus.on('Alexa.ModeController', alexaModeController.bind(this));
+
+/*
+
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.PowerLevelController",
+      "name": "SetPowerLevel",
+      "payloadVersion": "3",
+      "messageId": "709a0ca4-3e57-485a-bf58-8748c99e3e2e",
+      "correlationToken": "AAAAAAAAAACD4pj0ADsaqu3j0F9kk/4QDAIAAAAAAABYW38O5qg1EU9ggaH8SjxfPNf7lSkws/lUgmX0rOYcpZlSXeFVsLXaJkTkb6e/PtR9PTH7mwBUkuoRLP1bptIbVte7gl7eI6s6zWuBaafgFneVvl4pFyG9bBGupjrhQoloIjdu+ExQSk6J+4jRlUJB/LQ26xdIPq10JxGgf6noiPduwzIDjUmPkbs3MFCrIaIPTyJ5YuW5tAcCn3gqas7q+UU73PpuUz+5p4iN7O7pMWCb/xs7aa2Kprvr25YcSgr8sExapACOYqoD2EjF3A2BAvVcrgji5wSv0hYIgKGH9WpwZQW2UqPmuJvsVQpdIW9IsTri8w22LKUO7twkIOQ9lJ5MQchBIJeP5AEh+q4RTLe6c+sDRNTTKV+RVrRVZXQ9DF3ujDB4dlZx545gcAeGjTu5E+tzpp9mGdvcwGix5+IwDYP5wOdq+keyGdPet+zAtsqqkQaYQjyihLtTs/bcoRf8cATOS7eDdkMutzF5aVW6VPKuE8yI3GIBsi9zZ4+8ApL/qo9NjALag7WIHLOocjYxGLf73PtgeRKsW1jcjEJAcFIZ6JWS5c/Vedl66tvH1p0dPdwNMl8mxHcc935S+IzAjzCvOymO4twVts1H9SWzx3Dmj6A99Vii3NzHyQlkG7kA+6bdjZzmXlKJ9uPPAtR9FV9+xZ9ztafj0Gn42pEc1THGLP7rtm5S/Q=="
+    },
+    "endpoint": {
+      "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJFVEEtRmFrZSBCbGluZHMtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+      "cookie": {
+        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":100}",
+        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}]",
+        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":0}"
+      }
+    },
+    "payload": {
+      "powerLevel": 26
+    }
+  }
+}
+
+*/
+
+function alexaPowerLevelController(message, callback) {
+  // console.log(JSON.stringify(message));
+  var now = new Date();
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "Response",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.PowerLevelController",
+        "name": "powerLevel",
+        "value": message.directive.payload.powerLevel,
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    }
+  };
+  console.log(JSON.stringify(response));
+  callback(null, response);
+}
 
 /*
 {

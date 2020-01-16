@@ -1,257 +1,321 @@
-{
-  "event": {
-    "header": {
-      "namespace": "Alexa.Discovery",
-      "name": "Discover.Response",
-      "payloadVersion": "3",
-      "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
-    },
-    "payload": {
-      "endpoints": [{
-          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LUJsaW5kcy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-          "friendlyName": "Blinds",
-          "description": "parseTest Blinds Window Covering",
-          "manufacturerName": "Somfy",
-          "displayCategories": ["INTERIOR_BLIND"],
-          "cookie": {},
-          "capabilities": [{
-              "type": "AlexaInterface",
-              "interface": "Alexa",
-              "version": "3"
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.ModeController",
-              "instance": "Blinds.Position",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "mode"
-                }],
-                "retrievable": true,
-                "proactivelyReported": true
-              },
-              "capabilityResources": {
-                "friendlyNames": [{
-                  "@type": "asset",
-                  "value": {
-                    "assetId": "Alexa.Setting.Opening"
-                  }
-                }]
-              },
-              "configuration": {
-                "ordered": false,
-                "supportedModes": [{
-                    "value": "Position.Up",
-                    "modeResources": {
-                      "friendlyNames": [{
-                        "@type": "asset",
-                        "value": {
-                          "assetId": "Alexa.Value.Open"
+alexaDiscovery - returned 1 devices
+WARNING - Bad message [
+    {
+        "field": "data",
+        "message": "no (or more than one) schemas match",
+        "value": {
+            "event": {
+                "header": {
+                    "namespace": "Alexa.Discovery",
+                    "name": "Discover.Response",
+                    "payloadVersion": "3",
+                    "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+                },
+                "payload": {
+                    "endpoints": [
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJFVEEtVGVzdCBHYXJhZ2UgRG9vci0wMDAwMDA0MS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Test Garage Door",
+                            "description": "parseTest Test Garage Door Garage Door Opener",
+                            "manufacturerName": "BETA",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":0}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":1}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ModeController",
+                                    "instance": "GarageDoor.Position",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "mode"
+                                            }
+                                        ],
+                                        "retrievable": true,
+                                        "proactivelyReported": true
+                                    },
+                                    "capabilityResources": {
+                                        "friendlyNames": [
+                                            {
+                                                "@type": "asset",
+                                                "value": {
+                                                    "assetId": "Alexa.Setting.Mode"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "configuration": {
+                                        "ordered": false,
+                                        "supportedModes": [
+                                            {
+                                                "value": "Position.Up",
+                                                "modeResources": {
+                                                    "friendlyNames": [
+                                                        {
+                                                            "@type": "text",
+                                                            "value": {
+                                                                "text": "Open",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        {
+                                                            "@type": "asset",
+                                                            "value": {
+                                                                "assetId": "Alexa.Value.Open"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "value": "Position.Down",
+                                                "modeResources": {
+                                                    "friendlyNames": [
+                                                        {
+                                                            "@type": "text",
+                                                            "value": {
+                                                                "text": "Closed",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        {
+                                                            "@type": "asset",
+                                                            "value": {
+                                                                "assetId": "Alexa.Value.Close"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "semantics": {
+                                        "actionMappings": [
+                                            {
+                                                "@type": "ActionsToDirective",
+                                                "actions": [
+                                                    "Alexa.Actions.Close",
+                                                    "Alexa.Actions.Lower"
+                                                ],
+                                                "directive": {
+                                                    "name": "SetMode",
+                                                    "payload": {
+                                                        "mode": "Position.Down"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "@type": "ActionsToDirective",
+                                                "actions": [
+                                                    "Alexa.Actions.Open",
+                                                    "Alexa.Actions.Raise"
+                                                ],
+                                                "directive": {
+                                                    "name": "SetMode",
+                                                    "payload": {
+                                                        "mode": "Position.Up"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "stateMappings": [
+                                            {
+                                                "@type": "StatesToValue",
+                                                "states": [
+                                                    "Alexa.States.Closed"
+                                                ],
+                                                "value": "Position.Down"
+                                            },
+                                            {
+                                                "@type": "StatesToValue",
+                                                "states": [
+                                                    "Alexa.States.Open"
+                                                ],
+                                                "value": "Position.Up"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
                         }
-                      }]
-                    }
-                  },
-                  {
-                    "value": "Position.Down",
-                    "modeResources": {
-                      "friendlyNames": [{
-                        "@type": "asset",
-                        "value": {
-                          "assetId": "Alexa.Value.Close"
-                        }
-                      }]
-                    }
-                  }
-                ]
-              },
-              "semantics": {
-                "actionMappings": [{
-                    "@type": "ActionsToDirective",
-                    "actions": [
-                      "Alexa.Actions.Close",
-                      "Alexa.Actions.Lower"
-                    ],
-                    "directive": {
-                      "name": "SetMode",
-                      "payload": {
-                        "mode": "Position.Down"
-                      }
-                    }
-                  },
-                  {
-                    "@type": "ActionsToDirective",
-                    "actions": [
-                      "Alexa.Actions.Open",
-                      "Alexa.Actions.Raise"
-                    ],
-                    "directive": {
-                      "name": "SetMode",
-                      "payload": {
-                        "mode": "Position.Up"
-                      }
-                    }
-                  }
-                ],
-                "stateMappings": [{
-                    "@type": "StatesToValue",
-                    "states": [
-                      "Alexa.States.Closed"
-                    ],
-                    "value": "Position.Down"
-                  },
-                  {
-                    "@type": "StatesToValue",
-                    "states": [
-                      "Alexa.States.Open"
-                    ],
-                    "value": "Position.Up"
-                  }
-                ]
-              }
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.PowerLevelController",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "powerLevel"
-                }],
-                "proactivelyReported": false,
-                "retrievable": true
-              }
+                    ]
+                }
             }
-          ]
         },
-        {
-          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVdTU0VOU09SLUdhcmFnZSBEb29yLTAwMDAwMDQxLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-          "friendlyName": "Garage Door",
-          "description": "parseTest Garage Door Garage Door Opener",
-          "manufacturerName": "WSSENSOR",
-          "displayCategories": [
-            "GARAGE_DOOR"
-          ],
-          "cookie": {
-            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":0}",
-            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":1}",
-            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17}]"
-          },
-          "capabilities": [{
-              "type": "AlexaInterface",
-              "interface": "Alexa",
-              "version": "3"
-            },
-            {
-              "type": "AlexaInterface",
-              "interface": "Alexa.ModeController",
-              "instance": "GarageDoor.Position",
-              "version": "3",
-              "properties": {
-                "supported": [{
-                  "name": "mode"
-                }],
-                "retrievable": true,
-                "proactivelyReported": true
-              },
-              "capabilityResources": {
-                "friendlyNames": [{
-                  "@type": "asset",
-                  "value": {
-                    "assetId": "Alexa.Setting.Mode"
-                  }
-                }]
-              },
-              "configuration": {
-                "ordered": false,
-                "supportedModes": [{
-                    "value": "Position.Up",
-                    "modeResources": {
-                      "friendlyNames": [{
-                          "@type": "text",
-                          "value": {
-                            "text": "Open",
-                            "locale": "en-CA"
-                          }
-                        },
-                        {
-                          "@type": "asset",
-                          "value": {
-                            "assetId": "Alexa.Value.Open"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "value": "Position.Down",
-                    "modeResources": {
-                      "friendlyNames": [{
-                          "@type": "text",
-                          "value": {
-                            "text": "Closed",
-                            "locale": "en-CA"
-                          }
-                        },
-                        {
-                          "@type": "asset",
-                          "value": {
-                            "assetId": "Alexa.Value.Close"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              },
-              "semantics": {
-                "actionMappings": [{
-                    "@type": "ActionsToDirective",
-                    "actions": [
-                      "Alexa.Actions.Close",
-                      "Alexa.Actions.Lower"
-                    ],
-                    "directive": {
-                      "name": "SetMode",
-                      "payload": {
-                        "mode": "Position.Down"
-                      }
-                    }
-                  },
-                  {
-                    "@type": "ActionsToDirective",
-                    "actions": [
-                      "Alexa.Actions.Open",
-                      "Alexa.Actions.Raise"
-                    ],
-                    "directive": {
-                      "name": "SetMode",
-                      "payload": {
-                        "mode": "Position.Up"
-                      }
-                    }
-                  }
-                ],
-                "stateMappings": [{
-                    "@type": "StatesToValue",
-                    "states": [
-                      "Alexa.States.Closed"
-                    ],
-                    "value": "Position.Down"
-                  },
-                  {
-                    "@type": "StatesToValue",
-                    "states": [
-                      "Alexa.States.Open"
-                    ],
-                    "value": "Position.Up"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
+        "schemaPath": []
     }
-  }
+]
+---------------------------- Response -------------------------------
+------------------------------------------------------------
+
+-----------------------------------------------------------
+
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJFVEEtVGVzdCBHYXJhZ2UgRG9vci0wMDAwMDA0MS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Test Garage Door",
+                    "description": "parseTest Test Garage Door Garage Door Opener",
+                    "manufacturerName": "BETA",
+                    "displayCategories": [
+                        "OTHER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":0}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17,\"value\":1}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":17}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ModeController",
+                            "instance": "GarageDoor.Position",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "mode"
+                                    }
+                                ],
+                                "retrievable": true,
+                                "proactivelyReported": true
+                            },
+                            "capabilityResources": {
+                                "friendlyNames": [
+                                    {
+                                        "@type": "asset",
+                                        "value": {
+                                            "assetId": "Alexa.Setting.Mode"
+                                        }
+                                    }
+                                ]
+                            },
+                            "configuration": {
+                                "ordered": false,
+                                "supportedModes": [
+                                    {
+                                        "value": "Position.Up",
+                                        "modeResources": {
+                                            "friendlyNames": [
+                                                {
+                                                    "@type": "text",
+                                                    "value": {
+                                                        "text": "Open",
+                                                        "locale": "en-US"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.Open"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "value": "Position.Down",
+                                        "modeResources": {
+                                            "friendlyNames": [
+                                                {
+                                                    "@type": "text",
+                                                    "value": {
+                                                        "text": "Closed",
+                                                        "locale": "en-US"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.Close"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "semantics": {
+                                "actionMappings": [
+                                    {
+                                        "@type": "ActionsToDirective",
+                                        "actions": [
+                                            "Alexa.Actions.Close",
+                                            "Alexa.Actions.Lower"
+                                        ],
+                                        "directive": {
+                                            "name": "SetMode",
+                                            "payload": {
+                                                "mode": "Position.Down"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@type": "ActionsToDirective",
+                                        "actions": [
+                                            "Alexa.Actions.Open",
+                                            "Alexa.Actions.Raise"
+                                        ],
+                                        "directive": {
+                                            "name": "SetMode",
+                                            "payload": {
+                                                "mode": "Position.Up"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "stateMappings": [
+                                    {
+                                        "@type": "StatesToValue",
+                                        "states": [
+                                            "Alexa.States.Closed"
+                                        ],
+                                        "value": "Position.Down"
+                                    },
+                                    {
+                                        "@type": "StatesToValue",
+                                        "states": [
+                                            "Alexa.States.Open"
+                                        ],
+                                        "value": "Position.Up"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+
