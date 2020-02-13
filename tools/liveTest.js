@@ -318,6 +318,7 @@ function alexaModeController(message, callback) {
 
 
 function alexaMessage(message, callback) {
+  debug('alexaMessage', message);
   var now = new Date();
   var response = {
     "event": {
@@ -415,5 +416,6 @@ function alexaDiscovery(message, callback) {
     }
   }
 
+  console.log(JSON.stringify(response));
   callback(null, response);
 }
