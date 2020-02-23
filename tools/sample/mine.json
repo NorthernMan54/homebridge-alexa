@@ -1,0 +1,125 @@
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "payloadVersion": "3",
+      "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+    },
+    "payload": {
+      "endpoints": [{
+        "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUJFVEEtRmFrZSBCbGluZHMtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+        "friendlyName": "Fake Blinds",
+        "description": "parseTest Fake Blinds Window Covering",
+        "manufacturerName": "BETA",
+        "displayCategories": [
+          "INTERIOR_BLIND"
+        ],
+        "cookie": {
+          "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":100}",
+          "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":0}",
+          "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+          "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+          "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}]"
+        },
+        "capabilities": [{
+            "type": "AlexaInterface",
+            "interface": "Alexa.ModeController",
+            "instance": "Blinds.Position",
+            "version": "3",
+            "properties": {
+              "supported": [{
+                "name": "mode"
+              }],
+              "retrievable": true,
+              "proactivelyReported": true
+            },
+            "capabilityResources": {
+              "friendlyNames": [{
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Setting.Opening"
+                }
+              }]
+            },
+            "configuration": {
+              "ordered": false,
+              "supportedModes": [{
+                  "value": "Position.Up",
+                  "modeResources": {
+                    "friendlyNames": [{
+                      "@type": "asset",
+                      "value": {
+                        "assetId": "Alexa.Value.Open"
+                      }
+                    }]
+                  }
+                },
+                {
+                  "value": "Position.Down",
+                  "modeResources": {
+                    "friendlyNames": [{
+                      "@type": "asset",
+                      "value": {
+                        "assetId": "Alexa.Value.Close"
+                      }
+                    }]
+                  }
+                }
+              ]
+            },
+            "semantics": {
+              "actionMappings": [{
+                  "@type": "ActionsToDirective",
+                  "actions": [
+                    "Alexa.Actions.Close",
+                    "Alexa.Actions.Lower"
+                  ],
+                  "directive": {
+                    "name": "SetMode",
+                    "payload": {
+                      "mode": "Position.Down"
+                    }
+                  }
+                },
+                {
+                  "@type": "ActionsToDirective",
+                  "actions": [
+                    "Alexa.Actions.Open",
+                    "Alexa.Actions.Raise"
+                  ],
+                  "directive": {
+                    "name": "SetMode",
+                    "payload": {
+                      "mode": "Position.Up"
+                    }
+                  }
+                }
+              ],
+              "stateMappings": [{
+                  "@type": "StatesToValue",
+                  "states": [
+                    "Alexa.States.Closed"
+                  ],
+                  "value": "Position.Down"
+                },
+                {
+                  "@type": "StatesToValue",
+                  "states": [
+                    "Alexa.States.Open"
+                  ],
+                  "value": "Position.Up"
+                }
+              ]
+            }
+          },
+          {
+            "type": "AlexaInterface",
+            "interface": "Alexa",
+            "version": "3"
+          }
+        ]
+      }]
+    }
+  }
+}

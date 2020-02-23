@@ -318,28 +318,10 @@ function alexaModeController(message, callback) {
 
 
 function alexaMessage(message, callback) {
-  debug('alexaMessage', message);
+  debug('alexaMessage', JSON.stringify(message));
   var now = new Date();
-  var response = {
-    "event": {
-      "header": {
-        "namespace": "Alexa",
-        "name": "ErrorResponse",
-        "messageId": message.directive.header.messageId,
-        "correlationToken": message.directive.header.correlationToken,
-        "payloadVersion": "3"
-      },
-      "endpoint": {
-        "endpointId": message.directive.endpoint.endpointId
-      },
-      "payload": {
-        "type": "ENDPOINT_UNREACHABLE",
-        "message": "err.message"
-      }
-    }
-  };
 
-  response = {
+  var response = {
     "context": {
       "properties": [{
         "namespace": "Alexa.ModeController",
@@ -359,13 +341,12 @@ function alexaMessage(message, callback) {
         "payloadVersion": "3"
       },
       "endpoint": {
-
-        "endpointId": message.directive.endpoint.endpointId,
-        "cookie": {}
+        "endpointId": message.directive.endpoint.endpointId
       },
       "payload": {}
     }
   };
+  debug('alexaMessage - response: ', JSON.stringify(response));
   callback(null, response);
 }
 
