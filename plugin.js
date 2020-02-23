@@ -76,7 +76,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     eventBus: this.eventBus,
     username: this.username,
     password: this.password,
-    clientId: this.username,
+    // clientId: this.username,
     debug: this.debug,
     events: this.events,
     log: this.log,
