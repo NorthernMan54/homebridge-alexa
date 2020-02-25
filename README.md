@@ -66,8 +66,6 @@ Country availability - The plugin is available in these countries, English (AU),
          * [Slack Channel](#slack-channel)
          * [Debug logs](#debug-logs)
          * [Homebridge Accessory Dump](#homebridge-accessory-dump)
-   * [Previous version of homebridge-alexa ( Version 1 )](#previous-version-of-homebridge-alexa--version-1-)
-      * [Upgrading from the previous, non skill based version of homebridge-alexa](#upgrading-from-the-previous-non-skill-based-version-of-homebridge-alexa)
    * [Roadmap](#roadmap)
    * [Credits](#credits)
 
@@ -640,20 +638,6 @@ Sometimes during troubleshooting I need a dump of your homebridge accessories. P
 ```
 curl -X PUT http://127.0.0.1:51826/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
 ```
-
-# Previous version of homebridge-alexa ( Version 1 )
-
-## Upgrading from the previous, non skill based version of homebridge-alexa
-
-If you had installed the previous version of homebridge-alexa with the special version of homebridge and HAP-NodeJS, it can disabled without reinstalling homebridge.  You can disable it by removing the configuration parameter ssdp from your config.json.  This will disable the previous version.
-
-```
-"ssdp": 1900
-```
-
-Also please have Alexa forget all your old devices.
-
-* The old version is still available and the instructions for installation can be found [here.](V1_README.md).
 
 # Roadmap
 
