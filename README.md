@@ -17,7 +17,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
 * Supports passing of sensor updates in real time to Alexa for use in routines.
 * Includes support for brightness and colour.
-* This plugin does not have any devices or accessories that are visible from Homekit, and does not need to be added on the Home app.
+* Creates a Contact Sensor that monitors the status of the connect to the Homebridge Alexa Cloud Servers.
 * The plugin does not need to be installed in your 'main' homebridge instance.  It can be installed in any 'Homebridge' instance in your setup.
 * Enables control from non-hardware based alexa devices like Invoxia Triby, and AlexaPI.
 
@@ -596,9 +596,11 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 ## Homebridge cloud service monitoring ( homebridge.ca )
 
+* Contact Sensor **Alexa** monitors the connection to the cloud service.  When the contact sensor is **Closed**, the connection has been **successfully** made to the cloud service, and when the contact sensor is **Open** the connection to the cloud service has **not** been made. To determine why the connection to the cloud service is not working, please check your homebridge log files. During **normal** operation the Contact Sensor should be **Closed**.
+
 * Real time monitoring of the homebridge.ca cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
 
-* Operational event reporting and alerting is sent to the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance, and the uptime robot reports events there in real time.
+* Cloud service operational event reporting and alerting is sent to the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance, and the uptime robot reports events there in real time.
 
 ## Raising Issues and Troubleshooting
 
