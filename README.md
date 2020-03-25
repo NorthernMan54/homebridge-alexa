@@ -63,7 +63,7 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
          * [Troubleshooting](#troubleshooting)
          * [Known Issues](#known-issues)
-         * [Slack Channel](#slack-channel)
+         * [Discord Channel](#discord-channel)
          * [Debug logs](#debug-logs)
          * [Homebridge Accessory Dump](#homebridge-accessory-dump)
    * [Roadmap](#roadmap)
@@ -600,7 +600,7 @@ Please note, as part of the verbose output from discovery devices, all your devi
 
 * Real time monitoring of the homebridge.ca cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
 
-* Cloud service operational event reporting and alerting is sent to the [#hap-alexa](https://homebridgeteam.slack.com/messages/hap-alexa/) channel in the Homebridge slack instance, and the uptime robot reports events there in real time.
+* Cloud service operational event reporting and alerting is sent to the #homebridge-alexa channel in the Homebridge Discord instance, and the uptime robot reports events there in real time.
 
 ## Raising Issues and Troubleshooting
 
@@ -621,9 +621,9 @@ From here you should be able to determine if your plugin is communicating with t
 * The maximum number of supported devices is 300.  This is a limitation from the from the Amazon side, and not the plugin.
 * If your Amazon account is not domiciled in the country where your Alexa is located the skill will not work.  This is a limitation on the Amazon side and not with the plugin.  ie if you are in the UK and use an Amazon.com account, the skill will not work.  You need to use an Amazon account domiciled in the UK
 
-### Slack Channel
+### Discord Channel
 
-I have created a slack channel at (https://homebridgeteam.slack.com/messages/hap-alexa/) to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  If you don't have a slack account and need an invite, one is available via the Homebridge README / Community (https://github.com/nfarina/homebridge#community)
+I have created a Discord channel on the homebridge discord server to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  The channel is called #homebridge-alexa
 
 ### Debug logs
 
