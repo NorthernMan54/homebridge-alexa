@@ -130,8 +130,9 @@ deleteSeen = [];
 for (i = 0; i < response.event.payload.endpoints.length; i++) {
   endpoint = response.event.payload.endpoints[i];
   if (deleteSeen[endpoint.endpointId]) {
-    console.log("ERROR: Parsing failed, duplicate endpointID.", endpoint.friendlyName);
-    // response.event.payload.endpoints.splice(i, 1);
+    console.log("ERROR: Parsing failed, duplicate endpointID removed =>", endpoint.friendlyName);
+    // delete response.event.payload.endpoints[i];
+    response.event.payload.endpoints.splice(i, 1);
   } else {
     deleteSeen[endpoint.endpointId] = true;
   }
