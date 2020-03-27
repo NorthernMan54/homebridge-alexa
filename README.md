@@ -515,6 +515,52 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
 }
 ```
 
+* Inputs
+
+This combines several buttons that control inputs on a TV or Stereo into an Alexa input control.
+
+`Alexa, change the input to HDMI 1 on the Living Room TV.`
+
+```
+{
+    "platform": "Alexa",
+    "username": "...",
+    "password": "...",
+    "name": "Alexa",
+    "inputs": [{
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "Tuner",
+        "Alexa Name": "TUNER",
+        "into": "TV"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "HDMI1",
+        "Alexa Name": "HDMI 1",
+        "into": "TV"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "HDMI1",
+        "Alexa Name": "MEDIA PLAYER",
+        "into": "TV"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "HDMI2",
+        "Alexa Name": "HDMI 1",
+        "into": "TV"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "Tuner",
+        "Alexa Name": "TV",
+        "into": "TV"
+      }
+    ]
+  }
+```
+
+** Alexa Name - One of
+
+AUX 1, AUX 2, AUX 3, AUX 4, AUX 5, AUX 6, AUX 7, BLURAY, CABLE, CD, COAX 1, COAX 2, COMPOSITE 1, DVD, GAME, HD RADIO, HDMI 1, HDMI 2, HDMI 3, HDMI 4, HDMI 5, HDMI 6, HDMI 7, HDMI 8, HDMI 9, HDMI 10, HDMI ARC, INPUT 1, INPUT 2, INPUT 3, INPUT 4, INPUT 5, INPUT 6, INPUT 7, INPUT 8, INPUT 9, INPUT 10, IPOD, LINE 1, LINE 2, LINE 3, LINE 4, LINE 5, LINE 6, LINE 7, MEDIA PLAYER, OPTICAL 1, OPTICAL 2, PHONO, PLAYSTATION, PLAYSTATION 3, PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO 3, XBOX
+
 * Yamaha Spotify Controls
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
