@@ -167,6 +167,8 @@ cool, cool white
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
 
+See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door) using a routine to fix the wording
+
 ## Window coverings / blinds
 
 * Alexa, turn on *device* ( Open's blinds )
