@@ -1,0 +1,988 @@
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "47e85bc2-c6aa-4037-9311-5891cea848ba"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "MDA6MDE6NTA6NDA6MDM6MDI6ZTc6NzItTGVvbmFyZC1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLUV2ZW5pbmcgTGlnaHRzLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Evening Lights",
+                    "description": "Leonard-NodeRed Evening Lights Lightbulb",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":11}",
+                        "SetPowerLevel": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":11}",
+                        "BrightnessTurnOn": "true",
+                        "IncreaseColorTemperature": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":14}",
+                        "DecreaseColorTemperature": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":14}",
+                        "SetColorTemperature": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":14}",
+                        "SetColor": "{\"host\":\"192.168.1.51\",\"port\":51831,\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":10}}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":2,\"iid\":14},{\"interface\":\"Alexa.ColorController\",\"host\":\"192.168.1.51\",\"port\":51831,\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":10}}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorTemperatureController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "colorTemperatureInKelvin"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ColorController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "color"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MDE6NTA6NDA6MDM6MDI6ZTc6NzItTGVvbmFyZC1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLUVuc3VpdGUtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Ensuite",
+                    "description": "Leonard-NodeRed Ensuite Lightbulb",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":11}",
+                        "SetPowerLevel": "{\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":11}",
+                        "BrightnessTurnOn": "true",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":3,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MDE6NTA6NDA6MDM6MDI6ZTc6NzItTGVvbmFyZC1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLUdhcmFnZSBPcGVuLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Garage Open",
+                    "description": "Leonard-NodeRed Garage Open Contact Sensor",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "CONTACT_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"192.168.1.51\",\"port\":51831,\"aid\":5,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ContactSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLU5vZGUtUmVkLURyeWVyIEluIFVzZS0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Dryer In Use",
+                    "description": "Sheldon-NodeRed Dryer In Use Contact Sensor",
+                    "manufacturerName": "Node-Red",
+                    "displayCategories": [
+                        "CONTACT_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":7,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ContactSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLU5vZGUtUmVkLVdhc2hlciBJbiBVc2UtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Washer In Use",
+                    "description": "Sheldon-NodeRed Washer In Use Contact Sensor",
+                    "manufacturerName": "Node-Red",
+                    "displayCategories": [
+                        "CONTACT_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":6,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ContactSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLUludGVybmV0IERvd24tMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Internet Down",
+                    "description": "Sheldon-NodeRed Internet Down Outlet",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":5,\"iid\":14,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":5,\"iid\":14,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":5,\"iid\":14}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLVJlc2V0IFBvcmNoLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Reset Porch",
+                    "description": "Sheldon-NodeRed Reset Porch Switch",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":3,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":3,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":3,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLVZhY2FudCBEcml2ZXdheS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Vacant Driveway",
+                    "description": "Sheldon-NodeRed Vacant Driveway Switch",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":4,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":4,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":4,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "MDA6MGM6YzI6MzQ6NTA6MGM6YmM6YzMtU2hlbGRvbi1Ob2RlUmVkLURlZmF1bHQgTWFudWZhY3R1cmVyLVZhY2FudCBQb3JjaC0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Vacant Porch",
+                    "description": "Sheldon-NodeRed Vacant Porch Switch",
+                    "manufacturerName": "Default Manufacturer",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":2,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":2,\"iid\":10,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":51831,\"aid\":2,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "NzY6NTk6Q0U6MjU6Qjk6NkUtRnJvbnQgUG9yY2gtY2FtZXJhLWZmbXBlZy1Gcm9udCBQb3JjaC0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Front Porch",
+                    "description": "Front Porch Front Porch Switch",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":26,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":26,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":26}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "NzY6NTk6Q0U6MjU6Qjk6NkUtRnJvbnQgUG9yY2gtY2FtZXJhLWZmbXBlZy1Gcm9udCBQb3JjaC0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Front Porch",
+                    "description": "Front Porch Front Porch Motion Sensor",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "MOTION_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":29}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.MotionSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "NzY6NTk6Q0U6MjU6Qjk6NkUtRnJvbnQgUG9yY2gtY2FtZXJhLWZmbXBlZy1Gcm9udCBQb3JjaC0wMDAwMDExMS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Front Porch",
+                    "description": "Front Porch Front Porch Camera",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "OTHER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":9,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":9,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":41137,\"aid\":1,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OEQ6Mjg6NzY6NjI6NEI6MUYtRHJpdmV3YXktY2FtZXJhLWZmbXBlZy1Ecml2ZXdheS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Driveway",
+                    "description": "Driveway Driveway Switch",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":26,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":26,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":26}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OEQ6Mjg6NzY6NjI6NEI6MUYtRHJpdmV3YXktY2FtZXJhLWZmbXBlZy1Ecml2ZXdheS0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Driveway",
+                    "description": "Driveway Driveway Motion Sensor",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "MOTION_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":29}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.MotionSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "detectionState"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OEQ6Mjg6NzY6NjI6NEI6MUYtRHJpdmV3YXktY2FtZXJhLWZmbXBlZy1Ecml2ZXdheS0wMDAwMDExMS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Driveway",
+                    "description": "Driveway Driveway Camera",
+                    "manufacturerName": "camera-ffmpeg",
+                    "displayCategories": [
+                        "OTHER"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":9,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":9,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.79\",\"port\":39343,\"aid\":1,\"iid\":9}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OUM6MjI6M0Q6RTM6Q0U6MzEtaG9tZUFUVi1BcHBsZS1BcHBsZSBUVi0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Apple TV",
+                    "description": "homeATV Apple TV Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":17,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":17,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":17}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OUM6MjI6M0Q6RTM6Q0U6MzEtaG9tZUFUVi1BcHBsZS1Qb3dlci0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Power",
+                    "description": "homeATV Power Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OUM6MjI6M0Q6RTM6Q0U6MzEtaG9tZUFUVi1BcHBsZS1QbGF5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Play",
+                    "description": "homeATV Play Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":14,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":14,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":14}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "OUM6MjI6M0Q6RTM6Q0U6MzEtaG9tZUFUVi1BcHBsZS1XYWtlLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Wake",
+                    "description": "homeATV Wake Switch",
+                    "manufacturerName": "Apple",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":20,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":20,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51827,\"aid\":2,\"iid\":20}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0Q6MzUtSG93YXJkLW9sZC1Cb3NjaC1GYW1pbHkgUm9vbS0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Family Room",
+                    "description": "Howard-old Family Room Temperature Sensor",
+                    "manufacturerName": "Bosch",
+                    "displayCategories": [
+                        "TEMPERATURE_SENSOR"
+                    ],
+                    "cookie": {
+                        "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"192.168.1.81\",\"port\":51826,\"aid\":2,\"iid\":10}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1BbGwgRGV2aWNlcy0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "All Devices",
+                    "description": "Penny All Devices Switch",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":19,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":19,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":19,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1BbGwgTGlnaHRzLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "All Lights",
+                    "description": "Penny All Lights Switch",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SWITCH"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":20,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":20,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":20,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1GYW1pbHkgcm9vbSBMYW1wLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Family room Lamp",
+                    "description": "Penny Family room Lamp Lightbulb",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "LIGHT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":11,\"value\":0}",
+                        "AdjustPowerLevel": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":12}",
+                        "SetPowerLevel": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":12}",
+                        "BrightnessTurnOn": "true",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":7,\"iid\":12}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1GYW1pbHkgcm9vbSBvdXRsZXQtMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                    "friendlyName": "Family room outlet",
+                    "description": "Penny Family room outlet Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":8,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":8,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":8,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1HYXJhZ2UgT3V0bGV0LTAwMDAwMDQ3LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                    "friendlyName": "Garage Outlet",
+                    "description": "Penny Garage Outlet Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":15,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":15,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":15,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtUGVubnktSGV5dS1HYXJkZW4gUGF0aC0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Garden Path",
+                    "description": "Penny Garden Path Outlet",
+                    "manufacturerName": "Heyu",
+                    "displayCategories": [
+                        "SMARTPLUG"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":3,\"iid\":11,\"value\":1}",
+                        "TurnOff": "{\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":3,\"iid\":11,\"value\":0}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.4\",\"port\":51826,\"aid\":3,\"iid\":11}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
