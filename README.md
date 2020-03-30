@@ -522,6 +522,7 @@ This is the config from my Apple TV after completing the pairing.  Please note, 
 This combines several buttons that control inputs on a TV or Stereo into an Alexa input control.
 
 `Alexa, change the input to Tuner on the TV.`
+
 `Alexa, change the input to HDMI 1 on the TV.`
 
 ```
