@@ -117,11 +117,16 @@ var inputs = [{
   }]
 }];
 
+var channel = [{
+  "into": "TV"
+}];
+
 var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers,
   "combine": combine,
-  "inputs": inputs
+  "inputs": inputs,
+  "channel": channel
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({
@@ -129,7 +134,8 @@ var response = hbDevices.toAlexa({
   "events": true,
   "speakers": speakers,
   "combine": combine,
-  "inputs": inputs
+  "inputs": inputs,
+  "channel": channel
 }, message);
 
 // response = alexaTranslator.endPoints(message, endPoints, this);

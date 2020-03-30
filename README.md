@@ -359,7 +359,8 @@ sudo npm install -g homebridge-alexa
 
 ### Optional parameters
 
-* pin - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
+#### pin
+  - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
 
 ```
 "platforms": [
@@ -373,9 +374,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* routines - Enables passing to Alexa of real time events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.  Not required unless you are using Alexa Routines.
-
-**For users who enrolled prior to March 22, 2019, you MUST Disable the skill and Enable the skill in the Alexa app as part of setup. If you miss this step, you will see this error `Event Gateway Response Code: 400` in the logs.**
+#### routines
+  - Enables passing to Alexa of real time events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.  Not required unless you are using Alexa Routines.
 
 ```
 "platforms": [
@@ -389,7 +389,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* debug - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
+#### debug
+  - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
 
 ```
 "platforms": [
@@ -403,7 +404,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* refresh - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
+#### refresh
+  - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
 
 ```
 "platforms": [
@@ -417,7 +419,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* filter - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
+#### filter
+  - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
 
 ```
 "platforms": [
@@ -431,7 +434,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* combine - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
+#### combine
+  - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
 
 ```
 "platforms": [
@@ -454,7 +458,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-* speakers - Devices to configure as speakers as HomeKit currently does not have a Speaker service
+#### speakers
+  - Devices to configure as speakers as HomeKit currently does not have a Speaker service, and enable the alexa phase `Alexa, raise the volume on`.
 
 ```
 "platforms": [
@@ -471,8 +476,8 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-** Manufacturer - Is the manufacturer of the accessory as shown in the Home App
-** Name - Is the name of the accessory as shown in the Home App
+* manufacturer - Is the manufacturer of the accessory as shown in the Home App
+* name - Is the name of the accessory as shown in the Home App
 
 ie
 ```
@@ -497,29 +502,9 @@ ie
   }
 ```
 
-* Apple TV
+#### Inputs
 
-This is the config from my Apple TV after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
-
-```
-{
-  "platform":"AppleTV",
-  "name":"Apple TV",
-  "devices": [{
-          "id": "Cottage",
-          "name": "TV",
-          "credentials": "...." }
-    ],
-  "showDefaultSwitches": true,
-  "defaultSwitchesIncludeATVName": true,
-  "showPairSwitches": false,
-  "hideWelcomeMessage": true
-}
-```
-
-* Inputs
-
-This combines several buttons that control inputs on a TV or Stereo into an Alexa input control.
+  - This combines several buttons that control inputs on a TV or Stereo into an Alexa input control and enables the phrase `Alexa, change to input to`. For the names of the inputs, Amazon provided a list ( see alexa name below ) that you can choose from.  You can map multiple alexa names to the same button as well.
 
 `Alexa, change the input to Tuner on the TV.`
 
@@ -539,8 +524,20 @@ This combines several buttons that control inputs on a TV or Stereo into an Alex
         "alexaName": "TUNER"
       }, {
         "manufacturer": "HTTP-IRBlaster",
+        "name": "Tuner",
+        "alexaName": "TV TUNER"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "Tuner",
+        "alexaName": "TV"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
         "name": "HDMI1",
         "alexaName": "HDMI 1"
+      }, {
+        "manufacturer": "HTTP-IRBlaster",
+        "name": "HDMI1",
+        "alexaName": "TV KODI"
       }, {
         "manufacturer": "HTTP-IRBlaster",
         "name": "HDMI1",
@@ -551,22 +548,55 @@ This combines several buttons that control inputs on a TV or Stereo into an Alex
         "alexaName": "HDMI 2"
       }, {
         "manufacturer": "HTTP-IRBlaster",
-        "name": "Tuner",
-        "alexaName": "TV"
+        "name": "HDMI2",
+        "alexaName": "TV NETFLIX"
       }]
-    }]
-  }
+    }],
 ```
 
-** Alexa Name - One of
+In my setup I use an OTA Antenna, hence the Tuner option and have a KODI box on HDMI 1, and a Apple TV we use for Netflix on HDMI 2.  For the alexaName's "TV KODI", "TV TUNER", and "TV NETFLIX" these were not part of the Amazon documentation and may stop working at any time or may not work in your region.
 
-AUX 1, AUX 2, AUX 3, AUX 4, AUX 5, AUX 6, AUX 7, BLURAY, CABLE, CD, COAX 1, COAX 2, COMPOSITE 1, DVD, GAME, HD RADIO, HDMI 1, HDMI 2, HDMI 3, HDMI 4, HDMI 5, HDMI 6, HDMI 7, HDMI 8, HDMI 9, HDMI 10, HDMI ARC, INPUT 1, INPUT 2, INPUT 3, INPUT 4, INPUT 5, INPUT 6, INPUT 7, INPUT 8, INPUT 9, INPUT 10, IPOD, LINE 1, LINE 2, LINE 3, LINE 4, LINE 5, LINE 6, LINE 7, MEDIA PLAYER, OPTICAL 1, OPTICAL 2, PHONO, PLAYSTATION, PLAYSTATION 3, PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO 3, XBOX
+* into - Name of the existing accessory to add the input function to.  In my setup this is my Apple TV accessory.
 
-* Yamaha Spotify Controls
+* manufacturer - Is the manufacturer of the accessory as shown in the Home App
+
+* name - Is the name of the accessory as shown in the Home App
+
+* alexaName - This the input your are asking Alexa to change to.
+
+```
+AUX 1, AUX 2, AUX 3, AUX 4, AUX 5, AUX 6, AUX 7, BLURAY, CABLE, CD, COAX 1, COAX 2, COMPOSITE 1, DVD, GAME,
+HD RADIO, HDMI 1, HDMI 2, HDMI 3, HDMI 4, HDMI 5, HDMI 6, HDMI 7, HDMI 8, HDMI 9, HDMI 10, HDMI ARC, INPUT 1,
+INPUT 2, INPUT 3, INPUT 4, INPUT 5, INPUT 6, INPUT 7, INPUT 8, INPUT 9, INPUT 10, IPOD, LINE 1, LINE 2, LINE 3,
+LINE 4, LINE 5, LINE 6, LINE 7, MEDIA PLAYER, OPTICAL 1, OPTICAL 2, PHONO, PLAYSTATION, PLAYSTATION 3,
+PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO 3, XBOX
+```
+
+#### Apple TV
+
+  - This is the config from my Apple TV after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
+
+```
+{
+  "platform":"AppleTV",
+  "name":"Apple TV",
+  "devices": [{
+          "id": "Cottage",
+          "name": "TV",
+          "credentials": "...." }
+    ],
+  "showDefaultSwitches": true,
+  "defaultSwitchesIncludeATVName": true,
+  "showPairSwitches": false,
+  "hideWelcomeMessage": true
+}
+```
+
+#### Yamaha Spotify Controls
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
 
-* New Parser
+#### New Parser
 
 As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option oldParser to true.  Default is to the new parser.
 

@@ -34,6 +34,7 @@ function alexaHome(log, config, api) {
   this.refresh = config['refresh'] || 60 * 15; // Value in seconds, default every 15 minute's
   this.speakers = config['speakers'] || false; // Array of speaker devices
   this.inputs = config['inputs'] || false; // Array of input devices
+  this.channel = config['channel'] || false; // Array of input devices
   this.name = config['name'] || "homebridgeAlexa";
 
   // Enable config based DEBUG logging enable
@@ -99,6 +100,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     alexaService: alexaService,
     Characteristic: Characteristic,
     inputs: this.inputs,
+    channel: this.channel,
     servers: [{
       protocol: 'mqtt',
       host: host,
@@ -133,6 +135,7 @@ alexaHome.prototype.didFinishLaunching = function() {
   this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
   this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
   this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
+  this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 };
 
 /*
