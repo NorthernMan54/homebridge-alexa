@@ -530,32 +530,29 @@ This combines several buttons that control inputs on a TV or Stereo into an Alex
     "password": "...",
     "name": "Alexa",
     "inputs": [{
+      "into": "TV",
+      "devices": [{
         "manufacturer": "HTTP-IRBlaster",
         "name": "Tuner",
-        "Alexa Name": "TUNER",
-        "into": "TV"
+        "alexaName": "TUNER"
       }, {
         "manufacturer": "HTTP-IRBlaster",
         "name": "HDMI1",
-        "Alexa Name": "HDMI 1",
-        "into": "TV"
+        "alexaName": "HDMI 1"
       }, {
         "manufacturer": "HTTP-IRBlaster",
         "name": "HDMI1",
-        "Alexa Name": "MEDIA PLAYER",
-        "into": "TV"
+        "alexaName": "MEDIA PLAYER"
       }, {
         "manufacturer": "HTTP-IRBlaster",
         "name": "HDMI2",
-        "Alexa Name": "HDMI 1",
-        "into": "TV"
+        "alexaName": "HDMI 2"
       }, {
         "manufacturer": "HTTP-IRBlaster",
         "name": "Tuner",
-        "Alexa Name": "TV",
-        "into": "TV"
-      }
-    ]
+        "alexaName": "TV"
+      }]
+    }]
   }
 ```
 

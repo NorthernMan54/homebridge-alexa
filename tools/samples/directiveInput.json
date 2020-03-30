@@ -1,0 +1,58 @@
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.InputController",
+      "name": "SelectInput",
+      "payloadVersion": "3",
+      "messageId": "a6841c5a-9d84-4996-8460-c672b4173999",
+      "correlationToken": "AAAAAAAAAADrSa0wOcGPORda11YzZau3DAIAAAAAAADeFZNnUQtUK/pxC7lnQ8xrRN/C0pqxYCKGJ6a8JBWAZNWun6thlXWwbY8cjwgR8WSJ+WR/hMqPZEFmxMLQP3igOGMyygGVyuFSIgvm7hoBRUtQclRRlB8jSeQGSjzMDf2K5e7r5KKSeOVUgB83LeuU+nevTSZVKV+Mr+5H5HdMBdPJUJby+KmvgWNXsU600I0hf7VEkTQ4WDYyguewTcOxKZOPvMX7o7zElCA7gBK1BcbYxIqcEFwRk88gdFHlDchjEf49TK0cYvC/OnkEl3tnD5ww3VYr5ww8JJN1BWN/QJmtsBHYRUGNfaQiZvYPOFfxW+3y5A7wNJfAwqlZy59SXwA4UWJDiSGmlOnDKP95BJETP56RSKQh2MRAeU+Uv1FHDCwO2hwmXg/4jsUbCNkoupJuv1JBl1cjl5i0OaorJxzCukPY01Jg32zNC4A/JyPXIWvKLmCgmTU/TBwTxVxxkuoqay5tzA0cu7lFNXYu+tTgf1SDVplQfVzKJEN/USzFvrhGF66T1VvNiXaA2QOF1N0x4UvdUG6Fnztxq52yv809Lj86J3sm0wZLg/hzwTjiJ0dvsPF0jFbS5W4EVuWQWE3IzCzM2GlME7Wzhf9PLHYuoQSJB/zxDZAixvhTAsuivKvXQiv6DuUTbWNPupPCQUhfHBrmxBRb43HPx2v0loWWZPXrE2XZ6MufXw=="
+    },
+    "endpoint": {
+      "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+      "cookie": {
+        "MEDIA PLAYER": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":1}",
+        "TV": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+        "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":59,\"iid\":10,\"value\":1}",
+        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}",
+        "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":55,\"iid\":10,\"value\":1}",
+        "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":58,\"iid\":10,\"value\":1}",
+        "ReportState": "[{\"interface\":\"Alexa.PlaybackController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":59,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}]",
+        "HDMI 2": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}",
+        "HDMI 1": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+        "TUNER": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":0}"
+      }
+    },
+    "payload": {
+      "input": "TUNER"
+    }
+  }
+}
+
+
+
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa",
+      "name": "Response",
+      "messageId": "a6841c5a-9d84-4996-8460-c672b4173999",
+      "correlationToken": "AAAAAAAAAADrSa0wOcGPORda11YzZau3DAIAAAAAAADeFZNnUQtUK/pxC7lnQ8xrRN/C0pqxYCKGJ6a8JBWAZNWun6thlXWwbY8cjwgR8WSJ+WR/hMqPZEFmxMLQP3igOGMyygGVyuFSIgvm7hoBRUtQclRRlB8jSeQGSjzMDf2K5e7r5KKSeOVUgB83LeuU+nevTSZVKV+Mr+5H5HdMBdPJUJby+KmvgWNXsU600I0hf7VEkTQ4WDYyguewTcOxKZOPvMX7o7zElCA7gBK1BcbYxIqcEFwRk88gdFHlDchjEf49TK0cYvC/OnkEl3tnD5ww3VYr5ww8JJN1BWN/QJmtsBHYRUGNfaQiZvYPOFfxW+3y5A7wNJfAwqlZy59SXwA4UWJDiSGmlOnDKP95BJETP56RSKQh2MRAeU+Uv1FHDCwO2hwmXg/4jsUbCNkoupJuv1JBl1cjl5i0OaorJxzCukPY01Jg32zNC4A/JyPXIWvKLmCgmTU/TBwTxVxxkuoqay5tzA0cu7lFNXYu+tTgf1SDVplQfVzKJEN/USzFvrhGF66T1VvNiXaA2QOF1N0x4UvdUG6Fnztxq52yv809Lj86J3sm0wZLg/hzwTjiJ0dvsPF0jFbS5W4EVuWQWE3IzCzM2GlME7Wzhf9PLHYuoQSJB/zxDZAixvhTAsuivKvXQiv6DuUTbWNPupPCQUhfHBrmxBRb43HPx2v0loWWZPXrE2XZ6MufXw==",
+      "payloadVersion": "3"
+    },
+    "endpoint": {
+      "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ=="
+    },
+    "payload": {}
+  },
+  "context": {
+    "properties": [{
+      "namespace": "Alexa.PowerLevelController",
+      "name": "powerLevel",
+      "timeOfSample": "2020-03-30T01:25:45.183Z",
+      "uncertaintyInMilliseconds": 500
+    }]
+  }
+}
