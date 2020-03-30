@@ -155,18 +155,7 @@ for (var i = 0; i < response.event.payload.endpoints.length; i++) {
   }
 }
 
-deleteSeen = [];
-
-for (i = 0; i < response.event.payload.endpoints.length; i++) {
-  endpoint = response.event.payload.endpoints[i];
-  if (deleteSeen[endpoint.endpointId]) {
-    console.log("ERROR: Parsing failed, duplicate endpointID removed =>", i, endpoint.friendlyName);
-    // delete response.event.payload.endpoints[i];
-    response.event.payload.endpoints.splice(i, 1);
-  } else {
-    deleteSeen[endpoint.endpointId] = true;
-  }
-}
+response.event.payload.endpoints = removeDuplicateEndpoints(response.event.payload.endpoints);
 
 if (response && response.event.payload.endpoints.length < 1) {
   console.log("ERROR: HAP Discovery failed, please review config");
@@ -222,3 +211,21 @@ function findById(o, id) {
 }
 
 console.log("\n-----------------------------------------------------------\n");
+
+function removeDuplicateEndpoints(endpoints) {
+  var deleteSeen = [];
+  var response = [];
+  endpoints.forEach((endpoint) => {
+    if (deleteSeen[endpoint.endpointId]) {
+      console.log("ERROR: Parsing failed, removing duplicate endpointID =>", endpoint.friendlyName);
+    } else {
+      // console.log("Adding", endpoint.friendlyName);
+      response.push(endpoint);
+    }
+    deleteSeen[endpoint.endpointId] = true;
+  });
+
+  // console.log(response.length);
+  // console.log(response);
+  return (response);
+}
