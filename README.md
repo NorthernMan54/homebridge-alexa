@@ -502,6 +502,25 @@ ie
   }
 ```
 
+#### Channels
+
+  - This enables Alexa to be able to change channels on your TV by number, and enables the phrase `Alexa, change to the channel to`.
+
+```
+"channel": [{
+  "into": "TV",
+  "manufacturer": "HTTP-IRBlaster",
+  "name": "Tuner"}],
+```
+
+* into - Name of the existing accessory to add the input function to.  In my setup this is my Apple TV accessory.
+
+* manufacturer - Is the manufacturer of the accessory as shown in the Home App
+
+* name - Is the name of the accessory as shown in the Home App
+
+The accessory to receive channel change commands will receive the channel number as the value.
+
 #### Inputs
 
   - This combines several buttons that control inputs on a TV or Stereo into an Alexa input control and enables the phrase `Alexa, change to input to`. For the names of the inputs, Amazon provided a list ( see alexa name below ) that you can choose from.  You can map multiple alexa names to the same button as well.
