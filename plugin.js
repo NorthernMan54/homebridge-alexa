@@ -135,7 +135,6 @@ alexaHome.prototype.didFinishLaunching = function() {
   this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
   this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
   this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
-  this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 };
 
 /*
