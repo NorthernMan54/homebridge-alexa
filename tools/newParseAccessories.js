@@ -118,7 +118,9 @@ var inputs = [{
 }];
 
 var channel = [{
-  "into": "TV"
+  "into": "TV",
+  "manufacturer": "HTTP-IRBlaster",
+  "name": "Tuner"
 }];
 
 var hbDevices = new Homebridges(endPoints, {
