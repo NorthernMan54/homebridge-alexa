@@ -237,6 +237,11 @@ These are the remote buttons
 * Yamaha AVR - homebridge-yamaha-zone-tv
   - Alexa can turn on and off and control volume. Also control Spotify/Airplay playback
 
+### TV Inputs and Channels
+
+* Alexa, change to the channel to # on *device*
+* Alexa, change the input to *input* on the *device*
+
 ## Speakers
 
 * Alexa, lower the volume on *device*
@@ -525,9 +530,9 @@ The accessory to receive channel change commands will receive the channel number
 
   - This combines several buttons that control inputs on a TV or Stereo into an Alexa input control and enables the phrase `Alexa, change to input to`. For the names of the inputs, Amazon provided a list ( see alexa name below ) that you can choose from.  You can map multiple alexa names to the same button as well.
 
-`Alexa, change the input to Tuner on the TV.`
+`Alexa, change the input to Tuner on the TV`
 
-`Alexa, change the input to HDMI 1 on the TV.`
+`Alexa, change the input to HDMI 1 on the TV`
 
 ```
 {
