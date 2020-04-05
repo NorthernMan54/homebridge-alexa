@@ -1,0 +1,1064 @@
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "payloadVersion": "3",
+      "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+    },
+    "payload": {
+      "endpoints": [{
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUFwcGxlLVRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "TV",
+          "description": "parseTest TV Apple TV",
+          "manufacturerName": "Apple",
+          "displayCategories": [
+            "TV"
+          ],
+          "cookie": {
+            "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":55,\"iid\":10,\"value\":1}",
+            "ReportState": "[{\"interface\":\"Alexa.PlaybackController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":59,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}]",
+            "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":58,\"iid\":10,\"value\":1}",
+            "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":59,\"iid\":10,\"value\":1}",
+            "TUNER": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+            "HDMI 1": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+            "MEDIA PLAYER": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+            "HDMI 2": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+            "TV": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":0}",
+            "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}",
+            "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PlaybackController",
+              "version": "3",
+              "supportedOperations": [
+                "Stop",
+                "Play",
+                "Pause"
+              ]
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.InputController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "input"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              },
+              "inputs": [{
+                  "name": "TUNER"
+                },
+                {
+                  "name": "HDMI 1"
+                },
+                {
+                  "name": "MEDIA PLAYER"
+                },
+                {
+                  "name": "HDMI 2"
+                },
+                {
+                  "name": "TV"
+                }
+              ]
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.Speaker",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "volume"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUVDTyBQbHVncy1PZmZpY2UtMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Office",
+          "description": "parseTest Office Outlet",
+          "manufacturerName": "ECO Plugs",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":8,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhUVFAtSVJCbGFzdGVyLUZpcmVwbGFjZS0wMDAwMDA0MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Fireplace",
+          "description": "parseTest Fireplace Fan",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":4,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhUVFAtSVJCbGFzdGVyLUhETUkxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "HDMI1",
+          "description": "parseTest HDMI1 Switch",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":35,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhUVFAtSVJCbGFzdGVyLUhETUkyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "HDMI2",
+          "description": "parseTest HDMI2 Switch",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhUVFAtSVJCbGFzdGVyLVR1bmVyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Tuner",
+          "description": "parseTest Tuner Switch",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tQmFzZW1lbnQgU3RhaXItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Basement Stair",
+          "description": "parseTest Basement Stair Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":29,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRW5zdWl0ZSBNaXJyb3ItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Ensuite Mirror",
+          "description": "parseTest Ensuite Mirror Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":32,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRW5zdWl0ZSBTaG93ZXItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Ensuite Shower",
+          "description": "parseTest Ensuite Shower Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":33,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRW5zdWl0ZSBTaW5rLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Ensuite Sink",
+          "description": "parseTest Ensuite Sink Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":31,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRW5zdWl0ZSBUdWItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Ensuite Tub",
+          "description": "parseTest Ensuite Tub Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":34,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRmFtaWx5IFJvb20gUG90IExpZ2h0cy0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Family Room Pot Lights",
+          "description": "parseTest Family Room Pot Lights Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":19,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRnJvbnQgRG9vci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Front Door",
+          "description": "parseTest Front Door Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUluc3Rlb24tRnJvbnQgUG9yY2gtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Front Porch",
+          "description": "parseTest Front Porch Lightbulb",
+          "manufacturerName": "Insteon",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":27,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LW1xdHR0aGluZy1CZXNpZGUgU3RhaXJzLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Beside Stairs",
+          "description": "parseTest Beside Stairs Lightbulb",
+          "manufacturerName": "mqttthing",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LW1xdHR0aGluZy1LaXRjaGVuIERvb3ItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Kitchen Door",
+          "description": "parseTest Kitchen Door Lightbulb",
+          "manufacturerName": "mqttthing",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":28,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LW1xdHR0aGluZy1PdXRzaWRlIE9mZmljZS0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Outside Office",
+          "description": "parseTest Outside Office Lightbulb",
+          "manufacturerName": "mqttthing",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":16,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWVjb3BsdWctT3V0bGV0IFR3by0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Outlet Two",
+          "description": "parseTest Outlet Two Outlet",
+          "manufacturerName": "ecoplug",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":23,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":23,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":23,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWVjb3BsdWctT3V0bGV0IFRocmVlLTAwMDAwMDQ3LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Outlet Three",
+          "description": "parseTest Outlet Three Outlet",
+          "manufacturerName": "ecoplug",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWVjb3BsdWctTGl2aW5nIFJvb20gTGFtcC0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Living Room Lamp",
+          "description": "parseTest Living Room Lamp Outlet",
+          "manufacturerName": "ecoplug",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":24,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWVjb3BsdWctU3RhaXJjYXNlIExhbXAtMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Staircase Lamp",
+          "description": "parseTest Staircase Lamp Outlet",
+          "manufacturerName": "ecoplug",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":25,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":25,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":25,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWVjb3BsdWctUHJpbnRlci0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Printer",
+          "description": "parseTest Printer Outlet",
+          "manufacturerName": "ecoplug",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":22,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":22,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":22,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhhbXB0b24tYmF5LU1hc3RlciBmYW4tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Master fan",
+          "description": "parseTest Master fan Fan",
+          "manufacturerName": "hampton-bay",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":11}",
+            "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":11}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerLevel"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhhbXB0b24tYmF5LU1hc3RlciBsaWdodC0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Master light",
+          "description": "parseTest Master light Lightbulb",
+          "manufacturerName": "hampton-bay",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":14,\"value\":1}",
+            "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":14,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":14,\"iid\":14}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "powerState"
+                }],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhvbWVicmlkZ2UtYWxleGEtQWxleGEtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Alexa",
+          "description": "parseTest Alexa Contact Sensor",
+          "manufacturerName": "homebridge-alexa",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":54,\"iid\":10}]"
+          },
+          "capabilities": [{
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [{
+                  "name": "detectionState"
+                }],
+                "proactivelyReported": true,
+                "retrievable": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

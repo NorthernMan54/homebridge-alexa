@@ -1,5 +1,6 @@
 // var alexaTranslator = require('../lib/alexaTranslator.js');
 var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
+var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
@@ -91,18 +92,55 @@ var combine = [{
   "from": ["Yamaha"]
 }];
 
+var inputs = [{
+  "into": "TV",
+  "devices": [{
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "Tuner",
+    "alexaName": "TUNER"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "HDMI1",
+    "alexaName": "HDMI 1"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "HDMI1",
+    "alexaName": "MEDIA PLAYER"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "HDMI2",
+    "alexaName": "HDMI 2"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "Tuner",
+    "alexaName": "TV"
+  }]
+}];
+
+var channel = [{
+  "into": "TV",
+  "manufacturer": "HTTP-IRBlaster",
+  "name": "Tuner"
+}];
+
 var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers,
-  "combine": combine
+  "combine": combine,
+  "inputs": inputs,
+  "channel": channel
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({
   perms: 'pw',
   "events": true,
   "speakers": speakers,
-  "combine": combine
+  "combine": combine,
+  "inputs": inputs,
+  "channel": channel
 }, message);
+
+// response = alexaTranslator.endPoints(message, endPoints, this);
 
 // var response = alexaTranslator.endPoints(message, endPoints, {
 //   "events": true,
@@ -118,7 +156,7 @@ var deleteSeen = [];
 for (var i = 0; i < response.event.payload.endpoints.length; i++) {
   var endpoint = response.event.payload.endpoints[i];
   if (deleteSeen[endpoint.friendlyName]) {
-    console.log("WARNING: Duplicate device name", endpoint.friendlyName);
+    console.log("WARNING: Duplicate device name", i, endpoint.friendlyName);
     // response.event.payload.endpoints.splice(i, 1);
   } else {
     deleteSeen[endpoint.friendlyName] = true;

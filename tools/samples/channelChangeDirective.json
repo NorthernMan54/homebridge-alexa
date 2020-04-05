@@ -1,0 +1,40 @@
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.ChannelController",
+      "name": "ChangeChannel",
+      "payloadVersion": "3",
+      "messageId": "475060d5-4a6e-4164-bd1c-d259bb4e3526",
+      "correlationToken": "AAAAAAAAAADrSa0wOcGPORda11YzZau3DAIAAAAAAACu5NYaGTI2il+ZwDEyrIWoZ8pWK3ozKJ422BLjTtZCwVYFeZdp0B3hBjTv9jM38D6/W2EI/kEZs77x3kVkY3tuh0a/hZJlmdJblFuJBa8IfSsUxCu3xoL3kdiDGX60fPBiJEjvrwYWymsh2uspPEzmLm1hr+TiiHugS1scWfcN5kEspPVVGMV3iYASgEzQOe2jx1YYg+fGGrsyZHtsJfklLU3JSN47OMpGskTJ7lolsdjWeGteKYsB3bPqG7CotdM1WV3Q2ZL0sYVr9rIhHgj7sHv6ae7vffU3YpLoMzd/dEPO9i0fHvJMysO9OR4PALxX4bZ73RWtVE/zWANJYUcdQj2q4HwdvN9Mw7IIvRTfLxzOI1G/OQxyM3guo4SseV01syQHGKdp/M5Q6VB/Ja88fQlCQzfMy77SDFQtg+HntaY1khc0HnSX0VtWLrXMEbJ7FIiiIWlMESUZMyskN7nu+vL6ZcfrWw4f2MgwPK6TqfAjhWchYbz3hCZ5dKPU2S2eXR25uHlnbRmxlsEC2mD02EdTzMU79d3w1qksS9m5HbyDVd6bCLVcVSEm5ZRSjRyHZz1WroP/OK0G9Iag2EgSESBTwY878dDb5v52ixwHXOmRahexTCpXPDNR1iBHCm8vaURK7YB5P/UW3L1QZHGmEMie8bkVkFNtCD/iawdAnYAt0SaxsliIrKPasQ=="
+    },
+    "endpoint": {
+      "endpointId": "QUM6MjI6M0Q6RTM6Q0U6MzAtTGVvbmFyZC1EZXYtQXBwbGUtVFYtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+      "cookie": {
+        "MEDIA PLAYER": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+        "TV TUNER": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+        "TurnOn": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":1}",
+        "TV": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+        "Pause": "{\"host\":\"192.168.1.79\",\"port\":51828,\"aid\":59,\"iid\":10,\"value\":1}",
+        "AdjustVolume": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":11}",
+        "Stop": "{\"host\":\"192.168.1.79\",\"port\":51828,\"aid\":55,\"iid\":10,\"value\":1}",
+        "Play": "{\"host\":\"192.168.1.79\",\"port\":51828,\"aid\":58,\"iid\":10,\"value\":1}",
+        "ReportState": "[{\"interface\":\"Alexa.PlaybackController\",\"host\":\"192.168.1.79\",\"port\":51828,\"aid\":59,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":10},{\"interface\
+        ":\"Alexa.Speaker\",\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":11}]",
+        "TV KODI": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+        "HDMI 2": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+        "TV NETFLIX": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+        "SetVolume": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":11}",
+        "HDMI 1": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":35,\"iid\":11,\"value\":1}",
+        "NETFLIX": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+        "TUNER": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":34,\"iid\":11,\"value\":1}",
+        "TurnOff": "{\"host\":\"192.168.1.51\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":0}"
+      }
+    },
+    "payload": {
+      "channel": {
+        "number": "9"
+      },
+      "channelMetadata": {}
+    }
+  }
+}
