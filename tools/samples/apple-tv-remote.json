@@ -1,0 +1,233 @@
+{
+  "accessories": [{
+    "aid": 1,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "homebridge.io",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "homebridge",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Raj-Other",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "CC:22:3D:E3:CF:34",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "0.4.53",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 2000000008,
+      "type": "49FB9D4D-0FEA-4BF1-8FA6-E7B18AB86DCE",
+      "characteristics": [{
+        "iid": 9,
+        "type": "77474A2F-FA98-485E-97BE-4762458774D8",
+        "perms": ["pr", "ev"],
+        "format": "uint8",
+        "value": 0,
+        "description": "State",
+        "maxValue": 1,
+        "minValue": 0,
+        "minStep": 1
+      }, {
+        "iid": 10,
+        "type": "FD9FE4CC-D06F-4FFE-96C6-595D464E1026",
+        "perms": ["pr", "ev"],
+        "format": "string",
+        "value": "1.0",
+        "description": "Version"
+      }, {
+        "iid": 11,
+        "type": "5819A4C2-E1B0-4C9D-B761-3EB1AFF43073",
+        "perms": ["pr", "pw", "ev"],
+        "format": "data",
+        "value": null,
+        "description": "Control Point"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }, {
+    "aid": 49,
+    "services": [{
+      "iid": 1,
+      "type": "0000003E-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 2,
+        "type": "00000014-0000-1000-8000-0026BB765291",
+        "perms": ["pw"],
+        "format": "bool",
+        "description": "Identify"
+      }, {
+        "iid": 3,
+        "type": "00000020-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple",
+        "description": "Manufacturer"
+      }, {
+        "iid": 4,
+        "type": "00000021-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Apple TV",
+        "description": "Model"
+      }, {
+        "iid": 5,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "TV",
+        "description": "Name"
+      }, {
+        "iid": 6,
+        "type": "00000030-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "BAEAE918-6EEC-4CD1-A594-4C00E6443221",
+        "description": "Serial Number"
+      }, {
+        "iid": 7,
+        "type": "00000052-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "",
+        "description": "Firmware Revision"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 8,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 9,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Power (TV)",
+        "description": "Name"
+      }, {
+        "iid": 10,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 11,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 12,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Play (TV)",
+        "description": "Name"
+      }, {
+        "iid": 13,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 14,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 15,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Right (TV)",
+        "description": "Name"
+      }, {
+        "iid": 16,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 17,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 18,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Left (TV)",
+        "description": "Name"
+      }, {
+        "iid": 19,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }, {
+      "iid": 20,
+      "type": "00000049-0000-1000-8000-0026BB765291",
+      "characteristics": [{
+        "iid": 21,
+        "type": "00000023-0000-1000-8000-0026BB765291",
+        "perms": ["pr"],
+        "format": "string",
+        "value": "Pause (TV)",
+        "description": "Name"
+      }, {
+        "iid": 22,
+        "type": "00000025-0000-1000-8000-0026BB765291",
+        "perms": ["pr", "pw", "ev"],
+        "format": "bool",
+        "value": false,
+        "description": "On"
+      }],
+      "primary": false,
+      "hidden": false
+    }]
+  }]
+}
