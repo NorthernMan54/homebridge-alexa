@@ -1,875 +1,967 @@
-WARNING: Duplicate device name screen_share_seq
-WARNING: Duplicate device name volume_seq
-alexaDiscovery - returned 22 devices
-Alexa Message Validation Passed!
-
------------------------------------------------------------
-
-{
-    "event": {
-        "header": {
-            "namespace": "Alexa.Discovery",
-            "name": "Discover.Response",
-            "payloadVersion": "3",
-            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
-        },
-        "payload": {
-            "endpoints": [
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyB2b2x1bWVfc2VxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "volume_seq",
-                    "description": "parseTest volume_seq Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":111,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":111,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":111}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
+WARNING: Duplicate device name 9 TV
+ERROR: Parsing failed, removing duplicate endpointID => TV
+alexaDiscovery - returned 17 devices
+WARNING - Bad message [
+    {
+        "field": "data",
+        "message": "no (or more than one) schemas match",
+        "value": {
+            "event": {
+                "header": {
+                    "namespace": "Alexa.Discovery",
+                    "name": "Discover.Response",
+                    "payloadVersion": "3",
+                    "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
                 },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBMaXZlIFRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "Live TV",
-                    "description": "parseTest Live TV Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":114,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":114,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":114}]"
-                    },
-                    "capabilities": [
+                "payload": {
+                    "endpoints": [
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtRmlyc3QgRmxvb3IgVGhlcm1vc3RhdC0wMDAwMDA0QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "First Floor Thermostat",
+                            "description": "parseTest First Floor Thermostat Thermostat",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "THERMOSTAT"
+                            ],
+                            "cookie": {
+                                "thermostatMode": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":9}",
+                                "thermostatModeOFF": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":0}",
+                                "thermostatModeHEAT": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":1}",
+                                "thermostatModeCOOL": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":2}",
+                                "thermostatModeAUTO": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10,\"value\":3}",
+                                "targetSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":12}",
+                                "upperSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15}",
+                                "lowerSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":16}",
+                                "ReportState": "[{\"interface\":\"Alexa.ThermostatControllerthermostatMode\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":11},{\"interface\":\"Alexa.ThermostatControllertargetSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":12},{\"interface\":\"Alexa.ThermostatControllerupperSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":15},{\"interface\":\"Alexa.ThermostatControllerlowerSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":16}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.TemperatureSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "temperature"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBQUzQtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "PS4",
-                    "description": "parseTest PS4 Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":117,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":117,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":117}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ThermostatController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "thermostatMode"
+                                            },
+                                            {
+                                                "name": "targetSetpoint"
+                                            },
+                                            {
+                                                "name": "upperSetpoint"
+                                            },
+                                            {
+                                                "name": "lowerSetpoint"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    },
+                                    "configuration": {
+                                        "supportsScheduling": false,
+                                        "supportedModes": [
+                                            "HEAT",
+                                            "COOL",
+                                            "AUTO",
+                                            "OFF"
+                                        ]
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBQaG90byBWaWRlby0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "Photo Video",
-                    "description": "parseTest Photo Video Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":123,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":123,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":123}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBUViBDaXJvIENoYW5uZWwgRG93bi0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "TV Ciro Channel Down",
-                    "description": "parseTest TV Ciro Channel Down Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":129,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":129,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":129}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBUViBDaXJvIENoYW5uZWwgVXAtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "TV Ciro Channel Up",
-                    "description": "parseTest TV Ciro Channel Up Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":126,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":126,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":126}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBUViBDaXJvIFZvbHVtZSBEb3duLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "TV Ciro Volume Down",
-                    "description": "parseTest TV Ciro Volume Down Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":105,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":105,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":105}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBUViBDaXJvIFZvbHVtZSBVcC0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "TV Ciro Volume Up",
-                    "description": "parseTest TV Ciro Volume Up Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":102,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":102,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":102}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBUViBDaXJvLTAwMDAwMEQ4LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "TV Ciro",
-                    "description": "parseTest TV Ciro Television",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "TV"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":10,\"value\":0}",
-                        "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":11}",
-                        "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":8}",
-                        "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":9}",
-                        "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":7}",
-                        "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":6}",
-                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":10}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}]]",
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}",
-                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PlaybackController",
-                            "version": "3",
-                            "supportedOperations": [
-                                "Play",
-                                "Pause",
-                                "Stop",
-                                "Next",
-                                "Previous"
+                                }
                             ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.StepSpeaker",
-                            "version": "3",
-                            "properties": {}
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "volume"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtRmlyc3QgRmxvb3IgVGhlcm1vc3RhdCBFY28gTW9kZS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "First Floor Thermostat Eco Mode",
+                            "description": "parseTest First Floor Thermostat Eco Mode Switch",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":28,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":28,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":28}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBZb3VUdWJlLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "YouTube",
-                    "description": "parseTest YouTube Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":120,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":120,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":120}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgQ2lybyBzY3JlZW5fc2hhcmVfc2VxLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "screen_share_seq",
-                    "description": "parseTest screen_share_seq Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":108,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":108,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":108}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gUGhvdG8gVmlkZW9zLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "Photo Videos",
-                    "description": "parseTest Photo Videos Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":109,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":109,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":109}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVFYgTGV0dG8gQ2hhbm5lbCBEb3duLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "TV Letto Channel Down",
-                    "description": "parseTest TV Letto Channel Down Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":97,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":97,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":97}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVFYgTGV0dG8gQ2hhbm5lbCBVcC0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "TV Letto Channel Up",
-                    "description": "parseTest TV Letto Channel Up Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":94,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":94,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":94}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVFYgTGV0dG8gVm9sdW1lIERvd24tMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "TV Letto Volume Down",
-                    "description": "parseTest TV Letto Volume Down Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":115,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":115,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":115}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVFYgTGV0dG8gVm9sdW1lIFVwLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
-                    "friendlyName": "TV Letto Volume Up",
-                    "description": "parseTest TV Letto Volume Up Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":112,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":112,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":112}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVFYgTGV0dG8tMDAwMDAwRDgtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "TV Letto",
-                    "description": "parseTest TV Letto Television",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "TV"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":10,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":10,\"value\":0}",
-                        "Pause": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":11}",
-                        "Play": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":8}",
-                        "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":9}",
-                        "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":7}",
-                        "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":6}",
-                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":10}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}]]",
-                        "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}",
-                        "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
-                                    }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        },
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PlaybackController",
-                            "version": "3",
-                            "supportedOperations": [
-                                "Play",
-                                "Pause",
-                                "Stop",
-                                "Next",
-                                "Previous"
+                                }
                             ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.StepSpeaker",
-                            "version": "3",
-                            "properties": {}
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtRmlyc3QgRmxvb3IgVGhlcm1vc3RhdCBIb21lIE9jY3VwaWVkLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "First Floor Thermostat Home Occupied",
+                            "description": "parseTest First Floor Thermostat Home Occupied Switch",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":25,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":25,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":18,\"iid\":25}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.Speaker",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "volume"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtTGl2aW5nIFJvb20gVGhlcm1vc3RhdC0wMDAwMDA0QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Living Room Thermostat",
+                            "description": "parseTest Living Room Thermostat Thermostat",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "THERMOSTAT"
+                            ],
+                            "cookie": {
+                                "thermostatMode": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":9}",
+                                "thermostatModeOFF": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":0}",
+                                "thermostatModeHEAT": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":1}",
+                                "thermostatModeCOOL": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":2}",
+                                "thermostatModeAUTO": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10,\"value\":3}",
+                                "targetSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":12}",
+                                "upperSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":15}",
+                                "lowerSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":16}",
+                                "ReportState": "[{\"interface\":\"Alexa.ThermostatControllerthermostatMode\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":11},{\"interface\":\"Alexa.ThermostatControllertargetSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":12},{\"interface\":\"Alexa.ThermostatControllerupperSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":15},{\"interface\":\"Alexa.ThermostatControllerlowerSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":16}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.TemperatureSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "temperature"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gVHYgSW4gZGlyZXR0YS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "Tv In diretta",
-                    "description": "parseTest Tv In diretta Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":100,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":100,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":100}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ThermostatController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "thermostatMode"
+                                            },
+                                            {
+                                                "name": "targetSetpoint"
+                                            },
+                                            {
+                                                "name": "upperSetpoint"
+                                            },
+                                            {
+                                                "name": "lowerSetpoint"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    },
+                                    "configuration": {
+                                        "supportsScheduling": false,
+                                        "supportedModes": [
+                                            "HEAT",
+                                            "COOL",
+                                            "AUTO",
+                                            "OFF"
+                                        ]
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtTGl2aW5nIFJvb20gVGhlcm1vc3RhdCBFY28gTW9kZS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Living Room Thermostat Eco Mode",
+                            "description": "parseTest Living Room Thermostat Eco Mode Switch",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":28,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":28,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":28}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gWW91VHViZSBMZXR0by0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "YouTube Letto",
-                    "description": "parseTest YouTube Letto Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":106,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":106,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":106}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LU5lc3QtTGl2aW5nIFJvb20gVGhlcm1vc3RhdCBIb21lIE9jY3VwaWVkLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Living Room Thermostat Home Occupied",
+                            "description": "parseTest Living Room Thermostat Home Occupied Switch",
+                            "manufacturerName": "Nest",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":25,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":25,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":17,\"iid\":25}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gaGRtaTEtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
-                    "friendlyName": "hdmi1",
-                    "description": "parseTest hdmi1 Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":103,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":103,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":103}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNleWRYLVRWIFBvd2VyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "TV Power",
+                            "description": "parseTest TV Power Switch",
+                            "manufacturerName": "SeydX",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":15,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gc2NyZWVuX3NoYXJlX3NlcS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "screen_share_seq",
-                    "description": "parseTest screen_share_seq Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":88,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":88,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":88}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNleWRYLVRWIFZvbHVtZS0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "TV Volume",
+                            "description": "parseTest TV Volume Lightbulb",
+                            "manufacturerName": "SeydX",
+                            "displayCategories": [
+                                "LIGHT"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":10,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":11}",
+                                "BrightnessTurnOn": "true",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":12,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
-                        }
-                    ]
-                },
-                {
-                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUxHIEVsZWN0cm9uaWNzIEluYy4tVFYgTGV0dG8gdm9sdW1lX3NlcS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
-                    "friendlyName": "volume_seq",
-                    "description": "parseTest volume_seq Switch",
-                    "manufacturerName": "LG Electronics Inc.",
-                    "displayCategories": [
-                        "SWITCH"
-                    ],
-                    "cookie": {
-                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":91,\"value\":1}",
-                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":91,\"value\":0}",
-                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":91}]"
-                    },
-                    "capabilities": [
-                        {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa",
-                            "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "type": "AlexaInterface",
-                            "interface": "Alexa.PowerController",
-                            "version": "3",
-                            "properties": {
-                                "supported": [
-                                    {
-                                        "name": "powerState"
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNleWRYLVRWLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "TV",
+                            "description": "parseTest TV Switch",
+                            "manufacturerName": "SeydX",
+                            "displayCategories": [
+                                "SWITCH"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":10,\"value\":1}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":10,\"value\":0}",
+                                "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":13,\"iid\":10}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
                                     }
-                                ],
-                                "proactivelyReported": false,
-                                "retrievable": true
-                            }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.InputController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "input"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    },
+                                    "inputs": [
+                                        {
+                                            "name": "TUNER"
+                                        },
+                                        {
+                                            "name": "HDMI 1"
+                                        },
+                                        {
+                                            "name": "MEDIA PLAYER"
+                                        },
+                                        {
+                                            "name": "HDMI 2"
+                                        },
+                                        {
+                                            "name": "TV"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ChannelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "channel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LU15IEdhdGUtMDAwMDAwNDEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "My Gate",
+                            "description": "parseTest My Gate Garage Door Opener",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "DOOR"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":37,\"iid\":11,\"value\":0}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":37,\"iid\":11,\"value\":1}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":37,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":37,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LU1haW4gR2F0ZS0wMDAwMDA0MS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Main Gate",
+                            "description": "parseTest Main Gate Garage Door Opener",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "DOOR"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":0}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11,\"value\":1}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":36,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LUxlZnQgQ3VydGFpbi0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                            "friendlyName": "Left Curtain",
+                            "description": "parseTest Left Curtain Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":39,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LUxlZnQgQmxpbmQtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Left Blind",
+                            "description": "parseTest Left Blind Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":43,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LUxlZnQgU2t5TGlnaHQtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Left SkyLight",
+                            "description": "parseTest Left SkyLight Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":41,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LVJpZ2h0IEJsaW5kLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Right Blind",
+                            "description": "parseTest Right Blind Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":38,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LVJpZ2h0IEN1cnRhaW4tMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+                            "friendlyName": "Right Curtain",
+                            "description": "parseTest Right Curtain Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":40,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LVJpZ2h0IFNreUxpZ2h0LTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+                            "friendlyName": "Right SkyLight",
+                            "description": "parseTest Right SkyLight Window Covering",
+                            "manufacturerName": "Somfy",
+                            "displayCategories": [
+                                "OTHER"
+                            ],
+                            "cookie": {
+                                "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11,\"value\":100}",
+                                "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11,\"value\":0}",
+                                "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11}",
+                                "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11}",
+                                "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":42,\"iid\":11}]"
+                            },
+                            "capabilities": [
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa",
+                                    "version": "3"
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.ContactSensor",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "detectionState"
+                                            }
+                                        ],
+                                        "proactivelyReported": true,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerState"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                },
+                                {
+                                    "type": "AlexaInterface",
+                                    "interface": "Alexa.PowerLevelController",
+                                    "version": "3",
+                                    "properties": {
+                                        "supported": [
+                                            {
+                                                "name": "powerLevel"
+                                            }
+                                        ],
+                                        "proactivelyReported": false,
+                                        "retrievable": true
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
-            ]
-        }
+            }
+        },
+        "schemaPath": []
     }
-}
-
------------------------------------------------------------
-
-
------------------------------------------------------------
-
+]
+---------------------------- Response -------------------------------
+------------------------------------------------------------
