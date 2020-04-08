@@ -156,7 +156,7 @@ var deleteSeen = [];
 for (var i = 0; i < response.event.payload.endpoints.length; i++) {
   var endpoint = response.event.payload.endpoints[i];
   if (deleteSeen[endpoint.friendlyName]) {
-    console.log("WARNING: Duplicate device name", i, endpoint.friendlyName);
+    console.log("WARNING: Duplicate device name", endpoint.friendlyName);
     // response.event.payload.endpoints.splice(i, 1);
   } else {
     deleteSeen[endpoint.friendlyName] = true;
