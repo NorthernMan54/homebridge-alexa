@@ -311,7 +311,7 @@ Alexa Message Validation Passed!
                         "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":9}",
                         "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":7}",
                         "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":14,\"value\":6}",
-                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":10}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}]]",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}]",
                         "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}",
                         "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":60,\"iid\":22}"
                     },
@@ -630,7 +630,7 @@ Alexa Message Validation Passed!
                         "Stop": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":9}",
                         "Next": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":7}",
                         "Previous": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":14,\"value\":6}",
-                        "ReportState": "[[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":10}],[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}]]",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":19},{\"interface\":\"Alexa.StepSpeaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":21},{\"interface\":\"Alexa.Speaker\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}]",
                         "AdjustVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}",
                         "SetVolume": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":61,\"iid\":22}"
                     },
