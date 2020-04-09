@@ -202,7 +202,7 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 
 * Alexa, what is the temperature in the *device* ( Not supported in Japan )
 
-## AppleTV
+## AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )
 
 * Alexa, pause *device* ( Apple TV )
 * Alexa, resume *device* ( Apple TV )
@@ -464,7 +464,7 @@ sudo npm install -g homebridge-alexa
     "password": "....",
     "combine": [{
           "into": "TV",
-          "from": ["KODI"]
+          "from": ["KODI", "Power (TV)"]
         }, {
           "into": "Front",
           "from": ["Yamaha"]
@@ -475,6 +475,10 @@ sudo npm install -g homebridge-alexa
   }
 ],
 ```
+
+* into - Device name to combine into
+* from - Device name to combine from, can be a list of multiple devices.
+
 
 #### speakers
   - Devices to configure as speakers as HomeKit currently does not have a Speaker service, and enable the alexa phase `Alexa, raise the volume on`.
@@ -611,7 +615,7 @@ PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO
 
 #### Apple TV
 
-  - This is the config from my Apple TV after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
+  - This is the config from my Apple TV using the homebridge-apple-tv plugin after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
 
 ```
 {
@@ -627,6 +631,53 @@ PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO
   "showPairSwitches": false,
   "hideWelcomeMessage": true
 }
+```
+
+- This is the config for the homebridge-apple-tv-remote plugin.  This allows you to pause/play forward/rewind on device.
+
+Please note that the name in brackets ie (TV) will be the Name alexa uses to control your AppleTV
+
+```
+{
+  "platform": "AppleTvPlatform",
+  "devices": [{
+    "name": "Family Room",
+    "credentials": "XXXXXXXXXXXX",
+    "isOnOffSwitchEnabled": true,
+    "onOffSwitchName": "Power (TV)",
+    "isPlayPauseSwitchEnabled": true,
+    "playPauseSwitchName": "Play (TV)",
+    "commandSwitches": [{
+      "name": "Pause (TV)",
+      "commands": [{
+        "key": "pause",
+        "longPress": false
+      }]
+    }, {
+      "name": "Right (TV)",
+      "commands": [{
+        "key": "right",
+        "longPress": false
+      }]
+    }, {
+      "name": "Left (TV)",
+      "commands": [{
+        "key": "left",
+        "longPress": false
+      }]
+    }]
+  }],
+  "isApiEnabled": false
+}
+```
+
+Also to enable turning on and off your Apple TV, add this to your homebridge-alexa configuration.
+
+```
+"combine": [{
+      "into": "TV",
+      "from": ["Power (TV)"]
+    }]
 ```
 
 #### Yamaha Spotify Controls

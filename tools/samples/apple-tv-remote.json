@@ -184,24 +184,6 @@
         "description": "On"
       }]
     }, {
-      "iid": 21,
-      "type": "00000049-0000-1000-8000-0026BB765291",
-      "characteristics": [{
-        "iid": 22,
-        "type": "00000023-0000-1000-8000-0026BB765291",
-        "perms": ["pr"],
-        "format": "string",
-        "value": "Apple TV (TV)",
-        "description": "Name"
-      }, {
-        "iid": 23,
-        "type": "00000025-0000-1000-8000-0026BB765291",
-        "perms": ["pr", "pw", "ev"],
-        "format": "bool",
-        "value": false,
-        "description": "On"
-      }]
-    }, {
       "iid": 24,
       "type": "00000049-0000-1000-8000-0026BB765291",
       "characteristics": [{

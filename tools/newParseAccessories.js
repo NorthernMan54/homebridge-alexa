@@ -83,7 +83,7 @@ var speakers = [{
 
 var combine = [{
   "into": "TV",
-  "from": ["KODI"]
+  "from": ["KODI", "Power (TV)"]
 }, {
   "into": "Front",
   "from": ["Yamaha"]
