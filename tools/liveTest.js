@@ -263,7 +263,7 @@ function alexaModeController(message, callback) {
 }
 
 function alexaMessage(message, callback) {
-  debug('alexaMessage', JSON.stringify(message));
+  debug('alexaMessage', JSON.stringify(message, null, 2));
   var now = new Date();
 
   var response = {
