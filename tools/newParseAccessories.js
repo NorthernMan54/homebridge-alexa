@@ -128,7 +128,8 @@ var hbDevices = new Homebridges(endPoints, {
   "speakers": speakers,
   "combine": combine,
   "inputs": inputs,
-  "channel": channel
+  "channel": channel,
+  "blind": true
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({
@@ -175,11 +176,13 @@ if (response && response.event.payload.endpoints.length < 1) {
 }
 
 if (!status) {
-  console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
-  console.log("---------------------------- Response -------------------------------");
+  console.log("WARNING - Bad message");
+
+  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 4);
+  // console.log("---------------------------- Response -------------------------------");
   // console.log(JSON.stringify(response));
-  console.log("------------------------------------------------------------");
-  process.exit(1);
+  // console.log("------------------------------------------------------------");
+  // process.exit(1);
 } else {
   console.log("Alexa Message Validation Passed!");
 }

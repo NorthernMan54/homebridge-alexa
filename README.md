@@ -91,7 +91,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for Light Bulbs, Switches and outlets
 * Support for Color Light Bulbs and Colour Temperature of white Light bulbs
 * Support for Fans (As Alexa doesn't support Fans coverings I'm using Other)
-* Support for Window coverings/blinds (As Alexa doesn't support window coverings I'm using Other)
+* Support for Window coverings/blinds
 * Support for Garage Doors
 * Support for Temperature, Contact and Motion Sensors.  
 * Support for Occupancy Sensors as a Contact sensor.  
@@ -128,9 +128,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 
 ### Supported as Other Types
 
-* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Fans, Humidifier Dehumidifier and Air Purifiers - Supported as a Switch
-* Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
 
@@ -175,17 +173,30 @@ daylight, daylight white
 cool, cool white
 ```
 
-## Garage door
+## Garage door, Blinds and Window Coverings
+
+### Garage Door With blind = false
 
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
 
 See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door) using a routine to fix the wording
 
-## Window coverings / blinds
+### Window coverings / blinds With blind = false
 
 * Alexa, turn on *device* ( Open's blinds )
 * Alexa, turn off *device* ( Close's blinds )
+* Alexa, set *device* to 50 ( Moves blinds to 50% )
+
+### Garage Door With blind = true ( Not supported in all countries )
+
+* Alexa, raise *device* ( Open's a garage door )
+* Alexa, lower *device* ( Close's a garage door )
+
+## Window coverings / blinds With blind = true ( Not supported in all countries )
+
+* Alexa, raise *device* ( Open's blinds )
+* Alexa, lower *device* ( Close's blinds )
 * Alexa, set *device* to 50 ( Moves blinds to 50% )
 
 ## Thermostat's and Heater / Cooler's
@@ -403,6 +414,21 @@ sudo npm install -g homebridge-alexa
     "username": "....",
     "password": "....",
     "routines": true
+  }
+],
+```
+
+#### blind
+  - Enables natural wording for opening and closing blinds, window coverings and garage doors.  Not supported in all countries.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "routines": blind
   }
 ],
 ```

@@ -1,0 +1,115 @@
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "Discover.Response",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUhpdGFjaGktSGl0YWNoaSBBQy0wMDAwMDBCQy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+                    "friendlyName": "Hitachi AC",
+                    "description": "parseTest Hitachi AC Heater Cooler",
+                    "manufacturerName": "Hitachi",
+                    "displayCategories": [
+                        "THERMOSTAT"
+                    ],
+                    "cookie": {
+                        "TurnOn": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":10,\"value\":1}",
+                        "TurnOff": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":10,\"value\":0}",
+                        "thermostatModeOFF": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":12,\"value\":0}",
+                        "thermostatModeHEAT": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":12,\"value\":1}",
+                        "thermostatModeCOOL": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":12,\"value\":2}",
+                        "thermostatModeAUTO": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":12,\"value\":3}",
+                        "upperSetpoint": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":15}",
+                        "AdjustPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":17}",
+                        "SetPowerLevel": "{\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":17}",
+                        "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":10},{\"interface\":\"Alexa.ThermostatControllerthermostatMode\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":12},{\"interface\":\"Alexa.TemperatureSensor\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":13},{\"interface\":\"Alexa.ThermostatControllerupperSetpoint\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":15},{\"interface\":\"Alexa.PowerLevelController\",\"host\":\"127.0.0.1\",\"port\":51826,\"aid\":30,\"iid\":17}]"
+                    },
+                    "capabilities": [
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.TemperatureSensor",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "temperature"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.PowerLevelController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "powerLevel"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ThermostatController",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "thermostatMode"
+                                    },
+                                    {
+                                        "name": "upperSetpoint"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            },
+                            "configuration": {
+                                "supportsScheduling": false,
+                                "supportedModes": [
+                                    "HEAT",
+                                    "COOL",
+                                    "AUTO",
+                                    "OFF"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------

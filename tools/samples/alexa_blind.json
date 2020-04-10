@@ -1,0 +1,107 @@
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "payloadVersion": "3",
+      "messageId": "<message id>"
+    },
+    "payload": {
+      "endpoints": [{
+        "endpointId": "Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVNvbWZ5LUJsaW5kcy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE",
+        "manufacturerName": "Somfy",
+        "description": "<Smart Blinds by Manufacturer>",
+        "friendlyName": "<Blinds>",
+        "displayCategories": ["INTERIOR_BLIND"],
+        "cookie": {},
+        "capabilities": [{
+            "type": "AlexaInterface",
+            "interface": "Alexa.ModeController",
+            "instance": "Blinds.Position",
+            "version": "3",
+            "properties": {
+              "supported": [{
+                "name": "mode"
+              }],
+              "retrievable": true,
+              "proactivelyReported": true
+            },
+            "capabilityResources": {
+              "friendlyNames": [{
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Setting.Opening"
+                }
+              }]
+            },
+            "configuration": {
+              "ordered": false,
+              "supportedModes": [{
+                  "value": "Position.Up",
+                  "modeResources": {
+                    "friendlyNames": [{
+                      "@type": "asset",
+                      "value": {
+                        "assetId": "Alexa.Value.Open"
+                      }
+                    }]
+                  }
+                },
+                {
+                  "value": "Position.Down",
+                  "modeResources": {
+                    "friendlyNames": [{
+                      "@type": "asset",
+                      "value": {
+                        "assetId": "Alexa.Value.Close"
+                      }
+                    }]
+                  }
+                }
+              ]
+            },
+            "semantics": {
+              "actionMappings": [{
+                  "@type": "ActionsToDirective",
+                  "actions": ["Alexa.Actions.Close", "Alexa.Actions.Lower"],
+                  "directive": {
+                    "name": "SetMode",
+                    "payload": {
+                      "mode": "Position.Down"
+                    }
+                  }
+                },
+                {
+                  "@type": "ActionsToDirective",
+                  "actions": ["Alexa.Actions.Open", "Alexa.Actions.Raise"],
+                  "directive": {
+                    "name": "SetMode",
+                    "payload": {
+                      "mode": "Position.Up"
+                    }
+                  }
+                }
+              ],
+              "stateMappings": [{
+                  "@type": "StatesToValue",
+                  "states": ["Alexa.States.Closed"],
+                  "value": "Position.Down"
+                },
+                {
+                  "@type": "StatesToValue",
+                  "states": ["Alexa.States.Open"],
+                  "value": "Position.Up"
+                }
+              ]
+            }
+          },
+          {
+            "type": "AlexaInterface",
+            "interface": "Alexa",
+            "version": "3"
+          }
+        ]
+      }]
+    }
+  }
+}

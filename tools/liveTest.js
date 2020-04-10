@@ -131,7 +131,8 @@ var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers,
   "combine": combine,
-  "inputs": inputs
+  "inputs": inputs,
+  "blind": true
 });
 debug("Homebridges");
 
@@ -183,10 +184,10 @@ this.eventBus.on('hapEvent', alexaActions.alexaEvent.bind(this));
 this.eventBus.on('System', function(message) {
   this.log.error("ERROR: ", message.directive.header.message);
 }.bind(this));
-this.eventBus.on('Alexa', alexaActions.alexaMessage.bind(this));
+this.eventBus.on('Alexa', alexaMessage.bind(this));
 this.eventBus.on('Alexa.Discovery', alexaDiscovery.bind(this));
-this.eventBus.on('Alexa.PowerController', alexaActions.alexaPowerController.bind(this));
-this.eventBus.on('Alexa.PowerLevelController', alexaActions.alexaPowerLevelController.bind(this));
+this.eventBus.on('Alexa.PowerController', alexaPowerController.bind(this));
+this.eventBus.on('Alexa.PowerLevelController', alexaPowerLevelController.bind(this));
 this.eventBus.on('Alexa.ColorController', alexaActions.alexaColorController.bind(this));
 this.eventBus.on('Alexa.ColorTemperatureController', alexaActions.alexaColorTemperatureController.bind(this));
 this.eventBus.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
@@ -196,9 +197,138 @@ this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(t
 this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
+this.eventBus.on('Alexa.ModeController', alexaModeController.bind(this));
+
+
+
+function alexaModeController(message, callback) {
+  debug('alexaModeController', JSON.stringify(message));
+  var now = new Date();
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "Response",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.ModeController",
+        "instance": message.directive.header.instance,
+        "name": "mode",
+        "value": message.directive.payload.mode,
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    }
+  };
+  callback(null, response);
+};
+
+function alexaMessage(message, callback) {
+  debug('alexaMessage', JSON.stringify(message));
+  var now = new Date();
+
+  var response = {
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.ModeController",
+        "instance": "Blinds.Position",
+        "name": "mode",
+        "value": "Position.Down",
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    },
+    "event": {
+      "header": {
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "namespace": "Alexa",
+        "name": "StateReport",
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    }
+  };
+  debug('alexaMessage - response: ', JSON.stringify(response));
+  callback(null, response);
+}
 
 function alexaInputController(message, callback) {
   console.log(JSON.stringify(message));
+  var now = new Date();
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "Response",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.PowerLevelController",
+        "name": "powerLevel",
+        "value": message.directive.payload.powerLevel,
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    }
+  };
+  console.log(JSON.stringify(response));
+  callback(null, response);
+}
+
+function alexaPowerLevelController(message, callback) {
+  // console.log(JSON.stringify(message));
+  var now = new Date();
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "Response",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.PowerLevelController",
+        "name": "powerLevel",
+        "value": message.directive.payload.powerLevel,
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    }
+  };
+  console.log(JSON.stringify(response));
+  callback(null, response);
+}
+
+function alexaPowerController(message, callback) {
+  // console.log(JSON.stringify(message));
   var now = new Date();
   var response = {
     "event": {
