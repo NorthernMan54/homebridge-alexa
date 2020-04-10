@@ -20,7 +20,7 @@ this.events = false;
 this.oldParser = false;
 this.refresh = 60 * 15; // Value in seconds, default every 15 minute's
 
-var passwords = JSON.parse(fs.readFileSync("passwords.json"));
+var passwords = JSON.parse(fs.readFileSync(process.argv[3]));
 
 var hbAccDump = fs.readFileSync(process.argv[2]).toString();
 var accessories = JSON.parse(hbAccDump.replace(/\uFFFD/g, ''));
@@ -196,7 +196,7 @@ this.eventBus.on('Alexa.ThermostatController', alexaActions.alexaThermostatContr
 this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(this));
 this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
-this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
+this.eventBus.on('Alexa.InputController', alexaInputController.bind(this));
 this.eventBus.on('Alexa.ModeController', alexaModeController.bind(this));
 this.eventBus.on('Alexa.RangeController', alexaRangeController.bind(this));
 
@@ -229,10 +229,10 @@ function alexaRangeController(message, callback) {
     }
   };
   callback(null, response);
-};
+}
 
 function alexaModeController(message, callback) {
-  debug('alexaModeController', JSON.stringify(message));
+  debug('alexaModeController', JSON.stringify(message, null, 2));
   var now = new Date();
   var response = {
     "event": {
@@ -260,7 +260,7 @@ function alexaModeController(message, callback) {
     }
   };
   callback(null, response);
-};
+}
 
 function alexaMessage(message, callback) {
   debug('alexaMessage', JSON.stringify(message));
