@@ -344,7 +344,7 @@ Alexa Message Validation Passed!
                                 "Pause",
                                 "Stop",
                                 "Next",
-                                "Previous"
+                                "Rewind"
                             ]
                         },
                         {
@@ -663,7 +663,7 @@ Alexa Message Validation Passed!
                                 "Pause",
                                 "Stop",
                                 "Next",
-                                "Previous"
+                                "Rewind"
                             ]
                         },
                         {

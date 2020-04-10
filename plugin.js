@@ -35,6 +35,7 @@ function alexaHome(log, config, api) {
   this.speakers = config['speakers'] || false; // Array of speaker devices
   this.inputs = config['inputs'] || false; // Array of input devices
   this.channel = config['channel'] || false; // Array of input devices
+  this.blind = config['blind'] || false; // Use mode controller for Blinds and Doors
   this.name = config['name'] || "homebridgeAlexa";
 
   // Enable config based DEBUG logging enable
@@ -101,6 +102,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     Characteristic: Characteristic,
     inputs: this.inputs,
     channel: this.channel,
+    blind: this.blind,
     servers: [{
       protocol: 'mqtt',
       host: host,
