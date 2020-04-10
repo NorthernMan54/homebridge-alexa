@@ -198,8 +198,38 @@ this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.
 this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
 this.eventBus.on('Alexa.ModeController', alexaModeController.bind(this));
+this.eventBus.on('Alexa.RangeController', alexaRangeController.bind(this));
 
-
+function alexaRangeController(message, callback) {
+  debug('alexaRangeController', JSON.stringify(message, null, 2));
+  var now = new Date();
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "Response",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.ModeController",
+        "instance": message.directive.header.instance,
+        "name": "mode",
+        "value": message.directive.payload.mode,
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      }]
+    }
+  };
+  callback(null, response);
+};
 
 function alexaModeController(message, callback) {
   debug('alexaModeController', JSON.stringify(message));
