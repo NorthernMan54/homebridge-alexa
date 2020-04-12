@@ -667,7 +667,7 @@ Please note that the name in brackets ie (TV) will be the Name alexa uses to con
 {
   "platform": "AppleTvPlatform",
   "devices": [{
-    "name": "Family Room",
+    "name": "Family Room (TV)",
     "credentials": "XXXXXXXXXXXX",
     "isOnOffSwitchEnabled": true,
     "onOffSwitchName": "Power (TV)",
