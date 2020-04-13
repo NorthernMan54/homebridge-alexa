@@ -178,7 +178,7 @@ if (response && response.event.payload.endpoints.length < 1) {
 if (!status) {
   console.log("WARNING - Bad message");
 
-  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 4);
+  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 2);
   // console.log("---------------------------- Response -------------------------------");
   // console.log(JSON.stringify(response));
   // console.log("------------------------------------------------------------");
@@ -188,7 +188,7 @@ if (!status) {
 }
 
 console.log("\n-----------------------------------------------------------\n");
-console.log(JSON.stringify(response, null, 4));
+console.log(JSON.stringify(response, null, 2));
 console.log("\n-----------------------------------------------------------\n");
 // console.log(hbDevices.toEvents());
 
