@@ -35,7 +35,8 @@ function alexaHome(log, config, api) {
   this.speakers = config['speakers'] || false; // Array of speaker devices
   this.inputs = config['inputs'] || false; // Array of input devices
   this.channel = config['channel'] || false; // Array of input devices
-  this.blind = config['blind'] || false; // Use mode controller for Blinds and Doors
+  this.blind = config['blind'] || false; // Use range controller for Blinds
+  this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
 
   // Enable config based DEBUG logging enable
