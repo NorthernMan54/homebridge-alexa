@@ -104,6 +104,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     inputs: this.inputs,
     channel: this.channel,
     blind: this.blind,
+    door: this.door,
     servers: [{
       protocol: 'mqtt',
       host: host,
