@@ -175,17 +175,19 @@ if (response && response.event.payload.endpoints.length < 1) {
 }
 
 if (!status) {
-  console.log("WARNING - Bad message", JSON.stringify(checkAlexaMessage.errors, null, 4));
-  console.log("---------------------------- Response -------------------------------");
+  console.log("WARNING - Bad message");
+
+  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 2);
+  // console.log("---------------------------- Response -------------------------------");
   // console.log(JSON.stringify(response));
-  console.log("------------------------------------------------------------");
-  process.exit(1);
+  // console.log("------------------------------------------------------------");
+  // process.exit(1);
 } else {
   console.log("Alexa Message Validation Passed!");
 }
 
 console.log("\n-----------------------------------------------------------\n");
-console.log(JSON.stringify(response, null, 4));
+console.log(JSON.stringify(response, null, 2));
 console.log("\n-----------------------------------------------------------\n");
 // console.log(hbDevices.toEvents());
 
