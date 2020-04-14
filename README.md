@@ -14,7 +14,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
-* Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
+* Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings, Garage Doors and Switches.
 * Supports passing of sensor updates in real time to Alexa for use in routines.
 * Includes support for brightness and colour.
 * Creates a Contact Sensor that monitors the status of the connect to the Homebridge Alexa Cloud Servers.
@@ -36,13 +36,16 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Color lights](#color-lights)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
-      * [Garage door](#garage-door)
-      * [Window coverings / blinds](#window-coverings--blinds)
+      * [Garage door, Blinds and Window Coverings](#garage-door-blinds-and-window-coverings)
+         * [Garage Door With door = false](#garage-door-with-door--false)
+         * [Window coverings / blinds With blind = false](#window-coverings--blinds-with-blind--false)
+         * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
+         * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
       * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
       * [Lock / Unlock Doors](#lock--unlock-doors)
       * [Temperature sensors](#temperature-sensors)
-      * [AppleTV](#appletv)
-      * [HomeKit TV (iOS 12.2)](#homekit-tv-ios-122)
+      * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
+      * [HomeKit TV](#homekit-tv)
          * [HomeKit TV - Tested plugins](#homekit-tv---tested-plugins)
          * [TV Inputs and Channels](#tv-inputs-and-channels)
       * [Speakers](#speakers)
@@ -58,6 +61,8 @@ Country availability - The plugin is available in these countries, English (AU),
          * [Optional parameters](#optional-parameters)
             * [pin](#pin)
             * [routines](#routines)
+            * [blind](#blind)
+            * [door](#door)
             * [debug](#debug)
             * [refresh](#refresh)
             * [filter](#filter)
@@ -101,7 +106,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for Speakers ( Tested with homebridge-yamaha-home, homebridge-soundtouch and homebridge-http-irblaster )
-* Support for Apple TV ( Supports homebridge-apple-tv )
+* Support for Apple TV ( Supports homebridge-apple-tv, and homebridge-apple-tv-remote )
 * Support Spotify playback controls on Yamaha Receivers via homebridge-yamaha-home
 * Support for door locks
 
@@ -125,6 +130,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Heater/Cooler
 * Door locks ( Lock and status only, Alexa does not support unlocking )
 * HomeKit Television ( Initial support only On/Off and Volume Control )
+* Garage Doors and Window Coverings/Blinds
 
 ### Supported as Other Types
 
@@ -175,7 +181,7 @@ cool, cool white
 
 ## Garage door, Blinds and Window Coverings
 
-### Garage Door With blind = false
+### Garage Door With door = false
 
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
@@ -191,9 +197,13 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 ### Garage Door With blind = true ( Not supported in all countries )
 
 * Alexa, raise *device* ( Open's a garage door )
+* Alexa, open *device* ( Open's a garage door )
 * Alexa, lower *device* ( Close's a garage door )
+* Alexa, close *device* ( Close's a garage door )
 
-## Window coverings / blinds With blind = true ( Not supported in all countries )
+* Opening a garage door requires configuring a voice pin in the Alexa App.
+
+### Window coverings / blinds With blind = true ( Not supported in all countries )
 
 * Alexa, raise *device* ( Open's blinds )
 * Alexa, lower *device* ( Close's blinds )
@@ -220,7 +230,7 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
 
-## HomeKit TV (iOS 12.2)
+## HomeKit TV
 
 * Alexa, turn on *device*
 * Alexa, turn off *device*
@@ -229,11 +239,6 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, lower the volume on *device*
 * Alexa, volume up 20 on *device*
 * Alexa, set the volume of *device* to 50
-
-Or
-
-* Alexa, raise the volume on *device*
-* Alexa, lower the volume on *device*
 
 These are the remote buttons
 
@@ -263,8 +268,9 @@ These are the remote buttons
 
 ### TV Inputs and Channels
 
-* Alexa, change to the channel to # on *device*
-* Alexa, change the input to *input* on the *device*
+* Alexa, change channel to # on *device*
+* Alexa, change channel to cbc on *device*
+* Alexa, change input to *input* on the *device*
 
 ## Speakers
 
@@ -419,7 +425,7 @@ sudo npm install -g homebridge-alexa
 ```
 
 #### blind
-  - Enables natural wording for opening and closing blinds, window coverings and garage doors.  Not supported in all countries.
+  - Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false
 
 ```
 "platforms": [
@@ -428,7 +434,22 @@ sudo npm install -g homebridge-alexa
     "name": "Alexa",
     "username": "....",
     "password": "....",
-    "routines": blind
+    "blind": true
+  }
+],
+```
+
+#### door
+  - Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "door": true
   }
 ],
 ```
@@ -567,15 +588,15 @@ ie
 
 * name - Is the name of the accessory as shown in the Home App
 
-The accessory to receive channel change commands will receive the channel number as the value.
+The accessory to receive channel change commands will receive the channel number or name as the value.
 
 #### Inputs
 
   - This combines several buttons that control inputs on a TV or Stereo into an Alexa input control and enables the phrase `Alexa, change to input to`. For the names of the inputs, Amazon provided a list ( see alexa name below ) that you can choose from.  You can map multiple alexa names to the same button as well.
 
-`Alexa, change the input to Tuner on the TV`
+`Alexa, change input to Tuner on the TV`
 
-`Alexa, change the input to HDMI 1 on the TV`
+`Alexa, change input to HDMI 1 on the TV`
 
 ```
 {
