@@ -268,8 +268,8 @@ These are the remote buttons
 
 ### TV Inputs and Channels
 
-* Alexa, change channel to # on *device*
-* Alexa, change channel to cbc on *device*
+* Alexa, change channel to # on *device*   ( Channel number )
+* Alexa, change channel to cbc on *device* ( Station name )
 * Alexa, change input to *input* on the *device*
 
 ## Speakers
@@ -573,7 +573,9 @@ ie
 
 #### Channels
 
-  - This enables Alexa to be able to change channels on your TV by number, and enables the phrase `Alexa, change to the channel to`.
+  - This enables Alexa to be able to change channels on your TV by number, and enables the phrase `Alexa, change channel to`.
+On the Wiki I have the additional steps documented to configure this feature.  I leveraged node-red and an IR Blaster (ESP8266-HTTP-IR-Blaster) to change the channels on my TV.
+
 
 ```
 "channel": [{
