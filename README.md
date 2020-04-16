@@ -580,8 +580,8 @@ On the Wiki I have the additional steps documented to configure this feature.  I
 ```
 "channel": [{
   "into": "TV",
-  "manufacturer": "HTTP-IRBlaster",
-  "name": "Tuner"}],
+  "manufacturer": "Channel",
+  "name": "Channel"}],
 ```
 
 * into - Name of the existing accessory to add the input function to.  In my setup this is my Apple TV accessory.
