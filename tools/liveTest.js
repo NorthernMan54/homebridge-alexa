@@ -5,6 +5,7 @@ var AlexaLocal = require('../lib/alexaLocal.js').alexaLocal;
 var alexaActions = require('../lib/alexaActions.js');
 var EventEmitter = require('events').EventEmitter;
 var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
+var normalizeUUID = require('../node_modules/hap-node-client/lib/util.js').normalizeUUID;
 var debug = require('debug')('liveTest');
 var fs = require('fs');
 // var debug = require('debug')('alexaPlugin');
@@ -23,7 +24,7 @@ this.refresh = 60 * 15; // Value in seconds, default every 15 minute's
 var passwords = JSON.parse(fs.readFileSync(process.argv[3]));
 
 var hbAccDump = fs.readFileSync(process.argv[2]).toString();
-var accessories = JSON.parse(hbAccDump.replace(/\uFFFD/g, ''));
+var accessories = normalizeUUID(JSON.parse(hbAccDump.replace(/\uFFFD/g, '')));
 
 var endPoints = [{
   ipAddress: "127.0.0.1",
