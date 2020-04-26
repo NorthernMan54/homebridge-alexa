@@ -4,6 +4,7 @@ var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
+var normalizeUUID = require('../node_modules/hap-node-client/lib/util.js').normalizeUUID;
 var checkAlexaMessage = Validator(alexaSchema, {
   verbose: true
 });
@@ -13,7 +14,7 @@ var fs = require('fs');
 var response = fs.readFileSync(process.argv[2]).toString();
 // response = response.replace(/[^\x00-\x7F]/g, "");
 // response = response.replace(/\uFFFD/g, '');
-var accessories = JSON.parse(response.replace(/\uFFFD/g, ''));
+var accessories = normalizeUUID(JSON.parse(response.replace(/\uFFFD/g, '')));
 
 var endPoints = [{
   ipAddress: "127.0.0.1",
