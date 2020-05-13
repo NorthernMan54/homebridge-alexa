@@ -18,6 +18,7 @@ var accessories = normalizeUUID(JSON.parse(response.replace(/\uFFFD/g, '')));
 
 var endPoints = [{
   ipAddress: "127.0.0.1",
+  deviceID: "CC:22:3D:E3:CE:30",
   instance: {
     port: 51826,
     txt: {
@@ -115,6 +116,21 @@ var inputs = [{
     "manufacturer": "HTTP-IRBlaster",
     "name": "Tuner",
     "alexaName": "TV"
+  }]
+}, {    // issue #328
+  "into": "TV 1",
+  "devices": [{
+    "manufacturer": "Cmd4",
+    "name": "HDMI1",
+    "alexaName": "HDMI 1"
+  }, {
+    "manufacturer": "Panasonic",
+    "name": "HDMI2",
+    "alexaName": "HDMI 2"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "HDMI2",
+    "alexaName": "TV NETFLIX"
   }]
 }];
 
