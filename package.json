@@ -27,7 +27,7 @@
     "is-my-json-valid": ">=2.19.0",
     "debug": ">2.6.9",
     "mqtt": ">=2.18.8",
-    "hap-node-client": ">=0.1.0",
+    "hap-node-client": ">=0.1.3",
     "bottleneck": ">=2.18.0"
   },
   "author": "NorthernMan54",
