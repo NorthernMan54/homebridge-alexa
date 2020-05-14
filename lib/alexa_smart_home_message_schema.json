@@ -1814,6 +1814,31 @@
               "version": {
                 "$ref": "#/definitions/common.properties/version"
               },
+              "properties": {
+                "type": "object",
+                "required": [
+                  "supported"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "supported": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ]
+                    }
+                  },
+                  "proactivelyReported": {
+                    "type": "boolean"
+                  },
+                  "retrievable": {
+                    "type": "boolean"
+                  }
+                }
+              },
               "inputs": {
                 "type": "array",
                 "uniqueItems": true,
