@@ -129,7 +129,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Thermostat
 * Heater/Cooler
 * Door locks ( Lock and status only, Alexa does not support unlocking )
-* HomeKit Television ( Initial support only On/Off and Volume Control )
+* HomeKit Television ( Initial support only On/Off, Inputs and Volume Control )
 * Garage Doors and Window Coverings/Blinds
 
 ### Supported as Other Types
@@ -230,7 +230,7 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
 
-## HomeKit TV
+## HomeKit Television
 
 * Alexa, turn on *device*
 * Alexa, turn off *device*
@@ -249,7 +249,9 @@ These are the remote buttons
 * Alexa, next on *device* ( right arrow )
 * Alexa, rewind on *device* ( left arrow )
 
-### HomeKit TV - Tested plugins
+* Alexa, change input to *input* on the *device*
+
+### HomeKit Television - Tested plugins
 
 * Panasonic TV: - homebridge-panasonic-viera-tv@4.1.0
   - Alexa can turn on and off and control volume
@@ -266,9 +268,8 @@ These are the remote buttons
 * Yamaha AVR - homebridge-yamaha-zone-tv
   - Alexa can turn on and off and control volume. Also control Spotify/Airplay playback
 
-### TV Inputs and Channels
+### Television Inputs and Channels
 
-* Alexa, change channel to # on *device*   ( Channel number )
 * Alexa, change channel to cbc on *device* ( Station name )
 * Alexa, change input to *input* on the *device*
 
@@ -570,27 +571,6 @@ ie
     ]
   }
 ```
-
-#### Channels
-
-  - This enables Alexa to be able to change channels on your TV by number, and enables the phrase `Alexa, change channel to`.
-On the Wiki I have the additional steps documented to configure this feature.  I leveraged node-red and an IR Blaster (ESP8266-HTTP-IR-Blaster) to change the channels on my TV.
-
-
-```
-"channel": [{
-  "into": "TV",
-  "manufacturer": "Channel",
-  "name": "Channel"}],
-```
-
-* into - Name of the existing accessory to add the input function to.  In my setup this is my Apple TV accessory.
-
-* manufacturer - Is the manufacturer of the accessory as shown in the Home App
-
-* name - Is the name of the accessory as shown in the Home App
-
-The accessory to receive channel change commands will receive the channel number or name as the value.
 
 #### Inputs
 
