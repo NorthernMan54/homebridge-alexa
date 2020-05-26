@@ -59,6 +59,10 @@ function alexaHome(log, config, api) {
     this.log.error("Missing username and password");
   }
 
+  if (this.oldParser) {
+    this.log.error("ERROR: oldParser was deprecated with version 0.5.0, defaulting to new Parser.");
+  }
+
   if (api) {
     this.api = api;
     this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));

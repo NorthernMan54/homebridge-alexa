@@ -117,7 +117,7 @@ var inputs = [{
     "name": "Tuner",
     "alexaName": "TV"
   }]
-}, {    // issue #328
+}, { // issue #328
   "into": "TV 1",
   "devices": [{
     "manufacturer": "Cmd4",
@@ -137,6 +137,10 @@ var inputs = [{
 var channel = [{
   "into": "TV",
   "manufacturer": "HTTP-IRBlaster",
+  "name": "Tuner"
+}, {
+  "into": "TV 1",
+  "manufacturer": "Cmd4",
   "name": "Tuner"
 }];
 

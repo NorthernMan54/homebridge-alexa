@@ -715,11 +715,15 @@ This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes
 
 #### New Parser
 
+~~
 As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option oldParser to true.  Default is to the new parser.
 
 ```
 "oldParser": true
 ```
+~~
+
+Support for the oldParser option was **deprecated** with version 0.5.0
 
 ## Initial Testing and confirming configuration
 
