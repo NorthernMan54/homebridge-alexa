@@ -1,6 +1,6 @@
 // var alexaTranslator = require('../lib/alexaTranslator.js');
 var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
-var alexaTranslator = require('../lib/alexaTranslator.js');
+// var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
