@@ -268,6 +268,9 @@ These are the remote buttons
 * Yamaha AVR - homebridge-yamaha-zone-tv
   - Alexa can turn on and off and control volume. Also control Spotify/Airplay playback
 
+* LG WebOS TV - homebridge-lgwebos-tv
+  - Alexa can turn on and off.  Volume control has not validated
+
 ### Television Inputs and Channels
 
 * Alexa, change channel to cbc on *device* ( Station name )
