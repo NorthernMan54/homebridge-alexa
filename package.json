@@ -1,6 +1,6 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Alexa Skill frontend for Homebridge",
   "main": "plugin.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "homebridge": ">=0.4.16"
   },
   "devDependencies": {
-    "documentation": ">=12.1.4"
+    "documentation": "^13.0.1"
   },
   "dependencies": {
     "is-my-json-valid": ">=2.19.0",
