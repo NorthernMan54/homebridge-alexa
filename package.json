@@ -1,6 +1,10 @@
 {
   "name": "homebridge-alexa",
+<<<<<<< HEAD
   "version": "0.5.3",
+=======
+  "version": "0.4.73",
+>>>>>>> master
   "description": "Alexa Skill frontend for Homebridge",
   "main": "plugin.js",
   "scripts": {
@@ -27,7 +31,11 @@
     "is-my-json-valid": ">=2.19.0",
     "debug": ">2.6.9",
     "mqtt": ">=2.18.8",
+<<<<<<< HEAD
     "hap-node-client": ">=0.1.5",
+=======
+    "hap-node-client": "0.1.x",
+>>>>>>> master
     "bottleneck": ">=2.18.0"
   },
   "author": "NorthernMan54",
