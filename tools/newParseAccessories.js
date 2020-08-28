@@ -169,7 +169,7 @@ response.event.payload.endpoints = removeDuplicateEndpoints(response.event.paylo
 if (response && response.event.payload.endpoints.length < 1) {
   console.log("ERROR: HAP Discovery failed, please review config");
 } else {
-  console.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
+  debug.log("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
   if (response.event.payload.endpoints.length > 300) {
     console.log("ERROR: Maximum devices/accessories of 300 exceeded.");
   }
