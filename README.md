@@ -185,7 +185,7 @@ cool, cool white
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
 
-See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door) using a routine to fix the wording
+See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door) for using a routine to fix the wording
 
 ### Window coverings / blinds With blind = false
 
@@ -213,6 +213,8 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, set thermostat to 20
 * Alexa, set thermostat to heat/cool/automatic/off
 
+Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison) of Thermostat Voice Control [here](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison).
+   
 ## Lock / Unlock Doors
 
 * Alexa, unlock my *device* ( Amazon is blocking this function )
