@@ -1,10 +1,6 @@
 {
   "name": "homebridge-alexa",
-<<<<<<< HEAD
   "version": "0.5.4",
-=======
-  "version": "0.4.74",
->>>>>>> master
   "description": "Alexa Skill frontend for Homebridge",
   "main": "plugin.js",
   "scripts": {

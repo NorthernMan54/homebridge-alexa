@@ -215,7 +215,7 @@ console.log("\n-----------------------------------------------------------\n");
 
 for (var key in eventDevices) {
   console.log(key);
-  // console.log(eventDevices[key].endpointID);
+  console.log(eventDevices[key]);
   if (!findById(response, eventDevices[key].endpointID)) {
     console.log("Fail");
   }
