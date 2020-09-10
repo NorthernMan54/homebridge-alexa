@@ -52,6 +52,7 @@ Country availability - The plugin is available in these countries, English (AU),
          * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Contact and Motion Sensors](#contact-and-motion-sensors)
+      * [Door bell devices](#door-bell-devices)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
