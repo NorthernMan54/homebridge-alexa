@@ -108,6 +108,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for Apple TV ( Supports homebridge-apple-tv, and homebridge-apple-tv-remote )
 * Support Spotify playback controls on Yamaha Receivers via homebridge-yamaha-home
 * Support for door locks
+* Support for door bells ( Tested with homebridge-camera-ffmpeg )
 
 Alexa device names are the same as the homebridge device names.
 
@@ -130,6 +131,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Door locks ( Lock and status only, Alexa does not support unlocking )
 * HomeKit Television ( Initial support only On/Off, Inputs and Volume Control )
 * Garage Doors and Window Coverings/Blinds
+* Door bells
 
 ### Supported as Other Types
 
@@ -214,7 +216,7 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, set thermostat to heat/cool/automatic/off
 
 Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison) of Thermostat Voice Control [here](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison).
-   
+
 ## Lock / Unlock Doors
 
 * Alexa, unlock my *device* ( Amazon is blocking this function )
@@ -298,6 +300,10 @@ These are the remote buttons
 ## Contact and Motion Sensors
 
 * These are only visible to routines, no voice commands are available
+
+## Door bell devices
+
+* Their is no voice control of door bells, only the ability to have Alexa announce when the door bell is triggered.
 
 # Installation of homebridge-alexa
 
