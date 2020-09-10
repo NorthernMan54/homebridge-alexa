@@ -1,6 +1,7 @@
 #! /bin/sh
 
 npm audit
+npm audit fix
 #if npm audit; then
   npm run-script document
   rm *orig* *toc\.*

@@ -36,6 +36,14 @@
         "title": " Routines - enables passing to Alexa events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.",
         "type": "boolean"
       },
+      "blind": {
+        "title": "Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false",
+        "type": "boolean"
+      },
+      "door": {
+        "title": "Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false",
+        "type": "boolean"
+      },
       "debug": {
         "title": " Enable Debug Mode",
         "type": "boolean"
@@ -125,7 +133,7 @@
     {
       "type": "fieldset",
       "title": "Speakers",
-      "description": "Devices to configure as speakers as HomeKit currently does not have a Speaker service.", 
+      "description": "Devices to configure as speakers as HomeKit currently does not have a Speaker service.",
       "expandable": true,
       "expanded": false,
       "items": [
@@ -184,7 +192,7 @@
                     {
                       "title": "From",
                       "key": "combine[].from[]",
-                      
+
                       "placeholder": "Source Accessory Name"
                     }
                   ]
