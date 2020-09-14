@@ -304,7 +304,7 @@ These are the remote buttons
 
 ## Door bell devices
 
-* Their is no voice control of door bells, only the ability to have Alexa announce when the door bell is triggered.
+* Their is no voice control of door bells, only the ability to have Alexa announce when the door bell is triggered.  For a sample here is my [Door Bell](https://youtu.be/PhGbc_TO8pk) being rang.
 
 # Installation of homebridge-alexa
 
