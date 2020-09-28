@@ -308,7 +308,7 @@ These are the remote buttons
 
 # Installation of homebridge-alexa
 
-* If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).
+* If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).  And here is another setup guide (https://www.youtube.com/watch?v=Ylg4yiw8ofM).
 
 ## Prepare Homebridge for plugin installation
 
