@@ -34,19 +34,23 @@
       },
       "routines": {
         "title": " Routines - enables passing to Alexa events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.",
-        "type": "boolean"
+        "type": "boolean",
+        "default": false
       },
       "blind": {
         "title": "Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false",
-        "type": "boolean"
+        "type": "boolean",
+        "default": false
       },
       "door": {
         "title": "Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false",
-        "type": "boolean"
+        "type": "boolean",
+        "default": false
       },
       "debug": {
         "title": " Enable Debug Mode",
-        "type": "boolean"
+        "type": "boolean",
+        "default": false
       },
       "refresh": {
         "title": "Refresh Interval",
@@ -60,9 +64,6 @@
         "placeholder": "eg. 192.168.1.122:51826",
         "description": "Limits accessories shared with Alexa to a single homebridge instance.",
         "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
-      },
-      "oldParser": {
-        "type": "boolean"
       },
       "combine": {
         "type": "array",
