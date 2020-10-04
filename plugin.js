@@ -35,6 +35,8 @@ function alexaHome(log, config, api) {
   this.speakers = config['speakers'] || false; // Array of speaker devices
   this.inputs = config['inputs'] || false; // Array of input devices
   this.channel = config['channel'] || false; // Array of input devices
+  this.blind = config['blind'] || false; // Use range controller for Blinds
+  this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
 
   // Enable config based DEBUG logging enable
@@ -55,6 +57,10 @@ function alexaHome(log, config, api) {
 
   if (!this.username || !this.password) {
     this.log.error("Missing username and password");
+  }
+
+  if (this.oldParser) {
+    this.log.error("ERROR: oldParser was deprecated with version 0.5.0, defaulting to new Parser.");
   }
 
   if (api) {
@@ -101,6 +107,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     Characteristic: Characteristic,
     inputs: this.inputs,
     channel: this.channel,
+    blind: this.blind,
+    door: this.door,
     servers: [{
       protocol: 'mqtt',
       host: host,
@@ -135,6 +143,8 @@ alexaHome.prototype.didFinishLaunching = function() {
   this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
   this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
   this.eventBus.on('Alexa.InputController', alexaActions.alexaInputController.bind(this));
+  this.eventBus.on('Alexa.ModeController', alexaActions.alexaModeController.bind(this));
+  this.eventBus.on('Alexa.RangeController', alexaActions.alexaRangeController.bind(this));
 };
 
 /*

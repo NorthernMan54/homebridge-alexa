@@ -4,3 +4,5 @@ publish.sh
 README.md.orig.*
 README.md.toc.*
 tools/*
+publish.sh
+beta.sh

@@ -10,13 +10,13 @@ echo "penny"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/penny_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/penny.json after.json
 
-echo "apple_tv"
+#echo "apple_tv"
 
-node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/apple_tv.json after.json
+#node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/apple_tv.json after.json
 
-echo "apple_tv_space"
+#echo "apple_tv_space"
 
-node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/apple_tv_space.json after.json
+#node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > after.json ; diff ~/Code/alexaAwsBackend/samples/apple_tv_space.json after.json
 
 echo "mi-light"
 
@@ -77,5 +77,14 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json
 echo "LG TV/Issue #284"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/issue_284.json > after.json ; diff ~/Code/alexaAwsBackend/samples/issue_284_alexa.json after.json
+
+echo "Camera"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/camera.json > after.json ; diff ~/Code/alexaAwsBackend/samples/camera_alexa.json after.json
+
+echo "Doorbell"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/doorbell.json > after.json ; diff ~/Code/alexaAwsBackend/samples/doorbell_alexa.json after.json
+
 
 echo "Test successfully completed"

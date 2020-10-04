@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Alexa Smart Home Message Schema",
-  "description": "A JSON message sent from a skill to Alexa, either proactively or as a response to a directive",
+  "description": "A JSON message sent from a skill to Alexa, either proactively or as a response to a directive.  Source https://github.com/alexa/alexa-smarthome/pull/112",
   "definitions": {
     "common.properties": {
       "payloadVersion": {
@@ -332,8 +332,10 @@
                     "es-MX",
                     "fr-CA",
                     "fr-FR",
+                    "hi-IN",
                     "it-IT",
-                    "ja-JP"
+                    "ja-JP",
+                    "pt-BR"
                   ]
                 },
                 "text": {
@@ -426,6 +428,22 @@
           "endpointId": {
             "$ref": "#/definitions/common.properties/endpointId"
           }
+        }
+      },
+      "semantics": {
+        "actions": {
+          "enum": [
+            "Alexa.Actions.Close",
+            "Alexa.Actions.Open",
+            "Alexa.Actions.Lower",
+            "Alexa.Actions.Raise"
+          ]
+        },
+        "states": {
+          "enum": [
+            "Alexa.States.Closed",
+            "Alexa.States.Open"
+          ]
         }
       },
       "interfaces": {
@@ -1796,6 +1814,31 @@
               "version": {
                 "$ref": "#/definitions/common.properties/version"
               },
+              "properties": {
+                "type": "object",
+                "required": [
+                  "supported"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "supported": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ]
+                    }
+                  },
+                  "proactivelyReported": {
+                    "type": "boolean"
+                  },
+                  "retrievable": {
+                    "type": "boolean"
+                  }
+                }
+              },
               "inputs": {
                 "type": "array",
                 "uniqueItems": true,
@@ -2121,6 +2164,95 @@
                   "retrievable":
                   {
                     "type": "boolean"
+                  },
+                  "nonControllable": {
+                    "type": "boolean"
+                  },
+                  "readOnly":{
+                    "type": "boolean"
+                  }
+                }
+              },
+              "semantics": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "required": [
+                      "actionMappings"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stateMappings"
+                    ]
+                  }
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "actionMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "@type",
+                        "actions",
+                        "directive"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@type": {
+                          "enum": [
+                            "ActionsToDirective"
+                          ]
+                        },
+                        "actions": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "$ref": "#/definitions/common.properties/semantics/actions"
+                          }
+                        },
+                        "directive": {
+                          "$ref": "#/definitions/common.properties/directives/toggleState"
+                        }
+                      }
+                    }
+                  },
+                  "stateMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "@type",
+                        "states",
+                        "value"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@type": {
+                          "enum": [
+                            "StatesToValue"
+                          ]
+                        },
+                        "states": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "$ref": "#/definitions/common.properties/semantics/states"
+                          }
+                        },
+                        "value": {
+                          "enum": [
+                            "ON",
+                            "OFF"
+                          ]
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -2232,6 +2364,12 @@
                   },
                   "retrievable": {
                     "type": "boolean"
+                  },
+                  "nonControllable": {
+                    "type": "boolean"
+                  },
+                  "readOnly":{
+                    "type": "boolean"
                   }
                 }
               },
@@ -2276,6 +2414,86 @@
                               "$ref": "#/definitions/common.properties/resourceArray"
                             }
                           }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "semantics": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "required": [
+                      "actionMappings"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stateMappings"
+                    ]
+                  }
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "actionMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "@type",
+                        "actions",
+                        "directive"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@type": {
+                          "enum": [
+                            "ActionsToDirective"
+                          ]
+                        },
+                        "actions": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "$ref": "#/definitions/common.properties/semantics/actions"
+                          }
+                        },
+                        "directive": {
+                          "$ref": "#/definitions/common.properties/directives/mode"
+                        }
+                      }
+                    }
+                  },
+                  "stateMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "@type",
+                        "states",
+                        "value"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@type": {
+                          "enum": [
+                            "StatesToValue"
+                          ]
+                        },
+                        "states": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "$ref": "#/definitions/common.properties/semantics/states"
+                          }
+                        },
+                        "value": {
+                          "type": "string"
                         }
                       }
                     }
@@ -2388,6 +2606,12 @@
                   },
                   "retrievable": {
                     "type": "boolean"
+                  },
+                  "nonControllable": {
+                    "type": "boolean"
+                  },
+                  "readOnly":{
+                    "type": "boolean"
                   }
                 }
               },
@@ -2451,6 +2675,128 @@
                           }
                         }
                       }
+                    }
+                  }
+                }
+              },
+              "semantics": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "required": [
+                      "actionMappings"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stateMappings"
+                    ]
+                  }
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "actionMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "@type",
+                        "actions",
+                        "directive"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@type": {
+                          "enum": [
+                            "ActionsToDirective"
+                          ]
+                        },
+                        "actions": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "$ref": "#/definitions/common.properties/semantics/actions"
+                          }
+                        },
+                        "directive": {
+                          "$ref": "#/definitions/common.properties/directives/rangeValue"
+                        }
+                      }
+                    }
+                  },
+                  "stateMappings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "oneOf": [
+                        {
+                          "required": [
+                            "@type",
+                            "states",
+                            "range"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "@type": {
+                              "enum": [
+                                "StatesToRange"
+                              ]
+                            },
+                            "states": {
+                              "type": "array",
+                              "uniqueItems": true,
+                              "items": {
+                                "$ref": "#/definitions/common.properties/semantics/states"
+                              }
+                            },
+                            "range": {
+                              "type": "object",
+                              "required": [
+                                "minimumValue",
+                                "maximumValue"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "minimumValue": {
+                                  "type": "number"
+                                },
+                                "maximumValue": {
+                                  "type": "number"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "required": [
+                            "@type",
+                            "states",
+                            "value"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "@type": {
+                              "enum": [
+                                "StatesToValue"
+                              ]
+                            },
+                            "states": {
+                              "type": "array",
+                              "uniqueItems": true,
+                              "items": {
+                                "$ref": "#/definitions/common.properties/semantics/states"
+                              }
+                            },
+                            "value": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      ]
                     }
                   }
                 }
@@ -2787,6 +3133,114 @@
                     "Rewind",
                     "FastForward"
                   ]
+                }
+              }
+            }
+          }
+        },
+        "PlaybackStateReporter": {
+          "playbackState": {
+            "property": {
+              "type": "object",
+              "required": [
+                "namespace",
+                "name",
+                "value",
+                "timeOfSample",
+                "uncertaintyInMilliseconds"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "namespace": {
+                  "enum": [
+                    "Alexa.PlaybackStateReporter"
+                  ]
+                },
+                "name": {
+                  "enum": [
+                    "playbackState"
+                  ]
+                },
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "state"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "PLAYING",
+                        "PAUSED",
+                        "STOPPED"
+                      ]
+                    }
+                  }
+                },
+                "timeOfSample": {
+                  "$ref": "#/definitions/common.properties/timestamp"
+                },
+                "uncertaintyInMilliseconds": {
+                  "$ref": "#/definitions/common.properties/uncertaintyInMilliseconds"
+                }
+              }
+            }
+          },
+          "capabilities": {
+            "type": "object",
+            "required": [
+              "type",
+              "interface",
+              "version"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "enum": [
+                  "AlexaInterface"
+                ]
+              },
+              "interface": {
+                "enum": [
+                  "Alexa.PlaybackStateReporter"
+                ]
+              },
+              "version": {
+                "$ref": "#/definitions/common.properties/version"
+              },
+              "properties": {
+                "type": "object",
+                "required": [
+                  "supported",
+                  "proactivelyReported",
+                  "retrievable"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "supported": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "enum": [
+                            "playbackState"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "proactivelyReported": {
+                    "type": "boolean"
+                  },
+                  "retrievable": {
+                    "type": "boolean"
+                  }
                 }
               }
             }
@@ -3147,9 +3601,6 @@
                       }
                     }
                   },
-                  "supportsArmInstant": {
-                    "type": "boolean"
-                  },
                   "supportedArmStates": {
                     "type": "array",
                     "uniqueItems": true,
@@ -3239,6 +3690,9 @@
               "$ref": "#/definitions/common.properties/interfaces/EqualizerController/mode/property"
             },
             {
+              "$ref": "#/definitions/common.properties/interfaces/PlaybackStateReporter/playbackState/property"
+            },
+            {
               "$ref": "#/definitions/common.properties/interfaces/MotionSensor/detectionState/property"
             },
             {
@@ -3262,6 +3716,82 @@
           }
         }
       },
+      "directives": {
+        "mode": {
+          "type": "object",
+          "required": [
+            "name",
+            "payload"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "SetMode",
+                "AdjustMode"
+              ]
+            },
+            "payload": {
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/common.properties/payload/mode"
+                },
+                {
+                  "$ref": "#/definitions/common.properties/payload/modeDelta"
+                }
+              ]
+            }
+          }
+        },
+        "rangeValue": {
+          "type": "object",
+          "required": [
+            "name",
+            "payload"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "SetRangeValue",
+                "AdjustRangeValue"
+              ]
+            },
+            "payload": {
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/common.properties/payload/rangeValue"
+                },
+                {
+                  "$ref": "#/definitions/common.properties/payload/rangeValueDelta"
+                }
+              ]
+            }
+          }
+        },
+        "toggleState": {
+          "type": "object",
+          "required": [
+            "name",
+            "payload"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "TurnOn",
+                "TurnOff"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {},
+              "maxProperties": 0
+            }
+          }
+        }
+      },
       "payload": {
         "cameraStreams": {
           "type": "object",
@@ -3278,6 +3808,58 @@
             "imageUri": {
               "type": "string",
               "format": "uri"
+            }
+          }
+        },
+        "mode": {
+          "type": "object",
+          "required": [
+            "mode"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "type": "string"
+            }
+          }
+        },
+        "modeDelta": {
+          "type": "object",
+          "required": [
+            "modeDelta"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "modeDelta": {
+              "type": "integer"
+            }
+          }
+        },
+        "rangeValue": {
+          "type": "object",
+          "required": [
+            "rangeValue"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rangeValue": {
+              "type": "number"
+            }
+          }
+        },
+        "rangeValueDelta": {
+          "type": "object",
+          "required": [
+            "rangeValueDelta",
+            "rangeValueDeltaDefault"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rangeValueDelta": {
+              "type": "number"
+            },
+            "rangeValueDeltaDefault": {
+              "type": "boolean"
             }
           }
         },
@@ -3306,6 +3888,271 @@
               "minimum": 0,
               "maximum": 255
             }
+          }
+        }
+      },
+      "discoveredEndpointArray": {
+        "type": "array",
+        "uniqueItems": true,
+        "maxItems": 300,
+        "items": {
+          "type": "object",
+          "required": [
+            "endpointId",
+            "manufacturerName",
+            "friendlyName",
+            "description",
+            "displayCategories",
+            "capabilities"
+          ],
+          "properties": {
+            "endpointId": {
+              "$ref": "#/definitions/common.properties/endpointId"
+            },
+            "manufacturerName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "friendlyName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "displayCategories": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "LIGHT",
+                  "SMARTPLUG",
+                  "SWITCH",
+                  "CAMERA",
+                  "DOOR",
+                  "DOORBELL",
+                  "THERMOSTAT",
+                  "TEMPERATURE_SENSOR",
+                  "CONTACT_SENSOR",
+                  "MICROWAVE",
+                  "MOTION_SENSOR",
+                  "SPEAKER",
+                  "TV",
+                  "SMARTLOCK",
+                  "SCENE_TRIGGER",
+                  "ACTIVITY_TRIGGER",
+                  "SECURITY_PANEL",
+                  "COMPUTER",
+                  "EXTERIOR_BLIND",
+                  "FAN",
+                  "GAME_CONSOLE",
+                  "GARAGE_DOOR",
+                  "INTERIOR_BLIND",
+                  "LAPTOP",
+                  "MOBILE_PHONE",
+                  "MUSIC_SYSTEM",
+                  "NETWORK_HARDWARE",
+                  "OVEN",
+                  "PHONE",
+                  "SCREEN",
+                  "STREAMING_DEVICE",
+                  "TABLET",
+                  "WEARABLE",
+                  "OTHER"
+                ]
+              }
+            },
+            "cookie": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "capabilities": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "additionalItems": false,
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/Alexa/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/EndpointHealth/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/PowerController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/PowerLevelController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/PercentageController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/BrightnessController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/CameraStreamController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ColorController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ColorTemperatureController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/LockController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ThermostatController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/TemperatureSensor/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ChannelController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/InputController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/Speaker/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/StepSpeaker/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/SceneController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ToggleController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ModeController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/RangeController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/CustomIntent/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/DoorbellEventSource/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/RTCSessionController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/MediaMetadata/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/EqualizerController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/PlaybackController/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/PlaybackStateReporter/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/ContactSensor/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/MotionSensor/capabilities"
+                  },
+                  {
+                    "$ref": "#/definitions/common.properties/interfaces/SecurityPanelController/capabilities"
+                  }
+                ]
+              }
+            },
+            "connections": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {
+                  "type": {
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "enum": [
+                      "TCP_IP",
+                      "ZIGBEE",
+                      "ZWAVE",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "macAddress":{
+                    "type:": "string"
+                  },
+                  "homeId":{
+                    "type:": "string"
+                  },
+                  "nodeId":{
+                    "type:": "string"
+                  },
+                  "value":{
+                    "type:": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalAttributes": {
+              "type": "object",
+              "properties": {
+                "manufacturer": {
+                  "type": "string",
+                  "maxLength": 256
+                },
+                "model":{
+                  "type:": "string",
+                  "maxLength": 256
+                },
+                "serialNumber":{
+                  "type:": "string",
+                  "maxLength": 256
+                },
+                "firmwareVersion":{
+                  "type:": "string",
+                  "maxLength": 256
+                },
+                "softwareVersion":{
+                  "type:": "string",
+                  "maxLength": 256
+                },
+                "customIdentifier":{
+                  "type:": "string",
+                  "maxLength": 256
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "scope": {
+        "type": "object",
+        "required": [
+          "type",
+          "token"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "BearerToken"
+            ]
+          },
+          "token": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
@@ -3836,7 +4683,13 @@
     "Discover.Response.properties": {
       "name": {
         "enum": [
-          "Discover.Response",
+          "Discover.Response"
+        ]
+      }
+    },
+    "AddOrUpdateReport.properties": {
+      "name": {
+        "enum": [
           "AddOrUpdateReport"
         ]
       }
@@ -3907,6 +4760,34 @@
               "additionalProperties": false,
               "properties": {
                 "header": {
+                  "$ref": "#/definitions/ErrorResponse.properties/header.SecurityPanelController"
+                },
+                "endpoint": {
+                  "$ref": "#/definitions/common.properties/endpoint"
+                },
+                "payload": {
+                  "$ref": "#/definitions/ErrorResponse.properties/payload.SecurityPanelController.general"
+                }
+              }
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "header": {
+                  "$ref": "#/definitions/ErrorResponse.properties/header.ColorTemperatureController"
+                },
+                "endpoint": {
+                  "$ref": "#/definitions/common.properties/endpoint"
+                },
+                "payload": {
+                  "$ref": "#/definitions/ErrorResponse.properties/payload.ColorTemperatureController.NOT_SUPPORTED_IN_CURRENT_MODE"
+                }
+              }
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "header": {
                   "$ref": "#/definitions/ErrorResponse.properties/header.general"
                 },
                 "endpoint": {
@@ -3956,34 +4837,6 @@
                 },
                 "payload": {
                   "$ref": "#/definitions/ErrorResponse.properties/payload.ThermostatController.REQUESTED_SETPOINTS_TOO_CLOSE"
-                }
-              }
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "header": {
-                  "$ref": "#/definitions/ErrorResponse.properties/header.SecurityPanelController"
-                },
-                "endpoint": {
-                  "$ref": "#/definitions/common.properties/endpoint"
-                },
-                "payload": {
-                  "$ref": "#/definitions/ErrorResponse.properties/payload.SecurityPanelController.general"
-                }
-              }
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "header": {
-                  "$ref": "#/definitions/ErrorResponse.properties/header.ColorTemperatureController"
-                },
-                "endpoint": {
-                  "$ref": "#/definitions/common.properties/endpoint"
-                },
-                "payload": {
-                  "$ref": "#/definitions/ErrorResponse.properties/payload.ColorTemperatureController.NOT_SUPPORTED_IN_CURRENT_MODE"
                 }
               }
             },
@@ -4202,170 +5055,69 @@
               "additionalProperties": false,
               "properties": {
                 "endpoints": {
-                  "type": "array",
-                  "uniqueItems": true,
-                  "maxItems": 300,
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "endpointId",
-                      "manufacturerName",
-                      "friendlyName",
-                      "description",
-                      "displayCategories",
-                      "capabilities"
-                    ],
-                    "properties": {
-                      "endpointId": {
-                        "$ref": "#/definitions/common.properties/endpointId"
-                      },
-                      "manufacturerName": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 128
-                      },
-                      "friendlyName": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 128
-                      },
-                      "description": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 128
-                      },
-                      "displayCategories": {
-                        "type": "array",
-                        "minItems": 1,
-                        "uniqueItems": true,
-                        "items": {
-                          "enum": [
-                            "LIGHT",
-                            "SMARTPLUG",
-                            "SWITCH",
-                            "CAMERA",
-                            "DOOR",
-                            "DOORBELL",
-                            "THERMOSTAT",
-                            "TEMPERATURE_SENSOR",
-                            "CONTACT_SENSOR",
-                            "MICROWAVE",
-                            "MOTION_SENSOR",
-                            "SPEAKER",
-                            "TV",
-                            "SMARTLOCK",
-                            "SCENE_TRIGGER",
-                            "ACTIVITY_TRIGGER",
-                            "SECURITY_PANEL",
-                            "OTHER"
-                          ]
-                        }
-                      },
-                      "cookie": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "string"
-                        }
-                      },
-                      "capabilities": {
-                        "type": "array",
-                        "minItems": 1,
-                        "uniqueItems": true,
-                        "additionalItems": false,
-                        "items": {
-                          "anyOf": [
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/Alexa/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/EndpointHealth/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/PowerController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/PowerLevelController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/PercentageController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/BrightnessController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/CameraStreamController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ColorController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ColorTemperatureController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/LockController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ThermostatController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/TemperatureSensor/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ChannelController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/InputController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/Speaker/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/StepSpeaker/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/SceneController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ToggleController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ModeController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/RangeController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/CustomIntent/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/DoorbellEventSource/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/RTCSessionController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/MediaMetadata/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/EqualizerController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/PlaybackController/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/ContactSensor/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/MotionSensor/capabilities"
-                            },
-                            {
-                              "$ref": "#/definitions/common.properties/interfaces/SecurityPanelController/capabilities"
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/definitions/common.properties/discoveredEndpointArray"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "An AddOrUpdateReport message",
+      "type": "object",
+      "required": [
+        "event"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "type": "object",
+          "required": [
+            "header",
+            "payload"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "header": {
+              "type": "object",
+              "required": [
+                "namespace",
+                "name",
+                "payloadVersion",
+                "messageId"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "namespace": {
+                  "enum": [
+                    "Alexa.Discovery"
+                  ]
+                },
+                "name": {
+                  "$ref": "#/definitions/AddOrUpdateReport.properties/name"
+                },
+                "payloadVersion": {
+                  "$ref": "#/definitions/common.properties/payloadVersion"
+                },
+                "messageId": {
+                  "$ref": "#/definitions/common.properties/messageId"
+                }
+              }
+            },
+            "payload": {
+              "type": "object",
+              "required": [
+                "endpoints",
+                "scope"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "endpoints": {
+                  "$ref": "#/definitions/common.properties/discoveredEndpointArray"
+                },
+                "scope": {
+                  "$ref": "#/definitions/common.properties/scope"
                 }
               }
             }

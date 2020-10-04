@@ -1,6 +1,6 @@
 // var alexaTranslator = require('../lib/alexaTranslator.js');
 var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
-var alexaTranslator = require('../lib/alexaTranslator.js');
+// var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
@@ -18,6 +18,7 @@ var accessories = normalizeUUID(JSON.parse(response.replace(/\uFFFD/g, '')));
 
 var endPoints = [{
   ipAddress: "127.0.0.1",
+  deviceID: "CC:22:3D:E3:CE:30",
   instance: {
     port: 51826,
     txt: {
@@ -84,7 +85,7 @@ var speakers = [{
 
 var combine = [{
   "into": "TV",
-  "from": ["KODI"]
+  "from": ["KODI", "Power (TV)"]
 }, {
   "into": "Front",
   "from": ["Yamaha"]
@@ -116,11 +117,30 @@ var inputs = [{
     "name": "Tuner",
     "alexaName": "TV"
   }]
+}, { // issue #328
+  "into": "TV 1",
+  "devices": [{
+    "manufacturer": "Cmd4",
+    "name": "HDMI1",
+    "alexaName": "HDMI 1"
+  }, {
+    "manufacturer": "Panasonic",
+    "name": "HDMI2",
+    "alexaName": "HDMI 2"
+  }, {
+    "manufacturer": "HTTP-IRBlaster",
+    "name": "HDMI2",
+    "alexaName": "TV NETFLIX"
+  }]
 }];
 
 var channel = [{
   "into": "TV",
   "manufacturer": "HTTP-IRBlaster",
+  "name": "Tuner"
+}, {
+  "into": "TV 1",
+  "manufacturer": "Cmd4",
   "name": "Tuner"
 }];
 
@@ -129,7 +149,8 @@ var hbDevices = new Homebridges(endPoints, {
   "speakers": speakers,
   "combine": combine,
   "inputs": inputs,
-  "channel": channel
+  "channel": channel,
+  "blind": false
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({
@@ -178,7 +199,7 @@ if (response && response.event.payload.endpoints.length < 1) {
 if (!status) {
   console.log("WARNING - Bad message");
 
-  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 2);
+  // console.log(JSON.stringify(checkAlexaMessage.errors, null, 2));
   // console.log("---------------------------- Response -------------------------------");
   // console.log(JSON.stringify(response));
   // console.log("------------------------------------------------------------");
@@ -194,7 +215,7 @@ console.log("\n-----------------------------------------------------------\n");
 
 for (var key in eventDevices) {
   console.log(key);
-  // console.log(eventDevices[key].endpointID);
+  console.log(eventDevices[key]);
   if (!findById(response, eventDevices[key].endpointID)) {
     console.log("Fail");
   }

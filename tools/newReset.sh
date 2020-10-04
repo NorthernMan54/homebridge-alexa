@@ -73,3 +73,11 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/nest_accessories.json
 echo "LG TV/Issue #284"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/issue_284.json > ~/Code/alexaAwsBackend/samples/issue_284_alexa.json
+
+echo "Camera"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/camera.json > ~/Code/alexaAwsBackend/samples/camera_alexa.json
+
+echo "Doorbell"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/doorbell.json > ~/Code/alexaAwsBackend/samples/doorbell_alexa.json

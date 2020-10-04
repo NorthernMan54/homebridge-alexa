@@ -14,7 +14,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 * Supports multiple homebridge instances running on your network.
 * Auto-discovery of multiple Homebridge's
-* Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings and Switch.
+* Supports the following HomeKit accessory types Lightbulb, Outlet, Fan, Fan2, Temperature Sensor, Window Coverings, Garage Doors and Switches.
 * Supports passing of sensor updates in real time to Alexa for use in routines.
 * Includes support for brightness and colour.
 * Creates a Contact Sensor that monitors the status of the connect to the Homebridge Alexa Cloud Servers.
@@ -36,19 +36,23 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Color lights](#color-lights)
       * [Color temperature](#color-temperature)
          * [Color Temperatures](#color-temperatures)
-      * [Garage door](#garage-door)
-      * [Window coverings / blinds](#window-coverings--blinds)
+      * [Garage door, Blinds and Window Coverings](#garage-door-blinds-and-window-coverings)
+         * [Garage Door With door = false](#garage-door-with-door--false)
+         * [Window coverings / blinds With blind = false](#window-coverings--blinds-with-blind--false)
+         * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
+         * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
       * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
       * [Lock / Unlock Doors](#lock--unlock-doors)
       * [Temperature sensors](#temperature-sensors)
-      * [AppleTV](#appletv)
-      * [HomeKit TV (iOS 12.2)](#homekit-tv-ios-122)
-         * [HomeKit TV - Tested plugins](#homekit-tv---tested-plugins)
-         * [TV Inputs and Channels](#tv-inputs-and-channels)
+      * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
+      * [HomeKit Television](#homekit-television)
+         * [HomeKit Television - Tested plugins](#homekit-television---tested-plugins)
+         * [Television Inputs and Channels](#television-inputs-and-channels)
       * [Speakers](#speakers)
          * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
       * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
       * [Contact and Motion Sensors](#contact-and-motion-sensors)
+      * [Door bell devices](#door-bell-devices)
    * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
@@ -58,12 +62,13 @@ Country availability - The plugin is available in these countries, English (AU),
          * [Optional parameters](#optional-parameters)
             * [pin](#pin)
             * [routines](#routines)
+            * [blind](#blind)
+            * [door](#door)
             * [debug](#debug)
             * [refresh](#refresh)
             * [filter](#filter)
             * [combine](#combine)
             * [speakers](#speakers-1)
-            * [Channels](#channels)
             * [Inputs](#inputs)
             * [Apple TV](#apple-tv)
             * [Yamaha Spotify Controls](#yamaha-spotify-controls)
@@ -91,7 +96,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for Light Bulbs, Switches and outlets
 * Support for Color Light Bulbs and Colour Temperature of white Light bulbs
 * Support for Fans (As Alexa doesn't support Fans coverings I'm using Other)
-* Support for Window coverings/blinds (As Alexa doesn't support window coverings I'm using Other)
+* Support for Window coverings/blinds
 * Support for Garage Doors
 * Support for Temperature, Contact and Motion Sensors.  
 * Support for Occupancy Sensors as a Contact sensor.  
@@ -101,9 +106,10 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for more than 100 accessories
 * Support for generation 2 Echo's and other Alexa devices not supported with the original version
 * Support for Speakers ( Tested with homebridge-yamaha-home, homebridge-soundtouch and homebridge-http-irblaster )
-* Support for Apple TV ( Supports homebridge-apple-tv )
+* Support for Apple TV ( Supports homebridge-apple-tv, and homebridge-apple-tv-remote )
 * Support Spotify playback controls on Yamaha Receivers via homebridge-yamaha-home
 * Support for door locks
+* Support for door bells ( Tested with homebridge-camera-ffmpeg )
 
 Alexa device names are the same as the homebridge device names.
 
@@ -124,13 +130,13 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Thermostat
 * Heater/Cooler
 * Door locks ( Lock and status only, Alexa does not support unlocking )
-* HomeKit Television ( Initial support only On/Off and Volume Control )
+* HomeKit Television ( Initial support only On/Off, Inputs and Volume Control )
+* Garage Doors and Window Coverings/Blinds
+* Door bells
 
 ### Supported as Other Types
 
-* Door/Garage Door - Supported as a on/off device and also supported as a contact sensor for routines
 * Fans, Humidifier Dehumidifier and Air Purifiers - Supported as a Switch
-* Window Coverings / Blinds - Supported as Other
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
 
@@ -175,17 +181,34 @@ daylight, daylight white
 cool, cool white
 ```
 
-## Garage door
+## Garage door, Blinds and Window Coverings
+
+### Garage Door With door = false
 
 * Alexa, turn on *device* ( Open's a garage door )
 * Alexa, turn off *device* ( Close's a garage door )
 
 See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door) for using a routine to fix the wording
 
-## Window coverings / blinds
+### Window coverings / blinds With blind = false
 
 * Alexa, turn on *device* ( Open's blinds )
 * Alexa, turn off *device* ( Close's blinds )
+* Alexa, set *device* to 50 ( Moves blinds to 50% )
+
+### Garage Door With blind = true ( Not supported in all countries )
+
+* Alexa, raise *device* ( Open's a garage door )
+* Alexa, open *device* ( Open's a garage door )
+* Alexa, lower *device* ( Close's a garage door )
+* Alexa, close *device* ( Close's a garage door )
+
+* Opening a garage door requires configuring a voice pin in the Alexa App.
+
+### Window coverings / blinds With blind = true ( Not supported in all countries )
+
+* Alexa, raise *device* ( Open's blinds )
+* Alexa, lower *device* ( Close's blinds )
 * Alexa, set *device* to 50 ( Moves blinds to 50% )
 
 ## Thermostat's and Heater / Cooler's
@@ -194,7 +217,7 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 * Alexa, set thermostat to heat/cool/automatic/off
 
 Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison) of Thermostat Voice Control [here](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison).
-   
+
 ## Lock / Unlock Doors
 
 * Alexa, unlock my *device* ( Amazon is blocking this function )
@@ -204,14 +227,14 @@ Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/ho
 
 * Alexa, what is the temperature in the *device* ( Not supported in Japan )
 
-## AppleTV
+## AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )
 
 * Alexa, pause *device* ( Apple TV )
 * Alexa, resume *device* ( Apple TV )
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
 
-## HomeKit TV (iOS 12.2)
+## HomeKit Television
 
 * Alexa, turn on *device*
 * Alexa, turn off *device*
@@ -220,11 +243,6 @@ Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/ho
 * Alexa, lower the volume on *device*
 * Alexa, volume up 20 on *device*
 * Alexa, set the volume of *device* to 50
-
-Or
-
-* Alexa, raise the volume on *device*
-* Alexa, lower the volume on *device*
 
 These are the remote buttons
 
@@ -235,7 +253,9 @@ These are the remote buttons
 * Alexa, next on *device* ( right arrow )
 * Alexa, rewind on *device* ( left arrow )
 
-### HomeKit TV - Tested plugins
+* Alexa, change input to *input* on the *device*
+
+### HomeKit Television - Tested plugins
 
 * Panasonic TV: - homebridge-panasonic-viera-tv@4.1.0
   - Alexa can turn on and off and control volume
@@ -252,10 +272,13 @@ These are the remote buttons
 * Yamaha AVR - homebridge-yamaha-zone-tv
   - Alexa can turn on and off and control volume. Also control Spotify/Airplay playback
 
-### TV Inputs and Channels
+* LG WebOS TV - homebridge-lgwebos-tv
+  - Alexa can turn on and off.  Volume control has not validated
 
-* Alexa, change to the channel to # on *device*
-* Alexa, change the input to *input* on the *device*
+### Television Inputs and Channels
+
+* Alexa, change channel to cbc on *device* ( Station name )
+* Alexa, change input to *input* on the *device*
 
 ## Speakers
 
@@ -279,9 +302,13 @@ These are the remote buttons
 
 * These are only visible to routines, no voice commands are available
 
+## Door bell devices
+
+* Their is no voice control of door bells, only the ability to have Alexa announce when the door bell is triggered.  For a sample here is my [Door Bell](https://youtu.be/PhGbc_TO8pk) being rang.
+
 # Installation of homebridge-alexa
 
-* If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).
+* If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).  And here is another setup guide (https://www.youtube.com/watch?v=Ylg4yiw8ofM).
 
 ## Prepare Homebridge for plugin installation
 
@@ -409,6 +436,36 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
+#### blind
+  - Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "blind": true
+  }
+],
+```
+
+#### door
+  - Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "door": true
+  }
+],
+```
+
 #### debug
   - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
 
@@ -466,7 +523,7 @@ sudo npm install -g homebridge-alexa
     "password": "....",
     "combine": [{
           "into": "TV",
-          "from": ["KODI"]
+          "from": ["KODI", "Power (TV)"]
         }, {
           "into": "Front",
           "from": ["Yamaha"]
@@ -477,6 +534,10 @@ sudo npm install -g homebridge-alexa
   }
 ],
 ```
+
+* into - Device name to combine into
+* from - Device name to combine from, can be a list of multiple devices.
+
 
 #### speakers
   - Devices to configure as speakers as HomeKit currently does not have a Speaker service, and enable the alexa phase `Alexa, raise the volume on`.
@@ -522,32 +583,13 @@ ie
   }
 ```
 
-#### Channels
-
-  - This enables Alexa to be able to change channels on your TV by number, and enables the phrase `Alexa, change to the channel to`.
-
-```
-"channel": [{
-  "into": "TV",
-  "manufacturer": "HTTP-IRBlaster",
-  "name": "Tuner"}],
-```
-
-* into - Name of the existing accessory to add the input function to.  In my setup this is my Apple TV accessory.
-
-* manufacturer - Is the manufacturer of the accessory as shown in the Home App
-
-* name - Is the name of the accessory as shown in the Home App
-
-The accessory to receive channel change commands will receive the channel number as the value.
-
 #### Inputs
 
   - This combines several buttons that control inputs on a TV or Stereo into an Alexa input control and enables the phrase `Alexa, change to input to`. For the names of the inputs, Amazon provided a list ( see alexa name below ) that you can choose from.  You can map multiple alexa names to the same button as well.
 
-`Alexa, change the input to Tuner on the TV`
+`Alexa, change input to Tuner on the TV`
 
-`Alexa, change the input to HDMI 1 on the TV`
+`Alexa, change input to HDMI 1 on the TV`
 
 ```
 {
@@ -613,7 +655,7 @@ PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO
 
 #### Apple TV
 
-  - This is the config from my Apple TV after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
+  - This is the config from my Apple TV using the homebridge-apple-tv plugin after completing the pairing.  Please note, *"showDefaultSwitches": true* and   *"defaultSwitchesIncludeATVName": true*, are required parameters.  Please note I blanked out the devices/credentials section with my ATV credentials.
 
 ```
 {
@@ -631,17 +673,66 @@ PLAYSTATION 4, SATELLITE, SMARTCAST, TUNER, TV, USB DAC, VIDEO 1, VIDEO 2, VIDEO
 }
 ```
 
+- This is the config for the homebridge-apple-tv-remote plugin.  This allows you to pause/play forward/rewind on device.
+
+Please note that the name in brackets ie (TV) will be the Name alexa uses to control your AppleTV
+
+```
+{
+  "platform": "AppleTvPlatform",
+  "devices": [{
+    "name": "Family Room (TV)",
+    "credentials": "XXXXXXXXXXXX",
+    "isOnOffSwitchEnabled": true,
+    "onOffSwitchName": "Power (TV)",
+    "isPlayPauseSwitchEnabled": true,
+    "playPauseSwitchName": "Play (TV)",
+    "commandSwitches": [{
+      "name": "Pause (TV)",
+      "commands": [{
+        "key": "pause",
+        "longPress": false
+      }]
+    }, {
+      "name": "Right (TV)",
+      "commands": [{
+        "key": "right",
+        "longPress": false
+      }]
+    }, {
+      "name": "Left (TV)",
+      "commands": [{
+        "key": "left",
+        "longPress": false
+      }]
+    }]
+  }],
+  "isApiEnabled": false
+}
+```
+
+Also to enable turning on and off your Apple TV, add this to your homebridge-alexa configuration.
+
+```
+"combine": [{
+      "into": "TV",
+      "from": ["Power (TV)"]
+    }]
+```
+
 #### Yamaha Spotify Controls
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
 
 #### New Parser
 
-As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option oldParser to true.  Default is to the new parser.
+~~As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option oldParser to true.  Default is to the new parser.~~
 
 ```
 "oldParser": true
 ```
+
+Support for the oldParser option was **deprecated** with version 0.5.0
 
 ## Initial Testing and confirming configuration
 
