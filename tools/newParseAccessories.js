@@ -183,8 +183,10 @@ for (var i = 0; i < response.event.payload.endpoints.length; i++) {
   } else {
     deleteSeen[endpoint.friendlyName] = true;
   }
+
 }
 
+response.event.payload.endpoints = removeLargeCookieEndpoints(response.event.payload.endpoints);
 response.event.payload.endpoints = removeDuplicateEndpoints(response.event.payload.endpoints);
 
 if (response && response.event.payload.endpoints.length < 1) {
@@ -255,6 +257,22 @@ function removeDuplicateEndpoints(endpoints) {
       response.push(endpoint);
     }
     deleteSeen[endpoint.endpointId] = true;
+  });
+
+  // console.log(response.length);
+  // console.log(response);
+  return (response);
+}
+
+function removeLargeCookieEndpoints(endpoints) {
+  var response = [];
+  endpoints.forEach((endpoint) => {
+    debug("Cookie Object: ", JSON.stringify(endpoint.cookie).length);
+    if (JSON.stringify(endpoint.cookie).length < 5000) {
+      response.push(endpoint);
+    } else {
+      console.log("ERROR: Large endpoint Cookie, removing endpointID =>", endpoint.friendlyName);
+    }
   });
 
   // console.log(response.length);
