@@ -65,6 +65,34 @@
         "description": "Limits accessories shared with Alexa to a single homebridge instance.",
         "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
       },
+
+      "deviceListHandling": {
+        "title": "How to handle devices in the deviceList",
+        "type": "string",
+        "required": true,
+        "default": "allow",
+        "oneOf": [
+          {
+            "title": "Allow devices",
+            "enum": [
+              "allow"
+            ]
+          },
+          {
+            "title": "Ignore devices",
+            "enum": [
+              "deny"
+            ]
+          }
+        ]
+      },
+      "deviceList": {
+        "title": "Devices to be allowed or denied",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "combine": {
         "type": "array",
         "items": {
@@ -128,7 +156,17 @@
         "routines",
         "debug",
         "refresh",
-        "filter"
+        "filter",
+        "deviceListHandling",
+        {
+          "key": "deviceList",
+          "type": "array",
+          "items": {
+            "title": "DeviceName",
+            "description": "Name of the device you want to ignore",
+            "type": "string"
+          }
+        }
       ]
     },
     {
