@@ -36,6 +36,8 @@ function alexaHome(log, config, api) {
   this.inputs = config['inputs'] || false; // Array of input devices
   this.channel = config['channel'] || false; // Array of input devices
   this.blind = config['blind'] || false; // Use range controller for Blinds
+  this.deviceListHandling = config['deviceListHandling'] || []; // Use ea
+  this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
 
@@ -108,6 +110,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     inputs: this.inputs,
     channel: this.channel,
     blind: this.blind,
+    deviceListHandling: this.deviceListHandling,
+    deviceList: this.deviceList,
     door: this.door,
     servers: [{
       protocol: 'mqtt',

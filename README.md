@@ -511,6 +511,27 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
+#### deviceList & deviceListHandling
+  - allow or deny devices by name to be exposed to alexa
+
+```
+"platforms": [
+  {
+  "platform": "Alexa",
+  "name": "Alexa",
+  "username": "....",
+  "password": "....",
+  "deviceListHandling": "deny",   // or allow
+  "deviceList":
+    [
+      "LightBlub",
+      "GarageDoor",
+      "SecureDevice"
+    ]
+  }
+],
+```
+
 #### combine
   - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
 
@@ -862,3 +883,4 @@ See [Roadmap](Roadmap.md)
 * francescob - Validate TV Integration for homebridge-panasonic-viera-tv@4.1.0, homebridge-bravia@1.1.0 and homebridge-sky-q-experimental@1.0.2
 * jelvs - Validate TV Integration for homebridge-samsung-tizen
 * krocko - bose soundlink preset / channel change
+* pwilms - deviceList feature
