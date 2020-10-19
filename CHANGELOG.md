@@ -2,9 +2,17 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.14 (2020-10-18)
+
+## [Version 0.5.14](https://github.com/northernman54/homebridge-alexa/compare/v0.5.12...v0.5.14)
+
+#### Changes
+
+- Adds filtering ( ignorelist ) of devices from discovery, tks @pwilms
+
 ## 0.5.12 (2020-10-07)
 
-## [Version 0.5.11](https://github.com/northernman54/homebridge-tasmota/compare/v0.5.11...v0.5.12)
+## [Version 0.5.12](https://github.com/northernman54/homebridge-alexa/compare/v0.5.11...v0.5.12)
 
 #### Changes
 
@@ -12,7 +20,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.5.11 (2020-09-16)
 
-## [Version 0.5.11](https://github.com/northernman54/homebridge-tasmota/compare/v0.4.74...v0.5.11)
+## [Version 0.5.11](https://github.com/northernman54/homebridge-alexa/compare/v0.4.74...v0.5.11)
 
 #### Changes
 
