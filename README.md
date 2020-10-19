@@ -67,6 +67,7 @@ Country availability - The plugin is available in these countries, English (AU),
             * [debug](#debug)
             * [refresh](#refresh)
             * [filter](#filter)
+            * [deviceList &amp; deviceListHandling](#devicelist--devicelisthandling)
             * [combine](#combine)
             * [speakers](#speakers-1)
             * [Inputs](#inputs)
