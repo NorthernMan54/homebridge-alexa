@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.16 (2020-10-18)
+
+## [Version 0.5.16](https://github.com/northernman54/homebridge-alexa/compare/v0.5.14...v0.5.16)
+
+#### Changes
+
+- Fix for issue #374 - Events being sent twice
+
 ## 0.5.14 (2020-10-18)
 
 ## [Version 0.5.14](https://github.com/northernman54/homebridge-alexa/compare/v0.5.12...v0.5.14)
