@@ -513,7 +513,7 @@ sudo npm install -g homebridge-alexa
 ```
 
 #### deviceList & deviceListHandling
-  - allow or deny devices by name to be exposed to alexa
+  - allow or deny devices by name to be exposed to alexa.  Values are checked to see if they are contained within the name.  ( Under the covers it is using regex, so more complex options are available )
 
 ```
 "platforms": [
@@ -525,7 +525,7 @@ sudo npm install -g homebridge-alexa
   "deviceListHandling": "deny",   // or allow
   "deviceList":
     [
-      "LightBlub",
+      "LightBulb",
       "GarageDoor",
       "SecureDevice"
     ]
