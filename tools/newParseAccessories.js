@@ -84,18 +84,21 @@ var speakers = [{
 ];
 
 var combine = [{
-  "into": "TV",
-  "from": ["KODI", "Power (TV)"]
+  into: "TV",
+  from: ["KODI", "Power (TV)"]
 }, {
-  "into": "Front",
-  "from": ["Yamaha"]
+  into: "Front",
+  from: ["Yamaha"]
 }, {
-  "into": "Rear",
-  "from": ["Yamaha"]
+  into: "Rear",
+  from: ["Yamaha"]
+}, {
+  into: "TV",         // Issue #388
+  from: ["Telly1", "Sound1"]
 }];
 
 var inputs = [{
-  "into": "TV",
+  into: "TV",
   "devices": [{
     "manufacturer": "HTTP-IRBlaster",
     "name": "Tuner",
@@ -118,7 +121,7 @@ var inputs = [{
     "alexaName": "TV"
   }]
 }, { // issue #328
-  "into": "TV 1",
+  into: "TV 1",
   "devices": [{
     "manufacturer": "Cmd4",
     "name": "HDMI1",
@@ -135,11 +138,11 @@ var inputs = [{
 }];
 
 var channel = [{
-  "into": "TV",
+  into: "TV",
   "manufacturer": "HTTP-IRBlaster",
   "name": "Tuner"
 }, {
-  "into": "TV 1",
+  into: "TV 1",
   "manufacturer": "Cmd4",
   "name": "Tuner"
 }];

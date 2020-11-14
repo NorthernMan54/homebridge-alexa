@@ -2,36 +2,12 @@
 
 curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
 http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":3,"iid":10,"value":9}]}'
+--data '{"characteristics":[{"aid":25,"iid":9,"value":true},{"aid":23,"iid":9,"value":true},{"aid":24,"iid":9,"value":true}]}'
 
-sleep 1
-
-curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
-http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":3,"iid":10,"value":10}]}'
-
-sleep 1
 
 curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
 http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":3,"iid":10,"value":"CBC"}]}'
+--data '{"characteristics":[{"aid":25,"iid":9,"value":false},{"aid":23,"iid":9,"value":false},{"aid":24,"iid":9,"value":false}]}'
 
-sleep 1
-
-curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
-http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":3,"iid":10,"value":"ABC"}]}'
-
-sleep 1
-
-curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
-http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":2,"iid":19,"value":7}]}'
-
-sleep 1
-
-curl -v -X PUT --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
-http://127.0.0.1:51826/characteristics \
---data '{"characteristics":[{"aid":2,"iid":19,"value":8}]}'
-
-echo
+curl -v -X GET --header "Content-Type:Application/json" --header "authorization: 031-45-154" \
+http://127.0.0.1:51826/characteristics?id=24.9,22.9,25.9,23.9 
