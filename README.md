@@ -879,5 +879,3 @@ See [Roadmap](Roadmap.md)
 * jelvs - Validate TV Integration for homebridge-samsung-tizen
 * krocko - bose soundlink preset / channel change
 * pwilms - deviceList feature
- 
- 
