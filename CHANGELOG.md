@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Changes
 
-- Improvements for homebridge-apple-tv-remote behaviour, and removal of the need to create a Pause button
+- Improvements for homebridge-apple-tv-remote behaviour, and removal of the need to create a Pause button in the config
 
 ## 0.5.16 (2020-10-18)
 
