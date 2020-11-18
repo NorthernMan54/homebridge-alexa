@@ -710,12 +710,6 @@ Please note that the name in brackets ie (TV) will be the Name alexa uses to con
     "isPlayPauseSwitchEnabled": true,
     "playPauseSwitchName": "Play (TV)",
     "commandSwitches": [{
-      "name": "Pause (TV)",
-      "commands": [{
-        "key": "pause",
-        "longPress": false
-      }]
-    }, {
       "name": "Right (TV)",
       "commands": [{
         "key": "right",
