@@ -1,12 +1,23 @@
 {
   "name": "homebridge-alexa",
   "version": "0.5.19",
-  "description": "Alexa Skill frontend for Homebridge",
+  "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
-    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md"
+    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md",
+    "watch": "nodemon"
+  },
+  "nodemonConfig": {
+    "watch": [],
+    "ext": "js",
+    "ignore": [],
+    "exec": "~/npm/bin/homebridge -D -R -P ~/Code",
+    "signal": "SIGTERM",
+    "env": {
+      "NODE_OPTIONS": "--trace-warnings"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,7 +32,8 @@
     "homebridge": ">=0.4.16"
   },
   "devDependencies": {
-    "documentation": "^13.0.2"
+    "documentation": "^13.0.2",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "is-my-json-valid": ">=2.19.0",

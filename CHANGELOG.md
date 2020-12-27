@@ -2,9 +2,20 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.20 (2020-12-27)
+
+## [Version 0.5.20](https://github.com/northernman54/homebridge-alexa/compare/v0.5.17...v0.5.20)
+
+#### Changes
+
+- Updated development work flow to support nodemon.
+- Updated description in package.json to better describe this plugin.  Used by plugin search on homebridge.io
+- Moved device filtering to before duplicate name check
+- When DEBUG is enabled plugin will log the parsed Alexa discovery response ( alexaDiscovery.json ) into current directory.
+
 ## 0.5.17 (2020-11-18)
 
-## [Version 0.5.16](https://github.com/northernman54/homebridge-alexa/compare/v0.5.16...v0.5.17)
+## [Version 0.5.17](https://github.com/northernman54/homebridge-alexa/compare/v0.5.16...v0.5.17)
 
 #### Changes
 
