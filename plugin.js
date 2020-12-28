@@ -91,17 +91,24 @@ alexaHome.prototype.didFinishLaunching = function() {
     host = 'alexabeta.homebridge.ca';
   }
   options = {
-    eventBus: this.eventBus,
+    // Shared Options
+    log: this.log,
+    debug: this.debug,
+    // MQTT Options
     username: this.username,
     password: this.password,
-    // clientId: this.username,
-    debug: this.debug,
-    events: this.events,
-    log: this.log,
+    servers: [{
+      protocol: 'mqtt',
+      host: host,
+      port: 1883
+    }],
+    reconnectPeriod: 45000,
+    // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
+    eventBus: this.eventBus,
+    // HB Parser options
     oldParser: this.oldParser,
-    reconnectPeriod: 5000,
     combine: this.combine,
     speakers: this.speakers,
     filter: this.filter,
@@ -113,11 +120,8 @@ alexaHome.prototype.didFinishLaunching = function() {
     deviceListHandling: this.deviceListHandling,
     deviceList: this.deviceList,
     door: this.door,
-    servers: [{
-      protocol: 'mqtt',
-      host: host,
-      port: 1883
-    }]
+    // Other Options
+    events: this.events
   };
 
   // Initialize HAP Connections

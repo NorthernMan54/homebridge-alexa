@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.21 (2020-12-28)
+
+## [Version 0.5.21](https://github.com/northernman54/homebridge-alexa/compare/v0.5.20...v0.5.21)
+
+#### Changes
+
+- Removed logging of alexaDiscovery response due to issue #402
+- MQTT Connection recovery tuning for issue #401
+
 ## 0.5.20 (2020-12-27)
 
 ## [Version 0.5.20](https://github.com/northernman54/homebridge-alexa/compare/v0.5.17...v0.5.20)
