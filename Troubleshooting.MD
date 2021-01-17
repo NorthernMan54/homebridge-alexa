@@ -5,6 +5,7 @@
       * [[Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.](#alexa-error--homebridge-alexa-login-to-homebridgeca-failed-please-validate-your-credentials-in-configjson-and-restart-homebridge)
          * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](#--bad-login-or-password-in-your-configjson-for-httpswwwhomebridgeca)
       * [[Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#alexa-error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
+         * [- Cloud Server DDOS Protection has blocked your IP address](#--cloud-server-ddos-protection-has-blocked-your-ip-address)
          * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
          * [- VPN Software interfering with homebridge-alexa to homebridge.ca communications](#--vpn-software-interfering-with-homebridge-alexa-to-homebridgeca-communications)
       * [[Alexa] ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#alexa-error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
@@ -14,6 +15,7 @@
       * [HAP Discover failed ..... error code 470](#hap-discover-failed--error-code-470)
       * [Upgraded from old version and am seeing this error message](#upgraded-from-old-version-and-am-seeing-this-error-message)
       * [[Alexa] ERROR: HAP Discovery failed, please review config](#alexa-error-hap-discovery-failed-please-review-config)
+      * [alexaLocal ERROR: connect ECONNREFUSED 35.169.132.61:1883 -&gt;  ECONNREFUSED](#alexalocal-error-connect-econnrefused-35169132611883----econnrefused)
       * [alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883](#alexalocal-error--error-connect-econnrefused-35169132618883)
    * [Device Discovery](#device-discovery)
       * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
@@ -43,9 +45,13 @@
 
 ## [Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.
 
-Likely cause of this message is having multiple copies of homebridge-alexa in your environment.  Please note you only need one installation of homebridge-alexa per home or network.
+This message is triggered when the plugin repeatably has an issue connecting to the homebridge.ca cloud server. After 5 connection failures this message appears.
 
 Known possible causes:
+
+### - Cloud Server DDOS Protection has blocked your IP address
+
+If the cloud server detects multiple connection attempts from your IP address in a short period of time, the cloud service will prevent access from your IP Address for a few minutes.  To recover from this condition you need to stop the plugin for 5 minutes, then start it again.  Easiest method of clearing the issue is to turn off your RPI for 5 minutes, then turn it on again.
 
 ### - Multiple copies of homebridge-alexa on your network
 ### - VPN Software interfering with homebridge-alexa to homebridge.ca communications
@@ -101,9 +107,15 @@ Possible causes:
 2 - Discovery is working, but you don't have any devices that are supported by homebridge-alexa.
 
 
+## alexaLocal ERROR: connect ECONNREFUSED 35.169.132.61:1883 ->  ECONNREFUSED
+
+Cloud Server DDOS Protection has blocked your IP address
+
+If the cloud server detects multiple connection attempts from your IP address in a short period of time, the cloud service will prevent access from your IP Address for a few minutes.  To recover from this condition you need to stop the plugin for 5 minutes, then start it again.  Easiest method of clearing the issue is to turn off your RPI for 5 minutes, then turn it on again.
+
 ## alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
 
-This error is a future expansion option, and can be ignored
+When message has port 8883, this error is a future expansion option, and can be ignored
 
 ```
 alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883
