@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.25 (2020-12-28)
+
+## [Version 0.5.21](https://github.com/northernman54/homebridge-alexa/compare/v0.5.21...v0.5.25)
+
+#### Changes
+
+- Prioritize doorbell notification events ( found that they were being queued behind motion alerts when someone walked up to the door and delayed by almost a minute. )
+- Fix for Apple TV Remote plugin crashing the Alexa Plugin
+
 ## 0.5.21 (2020-12-28)
 
 ## [Version 0.5.21](https://github.com/northernman54/homebridge-alexa/compare/v0.5.20...v0.5.21)

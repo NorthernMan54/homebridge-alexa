@@ -102,7 +102,7 @@ alexaHome.prototype.didFinishLaunching = function() {
       host: host,
       port: 1883
     }],
-    reconnectPeriod: 45000,
+    reconnectPeriod: 65000,
     // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
