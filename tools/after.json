@@ -82,8 +82,8 @@ Alexa Message Validation Passed!
 
 {"deviceID":"CC:22:3D:E3:CE:30","aid":1,"iid":10}
 {
-  '0': 'NOT_DETECTED',
-  '1': 'DETECTED',
+  '0': 'DETECTED',
+  '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWNhbWVyYS1mZm1wZWctRG9vcmJlbGwgRG9vcmJlbGwtMDAwMDAxMjEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
   template: 'DoorbellEventSource'
 }
