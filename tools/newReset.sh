@@ -6,13 +6,13 @@ echo "penny"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/penny_accessories.json >  ~/Code/alexaAwsBackend/samples/penny.json
 
-echo "apple_tv"
+#echo "apple_tv"
 
-node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json >  ~/Code/alexaAwsBackend/samples/apple_tv.json
+#node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_accessories.json >  ~/Code/alexaAwsBackend/samples/apple_tv.json
 
-echo "apple_tv_space"
+#echo "apple_tv_space"
 
-node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > ~/Code/alexaAwsBackend/samples/apple_tv_space.json
+#node newParseAccessories.js ~/Code/alexaAwsBackend/samples/apple_tv_space_accessories.json > ~/Code/alexaAwsBackend/samples/apple_tv_space.json
 
 echo "mi-light"
 
@@ -81,3 +81,7 @@ node newParseAccessories.js ~/Code/alexaAwsBackend/samples/camera.json > ~/Code/
 echo "Doorbell"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/doorbell.json > ~/Code/alexaAwsBackend/samples/doorbell_alexa.json
+
+echo "blinds 99"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/blinds_99.json > ~/Code/alexaAwsBackend/samples/blinds_99_alexa.json 

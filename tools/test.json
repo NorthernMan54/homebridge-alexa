@@ -908,7 +908,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -935,7 +935,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -981,7 +981,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1049,7 +1049,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1076,7 +1076,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1122,7 +1122,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1190,7 +1190,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1217,7 +1217,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1263,7 +1263,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1331,7 +1331,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1358,7 +1358,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1404,7 +1404,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1472,7 +1472,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1499,7 +1499,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1545,7 +1545,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1613,7 +1613,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1640,7 +1640,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1686,7 +1686,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1754,7 +1754,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1781,7 +1781,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1827,7 +1827,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -1895,7 +1895,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -1922,7 +1922,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -1968,7 +1968,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2036,7 +2036,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2063,7 +2063,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2109,7 +2109,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2177,7 +2177,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2204,7 +2204,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2250,7 +2250,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2318,7 +2318,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2345,7 +2345,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2391,7 +2391,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2459,7 +2459,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2486,7 +2486,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2532,7 +2532,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2600,7 +2600,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2627,7 +2627,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2673,7 +2673,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]
@@ -2741,7 +2741,7 @@ Alexa Message Validation Passed!
               "configuration": {
                 "supportedRange": {
                   "minimumValue": 0,
-                  "maximumValue": 99,
+                  "maximumValue": 100,
                   "precision": 1
                 },
                 "unitOfMeasure": "Alexa.Unit.Percent"
@@ -2768,7 +2768,7 @@ Alexa Message Validation Passed!
                     "directive": {
                       "name": "SetRangeValue",
                       "payload": {
-                        "rangeValue": 99
+                        "rangeValue": 100
                       }
                     }
                   },
@@ -2814,7 +2814,7 @@ Alexa Message Validation Passed!
                     ],
                     "range": {
                       "minimumValue": 1,
-                      "maximumValue": 99
+                      "maximumValue": 100
                     }
                   }
                 ]

@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This projec
 #### Changes
 
 - Changed blinds, and doors etc to leverage minValue and maxValue from Issue #434
+- Updated FANS from SWITCH to FAN display category issue #172
 
 ## 0.5.25 (2020-12-28)
 

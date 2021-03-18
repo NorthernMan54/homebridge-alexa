@@ -153,7 +153,7 @@ var hbDevices = new Homebridges(endPoints, {
   "combine": combine,
   "inputs": inputs,
   "channel": channel,
-  "blind": false
+  "blind": true
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({

@@ -86,5 +86,9 @@ echo "Doorbell"
 
 node newParseAccessories.js ~/Code/alexaAwsBackend/samples/doorbell.json > after.json ; diff ~/Code/alexaAwsBackend/samples/doorbell_alexa.json after.json
 
+echo "blinds 99"
+
+node newParseAccessories.js ~/Code/alexaAwsBackend/samples/blinds_99.json > after.json ; diff ~/Code/alexaAwsBackend/samples/blinds_99_alexa.json after.json
+
 
 echo "Test successfully completed"
