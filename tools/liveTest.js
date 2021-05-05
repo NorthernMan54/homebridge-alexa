@@ -16,7 +16,7 @@ this.log = console.log;
 this.eventBus = new EventEmitter();
 
 this.pin = "031-45-154";
-this.beta = true;
+// this.beta = true;
 this.events = false;
 this.oldParser = false;
 this.refresh = 60 * 15; // Value in seconds, default every 15 minute's
@@ -403,6 +403,11 @@ function alexaDiscovery(message, callback) {
       alreadySeen[endpoint.friendlyName] = true;
     }
   });
+
+  response.event.payload.endpoints = checkDeviceList.call(this, response.event.payload.endpoints);
+  response.event.payload.endpoints = removeLargeCookieEndpoints.call(this, response.event.payload.endpoints);
+  response.event.payload.endpoints = removeDuplicateEndpoints.call(this, response.event.payload.endpoints);
+
   var deleteSeen = [];
 
   for (var i = 0; i < response.event.payload.endpoints.length; i++) {
@@ -436,5 +441,65 @@ function alexaDiscovery(message, callback) {
     }
   }
 
+  const fs = require('fs');
+  fs.writeFileSync('alexaDiscovery.json', JSON.stringify(response, null, 2));
+
   callback(null, response);
+}
+
+// Maximum cookie size is 5K
+
+function removeLargeCookieEndpoints(endpoints) {
+  var response = [];
+  endpoints.forEach((endpoint) => {
+    debug("Cookie Object: ", JSON.stringify(endpoint.cookie).length);
+    if (JSON.stringify(endpoint.cookie).length < 5000) {
+      response.push(endpoint);
+    } else {
+      console.log("ERROR: Large endpoint Cookie, removing endpointID =>", endpoint.friendlyName);
+    }
+  });
+
+  // console.log(response.length);
+  // console.log(response);
+  return (response);
+}
+
+function removeDuplicateEndpoints(endpoints) {
+  var deleteSeen = [];
+  var response = [];
+  endpoints.forEach((endpoint) => {
+    if (deleteSeen[endpoint.endpointId]) {
+      this.log("ERROR: Parsing failed, removing duplicate endpointID =>", endpoint.friendlyName);
+    } else {
+      response.push(endpoint);
+    }
+    deleteSeen[endpoint.endpointId] = true;
+  });
+  return (response);
+}
+
+function checkDeviceList(endpoints) {
+  if (this.deviceList && this.deviceList.length > 0 && ['allow', 'deny'].includes(this.deviceListHandling)) {
+    this.log(`INFO: DeviceList - The following devices are ${this.deviceListHandling} =>`, this.deviceList);
+    var response = [];
+    endpoints.forEach((endpoint) => {
+      if (this.deviceListHandling === "allow") {
+        if (verifyDeviceInList(this.deviceList, endpoint.friendlyName)) {
+          response.push(endpoint);
+          this.log("INFO: DeviceList - allow =>", endpoint.friendlyName);
+        }
+      } else if (this.deviceListHandling === "deny") {
+        if (verifyDeviceInList(this.deviceList, endpoint.friendlyName)) {
+          this.log("INFO: DeviceList - deny =>", endpoint.friendlyName);
+        } else {
+          response.push(endpoint);
+        }
+      }
+    });
+    return (response);
+  } else {
+    // this.log("INFO: DeviceList empty feature not enabled or config error in deviceListHandling");
+    return endpoints;
+  }
 }

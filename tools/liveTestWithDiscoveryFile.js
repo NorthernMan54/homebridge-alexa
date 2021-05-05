@@ -16,7 +16,7 @@ this.log = console.log;
 this.eventBus = new EventEmitter();
 
 this.pin = "031-45-154";
-this.beta = true;
+// this.beta = true;
 this.events = false;
 this.oldParser = false;
 this.refresh = 60 * 15; // Value in seconds, default every 15 minute's
