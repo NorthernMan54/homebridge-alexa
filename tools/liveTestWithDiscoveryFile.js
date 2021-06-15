@@ -6,7 +6,7 @@ var alexaActions = require('../lib/alexaActions.js');
 var EventEmitter = require('events').EventEmitter;
 var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
 var normalizeUUID = require('../node_modules/hap-node-client/lib/util.js').normalizeUUID;
-var debug = require('debug')('liveTest');
+var debug = require('debug')('alexa:liveTest');
 var fs = require('fs');
 // var debug = require('debug')('alexaPlugin');
 

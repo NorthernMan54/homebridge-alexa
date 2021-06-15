@@ -133,7 +133,7 @@ var hbDevices = new Homebridges(endPoints, {
   "speakers": speakers,
   "combine": combine,
   "inputs": inputs,
-  "blind": true
+  "blind": false
 });
 debug("Homebridges");
 
