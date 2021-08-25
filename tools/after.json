@@ -5299,6 +5299,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LWhvbWVicmlkZ2UtYWxleGEtQWxleGEtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'Alexa',
   template: 'ContactSensor'
 }
 {
@@ -5325,6 +5326,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LVhpYW9taS1Pc2thciBEb2NrLTAwMDAwMDg2LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Oskar Dock',
   template: 'ContactSensor'
 }
 {
@@ -5351,6 +5353,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV29obnppbW1lciBUci0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Wohnzimmer Tr',
   template: 'ContactSensor'
 }
 {
@@ -5389,6 +5392,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV29obnppbW1lciBEYWNoZ2VzY2hvc3MgbGlua3MtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'Rolladen Wohnzimmer Dachgeschoss links',
   template: 'ContactSensor'
 }
 {
@@ -5427,6 +5431,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV29obnppbW1lciByZWNodHMtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'Rolladen Wohnzimmer rechts',
   template: 'ContactSensor'
 }
 {
@@ -5465,6 +5470,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV29obnppbW1lciBEYWNoZ2VzY2hvc3MgcmVjaHRzLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Rolladen Wohnzimmer Dachgeschoss rechts',
   template: 'ContactSensor'
 }
 {
@@ -5503,6 +5509,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV29obnppbW1lciBsaW5rcy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Wohnzimmer links',
   template: 'ContactSensor'
 }
 {
@@ -5541,6 +5548,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gQW5zY2hsdXNzcmF1bS0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Anschlussraum',
   template: 'ContactSensor'
 }
 {
@@ -5579,6 +5587,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gQnJvLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Rolladen Bro',
   template: 'ContactSensor'
 }
 {
@@ -5617,6 +5626,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gQmFkLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Rolladen Bad',
   template: 'ContactSensor'
 }
 {
@@ -5655,6 +5665,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gQmFkIERhY2hnZXNjaG9zcy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Bad Dachgeschoss',
   template: 'ContactSensor'
 }
 {
@@ -5693,6 +5704,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gS2NoZS0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Kche',
   template: 'ContactSensor'
 }
 {
@@ -5731,6 +5743,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gS2luZGVyemltbWVyLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Rolladen Kinderzimmer',
   template: 'ContactSensor'
 }
 {
@@ -5769,6 +5782,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gU2NobGFmemltbWVyLTAwMDAwMDhDLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'Rolladen Schlafzimmer',
   template: 'ContactSensor'
 }
 {
@@ -5807,6 +5821,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gU2NobGFmemltbWVyIERhY2hnZXNjaG9zcy0wMDAwMDA4Qy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Rolladen Schlafzimmer Dachgeschoss',
   template: 'ContactSensor'
 }
 {
@@ -5845,6 +5860,7 @@ Alexa Message Validation Passed!
   '0': 'DETECTED',
   '1': 'NOT_DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtUm9sbGFkZW4gV0MtMDAwMDAwOEMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'Rolladen WC',
   template: 'ContactSensor'
 }
 {
@@ -5883,6 +5899,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfRG9vcl9XWi0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'XMI_Door_WZ',
   template: 'ContactSensor'
 }
 {
@@ -5909,6 +5926,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfTVNlbnNvcl8zLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'XMI_MSensor_3',
   true: 'DETECTED',
   false: 'NOT_DETECTED',
   template: 'MotionSensor'
@@ -5937,6 +5955,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X0JVRS0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'XMI_Window_BUE',
   template: 'ContactSensor'
 }
 {
@@ -5963,6 +5982,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X0JhZC0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'XMI_Window_Bad',
   template: 'ContactSensor'
 }
 {
@@ -5989,6 +6009,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X0tVRS0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'XMI_Window_KUE',
   template: 'ContactSensor'
 }
 {
@@ -6015,6 +6036,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X0taLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'XMI_Window_KZ',
   template: 'ContactSensor'
 }
 {
@@ -6041,6 +6063,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X1NaLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'XMI_Window_SZ',
   template: 'ContactSensor'
 }
 {
@@ -6067,6 +6090,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WGlhb21pU21hcnRIb21lX0RldmljZS1YTUlfV2luZG93X1daLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'XMI_Window_WZ',
   template: 'ContactSensor'
 }
 {
@@ -6093,6 +6117,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfRG9vcl8xLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Door_1',
   template: 'ContactSensor'
 }
 {
@@ -6119,6 +6144,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfTVNlbnNvcl8xLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_MSensor_1',
   true: 'DETECTED',
   false: 'NOT_DETECTED',
   template: 'MotionSensor'
@@ -6147,6 +6173,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtTW90aW9uIFNlbnNvciBTcGVpc2VrYW1tZXItMDAwMDAwODUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'Motion Sensor Speisekammer',
   true: 'DETECTED',
   false: 'NOT_DETECTED',
   template: 'MotionSensor'
@@ -6175,6 +6202,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfTWFpbkRvb3ItMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'ZW_MainDoor',
   template: 'ContactSensor'
 }
 {
@@ -6201,6 +6229,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X0FSLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Window_AR',
   template: 'ContactSensor'
 }
 {
@@ -6227,6 +6256,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X0JhZERHLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Window_BadDG',
   template: 'ContactSensor'
 }
 {
@@ -6253,6 +6283,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X1NaREctMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'ZW_Window_SZDG',
   template: 'ContactSensor'
 }
 {
@@ -6279,6 +6310,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X1dDLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Window_WC',
   template: 'ContactSensor'
 }
 {
@@ -6305,6 +6337,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X1daREdMLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Window_WZDGL',
   template: 'ContactSensor'
 }
 {
@@ -6331,6 +6364,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06WldhdmUtWldfV2luZG93X1daREdSLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==',
+  friendlyName: 'ZW_Window_WZDGR',
   template: 'ContactSensor'
 }
 {
@@ -6357,6 +6391,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06c3RydWN0dXJlLWdycF9Eb29yc1dpbmRvd3MtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx',
+  friendlyName: 'grp_DoorsWindows',
   template: 'ContactSensor'
 }
 {
@@ -6383,6 +6418,7 @@ Alexa Message Validation Passed!
   '0': 'NOT_DETECTED',
   '1': 'DETECTED',
   endpointID: 'Q0M6MjI6M0Q6RTM6Q0U6MzAtcGFyc2VUZXN0LUZIRU06TVFUVF9ERVZJQ0UtRWluc2F0em1lbGRlci0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=',
+  friendlyName: 'Einsatzmelder',
   template: 'ContactSensor'
 }
 {

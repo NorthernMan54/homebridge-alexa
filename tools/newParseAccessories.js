@@ -5,6 +5,7 @@ var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
 var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
 var normalizeUUID = require('../node_modules/hap-node-client/lib/util.js').normalizeUUID;
+var checkEventDeviceList = require('../lib/parse/messages').checkEventDeviceList;
 var checkAlexaMessage = Validator(alexaSchema, {
   verbose: true
 });
@@ -147,6 +148,9 @@ var channel = [{
   "name": "Tuner"
 }];
 
+this.deviceListHandling = "deny";
+this.deviceList = ["Front Porch - Dummy"];
+
 var hbDevices = new Homebridges(endPoints, {
   "events": true,
   "speakers": speakers,
@@ -172,7 +176,7 @@ var response = hbDevices.toAlexa({
 //   "speakers": speakers
 // });
 debug("toAlexa");
-var eventDevices = hbDevices.toEvents();
+var eventDevices = checkEventDeviceList.call(this, hbDevices.toEvents());
 debug("toEvents - complete");
 var status = checkAlexaMessage(response);
 
@@ -186,7 +190,6 @@ for (var i = 0; i < response.event.payload.endpoints.length; i++) {
   } else {
     deleteSeen[endpoint.friendlyName] = true;
   }
-
 }
 
 response.event.payload.endpoints = removeLargeCookieEndpoints(response.event.payload.endpoints);
