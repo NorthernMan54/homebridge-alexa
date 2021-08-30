@@ -103,7 +103,7 @@ alexaHome.prototype.didFinishLaunching = function() {
       port: 1883
     }],
     reconnectPeriod: 65000,
-//     keepalive: 1200,      // Reduce client timeout to 20 minutes
+    keepalive: 600,      // Reduce client timeout to 10 minutes
     // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
