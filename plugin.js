@@ -40,6 +40,7 @@ function alexaHome(log, config, api) {
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
+  this.keepalive = config['keepalive'] || 1200; // MQTT Connection Keepalive
 
   // Enable config based DEBUG logging enable
   this.debug = config['debug'] || false;
@@ -103,7 +104,7 @@ alexaHome.prototype.didFinishLaunching = function() {
       port: 1883
     }],
     reconnectPeriod: 65000,
-    keepalive: 300,      // Reduce client timeout to 10 minutes
+    keepalive: this.keepalive,      // Reduce client timeout to 10 minutes
     // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
