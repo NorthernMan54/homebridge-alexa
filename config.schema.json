@@ -58,6 +58,12 @@
         "placeholder": "900",
         "description": "Frequency of refreshes of the homebridge accessory cache, in seconds. Defaults to 15 minutes."
       },
+      "keepalive": {
+        "title": "Cloud Server Connection Keepalive",
+        "type": "integer",
+        "placeholder": "1200",
+        "description": "Frequency of keepalive messages to cloud server, in seconds. Defaults to 20 minutes.  Do not change from default unless requested as part of problem investigation."
+      },
       "filter": {
         "title": "Instance Filter",
         "type": "string",
@@ -167,6 +173,15 @@
             "type": "string"
           }
         }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Advanced Settings",
+      "expandable": true,
+      "expanded": false,
+      "items": [
+        "keepalive"
       ]
     },
     {
