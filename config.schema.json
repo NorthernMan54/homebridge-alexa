@@ -61,8 +61,10 @@
       "keepalive": {
         "title": "Cloud Server Connection Keepalive",
         "type": "integer",
-        "placeholder": "1200",
-        "description": "Frequency of keepalive messages to cloud server, in seconds. Defaults to 20 minutes.  Do not change from default unless requested as part of problem investigation."
+        "placeholder": "20",
+        "description": "Frequency of keepalive messages to cloud server, in minutes. Defaults to 20 minutes.  Do not change from default unless requested as part of problem investigation.",
+        "minimum": 1,
+        "maximum": 59
       },
       "filter": {
         "title": "Instance Filter",

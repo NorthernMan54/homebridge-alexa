@@ -40,7 +40,14 @@ function alexaHome(log, config, api) {
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
-  this.keepalive = config['keepalive'] || 1200; // MQTT Connection Keepalive
+  var mqttKeepalive = config['keepalive'] || 20; // MQTT Connection Keepalive
+
+  if( mqttKeepalive < 60 )
+    {
+      this.keepalive = mqttKeepalive * 60;
+    } else {
+      this.keepalive = mqttKeepalive;
+    }
 
   // Enable config based DEBUG logging enable
   this.debug = config['debug'] || false;
