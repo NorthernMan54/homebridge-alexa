@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.44 (2021-12-28)
+
+## [Version 0.5.44](https://github.com/northernman54/homebridge-alexa/compare/v0.5.37...v0.5.44)
+
+#### Changes
+
+- Workaround for issue #481
+- Cloud service connection tuning
+
 ## 0.5.37 (2021-06-15)
 
 ## [Version 0.5.37](https://github.com/northernman54/homebridge-alexa/compare/v0.5.33...v0.5.37)
