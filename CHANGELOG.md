@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. This projec
 #### Changes
 
 - Merge current beta into master
+- Expose cloud connection keep alive tuning parameter #479
+- Extend filtering to routines event registration - Resolve #458 #459 #461 #465
+- Reduce amount of logging
 
 ## 0.5.37 (2021-06-15)
 
