@@ -40,14 +40,14 @@ function alexaHome(log, config, api) {
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
+  this.LegacyCloudTransport = config['LegacyCloudTransport'] || false; // Default to new Transport
   var mqttKeepalive = config['keepalive'] || 20; // MQTT Connection Keepalive
 
-  if( mqttKeepalive < 60 )
-    {
-      this.keepalive = mqttKeepalive * 60;
-    } else {
-      this.keepalive = mqttKeepalive;
-    }
+  if (mqttKeepalive < 60) {
+    this.keepalive = mqttKeepalive * 60;
+  } else {
+    this.keepalive = mqttKeepalive;
+  }
 
   // Enable config based DEBUG logging enable
   this.debug = config['debug'] || false;
@@ -95,23 +95,24 @@ alexaHome.prototype = {
 
 alexaHome.prototype.didFinishLaunching = function() {
   var host = 'alexa.homebridge.ca';
+  var reconnectPeriod = 65000; // Increased reconnect period to allow DDOS protection to reset
   if (this.beta) {
     host = 'alexabeta.homebridge.ca';
+    // reconnectPeriod = 10000;
   }
+
   options = {
     // Shared Options
     log: this.log,
     debug: this.debug,
-    // MQTT Options
-    username: this.username,
-    password: this.password,
-    servers: [{
-      protocol: 'mqtt',
-      host: host,
-      port: 1883
-    }],
-    reconnectPeriod: 65000,
-    keepalive: this.keepalive,      // Reduce client timeout to 10 minutes
+    mqttURL: (this.LegacyCloudTransport ? "mqtt://" + host + ":1883/" : "wss://" + host + "/ws"),
+    mqttOptions: {
+      username: this.username,
+      password: this.password,
+      reconnectPeriod: reconnectPeriod, // Increased reconnect period to allow DDOS protection to reset
+      keepalive: (this.LegacyCloudTransport ? this.keepalive : 0), // Keep alive not required when using WSS Transport
+      rejectUnauthorized: false
+    },
     // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
@@ -145,7 +146,13 @@ alexaHome.prototype.didFinishLaunching = function() {
   // Alexa mesages
 
   this.eventBus.on('System', function(message) {
-    this.log.error("ERROR: ", message.directive.header.message);
+    this.log.error("ERROR:", message.directive.header.message);
+  }.bind(this));
+  this.eventBus.on('Warning', function(message) {
+    this.log.warn("Warning:", message.directive.header.message);
+  }.bind(this));
+  this.eventBus.on('Information', function(message) {
+    this.log("Info:", message.directive.header.message);
   }.bind(this));
   this.eventBus.on('Alexa', alexaActions.alexaMessage.bind(this));
   this.eventBus.on('Alexa.Discovery', alexaActions.alexaDiscovery.bind(this));
