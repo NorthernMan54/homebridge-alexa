@@ -94,10 +94,10 @@ alexaHome.prototype = {
 };
 
 alexaHome.prototype.didFinishLaunching = function() {
-  var host = 'alexa.homebridge.ca';
+  var host = (this.LegacyCloudTransport ? 'alexa.homebridge.ca' : 'www.homebridge.ca');
   var reconnectPeriod = 65000; // Increased reconnect period to allow DDOS protection to reset
   if (this.beta) {
-    host = 'alexabeta.homebridge.ca';
+    host = 'clone.homebridge.ca';
     // reconnectPeriod = 10000;
   }
 
@@ -110,7 +110,7 @@ alexaHome.prototype.didFinishLaunching = function() {
       username: this.username,
       password: this.password,
       reconnectPeriod: reconnectPeriod, // Increased reconnect period to allow DDOS protection to reset
-      keepalive: (this.LegacyCloudTransport ? this.keepalive : 0), // Keep alive not required when using WSS Transport
+      keepalive: (this.LegacyCloudTransport ? this.keepalive : 55), // Keep alive not required when using WSS Transport
       rejectUnauthorized: false
     },
     // HAP Node Client options
