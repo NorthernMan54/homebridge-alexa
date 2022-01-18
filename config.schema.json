@@ -67,10 +67,10 @@
         "maximum": 59
       },
       "LegacyCloudTransport": {
-        "title": "Cloud Server Connection Transport",
+        "title": "Legacy Cloud Server Connection",
         "type": "boolean",
         "default": false,
-        "description": "Enable Legacy Transport to Cloud Servers."
+        "description": "Enable Legacy Transport ( mqtt ) to Cloud Servers ( This is from version 0.5.55 or older )."
       },
       "filter": {
         "title": "Instance Filter",
