@@ -106,6 +106,7 @@ alexaHome.prototype.didFinishLaunching = function() {
     log: this.log,
     debug: this.debug,
     mqttURL: (this.LegacyCloudTransport ? "mqtt://" + host + ":1883/" : "wss://" + host + "/ws"),
+    transport: (this.LegacyCloudTransport ? "mqtt" : "wss"),
     mqttOptions: {
       username: this.username,
       password: this.password,
