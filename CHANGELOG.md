@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.5.60 (2021-01-17)
 
-## [Version 0.5.54](https://github.com/northernman54/homebridge-alexa/compare/v0.5.55...v0.5.60)
+## [Version 0.5.60](https://github.com/northernman54/homebridge-alexa/compare/v0.5.55...v0.5.60)
 
 #### Changes
 
