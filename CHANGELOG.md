@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Changes
 
-- Updates to README in regards to switch to subscription based model for the cloud services to support the services.
+- Updates to README in regards to switch to subscription based model for the cloud services.
 - Further fixes for #507/#508
 
 ## 0.5.56 (2022-03-21)
