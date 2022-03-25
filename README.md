@@ -41,6 +41,8 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
+   * [Note to users of the service](#note-to-users-of-the-service)
+   * [Availability](#availability)
    * [Features](#features)
    * [Table of Contents](#table-of-contents)
    * [Supported devices](#supported-devices)
