@@ -2,17 +2,24 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
-## 0.5.60 (2021-01-17)
+## 0.5.61 (2022-03-21)
 
-## [Version 0.5.60](https://github.com/northernman54/homebridge-alexa/compare/v0.5.55...v0.5.60)
+## [Version 0.5.61](https://github.com/northernman54/homebridge-alexa/compare/v0.5.56...v0.5.61)
 
 #### Changes
 
-- Enable the usage of websockets instead of mqtt, to provide improved connectivity in some setups
-- New configuration option `LegacyCloudTransport` which enables the mqtt transport
-- Removed the Alexa contact sensor ( which shows the status of the connection to the cloud servers ) from the list of devices passed to Alexa.
+- Updates to README in regards to switch to subscription based model for the cloud services.
+- Further fixes for #507/#508
 
-## 0.5.54 (2021-01-03)
+## 0.5.56 (2022-03-21)
+
+## [Version 0.5.56](https://github.com/northernman54/homebridge-alexa/compare/v0.5.54...v0.5.56)
+
+#### Changes
+
+- Fix for #507
+
+## 0.5.54 (2022-01-03)
 
 ## [Version 0.5.54](https://github.com/northernman54/homebridge-alexa/compare/v0.5.52...v0.5.54)
 

@@ -8,6 +8,24 @@
 
 Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
+# Note to users of the service
+
+Everyone, as your probably aware I have been running this for a number of years as a free service, and with the growth in users of the service and the volume of transactions flowing thru the cloud components I need to change to a subscription based service to continue to offer the service in a sustainable manner.
+
+The ongoing costs to run and support the cloud services have grown to the point where it is larger than pocket change, and rather than reducing functionality I have made the hard decision to switch to a subscription based model to continue to offer the current high levels of service.
+
+For the subscription model, I have set this up with PayPal to start with, and with a price cheaper than a cup of Starbucks coffee. I thought a coffee a month was a reasonable contribution for the continued delivery of service.
+
+For the migration of users to the new model I’m doing this in two phases, first being new users of the service and the second being existing or legacy users of the service.
+
+For new users of the service, they will receive a trial account, with 7 days of service to test out the service and work thru any issues prior to a subscription being required to continue service.  During the trial period users can apply for a subscription at any time, and it will be dated to start on the trial period end date. 
+
+For existing ‘legacy’ users of the service, over the next few months I’m going to start the migration of users to being subscription required.  I will post further messages when this migration starts. For the migration of your account you will have approximately 30 days to complete the subscription enrolment before service will be discontinued. During the migration period users can apply for a subscription at any time, and it will be dated to start on the migration period end date.
+
+If you have any questions or concerns, please let me know.
+
+# Availability
+
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), Spanish(US), Portuguese (BR) and Spanish (MX).
 
 # Features
@@ -23,6 +41,8 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
+   * [Note to users of the service](#note-to-users-of-the-service)
+   * [Availability](#availability)
    * [Features](#features)
    * [Table of Contents](#table-of-contents)
    * [Supported devices](#supported-devices)
