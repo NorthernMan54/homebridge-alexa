@@ -1,6 +1,8 @@
 Installation and Configuration of Homebridge Alexa
+==================================================
 
 <!--ts-->
+   * [Installation and Configuration of Homebridge Alexa](#installation-and-configuration-of-homebridge-alexa)
    * [Setup Instructions for users of the Homebridge UI](#setup-instructions-for-users-of-the-homebridge-ui)
       * [Create Homebridge-Alexa Cloud Services Account](#create-homebridge-alexa-cloud-services-account)
       * [Install and Configure the Plugin](#install-and-configure-the-plugin)
@@ -8,7 +10,7 @@ Installation and Configuration of Homebridge Alexa
          * [Configuration in Homebridge UI](#configuration-in-homebridge-ui)
       * [Enabling and linking the Homebridge Smart Home Skill](#enabling-and-linking-the-homebridge-smart-home-skill)
          * [Viewing Account Status](#viewing-account-status)
-   * [Legacy Setup Instructions for users not using the Homebridge UI](#legacy-setup-instructions-for-users-not-using-the-homebridge-ui)
+   * [Legacy Setup Instructions for users not using the Homebridge UI, includes advanced configuration options](#legacy-setup-instructions-for-users-not-using-the-homebridge-ui-includes-advanced-configuration-options)
       * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
       * [Install Plugin](#install-plugin)
       * [Create homebridge-alexa account](#create-homebridge-alexa-account)
@@ -38,6 +40,7 @@ Installation and Configuration of Homebridge Alexa
 <!--te-->
 
 # Setup Instructions for users of the Homebridge UI
+---------------------------------------------------
 
 ## Create Homebridge-Alexa Cloud Services Account
 
@@ -59,13 +62,14 @@ Restart homebridge
 
 ## Enabling and linking the Homebridge Smart Home Skill
 
-In the Amazon Alexa Application on your smart phone, search for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the https://www.homebridge.ca/ website to enable and link the skill to the plugin.
+In the Amazon Alexa Application on your smart phone, search for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the https://www.homebridge.ca/ website to enable and link the skill to the plugin.  You can now ask Alexa to `discover devices` and it should discover your homebridge devices.
 
 ### Viewing Account Status
 
 On the homebridge.ca website you can view your account status, and identify any setup issues.
 
-# Legacy Setup Instructions for users not using the Homebridge UI
+# Legacy Setup Instructions for users not using the Homebridge UI, includes advanced configuration options
+----------------------------------------------------------------------------------------------------------
 
 * If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).  And here is another setup guide (https://www.youtube.com/watch?v=Ylg4yiw8ofM).
 
