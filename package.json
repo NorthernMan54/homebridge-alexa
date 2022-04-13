@@ -1,12 +1,12 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.5.61",
+  "version": "0.5.62",
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
-    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md",
+    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md;./gh-md-toc --insert Installation.md",
     "watch": "nodemon"
   },
   "nodemonConfig": {
