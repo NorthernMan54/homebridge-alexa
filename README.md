@@ -345,7 +345,7 @@ From here you should be able to determine if your plugin is communicating with t
 
 ### Discord Channel
 
-I have created a Discord channel on the homebridge discord server to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  The channel is called #homebridge-alexa
+I have created a Discord channel on the homebridge discord server to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  The channel is called #homebridge-alexa https://discord.gg/6WBNPUauvA
 
 ### Debug logs
 
