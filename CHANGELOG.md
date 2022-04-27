@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.63 (2022-04-27)
+
+## [Version 0.5.63](https://github.com/northernman54/homebridge-alexa/compare/v0.5.61...v0.5.63)
+
+#### Changes
+
+- Updates to README in regards to switch to subscription based model for the cloud services.
+- Lower default cloud connection keepalive to 5 minutes
+
 ## 0.5.61 (2022-03-21)
 
 ## [Version 0.5.61](https://github.com/northernman54/homebridge-alexa/compare/v0.5.56...v0.5.61)
