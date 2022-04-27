@@ -322,7 +322,7 @@ Installation and configuration instructions are [here](Installation.md).
 
 * Real time monitoring of the homebridge.ca cloud service is provided by [Uptime Robot](https://stats.uptimerobot.com/2WmEDHyV6).
 
-* Cloud service operational event reporting and alerting is sent to the #homebridge-alexa channel in the Homebridge Discord instance, and the uptime robot reports events there in real time.  To access the homebridge discord server, here is an <a href="https://discord.gg/efg9ZESr">Invite</a>.
+* Cloud service operational event reporting and alerting is sent to the #homebridge-alexa channel in the Homebridge Discord instance, and the uptime robot reports events there in real time.  To access the homebridge discord server, here is an <a href="https://discord.gg/6WBNPUauvA">Invite</a>.
 
 ## Raising Issues and Troubleshooting
 
@@ -345,7 +345,7 @@ From here you should be able to determine if your plugin is communicating with t
 
 ### Discord Channel
 
-I have created a Discord channel on the homebridge discord server to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  The channel is called #homebridge-alexa https://discord.gg/6WBNPUauvA
+I have created a Discord channel on the homebridge discord server to troubleshoot issues not on the troubleshooting page.  If you reach out there, I'm usually available.  The channel is called #homebridge-alexa <a href="https://discord.gg/6WBNPUauvA">Invite</a>
 
 ### Debug logs
 
