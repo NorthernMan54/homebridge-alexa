@@ -45,6 +45,8 @@ Installation and Configuration of Homebridge Alexa
 
 This plugin requires the usage of cloud services to link your Amazon Alexa Account to the plugin.  Please create an account at https://www.homebridge.ca/.  The account details will be needed as part of plugin configuration and for linking the Homebridge smart home skill.
 
+Please ensure that you validate the email address you entered.
+
 ## Install and Configure the Plugin
 
 ### Installation in Homebridge UI
