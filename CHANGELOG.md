@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.5.64 (2022-05-19)
+
+## [Version 0.5.64](https://github.com/northernman54/homebridge-alexa/compare/v0.5.63...v0.5.64)
+
+#### Changes
+
+- Added additional debug logging to easily determine child bridge address to aid Homebridge Accessory Dumps
+
 ## 0.5.63 (2022-04-27)
 
 ## [Version 0.5.63](https://github.com/northernman54/homebridge-alexa/compare/v0.5.61...v0.5.63)
