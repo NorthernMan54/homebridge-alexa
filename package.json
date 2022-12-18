@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@oznu/hap-client": "^1.8.1",
-    "documentation": "^13.2.5",
+    "documentation": "^14.0.1",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
