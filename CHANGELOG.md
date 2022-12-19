@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. This projec
 
 - Added additional debug logging to easily determine child bridge address to aid Homebridge Accessory Dumps
 - Updates to hap-node-client to better support usage of ipv6
+- Update to gh-md-toc ( generates TOC for README )
 
 ## 0.5.63 (2022-04-27)
 
