@@ -66,6 +66,18 @@
         "minimum": 1,
         "maximum": 59
       },
+      "wssTransport": {
+        "title": "Websocket Cloud Server Connection",
+        "type": "boolean",
+        "default": false,
+        "description": "Enable Websocket based Cloud Server Connection, this is an alternative to the mqtt based transport. Do not change from default unless requested as part of problem investigation."
+      },
+      "mqttsTransport": {
+        "title": "MQTTS Cloud Server Connection",
+        "type": "boolean",
+        "default": false,
+        "description": "Enable MQTTS based Cloud Server Connection, this is an alternative to the mqtt based transport. Do not change from default unless requested as part of problem investigation."
+      },
       "filter": {
         "title": "Instance Filter",
         "type": "string",
@@ -183,7 +195,9 @@
       "expandable": true,
       "expanded": false,
       "items": [
-        "keepalive"
+        "keepalive",
+        "wssTransport",
+        "mqttsTransport"
       ]
     },
     {

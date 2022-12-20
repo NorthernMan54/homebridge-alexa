@@ -12,7 +12,7 @@ let Service, Characteristic;
 var options = {};
 var alexaService;
 
-module.exports = function(homebridge) {
+module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
 
@@ -40,14 +40,20 @@ function alexaHome(log, config, api) {
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "homebridgeAlexa";
+  this.wssTransport = config['wssTransport'] || false; // Default to existing Transport
+  this.mqttsTransport = config['mqttsTransport'] || false; // Default to existing Transport
   var mqttKeepalive = config['keepalive'] || 5; // MQTT Connection Keepalive
 
-  if( mqttKeepalive < 60 )
-    {
-      this.keepalive = mqttKeepalive * 60;
-    } else {
-      this.keepalive = mqttKeepalive;
-    }
+  if (mqttKeepalive < 60) {
+    this.keepalive = mqttKeepalive * 60;
+  } else {
+    this.keepalive = mqttKeepalive;
+  }
+
+  if (this.wssTransport && this.mqttsTransport) {
+    this.log.error("ERROR: wssTransport and mqttsTransport configured, defaulting to mqttsTransport.");
+    this.wssTransport = false;
+  }
 
   // Enable config based DEBUG logging enable
   this.debug = config['debug'] || false;
@@ -85,7 +91,7 @@ function alexaHome(log, config, api) {
 }
 
 alexaHome.prototype = {
-  accessories: function(callback) {
+  accessories: function (callback) {
     // this.log("Accessories");
     var accessories = [];
     accessories.push(new AlexaService(this.name, this.log));
@@ -93,25 +99,26 @@ alexaHome.prototype = {
   }
 };
 
-alexaHome.prototype.didFinishLaunching = function() {
-  var host = 'alexa.homebridge.ca';
+alexaHome.prototype.didFinishLaunching = function () {
+  var host = (this.wssTransport ? 'www.homebridge.ca' : 'alexa.homebridge.ca');
+  var reconnectPeriod = 65000; // Increased reconnect period to allow DDOS protection to reset
   if (this.beta) {
-    host = 'alexabeta.homebridge.ca';
+    host = 'clone.homebridge.ca';
   }
   options = {
     // Shared Options
     log: this.log,
     debug: this.debug,
     // MQTT Options
-    username: this.username,
-    password: this.password,
-    servers: [{
-      protocol: 'mqtt',
-      host: host,
-      port: 1883
-    }],
-    reconnectPeriod: 65000,
-    keepalive: this.keepalive,      // Reduce client timeout to 10 minutes
+    mqttURL: (this.wssTransport ? "wss://" + host + "/ws" : (this.mqttsTransport ? "mqtts://" + host + ":8883/" : "mqtt://" + host + ":1883/")),
+    transport: (this.wssTransport ? "wss" : (this.mqttsTransport ? "mqtts" : "mqtt")),
+    mqttOptions: {
+      username: this.username,
+      password: this.password,
+      reconnectPeriod: reconnectPeriod, // Increased reconnect period to allow DDOS protection to reset
+      keepalive: (this.wssTransport ? 55 : this.keepalive), // Keep alive not required when using WSS Transport
+      rejectUnauthorized: false
+    },
     // HAP Node Client options
     pin: this.pin,
     refresh: this.refresh,
@@ -144,8 +151,14 @@ alexaHome.prototype.didFinishLaunching = function() {
 
   // Alexa mesages
 
-  this.eventBus.on('System', function(message) {
-    this.log.error("ERROR: ", message.directive.header.message);
+  this.eventBus.on('System', function (message) {
+    this.log.error("ERROR:", message.directive.header.message);
+  }.bind(this));
+  this.eventBus.on('Warning', function (message) {
+    this.log.warn("Warning:", message.directive.header.message);
+  }.bind(this));
+  this.eventBus.on('Information', function (message) {
+    this.log("Info:", message.directive.header.message);
   }.bind(this));
   this.eventBus.on('Alexa', alexaActions.alexaMessage.bind(this));
   this.eventBus.on('Alexa.Discovery', alexaActions.alexaDiscovery.bind(this));
@@ -177,7 +190,7 @@ function AlexaService(name, log) {
 }
 
 AlexaService.prototype = {
-  getServices: function() {
+  getServices: function () {
     // this.log("getServices", this.name);
     // Information Service
     var informationService = new Service.AccessoryInformation();

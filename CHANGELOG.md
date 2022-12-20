@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file. This projec
 - Added additional debug logging to easily determine child bridge address to aid Homebridge Accessory Dumps
 - Updates to hap-node-client to better support usage of ipv6
 - Update to gh-md-toc ( generates TOC for README )
+- Merge current beta functionality into main code base
+- Remove the fake Alexa Contact sensor from discovery and events
+- Enable the usage of websockets instead of mqtt, to provide improved connectivity in some setups
+- New configuration option `wssTransport` which enables the websocket transport
+- Enable the usage of mqtts instead of mqtt, to provide improved connectivity in some setups
+- New configuration option `mqttsTransport` which enables the mqtts transport
+- Removed the Alexa contact sensor ( which shows the status of the connection to the cloud servers ) from the list of devices passed to Alexa.
 
 ## 0.5.63 (2022-04-27)
 
