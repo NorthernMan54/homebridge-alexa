@@ -11,7 +11,7 @@
   },
   "nodemonConfig": {
     "watch": [],
-    "ext": "js",
+    "ext": "js,json",
     "ignore": [],
     "exec": "~/npm/bin/homebridge -D -R -P ~/Code",
     "signal": "SIGTERM",

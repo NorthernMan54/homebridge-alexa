@@ -39,9 +39,9 @@ function alexaHome(log, config, api) {
   this.deviceListHandling = config['deviceListHandling'] || []; // Use ea
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
-  this.name = config['name'] || "homebridgeAlexa";
-  this.wssTransport = config['wssTransport'] || false; // Default to existing Transport
-  this.mqttsTransport = config['mqttsTransport'] || false; // Default to existing Transport
+  this.name = config['name'] || "Alexa";
+  this.CloudTransport = config['CloudTransport'] || "mqtts"; // Default to mqtts Transport
+  this.LegacyCloudTransport = config['LegacyCloudTransport'] || false; // Default to new Transport ( Setting from discarded beta )
   var mqttKeepalive = config['keepalive'] || 5; // MQTT Connection Keepalive
 
   if (mqttKeepalive < 60) {
@@ -50,9 +50,11 @@ function alexaHome(log, config, api) {
     this.keepalive = mqttKeepalive;
   }
 
-  if (this.wssTransport && this.mqttsTransport) {
-    this.log.error("ERROR: wssTransport and mqttsTransport configured, defaulting to mqttsTransport.");
-    this.wssTransport = false;
+  if (this.CloudTransport && ['mqtt', 'wss', 'mqtts'].includes(this.CloudTransport)) {
+    // Okay
+  } else {
+    this.log.error("ERROR: Invalid CloudTransport setting, defaulting to mqtts.");
+    this.CloudTransport = "mqtts";
   }
 
   // Enable config based DEBUG logging enable
@@ -100,7 +102,7 @@ alexaHome.prototype = {
 };
 
 alexaHome.prototype.didFinishLaunching = function () {
-  var host = (this.wssTransport ? 'www.homebridge.ca' : 'alexa.homebridge.ca');
+  var host = (this.CloudTransport === 'wss' ? 'www.homebridge.ca' : 'alexa.homebridge.ca');
   var reconnectPeriod = 65000; // Increased reconnect period to allow DDOS protection to reset
   if (this.beta) {
     host = 'clone.homebridge.ca';
@@ -110,13 +112,13 @@ alexaHome.prototype.didFinishLaunching = function () {
     log: this.log,
     debug: this.debug,
     // MQTT Options
-    mqttURL: (this.wssTransport ? "wss://" + host + "/ws" : (this.mqttsTransport ? "mqtts://" + host + ":8883/" : "mqtt://" + host + ":1883/")),
-    transport: (this.wssTransport ? "wss" : (this.mqttsTransport ? "mqtts" : "mqtt")),
+    mqttURL: (this.CloudTransport === 'wss' ? "wss://" + host + "/ws" : (this.CloudTransport === 'mqtts' ? "mqtts://" + host + ":8883/" : "mqtt://" + host + ":1883/")),
+    transport: this.CloudTransport,
     mqttOptions: {
       username: this.username,
       password: this.password,
       reconnectPeriod: reconnectPeriod, // Increased reconnect period to allow DDOS protection to reset
-      keepalive: (this.wssTransport ? 55 : this.keepalive), // Keep alive not required when using WSS Transport
+      keepalive: (this.CloudTransport === 'wss' ? 55 : this.keepalive), // Keep alive not used when using WSS Transport
       rejectUnauthorized: false
     },
     // HAP Node Client options
