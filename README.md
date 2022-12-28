@@ -92,7 +92,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * [Credits](#credits)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Tue 27 Dec 2022 22:22:53 EST -->
+<!-- Added by: sgracey, at: Tue 27 Dec 2022 22:23:09 EST -->
 
 <!--te-->
 
