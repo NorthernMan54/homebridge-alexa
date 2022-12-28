@@ -1,6 +1,6 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.5.63-beta.5",
+  "version": "0.5.63-beta.6",
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "plugin.js",
   "scripts": {
@@ -37,11 +37,11 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    "bottleneck": ">=2.19.5",
-    "debug": ">=4.3.3",
-    "hap-node-client": ">=0.1.29",
-    "is-my-json-valid": ">=2.20.6",
-    "mqtt": "4.3.7"
+    "bottleneck": "^2.19.5",
+    "debug": "^4.3.4",
+    "hap-node-client": ">=0.1.30-beta.0",
+    "is-my-json-valid": "^2.20.6",
+    "mqtt": "^4.3.7"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
