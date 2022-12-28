@@ -2,7 +2,7 @@
   "pluginAlias": "Alexa",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "<h1>Allow your Amazon Alexa to control your homebridge devices</H1>. <br>Detailed setup instructions are [here](https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md). <br><br>Prior to setting up the plugin you need to create an account on https://www.homebridge.ca/ to link your Amazon Alexa account with the plugin. This account will be used when you enable the skill in the Alexa App, and in the configuration below.",
+  "headerDisplay": "<h1>Allow your Amazon Alexa to control your homebridge devices</H1> <br>Detailed setup instructions are https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md . <br><br>Prior to setting up the plugin you need to create an account on https://www.homebridge.ca/ to link your Amazon Alexa account with the plugin. This account will be used when you enable the skill in the Alexa App, and in the configuration below.",
   "footerDisplay": "See https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md for more information and instructions.\n\nHomebridge Alex Skill: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ",
   "schema": {
     "type": "object",
@@ -63,7 +63,7 @@
       "keepalive": {
         "title": "Cloud Server Connection Keepalive",
         "type": "integer",
-        "placeholder": "5",
+        "default": "5",
         "description": "Frequency of keepalive messages to cloud server, in minutes. Defaults to 5 minutes.  Do not change from default unless requested as part of problem investigation.",
         "minimum": 1,
         "maximum": 59,
