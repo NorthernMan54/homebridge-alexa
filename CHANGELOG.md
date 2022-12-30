@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. This projec
 - Update to gh-md-toc ( generates TOC for README )
 - Merge current beta functionality into main code base
 - Remove the fake Alexa Contact sensor from discovery and events
-- Enable new cloud transport options `CloudTransport` websockets and mqtts, to provide improved connectivity in some setups. Previously these had been available in the beta.
+- Enable ability to change cloud transport `CloudTransport`, to provide improved connectivity in some setups. Previously these had been available in the beta.
 - Removed the Alexa contact sensor ( which shows the status of the connection to the cloud servers ) from the list of devices passed to Alexa.
 - Updated and simplified the Homebridge-UI plugin settings menu for homebridge-alexa
 
