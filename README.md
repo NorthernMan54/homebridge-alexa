@@ -16,17 +16,9 @@ The ongoing costs to run and support the cloud services have grown to the point 
 
 For the subscription model, we have set this up with PayPal to start with, and with a price cheaper than a cup of Starbucks coffee. We thought a coffee a month was a reasonable contribution for the continued delivery of service.
 
-For the migration of users to the new model I’m doing this in two phases, first being new users of the service and the second being existing or legacy users of the service.
-
 ## New Users
 
 For new users of the service, they will receive a trial account, with 7 days of service to test out the service and work thru any issues prior to a subscription being required to continue service.  During the trial period users can apply for a subscription at any time, and it will be future dated to start on the trial period end date. 
-
-## Existing Users ( Prior to March 26th, 2022 )
-
-For existing ‘legacy’ users of the service I have initiated the transition into subscriptions for all users, with a subscription being required after a date between May 25th, 2022 and June 25th, 2022.  If you login to the homebridge.ca website, you can see your start date.  You can signup for subscriptions at any time, and the first payment date will be future dated to the start date.
-
-If you have any questions or concerns, please let me know.
 
 # Availability
 
