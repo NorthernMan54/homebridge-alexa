@@ -2,7 +2,7 @@
   "pluginAlias": "Alexa",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "<h1><p align='center'>Allow your Amazon Alexa to control your homebridge devices</H1></p><h1><p align='center'> <img width='18%' src='https://user-images.githubusercontent.com/19808920/210089307-7622bb91-49d0-4d90-b2c3-31118e1a76c0.png'><b> => </b><img width='20%' src='https://user-images.githubusercontent.com/19808920/210090318-9e8ddc2a-a025-40ac-9718-7b5a2aa9a518.png'></p></h1> <br>To setup the service:<br>1 - First <b>create</b> an account on <a href='https://www.homebridge.ca/'>https://www.homebridge.ca/</a>.  <br>2 - Then <b>enter</b> the username and password for your account <b>below</b>.  <br>3 - <b>Save</b> the settings and <b>restart</b> homebridge.  <br>4 - In the Amazon Alexa Application on your smart phone, <b>search</b> for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the https://www.homebridge.ca/ website to <b>enable</b> and link the skill to the plugin.  <br>5 - You can now ask Alexa to <b>`discover devices`</b> and it should discover your homebridge devices.<br><br>Detailed setup instructions are available <a href='https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md#setup-instructions'>here</a>.",
+  "headerDisplay": "<h1><p align='center'>Allow your Amazon Alexa to control your homebridge devices</H1></p><h1><p align='center'> <img width='18%' src='https://user-images.githubusercontent.com/19808920/210089307-7622bb91-49d0-4d90-b2c3-31118e1a76c0.png'><b> => </b><img width='20%' src='https://user-images.githubusercontent.com/19808920/210090318-9e8ddc2a-a025-40ac-9718-7b5a2aa9a518.png'></p></h1> <br>To setup the service:<br>1 - First <b>create</b> an account on <a href='https://www.homebridge.ca/'>https://www.homebridge.ca/</a>.  <br>2 - Then <b>enter</b> the username and password for your account <b>below</b>.  <br>3 - <b>Save</b> the settings and <b>restart</b> homebridge.  <br>4 - In the Amazon Alexa Application on your smart phone, <b>search</b> for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the <b>https://www.homebridge.ca/</b> website to <b>enable</b> and link the skill to the plugin.  <br>5 - You can now ask Alexa to <b>`discover devices`</b> and it should discover your homebridge devices.<br><br>Detailed setup instructions are available <a href='https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md#setup-instructions'>here</a>.",
   "footerDisplay": "Homebridge Alex Skill: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ",
   "schema": {
     "type": "object",
@@ -33,24 +33,24 @@
         "description": "This needs to match the Homebridge pin set in your config.json file"
       },
       "routines": {
-        "title": " Routines - enables passing to Alexa events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.",
+        "title": " Routines - enables passing of Motion and Contact sensor events to Alexa. For use in the Alexa app to create Routines triggered by these sensors.",
         "type": "boolean",
-        "default": false
+        "placeholder": false
       },
       "blind": {
         "title": "Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false",
         "type": "boolean",
-        "default": false
+        "placeholder": false
       },
       "door": {
         "title": "Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false",
         "type": "boolean",
-        "default": false
+        "placeholder": false
       },
       "debug": {
         "title": "Enable debug level logging to assist in problem investigation",
         "type": "boolean",
-        "default": false
+        "placeholder": false
       },
       "refresh": {
         "title": "Accessory Cache Refresh Interval",
@@ -76,6 +76,7 @@
         "description": "Transport options for cloud server connection. MQTTS - this is the recommended setting. MQTT - this is the original/legacy option. WSS - this is the an alternative transport option.",
         "type": "string",
         "default": "mqtts",
+        "required": true,
         "oneOf": [
           {
             "title": "MQTTS",
