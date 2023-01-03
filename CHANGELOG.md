@@ -2,17 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
-## 0.5.64 (2022-12-19)
+## 0.6.0 (2023-01-03)
 
-## [Version 0.5.64](https://github.com/northernman54/homebridge-alexa/compare/v0.5.63...v0.5.64)
+## [Version 0.6.0](https://github.com/northernman54/homebridge-alexa/compare/v0.5.63...v0.6.0)
 
 #### Changes
 
 - Added additional debug logging to easily determine child bridge address to aid Homebridge Accessory Dumps
-- Updates to hap-node-client to better support usage of ipv6
+- Updates to hap-node-client to better support usage of ipv6 and removal of request dependancy
 - Update to gh-md-toc ( generates TOC for README )
 - Merge current beta functionality into main code base
-- Remove the fake Alexa Contact sensor from discovery and events
 - Enable ability to change cloud transport `CloudTransport`, to provide improved connectivity in some setups. Previously these had been available in the beta.
 - Removed the Alexa contact sensor ( which shows the status of the connection to the cloud servers ) from the list of devices passed to Alexa.
 - Updated and simplified the Homebridge-UI plugin settings menu for homebridge-alexa

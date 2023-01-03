@@ -39,7 +39,6 @@ Country availability - The plugin is available in these countries, English (AU),
 <!--ts-->
 * [Note to users of the service](#note-to-users-of-the-service)
    * [New Users](#new-users)
-   * [Existing Users ( Prior to March 26th, 2022 )](#existing-users--prior-to-march-26th-2022-)
 * [Availability](#availability)
 * [Features](#features)
 * [Table of Contents](#table-of-contents)
@@ -84,7 +83,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * [Credits](#credits)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Fri 30 Dec 2022 11:50:44 EST -->
+<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:31:06 EST -->
 
 <!--te-->
 
