@@ -40,7 +40,7 @@ Installation and Configuration of Homebridge Alexa
    * [Discover Devices](#discover-devices)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:42:25 EST -->
+<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:42:40 EST -->
 
 <!--te-->
 
