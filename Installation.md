@@ -3,44 +3,48 @@ Installation and Configuration of Homebridge Alexa
 
 <!--ts-->
 * [Installation and Configuration of Homebridge Alexa](#installation-and-configuration-of-homebridge-alexa)
-* [Setup Instructions for users of the Homebridge UI](#setup-instructions-for-users-of-the-homebridge-ui)
+* [Setup Instructions](#setup-instructions)
    * [Create Homebridge-Alexa Cloud Services Account](#create-homebridge-alexa-cloud-services-account)
    * [Install and Configure the Plugin](#install-and-configure-the-plugin)
       * [Installation in Homebridge UI](#installation-in-homebridge-ui)
       * [Configuration in Homebridge UI](#configuration-in-homebridge-ui)
    * [Enabling and linking the Homebridge Smart Home Skill](#enabling-and-linking-the-homebridge-smart-home-skill)
       * [Viewing Account Status](#viewing-account-status)
-* [Legacy Setup Instructions for users not using the Homebridge UI, includes advanced configuration options](#legacy-setup-instructions-for-users-not-using-the-homebridge-ui-includes-advanced-configuration-options)
+* [Advanced Setup Instructions, including advanced configuration options](#advanced-setup-instructions-including-advanced-configuration-options)
    * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
    * [Install Plugin](#install-plugin)
    * [Create homebridge-alexa account](#create-homebridge-alexa-account)
    * [HomeBridge-alexa plugin configuration](#homebridge-alexa-plugin-configuration)
-      * [Required parameters](#required-parameters)
-      * [Optional parameters](#optional-parameters)
+      * [Required Settings](#required-settings)
+      * [Optional Settings](#optional-settings)
+         * [debug](#debug)
          * [pin](#pin)
          * [routines](#routines)
+         * [deviceList &amp; deviceListHandling - Filtering of devices by name, either allow or allow](#devicelist--devicelisthandling---filtering-of-devices-by-name-either-allow-or-allow)
+      * [Advanced Settings](#advanced-settings)
+         * [CloudTransport - Cloud Server Connection Transport](#cloudtransport---cloud-server-connection-transport)
+         * [keepalive - Cloud Server Connection Keepalive](#keepalive---cloud-server-connection-keepalive)
+         * [refresh - Accessory Cache Refresh Interval](#refresh---accessory-cache-refresh-interval)
+         * [filter - Homebridge Instance Filter](#filter---homebridge-instance-filter)
          * [blind](#blind)
          * [door](#door)
-         * [debug](#debug)
-         * [refresh](#refresh)
-         * [filter](#filter)
-         * [deviceList &amp; deviceListHandling](#devicelist--devicelisthandling)
-         * [combine](#combine)
+      * [Speaker Settings](#speaker-settings)
          * [speakers](#speakers)
+      * [Combine Accessories](#combine-accessories)
+         * [combine](#combine)
          * [Inputs](#inputs)
          * [Apple TV](#apple-tv)
          * [Yamaha Spotify Controls](#yamaha-spotify-controls)
-         * [New Parser](#new-parser)
    * [Initial Testing and confirming configuration](#initial-testing-and-confirming-configuration)
    * [Enable Homebridge smarthome skill and link accounts](#enable-homebridge-smarthome-skill-and-link-accounts)
    * [Discover Devices](#discover-devices)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Sun 18 Dec 2022 19:34:09 EST -->
+<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:31:08 EST -->
 
 <!--te-->
 
-# Setup Instructions for users of the Homebridge UI
+# Setup Instructions
 
 ## Create Homebridge-Alexa Cloud Services Account
 
@@ -70,7 +74,7 @@ In the Amazon Alexa Application on your smart phone, search for the Homebridge S
 
 On the homebridge.ca website you can view your account status, and identify any setup issues.
 
-# Legacy Setup Instructions for users not using the Homebridge UI, includes advanced configuration options
+# Advanced Setup Instructions, including advanced configuration options
 
 * If you are looking for a basic setup to get this plugin up and running check out this guide (https://sambrooks.net/controlling-homebridge-using-alexa/).  And here is another setup guide (https://www.youtube.com/watch?v=Ylg4yiw8ofM).
 
@@ -163,12 +167,28 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-### Required parameters
+### Required Settings
 
+* name - Plugin name as displayed in the Homebridge log
 * username - Login created for the skill linking website https://www.homebridge.ca/
 * password - Login created for the skill linking website https://www.homebridge.ca/
 
-### Optional parameters
+### Optional Settings
+
+#### debug
+  - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "debug": true
+  }
+],
+```
 
 #### pin
   - If you had changed your homebridge pin from the default of "pin": "031-45-154" ie
@@ -186,7 +206,7 @@ sudo npm install -g homebridge-alexa
 ```
 
 #### routines
-  - Enables passing to Alexa of real time events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.  Not required unless you are using Alexa Routines.
+  - Enables passing to Alexa of real time events from Motion and Contact sensors. For use in the Alexa app to create Routines triggered by these sensors.  Not required unless you are using Alexa Routines triggered by Homebridge devices.
 
 ```
 "platforms": [
@@ -196,6 +216,92 @@ sudo npm install -g homebridge-alexa
     "username": "....",
     "password": "....",
     "routines": true
+  }
+],
+```
+
+#### deviceList & deviceListHandling - Filtering of devices by name, either allow or allow
+  - allow or deny devices by name to be exposed to alexa.  Values are checked to see if they are contained within the name.  ( Under the covers it is using regex, so more complex options are available )
+
+```
+"platforms": [
+  {
+  "platform": "Alexa",
+  "name": "Alexa",
+  "username": "....",
+  "password": "....",
+  "deviceListHandling": "deny",   // or allow
+  "deviceList":
+    [
+      "LightBulb",
+      "GarageDoor",
+      "SecureDevice"
+    ]
+  }
+],
+```
+
+### Advanced Settings
+
+#### CloudTransport - Cloud Server Connection Transport
+
+- Transport options for cloud server connection. MQTTS - this is the recommended setting. MQTT - this is the original/legacy option. WSS - this is the an alternative transport option.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "CloudTransport": "mqtts"
+  }
+],
+```
+
+#### keepalive - Cloud Server Connection Keepalive
+
+- Frequency of keepalive messages to cloud server, in minutes. Defaults to 5 minutes.  Do not change from default unless requested as part of problem investigation.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "keepalive": 5
+  }
+],
+```
+
+#### refresh - Accessory Cache Refresh Interval
+
+- Frequency of refreshes of the homebridge accessory cache, in seconds. Defaults to 900 Seconds ( 15 minutes ). This is the interval before new devices/homebridge instances are discovered.  This should never require changing, unless you are frequently changing your homebridge configuration without restarting the plugin.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "refresh": 900
+  }
+],
+```
+
+#### filter - Homebridge Instance Filter
+  - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "filter": "192.168.1.122:51826"
   }
 ],
 ```
@@ -230,101 +336,10 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
-#### debug
-  - This enables debug logging mode, can be used instead of the command line option ( DEBUG=* homebridge )
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "debug": true
-  }
-],
-```
-
-#### refresh
-  - Frequency of refreshes of the homebridge accessory cache, in seconds.  Defaults to 15 minutes.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "refresh": 900
-  }
-],
-```
-
-#### filter
-  - Limits accessories shared with Alexa to a single homebridge instance.  ( I'm using this setting with Amazon for skill testing. ).  The setting is ip:port of homebridge instance.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "filter": "192.168.1.122:51826"
-  }
-],
-```
-
-#### deviceList & deviceListHandling
-  - allow or deny devices by name to be exposed to alexa.  Values are checked to see if they are contained within the name.  ( Under the covers it is using regex, so more complex options are available )
-
-```
-"platforms": [
-  {
-  "platform": "Alexa",
-  "name": "Alexa",
-  "username": "....",
-  "password": "....",
-  "deviceListHandling": "deny",   // or allow
-  "deviceList":
-    [
-      "LightBulb",
-      "GarageDoor",
-      "SecureDevice"
-    ]
-  }
-],
-```
-
-#### combine
-  - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
-
-```
-"platforms": [
-  {
-    "platform": "Alexa",
-    "name": "Alexa",
-    "username": "....",
-    "password": "....",
-    "combine": [{
-          "into": "TV",
-          "from": ["KODI", "Power (TV)"]
-        }, {
-          "into": "Front",
-          "from": ["Yamaha"]
-        }, {
-          "into": "Rear",
-          "from": ["Yamaha"]
-        }],
-  }
-],
-```
-
-* into - Device name to combine into
-* from - Device name to combine from, can be a list of multiple devices.
-
+### Speaker Settings
 
 #### speakers
+
   - Devices to configure as speakers as HomeKit currently does not have a Speaker service, and enable the alexa phase `Alexa, raise the volume on`.
 
 ```
@@ -367,6 +382,39 @@ ie
     ]
   }
 ```
+
+### Combine Accessories
+
+
+#### combine
+  - Combine disparate accessories into one common device.  My example here is combining my TV Remote (KODI), which only has ON/OFF and Volume controls into the Apple TV (TV) playback controls. And combining the spotify controls from my Yamaha receiver into the Zone.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "combine": [{
+          "into": "TV",
+          "from": ["KODI", "Power (TV)"]
+        }, {
+          "into": "Front",
+          "from": ["Yamaha"]
+        }, {
+          "into": "Rear",
+          "from": ["Yamaha"]
+        }],
+  }
+],
+```
+
+* into - Device name to combine into
+* from - Device name to combine from, can be a list of multiple devices.
+
+
+
 
 #### Inputs
 
@@ -503,15 +551,6 @@ Also to enable turning on and off your Apple TV, add this to your homebridge-ale
 
 This uses the plugin homebridge-yamaha-home and a Yamaha Receiver which includes Spotify and Spotify Playback Controls.
 
-#### New Parser
-
-~~As of April 14, 2019 I changed the Homebridge device parser massively, to add support for Locks and Heater/Cooler devices.  To go back to the old device parser, you can set an option oldParser to true.  Default is to the new parser.~~
-
-```
-"oldParser": true
-```
-
-Support for the oldParser option was **deprecated** with version 0.5.0
 
 ## Initial Testing and confirming configuration
 

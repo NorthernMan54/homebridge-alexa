@@ -1,17 +1,17 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.5.63-beta.4",
+  "version": "0.6.0-beta.9",
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
-    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md;./gh-md-toc --insert Installation.md",
+    "document": "./gh-md-toc --insert README.md;./gh-md-toc --insert Troubleshooting.md;./gh-md-toc --insert Installation.md; rm README.md.orig.* README.md.toc.* Troubleshooting.md.orig.* Troubleshooting.md.toc.* Installation.md.orig.* Installation.md.toc.*",
     "watch": "nodemon"
   },
   "nodemonConfig": {
     "watch": [],
-    "ext": "js",
+    "ext": "js,json",
     "ignore": [],
     "exec": "~/npm/bin/homebridge -D -R -P ~/Code",
     "signal": "SIGTERM",
@@ -37,11 +37,11 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    "bottleneck": ">=2.19.5",
-    "debug": ">=4.3.3",
-    "hap-node-client": ">=0.1.29",
-    "is-my-json-valid": ">=2.20.6",
-    "mqtt": "4.3.7"
+    "bottleneck": "^2.19.5",
+    "debug": "^4.3.4",
+    "hap-node-client": "^0.2.0",
+    "is-my-json-valid": "^2.20.6",
+    "mqtt": "^4.3.7"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
