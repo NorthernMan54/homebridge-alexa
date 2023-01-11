@@ -36,7 +36,7 @@ client.on('connect', function () {
       var msg = JSON.parse(message.toString());
       console.log(message.toString());
       //    debug("Count", this.listenerCount(msg.directive.header.namespace.toLowerCase()));
-      process.exit();
+      // process.exit();
     } catch (err) {
       options.log.error("ERROR: MQTT Message on topic \"%s\" triggered an internal error\n", topic, err);
     }
