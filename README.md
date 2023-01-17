@@ -19,7 +19,7 @@ For the subscription model, we have set this up with PayPal to start with, and w
 ## New Users
 
 For new users of the service, they will receive a trial account, with 7 days of service to test out the service and work thru any issues prior to a subscription being required to continue service.  During the trial period users can apply for a subscription at any time, and it will be future dated to start on the trial period end date. 
-
+ 
 # Availability
 
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), Spanish(US), Portuguese (BR) and Spanish (MX).
@@ -46,6 +46,7 @@ Country availability - The plugin is available in these countries, English (AU),
    * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
       * [Native Support](#native-support)
       * [Supported as Other Types](#supported-as-other-types)
+      * [Non-Homebridge Devices](#non-homebridge-devices)
    * [Unsupported device types](#unsupported-device-types)
 * [Alexa Voice Commands](#alexa-voice-commands)
    * [Setup](#setup)
@@ -109,7 +110,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 Alexa device names are the same as the homebridge device names.
 
-This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
+This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported. See [Non-Homebridge Devices](#non-homebridge-devices)
 
 ## HomeKit/Homebridge Devices supported
 
@@ -135,6 +136,10 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Fans, Humidifier Dehumidifier and Air Purifiers - Supported as a Switch
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
+
+### Non-Homebridge Devices
+
+* `homebridge-alexa` only supports devices that are managed by the Homebridge instance. This means that HomeKit-supported devices that you add to your home via *only* HomeKit _will not be available to Alexa through this plugin_. You may wish to use the device manufacturer's app (if they have one) to link Alexa to the device(s) in duplicate to your existing HomeKit binding. Most devices are perfectly happy to be part of two worlds in this sense.
 
 ## Unsupported device types
 
