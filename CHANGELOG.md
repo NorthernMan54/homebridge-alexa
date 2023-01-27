@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.5 (2023-01-03)
+
+## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.4...v0.6.5)
+
+#### Changes
+
+- Fix for issue #551, which includes an alternate device naming approach that combines the HomeKit internal services names for an accessory to resolve some issues with duplicate device names.  The new config option `mergeServiceName` enables this feature.  This option if enabled is a break changing for existing implementations, and will cause existing devices to no longer be controllable by Alexa.  You will need to remove the non-functioning devices from the Alexa App and ask Alexa to discover devices again to resolve.
+
 ## 0.6.4 (2023-01-03)
 
 ## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.3...v0.6.4)

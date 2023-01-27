@@ -40,6 +40,7 @@ function alexaHome(log, config, api) {
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
   this.name = config['name'] || "Alexa";
+  this.mergeServiceName = config['mergeServiceName'] || false;
   this.CloudTransport = config['CloudTransport'] || "mqtts"; // Default to mqtts Transport
   this.LegacyCloudTransport = config['LegacyCloudTransport'] || false; // Default to new Transport ( Setting from discarded beta )
   var mqttKeepalive = config['keepalive'] || 5; // MQTT Connection Keepalive
@@ -138,6 +139,7 @@ alexaHome.prototype.didFinishLaunching = function () {
     deviceListHandling: this.deviceListHandling,
     deviceList: this.deviceList,
     door: this.door,
+    mergeServiceName: this.mergeServiceName,
     // Other Options
     events: this.events
   };

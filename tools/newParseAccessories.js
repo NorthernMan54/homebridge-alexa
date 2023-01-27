@@ -55,33 +55,33 @@ var message = {
 };
 
 var speakers = [{
-    "manufacturer": "yamaha-home",
-    "name": "Front"
-  },
-  {
-    "manufacturer": "yamaha-home",
-    "name": "Rear"
-  },
-  {
-    "manufacturer": "HTTP-IRBlaster",
-    "name": "Panasonic"
-  },
-  {
-    "manufacturer": "Bose SoundTouch",
-    "name": "Bose SoundTouch 10"
-  },
-  {
-    "manufacturer": "Bose SoundTouch",
-    "name": "Bose SoundTouch 20"
-  },
-  {
-    "manufacturer": "Bose SoundTouch",
-    "name": "Bose SoundTouch 300"
-  },
-  {
-    "manufacturer": "HTTP-IRBlaster",
-    "name": "KODI"
-  }
+  "manufacturer": "yamaha-home",
+  "name": "Front"
+},
+{
+  "manufacturer": "yamaha-home",
+  "name": "Rear"
+},
+{
+  "manufacturer": "HTTP-IRBlaster",
+  "name": "Panasonic"
+},
+{
+  "manufacturer": "Bose SoundTouch",
+  "name": "Bose SoundTouch 10"
+},
+{
+  "manufacturer": "Bose SoundTouch",
+  "name": "Bose SoundTouch 20"
+},
+{
+  "manufacturer": "Bose SoundTouch",
+  "name": "Bose SoundTouch 300"
+},
+{
+  "manufacturer": "HTTP-IRBlaster",
+  "name": "KODI"
+}
 ];
 
 var combine = [{
@@ -157,7 +157,8 @@ var hbDevices = new Homebridges(endPoints, {
   "combine": combine,
   "inputs": inputs,
   "channel": channel,
-  "blind": true
+  "blind": true,
+  mergeServiceName: true
 });
 debug("Homebridges");
 var response = hbDevices.toAlexa({
