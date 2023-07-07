@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.6 (2023-07-07)
+
+## [Version 0.6.6](https://github.com/northernman54/homebridge-alexa/compare/v0.6.5...v0.6.6)
+
+#### Changes
+
+- Fix for issue #572, Issue with Heater/Cooler devices and alexa status request failing with an error.
+
 ## 0.6.5 (2023-01-03)
 
 ## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.4...v0.6.5)
