@@ -6,7 +6,7 @@
     <img src="docs/homebridge.png" height="200">
 </p>
 
-Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
+Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
 # Note to users of the service
 
