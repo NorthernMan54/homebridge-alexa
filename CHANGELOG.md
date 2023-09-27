@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.7 (2023-07-07)
+
+## [Version 0.6.7](https://github.com/northernman54/homebridge-alexa/compare/v0.6.6...v0.6.7)
+
+#### Changes
+
+- Fix for issue #579, AC can't change temperature
+  
 ## 0.6.6 (2023-07-07)
 
 ## [Version 0.6.6](https://github.com/northernman54/homebridge-alexa/compare/v0.6.5...v0.6.6)
