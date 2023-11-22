@@ -71,6 +71,12 @@
           "functionBody": "return model.CloudTransport !== 'wss';"
         }
       },
+      "mergeServiceName": {
+        "title": "Alternate device naming approach",
+        "type": "boolean",
+        "description": "This is an alternate device naming approach, which combines the internal HomeKit names for a device.  It may resolve duplicate device name issues. Do not enable on an existing implementation, as you will lose control of your existing devices.",
+        "placeholder": false
+      },
       "CloudTransport": {
         "title": "Cloud Server Connection Transport",
         "description": "Transport options for cloud server connection. MQTTS - this is the recommended setting. MQTT - this is the original/legacy option. WSS - this is the an alternative transport option.",
@@ -232,7 +238,8 @@
         "CloudTransport",
         "keepalive",
         "refresh",
-        "filter"
+        "filter",
+        "mergeServiceName"
       ]
     },
     {

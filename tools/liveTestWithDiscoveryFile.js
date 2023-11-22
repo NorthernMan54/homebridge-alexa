@@ -162,7 +162,7 @@ options = {
   clientId: passwords.username,
   debug: this.debug,
   events: this.events,
-  log: this.log,
+  log: { error: this.log },
   pin: this.pin,
   refresh: this.refresh,
   oldParser: this.oldParser,
@@ -170,11 +170,14 @@ options = {
   combine: this.combine,
   speakers: this.speakers,
   filter: this.filter,
-  servers: [{
-    protocol: 'mqtt',
-    host: host,
-    port: 1883
-  }]
+  mqttURL: (this.CloudTransport === 'wss' ? "wss://" + host + "/ws" : (this.CloudTransport === 'mqtts' ? "mqtts://" + host + ":8883/" : "mqtt://" + host + ":1883/")),
+  mqttOptions: {
+    username: passwords.username,
+    password: passwords.password,
+    reconnectPeriod: 65000, // Increased reconnect period to allow DDOS protection to reset
+    keepalive: (this.CloudTransport === 'wss' ? 55 : this.keepalive), // Keep alive not used when using WSS Transport
+    rejectUnauthorized: false
+  },
 };
 
 // Initialize HAP Connections
@@ -188,7 +191,7 @@ this.eventBus.on('hapEvent', alexaActions.alexaEvent.bind(this));
 
 // Alexa mesages
 
-this.eventBus.on('System', function(message) {
+this.eventBus.on('System', function (message) {
   this.log.error("ERROR: ", message.directive.header.message);
 }.bind(this));
 this.eventBus.on('Alexa', alexaMessage.bind(this));
@@ -199,13 +202,192 @@ this.eventBus.on('Alexa.ColorController', alexaActions.alexaColorController.bind
 this.eventBus.on('Alexa.ColorTemperatureController', alexaActions.alexaColorTemperatureController.bind(this));
 this.eventBus.on('Alexa.PlaybackController', alexaActions.alexaPlaybackController.bind(this));
 this.eventBus.on('Alexa.Speaker', alexaActions.alexaSpeaker.bind(this));
-this.eventBus.on('Alexa.ThermostatController', alexaActions.alexaThermostatController.bind(this));
+this.eventBus.on('Alexa.ThermostatController', alexaThermostatController.bind(this));
 this.eventBus.on('Alexa.LockController', alexaActions.alexaLockController.bind(this));
 this.eventBus.on('Alexa.ChannelController', alexaActions.alexaChannelController.bind(this));
 this.eventBus.on('Alexa.StepSpeaker', alexaActions.alexaStepSpeaker.bind(this));
 this.eventBus.on('Alexa.InputController', alexaInputController.bind(this));
 this.eventBus.on('Alexa.ModeController', alexaModeController.bind(this));
 this.eventBus.on('Alexa.RangeController', alexaRangeController.bind(this));
+
+function alexaThermostatController(message, callback) {
+  debug('alexaThermostatController', JSON.stringify(message, null, 2));
+  var now = new Date();
+  var response = {};
+  switch (message.directive.header.name) {
+    case "SetThermostatMode":
+      response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
+            "payloadVersion": "3"
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        },
+        "context": {
+          "properties": [
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "thermostatMode",
+              "value": message.directive.payload.thermostatMode.value,
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "targetSetpoint",
+              "value": {
+                "value": 72.0,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.TemperatureSensor",
+              "name": "temperature",
+              "value": {
+                "value": 66.5,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 1000
+            }
+          ]
+        }
+      }
+      break;
+    case "SetTargetTemperature":
+      response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
+            "payloadVersion": "3"
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        },
+        "context": {
+          "properties": [
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "thermostatMode",
+              "value": "HEAT",
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "targetSetpoint",
+              "value": {
+                "value": 72.0,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.TemperatureSensor",
+              "name": "temperature",
+              "value": {
+                "value": 66.5,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 1000
+            }
+          ]
+        }
+      };
+      break;
+    case "AdjustTargetTemperature":
+      response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
+            "payloadVersion": "3"
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        },
+        "context": {
+          "properties": [
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "thermostatMode",
+              "value": "HEAT",
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.ThermostatController",
+              "name": "targetSetpoint",
+              "value": {
+                "value": 72.0,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            },
+            {
+              "namespace": "Alexa.TemperatureSensor",
+              "name": "temperature",
+              "value": {
+                "value": 66.5,
+                "scale": "CELSIUS"
+              },
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 1000
+            }
+          ]
+        }
+      };
+      break;
+    default:
+      response = {
+        "event": {
+          "header": {
+            "namespace": "Alexa",
+            "name": "Response",
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
+            "payloadVersion": "3"
+          },
+          "endpoint": {
+            "endpointId": message.directive.endpoint.endpointId
+          },
+          "payload": {}
+        },
+        "context": {
+          "properties": [{
+            "namespace": "Alexa.ModeController",
+            "instance": message.directive.header.instance,
+            "name": "mode",
+            "value": message.directive.payload.mode,
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          }]
+        }
+      };
+  }
+  callback(null, response);
+}
 
 function alexaRangeController(message, callback) {
   debug('alexaRangeController', JSON.stringify(message, null, 2));
@@ -266,6 +448,7 @@ function alexaModeController(message, callback) {
       }]
     }
   };
+
   callback(null, response);
 }
 
@@ -273,6 +456,61 @@ function alexaMessage(message, callback) {
   debug('alexaMessage', JSON.stringify(message, null, 2));
   var now = new Date();
 
+  var response = {
+    "event": {
+      "header": {
+        "namespace": "Alexa",
+        "name": "StateReport",
+        "messageId": message.directive.header.messageId,
+        "correlationToken": message.directive.header.correlationToken,
+        "payloadVersion": "3"
+      },
+      "endpoint": {
+        "endpointId": message.directive.endpoint.endpointId
+      },
+      "payload": {}
+    },
+    "context": {
+      "properties": [{
+        "namespace": "Alexa.ThermostatController",
+        "name": "thermostatMode",
+        "value": "HEAT",
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      },
+      {
+        "namespace": "Alexa.ThermostatController",
+        "name": "targetSetpoint",
+        "value": {
+          "value": 22.0,
+          "scale": "CELSIUS"
+        },
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 500
+      },
+      {
+        "namespace": "Alexa.TemperatureSensor",
+        "name": "temperature",
+        "value": {
+          "value": 19.9,
+          "scale": "CELSIUS"
+        },
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 1000
+      },
+      {
+        "namespace": "Alexa.EndpointHealth",
+        "name": "connectivity",
+        "value": {
+          "value": "OK"
+        },
+        "timeOfSample": now.toISOString(),
+        "uncertaintyInMilliseconds": 0
+      }
+      ]
+    }
+  }
+  /*
   var response = {
     "context": {
       "properties": [{
@@ -298,6 +536,7 @@ function alexaMessage(message, callback) {
       "payload": {}
     }
   };
+  */
   debug('alexaMessage - response: ', JSON.stringify(response));
   callback(null, response);
 }
@@ -402,7 +641,7 @@ function alexaDiscovery(message, callback) {
   response.event.header.messageId = messageID;
   var alreadySeen = [];
 
-  response.event.payload.endpoints.forEach(function(endpoint) {
+  response.event.payload.endpoints.forEach(function (endpoint) {
     if (alreadySeen[endpoint.friendlyName]) {
       debug("Duplicate name", endpoint.friendlyName);
     } else {

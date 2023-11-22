@@ -306,6 +306,21 @@ sudo npm install -g homebridge-alexa
 ],
 ```
 
+#### mergeServiceName - Alternate device naming
+  - An alternate device naming approach that combines the HomeKit internal services names for an accessory to resolve some issues with duplicate device names.  This option if enabled is a break changing for existing implementations, and will cause existing devices to no longer be controllable by Alexa.  You will need to remove the non-functioning devices from the Alexa App and ask Alexa to discover devices again to resolve.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "mergeServiceName": true
+  }
+],
+```  
+
 #### blind
   - Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false
 

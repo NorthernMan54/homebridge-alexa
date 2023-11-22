@@ -6,7 +6,7 @@
     <img src="docs/homebridge.png" height="200">
 </p>
 
-Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge.  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
+Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 
 # Note to users of the service
 
@@ -19,7 +19,7 @@ For the subscription model, we have set this up with PayPal to start with, and w
 ## New Users
 
 For new users of the service, they will receive a trial account, with 7 days of service to test out the service and work thru any issues prior to a subscription being required to continue service.  During the trial period users can apply for a subscription at any time, and it will be future dated to start on the trial period end date. 
-
+ 
 # Availability
 
 Country availability - The plugin is available in these countries, English (AU), German (DE), English (CA), English (US), French (FR), English (UK), Italian (IT), English (IN), Spanish (ES), Japanese (JP), Spanish(US), Portuguese (BR) and Spanish (MX).
@@ -37,53 +37,10 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
-* [Note to users of the service](#note-to-users-of-the-service)
-   * [New Users](#new-users)
-* [Availability](#availability)
-* [Features](#features)
-* [Table of Contents](#table-of-contents)
-* [Supported devices](#supported-devices)
-   * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
-      * [Native Support](#native-support)
-      * [Supported as Other Types](#supported-as-other-types)
-   * [Unsupported device types](#unsupported-device-types)
-* [Alexa Voice Commands](#alexa-voice-commands)
-   * [Setup](#setup)
-   * [Light bulbs / Switches / Dimmer Switches](#light-bulbs--switches--dimmer-switches)
-   * [Color lights](#color-lights)
-   * [Color temperature](#color-temperature)
-      * [Color Temperatures](#color-temperatures)
-   * [Garage door, Blinds and Window Coverings](#garage-door-blinds-and-window-coverings)
-      * [Garage Door With door = false](#garage-door-with-door--false)
-      * [Window coverings / blinds With blind = false](#window-coverings--blinds-with-blind--false)
-      * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
-      * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
-   * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
-   * [Lock / Unlock Doors](#lock--unlock-doors)
-   * [Temperature sensors](#temperature-sensors)
-   * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
-   * [HomeKit Television](#homekit-television)
-      * [HomeKit Television - Tested plugins](#homekit-television---tested-plugins)
-      * [Television Inputs and Channels](#television-inputs-and-channels)
-   * [Speakers](#speakers)
-      * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
-   * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
-   * [Contact and Motion Sensors](#contact-and-motion-sensors)
-   * [Door bell devices](#door-bell-devices)
-* [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
-* [Service Availability and Issues](#service-availability-and-issues)
-   * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
-   * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
-      * [Troubleshooting](#troubleshooting)
-      * [Known Issues](#known-issues)
-      * [Discord Channel](#discord-channel)
-      * [Debug logs](#debug-logs)
-      * [Homebridge Accessory Dump](#homebridge-accessory-dump)
-* [Roadmap](#roadmap)
-* [Credits](#credits)
+
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:41:46 EST -->
+<!-- Added by: sgracey, at: Wed 27 Sep 2023 19:52:24 EDT -->
 
 <!--te-->
 
@@ -109,7 +66,7 @@ Country availability - The plugin is available in these countries, English (AU),
 
 Alexa device names are the same as the homebridge device names.
 
-This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported.
+This only supports accessories connected via a homebridge plugin, any 'Homekit' accessories are not supported, and will never be supported. See [Non-Homebridge Devices](#non-homebridge-devices)
 
 ## HomeKit/Homebridge Devices supported
 
@@ -135,6 +92,10 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Fans, Humidifier Dehumidifier and Air Purifiers - Supported as a Switch
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
+
+### Non-Homebridge Devices
+
+* `homebridge-alexa` only supports devices that are managed by the Homebridge instance. This means that HomeKit-supported devices that you add to your home via *only* HomeKit _will not be available to Alexa through this plugin_. You may wish to use the device manufacturer's app (if they have one) to link Alexa to the device(s) in duplicate to your existing HomeKit binding. Most devices are perfectly happy to be part of two worlds in this sense.
 
 ## Unsupported device types
 

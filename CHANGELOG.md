@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.7 (2023-09-27)
+
+## [Version 0.6.7](https://github.com/northernman54/homebridge-alexa/compare/v0.6.6...v0.6.7)
+
+#### Changes
+
+- Fix for issue #579, AC can't change temperature
+  
+## 0.6.6 (2023-07-07)
+
+## [Version 0.6.6](https://github.com/northernman54/homebridge-alexa/compare/v0.6.5...v0.6.6)
+
+#### Changes
+
+- Fix for issue #572, Issue with Heater/Cooler devices and alexa status request failing with an error.
+
+## 0.6.5 (2023-01-03)
+
+## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.4...v0.6.5)
+
+#### Changes
+
+- Fix for issue #551, which includes an alternate device naming approach that combines the HomeKit internal services names for an accessory to resolve some issues with duplicate device names.  The new config option `mergeServiceName` enables this feature.  This option if enabled is a break changing for existing implementations, and will cause existing devices to no longer be controllable by Alexa.  You will need to remove the non-functioning devices from the Alexa App and ask Alexa to discover devices again to resolve.
+
+## 0.6.4 (2023-01-03)
+
+## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.3...v0.6.4)
+
+#### Changes
+
+- Fix for issue #564
+
+## 0.6.3 (2023-01-03)
+
+## [Version 0.6.3](https://github.com/northernman54/homebridge-alexa/compare/v0.6.0...v0.6.3)
+
+#### Changes
+
+- Disable support for ipv6, this was problematic for some users #561
+
 ## 0.6.0 (2023-01-03)
 
 ## [Version 0.6.0](https://github.com/northernman54/homebridge-alexa/compare/v0.5.63...v0.6.0)
