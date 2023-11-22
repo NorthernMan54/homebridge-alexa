@@ -26,6 +26,7 @@ Installation and Configuration of Homebridge Alexa
          * [keepalive - Cloud Server Connection Keepalive](#keepalive---cloud-server-connection-keepalive)
          * [refresh - Accessory Cache Refresh Interval](#refresh---accessory-cache-refresh-interval)
          * [filter - Homebridge Instance Filter](#filter---homebridge-instance-filter)
+         * [mergeServiceName - Alternate device naming](#mergeservicename---alternate-device-naming)
          * [blind](#blind)
          * [door](#door)
       * [Speaker Settings](#speaker-settings)
@@ -40,7 +41,7 @@ Installation and Configuration of Homebridge Alexa
    * [Discover Devices](#discover-devices)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Tue  3 Jan 2023 10:41:47 EST -->
+<!-- Added by: runner, at: Thu Nov 23 15:45:35 UTC 2023 -->
 
 <!--te-->
 
