@@ -1,0 +1,62 @@
+name: "Build"
+
+on:
+  push:
+    branches: [beta-*.*.*, beta]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout repo
+    - uses: actions/checkout@v4
+
+    # get branch / tag name
+    - name: Get Branch / Tag Name
+      id: get_branch
+      run: |
+        export BRANCH_NAME=$(if [[ ${GITHUB_REF} =~ "refs/tags/" ]]; then echo ${GITHUB_REF/refs\/tags\//}; else echo ${GITHUB_REF/refs\/heads\//}; fi)
+        echo $BRANCH_NAME
+        echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_OUTPUT
+
+    # generate the image tag
+    - name: Get Image Tag
+      id: get_tag
+      run: |
+        export TARGET_IMAGE_TAG=$(if [ "${{ steps.get_branch.outputs.NAME }}" = "main" ]; then echo "main"; else echo "${{ steps.get_branch.outputs.BRANCH_NAME }}"; fi)
+        echo $TARGET_IMAGE_TAG
+        echo "TARGET_IMAGE_TAG=${TARGET_IMAGE_TAG}" >> $GITHUB_OUTPUT
+
+    # generate the alternative image tag
+    - name: Get Alternate Tag
+      id: get_alt_tag
+      run: |
+        export ALT_IMAGE_TAG=$(if [ "${{ steps.get_branch.outputs.NAME }}" = "main" ]; then echo "ubuntu"; else echo "${{ steps.get_branch.outputs.BRANCH_NAME }}-ubuntu"; fi)
+        echo $ALT_IMAGE_TAG
+        echo "ALT_IMAGE_TAG=${ALT_IMAGE_TAG}" >> $GITHUB_OUTPUT
+
+    - name: Publish Test Version - ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
+      if: ${{ steps.get_branch.outputs.BRANCH_NAME != 'main' }}
+      uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+      with:
+        tag: ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
+        dynamically_adjust_version: true
+        npm_version_command: 'pre'
+        pre_id: ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
+      secrets:
+            npm_auth_token: ${{ secrets.npm_token }}
+
+    - name: Publish Release Version
+      if: ${{ steps.get_branch.outputs.BRANCH_NAME == 'main' }}
+      uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+      with:
+        install_cmd: npm ci
+      secrets:
+        npm_auth_token: ${{ secrets.npm_token }}
+
+
+
+
+
