@@ -3,7 +3,6 @@ npm-debug.log
 
 *.zip
 node_modules
-package-lock.json
 password*
 README.md.toc.*
 README.md.orig.*
