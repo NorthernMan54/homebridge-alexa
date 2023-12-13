@@ -2,10 +2,46 @@ Installation and Configuration of Homebridge Alexa
 ==================================================
 
 <!--ts-->
-
+* [Installation and Configuration of Homebridge Alexa](#installation-and-configuration-of-homebridge-alexa)
+* [Setup Instructions](#setup-instructions)
+   * [Create Homebridge-Alexa Cloud Services Account](#create-homebridge-alexa-cloud-services-account)
+   * [Install and Configure the Plugin](#install-and-configure-the-plugin)
+      * [Installation in Homebridge UI](#installation-in-homebridge-ui)
+      * [Configuration in Homebridge UI](#configuration-in-homebridge-ui)
+   * [Enabling and linking the Homebridge Smart Home Skill](#enabling-and-linking-the-homebridge-smart-home-skill)
+      * [Viewing Account Status](#viewing-account-status)
+* [Advanced Setup Instructions, including advanced configuration options](#advanced-setup-instructions-including-advanced-configuration-options)
+   * [Prepare Homebridge for plugin installation](#prepare-homebridge-for-plugin-installation)
+   * [Install Plugin](#install-plugin)
+   * [Create homebridge-alexa account](#create-homebridge-alexa-account)
+   * [HomeBridge-alexa plugin configuration](#homebridge-alexa-plugin-configuration)
+      * [Required Settings](#required-settings)
+      * [Optional Settings](#optional-settings)
+         * [debug](#debug)
+         * [pin](#pin)
+         * [routines](#routines)
+         * [deviceList &amp; deviceListHandling - Filtering of devices by name, either allow or allow](#devicelist--devicelisthandling---filtering-of-devices-by-name-either-allow-or-allow)
+      * [Advanced Settings](#advanced-settings)
+         * [CloudTransport - Cloud Server Connection Transport](#cloudtransport---cloud-server-connection-transport)
+         * [keepalive - Cloud Server Connection Keepalive](#keepalive---cloud-server-connection-keepalive)
+         * [refresh - Accessory Cache Refresh Interval](#refresh---accessory-cache-refresh-interval)
+         * [filter - Homebridge Instance Filter](#filter---homebridge-instance-filter)
+         * [mergeServiceName - Alternate device naming](#mergeservicename---alternate-device-naming)
+         * [blind](#blind)
+         * [door](#door)
+      * [Speaker Settings](#speaker-settings)
+         * [speakers](#speakers)
+      * [Combine Accessories](#combine-accessories)
+         * [combine](#combine)
+         * [Inputs](#inputs)
+         * [Apple TV](#apple-tv)
+         * [Yamaha Spotify Controls](#yamaha-spotify-controls)
+   * [Initial Testing and confirming configuration](#initial-testing-and-confirming-configuration)
+   * [Enable Homebridge smarthome skill and link accounts](#enable-homebridge-smarthome-skill-and-link-accounts)
+   * [Discover Devices](#discover-devices)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Wed 27 Sep 2023 19:52:25 EDT -->
+<!-- Added by: runner, at: Wed Dec 13 14:15:55 UTC 2023 -->
 
 <!--te-->
 

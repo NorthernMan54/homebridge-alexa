@@ -1,10 +1,40 @@
 **Troubleshooting Tips**
 
 <!--ts-->
-
+* [Initial Setup](#initial-setup)
+   * [[Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.](#alexa-error--homebridge-alexa-login-to-homebridgeca-failed-please-validate-your-credentials-in-configjson-and-restart-homebridge)
+      * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](#--bad-login-or-password-in-your-configjson-for-httpswwwhomebridgeca)
+   * [[Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#alexa-error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
+      * [- Cloud Server DDOS Protection has blocked your IP address](#--cloud-server-ddos-protection-has-blocked-your-ip-address)
+      * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
+      * [- VPN Software interfering with homebridge-alexa to homebridge.ca communications](#--vpn-software-interfering-with-homebridge-alexa-to-homebridgeca-communications)
+   * [[Alexa] ERROR: ( homebridge-alexa) Stopping Home Skill connection due to excessive reconnects, please review the README.](#alexa-error--homebridge-alexa-stopping-home-skill-connection-due-to-excessive-reconnects-please-review-the-readme)
+   * [[Alexa] WARNING: Duplicate device name xxxxx](#alexa-warning-duplicate-device-name-xxxxx)
+* [Initial Setup Messages from DEBUG mode](#initial-setup-messages-from-debug-mode)
+   * [alexaHAP HAP Discover failed ... is not running in insecure mode](#alexahap-hap-discover-failed--is-not-running-in-insecure-mode)
+   * [HAP Discover failed ..... error code 470](#hap-discover-failed--error-code-470)
+   * [Upgraded from old version and am seeing this error message](#upgraded-from-old-version-and-am-seeing-this-error-message)
+   * [[Alexa] ERROR: HAP Discovery failed, please review config](#alexa-error-hap-discovery-failed-please-review-config)
+   * [alexaLocal ERROR: connect ECONNREFUSED 35.169.132.61:1883 -&gt;  ECONNREFUSED](#alexalocal-error-connect-econnrefused-35169132611883----econnrefused)
+   * [alexaLocal error { Error: connect ECONNREFUSED 35.169.132.61:8883](#alexalocal-error--error-connect-econnrefused-35169132618883)
+* [Device Discovery](#device-discovery)
+   * [Device discovery fails and the plugin logs show no issues.](#device-discovery-fails-and-the-plugin-logs-show-no-issues)
+   * [Device discovery fails, and this message is in the logs ERROR: Empty accessory name, parsing failed.](#device-discovery-fails-and-this-message-is-in-the-logs-error-empty-accessory-name-parsing-failed)
+   * [Device discovery fails, and this message is in the logs ERROR: Maximum devices/accessories of 300 exceeded.](#device-discovery-fails-and-this-message-is-in-the-logs-error-maximum-devicesaccessories-of-300-exceeded)
+   * [Device discovery fails, and this message is in the logs ERROR: Parsing failed, duplicate endpointID.](#device-discovery-fails-and-this-message-is-in-the-logs-error-parsing-failed-duplicate-endpointid)
+   * [After restarting homebridge Alexa can't find devices and needs to discover them again.  Or you have duplicate devices in Alexa](#after-restarting-homebridge-alexa-cant-find-devices-and-needs-to-discover-them-again--or-you-have-duplicate-devices-in-alexa)
+* [Controlling devices](#controlling-devices)
+   * [[Alexa] PowerController TurnOff 192.168.1.226 51826 undefined Error: Homebridge auth failed, invalid PIN](#alexa-powercontroller-turnoff-1921681226-51826-undefined-error-homebridge-auth-failed-invalid-pin)
+* [Event error messages](#event-error-messages)
+   * [[Alexa] WARNING: ( homebridge-alexa) Dropped event message, message rate too high.](#alexa-warning--homebridge-alexa-dropped-event-message-message-rate-too-high)
+   * [ERROR:  Error: getAccessToken No data Error: XXXXXXXXXX](#error--error-getaccesstoken-no-data-error-xxxxxxxxxx)
+   * [ERROR:  Error: getAccessToken Token not found](#error--error-getaccesstoken-token-not-found)
+      * [Unsuccessful event message ( No event gateway token )](#unsuccessful-event-message--no-event-gateway-token-)
+      * [Successful event message being sent to Alexa](#successful-event-message-being-sent-to-alexa)
+   * [[Alexa] ERROR:  Event gateway token refresh error: 400](#alexa-error--event-gateway-token-refresh-error-400)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Wed 27 Sep 2023 19:52:25 EDT -->
+<!-- Added by: runner, at: Wed Dec 13 14:15:55 UTC 2023 -->
 
 <!--te-->
 
