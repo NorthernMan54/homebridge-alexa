@@ -7,6 +7,8 @@ var passwords = JSON.parse(fs.readFileSync(process.argv[2]));
 
 var clientUsername = process.argv[3];
 
+var statusCommand = JSON.parse(fs.readFileSync(process.argv[4]));
+
 if (!clientUsername) {
   console.log("Missing clientUsername");
   process.exit();
@@ -29,21 +31,30 @@ client.on('connect', function () {
   debug('connect', options.mqttURL, "command/" + clientUsername + "/#");
   client.removeAllListeners('message'); // Clean up event handlers
   client.subscribe("response/" + clientUsername + "/#");
-  client.publish("command/" + clientUsername + "/1", JSON.stringify(discoveryCommand));
+  client.publish("command/" + clientUsername + "/1", JSON.stringify(statusCommand));
 
-  client.on('message', function (topic, message) {
+  client.on('message', async function (topic, message) {
     try {
       var msg = JSON.parse(message.toString());
       console.log(message.toString());
+
+      const homeDir = require('os').homedir(); // See: https://www.npmjs.com/package/os
+      const desktopDir = `${homeDir}/Desktop/status-`;
+
+      fs.writeFileSync(desktopDir + clientUsername + '.json', message);
+      await sleep(5000);
+      process.exit();
       //    debug("Count", this.listenerCount(msg.directive.header.namespace.toLowerCase()));
       // process.exit();
     } catch (err) {
-      options.log.error("ERROR: MQTT Message on topic \"%s\" triggered an internal error\n", topic, err);
+      console.log("ERROR: MQTT Message on topic \"%s\" triggered an internal error\n", topic, err);
     }
   });
 });
 
 
-
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
