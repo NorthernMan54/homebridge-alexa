@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.8 (2023-12-13)
+
+## [Version 0.6.8](https://github.com/northernman54/homebridge-alexa/compare/v0.6.7...v0.6.8)
+
+#### Changes
+
+- Fix for issue #591, Window coverings / blinds show as unresponsive in the Alexa App
+
 ## 0.6.7 (2023-09-27)
 
 ## [Version 0.6.7](https://github.com/northernman54/homebridge-alexa/compare/v0.6.6...v0.6.7)
