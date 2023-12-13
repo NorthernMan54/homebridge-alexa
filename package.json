@@ -32,16 +32,16 @@
     "homebridge": ">=0.4.16"
   },
   "devDependencies": {
-    "@oznu/hap-client": "^1.8.1",
+    "@oznu/hap-client": "^1.9.0",
     "documentation": "^14.0.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.2"
   },
   "dependencies": {
     "bottleneck": "^2.19.5",
     "debug": "^4.3.4",
     "hap-node-client": "^0.2.4",
     "is-my-json-valid": "^2.20.6",
-    "mqtt": "^4.3.7"
+    "mqtt": "^4.3.8"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
