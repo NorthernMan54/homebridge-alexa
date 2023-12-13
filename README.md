@@ -37,10 +37,54 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
-
+* [Note to users of the service](#note-to-users-of-the-service)
+   * [New Users](#new-users)
+* [Availability](#availability)
+* [Features](#features)
+* [Table of Contents](#table-of-contents)
+* [Supported devices](#supported-devices)
+   * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
+      * [Native Support](#native-support)
+      * [Supported as Other Types](#supported-as-other-types)
+      * [Non-Homebridge Devices](#non-homebridge-devices)
+   * [Unsupported device types](#unsupported-device-types)
+* [Alexa Voice Commands](#alexa-voice-commands)
+   * [Setup](#setup)
+   * [Light bulbs / Switches / Dimmer Switches](#light-bulbs--switches--dimmer-switches)
+   * [Color lights](#color-lights)
+   * [Color temperature](#color-temperature)
+      * [Color Temperatures](#color-temperatures)
+   * [Garage door, Blinds and Window Coverings](#garage-door-blinds-and-window-coverings)
+      * [Garage Door With door = false](#garage-door-with-door--false)
+      * [Window coverings / blinds With blind = false](#window-coverings--blinds-with-blind--false)
+      * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
+      * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
+   * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
+   * [Lock / Unlock Doors](#lock--unlock-doors)
+   * [Temperature sensors](#temperature-sensors)
+   * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
+   * [HomeKit Television](#homekit-television)
+      * [HomeKit Television - Tested plugins](#homekit-television---tested-plugins)
+      * [Television Inputs and Channels](#television-inputs-and-channels)
+   * [Speakers](#speakers)
+      * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
+   * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
+   * [Contact and Motion Sensors](#contact-and-motion-sensors)
+   * [Door bell devices](#door-bell-devices)
+* [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
+* [Service Availability and Issues](#service-availability-and-issues)
+   * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
+   * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
+      * [Troubleshooting](#troubleshooting)
+      * [Known Issues](#known-issues)
+      * [Discord Channel](#discord-channel)
+      * [Debug logs](#debug-logs)
+      * [Homebridge Accessory Dump](#homebridge-accessory-dump)
+* [Roadmap](#roadmap)
+* [Credits](#credits)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sgracey, at: Wed 27 Sep 2023 19:52:24 EDT -->
+<!-- Added by: runner, at: Wed Dec 13 14:15:55 UTC 2023 -->
 
 <!--te-->
 
