@@ -1,8 +1,6 @@
 name: "Build and Publish"
 
 on:
-  push:
-    branches: [beta-*.*.*, beta]
   workflow_dispatch:
 
 jobs:
