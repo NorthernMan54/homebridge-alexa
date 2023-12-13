@@ -289,7 +289,7 @@ From here you should be able to determine if your plugin is communicating with t
 
 ### Known Issues
 
-* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.MD).
+* I have started recording troubleshooting tips here based on issues seen by the community [Troubleshooting](Troubleshooting.md).
 * All homebridge PIN's in your setup need to be set to the same value.
 * An Alexa device or a software based Alexa is required. Using just the App or Website does not work, and device discovery will fail to find devices. The Reverb app is a software based Alexa that is known to work.
 * The maximum number of supported devices is 300.  This is a limitation from the from the Amazon side, and not the plugin.
