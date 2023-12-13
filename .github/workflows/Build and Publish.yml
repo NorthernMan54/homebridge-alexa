@@ -1,10 +1,12 @@
 name: "Build and Publish"
-
+ 
 on:
+  push:
+    branches: [beta-*.*.*, beta]
   workflow_dispatch:
 
 jobs:
-  build:
+  get_tags:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,38 +25,68 @@ jobs:
     - name: Get Image Tag
       id: get_tag
       run: |
-        export TARGET_IMAGE_TAG=$(if [ "${{ steps.get_branch.outputs.NAME }}" = "main" ]; then echo "main"; else echo "${{ steps.get_branch.outputs.BRANCH_NAME }}"; fi)
+        export TARGET_IMAGE_TAG=$(if [ "${{ steps.get_branch.outputs.BRANCH_NAME }}" = "main" ]; then echo "main"; else echo "${{ steps.get_branch.outputs.BRANCH_NAME }}" | awk -F- '{ print $1 }'; fi)
         echo $TARGET_IMAGE_TAG
         echo "TARGET_IMAGE_TAG=${TARGET_IMAGE_TAG}" >> $GITHUB_OUTPUT
 
-    # generate the alternative image tag
-    - name: Get Alternate Tag
-      id: get_alt_tag
+    outputs:
+      BRANCH_NAME: ${{ steps.get_branch.outputs.BRANCH_NAME }}
+      TARGET_IMAGE_TAG: ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
+
+  create_documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout repo
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: lts/*
+
+    - name: Retrieve github-markdown-toc
       run: |
-        export ALT_IMAGE_TAG=$(if [ "${{ steps.get_branch.outputs.NAME }}" = "main" ]; then echo "ubuntu"; else echo "${{ steps.get_branch.outputs.BRANCH_NAME }}-ubuntu"; fi)
-        echo $ALT_IMAGE_TAG
-        echo "ALT_IMAGE_TAG=${ALT_IMAGE_TAG}" >> $GITHUB_OUTPUT
+        wget -q https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
+        chmod a+x gh-md-toc
+        
+    - name: Create Table of Contents
+      run: |
+        npm run-script document
 
-    - name: Publish Test Version - ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
-      if: ${{ steps.get_branch.outputs.BRANCH_NAME != 'main' }}
-      uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Update TOC"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        tag: ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
-        dynamically_adjust_version: true
-        npm_version_command: 'pre'
-        pre_id: ${{ steps.get_tag.outputs.TARGET_IMAGE_TAG }}
-      secrets:
-            npm_auth_token: ${{ secrets.npm_token }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+    
+  publish_release:
+    needs: [get_tags, create_documentation]
+    name: Publish Release Version
+    if: ${{ needs.get_tags.outputs.BRANCH_NAME == 'main' }}
+    uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+    with:
+      install_cmd: npm ci
+    secrets:
+      npm_auth_token: ${{ secrets.npm_token }}
 
-    - name: Publish Release Version
-      if: ${{ steps.get_branch.outputs.BRANCH_NAME == 'main' }}
-      uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
-      with:
-        install_cmd: npm ci
-      secrets:
-        npm_auth_token: ${{ secrets.npm_token }}
-
-
-
-
-
+  publish_test:
+    needs: [get_tags, create_documentation]
+    name: Publish Test Version - ${{ needs.get_tags.outputs.BRANCH_NAME }}
+    if: ${{ needs.get_tags.outputs.BRANCH_NAME != 'main' }}
+    uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+    with:
+      tag: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
+      dynamically_adjust_version: true
+      npm_version_command: 'pre'
+      pre_id: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
+    secrets:
+          npm_auth_token: ${{ secrets.npm_token }}
