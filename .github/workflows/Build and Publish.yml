@@ -1,5 +1,14 @@
-name: "Build and Publish"
+name: "Build, Publish and Release"
  
+ #
+ # Automatically publish beta releases on pushes, require a manual workflow action for production releases
+ #
+ # Does the following
+ # 1 - Run the documentation script against the package
+ # 2 - Create the npm package using the package.json version tag ( or for beta releases, adds a beta tag and increments as needed )
+ # 3 - Publish the npm package
+ # 4 - For releases against the main branch, create a github release as well
+
 on:
   push:
     branches: [beta-*.*.*, beta]
@@ -51,7 +60,7 @@ jobs:
       run: |
         wget -q https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
         chmod a+x gh-md-toc
-        
+
     - name: Create Table of Contents
       run: |
         npm run-script document
@@ -60,6 +69,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        git add *
         git commit -a -m "Update TOC"
 
     - name: Push changes
@@ -67,8 +77,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
-    
-  publish_release:
+
+  publish_prod_release:
     needs: [get_tags, create_documentation]
     name: Publish Release Version
     if: ${{ needs.get_tags.outputs.BRANCH_NAME == 'main' }}
@@ -78,7 +88,7 @@ jobs:
     secrets:
       npm_auth_token: ${{ secrets.npm_token }}
 
-  publish_test:
+  publish_test_release:
     needs: [get_tags, create_documentation]
     name: Publish Test Version - ${{ needs.get_tags.outputs.BRANCH_NAME }}
     if: ${{ needs.get_tags.outputs.BRANCH_NAME != 'main' }}
@@ -89,4 +99,20 @@ jobs:
       npm_version_command: 'pre'
       pre_id: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
     secrets:
-          npm_auth_token: ${{ secrets.npm_token }}
+      npm_auth_token: ${{ secrets.npm_token }}
+
+  publish_github_release:
+    needs: [publish_prod_release]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ needs.publish_prod_release.outputs.NPM_VERSION }}
+        name: Release ${{ needs.publish_prod_release.outputs.NPM_VERSION }}
+        generate_release_notes: true
+        draft: false
+        prerelease: false
