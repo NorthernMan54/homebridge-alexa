@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.9 (2023-03-30)
+
+## [Version 0.6.9](https://github.com/northernman54/homebridge-alexa/compare/v0.6.8...v0.6.9)
+
+#### Changes
+
+- Enables HK Thermostat type accessory to turn off #605 ( Tks @banboobee )
+- Updates to package dependencies
+
 ## 0.6.8 (2023-12-13)
 
 ## [Version 0.6.8](https://github.com/northernman54/homebridge-alexa/compare/v0.6.7...v0.6.8)

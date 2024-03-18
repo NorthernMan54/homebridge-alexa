@@ -2,9 +2,9 @@
 
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
-<p align="center">
-    <img src="docs/echo_5th.jpg" height="200"><img src="docs/homebridge.png" height="200">
-</p>
+<h1><p align="center">
+    <img src="docs/echo_5th.jpg" height="200"><b> => </b><img src="docs/homebridge.png" height="200">
+</p></h1>
 
 Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
 

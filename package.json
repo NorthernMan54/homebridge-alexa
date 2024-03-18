@@ -23,6 +23,10 @@
     "type": "git",
     "url": "git+https://github.com/NorthernMan54/homebridge-alexa.git"
   },
+  "engines": {
+    "homebridge": "^1.6.0",
+    "node": "^18 || ^20"
+  },
   "keywords": [
     "alexa",
     "homebridge-plugin"
