@@ -46,7 +46,7 @@
   "dependencies": {
     "bottleneck": "2.19.5",
     "debug": "4.3.4",
-    "hap-node-client": "0.2.4",
+    "hap-node-client": "0.2.5-beta.5",
     "is-my-json-valid": "2.20.6",
     "mqtt": "5.3.6"
   },
