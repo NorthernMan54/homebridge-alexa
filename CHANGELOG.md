@@ -8,7 +8,8 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Changes
 
-- Enables HK Thermostat type accessory to turn off #605 ( Tks @banboobee )
+- Enables Thermostat type accessory to `Turn Off` and `Turn On` #605 ( Tks @banboobee ).  To preserve existing functionality the inital / default behaviour for the `Turn on Thermostat` command is to return an error message `That command does not work on device` unless the new optional config setting `Thermostat Turn On Behaviour` is set.
+- Minor style updates to Config Menu
 - Updates to package dependencies
 
 ## 0.6.8 (2023-12-13)

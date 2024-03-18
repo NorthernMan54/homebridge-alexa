@@ -3,10 +3,10 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
 <h1><p align="center">
-    <img src="docs/echo_5th.jpg" height="200"><b> => </b><img src="docs/homebridge.png" height="200">
+    <img src="docs/README_Image.001.jpeg" width="80%" style="vertical-align:middle">
 </p></h1>
 
-Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
+Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).
 
 # Note to users of the service
 
@@ -37,11 +37,52 @@ Country availability - The plugin is available in these countries, English (AU),
 
 # Table of Contents
 <!--ts-->
-
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: runner, at: Mon Mar 18 15:02:55 UTC 2024 -->
-
+* [Note to users of the service](#note-to-users-of-the-service)
+   * [New Users](#new-users)
+* [Availability](#availability)
+* [Features](#features)
+* [Table of Contents](#table-of-contents)
+* [Supported devices](#supported-devices)
+   * [HomeKit/Homebridge Devices supported](#homekithomebridge-devices-supported)
+      * [Native Support](#native-support)
+      * [Supported as Other Types](#supported-as-other-types)
+      * [Non-Homebridge Devices](#non-homebridge-devices)
+   * [Unsupported device types](#unsupported-device-types)
+* [Alexa Voice Commands](#alexa-voice-commands)
+   * [Setup](#setup)
+   * [Light bulbs / Switches / Dimmer Switches](#light-bulbs--switches--dimmer-switches)
+   * [Color lights](#color-lights)
+   * [Color temperature](#color-temperature)
+      * [Color Temperatures](#color-temperatures)
+   * [Garage door, Blinds and Window Coverings](#garage-door-blinds-and-window-coverings)
+      * [Garage Door With door = false](#garage-door-with-door--false)
+      * [Window coverings / blinds With blind = false](#window-coverings--blinds-with-blind--false)
+      * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
+      * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
+   * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
+      * [For Thermostat's only](#for-thermostats-only)
+   * [Lock / Unlock Doors](#lock--unlock-doors)
+   * [Temperature sensors](#temperature-sensors)
+   * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
+   * [HomeKit Television](#homekit-television)
+      * [HomeKit Television - Tested plugins](#homekit-television---tested-plugins)
+      * [Television Inputs and Channels](#television-inputs-and-channels)
+   * [Speakers](#speakers)
+      * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
+   * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
+   * [Contact and Motion Sensors](#contact-and-motion-sensors)
+   * [Door bell devices](#door-bell-devices)
+* [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
+* [Service Availability and Issues](#service-availability-and-issues)
+   * [Homebridge cloud service monitoring ( homebridge.ca )](#homebridge-cloud-service-monitoring--homebridgeca-)
+   * [Raising Issues and Troubleshooting](#raising-issues-and-troubleshooting)
+      * [Troubleshooting](#troubleshooting)
+      * [Known Issues](#known-issues)
+      * [Discord Channel](#discord-channel)
+      * [Debug logs](#debug-logs)
+      * [Homebridge Accessory Dump](#homebridge-accessory-dump)
+* [Roadmap](#roadmap)
+* [Credits](#credits)
 <!--te-->
 
 # Supported devices
@@ -172,6 +213,13 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 
 * Alexa, set thermostat to 20
 * Alexa, set thermostat to heat/cool/automatic/off
+
+### For Thermostat's only
+
+* Alexa, turn off thermostat
+* Alexa, turn on thermostat
+
+The `Turn On` thermostat behaviour is configured in the Optional Setting config menu under `Thermostat Turn On Behaviour`, and unless this is configured `Turn On` is disabled, and alexa will respond with `That command does not work on device`.
 
 Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison) of Thermostat Voice Control [here](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison).
 

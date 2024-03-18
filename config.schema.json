@@ -2,58 +2,68 @@
   "pluginAlias": "Alexa",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "<h1><p align='center'>Allow your Amazon Alexa to control your homebridge devices</H1></p><h1><p align='center'> <img width='18%' src='https://user-images.githubusercontent.com/19808920/210089307-7622bb91-49d0-4d90-b2c3-31118e1a76c0.png'><b> => </b><img width='20%' src='https://user-images.githubusercontent.com/19808920/210090318-9e8ddc2a-a025-40ac-9718-7b5a2aa9a518.png'></p></h1> <br>To setup the service:<br>1 - First <b>create</b> an account on <a href='https://www.homebridge.ca/'>https://www.homebridge.ca/</a>.  <br>2 - Then <b>enter</b> the username and password for your account <b>below</b>.  <br>3 - <b>Save</b> the settings and <b>restart</b> homebridge.  <br>4 - In the Amazon Alexa Application on your smart phone, <b>search</b> for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the <b>https://www.homebridge.ca/</b> website to <b>enable</b> and link the skill to the plugin.  <br>5 - You can now ask Alexa to <b>`discover devices`</b> and it should discover your homebridge devices.<br><br>Detailed setup instructions are available <a href='https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md#setup-instructions'>here</a>.",
+  "headerDisplay": "<h1><p align='center'>Allow your Amazon Alexa to control your homebridge devices</H1></p><h1><p align='center'><img src='https://raw.githubusercontent.com/NorthernMan54/homebridge-alexa/main/docs/README_Image.001.jpeg' width='80%' style='vertical-align:middle'></p></h1> <br><b>To setup the service:</b><br><br>1 - First <b>create</b> an account on <a href='https://www.homebridge.ca/'>https://www.homebridge.ca/</a>.  <br>2 - Then <b>enter</b> the username and password for your account <b>below</b>.  <br>3 - <b>Save</b> the settings and <b>restart</b> homebridge.  <br>4 - In the Amazon Alexa Application on your smart phone, <b>search</b> for the Homebridge Skill and enable it.  When you enable the skill, it will take you to the <b>https://www.homebridge.ca/</b> website to <b>enable</b> and link the skill to the plugin.  <br>5 - You can now ask Alexa to <b>`discover devices`</b> and it should discover your homebridge devices.<br><br>Detailed setup instructions are available <a href='https://github.com/NorthernMan54/homebridge-alexa/blob/master/Installation.md#setup-instructions'>here</a>.<br>",
   "footerDisplay": "Homebridge Alexa Skill: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ",
   "schema": {
     "type": "object",
     "properties": {
       "name": {
-        "title": "Name",
+        "title": "<b>Name</b>",
         "type": "string",
         "required": true,
         "default": "Alexa",
         "description": "Plugin name as displayed in the Homebridge log"
       },
       "username": {
-        "title": "Username",
+        "title": "<b>Username</b>",
         "type": "string",
         "required": true,
         "description": "Username for https://www.homebridge.ca/"
       },
       "password": {
-        "title": "Password",
+        "title": "<b>Password</b>",
         "type": "string",
         "required": true,
         "description": "Password for https://www.homebridge.ca/"
       },
       "pin": {
-        "title": "Homebridge Pin",
+        "title": "<b>Homebridge Pin</b>",
         "type": "string",
         "placeholder": "031-45-154",
         "description": "This needs to match the Homebridge pin set in your config.json file"
       },
       "routines": {
-        "title": " Routines - enables passing of Motion and Contact sensor events to Alexa. For use in the Alexa app to create Routines triggered by these sensors.",
+        "title": "<b>Routines</b>",
         "type": "boolean",
-        "placeholder": false
+        "placeholder": false,
+        "description": "Enables passing of Motion and Contact sensor events to Alexa. For use in the Alexa app to create Routines triggered by these sensors."
       },
       "blind": {
-        "title": "Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false",
+        "title": "<b>Blind</b>",
         "type": "boolean",
-        "placeholder": false
+        "placeholder": false,
+        "description": "Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false"
       },
       "door": {
-        "title": "Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false",
+        "title": "<b>Door</b>",
         "type": "boolean",
-        "placeholder": false
+        "placeholder": false,
+        "description": "Enables natural wording for opening and closing garage doors.  Not supported in all countries.  Please note that opening a garage door requires setting a voice pin within the Alexa app.  Defaults to false"
       },
       "debug": {
-        "title": "Enable debug level logging to assist in problem investigation",
+        "title": "<b>Debug</b>",
         "type": "boolean",
-        "placeholder": false
+        "placeholder": false,
+        "description": "Enable debug level logging to assist in problem investigation."
+      },
+      "beta": {
+        "title": "<b>beta</b>",
+        "type": "boolean",
+        "placeholder": false,
+        "description": "Enable beta test environment.  Only available by invitation."
       },
       "refresh": {
-        "title": "Accessory Cache Refresh Interval",
+        "title": "<b>Accessory Cache Refresh Interval</b>",
         "type": "integer",
         "default": 900,
         "description": "Frequency of refreshes of the homebridge accessory cache, in seconds. Defaults to 900 Seconds ( 15 minutes ). This is the interval before new devices/homebridge instances are discovered.  This should never require changing, unless you are frequently changing your homebridge configuration without restarting the plugin.",
@@ -61,7 +71,7 @@
         "maximum": 86400
       },
       "keepalive": {
-        "title": "Cloud Server Connection Keepalive",
+        "title": "<b>Cloud Server Connection Keepalive</b>",
         "type": "integer",
         "default": "5",
         "description": "Frequency of keepalive messages to cloud server, in minutes. Defaults to 5 minutes.  Do not change from default unless requested as part of problem investigation.",
@@ -72,13 +82,38 @@
         }
       },
       "mergeServiceName": {
-        "title": "Alternate device naming approach",
+        "title": "<b>Alternate device naming approach</b>",
         "type": "boolean",
         "description": "This is an alternate device naming approach, which combines the internal HomeKit names for a device.  It may resolve duplicate device name issues. Do not enable on an existing implementation, as you will lose control of your existing devices.",
         "placeholder": false
       },
+      "thermostatTurnOn": {
+        "title": "<b>Thermostat Turn On Behaviour</b>",
+        "description": "Set Thermostat `Turn On` Behaviour to either Heat, Cool or Auto when Alexa is asked to turn on a Thermostat. Defaults to doing nothing and saying `That command does not work on device ...`.",
+        "type": "integer",
+        "oneOf": [
+          {
+            "title": "Heat",
+            "enum": [
+              1
+            ]
+          },
+          {
+            "title": "Cool",
+            "enum": [
+              2
+            ]
+          },
+          {
+            "title": "Auto",
+            "enum": [
+              3
+            ]
+          }
+        ]
+      },
       "CloudTransport": {
-        "title": "Cloud Server Connection Transport",
+        "title": "<b>Cloud Server Connection Transport</b>",
         "description": "Transport options for cloud server connection. MQTTS - this is the recommended setting. MQTT - this is the original/legacy option. WSS - this is the an alternative transport option.",
         "type": "string",
         "default": "mqtts",
@@ -105,15 +140,16 @@
         ]
       },
       "filter": {
-        "title": "Homebridge Instance Filter",
+        "title": "<b>Homebridge Instance Filter</b>",
         "type": "string",
         "placeholder": "eg. 192.168.1.122:51826",
-        "description": "Limits accessories shared with Alexa to a single homebridge instance.",
+        "description": "Limits accessories shared with Alexa to a single homebridge instance. Uses ip address and port of homebridge instance.",
         "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
       },
       "deviceListHandling": {
-        "title": "<b>Filtering of devices by name, either allow or ignore.</b>",
+        "title": "<b>Device List</b>",
         "type": "string",
+        "description": "Allows filtering of devices by name. You can either allow or ignore a list of device names.",
         "default": "none",
         "required": true,
         "oneOf": [
@@ -144,7 +180,7 @@
           "type": "string"
         },
         "condition": {
-          "functionBody": "return model.deviceListHandling !== 'null';"
+          "functionBody": "if (model.deviceListHandling === 'allow' || model.deviceListHandling === 'deny') { return true } else { return false };"
         }
       },
       "combine": {
@@ -214,6 +250,7 @@
         "pin",
         "routines",
         "debug",
+        "thermostatTurnOn",
         "deviceListHandling",
         {
           "key": "deviceList",
@@ -239,7 +276,9 @@
         "keepalive",
         "refresh",
         "filter",
-        "mergeServiceName"
+        "mergeServiceName",
+        "blind",
+        "door"
       ]
     },
     {
