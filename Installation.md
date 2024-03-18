@@ -5,7 +5,7 @@ Installation and Configuration of Homebridge Alexa
 
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: runner, at: Mon Mar 18 14:48:19 UTC 2024 -->
+<!-- Added by: runner, at: Mon Mar 18 15:02:56 UTC 2024 -->
 
 <!--te-->
 
