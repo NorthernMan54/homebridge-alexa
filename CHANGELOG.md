@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.6.9 (2023-03-30)
+
+## [Version 0.6.9](https://github.com/northernman54/homebridge-alexa/compare/v0.6.8...v0.6.9)
+
+#### Changes
+
+- Enables Thermostat type accessory to `Turn Off` and `Turn On` #605 ( Tks @banboobee ).  To preserve existing functionality the inital / default behaviour for the `Turn on Thermostat` command is to return an error message `That command does not work on device` unless the new optional config setting `Thermostat Turn On Behaviour` is set.
+- Minor style updates to Config Menu
+- Updates to package dependencies
+
 ## 0.6.8 (2023-12-13)
 
 ## [Version 0.6.8](https://github.com/northernman54/homebridge-alexa/compare/v0.6.7...v0.6.8)

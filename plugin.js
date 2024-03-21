@@ -36,6 +36,7 @@ function alexaHome(log, config, api) {
   this.inputs = config['inputs'] || false; // Array of input devices
   this.channel = config['channel'] || false; // Array of input devices
   this.blind = config['blind'] || false; // Use range controller for Blinds
+  this.thermostatTurnOn = config['thermostatTurnOn'] || 0; // Default to unsupported
   this.deviceListHandling = config['deviceListHandling'] || []; // Use ea
   this.deviceList = config['deviceList'] || []; // Use ea
   this.door = config['door'] || false; // Use mode controller for Garage Doors
@@ -135,6 +136,7 @@ alexaHome.prototype.didFinishLaunching = function () {
     Characteristic: Characteristic,
     inputs: this.inputs,
     channel: this.channel,
+    thermostatTurnOn: this.thermostatTurnOn,
     blind: this.blind,
     deviceListHandling: this.deviceListHandling,
     deviceList: this.deviceList,

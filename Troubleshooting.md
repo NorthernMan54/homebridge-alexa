@@ -3,7 +3,7 @@
 <!--ts-->
 * [Initial Setup](#initial-setup)
    * [[Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.](#alexa-error--homebridge-alexa-login-to-homebridgeca-failed-please-validate-your-credentials-in-configjson-and-restart-homebridge)
-      * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](#--bad-login-or-password-in-your-configjson-for-httpswwwhomebridgeca)
+      * [- Bad login or password in your config.json for <a href="https://www.homebridge.ca" rel="nofollow">https://www.homebridge.ca</a>](https://www.homebridge.ca)
    * [[Alexa] ERROR: ( homebridge-alexa) You have an issue with your installation, please review the README.](#alexa-error--homebridge-alexa-you-have-an-issue-with-your-installation-please-review-the-readme)
       * [- Cloud Server DDOS Protection has blocked your IP address](#--cloud-server-ddos-protection-has-blocked-your-ip-address)
       * [- Multiple copies of homebridge-alexa on your network](#--multiple-copies-of-homebridge-alexa-on-your-network)
@@ -32,13 +32,10 @@
       * [Unsuccessful event message ( No event gateway token )](#unsuccessful-event-message--no-event-gateway-token-)
       * [Successful event message being sent to Alexa](#successful-event-message-being-sent-to-alexa)
    * [[Alexa] ERROR:  Event gateway token refresh error: 400](#alexa-error--event-gateway-token-refresh-error-400)
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: runner, at: Wed Dec 13 14:31:10 UTC 2023 -->
-
 <!--te-->
 
 # Initial Setup
+
 
 ## [Alexa] ERROR: ( homebridge-alexa) Login to homebridge.ca failed, please validate your credentials in config.json and restart homebridge.
 

@@ -2,11 +2,11 @@
 
 [![NPM Downloads](https://img.shields.io/npm/dm/homebridge-alexa.svg?style=flat)](https://npmjs.org/package/homebridge-alexa)
 
-<p align="center">
-    <img src="docs/homebridge.png" height="200">
-</p>
+<h1><p align="center">
+    <img src="docs/README_Image.001.jpeg" width="80%" style="vertical-align:middle">
+</p></h1>
 
-Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).  Full support for all Amazon Alexa devices, including the echo 2nd Generation and software based solutions.  Uses an Amazon smart home skill based approach for integration between HomeBridge and Amazon Alexa.
+Enable Amazon Alexa to control your homebridge smart home devices and accessories.  Please note, that this does **NOT** bring Alexa enabled devices into homebridge, for this please try [homebridge-alexa-smarthome](https://github.com/joeyhage/homebridge-alexa-smarthome).
 
 # Note to users of the service
 
@@ -60,6 +60,7 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Garage Door With blind = true ( Not supported in all countries )](#garage-door-with-blind--true--not-supported-in-all-countries-)
       * [Window coverings / blinds With blind = true ( Not supported in all countries )](#window-coverings--blinds-with-blind--true--not-supported-in-all-countries-)
    * [Thermostat's and Heater / Cooler's](#thermostats-and-heater--coolers)
+      * [For Thermostat's only](#for-thermostats-only)
    * [Lock / Unlock Doors](#lock--unlock-doors)
    * [Temperature sensors](#temperature-sensors)
    * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
@@ -82,10 +83,6 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Homebridge Accessory Dump](#homebridge-accessory-dump)
 * [Roadmap](#roadmap)
 * [Credits](#credits)
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: runner, at: Wed Dec 13 14:31:09 UTC 2023 -->
-
 <!--te-->
 
 # Supported devices
@@ -216,6 +213,13 @@ See [example](https://github.com/NorthernMan54/homebridge-alexa/wiki/Garage-Door
 
 * Alexa, set thermostat to 20
 * Alexa, set thermostat to heat/cool/automatic/off
+
+### For Thermostat's only
+
+* Alexa, turn off thermostat
+* Alexa, turn on thermostat
+
+The `Turn On` thermostat behaviour is configured in the Optional Setting config menu under `Thermostat Turn On Behaviour`, and unless this is configured `Turn On` is disabled, and alexa will respond with `That command does not work on device`.
 
 Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison) of Thermostat Voice Control [here](https://github.com/NorthernMan54/homebridge-alexa/wiki/Thermostat-Voice-Control-Comparison).
 

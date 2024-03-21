@@ -27,6 +27,7 @@ Installation and Configuration of Homebridge Alexa
          * [refresh - Accessory Cache Refresh Interval](#refresh---accessory-cache-refresh-interval)
          * [filter - Homebridge Instance Filter](#filter---homebridge-instance-filter)
          * [mergeServiceName - Alternate device naming](#mergeservicename---alternate-device-naming)
+         * [thermostatTurnOn - Thermostat Turn On Behaviour](#thermostatturnon---thermostat-turn-on-behaviour)
          * [blind](#blind)
          * [door](#door)
       * [Speaker Settings](#speaker-settings)
@@ -39,10 +40,6 @@ Installation and Configuration of Homebridge Alexa
    * [Initial Testing and confirming configuration](#initial-testing-and-confirming-configuration)
    * [Enable Homebridge smarthome skill and link accounts](#enable-homebridge-smarthome-skill-and-link-accounts)
    * [Discover Devices](#discover-devices)
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: runner, at: Wed Dec 13 14:31:10 UTC 2023 -->
-
 <!--te-->
 
 # Setup Instructions
@@ -321,6 +318,25 @@ sudo npm install -g homebridge-alexa
   }
 ],
 ```  
+
+#### thermostatTurnOn - Thermostat Turn On Behaviour
+  - Set Thermostat `Turn On` Behaviour to either Heat, Cool or Auto when Alexa is asked to turn on a Thermostat. Defaults to `That command does not work on device`.
+
+Heat - 1
+Cool - 2
+Auto - 3
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "thermostatTurnOn": 2
+  }
+],
+```
 
 #### blind
   - Enables natural wording for opening and closing blinds, and window coverings.  Not supported in all countries.  Defaults to false
