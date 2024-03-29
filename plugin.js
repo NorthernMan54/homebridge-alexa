@@ -3,8 +3,8 @@
 
 var AlexaLocal = require('./lib/alexaLocal.js').alexaLocal;
 var alexaActions = require('./lib/alexaActions.js');
-var EventEmitter = require('events').EventEmitter;
-var os = require("os");
+var EventEmitter = require('node:events').EventEmitter;
+var os = require("node:os");
 
 const packageConfig = require('./package.json');
 let Service, Characteristic;
