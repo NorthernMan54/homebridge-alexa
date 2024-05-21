@@ -9,6 +9,8 @@ README.md.orig.*
 Troubleshooting.md.toc.*
 Troubleshooting.md.orig.*
 alexaDiscovery.json
+homebridge-alexa-alexaDiscovery.json
+homebridge-alexa-endpointCache.json
 tools/after.json
 tools/output.txt
 
