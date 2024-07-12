@@ -4,11 +4,11 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.7.0 (2023-05-30)
 
-## [Version 0.6.9](https://github.com/northernman54/homebridge-alexa/compare/v0.6.9...v0.7.0)
+## [Version 0.7.0](https://github.com/northernman54/homebridge-alexa/compare/v0.6.9...v0.7.0)
 
 #### Changes
 
-- Filter discovery of devices from homebridge-alexa-smarthome - needs this Pull Request implemented https://github.com/joeyhage/homebridge-alexa-smarthome/pull/124
+- Filter discovery of devices from homebridge-alexa-smarthome 
 - Updates to package dependencies
 
 ## 0.6.9 (2023-03-30)
