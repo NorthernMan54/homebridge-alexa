@@ -14,6 +14,9 @@ on:
     branches: [beta-*.*.*, beta]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+
 jobs:
   get_tags:
     runs-on: ubuntu-latest
