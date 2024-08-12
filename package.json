@@ -50,7 +50,7 @@
   "dependencies": {
     "bottleneck": "2.19.5",
     "debug": "4.3.6",
-    "hap-node-client": "0.2.8-beta.12",
+    "hap-node-client": "^0.2.8",
     "is-my-json-valid": "2.20.6",
     "mqtt": "5.9.1"
   },
