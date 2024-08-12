@@ -143,7 +143,7 @@
         "title": "<b>Homebridge Instance Filter</b>",
         "type": "string",
         "placeholder": "eg. 192.168.1.122:51826",
-        "description": "Limits accessories shared with Alexa to a single homebridge instance. Uses ip address and port of homebridge instance.",
+        "description": "Limits accessories shared with Alexa to particular homebridge instances. Uses ip address and port of homebridge instance, eg. '192.168.1.122:51826' or '192.168.1.11:51551, 192.168.1.11:46047'.",
         "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
       },
       "deviceListHandling": {

@@ -7,13 +7,15 @@ var passwords = JSON.parse(fs.readFileSync(process.argv[2]));
 
 var clientUsername = process.argv[3];
 
+var statusCommand = JSON.parse(fs.readFileSync(process.argv[4]));
+
 if (!clientUsername) {
   console.log("Missing clientUsername");
   process.exit();
 }
 
 var options = {
-  mqttURL: "mqtts://clone.homebridge.ca:8883/",
+  mqttURL: "mqtts://alexa.homebridge.ca:8883/",
   mqttOptions: {
     username: passwords.username,
     password: passwords.password,
@@ -29,7 +31,7 @@ client.on('connect', function () {
   debug('connect', options.mqttURL, "command/" + clientUsername + "/#");
   client.removeAllListeners('message'); // Clean up event handlers
   client.subscribe("response/" + clientUsername + "/#");
-  client.publish("command/" + clientUsername + "/1", JSON.stringify(discoveryCommand));
+  client.publish("command/" + clientUsername + "/1", JSON.stringify(statusCommand));
 
   client.on('message', async function (topic, message) {
     try {
@@ -37,7 +39,7 @@ client.on('connect', function () {
       console.log(message.toString());
 
       const homeDir = require('os').homedir(); // See: https://www.npmjs.com/package/os
-      const desktopDir = `${homeDir}/Desktop/discovery-`;
+      const desktopDir = `${homeDir}/Desktop/status-`;
 
       fs.writeFileSync(desktopDir + clientUsername + '.json', message);
       await sleep(5000);

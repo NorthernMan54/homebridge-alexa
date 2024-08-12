@@ -4,9 +4,11 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.7.1 (2023-05-30)
 
-## [Version 0.7.0](https://github.com/northernman54/homebridge-alexa/compare/v0.7.0...v0.7.1)
+## [Version 0.7.1](https://github.com/northernman54/homebridge-alexa/compare/v0.7.0...v0.7.1)
 
 #### Changes
+
+- Update `filter` to accept a list of addresses and ports ie "192.168.1.11:51551, 192.168.1.11:46047"
 
 ## 0.7.0 (2023-05-30)
 

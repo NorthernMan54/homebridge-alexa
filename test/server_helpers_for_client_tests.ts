@@ -25,15 +25,21 @@ export default function serverBuilder(
 	handler?: MqttServerListener,
 ): Server {
 	const sockets = []
+
+
 	const defaultHandler: MqttServerListener = (serverClient) => {
+		
 		sockets.push(serverClient)
+
 		serverClient.on('auth', (packet) => {
+			console.log('auth');
 			if (serverClient.writable) return false
 			const rc = 'reasonCode'
 			const connack = {}
 			connack[rc] = 0
 			serverClient.connack(connack)
 		})
+
 		serverClient.on('connect', (packet) => {
 			if (!serverClient.writable) return false
 			let rc = 'returnCode'
@@ -63,6 +69,7 @@ export default function serverBuilder(
 		})
 
 		serverClient.on('publish', (packet) => {
+			console.log('publish');
 			if (!serverClient.writable) return false
 			setImmediate(() => {
 				switch (packet.qos) {
