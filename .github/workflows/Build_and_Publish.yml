@@ -14,9 +14,6 @@ on:
     branches: [beta-*.*.*, beta]
   workflow_dispatch:
 
-permissions:
-  id-token: write
-
 jobs:
   get_tags:
     runs-on: ubuntu-latest
@@ -83,6 +80,8 @@ jobs:
         branch: ${{ github.ref }}
 
   publish_prod_release:
+    permissions:
+      id-token: write
     needs: [get_tags, create_documentation]
     name: Publish Release Version
     if: ${{ needs.get_tags.outputs.BRANCH_NAME == 'main' }}
@@ -93,6 +92,8 @@ jobs:
       npm_auth_token: ${{ secrets.npm_token }}
 
   publish_test_release:
+    permissions:
+      id-token: write
     needs: [get_tags, create_documentation]
     name: Publish Test Version - ${{ needs.get_tags.outputs.BRANCH_NAME }}
     if: ${{ needs.get_tags.outputs.BRANCH_NAME != 'main' }}
