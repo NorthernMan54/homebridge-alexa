@@ -59,5 +59,28 @@
   "bugs": {
     "url": "https://github.com/NorthernMan54/homebridge-alexa/issues"
   },
-  "homepage": "https://github.com/NorthernMan54/homebridge-alexa#readme"
+  "homepage": "https://github.com/NorthernMan54/homebridge-alexa#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "./",
+    "testEnvironment": "node",
+    "testRegex": ".test.ts$",
+    "testTimeout": 10000,
+    "transform": {
+      "^.+\\.(t)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/ui/",
+      "/test/",
+      "/dist/",
+      "/scripts/"
+    ]
+  }
 }

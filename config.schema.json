@@ -220,6 +220,12 @@
             }
           }
         }
+      },
+      "enhancedSkip": {
+        "title": "<b>For 'appletv-enhanced', enable skip</b>",
+        "type": "boolean",
+        "placeholder": false,
+        "description": "This option will change the behaviour of the next or skip command of the 'appletv-enhanced' plugin, from skip to select.  This will enable the wording 'Alexa tv skip' to press the select button on the Apple TV remote.  This is useful for skipping adds on YouTube."
       }
     }
   },
@@ -251,6 +257,7 @@
         "routines",
         "debug",
         "thermostatTurnOn",
+        "enhancedSkip",
         "deviceListHandling",
         {
           "key": "deviceList",

@@ -45,6 +45,7 @@ function alexaHome(log, config, api) {
   this.CloudTransport = config['CloudTransport'] || "mqtts"; // Default to mqtts Transport
   this.LegacyCloudTransport = config['LegacyCloudTransport'] || false; // Default to new Transport ( Setting from discarded beta )
   var mqttKeepalive = config['keepalive'] || 5; // MQTT Connection Keepalive
+  this.enhancedSkip = config['enhancedSkip'] || false; // Use enhanced skip for appletv-enhanced plugin
 
   if (mqttKeepalive < 60) {
     this.keepalive = mqttKeepalive * 60;
@@ -143,7 +144,8 @@ alexaHome.prototype.didFinishLaunching = function () {
     door: this.door,
     mergeServiceName: this.mergeServiceName,
     // Other Options
-    events: this.events
+    events: this.events,
+    enhancedSkip: this.enhancedSkip
   };
 
   // Initialize HAP Connections
