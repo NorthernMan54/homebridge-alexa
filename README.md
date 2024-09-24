@@ -370,7 +370,27 @@ Sometimes during troubleshooting I need a dump of your homebridge accessories. P
 curl -X PUT http://127.0.0.1:51826/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
 ```
 
-When your running under child bridges it can be tricky to find the ip address and port number of the child bridge and I found the easiest method is to leverage the [Discovery - DNS-SD Browser](https://apps.apple.com/ca/app/discovery-dns-sd-browser/id1381004916?mt=12) app, and look under _hap._tcp. for the child bridge.  The child bridge name should mention the name of the plugin.
+If needed during plugin startup with the debug option enabled ( this is available with version 0.5.64 ), the plugin will log the unique command for each homebridge instance in your setup, including child bridges. 
+
+The entries in the log file look like this for each homebridge instance.
+
+```
+  alexaActions Homebridge Accessory Information Dump for Hue B509
+  alexaActions curl -X PUT http://192.168.1.11:40889/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
+  alexaActions 
+  alexaActions Homebridge Accessory Information Dump for Alexa E33F
+  alexaActions curl -X PUT http://192.168.1.11:33019/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
+  alexaActions 
+  alexaActions Homebridge Accessory Information Dump for Tuner 8723
+  alexaActions curl -X PUT http://192.168.1.11:45397/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
+  alexaActions 
+  alexaActions Homebridge Accessory Information Dump for Tasmota 5019
+  alexaActions curl -X PUT http://192.168.1.11:38859/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
+  alexaActions 
+  alexaActions Homebridge Accessory Information Dump for homebridge-tuya BF07
+  alexaActions curl -X PUT http://192.168.1.11:36323/accessories --header "Content-Type:Application/json" --header "authorization: 031-45-154"
+  alexaActions 
+```
 
 # Roadmap
 
