@@ -13,7 +13,7 @@
     "watch": [],
     "ext": "js",
     "ignore": [],
-    "exec": "~/npm/bin/homebridge -D -R -P ~/Code",
+    "exec": "~/npm/bin/homebridge -D -P ~/Code",
     "signal": "SIGTERM",
     "env": {
       "NODE_OPTIONS": "--trace-warnings"
@@ -47,6 +47,8 @@
     "ws": "^8.14.2"
   },
   "dependencies": {
+    "@homebridge/plugin-ui-utils": "^1.0.3",
+    "axios": "^1.7.7",
     "bottleneck": "2.19.5",
     "debug": "4.3.7",
     "hap-node-client": "^0.2.9",

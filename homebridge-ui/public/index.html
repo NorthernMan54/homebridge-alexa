@@ -1,0 +1,468 @@
+<!-- <style>
+  .hidden {display: none;}
+</style>
+
+<div class="card card-body">
+  <div id="setupComplete" style="display:none;">
+    <form id="configForm">
+      <div class="form-group">
+        <label for="imeiInput">IMEI</label>
+        <input type="text" class="form-control" id="imeiInput">
+      </div>
+      <div class="form-group">
+        <label for="tokenInput">Token</label>
+        <input type="text" class="form-control" id="tokenInput">
+      </div>
+      <a id="startOver" class="btn btn-success">Get Token and IMEI</a>
+      <hr>
+
+      <div class="custom-control custom-checkbox form-group">
+        <input type="checkbox" class="custom-control-input" id="disableFanInput">
+        <label class="custom-control-label" for="disableFanInput">Disable Fan Accessory</label>
+        <small id="help" class="form-text text-muted">"Disable FAN mode control - remove extra fan accessory</small>
+      </div>
+
+      <div class="custom-control custom-checkbox form-group">
+        <input type="checkbox" class="custom-control-input" id="disableDryInput">
+        <label class="custom-control-label" for="disableDryInput">Disable Dry Accessory</label>
+        <small id="help" class="form-text text-muted">"Disable DRY mode control - remove extra dehumidifier
+          accessory</small>
+      </div>
+
+      <div class="custom-control custom-checkbox form-group">
+        <input type="checkbox" class="custom-control-input" id="debugInput">
+        <label class="custom-control-label" for="debugInput">Enable Debug Logs</label>
+        <small id="help" class="form-text text-muted">When checked, the plugin will produce extra logs for debugging
+          purposes</small>
+      </div>
+      <div class="schema-form-fieldset form-group">
+        <h4 id="advanced" style="cursor: pointer"><i class="fas fa-chevron-right"></i>&nbsp;Advanced Settings</h4>
+        <p>Don't change these, unless you understand what you're doing.</p>
+        <div id="expandable" class="hidden">
+          <div class="form-group">
+            <label for="statePollingIntervalInput">AC Device Status Polling Interval</label>
+            <input type="range" class="custom-range" id="statePollingIntervalInput" min="0" max="600" value="30" step="1">
+            <span id="pollingValue">30 seconds</span>
+            <small id="help" class="form-text text-muted">Time in seconds between each status polling of the Electra devices
+              (set to 0 for no polling)</small>
+          </div>
+          <div class="form-group">
+            <label for="minTemperatureInput">Minimum Temperature</label>
+            <input type="range" class="custom-range" id="minTemperatureInput" min="10" max="35" value="16" step="1">
+            <span id="minTempValue">16</span>
+            <small id="help" class="form-text text-muted">Minimum Temperature to show in HomeKit</small>
+          </div>
+          <div class="form-group">
+            <label for="maxTemperatureInput">Maximum Temperature</label>
+            <input type="range" class="custom-range" id="maxTemperatureInput" min="10" max="35" value="30" step="1">
+            <span id="maxTempValue">30</span>
+            <small id="help" class="form-text text-muted">Maximum Temperature to show in HomeKit</small>
+          </div>
+          <div class="form-group">
+            <label for="swingDirectionInput">Swing Direction Control</label>
+            <select class="form-control" id="swingDirectionInput">
+              <option value="both">Both</option>
+              <option value="vertical">Vertical</option>
+              <option value="horizontal">Horizontal</option>
+            </select>
+            <small id="help" class="form-text text-muted">Choose what kind of swing you would like to control in HomeKit</small>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <div id="setupRequired" style="display:none;">
+    <h3>Welcome to Electra Smart Plugin</h3>
+    <h5>To get this plugin to work, You'll need <b>token</b> and <b>IMEI</b> which can be extracted following this form:</h5>
+    <hr>
+    <div id="step1">
+      <div class="form-group">
+        <label for="phoneNumberInput">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumberInput" aria-describedby="phoneNumberHelp" required>
+        <small id="phoneNumberHelp" class="form-text text-muted">Please insert the phone number registered to Electra
+          Smart (e.g. 0524001234).</small>
+      </div>
+      <div class="text-center">
+        <a id="skip" class="btn btn-elegant">Skip</a>
+        <button id="step1Submit" type="submit" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <div id="step2" style="display:none;">
+      <div class="form-group">
+        <label for="otpInput">OTP Code</label>
+        <input type="text" class="form-control" id="otpInput" aria-describedby="otpHelp">
+        <small id="otpHelp" class="form-text text-muted">Please enter the OTP password received at your phone.</small>
+      </div>
+      <div class="text-center">
+        <a id="skip2" class="btn btn-elegant">Skip</a>
+        <button id="step2Submit" type="submit" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<script>
+  var pluginConfig = {
+    platform: 'ElectraSmart',
+  };
+
+  function updateFormFromConfig() {
+    // populate the form
+    document.getElementById('imeiInput').value = pluginConfig.imei;
+    document.getElementById('tokenInput').value = pluginConfig.token;
+    document.getElementById('disableFanInput').checked = pluginConfig.disableFan;
+    document.getElementById('disableDryInput').checked = pluginConfig.disableDry;
+    document.getElementById('statePollingIntervalInput').value = !pluginConfig.statePollingInterval && pluginConfig.statePollingInterval !== 0 ? 30 : pluginConfig.statePollingInterval;
+    document.getElementById('minTemperatureInput').value = !pluginConfig.minTemperature && pluginConfig.minTemperature !== 0 ? 16 : pluginConfig.minTemperature;
+    document.getElementById('maxTemperatureInput').value = !pluginConfig.maxTemperature && pluginConfig.maxTemperature !== 0 ? 30 : pluginConfig.maxTemperature;
+    document.getElementById('swingDirectionInput').value = pluginConfig.swingDirection || "both";
+    document.getElementById('debugInput').checked = pluginConfig.debug;
+    homebridge.fixScrollHeight();
+  }
+
+  function updateConfigFromForm() {
+    pluginConfig.imei = document.getElementById('imeiInput').value;
+    pluginConfig.token = document.getElementById('tokenInput').value;
+    pluginConfig.disableFan = document.getElementById('disableFanInput').checked;
+    pluginConfig.disableDry = document.getElementById('disableDryInput').checked;
+    pluginConfig.statePollingInterval = parseInt(document.getElementById('statePollingIntervalInput').value);
+    pluginConfig.minTemperature = parseInt(document.getElementById('minTemperatureInput').value);
+    pluginConfig.maxTemperature = parseInt(document.getElementById('maxTemperatureInput').value);
+    pluginConfig.swingDirection = document.getElementById('swingDirectionInput').value;
+    pluginConfig.debug = document.getElementById('debugInput').checked;
+  }
+
+  function showHideTokenButton() {
+    const imeiInput = document.getElementById('imeiInput').value;
+    const tokenInput = document.getElementById('tokenInput').value;
+    document.getElementById('startOver').style.display = (!imeiInput || !tokenInput) ? 'inline-block' : 'none';
+  }
+
+  function adjustPollingValue() {
+    const pollingValue = document.getElementById('statePollingIntervalInput').value;
+    document.getElementById('pollingValue').innerHTML = pollingValue + ' seconds';
+  }
+
+  function adjustMinTempValue() {
+    const minTempValue = document.getElementById('minTemperatureInput').value;
+    document.getElementById('minTempValue').innerHTML = minTempValue;
+  }
+
+  function adjustMaxTempValue() {
+    const maxTempValue = document.getElementById('maxTemperatureInput').value;
+    document.getElementById('maxTempValue').innerHTML = maxTempValue;
+  }
+
+  (async () => {
+    // get the plugin config blocks (this returns an array)
+    const pluginConfigBlocks = await homebridge.getPluginConfig();
+
+    if (!pluginConfigBlocks.length || !pluginConfigBlocks[0].imei || !pluginConfigBlocks[0].token) {
+      document.getElementById('setupRequired').style.display = 'block';
+      if (pluginConfigBlocks[0])
+        pluginConfig = pluginConfigBlocks[0];
+      updateFormFromConfig();
+    } else {
+      pluginConfig = pluginConfigBlocks[0];
+      updateFormFromConfig();
+      document.getElementById('setupComplete').style.display = 'block';
+    }
+    adjustPollingValue()
+    adjustMinTempValue()
+    adjustMaxTempValue()
+    showHideTokenButton()
+  })();
+
+  // watch for changes to the config form
+  document.getElementById('configForm').addEventListener('change', () => {
+    // extract the values from the form - stored in var pluginConfig.
+    updateConfigFromForm();
+    adjustPollingValue()
+
+    // send the current value to the UI.
+    homebridge.updatePluginConfig([pluginConfig]);
+  });
+
+
+  document.getElementById('statePollingIntervalInput').addEventListener('input', adjustPollingValue);
+  document.getElementById('minTemperatureInput').addEventListener('input', adjustMinTempValue);
+  document.getElementById('maxTemperatureInput').addEventListener('input', adjustMaxTempValue);
+  document.getElementById('imeiInput').addEventListener('input', showHideTokenButton);
+  document.getElementById('tokenInput').addEventListener('input', showHideTokenButton);
+
+
+  // step 1 submit handler
+  document.getElementById('advanced').addEventListener('click', async (e) => {
+    const expandable = document.getElementById('expandable');
+
+    if (expandable.classList.contains('hidden')) {
+      expandable.classList.remove('hidden')
+      e.target.getElementsByTagName('i')[0].classList.remove('fa-chevron-right')
+      e.target.getElementsByTagName('i')[0].classList.add('fa-chevron-down')
+    } else {
+      expandable.classList.add('hidden')
+      e.target.getElementsByTagName('i')[0].classList.add('fa-chevron-right')
+      e.target.getElementsByTagName('i')[0].classList.remove('fa-chevron-down')
+    }
+  });
+
+
+  // skip
+  document.getElementById('skip').addEventListener('click', async () => {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+  });
+
+
+  // skip2
+  document.getElementById('skip2').addEventListener('click', async () => {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+  });
+
+  // startOver
+  document.getElementById('startOver').addEventListener('click', async () => {
+      document.getElementById('setupRequired').style.display = 'block';
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'none';
+  });
+
+  // step 1 submit handler
+  document.getElementById('step1Submit').addEventListener('click', async () => {
+    const phoneValue = document.getElementById('phoneNumberInput').value;
+
+    if (!phoneValue) {
+      homebridge.toast.error('Please enter a valid phone number.', 'Error');
+      return;
+    }
+
+    document.getElementById('step1Submit').setAttribute('disabled', 'disabled');
+
+    try {
+      homebridge.showSpinner()
+      await homebridge.request('/request-otp', { phone: phoneValue });
+      homebridge.hideSpinner()
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+    } catch (e) {
+      homebridge.hideSpinner()
+      homebridge.toast.error(e.message, 'Error');
+    }
+
+    document.getElementById('step1Submit').removeAttribute('disabled');
+  });
+
+  // step 2 submit handler
+  document.getElementById('step2Submit').addEventListener('click', async () => {
+    const phoneValue = document.getElementById('phoneNumberInput').value;
+    const otpValue = document.getElementById('otpInput').value;
+
+    if (!otpValue) {
+      homebridge.toast.error('Please enter a valid OTP code.', 'Error');
+      return;
+    }
+
+    document.getElementById('step2Submit').setAttribute('disabled', 'disabled');
+
+    try {
+      homebridge.showSpinner()
+      const response = await homebridge.request('/check-otp', { phone: phoneValue, code: otpValue });
+
+      // update the config
+      pluginConfig.imei = response.imei;
+      pluginConfig.token = response.token;
+
+      // populate the form
+      updateFormFromConfig();
+
+      // update the config
+      await homebridge.updatePluginConfig([pluginConfig]);
+
+      // trigger save
+      await homebridge.savePluginConfig();
+
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+      homebridge.hideSpinner()
+
+    } catch (e) {
+      homebridge.hideSpinner()
+      homebridge.toast.error(e.error || e.message, 'Error');
+    }
+
+    document.getElementById('step2Submit').removeAttribute('disabled');
+  });
+
+</script>
+
+
+
+
+
+
+
+
+ -->
+ <style>
+  .hidden {display: none;}
+</style>
+
+<div>
+
+  <!-- shown when setup is complete or the plugin is already configured -->
+  <div id="setupComplete" style="display:none;">
+    <h5><i class="fa fa-check green-text"></i> Homebridge is authorized to control Electra Smart Devices</h5>
+    <a id="startOver" class="btn btn-blue">Generate New Token</a>
+  </div>
+
+  <!-- shown when the plugin is not configured -->
+  <div id="setupRequired" style="display:none;">
+    <h3>Welcome to Electra Smart Plugin</h3>
+    <h5>To get this plugin to work, You'll need <b>token</b> and <b>IMEI</b> which can be extracted following this form:</h5>
+    <hr>
+    <div id="step1">
+      <div class="form-group">
+        <label for="phoneNumberInput">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumberInput" aria-describedby="phoneNumberHelp" required>
+        <small id="phoneNumberHelp" class="form-text text-muted">Please insert the phone number registered to Electra Smart (e.g. 0524001234).</small>
+      </div>
+      <div class="text-center">
+        <a id="skip" class="btn btn-elegant">Skip</a>
+        <button id="step1Submit" type="submit" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <div id="step2" style="display:none;">
+      <div class="form-group">
+        <label for="otpInput">OTP Code</label>
+        <input type="text" class="form-control" id="otpInput" aria-describedby="otpHelp">
+        <small id="otpHelp" class="form-text text-muted">Please enter the OTP code received at your phone.</small>
+      </div>
+      <div class="text-center">
+        <a id="skip2" class="btn btn-elegant">Skip</a>
+        <button id="step2Submit" type="submit" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<script>
+  let pluginConfig
+
+  (async () => {
+    // get the initial config - this is an array potentially containing multiple config blocks
+    pluginConfig = await homebridge.getPluginConfig();
+
+    if (!pluginConfig.length || !pluginConfig[0].token || !pluginConfig[0].imei) {
+      pluginConfig.push({platform: 'ElectraSmart'});
+      await homebridge.updatePluginConfig(pluginConfig);
+      document.getElementById('setupRequired').style.display = 'block';
+    } else {
+      document.getElementById('setupComplete').style.display = 'block';
+      homebridge.showSchemaForm();
+    }
+
+    window.homebridge.addEventListener('configChanged', async (event) => {
+      console.log('Updated config:', event.data);
+      await homebridge.updatePluginConfig(event.data);
+    });
+  })();
+
+  // skip
+  document.getElementById('skip').addEventListener('click', async () => {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+      homebridge.showSchemaForm();
+  });
+
+
+  // skip2
+  document.getElementById('skip2').addEventListener('click', async () => {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+      homebridge.showSchemaForm();
+  });
+
+  // startOver
+  document.getElementById('startOver').addEventListener('click', async () => {
+      document.getElementById('setupRequired').style.display = 'block';
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'none';
+  });
+
+  // step 1 submit handler
+  document.getElementById('step1Submit').addEventListener('click', async () => {
+    const phoneValue = document.getElementById('phoneNumberInput').value;
+
+    if (!phoneValue) {
+      homebridge.toast.error('Please enter a valid phone number.', 'Error');
+      return;
+    }
+
+    document.getElementById('step1Submit').setAttribute('disabled', 'disabled');
+
+    try {
+      homebridge.showSpinner()
+      await homebridge.request('/request-otp', { phone: phoneValue });
+      homebridge.hideSpinner()
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+    } catch (e) {
+      homebridge.hideSpinner()
+      homebridge.toast.error(e.message, 'Error');
+    }
+
+    document.getElementById('step1Submit').removeAttribute('disabled');
+  });
+
+  // step 2 submit handler
+  document.getElementById('step2Submit').addEventListener('click', async () => {
+    const phoneValue = document.getElementById('phoneNumberInput').value;
+    const otpValue = document.getElementById('otpInput').value;
+
+    if (!otpValue) {
+      homebridge.toast.error('Please enter a valid OTP code.', 'Error');
+      return;
+    }
+
+    document.getElementById('step2Submit').setAttribute('disabled', 'disabled');
+
+    try {
+      homebridge.showSpinner()
+      const response = await homebridge.request('/check-otp', { phone: phoneValue, code: otpValue });
+
+      // update the config
+      pluginConfig[0].imei = response.imei;
+      pluginConfig[0].token = response.token;
+
+      // update the config
+      await homebridge.updatePluginConfig(pluginConfig);
+      homebridge.showSchemaForm();
+
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('setupRequired').style.display = 'none';
+      document.getElementById('setupComplete').style.display = 'block';
+      homebridge.hideSpinner()
+
+    } catch (e) {
+      homebridge.hideSpinner()
+      homebridge.toast.error(e.error || e.message, 'Error');
+    }
+
+    document.getElementById('step2Submit').removeAttribute('disabled');
+  });
+
+</script>

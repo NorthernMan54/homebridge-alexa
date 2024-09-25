@@ -149,6 +149,11 @@ alexaHome.prototype.didFinishLaunching = function () {
   };
 
   // Initialize HAP Connections
+  if (options.filter) {
+    this.log(`Starting Homebridge discovery with filter: '${options.filter}'`,);
+  } else {
+    this.log("Starting Homebridge discovery");
+  }
   alexaActions.hapDiscovery(options);
 
   var alexa = new AlexaLocal(options);
