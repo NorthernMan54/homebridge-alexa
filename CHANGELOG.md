@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. This projec
 
 - Update `filter` to accept a list of addresses and ports ie "192.168.1.11:51551, 192.168.1.11:46047"
 - Add config option `enhancedSkip` to allow the wording `Alexa, tv skip` when watching youtube via appletv-enhanced to push the select button on the remote.
+- Homebridge 2.0 support
 
 ## 0.7.0 (2023-05-30)
 
