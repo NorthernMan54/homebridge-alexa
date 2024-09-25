@@ -143,8 +143,8 @@
         "title": "<b>Homebridge Instance Filter</b>",
         "type": "string",
         "placeholder": "eg. 192.168.1.122:51826",
-        "description": "Limits accessories shared with Alexa to a single homebridge instance. Uses ip address and port of homebridge instance.",
-        "pattern": "^[^{}/ :\\\\]+(?::\\d+)?$"
+        "description": "Limits accessories shared with Alexa to particular homebridge instances. Uses ip address and port of homebridge instance, eg. '192.168.1.122:51826' or '192.168.1.11:51551, 192.168.1.11:46047'.",
+        "pattern": "^(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}:\\d{1,5})(,\\s*\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}:\\d{1,5})*$"
       },
       "deviceListHandling": {
         "title": "<b>Device List</b>",
@@ -220,6 +220,12 @@
             }
           }
         }
+      },
+      "enhancedSkip": {
+        "title": "<b>For 'appletv-enhanced', enable skip</b>",
+        "type": "boolean",
+        "placeholder": false,
+        "description": "This option will change the behaviour of the next or skip command of the 'appletv-enhanced' plugin, from skip to select.  This will enable the wording 'Alexa tv skip' to press the select button on the Apple TV remote.  This is useful for skipping adds on YouTube."
       }
     }
   },
@@ -251,6 +257,7 @@
         "routines",
         "debug",
         "thermostatTurnOn",
+        "enhancedSkip",
         "deviceListHandling",
         {
           "key": "deviceList",

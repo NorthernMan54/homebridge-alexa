@@ -63,7 +63,7 @@ Country availability - The plugin is available in these countries, English (AU),
       * [For Thermostat's only](#for-thermostats-only)
    * [Lock / Unlock Doors](#lock--unlock-doors)
    * [Temperature sensors](#temperature-sensors)
-   * [AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )](#appletv--homebridge-apple-tv-or-homebridge-apple-tv-remote-)
+   * [AppleTV ( homebridge-apple-tv, homebridge-apple-tv-remote or homebridge-appletv-enhanced )](#appletv--homebridge-apple-tv-homebridge-apple-tv-remote-or-homebridge-appletv-enhanced-)
    * [HomeKit Television](#homekit-television)
       * [HomeKit Television - Tested plugins](#homekit-television---tested-plugins)
       * [Television Inputs and Channels](#television-inputs-and-channels)
@@ -232,12 +232,19 @@ Adamo Maisano provided a deeper [comparison](https://github.com/NorthernMan54/ho
 
 * Alexa, what is the temperature in the *device* ( Not supported in Japan )
 
-## AppleTV ( homebridge-apple-tv or homebridge-apple-tv-remote )
+## AppleTV ( homebridge-apple-tv, homebridge-apple-tv-remote or homebridge-appletv-enhanced )
 
 * Alexa, pause *device* ( Apple TV )
 * Alexa, resume *device* ( Apple TV )
 * Alexa, play *device* ( Apple TV )
 * Alexa, stop *device* ( Apple TV )
+* Alexa, next on *device* ( right arrow )
+* Alexa, rewind on *device* ( left arrow )
+
+* Alexa, turn on *device* ( Apple TV )
+* Alexa, turn off *device* ( Apple TV )
+
+With the `enhancedSkip` option on the homebridge-appletv-enhanced plugin, and when watching YouTube or other sources, you can use the wording `Alexa, tv skip` or `alexa skip tv` to press the skip button that appears after a little while.
 
 ## HomeKit Television
 

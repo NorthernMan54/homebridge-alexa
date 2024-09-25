@@ -157,7 +157,7 @@ var hbDevices = new Homebridges(endPoints, {
   "combine": combine,
   "inputs": inputs,
   "channel": channel,
-  "blind": true,
+  "blind": false,
   mergeServiceName: true
 });
 debug("Homebridges");

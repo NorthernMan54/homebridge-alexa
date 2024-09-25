@@ -1,7 +1,7 @@
 import * as net from 'net'
 import  { TlsOptions } from 'tls'
 import * as tls from 'tls'
-import Connection from 'mqtt-connection'
+import * as Connection from 'mqtt-connection'
 import { Duplex } from 'stream'
 
 export type MqttServerListener = (client: Connection) => void
@@ -29,7 +29,7 @@ export class MqttServer extends net.Server {
 			this.on('client', listener)
 		}
 	}
-}
+} 
 
 /**
  * MqttServerNoWait (w/o waiting for initialization)
