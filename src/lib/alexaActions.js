@@ -989,7 +989,7 @@ async function processStatusArray(statusArray, message) {
 
     return (alexaMessages.alexaStateResponse(resultArray, message));
   } catch (err) {
-    if(this.deviceCleanup) {
+    if (this.deviceCleanup) {
       reportDeviceError(message);
     }
     return (alexaMessages.alexaStateResponse(err, message));
@@ -1066,7 +1066,7 @@ function reportDeviceError(message) {
       "payload": {
         "endpoints": [
           {
-            "endpointId": message.endpoint.endpointId,
+            "endpointId": message.directive.endpoint.endpointId,
           }
         ],
         "scope": {

@@ -55,6 +55,7 @@ function stateToProperties(statusObject, hbResponse) {
   // Convert each individual HAP hbResponse to Alexa Format
   statusObject.elements.forEach((element, i) => {
     // debug("stateToProperties - element", element, i, hbResponse[i]);
+
     switch (element.interface.toLowerCase()) {
       case "alexa.speaker":
         properties.push({
