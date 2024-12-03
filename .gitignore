@@ -13,3 +13,7 @@ tools/after.json
 tools/output.txt
 
 gh-md-toc
+/test/hbConfig/accessories
+/test/hbConfig/backups
+/test/hbConfig/persist
+test/hbConfig/config.json

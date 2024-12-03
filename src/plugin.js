@@ -6,7 +6,7 @@ var alexaActions = require('./lib/alexaActions.js');
 var EventEmitter = require('events').EventEmitter;
 var os = require("os");
 
-const packageConfig = require('./package.json');
+const packageConfig = require('../package.json');
 let Service, Characteristic;
 
 var options = {};
@@ -212,7 +212,7 @@ AlexaService.prototype = {
     informationService
       .setCharacteristic(Characteristic.Manufacturer, "homebridge-alexa")
       .setCharacteristic(Characteristic.SerialNumber, hostname)
-      .setCharacteristic(Characteristic.FirmwareRevision, require('./package.json').version);
+      .setCharacteristic(Characteristic.FirmwareRevision, packageConfig.version);
     // Thermostat Service
 
     alexaService = new Service.ContactSensor(this.name);

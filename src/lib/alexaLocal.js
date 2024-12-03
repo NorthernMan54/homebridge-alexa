@@ -7,7 +7,7 @@
 
 var mqtt = require('mqtt');
 var debug = require('debug')('alexaLocal');
-const packageConfig = require('../package.json');
+const packageConfig = require('../../package.json');
 var Bottleneck = require("bottleneck");
 
 var Validator = require('is-my-json-valid');
