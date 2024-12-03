@@ -46,6 +46,7 @@ function alexaHome(log, config, api) {
   this.LegacyCloudTransport = config['LegacyCloudTransport'] || false; // Default to new Transport ( Setting from discarded beta )
   var mqttKeepalive = config['keepalive'] || 5; // MQTT Connection Keepalive
   this.enhancedSkip = config['enhancedSkip'] || false; // Use enhanced skip for appletv-enhanced plugin
+  this.deviceCleanup = config['deviceCleanup'] || false; // Cleanup devices when not found
 
   if (mqttKeepalive < 60) {
     this.keepalive = mqttKeepalive * 60;

@@ -26,7 +26,8 @@ module.exports = {
   alexaChannelController: alexaChannelController,
   alexaInputController: alexaInputController,
   alexaRangeController: alexaRangeController,
-  alexaModeController: alexaModeController
+  alexaModeController: alexaModeController,
+  destroy: destroy
 };
 
 function hapDiscovery(options) {
@@ -46,6 +47,10 @@ function hapDiscovery(options) {
     options.eventBus.emit('hapEvent', event);
   });
   // debug("Event Relay - 1", homebridge);
+}
+
+function destroy() {
+  homebridge.destroy();
 }
 
 function registerEvents(message) {
@@ -932,7 +937,7 @@ function alexaMessage(message, callback) {
       // For performance HAP GET Characteristices supports getting multiple in one call
       // debug("alexaMessage - statusArray", statusArray);
 
-      processStatusArray(statusArray, message).then(response => {
+      processStatusArray.call(this, statusArray, message).then(response => {
         debug("alexaMessage: Response", JSON.stringify(response,
           null, 2));
         callback(null, response);
@@ -984,6 +989,9 @@ async function processStatusArray(statusArray, message) {
 
     return (alexaMessages.alexaStateResponse(resultArray, message));
   } catch (err) {
+    if(this.deviceCleanup) {
+      reportDeviceError(message);
+    }
     return (alexaMessages.alexaStateResponse(err, message));
   }
 }
@@ -1045,6 +1053,30 @@ function alexaEvent(events) {
     }
   });
 }
+
+function reportDeviceError(message) {
+  alexaLocal.alexaEvent({
+    "event": {
+      "header": {
+        "namespace": "Alexa.Discovery",
+        "name": "DeleteReport",
+        "messageId": messages.createMessageId(),
+        "payloadVersion": "3"
+      },
+      "payload": {
+        "endpoints": [
+          {
+            "endpointId": message.endpoint.endpointId,
+          }
+        ],
+        "scope": {
+          "type": "BearerToken",
+          "token": "OAuth2.0 bearer token"
+        }
+      }
+    }
+  });
+};
 
 /*
 
