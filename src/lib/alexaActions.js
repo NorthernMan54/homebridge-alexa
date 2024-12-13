@@ -140,10 +140,11 @@ function alexaDiscovery(message, callback) {
         this.log("ERROR: Maximum devices/accessories of 300 exceeded.");
       }
     }
-    // debug("Discovery Response", JSON.stringify(response, null, 2));
     if (this.debug) {
       const fs = require('fs');
-      fs.writeFileSync('alexaDiscovery.json', JSON.stringify(response, null, 2));
+      const storagePath = this.api.user.storagePath() + '/homebridge-alexa-discovery.json';
+      this.log.warn("Writing Alexa Discovery Response to", storagePath);
+      fs.writeFileSync(storagePath, JSON.stringify(response, null, 2));
     }
     callback(null, response);
   }.bind(this));
@@ -265,7 +266,13 @@ function alexaColorTemperatureController(message, callback) {
         }]
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("ColorTemperatureController-set", action, haAction.deviceID, status, body, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err, message.directive.payload.colorTemperatureInKelvin);
         callback(err, response);
       }.bind(this));
@@ -292,7 +299,13 @@ function alexaPlaybackController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("PlaybackController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -317,7 +330,13 @@ function alexaInputController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("InputController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -342,7 +361,13 @@ function alexaPowerController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("PowerController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -383,7 +408,13 @@ function alexaModeController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("ModeController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -408,7 +439,13 @@ function alexaLockController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("alexaLockController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -473,7 +510,13 @@ function alexaChannelController(message, callback) {
   // debug("alexaChannelController", JSON.stringify(message), JSON.stringify(body));
 
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("alexaChannelController", channel, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -558,7 +601,13 @@ async function alexaThermostatController(message, callback) {
         "characteristics": characteristics
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("ThermostatController", action, haAction.deviceID, status, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err);
         callback(err, response);
       }.bind(this));
@@ -627,7 +676,13 @@ function alexaColorController(message, callback) {
   };
   debug("color HB command", body);
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("ColorController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -682,7 +737,13 @@ function alexaRangeController(message, callback) {
         }]
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("RangeController", action, haAction.deviceID, status, body, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err, rangeValue);
         callback(err, response);
       }.bind(this));
@@ -868,7 +929,7 @@ function alexaStepSpeaker(message, callback) {
 }
 
 function alexaMessage(message, callback) {
-  debug("alexaMessage:", JSON.stringify(message));
+  // debug("alexaMessage:", JSON.stringify(message));
   switch (message.directive.header.name.toLowerCase()) {
     case "reportstate": // aka getStatus
       var action = message.directive.header.name;
@@ -938,8 +999,7 @@ function alexaMessage(message, callback) {
       // debug("alexaMessage - statusArray", statusArray);
 
       processStatusArray.call(this, statusArray, message).then(response => {
-        debug("alexaMessage: Response", JSON.stringify(response,
-          null, 2));
+        // debug("alexaMessage: Response", JSON.stringify(response));
         callback(null, response);
       }).catch(err => {
         debug("alexaMessage:Error:", err.message);
@@ -987,6 +1047,7 @@ async function processStatusArray(statusArray, message) {
     // debug("processStatusArray", messageArray);
     var resultArray = await Promise.all(messageArray);
 
+    // debug("processStatusArray-2", JSON.stringify(resultArray));
     return (alexaMessages.alexaStateResponse(resultArray, message));
   } catch (err) {
     if (this.deviceCleanup) {
@@ -997,14 +1058,14 @@ async function processStatusArray(statusArray, message) {
 }
 
 function _HAPstatusByDeviceID(statusObject, message) {
-  debug("_HAPstatusByDeviceID-1", statusObject);
+  // debug("_HAPstatusByDeviceID-1", JSON.stringify(statusObject));
   return new Promise((resolve, reject) => {
     homebridge.HAPstatusByDeviceID(statusObject.deviceID, statusObject.body, function (err, status) {
       if (err) {
         // debug("Error: _HAPstatusByDeviceID", err);
         reject(err);
       } else {
-        debug("_HAPstatusByDeviceID-2", statusObject.deviceID, status);
+        // debug("_HAPstatusByDeviceID-2", statusObject.deviceID, JSON.stringify(status));
         resolve(messages.stateToProperties(statusObject, status.characteristics));
       }
     });

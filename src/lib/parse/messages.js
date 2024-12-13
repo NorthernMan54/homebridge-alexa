@@ -236,7 +236,7 @@ function stateToProperties(statusObject, hbResponse) {
             "timeOfSample": now.toISOString(),
             "uncertaintyInMilliseconds": 500
           });
-	}
+        }
         break;
       default:
         debug("ERROR: statusReport unknown/handled device", element, reportState);
@@ -1282,7 +1282,7 @@ function _getValue(element, hbResponse) {
 }
 
 function _getHBValue(element, hbResponse) {
-  debug("_getHBValue", element, hbResponse);
+  // debug("_getHBValue", JSON.stringify(element), JSON.stringify(hbResponse));
   var value, status;
   for (var i in hbResponse) {
     if (hbResponse[i].aid === element.aid && hbResponse[i].iid === element.iid) {

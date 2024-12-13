@@ -21,6 +21,7 @@ module.exports = function (homebridge) {
 
 function alexaHome(log, config, api) {
   this.log = log;
+  this.api = api;
   this.eventBus = new EventEmitter();
   this.config = config;
   this.pin = config['pin'] || "031-45-154";
@@ -113,6 +114,7 @@ alexaHome.prototype.didFinishLaunching = function () {
   }
   options = {
     // Shared Options
+    api: this.api,
     log: this.log,
     debug: this.debug,
     // MQTT Options

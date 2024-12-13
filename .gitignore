@@ -17,3 +17,4 @@ gh-md-toc
 /test/hbConfig/backups
 /test/hbConfig/persist
 test/hbConfig/config.json
+test/hbConfig/homebridge-alexa-discovery.json

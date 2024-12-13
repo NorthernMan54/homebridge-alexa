@@ -70,11 +70,12 @@ function alexaLocal(options) {
 
         //    debug("Count", this.listenerCount(msg.directive.header.namespace.toLowerCase()));
         if (options.eventBus.listenerCount(msg.directive.header.namespace) > 0) {
-          debug('Emitting', msg.directive.header.namespace);
+          debug('Emitting', msg.directive.header.namespace, msg.directive.header.name, msg.directive.header.correlationToken, msg.directive.endpoint?.endpointId);
           options.eventBus.emit(msg.directive.header.namespace, msg, function (err, response) {
             // TODO: if no message, return error Response
             if (response == null) {
               response = _alexaErrorResponse(msg);
+              this.log.error("ERROR Response", JSON.stringify(msg));
             }
             // debug("Response", JSON.stringify(response));
             connection.client.publish("response/" + username + "/1", JSON.stringify(response));

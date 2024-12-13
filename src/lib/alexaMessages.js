@@ -21,6 +21,7 @@ function alexaResponse(message, hbResponse, err, value) {
           "namespace": "Alexa",
           "name": "ErrorResponse",
           "messageId": message.directive.header.messageId,
+          "correlationToken": message.directive.header.correlationToken,
           "payloadVersion": "3"
         },
         "endpoint": {
@@ -40,6 +41,7 @@ function alexaResponse(message, hbResponse, err, value) {
           "namespace": "Alexa",
           "name": "ErrorResponse",
           "messageId": message.directive.header.messageId,
+          "correlationToken": message.directive.header.correlationToken,
           "payloadVersion": "3"
         },
         "endpoint": {
