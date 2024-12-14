@@ -929,7 +929,6 @@ function alexaStepSpeaker(message, callback) {
 }
 
 function alexaMessage(message, callback) {
-  // debug("alexaMessage:", JSON.stringify(message));
   switch (message.directive.header.name.toLowerCase()) {
     case "reportstate": // aka getStatus
       var action = message.directive.header.name;
@@ -999,7 +998,6 @@ function alexaMessage(message, callback) {
       // debug("alexaMessage - statusArray", statusArray);
 
       processStatusArray.call(this, statusArray, message).then(response => {
-        // debug("alexaMessage: Response", JSON.stringify(response));
         callback(null, response);
       }).catch(err => {
         debug("alexaMessage:Error:", err.message);
@@ -1024,7 +1022,8 @@ function alexaMessage(message, callback) {
             "name": "ErrorResponse",
             "namespace": "Alexa",
             "payloadVersion": "3",
-            "messageId": message.directive.header.messageId
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
           },
           "payload": {
             "endpoints": []
