@@ -28,7 +28,7 @@ class AlexaHome {
       password: false,
       filter: null,
       beta: false,
-      events: false,
+      routines: false,
       combine: false,
       oldParser: false,
       refresh: 60 * 15,
@@ -122,7 +122,7 @@ class AlexaHome {
       deviceList: this.deviceList,
       door: this.door,
       mergeServiceName: this.mergeServiceName,
-      events: this.events,
+      events: this.routines,
       enhancedSkip: this.enhancedSkip,
     };
 
