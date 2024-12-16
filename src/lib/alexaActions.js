@@ -998,6 +998,7 @@ function alexaMessage(message, callback) {
       // debug("alexaMessage - statusArray", statusArray);
 
       processStatusArray.call(this, statusArray, message).then(response => {
+        debug("alexaMessage:Response:", JSON.stringify(response));
         callback(null, response);
       }).catch(err => {
         debug("alexaMessage:Error:", err.message);

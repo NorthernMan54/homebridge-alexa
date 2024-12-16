@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Changes
 
-- Changed behaviour for missing devices, and have the plugin inform Alexa about some missing devices so they can be automatically deleted.  Feature is enabled with the config option `deviceCleanup`.  Currently only removes devices when it detects that the homebridge instance / child bridge associated with the device is no longer available.
+- Changed behaviour for missing devices, and have updated the plugin inform Alexa about some missing devices so they can be automatically deleted.  Feature is enabled with the config option `deviceCleanup`.  Currently only removes devices when it detects that the homebridge instance / child bridge associated with the device is no longer available.
 
 - Improved performance on `Alexa turn off all the lights`
   
