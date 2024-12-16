@@ -6,3 +6,5 @@ README.md.toc.*
 tools/*
 publish.sh
 beta.sh
+
+test/*

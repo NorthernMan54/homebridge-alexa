@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.8.0 (2024-12-24)
+
+## [Version 0.8.0](https://github.com/northernman54/homebridge-alexa/compare/v0.7.1...v0.8.0)
+
+#### Changes
+
+- Changed behaviour for missing devices, and have updated the plugin inform Alexa about some missing devices so they can be automatically deleted.  Feature is enabled with the config option `deviceCleanup`.  Currently only removes devices when it detects that the homebridge instance / child bridge associated with the device is no longer available.
+
+- Improved performance on `Alexa turn off all the lights`
+  
 ## 0.7.1 (2024-09-24)
 
 ## [Version 0.7.1](https://github.com/northernman54/homebridge-alexa/compare/v0.7.0...v0.7.1)
