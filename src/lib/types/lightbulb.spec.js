@@ -1,4 +1,3 @@
-import { CharacteristicType, ServiceType } from '@homebridge/hap-client';
 import { Lightbulb } from './lightbulb';
 
 jest.setTimeout(30000);
@@ -8,7 +7,7 @@ const lightbulb = new Lightbulb();
 describe('lightBulb', () => {
   describe('sync message', () => {
     it('lightbulb with On/Off only', async () => {
-      const response: any = lightbulb.sync(lightbulbServiceOnOff);
+      const response = lightbulb.sync(lightbulbServiceOnOff);
       expect(response).toBeDefined();
       expect(response.type).toBe('action.devices.types.LIGHT');
       expect(response.traits).toContain('action.devices.traits.OnOff');
@@ -126,13 +125,13 @@ describe('lightBulb', () => {
   });
 });
 
-async function sleep(ms: number) {
+async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const setValue = async function (value: string | number | boolean): Promise<CharacteristicType> {
+const setValue = async function (value) {
   // Perform your operations here
-  const result: CharacteristicType = {
+  const result = {
     aid: 1,
     iid: 1,
     uuid: '00000025-0000-1000-8000-0026BB765291',
@@ -154,10 +153,10 @@ const setValue = async function (value: string | number | boolean): Promise<Char
   return result;
 };
 
-const setValueError = async function (value: string | number | boolean): Promise<CharacteristicType> {
+const setValueError = async function (value) {
   // Perform your operations here
   throw new Error('Error setting value');
-  const result: CharacteristicType = {
+  const result = {
     aid: 1,
     iid: 1,
     uuid: '00000025-0000-1000-8000-0026BB765291',
@@ -179,9 +178,9 @@ const setValueError = async function (value: string | number | boolean): Promise
   return result;
 };
 
-const getValue = async function (): Promise<CharacteristicType> {
+const getValue = async function () {
   // Perform your operations here
-  const result: CharacteristicType = {
+  const result = {
     aid: 1,
     iid: 1,
     uuid: '00000025-0000-1000-8000-0026BB765291',
@@ -203,13 +202,13 @@ const getValue = async function (): Promise<CharacteristicType> {
   return result;
 };
 
-const refreshCharacteristics = async function (): Promise<ServiceType> {
+const refreshCharacteristics = async function () {
   return lightbulbServiceHue;
 };
 
-const setCharacteristic = async function (value: string | number | boolean): Promise<ServiceType> {
+const setCharacteristic = async function (value) {
   // Perform your operations here
-  const result: CharacteristicType = {
+  const result = {
     aid: 1,
     iid: 1,
     uuid: '00000025-0000-1000-8000-0026BB765291',
@@ -231,9 +230,9 @@ const setCharacteristic = async function (value: string | number | boolean): Pro
   return lightbulbServiceHue;
 };
 
-const getCharacteristic = function (): CharacteristicType {
+const getCharacteristic = function () {
   // Perform your operations here
-  const result: CharacteristicType = {
+  const result = {
     aid: 1,
     iid: 1,
     uuid: '00000025-0000-1000-8000-0026BB765291',
@@ -255,7 +254,7 @@ const getCharacteristic = function (): CharacteristicType {
   return result;
 };
 
-const lightbulbServiceHue: ServiceType = {
+const lightbulbServiceHue = {
   aid: 58,
   iid: 8,
   uuid: '00000043-0000-1000-8000-0026BB765291',
@@ -420,7 +419,7 @@ const lightbulbServiceHue: ServiceType = {
   getCharacteristic,
 };
 
-const lightbulbServiceOnOff: ServiceType = {
+const lightbulbServiceOnOff = {
   aid: 13,
   iid: 8,
   uuid: '00000043-0000-1000-8000-0026BB765291',
@@ -494,7 +493,7 @@ const lightbulbServiceOnOff: ServiceType = {
   getCharacteristic,
 };
 
-const lightbulbServiceOnOffError: ServiceType = {
+const lightbulbServiceOnOffError = {
   aid: 13,
   iid: 8,
   uuid: '00000043-0000-1000-8000-0026BB765291',
@@ -568,7 +567,7 @@ const lightbulbServiceOnOffError: ServiceType = {
   getCharacteristic,
 };
 
-const lightbulbServiceDimmer: ServiceType = {
+const lightbulbServiceDimmer = {
   aid: 14,
   iid: 8,
   uuid: '00000043-0000-1000-8000-0026BB765291',

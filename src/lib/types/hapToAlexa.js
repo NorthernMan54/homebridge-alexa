@@ -1,3 +1,4 @@
+const Buffer = require('buffer').Buffer;
 
 class hapToAlexa {
   discoveryTemplate(service) {
@@ -12,7 +13,7 @@ class hapToAlexa {
 
     const endpointReg = /[^\w|_|-|=|#|;|:|?|@|&]/g; // Invalid characters in endpointid
     const endpointID = Buffer.from(`${service.instance.username}-${service.instance.name}-${service.accessoryInformation.Manufacturer}-${service.serviceName}-${service.uuid}`).toString('base64').replace(endpointReg, '#');
-  
+
     // console.log('hapToAlexa discovery endpointID:', endpointID);
     return {
       endpointId: endpointID,

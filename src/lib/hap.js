@@ -4,12 +4,19 @@ const { HapClient, ServiceType } = require('@homebridge/hap-client');
 const path = require('path');
 const fs = require('fs');
 
-const { Lightbulb } = require('./types/lightbulb');
+
 const { ContactSensor } = require('./types/contactSensor');
+const { Doorbell } = require('./types/doorbell');
+const { Fan } = require('./types/fan');
+const { FanV2 } = require('./types/fanV2');
+const { GarageDoorOpener } = require('./types/garageDoorOpener');
+const { Lightbulb } = require('./types/lightbulb');
 const { MotionSensor } = require('./types/motionSensor');
 const { Outlet } = require('./types/outlet');
 const { Switch } = require('./types/switch');
+const { Television } = require('./types/television');
 const { TemperatureSensor } = require('./types/temperatureSensor');
+const { Thermostat } = require('./types/thermostat');
 
 class Hap {
 
@@ -19,11 +26,18 @@ class Hap {
   /* GSH Supported types */
   types = {
     ContactSensor: new ContactSensor(),
+    Doorbell: new Doorbell(),
+    Fan: new Fan(),
+    FanV2: new FanV2(),
+    GarageDoorOpener: new GarageDoorOpener(),
     Lightbulb: new Lightbulb(),
     MotionSensor: new MotionSensor(),
+    OccupancySensor: new ContactSensor(),
     Outlet: new Outlet(),
     Switch: new Switch(),
+    Television: new Television(),
     TemperatureSensor: new TemperatureSensor(),
+    Thermostat: new Thermostat()
   };
 
 
