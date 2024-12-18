@@ -40,38 +40,68 @@ describe('newHap', () => {
     expect(newVersionData.event).toBeDefined();
     expect(newVersionData.event.header).toBeDefined();
     expect(Array.isArray(newVersionData.event.payload.endpoints)).toBe(true);
-    // expect((newVersionData.event.payload.endpoints).length).toBe(87);
+    expect((newVersionData.event.payload.endpoints).length).toBe(181);
   });
 
-  //  console.log(masterEndpoints);
+
+  // existing Endpoints should exist in newEndpoints
   let matchingNewEndpoint;
   masterEndpoints.forEach((masterEndpoint) => {
     describe(`Endpoint: ${masterEndpoint.friendlyName}`, () => {
-      test('should exist in the master file', () => {
+      test(`${masterEndpoint?.endpointId} should exist in the newEndpoints file`, () => {
         matchingNewEndpoint = newEndpoints.find(
           (newEndpoint) => masterEndpoint?.endpointId === newEndpoint?.endpointId
         );
         expect(matchingNewEndpoint).toBeDefined();
       });
       /*
-            test('should have the same friendlyName', () => {
-              expect(matchingNewEndpoint.friendlyName).toBe(masterEndpoint.friendlyName);
-            });
-            test('should have the same description', () => {
-              expect(matchingNewEndpoint.description).toBe(masterEndpoint.description);
-            });
-      
-            test('should have the same manufacturerName', () => {
-              expect(matchingNewEndpoint.manufacturerName).toBe(masterEndpoint.manufacturerName);
-            });
-            test('should have the same displayCategories', () => {
-              expect(matchingNewEndpoint.displayCategories).toStrictEqual(masterEndpoint.displayCategories);
-            });
-            */
+      test('should have the same friendlyName', () => {
+        expect(matchingNewEndpoint.friendlyName).toBe(masterEndpoint.friendlyName);
+      });
+      test('should have the same description', () => {
+        expect(matchingNewEndpoint.description).toBe(masterEndpoint.description);
+      });
+ 
+      test('should have the same manufacturerName', () => {
+        expect(matchingNewEndpoint.manufacturerName).toBe(masterEndpoint.manufacturerName);
+      });
+      test('should have the same displayCategories', () => {
+        expect(matchingNewEndpoint.displayCategories).toStrictEqual(masterEndpoint.displayCategories);
+      });
+      */
       //  test('should have the same capabilities', () => {
       //    expect(matchingNewEndpoint.capabilities).toEqual(masterEndpoint.capabilities);
       //  });
+    });
+  });
 
+  // existing Endpoints should exist in newEndpoints
+  newEndpoints.forEach((newEndpoint) => {
+    describe(`Endpoint: ${newEndpoint.friendlyName}`, () => {
+      test(`${newEndpoint?.endpointId} should exist in the masterEndpoints file`, () => {
+        matchingNewEndpoint = masterEndpoints.find(
+          (masterEndpoint) => masterEndpoint?.endpointId === newEndpoint?.endpointId
+        );
+        expect(matchingNewEndpoint).toBeDefined();
+      });
+      /*
+      test('should have the same friendlyName', () => {
+        expect(matchingNewEndpoint.friendlyName).toBe(masterEndpoint.friendlyName);
+      });
+      test('should have the same description', () => {
+        expect(matchingNewEndpoint.description).toBe(masterEndpoint.description);
+      });
+ 
+      test('should have the same manufacturerName', () => {
+        expect(matchingNewEndpoint.manufacturerName).toBe(masterEndpoint.manufacturerName);
+      });
+      test('should have the same displayCategories', () => {
+        expect(matchingNewEndpoint.displayCategories).toStrictEqual(masterEndpoint.displayCategories);
+      });
+      */
+      //  test('should have the same capabilities', () => {
+      //    expect(matchingNewEndpoint.capabilities).toEqual(masterEndpoint.capabilities);
+      //  });
     });
   });
 

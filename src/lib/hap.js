@@ -28,7 +28,7 @@ class Hap {
     ContactSensor: new ContactSensor(),
     Doorbell: new Doorbell(),
     Fan: new Fan(),
-    FanV2: new FanV2(),
+    Fanv2: new FanV2(),
     GarageDoorOpener: new GarageDoorOpener(),
     Lightbulb: new Lightbulb(),
     MotionSensor: new MotionSensor(),
@@ -46,15 +46,15 @@ class Hap {
   }
 
   /**
-* Build Google SYNC intent payload
-*/
+  * Build Google SYNC intent payload
+  */
   async buildDiscoveryResponse() {
     const masterFilePath = path.join(__dirname, '../../test/homebridge-gsh-services.json');
     const data = fs.readFileSync(masterFilePath, 'utf8');
     this.services = JSON.parse(data);
     const endpoints = this.services.map((service) => {
       if (!this.types[service.type]) {
-        // this.log.debug(`Unsupported service type ${service.type}`);
+        console.log(`Unsupported service type ${service.type} for`, JSON.stringify(service));
         return;
       }
       // console.log('buildSyncResponse', service);

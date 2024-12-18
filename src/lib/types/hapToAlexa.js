@@ -11,13 +11,15 @@ class hapToAlexa {
     // Received - MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLQogICAgV2VzdCBCZWRyb29tLUxpZ2h0YnVsYg==
     // 1C:22:3D:E3:CF:34-homebridge-Tasmota-West Bedroom-Lightbulb
 
+    // 0E:F4:E9:FC:AD:D1-homebridge-Unknown-Patio Room-00000040-0000-1000-8000-0026BB765291
+    const friendlyName = (service.serviceName ? service.serviceName: service.accessoryInformation.Name);
     const endpointReg = /[^\w|_|-|=|#|;|:|?|@|&]/g; // Invalid characters in endpointid
-    const endpointID = Buffer.from(`${service.instance.username}-${service.instance.name}-${service.accessoryInformation.Manufacturer}-${service.serviceName}-${service.uuid}`).toString('base64').replace(endpointReg, '#');
+    const endpointID = Buffer.from(`${service.instance.username}-${service.instance.name}-${service.accessoryInformation.Manufacturer}-${friendlyName}-${service.uuid}`).toString('base64').replace(endpointReg, '#');
 
-    // console.log('hapToAlexa discovery endpointID:', endpointID);
+    // console.log('hapToAlexa discovery endpointID:', endpointID); 
     return {
       endpointId: endpointID,
-      friendlyName: service.serviceName,
+      friendlyName: friendlyName,
       description: `${service.instance.name} ${service.serviceName} ${service.humanType}`,
       manufacturerName: service.accessoryInformation.Manufacturer,
       displayCategories: ['LIGHT'],
