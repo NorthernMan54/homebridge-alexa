@@ -1,5 +1,5 @@
 var debug = require('debug')('alexa:Characteristic');
-var messages = require('./messages.js');
+var messages = require('./messages.cjs');
 
 module.exports = {
   Characteristic: Characteristic

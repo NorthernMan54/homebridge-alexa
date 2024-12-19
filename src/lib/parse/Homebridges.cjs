@@ -1,7 +1,7 @@
 var debug = require('debug')('alexa:Homebridges');
-var Homebridge = require('./Homebridge.js').Homebridge;
+var Homebridge = require('./Homebridge.cjs').Homebridge;
 // var messageUtil = require('../util/messageUtil');
-var messages = require('./messages');
+var messages = require('./messages.cjs');
 
 module.exports = {
   Homebridges: Homebridges

@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class Doorbell extends hapToAlexa {
   discovery(service) {
-    let discovery = { ...{ displayCategories: ["DOORBELL"] }, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{ displayCategories: ["DOORBELL"] }};
     return discovery;
   }
 }

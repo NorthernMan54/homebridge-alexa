@@ -20,7 +20,7 @@ class hapToAlexa {
     return {
       endpointId: endpointID,
       friendlyName: friendlyName,
-      description: `${service.instance.name} ${service.serviceName} ${service.humanType}`,
+      description: `${service.instance.name} ${friendlyName} ${service.humanType}`,
       manufacturerName: service.accessoryInformation.Manufacturer,
       displayCategories: ['LIGHT'],
     }

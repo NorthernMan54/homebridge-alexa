@@ -35,7 +35,7 @@
     "homebridge-plugin"
   ],
   "devDependencies": {
-    "@homebridge/hap-client": "^2.0.0",
+
     "@types/node": "^22.10.2",
     "@types/jest": "^29.5.14",
     "@eslint/js": "^9.14.0",
@@ -50,6 +50,7 @@
     "semver": "^7.6.3"
   },
   "dependencies": {
+    "@homebridge/hap-client": "^2.0.0",
     "axios": "^1.7.9",
     "bottleneck": "2.19.5",
     "debug": "4.4.0",

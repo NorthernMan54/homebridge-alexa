@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class Television extends hapToAlexa {
   discovery(service) {
-    let discovery = { ...{ displayCategories: ["TV"] }, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{ displayCategories: ["TV"] }};
     return discovery;
   }
 }

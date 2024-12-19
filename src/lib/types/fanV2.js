@@ -6,8 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class FanV2 extends hapToAlexa {
   discovery(service) {
-    let discovery = { ...{ displayCategories: ["FAN"] }, ...this.discoveryTemplate(service) };
-    console.log('FanV2 discovery:', discovery);
+    let discovery = { ...this.discoveryTemplate(service), ...{ displayCategories: ["FAN"] }};
     return discovery;
   }
 }

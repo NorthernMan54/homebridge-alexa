@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class GarageDoorOpener extends hapToAlexa {
   discovery(service) {
-    let discovery = { ...{ displayCategories: ["GARAGE_DOOR"] }, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{ displayCategories: ["GARAGE_DOOR"] }};
     return discovery;
   }
 }

@@ -1,6 +1,6 @@
 var debug = require('debug')('alexa:Homebridge');
-var Accessory = require('./Accessory.js').Accessory;
-var messages = require('./messages.js');
+var Accessory = require('./Accessory.cjs').Accessory;
+var messages = require('./messages.cjs');
 
 module.exports = {
   Homebridge: Homebridge

@@ -1,6 +1,6 @@
 var debug = require('debug')('alexa:Accessory');
-var Service = require('./Service.js').Service;
-var messages = require('./messages.js');
+var Service = require('./Service.cjs').Service;
+var messages = require('./messages.cjs');
 
 module.exports = {
   Accessory: Accessory

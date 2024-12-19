@@ -1,11 +1,11 @@
 // var alexaTranslator = require('../lib/alexaTranslator.js');
-var Homebridges = require('../lib/parse/Homebridges.js').Homebridges;
+var Homebridges = require('../src/lib/parse/Homebridges.cjs').Homebridges;
 // var alexaTranslator = require('../lib/alexaTranslator.js');
 var Validator = require('is-my-json-valid');
 var debug = require('debug')('parse');
-var alexaSchema = require('../lib/alexa_smart_home_message_schema.json');
+var alexaSchema = require('../src/lib/alexa_smart_home_message_schema.json');
 var normalizeUUID = require('../node_modules/hap-node-client/lib/util.js').normalizeUUID;
-var checkEventDeviceList = require('../lib/parse/messages').checkEventDeviceList;
+var checkEventDeviceList = require('../src/lib/parse/messages.cjs').checkEventDeviceList;
 var checkAlexaMessage = Validator(alexaSchema, {
   verbose: true
 });

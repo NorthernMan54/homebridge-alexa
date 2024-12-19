@@ -13,18 +13,49 @@ function readJsonFile(filePath) {
   }
 }
 
-const hap = new Hap();
+const config = {
+  "combine": [
+    {
+      "into": "Living",
+      "from": [
+        "Yamaha"
+      ]
+    },
+    {
+      "into": "Deck",
+      "from": [
+        "Yamaha"
+      ]
+    }
+  ],
+  "speakers": [
+    {
+      "manufacturer": "yamaha-home",
+      "name": "Deck"
+    },
+    {
+      "manufacturer": "yamaha-home",
+      "name": "Living"
+    },
+    {
+      "manufacturer": "HTTP-IRBlaster",
+      "name": "Stereo"
+    }
+  ]
+};
+
+const hap = new Hap(null, null, null, config);
 
 // Jest test cases
 const masterFilePath = path.join(__dirname, '../../test/homebridge-alexa-discovery.json');
 const masterData = readJsonFile(masterFilePath);
 const masterEndpoints = masterData?.event?.payload?.endpoints || [];
 var newVersionData, newEndpoints;
+newVersionData = hap.buildDiscoveryResponse();
+newEndpoints = newVersionData?.event?.payload?.endpoints || [];
 
 describe('newHap', () => {
   beforeAll(async () => {
-    newVersionData = await hap.buildDiscoveryResponse();
-    newEndpoints = newVersionData?.event?.payload?.endpoints || [];
   });
 
   test('masterData files should contain endpoints', () => {
@@ -40,7 +71,7 @@ describe('newHap', () => {
     expect(newVersionData.event).toBeDefined();
     expect(newVersionData.event.header).toBeDefined();
     expect(Array.isArray(newVersionData.event.payload.endpoints)).toBe(true);
-    expect((newVersionData.event.payload.endpoints).length).toBe(181);
+    expect((newVersionData.event.payload.endpoints).length).toBe(88);
   });
 
 
@@ -54,21 +85,21 @@ describe('newHap', () => {
         );
         expect(matchingNewEndpoint).toBeDefined();
       });
-      /*
+
       test('should have the same friendlyName', () => {
         expect(matchingNewEndpoint.friendlyName).toBe(masterEndpoint.friendlyName);
       });
       test('should have the same description', () => {
         expect(matchingNewEndpoint.description).toBe(masterEndpoint.description);
       });
- 
+
       test('should have the same manufacturerName', () => {
         expect(matchingNewEndpoint.manufacturerName).toBe(masterEndpoint.manufacturerName);
       });
       test('should have the same displayCategories', () => {
         expect(matchingNewEndpoint.displayCategories).toStrictEqual(masterEndpoint.displayCategories);
       });
-      */
+
       //  test('should have the same capabilities', () => {
       //    expect(matchingNewEndpoint.capabilities).toEqual(masterEndpoint.capabilities);
       //  });
@@ -84,21 +115,21 @@ describe('newHap', () => {
         );
         expect(matchingNewEndpoint).toBeDefined();
       });
-      /*
+
       test('should have the same friendlyName', () => {
         expect(matchingNewEndpoint.friendlyName).toBe(masterEndpoint.friendlyName);
       });
       test('should have the same description', () => {
         expect(matchingNewEndpoint.description).toBe(masterEndpoint.description);
       });
- 
+
       test('should have the same manufacturerName', () => {
         expect(matchingNewEndpoint.manufacturerName).toBe(masterEndpoint.manufacturerName);
       });
       test('should have the same displayCategories', () => {
         expect(matchingNewEndpoint.displayCategories).toStrictEqual(masterEndpoint.displayCategories);
       });
-      */
+
       //  test('should have the same capabilities', () => {
       //    expect(matchingNewEndpoint.capabilities).toEqual(masterEndpoint.capabilities);
       //  });

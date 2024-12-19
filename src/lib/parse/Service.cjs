@@ -1,6 +1,6 @@
 var debug = require('debug')('Alexa:Service');
-var Characteristic = require('./Characteristic.js').Characteristic;
-var messages = require('./messages.js');
+var Characteristic = require('./Characteristic.cjs').Characteristic;
+var messages = require('./messages.cjs');
 
 module.exports = {
   Service: Service
@@ -37,6 +37,7 @@ function Service(devices, context) {
   this.linked = devices.linked;
   this.name = context.name;
   var endpointReg = /[^\w|_|-|=|#|;|:|?|@|&]/g; // Invalid characters in endpointid
+  console.log("endpointReg", this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + context.info.Name + "-" + this.serviceType);
   this.endpointID = Buffer.from(this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + context.info.Name + "-" + this.serviceType).toString('base64').replace(endpointReg, '#');
   // this.endpointID = new Buffer(this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + context.info.Name + "-" + this.serviceType).toString('base64');
   // debug("First EP", this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + context.info.Name + "-" + this.serviceType);
@@ -71,6 +72,7 @@ function Service(devices, context) {
             this.EPname = context.name + " " + element.value;
             debug("mergeServiceName", this.name);
           }
+          console.log("endpointReg -2", this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + this.EPname + "-" + this.serviceType);
 
           this.endpointID = Buffer.from(this.id + "-" + context.homebridge + "-" + context.info.Manufacturer + "-" + this.EPname + "-" + this.serviceType).toString('base64').replace(endpointReg, '#');
         }

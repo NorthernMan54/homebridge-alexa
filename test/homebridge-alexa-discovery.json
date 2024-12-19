@@ -512,7 +512,7 @@
           ]
         },
         {
-          "endpointId": "MEU6RjQ6RTk6RkM6QUQ6RDEtaG9tZWJyaWRnZS1Vbmtub3duLVBhdGlvIFJvb20tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "endpointId": "MEU6RjQ6RTk6RkM6QUQ6RDEtaG9tZWJyaWRnZS1IdW50ZXIgRmFuLVBhdGlvIFJvb20tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
           "friendlyName": "Patio Room",
           "description": "homebridge Patio Room Fan",
           "manufacturerName": "Hunter Fan",

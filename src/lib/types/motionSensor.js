@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class MotionSensor extends hapToAlexa {
   discovery(service) {
-    let discovery = { ...{ displayCategories: ["MOTION_SENSOR"] }, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{ displayCategories: ["MOTION_SENSOR"] }};
     return discovery;
   }
 }

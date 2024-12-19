@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class Outlet extends hapToAlexa {
   discovery(service) {
-    let discovery = {...{displayCategories:["SMARTPLUG"]}, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{displayCategories:["SMARTPLUG"]}};
     return discovery;
   }
 }

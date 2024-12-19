@@ -6,7 +6,7 @@ const { hapToAlexa, hapToAlexa_t } = require('./hapToAlexa');
 
 class TemperatureSensor extends hapToAlexa {
   discovery(service) {
-    let discovery = {...{displayCategories:["TEMPERATURE_SENSOR"]}, ...this.discoveryTemplate(service) };
+    let discovery = { ...this.discoveryTemplate(service), ...{displayCategories:["TEMPERATURE_SENSOR"]}};
     return discovery;
   }
 }
