@@ -161,16 +161,25 @@ function handleError(err, options) {
 }
 
 function alexaEvent(message) {
-  publishMessage(`event/${username}/1`, message);
+  var topic = "event/" + username + "/1";
+  var publish = function (callback) {
+    debug("Sending message", topic, JSON.stringify(message));
+    connection.client.publish(topic, JSON.stringify(message), {
+      retain: false
+    }, callback);
+  };
+  limiter.submit(publish);
 }
 
 function alexaPriorityEvent(message) {
-  limiter.submit({ priority: 4 }, publishMessage, `event/${username}/1`, message);
-}
-
-function publishMessage(topic, message, callback) {
-  debug("Publishing message", topic, JSON.stringify(message));
-  connection.client.publish(topic, JSON.stringify(message), { retain: false }, callback);
+  var topic = "event/" + username + "/1";
+  var publish = function (callback) {
+    debug("Sending priority message", topic, JSON.stringify(message));
+    connection.client.publish(topic, JSON.stringify(message), {
+      retain: false
+    }, callback);
+  };
+  limiter.submit({ priority: 4 }, publish);
 }
 
 function createAlexaErrorResponse(message) {
