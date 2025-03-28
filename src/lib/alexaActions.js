@@ -27,7 +27,8 @@ module.exports = {
   alexaInputController: alexaInputController,
   alexaRangeController: alexaRangeController,
   alexaModeController: alexaModeController,
-  destroy: destroy
+  destroy: destroy,
+  setHomebridge: setHomebridge
 };
 
 function hapDiscovery(options) {
@@ -49,8 +50,14 @@ function hapDiscovery(options) {
   // debug("Event Relay - 1", homebridge);
 }
 
+// Used for testing
+
 function destroy() {
   homebridge.destroy();
+}
+
+function setHomebridge(hb) {
+  homebridge = hb;
 }
 
 function registerEvents(message) {

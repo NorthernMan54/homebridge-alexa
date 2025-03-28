@@ -4,7 +4,7 @@
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "src/plugin.js",
   "scripts": {
-    "test": "jest --forceExit --detectOpenHandles --verbose=true --silent ",
+    "test": "jest --forceExit --detectOpenHandles --verbose=true  ",
     "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
     "document": "./gh-md-toc --hide-footer README.md ;./gh-md-toc --hide-footer Troubleshooting.md ;./gh-md-toc --hide-footer Installation.md; rm README.md.orig.* README.md.toc.* Troubleshooting.md.orig.* Troubleshooting.md.toc.* Installation.md.orig.* Installation.md.toc.*",
     "watch": "nodemon",

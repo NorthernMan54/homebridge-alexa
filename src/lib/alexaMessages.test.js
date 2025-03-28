@@ -84,6 +84,24 @@ describe('alexaMessages', () => {
       expect(response.event.payload.type).toBe('ENDPOINT_UNREACHABLE');
     });
 
+    test('should return ErrorResponse when properties are empty', () => {
+      const properties = [[]];
+      const message = {
+        directive: {
+          header: {
+            messageId: '123',
+            name: 'ReportState'
+          },
+          endpoint: {
+            endpointId: 'endpoint-001'
+          }
+        }
+      };
+      const response = alexaStateResponse(properties, message);
+      expect(response.event.header.name).toBe('ErrorResponse');
+      expect(response.event.payload.type).toBe('ENDPOINT_UNREACHABLE');
+    });
+
     test('should return StateReport for ReportState directive', () => {
       const properties = [{
         namespace: 'Alexa.PowerController',
