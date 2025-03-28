@@ -71,7 +71,7 @@ function handleConnect(options) {
     version: packageConfig.version,
     transport: options.transport,
     keepalive: options.mqttOptions.keepalive,
-    routines: options.events,
+    routines: options.routines,
   }));
 
   connection.client.on('message', (topic, message) => handleMessage(topic, message, options));

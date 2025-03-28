@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.8.3 (2025-03-29)
+
+## [Version 0.8.3](https://github.com/northernman54/homebridge-alexa/compare/v0.8.2...v0.8.3)
+
+#### Bug Fix
+
+- Fix for Routines #761
+
 ## 0.8.2 (2024-12-27)
 
 ## [Version 0.8.2](https://github.com/northernman54/homebridge-alexa/compare/v0.8.1...v0.8.2)

@@ -36,7 +36,7 @@ function hapDiscovery(options) {
   homebridge.on('Ready', function () {
     alexaDiscovery.call(options, null, function () {
       // debug("Events", options);
-      if (options.events) {
+      if (options.routines) {
         registerEvents(messages.checkEventDeviceList.call(options, hbDevices.toEvents()));
       }
     });
@@ -95,11 +95,10 @@ function registerEvents(message) {
 function alexaDiscovery(message, callback) {
   // debug('alexaDiscovery', this);
   homebridge.HAPaccessories(function (endPoints) {
-    debug("alexaDiscovery");
+    debug("alexaDiscovery", this);
     var response;
 
     hbDevices = new Homebridges(endPoints, this);
-    // debug("RESPONSE", JSON.stringify(hbDevices, null, 2));
     response = hbDevices.toAlexa(this, message);
 
     // debug("RESPONSE", JSON.stringify(response, null, 2));

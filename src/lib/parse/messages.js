@@ -765,8 +765,8 @@ function lookupCapabilities(capability, options, operations, devices) {
           "supported": [{
             "name": "detectionState"
           }],
-          "proactivelyReported": options.events,
-          "retrievable": true
+          "proactivelyReported": options.routines,
+          "retrievable": !options.routines
         }
       });
       break;
@@ -782,8 +782,8 @@ function lookupCapabilities(capability, options, operations, devices) {
           "supported": [{
             "name": "detectionState"
           }],
-          "proactivelyReported": options.events,
-          "retrievable": true
+          "proactivelyReported": options.routines,
+          "retrievable": !options.routines
         }
       });
       break;

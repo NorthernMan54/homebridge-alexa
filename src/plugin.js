@@ -122,7 +122,7 @@ class AlexaHome {
       deviceList: this.deviceList,
       door: this.door,
       mergeServiceName: this.mergeServiceName,
-      events: this.routines,
+      routines: this.routines,
       enhancedSkip: this.enhancedSkip,
     };
 
