@@ -4,6 +4,7 @@ var alexaMessages = require('./alexaMessages.js');
 var messages = require('./parse/messages');
 var debug = require('debug')('alexaActions');
 var alexaLocal = require('./alexaLocal.js');
+const process = require('process');
 
 var homebridge;
 var hbDevices;
@@ -102,7 +103,7 @@ function registerEvents(message) {
 function alexaDiscovery(message, callback) {
   // debug('alexaDiscovery', this);
   homebridge.HAPaccessories(function (endPoints) {
-    debug("alexaDiscovery", this);
+    // debug("alexaDiscovery", this);
     var response;
 
     hbDevices = new Homebridges(endPoints, this);
@@ -380,12 +381,13 @@ function alexaPowerController(message, callback) {
 }
 
 function alexaModeController(message, callback) {
-  var action = message.directive.header.name;
+  const action = message.directive.header.name;
+  var response;
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
     this.log("alexaModeController missing action", action, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -401,7 +403,7 @@ function alexaModeController(message, callback) {
     default:
       this.log("alexaModeController missing mode", action, message.directive.payload.mode);
       var e = new Error("alexaModeController missing mode " + action + " " + message.directive.payload);
-      var response = alexaMessages.alexaResponse(message, "", e);
+      response = alexaMessages.alexaResponse(message, "", e);
       response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
       callback(e, response);
       return;
@@ -427,12 +429,13 @@ function alexaModeController(message, callback) {
 }
 
 function alexaLockController(message, callback) {
-  var action = message.directive.header.name;
+  const action = message.directive.header.name;
+  var response;
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
     this.log("alexaLockController missing action", action, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -490,7 +493,7 @@ function alexaChannelController(message, callback) {
   } else {
     var e = new Error("ERROR: alexaChannelController missing channel", message.directive.endpoint.payload);
     this.log(e.message);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_DIRECTIVE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -499,7 +502,7 @@ function alexaChannelController(message, callback) {
     var haAction = JSON.parse(message.directive.endpoint.cookie[channel.toUpperCase()]);
   } catch (e) {
     this.log("alexaChannelController invalid station", channel, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "VALUE_OUT_OF_RANGE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -517,11 +520,11 @@ function alexaChannelController(message, callback) {
 
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
     if (err) {
-      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+      this.log.error(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
     } else if (status) {
-      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+      this.log.warn(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
     } else {
-      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+      this.log(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
     }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
@@ -530,14 +533,15 @@ function alexaChannelController(message, callback) {
 
 async function alexaThermostatController(message, callback) {
   // debug("alexaThermostatController", JSON.stringify(message));
-  var action = message.directive.header.name;
-  var payloads = message.directive.payload;
+  const action = message.directive.header.name;
+  const payloads = message.directive.payload;
+  var haAction;
   // directive.header.name = SetThermostatMode, SetTargetTemperature
   switch (action) {
     case "SetThermostatMode":
       try {
         var mode = message.directive.payload.thermostatMode.value;
-        var haAction = JSON.parse(message.directive.endpoint.cookie["thermostatMode" + mode]);
+        haAction = JSON.parse(message.directive.endpoint.cookie["thermostatMode" + mode]);
       } catch (e) {
         this.log("alexaThermostatController missing action", "thermostatMode" + mode, e.message, message.directive.endpoint.cookie);
         var response = alexaMessages.alexaResponse(message, "", e);
@@ -561,7 +565,6 @@ async function alexaThermostatController(message, callback) {
     case "SetTargetTemperature":
       // targetSetpoint, lowerSetpoint, upperSetpoint
       var characteristics = [];
-      var haAction;
       for (var index in payloads) {
         try {
           if (message.directive.endpoint.cookie[index]) {
@@ -1053,11 +1056,15 @@ async function processStatusArray(statusArray, message) {
     // debug("processStatusArray", messageArray);
     var resultArray = await Promise.all(messageArray);
 
-    // debug("processStatusArray-2", JSON.stringify(resultArray));
-    return (alexaMessages.alexaStateResponse(resultArray, message));
+    if (resultArray[0].length === 0) {
+      throw new Error('No response from Homebridge')
+    } else {
+      return (alexaMessages.alexaStateResponse(resultArray, message));
+    }
   } catch (err) {
+    debug("processStatusArray-Error", err);
     if (this.deviceCleanup) {
-      reportDeviceError(message);
+      reportDeviceError.call(this, message);
     }
     return (alexaMessages.alexaStateResponse(err, message));
   }
@@ -1122,27 +1129,33 @@ function alexaEvent(events) {
 }
 
 function reportDeviceError(message) {
-  alexaLocal.alexaEvent({
-    "event": {
-      "header": {
-        "namespace": "Alexa.Discovery",
-        "name": "DeleteReport",
-        "messageId": messages.createMessageId(),
-        "payloadVersion": "3"
-      },
-      "payload": {
-        "endpoints": [
-          {
-            "endpointId": message.directive.endpoint.endpointId,
+  // debug("reportDeviceError", message);
+  this.log.error("Error: Device not responding, sending delete report", message.directive.endpoint.endpointId);
+  try {
+    alexaLocal.alexaEvent({
+      "event": {
+        "header": {
+          "namespace": "Alexa.Discovery",
+          "name": "DeleteReport",
+          "messageId": messages.createMessageId(),
+          "payloadVersion": "3"
+        },
+        "payload": {
+          "endpoints": [
+            {
+              "endpointId": message.directive.endpoint.endpointId,
+            }
+          ],
+          "scope": {
+            "type": "BearerToken",
+            "token": "OAuth2.0 bearer token"
           }
-        ],
-        "scope": {
-          "type": "BearerToken",
-          "token": "OAuth2.0 bearer token"
         }
       }
-    }
-  });
+    });
+  } catch (e) {
+    debug("reportDeviceError:", e);
+  }
 };
 
 /*

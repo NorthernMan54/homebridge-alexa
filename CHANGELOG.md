@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Bug Fix
 
-- Fix for Routines #761
+- Fix for Routines not working #761
+
+#### Changes
+
+- Increased test case coverage
 
 ## 0.8.2 (2024-12-27)
 

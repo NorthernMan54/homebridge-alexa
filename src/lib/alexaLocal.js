@@ -1,5 +1,6 @@
 "use strict";
 
+const process = require('process');
 const mqtt = require('mqtt');
 const debug = require('debug')('alexaLocal');
 const Bottleneck = require('bottleneck');
@@ -18,7 +19,7 @@ let Characteristic;
 module.exports = {
   alexaLocal,
   alexaEvent,
-  alexaPriorityEvent,
+  alexaPriorityEvent
 };
 
 function alexaLocal(options) {
