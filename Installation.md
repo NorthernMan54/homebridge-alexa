@@ -18,6 +18,7 @@ Installation and Configuration of Homebridge Alexa
       * [Required Settings](#required-settings)
       * [Optional Settings](#optional-settings)
          * [debug](#debug)
+         * [deviceCleanup](#devicecleanup)
          * [pin](#pin)
          * [routines](#routines)
          * [deviceList &amp; deviceListHandling - Filtering of devices by name, either allow or allow](#devicelist--devicelisthandling---filtering-of-devices-by-name-either-allow-or-allow)
