@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 #### Changes
 
-- Changed behaviour for missing devices, and have updated the plugin inform Alexa about some missing devices so they can be automatically deleted.  Feature is enabled with the config option `deviceCleanup`.
+- Major improvement in the handling of missing or orphan devices in Alexa.  When `deviceCleanup` is enabled the plugin will inform Alexa when a request is received for a missing or orphan device, and tell Alexa to remove the device.
 
 #### Bug Fix
 
