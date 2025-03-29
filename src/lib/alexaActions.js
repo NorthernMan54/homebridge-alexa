@@ -1047,7 +1047,7 @@ function alexaMessage(message, callback) {
 async function processStatusArray(statusArray, message) {
   try {
     var messageArray = [];
-    // debug("processStatusArray-1", statusArray);
+    // debug("processStatusArray-1", JSON.stringify(message));
     for (let item in statusArray) {
       // debug("processStatusArray-item", statusArray[item]);
       messageArray.push(_HAPstatusByDeviceID(statusArray[item], message));
@@ -1057,12 +1057,12 @@ async function processStatusArray(statusArray, message) {
     var resultArray = await Promise.all(messageArray);
 
     if (resultArray[0].length === 0) {
-      throw new Error('No response from Homebridge')
+      return (alexaMessages.alexaStateResponse(Error('No response from Homebridge'), message));
     } else {
       return (alexaMessages.alexaStateResponse(resultArray, message));
     }
   } catch (err) {
-    debug("processStatusArray-Error", err);
+    // debug("processStatusArray", err.message);
     if (this.deviceCleanup) {
       reportDeviceError.call(this, message);
     }
@@ -1077,6 +1077,10 @@ function _HAPstatusByDeviceID(statusObject, message) {
       if (err) {
         // debug("Error: _HAPstatusByDeviceID", err);
         reject(err);
+      }
+      const responseStatus = status.characteristics.find(item => item.status !== 0)?.status;
+      if (responseStatus !== -70402 && responseStatus !== undefined) {
+        reject(Error('Homebridge Error: ' + responseStatus));
       } else {
         // debug("_HAPstatusByDeviceID-2", statusObject.deviceID, JSON.stringify(status));
         resolve(messages.stateToProperties(statusObject, status.characteristics));
