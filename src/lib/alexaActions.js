@@ -902,7 +902,7 @@ function alexaSpeaker(message, callback) {
 }
 
 function alexaStepSpeaker(message, callback) {
-  // debug(JSON.stringify(message, null, 2));
+  // debug('alexaStepSpeaker', JSON.stringify(message, null, 2));
   var action = message.directive.header.name;
   var volume, haAction;
   try {
@@ -934,6 +934,25 @@ function alexaStepSpeaker(message, callback) {
         callback(err, response);
       }.bind(this));
       break;
+    case "setmute":
+      // Characteristic.VolumeSelector.INCREMENT = 0;
+      // Characteristic.VolumeSelector.DECREMENT = 1;
+      const payload = message.directive.payload.mute;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": !payload       // Alexa is opposite of HomeKit
+        }]
+      };
+      homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
+        this.log("StepSpeaker", action, haAction.deviceID, status, body, err);
+        var response = alexaMessages.alexaResponse(message, status, err, volume);
+        callback(err, response);
+      }.bind(this));
+      break;
+    default:
+      this.log.error("Unhandled alexaStepSpeaker Directive", message.directive.header.name);
   }
 }
 

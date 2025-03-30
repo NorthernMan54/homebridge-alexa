@@ -228,16 +228,16 @@ function _getActions(description, context, devices) {
       break;
     case "Volume Selector": // Speaker volume
       // case "91288267": // This is in the homebridge-bose-soundtouch plugin
-      reportState.push(messages.reportState("Alexa.StepSpeaker", context));
+      // reportState.push(messages.reportState("Alexa.StepSpeaker", context));  // Volume Selector is read only
       cookie["AdjustVolume"] = messages.cookie(context);
       break;
-    /*
-  case "Mute": // Speaker volume
-    // case "91288267": // This is in the homebridge-bose-soundtouch plugin
-    reportState.push(messages.reportState("Alexa.StepSpeaker", context));
-    cookie["SetMute"] = messages.cookie(context);
-    break;
-    */
+
+    case "Mute": // Speaker volume
+      // case "91288267": // This is in the homebridge-bose-soundtouch plugin
+      // reportState.push(messages.reportState("Alexa.StepSpeaker", context));
+      cookie["SetMute"] = messages.cookie(context);
+      break;
+
     case "Target Temperature": // Target Temperature
       reportState.push(messages.reportState("Alexa.ThermostatControllertargetSetpoint", context));
       // cookie["SetTargetTemperature"] = messages.cookie(context);
@@ -312,7 +312,7 @@ function _getActions(description, context, devices) {
       Characteristic.RemoteKey.INFORMATION = 15;
       */
       // "Play", "Pause", "Stop", "Next", "Previous"
-//      console.log("Remote Key", context);
+      //      console.log("Remote Key", context);
       cookie["Pause"] = messages.cookieV(11, context);
       cookie["Play"] = messages.cookieV(8, context);
       cookie["Stop"] = messages.cookieV(9, context);

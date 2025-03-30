@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. This projec
 #### Bug Fix
 
 - Fix for Routines not working #761
+- Fix for missing Mute function with Apple TV
 
 #### Changes
 
