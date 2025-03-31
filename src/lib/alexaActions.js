@@ -1097,8 +1097,11 @@ function _HAPstatusByDeviceID(statusObject, message) {
         // debug("Error: _HAPstatusByDeviceID", err);
         reject(err);
       }
-      const responseStatus = status.characteristics.find(item => item.status !== 0)?.status;
-      if (responseStatus !== -70402 && responseStatus !== undefined) {
+      const responseStatus = status?.characteristics.find(item => item.status !== 0)?.status;
+      debug("_HAPstatusByDeviceID-2", statusObject.deviceID, status, responseStatus);
+      if (status === undefined) {
+        reject(Error('Homebridge Error: no device'));
+      } else if (responseStatus !== -70402 && responseStatus !== undefined) {
         reject(Error('Homebridge Error: ' + responseStatus));
       } else {
         // debug("_HAPstatusByDeviceID-2", statusObject.deviceID, JSON.stringify(status));
@@ -1151,9 +1154,31 @@ function alexaEvent(events) {
   });
 }
 
+const pendingErrors = new Set();
+let errorReportTimer = null;
+
 function reportDeviceError(message) {
-  // debug("reportDeviceError", message);
-  this.log.error("Error: Device not responding, sending delete report", message.directive.endpoint.endpointId);
+  const endpointId = message.directive.endpoint.endpointId;
+
+  // Log the error
+  this.log.error("Error: Device not responding, scheduling delete report", endpointId);
+
+  // Add endpointId to the set
+  pendingErrors.add(endpointId);
+
+  // Start a single timer if not already running
+  if (!errorReportTimer) {
+    errorReportTimer = setTimeout(() => {
+      sendDeleteReport();
+    }, 30000); // 30-second delay
+  }
+}
+
+function sendDeleteReport() {
+  if (pendingErrors.size === 0) return;
+
+  const endpoints = Array.from(pendingErrors).map(id => ({ endpointId: id }));
+  debug("sendDeleteReport", endpoints);
   try {
     alexaLocal.alexaEvent({
       "event": {
@@ -1164,11 +1189,7 @@ function reportDeviceError(message) {
           "payloadVersion": "3"
         },
         "payload": {
-          "endpoints": [
-            {
-              "endpointId": message.directive.endpoint.endpointId,
-            }
-          ],
+          "endpoints": endpoints,
           "scope": {
             "type": "BearerToken",
             "token": "OAuth2.0 bearer token"
@@ -1177,9 +1198,12 @@ function reportDeviceError(message) {
       }
     });
   } catch (e) {
-    debug("reportDeviceError:", e);
+    debug("sendDeleteReport error:", e);
+  } finally {
+    pendingErrors.clear();
+    errorReportTimer = null; // Reset timer reference
   }
-};
+}
 
 /*
 
