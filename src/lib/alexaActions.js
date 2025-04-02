@@ -104,6 +104,12 @@ function alexaDiscovery(message, callback) {
   // debug('alexaDiscovery', this);
   homebridge.HAPaccessories(function (endPoints) {
     // debug("alexaDiscovery", this);
+    if (this.debug) {
+      const fs = require('fs');
+      const storagePath = this.api.user.storagePath() + '/homebridge-alexa-endpoints.json';
+      this.log.warn("Writing Homebridge endpoints to", storagePath);
+      fs.writeFileSync(storagePath, JSON.stringify(endPoints, null, 2));
+    }
     var response;
 
     hbDevices = new Homebridges(endPoints, this);
