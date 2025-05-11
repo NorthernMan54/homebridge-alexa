@@ -1,0 +1,3987 @@
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "payloadVersion": "3",
+      "messageId": ""
+    },
+    "payload": {
+      "endpoints": [
+        {
+          "endpointId": "MEU6MDM6NEI6QjM6QUY6NEMtaG9tZWJyaWRnZS1XTEVELUJ1bmtpZSBMb3dlci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Bunkie Lower",
+          "description": "homebridge Bunkie Lower Lightbulb",
+          "manufacturerName": "WLED",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "SetColor": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"hue\":{\"aid\":3,\"iid\":12},\"saturation\":{\"aid\":3,\"iid\":13},\"brightness\":{\"aid\":3,\"iid\":11},\"on\":{\"aid\":3,\"iid\":9}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"hue\":{\"aid\":3,\"iid\":12},\"saturation\":{\"aid\":3,\"iid\":13},\"brightness\":{\"aid\":3,\"iid\":11},\"on\":{\"aid\":3,\"iid\":9}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6MDM6NEI6QjM6QUY6NEMtaG9tZWJyaWRnZS1XTEVELVBvcmNoIExpZ2h0IFN0cmlwLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Porch Light Strip",
+          "description": "homebridge Porch Light Strip Lightbulb",
+          "manufacturerName": "WLED",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "SetColor": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":9}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":11},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"hue\":{\"aid\":2,\"iid\":12},\"saturation\":{\"aid\":2,\"iid\":13},\"brightness\":{\"aid\":2,\"iid\":11},\"on\":{\"aid\":2,\"iid\":9}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6ODk6QTc6REE6RDM6MjEtaG9tZWJyaWRnZS1EZWZhdWx0LU1hbnVmYWN0dXJlci1TaWRlIGRvb3ItMDAwMDAwODUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Side door",
+          "description": "homebridge Side door Motion Sensor",
+          "manufacturerName": "Default-Manufacturer",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"0E:89:A7:DA:D3:21\",\"aid\":3,\"iid\":18}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6ODk6QTc6REE6RDM6MjEtaG9tZWJyaWRnZS1FdWZ5LUJhY2t5YXJkLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Backyard",
+          "description": "homebridge Backyard Motion Sensor",
+          "manufacturerName": "Eufy",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"0E:89:A7:DA:D3:21\",\"aid\":2,\"iid\":18}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6QkE6MUI6NEY6Q0E6OEQtaG9tZWJyaWRnZS1TT05PRkYtU2hlZCBEb29yLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Shed Door",
+          "description": "homebridge Shed Door Contact Sensor",
+          "manufacturerName": "SONOFF",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"0E:BA:1B:4F:CA:8D\",\"aid\":2,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6QkE6MUI6NEY6Q0E6OEQtaG9tZWJyaWRnZS1TT05PRkYtU2hlZCBHYXJhZ2UgRG9vci0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Shed Garage Door",
+          "description": "homebridge Shed Garage Door Contact Sensor",
+          "manufacturerName": "SONOFF",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"0E:BA:1B:4F:CA:8D\",\"aid\":3,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6QkE6MUI6NEY6Q0E6OEQtaG9tZWJyaWRnZS1TT05PRkYtU2lkZSBEb29yLTAwMDAwMDgwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Side Door",
+          "description": "homebridge Side Door Contact Sensor",
+          "manufacturerName": "SONOFF",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"0E:BA:1B:4F:CA:8D\",\"aid\":4,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6QkE6MUI6NEY6Q0E6OEQtaG9tZWJyaWRnZS1TT05PRkYtUGF0aW8gRG9vci0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Patio Door",
+          "description": "homebridge Patio Door Contact Sensor",
+          "manufacturerName": "SONOFF",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"0E:BA:1B:4F:CA:8D\",\"aid\":5,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6RDM6MjE6QkE6OEM6NUMtaG9tZWJyaWRnZS1TaGFyay1CdXN5IEJlZS0wMDAwMDBCNy0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Busy Bee",
+          "description": "homebridge Busy Bee Fan v2",
+          "manufacturerName": "Shark",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6RDM6MjE6QkE6OEM6NUMtaG9tZWJyaWRnZS1TaGFyay1CdXN5IEJlZSBEb2NrZWQtMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Busy Bee Docked",
+          "description": "homebridge Busy Bee Docked Contact Sensor",
+          "manufacturerName": "Shark",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":14}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6RDM6MjE6QkE6OEM6NUMtaG9tZWJyaWRnZS1TaGFyay1CdXN5IEJlZSBQYXVzZWQtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Busy Bee Paused",
+          "description": "homebridge Busy Bee Paused Switch",
+          "manufacturerName": "Shark",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6RjQ6RTk6RkM6QUQ6RDEtaG9tZWJyaWRnZS1IdW50ZXIgRmFuLVBhdGlvIFJvb20tMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Patio Room",
+          "description": "homebridge Patio Room Lightbulb",
+          "manufacturerName": "Hunter Fan",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":16}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":16}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6RjQ6RTk6RkM6QUQ6RDEtaG9tZWJyaWRnZS1Vbmtub3duLVBhdGlvIFJvb20tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Patio Room",
+          "description": "homebridge Patio Room Fan",
+          "manufacturerName": "Hunter Fan",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1EZWZhdWx0LU1hbnVmYWN0dXJlci1UcmFpbGVyX1dhdGVyIDAtMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Trailer_Water 0",
+          "description": "homebridge Trailer_Water 0 Outlet",
+          "manufacturerName": "Default-Manufacturer",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLU1hc3Rlci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Master",
+          "description": "homebridge Master Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLU1hc3RlciBGYW4tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Master Fan",
+          "description": "homebridge Master Fan Fan",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUJ1bmtpZSBGYW4gTGlnaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Bunkie Fan Light",
+          "description": "homebridge Bunkie Fan Light Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUJ1bmtpZSBGYW4tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Bunkie Fan",
+          "description": "homebridge Bunkie Fan Fan",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUJ1bmtpZSBMaWdodC0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Bunkie Light",
+          "description": "homebridge Bunkie Light Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUJ1bmtpZSBVcHBlci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Bunkie Upper",
+          "description": "homebridge Bunkie Upper Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUJhdGhyb29tIEZhbi0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Bathroom Fan",
+          "description": "homebridge Bathroom Fan Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURlY2sgTGlnaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Deck Light",
+          "description": "homebridge Deck Light Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURpbmluZyBSb29tIENoYW5kZWxpZXItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Dining Room Chandelier",
+          "description": "homebridge Dining Room Chandelier Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURvb3IgUG93ZXItMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Door Power",
+          "description": "homebridge Door Power Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURvb3JiZWxsIEJ1dHRvbi0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Doorbell Button",
+          "description": "homebridge Doorbell Button Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURvb3JiZWxsIEJ1dHRvbiBCTUUyODAgRGV3UG9pbnQtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Doorbell Button BME280 DewPoint",
+          "description": "homebridge Doorbell Button BME280 DewPoint Temperature Sensor",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":28}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURvb3JiZWxsIEJ1dHRvbiBCTUUyODAgVGVtcGVyYXR1cmUtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Doorbell Button BME280 Temperature",
+          "description": "homebridge Doorbell Button BME280 Temperature Temperature Sensor",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":20}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLURyeWVyIFBvd2VyLTAwMDAwMDQ3LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Dryer Power",
+          "description": "homebridge Dryer Power Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUVhc3QgQmVkcm9vbS0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "East Bedroom",
+          "description": "homebridge East Bedroom Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUVhc3QgQmVkcm9vbSBGYW4tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "East Bedroom Fan",
+          "description": "homebridge East Bedroom Fan Fan",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUZpcmVwaXQgbGlnaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Firepit light",
+          "description": "homebridge Firepit light Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUZyb250IEhhbGwtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Front Hall",
+          "description": "homebridge Front Hall Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUZyb250IFNvZmZpdC0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Front Soffit",
+          "description": "homebridge Front Soffit Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUdhcmFnZSBEb29yLTAwMDAwMDQxLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Garage Door",
+          "description": "homebridge Garage Door Garage Door Opener",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "GARAGE_DOOR"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":7,\"iid\":11,\"value\":0}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":7,\"iid\":11,\"value\":1}",
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":7,\"iid\":10},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":7,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUdhcmFnZSBTb2ZmaXQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Garage Soffit",
+          "description": "homebridge Garage Soffit Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLUxhdW5kcnktMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Laundry",
+          "description": "homebridge Laundry Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":15}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":15}",
+            "SetColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":15}",
+            "SetColor": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":16,\"iid\":13},\"saturation\":{\"aid\":16,\"iid\":14},\"brightness\":{\"aid\":16,\"iid\":12},\"on\":{\"aid\":16,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":12},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":15},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":16,\"iid\":13},\"saturation\":{\"aid\":16,\"iid\":14},\"brightness\":{\"aid\":16,\"iid\":12},\"on\":{\"aid\":16,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVBvcnRhYmxlIEZhbi0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Portable Fan",
+          "description": "homebridge Portable Fan Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVBvd2Rlci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Powder",
+          "description": "homebridge Powder Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":15}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":15}",
+            "SetColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":15}",
+            "SetColor": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":22,\"iid\":13},\"saturation\":{\"aid\":22,\"iid\":14},\"brightness\":{\"aid\":22,\"iid\":12},\"on\":{\"aid\":22,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":12},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":15},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":22,\"iid\":13},\"saturation\":{\"aid\":22,\"iid\":14},\"brightness\":{\"aid\":22,\"iid\":12},\"on\":{\"aid\":22,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVBvd2RlciBGYW4tMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Powder Fan",
+          "description": "homebridge Powder Fan Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVBvd2RlciBTaG93ZXItMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Powder Shower",
+          "description": "homebridge Powder Shower Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":12}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":12}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":15}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":15}",
+            "SetColorTemperature": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":15}",
+            "SetColor": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":17,\"iid\":13},\"saturation\":{\"aid\":17,\"iid\":14},\"brightness\":{\"aid\":17,\"iid\":12},\"on\":{\"aid\":17,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":12},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":15},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":17,\"iid\":13},\"saturation\":{\"aid\":17,\"iid\":14},\"brightness\":{\"aid\":17,\"iid\":12},\"on\":{\"aid\":17,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVJvdXRlciBQb3dlci0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Router Power",
+          "description": "homebridge Router Power Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVNoZWQgTGlnaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Shed Light",
+          "description": "homebridge Shed Light Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVNpZGUgQ291bnRlci0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Side Counter",
+          "description": "homebridge Side Counter Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":22}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":22}",
+            "BrightnessTurnOn": "true",
+            "SetColor": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":4,\"iid\":23},\"saturation\":{\"aid\":4,\"iid\":24},\"brightness\":{\"aid\":4,\"iid\":22},\"on\":{\"aid\":4,\"iid\":20}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":22},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"hue\":{\"aid\":4,\"iid\":23},\"saturation\":{\"aid\":4,\"iid\":24},\"brightness\":{\"aid\":4,\"iid\":22},\"on\":{\"aid\":4,\"iid\":20}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVNpZGUgQ291bnRlci0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Side Counter",
+          "description": "homebridge Side Counter Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVRyYWlsZXIgUG93ZXItMDAwMDAwNDctMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Trailer Power",
+          "description": "homebridge Trailer Power Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdhc2hlciBQb3dlci0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Washer Power",
+          "description": "homebridge Washer Power Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdhdGVyIE1ldGVyIEJNRTI4MCBEZXdQb2ludC0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Water Meter BME280 DewPoint",
+          "description": "homebridge Water Meter BME280 DewPoint Temperature Sensor",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":33,\"iid\":24}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdhdGVyIE1ldGVyIEJNRTI4MCBUZW1wZXJhdHVyZS0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Water Meter BME280 Temperature",
+          "description": "homebridge Water Meter BME280 Temperature Temperature Sensor",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":33,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdhdGVyIFZhbHZlLTAwMDAwMDQ3LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Water Valve",
+          "description": "homebridge Water Valve Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdlc3QgQmVkcm9vbS0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "West Bedroom",
+          "description": "homebridge West Bedroom Lightbulb",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVdlc3QgQmVkcm9vbSBGYW4tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "West Bedroom Fan",
+          "description": "homebridge West Bedroom Fan Fan",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}",
+            "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MUM6MjI6M0Q6RTM6Q0Y6MzQtaG9tZWJyaWRnZS1UYXNtb3RhLVhtYXMgVHJlZS0wMDAwMDA0Ny0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Xmas Tree",
+          "description": "homebridge Xmas Tree Outlet",
+          "manufacturerName": "Tasmota",
+          "displayCategories": [
+            "SMARTPLUG"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MzI6NkM6NkM6MkI6NEY6MzMtQXBwbGUgVFYgNC1BcHBsZSBJbmMuLUNvdHRhZ2UgTWFpbiA4MzY1LTAwMDAwMEQ4LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Cottage Main 8365",
+          "description": "Apple TV 4 Cottage Main 8365 Television",
+          "manufacturerName": "Apple Inc.",
+          "displayCategories": [
+            "TV"
+          ],
+          "cookie": {
+            "Pause": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":11}",
+            "Play": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":8}",
+            "Stop": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":9}",
+            "Next": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":8}",
+            "Previous": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":6}",
+            "TurnOn": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":0}",
+            "Active Identifier": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":10}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9},{\"interface\":\"Alexa.StepSpeaker\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":22},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":20}]",
+            "AdjustVolume": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":22}",
+            "Avada Kedavra": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":42,\"iid\":10}",
+            "Home": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":69,\"iid\":10}",
+            "AirPlay YouTube": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":7567,\"iid\":10}",
+            "YouTube": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3498025792,\"iid\":10}",
+            "TV Shows": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":603468196,\"iid\":10}",
+            "Spotify": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":236585001,\"iid\":10}",
+            "Settings": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2130633348,\"iid\":10}",
+            "Search": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1325395214,\"iid\":10}",
+            "Prime Video": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1405852026,\"iid\":10}",
+            "Podcasts": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1155383753,\"iid\":10}",
+            "Pluto TV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":581251333,\"iid\":10}",
+            "Photos": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3347068108,\"iid\":10}",
+            "HDMI 9": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2522907556,\"iid\":10}",
+            "Movies": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3171583122,\"iid\":10}",
+            "Global TV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":795837025,\"iid\":10}",
+            "Fitness": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":165566846,\"iid\":10}",
+            "Fibe TV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2226583655,\"iid\":10}",
+            "Eternal Fire": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3148503145,\"iid\":10}",
+            "Disney": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":24698133,\"iid\":10}",
+            "Crave": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3782569757,\"iid\":10}",
+            "Crackle": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1175978640,\"iid\":10}",
+            "Computers": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1149221640,\"iid\":10}",
+            "Citytv": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1518486930,\"iid\":10}",
+            "CTV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3487135580,\"iid\":10}",
+            "CBC Gem": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":3236376241,\"iid\":10}",
+            "Arcade": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2675918005,\"iid\":10}",
+            "Apple TV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1165595439,\"iid\":10}",
+            "Apple Music": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2318275026,\"iid\":10}",
+            "AppStore": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1938323747,\"iid\":10}",
+            "Planets": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1819322031,\"iid\":10}"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PlaybackController",
+              "version": "3",
+              "supportedOperations": [
+                "Play",
+                "Pause",
+                "Stop",
+                "Next",
+                "Rewind"
+              ]
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.StepSpeaker",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.InputController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "input"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              },
+              "inputs": [
+                {
+                  "name": "Avada Kedavra"
+                },
+                {
+                  "name": "Home"
+                },
+                {
+                  "name": "AirPlay YouTube"
+                },
+                {
+                  "name": "YouTube"
+                },
+                {
+                  "name": "TV Shows"
+                },
+                {
+                  "name": "Spotify"
+                },
+                {
+                  "name": "Settings"
+                },
+                {
+                  "name": "Search"
+                },
+                {
+                  "name": "Prime Video"
+                },
+                {
+                  "name": "Podcasts"
+                },
+                {
+                  "name": "Pluto TV"
+                },
+                {
+                  "name": "Photos"
+                },
+                {
+                  "name": "HDMI 9"
+                },
+                {
+                  "name": "Movies"
+                },
+                {
+                  "name": "Global TV"
+                },
+                {
+                  "name": "Fitness"
+                },
+                {
+                  "name": "Fibe TV"
+                },
+                {
+                  "name": "Eternal Fire"
+                },
+                {
+                  "name": "Disney"
+                },
+                {
+                  "name": "Crave"
+                },
+                {
+                  "name": "Crackle"
+                },
+                {
+                  "name": "Computers"
+                },
+                {
+                  "name": "Citytv"
+                },
+                {
+                  "name": "CTV"
+                },
+                {
+                  "name": "CBC Gem"
+                },
+                {
+                  "name": "Arcade"
+                },
+                {
+                  "name": "Apple TV"
+                },
+                {
+                  "name": "Apple Music"
+                },
+                {
+                  "name": "AppStore"
+                },
+                {
+                  "name": "Planets"
+                }
+              ]
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ChannelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "channel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "NUM6RUU6RkU6NEQ6NjQ6QjQtRUNJLVQyNEYyLUhpa1Zpc2lvbi1DYW5vZS0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Canoe",
+          "description": "ECI-T24F2 Canoe Motion Sensor",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"5C:EE:FE:4D:64:B4\",\"aid\":1,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBBY3VyaXRlLTk4Ni8xUi1GcmlkZ2UtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Fridge",
+          "description": "Default Model Fridge Temperature Sensor",
+          "manufacturerName": "NRCHKB - Acurite-986/1R",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":56,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBBY3VyaXRlLTk4Ni8yRi1GcmVlemVyLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Freezer",
+          "description": "Default Model Freezer Temperature Sensor",
+          "manufacturerName": "NRCHKB - Acurite-986/2F",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":57,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBBY3VyaXRlLVRvd2VyL0EtQXR0aWMtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Attic",
+          "description": "Default Model Attic Temperature Sensor",
+          "manufacturerName": "NRCHKB - Acurite-Tower/A",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":53,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBBY3VyaXRlLVRvd2VyL0ItUG9yY2gtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Porch",
+          "description": "Default Model Porch Temperature Sensor",
+          "manufacturerName": "NRCHKB - Acurite-Tower/B",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":54,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBMYUNyb3NzZS1UWDE0MUJ2My1CYWNreWFyZCBUcmVlLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Backyard Tree",
+          "description": "Default Model Backyard Tree Temperature Sensor",
+          "manufacturerName": "NRCHKB - LaCrosse-TX141Bv3",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":55,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBMYUNyb3NzZS1UWDE0MVctQmFja3lhcmQtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Backyard",
+          "description": "Default Model Backyard Temperature Sensor",
+          "manufacturerName": "NRCHKB - LaCrosse-TX141W",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":52,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBPTUctQnVua2llLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Bunkie",
+          "description": "Default Model Bunkie Temperature Sensor",
+          "manufacturerName": "NRCHKB - OMG",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":61,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBPTUctTGF1bmRyeS0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Laundry",
+          "description": "Default Model Laundry Temperature Sensor",
+          "manufacturerName": "NRCHKB - OMG",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":59,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0IgLSBPTUctUGF0aW8gUm9vbS0wMDAwMDA4QS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Patio Room",
+          "description": "Default Model Patio Room Temperature Sensor",
+          "manufacturerName": "NRCHKB - OMG",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":60,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItQmF0aHJvb20tMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Bathroom",
+          "description": "Default Model Bathroom Temperature Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":38,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItQnVua2llIEdyb3VwLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Bunkie Group",
+          "description": "Default Model Bunkie Group Lightbulb",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":13}",
+            "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":13}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":13}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItRHJ5ZXIgV29ya2luZy0wMDAwMDA4MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Dryer Working",
+          "description": "Default Model Dryer Working Contact Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":36,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItU21hbGwgRnJpZGdlLTAwMDAwMDhBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Small Fridge",
+          "description": "Default Model Small Fridge Temperature Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":44,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItU3BhcmUtMDAwMDAwOEEtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Spare",
+          "description": "Default Model Spare Temperature Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":42,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItUHJlc2VuY2UgU3dpdGNoLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Presence Switch",
+          "description": "Default Model Presence Switch Switch",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItUHJlc2VuY2UtMDAwMDAwODYtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Presence",
+          "description": "Default Model Presence Occupancy Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1OUkNIS0ItV2FzaGVyIFdvcmtpbmctMDAwMDAwODAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Washer Working",
+          "description": "Default Model Washer Working Contact Sensor",
+          "manufacturerName": "NRCHKB",
+          "displayCategories": [
+            "CONTACT_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.ContactSensor\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":37,\"iid\":12}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ContactSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1Ob2RlIFJlZC1FdmVuaW5nIExpZ2h0cy0wMDAwMDA0My0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Evening Lights",
+          "description": "Default Model Evening Lights Lightbulb",
+          "manufacturerName": "Node Red",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":14}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":14}",
+            "SetColorTemperature": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":14}",
+            "SetColor": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"hue\":{\"aid\":13,\"iid\":12},\"saturation\":{\"aid\":13,\"iid\":13},\"brightness\":{\"aid\":13,\"iid\":11},\"on\":{\"aid\":13,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":14},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"hue\":{\"aid\":13,\"iid\":12},\"saturation\":{\"aid\":13,\"iid\":13},\"brightness\":{\"aid\":13,\"iid\":11},\"on\":{\"aid\":13,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1Ob2RlIFJlZC1NYWluIFJvb20gR3JvdXAtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Main Room Group",
+          "description": "Default Model Main Room Group Lightbulb",
+          "manufacturerName": "Node Red",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Njk6NjI6Qjc6QUU6Mzg6RDQtRGVmYXVsdCBNb2RlbC1Ob2RlIFJlZC1NYXN0ZXIgTGlnaHRzLTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Master Lights",
+          "description": "Default Model Master Lights Lightbulb",
+          "manufacturerName": "Node Red",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "OEU6ODg6QUI6N0E6RDA6NTQtRUNJLVQyNEYyLUhpa1Zpc2lvbi1EZWNrLTAwMDAwMDg1LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Deck",
+          "description": "ECI-T24F2 Deck Motion Sensor",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"8E:88:AB:7A:D0:54\",\"aid\":1,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0I6NkY6OTQ6REQ6NDM6NzctRUNJLVQyNEYyLUhpa1Zpc2lvbi1Ecml2ZXdheS0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Driveway",
+          "description": "ECI-T24F2 Driveway Motion Sensor",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"CB:6F:94:DD:43:77\",\"aid\":1,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tQWxpY2XigJlzIExpZ2h0LTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Alice’s Light",
+          "description": "homebridge Alice’s Light Lightbulb",
+          "manufacturerName": "Signify Netherlands B.V.",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
+            "SetColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":0}",
+            "SetColor": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tRmxvb3IgTGFtcCBPbmUtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Floor Lamp One",
+          "description": "homebridge Floor Lamp One Lightbulb",
+          "manufacturerName": "Signify Netherlands B.V.",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tRmxvb3IgTGFtcCBUd28tMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Floor Lamp Two",
+          "description": "homebridge Floor Lamp Two Lightbulb",
+          "manufacturerName": "Signify Netherlands B.V.",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tVGFibGUgTGlnaHQtMDAwMDAwNDMtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Table Light",
+          "description": "homebridge Table Light Lightbulb",
+          "manufacturerName": "Signify Netherlands B.V.",
+          "displayCategories": [
+            "LIGHT"
+          ],
+          "cookie": {
+            "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":11}",
+            "BrightnessTurnOn": "true",
+            "IncreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
+            "DecreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
+            "SetColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":0}",
+            "SetColor": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":9,\"iid\":14},\"saturation\":{\"aid\":9,\"iid\":15},\"brightness\":{\"aid\":9,\"iid\":11},\"on\":{\"aid\":9,\"iid\":10}}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":9,\"iid\":14},\"saturation\":{\"aid\":9,\"iid\":15},\"brightness\":{\"aid\":9,\"iid\":11},\"on\":{\"aid\":9,\"iid\":10}}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorTemperatureController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "colorTemperatureInKelvin"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ColorController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "color"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QUM6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1UQ0MtV2FzYWdhLTAwMDAwMDRBLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Wasaga",
+          "description": "homebridge Wasaga Thermostat",
+          "manufacturerName": "TCC",
+          "displayCategories": [
+            "THERMOSTAT"
+          ],
+          "cookie": {
+            "TurnOff": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11,\"value\":0}",
+            "thermostatMode": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11}",
+            "thermostatModeOFF": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11,\"value\":0}",
+            "thermostatModeHEAT": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11,\"value\":1}",
+            "thermostatModeCOOL": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11,\"value\":2}",
+            "thermostatModeAUTO": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11,\"value\":3}",
+            "targetSetpoint": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":13}",
+            "upperSetpoint": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":15}",
+            "lowerSetpoint": "{\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":16}",
+            "ReportState": "[{\"interface\":\"Alexa.ThermostatControllerthermostatMode\",\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":11},{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":12},{\"interface\":\"Alexa.ThermostatControllertargetSetpoint\",\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":13},{\"interface\":\"Alexa.ThermostatControllerupperSetpoint\",\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":15},{\"interface\":\"Alexa.ThermostatControllerlowerSetpoint\",\"deviceID\":\"AC:22:3D:E3:CF:33\",\"aid\":2,\"iid\":16}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.TemperatureSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "temperature"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.ThermostatController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "thermostatMode"
+                  },
+                  {
+                    "name": "targetSetpoint"
+                  },
+                  {
+                    "name": "upperSetpoint"
+                  },
+                  {
+                    "name": "lowerSetpoint"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              },
+              "configuration": {
+                "supportsScheduling": false,
+                "supportedModes": [
+                  "HEAT",
+                  "COOL",
+                  "AUTO",
+                  "OFF"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QkM6MjI6M0Q6RTM6Q0Y6NDItaG9tZWJyaWRnZS1IVFRQLUlSQmxhc3Rlci1UdW5lci0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Tuner",
+          "description": "homebridge Tuner Switch",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QkM6MjI6M0Q6RTM6Q0Y6NDMtaG9tZWJyaWRnZS1IVFRQLUlSQmxhc3Rlci1NdXNpYyBQb3J0LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Music Port",
+          "description": "homebridge Music Port Switch",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QkM6MjI6M0Q6RTM6Q0Y6NDQtaG9tZWJyaWRnZS1IVFRQLUlSQmxhc3Rlci1TdGVyZW8tMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Stereo",
+          "description": "homebridge Stereo Speaker",
+          "manufacturerName": "HTTP-IRBlaster",
+          "displayCategories": [
+            "SPEAKER"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "AdjustVolume": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}",
+            "SetVolume": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.Speaker",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "volume"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QzE6QkI6REU6NDI6QTU6MzktRUNJLVQyNEYyLUhpa1Zpc2lvbi1Qb3JjaC0wMDAwMDA4NS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Porch",
+          "description": "ECI-T24F2 Porch Motion Sensor",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "MOTION_SENSOR"
+          ],
+          "cookie": {
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.MotionSensor",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "detectionState"
+                  }
+                ],
+                "proactivelyReported": true,
+                "retrievable": false
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "QzE6QkI6REU6NDI6QTU6MzktRUNJLVQyNEYyLUhpa1Zpc2lvbi1Qb3JjaCBEb29yYmVsbC0wMDAwMDEyMS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Porch Doorbell",
+          "description": "ECI-T24F2 Porch Doorbell Doorbell",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "DOORBELL"
+          ],
+          "cookie": {
+            "ReportState": "[]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.DoorbellEventSource",
+              "version": "3",
+              "proactivelyReported": true
+            }
+          ]
+        },
+        {
+          "endpointId": "QzE6QkI6REU6NDI6QTU6MzktRUNJLVQyNEYyLUhpa1Zpc2lvbi1Qb3JjaCBEb29yYmVsbCBUcmlnZ2VyLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Porch Doorbell Trigger",
+          "description": "ECI-T24F2 Porch Doorbell Trigger Switch",
+          "manufacturerName": "HikVision",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

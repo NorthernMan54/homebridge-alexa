@@ -18,6 +18,7 @@ Installation and Configuration of Homebridge Alexa
       * [Required Settings](#required-settings)
       * [Optional Settings](#optional-settings)
          * [debug](#debug)
+         * [deviceCleanup](#devicecleanup)
          * [pin](#pin)
          * [routines](#routines)
          * [deviceList &amp; deviceListHandling - Filtering of devices by name, either allow or allow](#devicelist--devicelisthandling---filtering-of-devices-by-name-either-allow-or-allow)
@@ -184,6 +185,21 @@ sudo npm install -g homebridge-alexa
     "username": "....",
     "password": "....",
     "debug": true
+  }
+],
+```
+
+#### deviceCleanup
+  - This enables automated cleanup of missing or orphan devices within the Alexa environment.  When this is enabled, if a request is received from Alexa for a device that is no longer in homebridge, the plugin will send a request to Alexa to delete the device.
+
+```
+"platforms": [
+  {
+    "platform": "Alexa",
+    "name": "Alexa",
+    "username": "....",
+    "password": "....",
+    "deviceCleanup": true
   }
 ],
 ```

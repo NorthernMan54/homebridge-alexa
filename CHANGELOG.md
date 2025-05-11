@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.9.0 (2025-03-30)
+
+## [Version 0.9.0](https://github.com/northernman54/homebridge-alexa/compare/v0.8.2...v0.9.0)
+
+#### Changes
+
+- Major improvement in the handling of missing or orphan devices in Alexa.  When `deviceCleanup` is enabled the plugin will inform Alexa when a request is received for a missing or orphan device, and tell Alexa to remove the device.
+
+#### Bug Fix
+
+- Fix for Routines not working #761
+- Fix for missing Mute function with Apple TV
+
+#### Changes
+
+- Increased test case coverage
+
 ## 0.8.2 (2024-12-27)
 
 ## [Version 0.8.2](https://github.com/northernman54/homebridge-alexa/compare/v0.8.1...v0.8.2)

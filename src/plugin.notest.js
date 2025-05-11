@@ -18,7 +18,7 @@ describe.skip('alexaHome', () => {
       username: 'testUser',
       password: 'testPass',
       filter: 'testFilter',
-      beta: false, 
+      beta: false,
       routines: false,
       combine: false,
       oldParser: false,

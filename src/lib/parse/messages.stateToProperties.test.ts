@@ -49,39 +49,38 @@ describe('stateToProperties', () => {
 
   test('should convert Alexa.TemperatureSensor error response correctly', () => {
     const statusObject = {
-      elements: [{ interface: 'Alexa.TemperatureSensor', aid: 101, iid: 10 }]
+      elements: [{ interface: 'Alexa.TemperatureSensor', aid: 123, iid: 10 }]
     };
     const hbResponse = [{ aid: 123, iid: 10, status: -70410 }];
 
     const result = stateToProperties(statusObject, hbResponse);
 
-    expect(result).toEqual([{
-      namespace: 'Alexa.TemperatureSensor',
-      name: 'temperature',
-      value: {
-        "scale": "CELSIUS",
-        "value": 25,
-      },
-      timeOfSample: mockDate,
-      uncertaintyInMilliseconds: 500
-    }]);
+    expect(result).toHaveLength(0);
   });
 
   test('should convert Alexa.ColorController response correctly', () => {
     const statusObject = {
-      elements: [{ interface: 'Alexa.ColorController', aid: 101, iid: 10 }]
+      elements: [{
+        interface: 'Alexa.ColorController',
+        hue: { aid: 9, iid: 14 },
+        saturation: { aid: 9, iid: 15 },
+        brightness: { aid: 9, iid: 11 }
+      }]
     };
-    const hbResponse = [{ aid: 101, iid: 10, value: true }];
+
+    const hbResponse = [
+      { aid: 9, iid: 11, value: 0 },
+      { aid: 9, iid: 13, value: 242 },
+      { aid: 9, iid: 14, value: 44 },
+      { aid: 9, iid: 15, value: 24 },
+      { aid: 9, iid: 10, value: 0 }
+    ];
 
     const result = stateToProperties(statusObject, hbResponse);
 
     expect(result).toEqual([{
-      namespace: 'Alexa.ColorController',
-      name: 'temperature',
-      value: {
-        "scale": "CELSIUS",
-        "value": 25,
-      },
+      namespace: "Alexa.ColorController",
+      name: "color", "value": { "hue": 44, "saturation": 0.24, "brightness": 0 },
       timeOfSample: mockDate,
       uncertaintyInMilliseconds: 500
     }]);
@@ -161,3 +160,4 @@ describe('stateToProperties', () => {
     expect(result).toEqual([]);
   });
 });
+

@@ -467,12 +467,13 @@ function alexaResponse(message, hbResponse, err, value) {
 // alexaMessages.alexaStateResponse(message, reportState, status, err);
 // message, reportState, hbResponse, err
 function alexaStateResponse(properties, message) {
+  // debug("alexaStateResponse", properties, JSON.stringify(message, null, 2));
   var endpointId = message.directive.endpoint.endpointId;
   var messageId = message.directive.header.messageId;
   var correlationToken = message.directive.header.correlationToken;
   var response;
 
-  if (properties instanceof Error) {
+  if (properties instanceof Error || properties[0].length === 0) {
     // console.log("ERROR: alexaStateResponse", properties.message);
     response = {
       "event": {

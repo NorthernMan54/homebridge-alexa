@@ -18,3 +18,4 @@ gh-md-toc
 /test/hbConfig/persist
 test/hbConfig/config.json
 test/hbConfig/homebridge-alexa-discovery.json
+test/hbConfig/homebridge-alexa-endpoints.json

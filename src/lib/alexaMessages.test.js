@@ -24,7 +24,7 @@ describe('alexaMessages', () => {
       expect(response.event.payload.type).toBe('ENDPOINT_UNREACHABLE');
     });
 
-    test('should return ErrorResponse when HomeBridge returns an error', () => {
+    test('should return ErrorResponse when HomeBridge returns -70402 ( Not Responding )', () => {
       const message = {
         directive: {
           header: {
@@ -38,6 +38,25 @@ describe('alexaMessages', () => {
         }
       };
       const hbResponse = { characteristics: [{ status: -70402 }] };
+      const response = alexaResponse(message, hbResponse, null, null);
+      expect(response.event.header.name).toBe('ErrorResponse');
+      expect(response.event.payload.type).toBe('INVALID_VALUE');
+    });
+
+    test('should return ErrorResponse when HomeBridge returns -70410 ( No device )', () => {
+      const message = {
+        directive: {
+          header: {
+            messageId: '123',
+            namespace: 'Alexa',
+            name: 'TurnOn'
+          },
+          endpoint: {
+            endpointId: 'endpoint-001'
+          }
+        }
+      };
+      const hbResponse = { characteristics: [{ status: -70410 }] };
       const response = alexaResponse(message, hbResponse, null, null);
       expect(response.event.header.name).toBe('ErrorResponse');
       expect(response.event.payload.type).toBe('INVALID_VALUE');
@@ -68,6 +87,24 @@ describe('alexaMessages', () => {
   describe('alexaStateResponse', () => {
     test('should return ErrorResponse when properties is an error', () => {
       const properties = new Error('Test error');
+      const message = {
+        directive: {
+          header: {
+            messageId: '123',
+            name: 'ReportState'
+          },
+          endpoint: {
+            endpointId: 'endpoint-001'
+          }
+        }
+      };
+      const response = alexaStateResponse(properties, message);
+      expect(response.event.header.name).toBe('ErrorResponse');
+      expect(response.event.payload.type).toBe('ENDPOINT_UNREACHABLE');
+    });
+
+    test('should return ErrorResponse when properties are empty', () => {
+      const properties = [[]];
       const message = {
         directive: {
           header: {
