@@ -1,6 +1,6 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "src/plugin.js",
   "scripts": {
