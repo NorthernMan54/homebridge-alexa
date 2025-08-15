@@ -41,11 +41,12 @@ const HAPcontrolByDeviceID = (deviceID, body, callback) => {
   // console.log('Mock - HAPstatusByDeviceID', deviceID, body, callback);
   switch (deviceID) {
     case "0E:53:9E:7C:32:AC": // Thermostat
+    case "1C:22:3D:E3:CF:36": // Thermostat
       callback(null, null);
       break;
     default:
       console.log('Missing Mock - HAPcontrolByDeviceID', deviceID, body, callback);
-      callback(null);
+      callback('Missing Mock - HAPcontrolByDeviceID', null);
   }
 }
 
@@ -265,13 +266,28 @@ describe('Controller', () => {
         context.log.error.mockClear();
         context.log.warn.mockClear();
       });
-      test('targetSetpoint', async () => {
-        alexaThermostatController.call(context, thermostatSet, callback);
+      test('targetSetpoint - Upper and Lower', async () => {
+        alexaThermostatController.call(context, thermostatSetDual, callback);
 
         await sleep(500);
         // Add your assertions here to verify the behavior of the function
         expect(context.log).toHaveBeenCalledTimes(1);
         expect(context.log).toHaveBeenCalledWith('Alexa.ThermostatController', 'SetTargetTemperature-Heat', '0E:53:9E:7C:32:AC', 'Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tQWxpY2XigJlzIExpZ2h0LTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==', '');
+        expect(context.log.error).toHaveBeenCalledTimes(0);
+        expect(context.log.warn).toHaveBeenCalledTimes(0);
+        expect(callback).toHaveBeenCalled();
+        const response = callback.mock.calls[0][1].context.properties;
+        //expect(response[0].value).toBe(45);
+        expect(response[0].name).toBe("targetSetpoint");
+      });
+
+      test('targetSetpoint - Single', async () => {
+        alexaThermostatController.call(context, thermostatSetSingle, callback);
+
+        await sleep(500);
+        // Add your assertions here to verify the behavior of the function
+        expect(context.log).toHaveBeenCalledTimes(1);
+        expect(context.log).toHaveBeenCalledWith('Alexa.ThermostatController', 'SetTargetTemperature', '1C:22:3D:E3:CF:36', 'Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tQWxpY2XigJlzIExpZ2h0LTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==', '');
         expect(context.log.error).toHaveBeenCalledTimes(0);
         expect(context.log.warn).toHaveBeenCalledTimes(0);
         expect(callback).toHaveBeenCalled();
@@ -331,7 +347,7 @@ const message4 = {
   }
 };
 
-const thermostatSet = {
+const thermostatSetDual = {
   directive: {
     header: {
       namespace: "Alexa.ThermostatController",
@@ -350,6 +366,34 @@ const thermostatSet = {
         thermostatModeAUTO: '{"deviceID":"0E:53:9E:7C:32:AC","aid":61,"iid":6,"value":3}',
         TurnOff: '{"deviceID":"0E:53:9E:7C:32:AC","aid":61,"iid":4,"value":0}',
         thermostatModeHEAT: '{"deviceID":"0E:53:9E:7C:32:AC","aid":61,"iid":6,"value":1}'
+      }
+    },
+    payload: {
+      targetSetpoint: {
+        "value": 20.0,
+        "scale": "CELSIUS"
+      }
+    }
+  }
+};
+
+const thermostatSetSingle = {
+  directive: {
+    header: {
+      namespace: "Alexa.ThermostatController",
+      "name": "SetTargetTemperature", "payloadVersion": "3", "messageId": "bbca65f0-183f-4bc9-9c3f-277e963106aa", "correlationToken": "AAAAAAAAAABr5SUHNe8BBkCT1sRvubl2AAIAAAAAAAB90j2CBpD9gvkdeRQB7XdUryxMTIusyHgcdCdx3swJ17yGKRsJsZi4Lx+VxDYBxWrXR8/zNW1axGXiPFGPIMZW9UQCfboB6lvDU8Gwfjxu/BruHTKTjbtLB/OLFc9i+XdGjT5g4NaFSqz8jLNTiHt/gjpEPRhf4nQTLLnqlrAQ/UBqEro+qCrD13Z741DG9qRiMjt9Ell8MfIWF/tMI8nAo5Tl/RN7Vgjq5rfF162bXWWbwiEm+NALzW0rh6SqTG1zv7CEczLKBh3HYIDaAo7W11Gbr8yMayElieKtzuB6rll3s9hJxRID6EY/7Qk4U8F4qflv+ZnpUS78HKkwaqlJOaKbiiRcJ01kM+QxhXD/uTuNYoSHfMoI2cJPJKy7s0QkazZtYQhfrXIm2zWVUX6BbpQOLA6PghDrI0+E37xGpibNwiteLYKgMPySOnJQ819yNjninJfTlKZYeDs3X1nybUysNezzpz+KyQmTlzGj31FV/G+nBzaqcSIfQu9OytV7Oo0midw0Jed3qT9UUO2hzNTM3VyUOupZT0N/h8WkQZQyu8yIy6KWXrEDgW+7LphqlEJ858R8u8fod0Hy75kvm578st9nEF3BhwLQSTq/thXLa0rA/S7w+iOZxg8slHKoUrl+VJyg4CwAnEF92LvTDDIYRY3jtI5QtBCPzA0uGg=="
+    },
+    "endpoint": {
+      "endpointId": "Q0M6MjI6M0Q6RTM6Q0Y6MzMtaG9tZWJyaWRnZS1TaWduaWZ5IE5ldGhlcmxhbmRzIEIuVi4tQWxpY2XigJlzIExpZ2h0LTAwMDAwMDQzLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+      "cookie": {
+        "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10,\"value\":0}",
+        "thermostatMode": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10}",
+        "thermostatModeOFF": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10,\"value\":0}",
+        "thermostatModeHEAT": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10,\"value\":1}",
+        "thermostatModeCOOL": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10,\"value\":2}",
+        "thermostatModeAUTO": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10,\"value\":3}",
+        "targetSetpoint": "{\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":12}",
+        "ReportState": "[{\"interface\":\"Alexa.ThermostatControllerthermostatMode\",\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":10},{\"interface\":\"Alexa.TemperatureSensor\",\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":11},{\"interface\":\"Alexa.ThermostatControllertargetSetpoint\",\"deviceID\":\"1C:22:3D:E3:CF:36\",\"aid\":6,\"iid\":12}]"
       }
     },
     payload: {
