@@ -539,7 +539,7 @@ function alexaChannelController(message, callback) {
 
 async function alexaThermostatController(message, callback) {
   // debug("alexaThermostatController", JSON.stringify(message));
-  const action = message.directive.header.name;
+  let action = message.directive.header.name;
   const payloads = message.directive.payload;
   var haAction;
   // directive.header.name = SetThermostatMode, SetTargetTemperature
@@ -570,6 +570,7 @@ async function alexaThermostatController(message, callback) {
       break;
     case "SetTargetTemperature":
       // targetSetpoint, lowerSetpoint, upperSetpoint
+      // debug("alexaThermostatController - SetTargetTemperature", JSON.stringify(payloads));
       var characteristics = [];
       for (var index in payloads) {
         try {
@@ -595,6 +596,7 @@ async function alexaThermostatController(message, callback) {
           }
           debug("alexaThermostatController - haAction", JSON.stringify(haAction));
         } catch (e) {
+          //         debug("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
           this.log("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
           var response = alexaMessages.alexaResponse(message, "", e);
           response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
@@ -612,6 +614,7 @@ async function alexaThermostatController(message, callback) {
         });
       }
 
+      // debug("alexaThermostatController - characteristics", JSON.stringify(characteristics));
       var body = {
         "characteristics": characteristics
       };
