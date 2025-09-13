@@ -1,6 +1,6 @@
 {
   "name": "homebridge-alexa",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "src/plugin.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "homebridge-plugin"
   ],
   "devDependencies": {
-    "@homebridge/hap-client": "^2.0.0",
+    "@homebridge/hap-client": "^3.1.1",
     "@types/node": "^22.10.2",
     "@types/jest": "^29.5.14",
     "@eslint/js": "^9.14.0",
