@@ -2,6 +2,65 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.9.2 (2025-09-13)
+
+## [Version 0.9.2](https://github.com/northernman54/homebridge-alexa/compare/v0.9.1...v0.9.2)
+
+#### Changes
+
+- Dependency Updates
+  
+## 0.9.1 (2025-08-13)
+
+## [Version 0.9.1](https://github.com/northernman54/homebridge-alexa/compare/v0.9.0...v0.9.1)
+
+#### Bug Fix
+
+- AC can't change temperature #579
+
+## 0.9.0 (2025-03-30)
+
+## [Version 0.9.0](https://github.com/northernman54/homebridge-alexa/compare/v0.8.2...v0.9.0)
+
+#### Changes
+
+- Major improvement in the handling of missing or orphan devices in Alexa.  When `deviceCleanup` is enabled the plugin will inform Alexa when a request is received for a missing or orphan device, and tell Alexa to remove the device.
+
+#### Bug Fix
+
+- Fix for Routines not working #761
+- Fix for missing Mute function with Apple TV
+
+#### Changes
+
+- Increased test case coverage
+
+## 0.8.2 (2024-12-27)
+
+## [Version 0.8.2](https://github.com/northernman54/homebridge-alexa/compare/v0.8.1...v0.8.2)
+
+#### Bug Fix
+
+- Doorbell events not being received
+  
+## 0.8.1 (2024-12-24)
+
+## [Version 0.8.1](https://github.com/northernman54/homebridge-alexa/compare/v0.8.0...v0.8.1)
+
+#### Bug Fix
+
+- Improved performance for Playback and Input controller, and resolve device not responding after a command
+  
+## 0.8.0 (2024-12-24)
+
+## [Version 0.8.0](https://github.com/northernman54/homebridge-alexa/compare/v0.7.1...v0.8.0)
+
+#### Changes
+
+- Changed behaviour for missing devices, and have updated the plugin inform Alexa about some missing devices so they can be automatically deleted.  Feature is enabled with the config option `deviceCleanup`.  Currently only removes devices when it detects that the homebridge instance / child bridge associated with the device is no longer available.
+
+- Improved performance on `Alexa turn off all the lights`
+  
 ## 0.7.1 (2024-09-24)
 
 ## [Version 0.7.1](https://github.com/northernman54/homebridge-alexa/compare/v0.7.0...v0.7.1)

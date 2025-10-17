@@ -17,7 +17,7 @@ function Homebridge(devices, context) {
   this.deviceID = devices.deviceID;
   this.id = devices.instance.txt.id;
   this.options = {
-    events: context.events,
+    routines: context.routines,
     speakers: context.speakers,
     blind: context.blind,
     door: context.door,
