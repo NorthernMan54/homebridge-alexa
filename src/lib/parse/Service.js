@@ -216,11 +216,11 @@ Service.prototype.toAlexa = function (context) {
             "brightness": this.characteristics["Brightness"].getCharacteristic,
             "on": this.characteristics["On"].getCharacteristic
           });
-          capabilities = capabilities.concat(messages.lookupCapabilities("ColorController", context.events));
+          capabilities = capabilities.concat(messages.lookupCapabilities("ColorController", context.routines));
         }
         break;
       case "Thermostat":
-        capabilities = capabilities.concat(messages.lookupCapabilities("Active", context.events, cookie));
+        capabilities = capabilities.concat(messages.lookupCapabilities("Active", context.routines, cookie));
       case "Heater Cooler":
         /*
         reportState.push({
@@ -230,7 +230,7 @@ Service.prototype.toAlexa = function (context) {
           "aid": this.aid
         });
         */
-        capabilities = capabilities.concat(messages.lookupCapabilities("ThermostatController", context.events, cookie));
+        capabilities = capabilities.concat(messages.lookupCapabilities("ThermostatController", context.routines, cookie));
         break;
       case "Temperature Sensor":
         // Fix for issue #237
@@ -244,7 +244,7 @@ Service.prototype.toAlexa = function (context) {
       case "Input Source":
         // debug("Input Source", this.characteristics);
         cookie[normalizeInput(this.characteristics["Configured Name"].value)] = messages.cookieV(this.characteristics["Identifier"].value, context);
-        capabilities = capabilities.concat(messages.lookupCapabilities("Input Source", context.events, cookie));
+        capabilities = capabilities.concat(messages.lookupCapabilities("Input Source", context.routines, cookie));
         break;
     }
   } catch (err) {

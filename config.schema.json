@@ -62,6 +62,12 @@
         "placeholder": false,
         "description": "Enable beta test environment.  Only available by invitation."
       },
+      "deviceCleanup": {
+        "title": "<b>Cleanup of Not Responding Devices</b>",
+        "type": "boolean",
+        "default": true,
+        "description": "Enables cleanup of devices that are not responding.  This will remove devices from Alexa that are not responding.  Defaults to true."
+      },
       "refresh": {
         "title": "<b>Accessory Cache Refresh Interval</b>",
         "type": "integer",
@@ -255,6 +261,7 @@
       "items": [
         "pin",
         "routines",
+        "deviceCleanup",
         "debug",
         "thermostatTurnOn",
         "enhancedSkip",

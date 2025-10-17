@@ -54,191 +54,197 @@ function stateToProperties(statusObject, hbResponse) {
   // debug("stateToProperties - hbResponse", hbResponse);
   // Convert each individual HAP hbResponse to Alexa Format
   statusObject.elements.forEach((element, i) => {
-    // debug("stateToProperties - element", element, i, hbResponse[i]);
-    switch (element.interface.toLowerCase()) {
-      case "alexa.speaker":
-        properties.push({
-          "namespace": "Alexa.Speaker",
-          "name": "volume",
-          "value": round(_getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        properties.push({
-          "namespace": "Alexa.Speaker",
-          "name": "muted",
-          "value": false,
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.stepspeaker":
-        // No response needed
-        break;
-      case "alexa.powercontroller":
-        properties.push({
-          "namespace": "Alexa.PowerController",
-          "name": "powerState",
-          "value": _getValue(element, hbResponse, i).value ? "ON" : "OFF",
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.powerlevelcontroller":
-        properties.push({
-          "namespace": "Alexa.PowerLevelController",
-          "name": "powerLevel",
-          "value": round(_getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.rangecontroller":
-        properties.push({
-          "namespace": "Alexa.RangeController",
-          "name": "rangeValue",
-          "value": round(_getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.modecontroller":
-        properties.push({
-          "namespace": "Alexa.ModeController",
-          "instance": "GarageDoor.Position",
-          "name": "mode",
-          "value": _getValue(element, hbResponse, i).value ? "Position.Down" : "Position.Up",
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.colortemperaturecontroller":
-        properties.push({
-          "namespace": "Alexa.ColorTemperatureController",
-          "name": "colorTemperatureInKelvin",
-          "value": round(1000000 / _getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.colorcontroller":
-        properties.push({
-          "namespace": "Alexa.ColorController",
-          "name": "color",
-          "value": _getValue(element, hbResponse, i).value,
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        i = i + 2; // Skip over the 3 color values
-        break;
-      case "alexa.temperaturesensor":
-        properties.push({
-          "namespace": "Alexa.TemperatureSensor",
-          "name": "temperature",
-          "value": {
-            "value": round(_getValue(element, hbResponse, i).value, 1),
-            "scale": "CELSIUS"
-          },
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.contactsensor":
-        properties.push({
-          "namespace": "Alexa.ContactSensor",
-          "name": "detectionState",
-          "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.motionsensor":
-        properties.push({
-          "namespace": "Alexa.MotionSensor",
-          "name": "detectionState",
-          "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.doorbelleventsource":
-        properties.push({
-          "namespace": "Alexa.DoorbellEventSource",
-          "name": "detectionState",
-          "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      // Characteristic.LockCurrentState.UNSECURED = 0;
-      // Characteristic.LockCurrentState.SECURED = 1;
-      // Characteristic.LockCurrentState.JAMMED = 2;
-      // Characteristic.LockCurrentState.UNKNOWN = 3;
-      case "alexa.lockcontroller":
-        properties.push({
-          "namespace": "Alexa.LockController",
-          "name": "lockState",
-          "value": _lockState(_getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.thermostatcontrollertargetsetpoint":
-        properties.push({
-          namespace: "Alexa.ThermostatController",
-          name: "targetSetpoint",
-          value: {
-            value: _getValue(element, hbResponse, i).value,
-            scale: "CELSIUS"
-          },
-          timeOfSample: now.toISOString(),
-          uncertaintyInMilliseconds: 500
-        });
-        break;
-      case "alexa.thermostatcontrollerlowersetpoint":
-        properties.push({
-          "namespace": "Alexa.ThermostatController",
-          "name": "lowerSetpoint",
-          "value": {
-            "value": _getValue(element, hbResponse, i).value,
-            "scale": "CELSIUS"
-          },
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.thermostatcontrolleruppersetpoint":
-        properties.push({
-          "namespace": "Alexa.ThermostatController",
-          "name": "upperSetpoint",
-          "value": {
-            "value": _getValue(element, hbResponse, i).value,
-            "scale": "CELSIUS"
-          },
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        break;
-      case "alexa.thermostatcontrollerthermostatmode":
-        properties.push({
-          "namespace": "Alexa.ThermostatController",
-          "name": "thermostatMode",
-          "value": _getThermoMode(_getValue(element, hbResponse, i).value),
-          "timeOfSample": now.toISOString(),
-          "uncertaintyInMilliseconds": 500
-        });
-        if (!statusObject.elements.find(x => x.interface.toLowerCase() === "alexa.powercontroller")) {
+    // debug("stateToProperties - element", element, _getValue(element, hbResponse, i).status);
+
+    if (_getValue(element, hbResponse, i).status === 0 || _getValue(element, hbResponse, i).status === undefined) {
+
+      switch (element.interface.toLowerCase()) {
+        case "alexa.speaker":
           properties.push({
-            "namespace": "Alexa.PowerController",
-            "name": "powerState",
-            "value": properties[0].value === "OFF" ? "OFF" : "ON",
+            "namespace": "Alexa.Speaker",
+            "name": "volume",
+            "value": round(_getValue(element, hbResponse, i).value),
             "timeOfSample": now.toISOString(),
             "uncertaintyInMilliseconds": 500
           });
-	}
-        break;
-      default:
-        debug("ERROR: statusReport unknown/handled device", element, reportState);
+          properties.push({
+            "namespace": "Alexa.Speaker",
+            "name": "muted",
+            "value": false,
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.stepspeaker":
+          // No response needed
+          break;
+        case "alexa.powercontroller":
+          properties.push({
+            "namespace": "Alexa.PowerController",
+            "name": "powerState",
+            "value": _getValue(element, hbResponse, i).value ? "ON" : "OFF",
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.powerlevelcontroller":
+          properties.push({
+            "namespace": "Alexa.PowerLevelController",
+            "name": "powerLevel",
+            "value": round(_getValue(element, hbResponse, i).value),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.rangecontroller":
+          properties.push({
+            "namespace": "Alexa.RangeController",
+            "name": "rangeValue",
+            "value": round(_getValue(element, hbResponse, i).value),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.modecontroller":
+          properties.push({
+            "namespace": "Alexa.ModeController",
+            "instance": "GarageDoor.Position",
+            "name": "mode",
+            "value": _getValue(element, hbResponse, i).value ? "Position.Down" : "Position.Up",
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.colortemperaturecontroller":
+          properties.push({
+            "namespace": "Alexa.ColorTemperatureController",
+            "name": "colorTemperatureInKelvin",
+            "value": round(1000000 / _getValue(element, hbResponse, i).value),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.colorcontroller":
+          properties.push({
+            "namespace": "Alexa.ColorController",
+            "name": "color",
+            "value": _getValue(element, hbResponse, i).value,
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          i = i + 2; // Skip over the 3 color values
+          break;
+        case "alexa.temperaturesensor":
+          properties.push({
+            "namespace": "Alexa.TemperatureSensor",
+            "name": "temperature",
+            "value": {
+              "value": round(_getValue(element, hbResponse, i).value, 1),
+              "scale": "CELSIUS"
+            },
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.contactsensor":
+          properties.push({
+            "namespace": "Alexa.ContactSensor",
+            "name": "detectionState",
+            "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.motionsensor":
+          properties.push({
+            "namespace": "Alexa.MotionSensor",
+            "name": "detectionState",
+            "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.doorbelleventsource":
+          properties.push({
+            "namespace": "Alexa.DoorbellEventSource",
+            "name": "detectionState",
+            "value": _getValue(element, hbResponse, i).value ? "DETECTED" : "NOT_DETECTED",
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        // Characteristic.LockCurrentState.UNSECURED = 0;
+        // Characteristic.LockCurrentState.SECURED = 1;
+        // Characteristic.LockCurrentState.JAMMED = 2;
+        // Characteristic.LockCurrentState.UNKNOWN = 3;
+        case "alexa.lockcontroller":
+          properties.push({
+            "namespace": "Alexa.LockController",
+            "name": "lockState",
+            "value": _lockState(_getValue(element, hbResponse, i).value),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.thermostatcontrollertargetsetpoint":
+          properties.push({
+            namespace: "Alexa.ThermostatController",
+            name: "targetSetpoint",
+            value: {
+              value: _getValue(element, hbResponse, i).value,
+              scale: "CELSIUS"
+            },
+            timeOfSample: now.toISOString(),
+            uncertaintyInMilliseconds: 500
+          });
+          break;
+        case "alexa.thermostatcontrollerlowersetpoint":
+          properties.push({
+            "namespace": "Alexa.ThermostatController",
+            "name": "lowerSetpoint",
+            "value": {
+              "value": _getValue(element, hbResponse, i).value,
+              "scale": "CELSIUS"
+            },
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.thermostatcontrolleruppersetpoint":
+          properties.push({
+            "namespace": "Alexa.ThermostatController",
+            "name": "upperSetpoint",
+            "value": {
+              "value": _getValue(element, hbResponse, i).value,
+              "scale": "CELSIUS"
+            },
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          break;
+        case "alexa.thermostatcontrollerthermostatmode":
+          properties.push({
+            "namespace": "Alexa.ThermostatController",
+            "name": "thermostatMode",
+            "value": _getThermoMode(_getValue(element, hbResponse, i).value),
+            "timeOfSample": now.toISOString(),
+            "uncertaintyInMilliseconds": 500
+          });
+          if (!statusObject.elements.find(x => x.interface.toLowerCase() === "alexa.powercontroller")) {
+            properties.push({
+              "namespace": "Alexa.PowerController",
+              "name": "powerState",
+              "value": properties[0].value === "OFF" ? "OFF" : "ON",
+              "timeOfSample": now.toISOString(),
+              "uncertaintyInMilliseconds": 500
+            });
+          }
+          break;
+        default:
+          debug("ERROR: statusReport unknown/handled device", element, reportState);
+      }
+    } else {
+      debug("ERROR: statusReport error", element, _getValue(element, hbResponse, i));
     }
   });
 
@@ -764,8 +770,8 @@ function lookupCapabilities(capability, options, operations, devices) {
           "supported": [{
             "name": "detectionState"
           }],
-          "proactivelyReported": options.events,
-          "retrievable": true
+          "proactivelyReported": options.routines,
+          "retrievable": !options.routines
         }
       });
       break;
@@ -781,8 +787,8 @@ function lookupCapabilities(capability, options, operations, devices) {
           "supported": [{
             "name": "detectionState"
           }],
-          "proactivelyReported": options.events,
-          "retrievable": true
+          "proactivelyReported": options.routines,
+          "retrievable": !options.routines
         }
       });
       break;
@@ -1270,7 +1276,7 @@ function _getValue(element, hbResponse) {
       saturation: _round(_getHBValue(element.saturation, hbResponse).value / 100, 4),
       brightness: _round(_getHBValue(element.brightness, hbResponse).value / 100, 4)
     };
-    debug("Color Value", value);
+    // debug("Color Value", value);
     return {
       value: value,
       status: 0
@@ -1281,7 +1287,7 @@ function _getValue(element, hbResponse) {
 }
 
 function _getHBValue(element, hbResponse) {
-  debug("_getHBValue", element, hbResponse);
+  // debug("_getHBValue", JSON.stringify(element), JSON.stringify(hbResponse));
   var value, status;
   for (var i in hbResponse) {
     if (hbResponse[i].aid === element.aid && hbResponse[i].iid === element.iid) {

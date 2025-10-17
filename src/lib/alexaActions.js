@@ -4,6 +4,7 @@ var alexaMessages = require('./alexaMessages.js');
 var messages = require('./parse/messages');
 var debug = require('debug')('alexaActions');
 var alexaLocal = require('./alexaLocal.js');
+const process = require('process');
 
 var homebridge;
 var hbDevices;
@@ -26,7 +27,9 @@ module.exports = {
   alexaChannelController: alexaChannelController,
   alexaInputController: alexaInputController,
   alexaRangeController: alexaRangeController,
-  alexaModeController: alexaModeController
+  alexaModeController: alexaModeController,
+  destroy: destroy,
+  setHomebridge: setHomebridge
 };
 
 function hapDiscovery(options) {
@@ -35,7 +38,7 @@ function hapDiscovery(options) {
   homebridge.on('Ready', function () {
     alexaDiscovery.call(options, null, function () {
       // debug("Events", options);
-      if (options.events) {
+      if (options.routines) {
         registerEvents(messages.checkEventDeviceList.call(options, hbDevices.toEvents()));
       }
     });
@@ -46,6 +49,16 @@ function hapDiscovery(options) {
     options.eventBus.emit('hapEvent', event);
   });
   // debug("Event Relay - 1", homebridge);
+}
+
+// Used for testing
+
+function destroy() {
+  homebridge.destroy();
+}
+
+function setHomebridge(hb) {
+  homebridge = hb;
 }
 
 function registerEvents(message) {
@@ -90,11 +103,16 @@ function registerEvents(message) {
 function alexaDiscovery(message, callback) {
   // debug('alexaDiscovery', this);
   homebridge.HAPaccessories(function (endPoints) {
-    debug("alexaDiscovery");
+    // debug("alexaDiscovery", this);
+    if (this.debug) {
+      const fs = require('fs');
+      const storagePath = this.api.user.storagePath() + '/homebridge-alexa-endpoints.json';
+      this.log.warn("Writing Homebridge endpoints to", storagePath);
+      fs.writeFileSync(storagePath, JSON.stringify(endPoints, null, 2));
+    }
     var response;
 
     hbDevices = new Homebridges(endPoints, this);
-    // debug("RESPONSE", JSON.stringify(hbDevices, null, 2));
     response = hbDevices.toAlexa(this, message);
 
     // debug("RESPONSE", JSON.stringify(response, null, 2));
@@ -116,7 +134,7 @@ function alexaDiscovery(message, callback) {
     }
 
     if (response && response.event.payload.endpoints.length < 1) {
-      this.log("ERROR: HAP Discovery failed, please review config");
+      this.log.error("ERROR: HAP Discovery failed, please review config");
     } else {
       if (process.uptime() > 600) { // Only use console during startup
         debug("alexaDiscovery - returned %s devices", response.event.payload.endpoints.length);
@@ -135,10 +153,11 @@ function alexaDiscovery(message, callback) {
         this.log("ERROR: Maximum devices/accessories of 300 exceeded.");
       }
     }
-    // debug("Discovery Response", JSON.stringify(response, null, 2));
     if (this.debug) {
       const fs = require('fs');
-      fs.writeFileSync('alexaDiscovery.json', JSON.stringify(response, null, 2));
+      const storagePath = this.api.user.storagePath() + '/homebridge-alexa-discovery.json';
+      this.log.warn("Writing Alexa Discovery Response to", storagePath);
+      fs.writeFileSync(storagePath, JSON.stringify(response, null, 2));
     }
     callback(null, response);
   }.bind(this));
@@ -260,7 +279,13 @@ function alexaColorTemperatureController(message, callback) {
         }]
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("ColorTemperatureController-set", action, haAction.deviceID, status, body, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err, message.directive.payload.colorTemperatureInKelvin);
         callback(err, response);
       }.bind(this));
@@ -287,7 +312,13 @@ function alexaPlaybackController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("PlaybackController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -312,7 +343,13 @@ function alexaInputController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("InputController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -337,19 +374,26 @@ function alexaPowerController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("PowerController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
 }
 
 function alexaModeController(message, callback) {
-  var action = message.directive.header.name;
+  const action = message.directive.header.name;
+  var response;
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
     this.log("alexaModeController missing action", action, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -365,7 +409,7 @@ function alexaModeController(message, callback) {
     default:
       this.log("alexaModeController missing mode", action, message.directive.payload.mode);
       var e = new Error("alexaModeController missing mode " + action + " " + message.directive.payload);
-      var response = alexaMessages.alexaResponse(message, "", e);
+      response = alexaMessages.alexaResponse(message, "", e);
       response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
       callback(e, response);
       return;
@@ -378,19 +422,26 @@ function alexaModeController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("ModeController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
 }
 
 function alexaLockController(message, callback) {
-  var action = message.directive.header.name;
+  const action = message.directive.header.name;
+  var response;
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
     this.log("alexaLockController missing action", action, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -403,7 +454,13 @@ function alexaLockController(message, callback) {
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("alexaLockController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -442,7 +499,7 @@ function alexaChannelController(message, callback) {
   } else {
     var e = new Error("ERROR: alexaChannelController missing channel", message.directive.endpoint.payload);
     this.log(e.message);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "INVALID_DIRECTIVE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -451,7 +508,7 @@ function alexaChannelController(message, callback) {
     var haAction = JSON.parse(message.directive.endpoint.cookie[channel.toUpperCase()]);
   } catch (e) {
     this.log("alexaChannelController invalid station", channel, e.message, message.directive.endpoint.cookie);
-    var response = alexaMessages.alexaResponse(message, "", e);
+    response = alexaMessages.alexaResponse(message, "", e);
     response.event.payload.type = "VALUE_OUT_OF_RANGE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
     callback(e, response);
     return;
@@ -468,7 +525,13 @@ function alexaChannelController(message, callback) {
   // debug("alexaChannelController", JSON.stringify(message), JSON.stringify(body));
 
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("alexaChannelController", channel, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -476,14 +539,15 @@ function alexaChannelController(message, callback) {
 
 async function alexaThermostatController(message, callback) {
   // debug("alexaThermostatController", JSON.stringify(message));
-  var action = message.directive.header.name;
-  var payloads = message.directive.payload;
+  let action = message.directive.header.name;
+  const payloads = message.directive.payload;
+  var haAction;
   // directive.header.name = SetThermostatMode, SetTargetTemperature
   switch (action) {
     case "SetThermostatMode":
       try {
         var mode = message.directive.payload.thermostatMode.value;
-        var haAction = JSON.parse(message.directive.endpoint.cookie["thermostatMode" + mode]);
+        haAction = JSON.parse(message.directive.endpoint.cookie["thermostatMode" + mode]);
       } catch (e) {
         this.log("alexaThermostatController missing action", "thermostatMode" + mode, e.message, message.directive.endpoint.cookie);
         var response = alexaMessages.alexaResponse(message, "", e);
@@ -506,8 +570,8 @@ async function alexaThermostatController(message, callback) {
       break;
     case "SetTargetTemperature":
       // targetSetpoint, lowerSetpoint, upperSetpoint
+      // debug("alexaThermostatController - SetTargetTemperature", JSON.stringify(payloads));
       var characteristics = [];
-      var haAction;
       for (var index in payloads) {
         try {
           if (message.directive.endpoint.cookie[index]) {
@@ -532,6 +596,7 @@ async function alexaThermostatController(message, callback) {
           }
           debug("alexaThermostatController - haAction", JSON.stringify(haAction));
         } catch (e) {
+          //         debug("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
           this.log("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
           var response = alexaMessages.alexaResponse(message, "", e);
           response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
@@ -549,11 +614,18 @@ async function alexaThermostatController(message, callback) {
         });
       }
 
+      // debug("alexaThermostatController - characteristics", JSON.stringify(characteristics));
       var body = {
         "characteristics": characteristics
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("ThermostatController", action, haAction.deviceID, status, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err);
         callback(err, response);
       }.bind(this));
@@ -622,7 +694,13 @@ function alexaColorController(message, callback) {
   };
   debug("color HB command", body);
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-    this.log("ColorController", action, haAction.deviceID, status, err);
+    if (err) {
+      this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+    } else if (status) {
+      this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    } else {
+      this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+    }
     var response = alexaMessages.alexaResponse(message, status, err);
     callback(err, response);
   }.bind(this));
@@ -677,7 +755,13 @@ function alexaRangeController(message, callback) {
         }]
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
-        this.log("RangeController", action, haAction.deviceID, status, body, err);
+        if (err) {
+          this.log.error(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""), (err ? "ERROR: " + err : ""));
+        } else if (status) {
+          this.log.warn(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        } else {
+          this.log(message.directive.header.namespace, action, haAction.deviceID, message.directive.endpoint.endpointId, (status ? status : ""));
+        }
         var response = alexaMessages.alexaResponse(message, status, err, rangeValue);
         callback(err, response);
       }.bind(this));
@@ -827,7 +911,7 @@ function alexaSpeaker(message, callback) {
 }
 
 function alexaStepSpeaker(message, callback) {
-  // debug(JSON.stringify(message, null, 2));
+  // debug('alexaStepSpeaker', JSON.stringify(message, null, 2));
   var action = message.directive.header.name;
   var volume, haAction;
   try {
@@ -859,11 +943,29 @@ function alexaStepSpeaker(message, callback) {
         callback(err, response);
       }.bind(this));
       break;
+    case "setmute":
+      // Characteristic.VolumeSelector.INCREMENT = 0;
+      // Characteristic.VolumeSelector.DECREMENT = 1;
+      const payload = message.directive.payload.mute;
+      var body = {
+        "characteristics": [{
+          "aid": haAction.aid,
+          "iid": haAction.iid,
+          "value": !payload       // Alexa is opposite of HomeKit
+        }]
+      };
+      homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
+        this.log("StepSpeaker", action, haAction.deviceID, status, body, err);
+        var response = alexaMessages.alexaResponse(message, status, err, volume);
+        callback(err, response);
+      }.bind(this));
+      break;
+    default:
+      this.log.error("Unhandled alexaStepSpeaker Directive", message.directive.header.name);
   }
 }
 
 function alexaMessage(message, callback) {
-  debug("alexaMessage:", JSON.stringify(message));
   switch (message.directive.header.name.toLowerCase()) {
     case "reportstate": // aka getStatus
       var action = message.directive.header.name;
@@ -932,9 +1034,8 @@ function alexaMessage(message, callback) {
       // For performance HAP GET Characteristices supports getting multiple in one call
       // debug("alexaMessage - statusArray", statusArray);
 
-      processStatusArray(statusArray, message).then(response => {
-        debug("alexaMessage: Response", JSON.stringify(response,
-          null, 2));
+      processStatusArray.call(this, statusArray, message).then(response => {
+        debug("alexaMessage:Response:", JSON.stringify(response));
         callback(null, response);
       }).catch(err => {
         debug("alexaMessage:Error:", err.message);
@@ -959,7 +1060,8 @@ function alexaMessage(message, callback) {
             "name": "ErrorResponse",
             "namespace": "Alexa",
             "payloadVersion": "3",
-            "messageId": message.directive.header.messageId
+            "messageId": message.directive.header.messageId,
+            "correlationToken": message.directive.header.correlationToken,
           },
           "payload": {
             "endpoints": []
@@ -973,7 +1075,7 @@ function alexaMessage(message, callback) {
 async function processStatusArray(statusArray, message) {
   try {
     var messageArray = [];
-    // debug("processStatusArray-1", statusArray);
+    // debug("processStatusArray-1", JSON.stringify(message));
     for (let item in statusArray) {
       // debug("processStatusArray-item", statusArray[item]);
       messageArray.push(_HAPstatusByDeviceID(statusArray[item], message));
@@ -982,21 +1084,36 @@ async function processStatusArray(statusArray, message) {
     // debug("processStatusArray", messageArray);
     var resultArray = await Promise.all(messageArray);
 
-    return (alexaMessages.alexaStateResponse(resultArray, message));
+    if (resultArray[0].length === 0) {
+      return (alexaMessages.alexaStateResponse(Error('No response from Homebridge'), message));
+    } else {
+      return (alexaMessages.alexaStateResponse(resultArray, message));
+    }
   } catch (err) {
+    // debug("processStatusArray", err.message);
+    if (this.deviceCleanup) {
+      reportDeviceError.call(this, message);
+    }
     return (alexaMessages.alexaStateResponse(err, message));
   }
 }
 
 function _HAPstatusByDeviceID(statusObject, message) {
-  debug("_HAPstatusByDeviceID-1", statusObject);
+  // debug("_HAPstatusByDeviceID-1", JSON.stringify(statusObject));
   return new Promise((resolve, reject) => {
     homebridge.HAPstatusByDeviceID(statusObject.deviceID, statusObject.body, function (err, status) {
       if (err) {
         // debug("Error: _HAPstatusByDeviceID", err);
         reject(err);
+      }
+      const responseStatus = status?.characteristics.find(item => item.status !== 0)?.status;
+      debug("_HAPstatusByDeviceID-2", statusObject.deviceID, status, responseStatus);
+      if (status === undefined) {
+        reject(Error('Homebridge Error: no device'));
+      } else if (responseStatus !== -70402 && responseStatus !== undefined) {
+        reject(Error('Homebridge Error: ' + responseStatus));
       } else {
-        debug("_HAPstatusByDeviceID-2", statusObject.deviceID, status);
+        // debug("_HAPstatusByDeviceID-2", statusObject.deviceID, JSON.stringify(status));
         resolve(messages.stateToProperties(statusObject, status.characteristics));
       }
     });
@@ -1044,6 +1161,57 @@ function alexaEvent(events) {
         debug("Event message not being sent - invalid state", event);
     }
   });
+}
+
+const pendingErrors = new Set();
+let errorReportTimer = null;
+
+function reportDeviceError(message) {
+  const endpointId = message.directive.endpoint.endpointId;
+
+  // Log the error
+  this.log.error("Error: Device not responding, scheduling delete report", endpointId);
+
+  // Add endpointId to the set
+  pendingErrors.add(endpointId);
+
+  // Start a single timer if not already running
+  if (!errorReportTimer) {
+    errorReportTimer = setTimeout(() => {
+      sendDeleteReport();
+    }, 30000); // 30-second delay
+  }
+}
+
+function sendDeleteReport() {
+  if (pendingErrors.size === 0) return;
+
+  const endpoints = Array.from(pendingErrors).map(id => ({ endpointId: id }));
+  debug("sendDeleteReport", endpoints);
+  try {
+    alexaLocal.alexaEvent({
+      "event": {
+        "header": {
+          "namespace": "Alexa.Discovery",
+          "name": "DeleteReport",
+          "messageId": messages.createMessageId(),
+          "payloadVersion": "3"
+        },
+        "payload": {
+          "endpoints": endpoints,
+          "scope": {
+            "type": "BearerToken",
+            "token": "OAuth2.0 bearer token"
+          }
+        }
+      }
+    });
+  } catch (e) {
+    debug("sendDeleteReport error:", e);
+  } finally {
+    pendingErrors.clear();
+    errorReportTimer = null; // Reset timer reference
+  }
 }
 
 /*
