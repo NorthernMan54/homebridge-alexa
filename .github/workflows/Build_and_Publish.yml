@@ -14,6 +14,10 @@ on:
     branches: [beta-*.*.*, beta]
   workflow_dispatch:
 
+concurrency:
+  group: build_and_publish
+  cancel-in-progress: true
+
 jobs:
   get_tags:
     runs-on: ubuntu-latest
