@@ -1,5 +1,4 @@
 name: "Build, Publish and Release"
-run-name: Build, Publish and Release - ${{ jobs.get_tags.outputs.TARGET_IMAGE_TAG }}
 
  
  #
