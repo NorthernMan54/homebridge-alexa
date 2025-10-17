@@ -20,7 +20,7 @@ jobs:
 
     steps:
     # checkout repo
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     # get branch / tag name
     - name: Get Branch / Tag Name
@@ -47,12 +47,12 @@ jobs:
 
     steps:
     # checkout repo
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v6
       with:
         node-version: lts/*
 
@@ -110,9 +110,9 @@ jobs:
     needs: [publish_prod_release]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Create Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
