@@ -54,7 +54,6 @@
     "axios": "^1.7.9",
     "bottleneck": "2.19.5",
     "debug": "4.4.3",
-    "fix": "^0.0.3",
     "hap-node-client": "^0.2.9",
     "is-my-json-valid": "2.20.6",
     "mqtt": "5.14.1"
