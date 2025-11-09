@@ -50,7 +50,6 @@
     "semver": "^7.6.3"
   },
   "dependencies": {
-    "audit": "^0.0.6",
     "axios": "^1.7.9",
     "bottleneck": "2.19.5",
     "debug": "4.4.3",
