@@ -34,14 +34,14 @@
     "homebridge-plugin"
   ],
   "devDependencies": {
-    "@homebridge/hap-client": "^3.1.1",
-    "@types/node": "^24.8.1",
-    "@types/jest": "^30.0.0",
     "@eslint/js": "^9.14.0",
+    "@homebridge/hap-client": "^3.1.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.8.1",
+    "babel-jest": "^30.2.0",
     "eslint": "^9.37.0",
     "eslint-plugin-format": "^1.0.2",
     "eslint-plugin-jest": "^29.0.1",
-    "babel-jest": "^30.2.0",
     "globals": "^16.4.0",
     "jest": "^30.2.0",
     "mqtt-connection": "^4.1.0",
@@ -50,9 +50,11 @@
     "semver": "^7.6.3"
   },
   "dependencies": {
+    "audit": "^0.0.6",
     "axios": "^1.7.9",
     "bottleneck": "2.19.5",
     "debug": "4.4.3",
+    "fix": "^0.0.3",
     "hap-node-client": "^0.2.9",
     "is-my-json-valid": "2.20.6",
     "mqtt": "5.14.1"
