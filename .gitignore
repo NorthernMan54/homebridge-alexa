@@ -19,3 +19,17 @@ gh-md-toc
 test/hbConfig/config.json
 test/hbConfig/homebridge-alexa-discovery.json
 test/hbConfig/homebridge-alexa-endpoints.json
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Jest
+jest-results.json
+
+# Test artifacts
+homebridge-alexa-endpoints.json
+homebridge-alexa-discovery.json
+alexaDiscovery.json
+after.json

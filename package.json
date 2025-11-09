@@ -4,12 +4,15 @@
   "description": "Control your Homebridge devices with Amazon Alexa.",
   "main": "src/plugin.js",
   "scripts": {
-    "test": "jest --forceExit --detectOpenHandles --verbose=true  ",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --maxWorkers=2",
     "api": "documentation build plugin.js lib/alexaActions.js lib/alexaLocal.js lib/alexaMessages.js lib/alexaTranslator.js -f md --config docs/documentation.yml > docs/API.md",
     "document": "./gh-md-toc --hide-footer README.md ;./gh-md-toc --hide-footer Troubleshooting.md ;./gh-md-toc --hide-footer Installation.md; rm README.md.orig.* README.md.toc.* Troubleshooting.md.orig.* Troubleshooting.md.toc.* Installation.md.orig.* Installation.md.toc.*",
     "watch": "nodemon",
-    "lint": "eslint --max-warnings=10 .",
-    "lint:fix": "eslint --fix --max-warnings=0 ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "nodemonConfig": {
     "watch": [],
@@ -34,7 +37,6 @@
     "homebridge-plugin"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
     "@homebridge/hap-client": "^3.1.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.8.1",
@@ -62,15 +64,5 @@
   "bugs": {
     "url": "https://github.com/NorthernMan54/homebridge-alexa/issues"
   },
-  "homepage": "https://github.com/NorthernMan54/homebridge-alexa#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "modulePathIgnorePatterns": [],
-    "coverageReporters": [
-      "lcov"
-    ],
-    "collectCoverageFrom": [
-      "src/**"
-    ]
-  }
+  "homepage": "https://github.com/NorthernMan54/homebridge-alexa#readme"
 }

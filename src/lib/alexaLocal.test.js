@@ -5,6 +5,20 @@ const { alexaLocal, alexaEvent, alexaPriorityEvent } = require('./alexaLocal');
 jest.mock('mqtt');
 jest.mock('bottleneck');
 
+// Prevent any real network calls
+jest.mock('dns', () => ({
+  lookup: jest.fn((hostname, callback) => callback(null, '127.0.0.1', 4))
+}));
+
+jest.mock('net', () => ({
+  connect: jest.fn(() => ({
+    on: jest.fn(),
+    write: jest.fn(),
+    end: jest.fn(),
+    destroy: jest.fn()
+  }))
+}));
+
 describe('alexaLocal', () => {
   let options;
   let mockClient;

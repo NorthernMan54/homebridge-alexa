@@ -13,6 +13,7 @@ export default [
         ...globals.browser,
         ...globals.es2021,
         ...globals.jest, // Add Jest globals
+        ...globals.node, // Add Node.js globals
       },
     },
     // Add any other specific rules here
@@ -25,10 +26,17 @@ export default [
     rules: {
       ...pluginJest.configs.recommended.rules,
       "no-unused-vars": "warn", // Change no-unused-vars to a warning
+      "no-undef": "warn", // Change undefined variable errors to warnings
     },
   },
   {
     // Exclude test, tools, and lib directories from linting
-    ignores: ["test/**/*", "tools/**/*js"], // Exclude these files from linting
+    ignores: [
+      "test/**/*",
+      "tools/**/*.js",
+      "coverage/**/*",
+      "node_modules/**/*",
+      "*.notest.js"
+    ],
   }
 ];

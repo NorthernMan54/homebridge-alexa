@@ -407,3 +407,29 @@ See [Roadmap](Roadmap.md)
 * jelvs - Validate TV Integration for homebridge-samsung-tizen
 * krocko - bose soundlink preset / channel change
 * pwilms - deviceList feature
+
+## Development
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run linter
+npm run lint
+```
+
+See [Testing Guide](docs/TESTING.md) for more details.
+
+### Continuous Integration
+
+This project uses GitHub Actions for CI/CD. Tests run automatically on:
+- Push to main/master/beta branches
+- Pull requests
