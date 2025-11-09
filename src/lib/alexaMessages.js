@@ -190,7 +190,7 @@ function alexaResponse(message, hbResponse, err, value) {
             "properties": [{
               "namespace": "Alexa.RangeController",
               "instance": message.directive.header.instance,
-              "name": message.directive.header.name,
+              "name": "rangeValue",
               "value": value,
               "timeOfSample": now.toISOString(),
               "uncertaintyInMilliseconds": 500
