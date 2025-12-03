@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Version 0.9.3](https://github.com/northernman54/homebridge-alexa/compare/0.9.2...0.9.3)
 
+#### Fixes
+
+- Fix for RangeController response property name for window covering state reporting (#786)
+
 #### Changes
 
 - Dependency Updates
