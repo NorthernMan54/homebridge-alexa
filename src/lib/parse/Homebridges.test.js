@@ -1,5 +1,4 @@
 var Homebridges = require('./Homebridges.js').Homebridges;
-const Homebridge = require('./Homebridge');
 
 describe('Parse Discovery Response', () => {
 
@@ -7,7 +6,6 @@ describe('Parse Discovery Response', () => {
 
     const devices = require('../../../test/endPoints.test.json');
 
-    const message = {};
     const context = {
       pin: '031-45-154',
       filter: null,
@@ -58,7 +56,6 @@ describe('Parse Discovery Response', () => {
 
     const devices = require('../../../test/endPoints.test.json');
 
-    const message = {};
     const context = {
       pin: '031-45-154',
       filter: null,

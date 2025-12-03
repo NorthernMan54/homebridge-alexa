@@ -2,9 +2,21 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.9.3 (2025-10-18)
+
+## [Version 0.9.3](https://github.com/northernman54/homebridge-alexa/compare/0.9.2...0.9.3)
+
+#### Fixes
+
+- Fix for RangeController response property name for window covering state reporting (#786)
+
+#### Changes
+
+- Dependency Updates
+
 ## 0.9.2 (2025-09-13)
 
-## [Version 0.9.2](https://github.com/northernman54/homebridge-alexa/compare/v0.9.1...v0.9.2)
+## [Version 0.9.2](https://github.com/northernman54/homebridge-alexa/compare/0.9.1...0.9.2)
 
 #### Changes
 
@@ -12,7 +24,7 @@ All notable changes to this project will be documented in this file. This projec
   
 ## 0.9.1 (2025-08-13)
 
-## [Version 0.9.1](https://github.com/northernman54/homebridge-alexa/compare/v0.9.0...v0.9.1)
+## [Version 0.9.1](https://github.com/northernman54/homebridge-alexa/compare/0.9.0...0.9.1)
 
 #### Bug Fix
 
@@ -20,7 +32,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.9.0 (2025-03-30)
 
-## [Version 0.9.0](https://github.com/northernman54/homebridge-alexa/compare/v0.8.2...v0.9.0)
+## [Version 0.9.0](https://github.com/northernman54/homebridge-alexa/compare/0.8.2...0.9.0)
 
 #### Changes
 
@@ -37,7 +49,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.8.2 (2024-12-27)
 
-## [Version 0.8.2](https://github.com/northernman54/homebridge-alexa/compare/v0.8.1...v0.8.2)
+## [Version 0.8.2](https://github.com/northernman54/homebridge-alexa/compare/0.8.1...0.8.2)
 
 #### Bug Fix
 
@@ -45,7 +57,7 @@ All notable changes to this project will be documented in this file. This projec
   
 ## 0.8.1 (2024-12-24)
 
-## [Version 0.8.1](https://github.com/northernman54/homebridge-alexa/compare/v0.8.0...v0.8.1)
+## [Version 0.8.1](https://github.com/northernman54/homebridge-alexa/compare/0.8.0...0.8.1)
 
 #### Bug Fix
 
@@ -53,7 +65,7 @@ All notable changes to this project will be documented in this file. This projec
   
 ## 0.8.0 (2024-12-24)
 
-## [Version 0.8.0](https://github.com/northernman54/homebridge-alexa/compare/v0.7.1...v0.8.0)
+## [Version 0.8.0](https://github.com/northernman54/homebridge-alexa/compare/0.7.1...0.8.0)
 
 #### Changes
 
@@ -63,7 +75,7 @@ All notable changes to this project will be documented in this file. This projec
   
 ## 0.7.1 (2024-09-24)
 
-## [Version 0.7.1](https://github.com/northernman54/homebridge-alexa/compare/v0.7.0...v0.7.1)
+## [Version 0.7.1](https://github.com/northernman54/homebridge-alexa/compare/0.7.0...0.7.1)
 
 #### Changes
 
@@ -73,7 +85,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.7.0 (2023-05-30)
 
-## [Version 0.7.0](https://github.com/northernman54/homebridge-alexa/compare/v0.6.9...v0.7.0)
+## [Version 0.7.0](https://github.com/northernman54/homebridge-alexa/compare/0.6.9...0.7.0)
 
 #### Changes
 
@@ -82,7 +94,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.9 (2023-03-30)
 
-## [Version 0.6.9](https://github.com/northernman54/homebridge-alexa/compare/v0.6.8...v0.6.9)
+## [Version 0.6.9](https://github.com/northernman54/homebridge-alexa/compare/0.6.8...0.6.9)
 
 #### Changes
 
@@ -92,7 +104,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.8 (2023-12-13)
 
-## [Version 0.6.8](https://github.com/northernman54/homebridge-alexa/compare/v0.6.7...v0.6.8)
+## [Version 0.6.8](https://github.com/northernman54/homebridge-alexa/compare/0.6.7...0.6.8)
 
 #### Changes
 
@@ -100,7 +112,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.7 (2023-09-27)
 
-## [Version 0.6.7](https://github.com/northernman54/homebridge-alexa/compare/v0.6.6...v0.6.7)
+## [Version 0.6.7](https://github.com/northernman54/homebridge-alexa/compare/0.6.6...0.6.7)
 
 #### Changes
 
@@ -108,7 +120,7 @@ All notable changes to this project will be documented in this file. This projec
   
 ## 0.6.6 (2023-07-07)
 
-## [Version 0.6.6](https://github.com/northernman54/homebridge-alexa/compare/v0.6.5...v0.6.6)
+## [Version 0.6.6](https://github.com/northernman54/homebridge-alexa/compare/0.6.5...0.6.6)
 
 #### Changes
 
@@ -116,7 +128,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.5 (2023-01-03)
 
-## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.4...v0.6.5)
+## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/0.6.4...0.6.5)
 
 #### Changes
 
@@ -124,7 +136,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.4 (2023-01-03)
 
-## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/v0.6.3...v0.6.4)
+## [Version 0.6.4](https://github.com/northernman54/homebridge-alexa/compare/0.6.3...0.6.4)
 
 #### Changes
 
@@ -132,7 +144,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.3 (2023-01-03)
 
-## [Version 0.6.3](https://github.com/northernman54/homebridge-alexa/compare/v0.6.0...v0.6.3)
+## [Version 0.6.3](https://github.com/northernman54/homebridge-alexa/compare/0.6.0...0.6.3)
 
 #### Changes
 
@@ -140,7 +152,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 0.6.0 (2023-01-03)
 
-## [Version 0.6.0](https://github.com/northernman54/homebridge-alexa/compare/v0.5.63...v0.6.0)
+## [Version 0.6.0](https://github.com/northernman54/homebridge-alexa/compare/0.5.63...v0.6.0)
 
 #### Changes
 
