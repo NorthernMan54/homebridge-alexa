@@ -779,6 +779,9 @@ function lookupCapabilities(capability, options, operations, devices) {
     case "Current Position":
     case "Current Door State": // Current Door state
     case "Occupancy Detected": // Occupancy Sensor
+    case "Smoke Detected": // Smoke Sensor
+    case "Carbon Monoxide Detected": // Carbon Monoxide Sensor
+    case "Leak Detected": // Leak Sensor
       response.push({
         "type": "AlexaInterface",
         "interface": "Alexa.ContactSensor",
@@ -954,6 +957,9 @@ function lookupDisplayCategory(service) {
       break;
     case "00000080":
     case "00000086": // Occupancy Sensor
+    case "00000087": // Smoke Sensor
+    case "0000007F": // Carbon Monoxide Sensor
+    case "00000083": // Leak Sensor
       category = ["CONTACT_SENSOR"];
       break;
     case "00000121": // Doorbell

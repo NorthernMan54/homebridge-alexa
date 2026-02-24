@@ -90,6 +90,60 @@ describe('lib/parse/messages', () => {
       ]);
     });
 
+    test('should return ContactSensor capability for Smoke Detected - Routines false', () => {
+      const capability = 'Smoke Detected';
+      const options = { routines: false };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: false,
+            retrievable: true,
+          },
+        },
+      ]);
+    });
+
+    test('should return ContactSensor capability for Carbon Monoxide Detected - Routines true', () => {
+      const capability = 'Carbon Monoxide Detected';
+      const options = { routines: true };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: true,
+            retrievable: false,
+          },
+        },
+      ]);
+    });
+
+    test('should return ContactSensor capability for Leak Detected - Routines false', () => {
+      const capability = 'Leak Detected';
+      const options = { routines: false };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: false,
+            retrievable: true,
+          },
+        },
+      ]);
+    });
+
     // Add more test cases for other capabilities
 
   });
