@@ -779,9 +779,6 @@ function lookupCapabilities(capability, options, operations, devices) {
     case "Current Position":
     case "Current Door State": // Current Door state
     case "Occupancy Detected": // Occupancy Sensor
-    case "Smoke Detected": // Smoke Sensor
-    case "Carbon Monoxide Detected": // Carbon Monoxide Sensor
-    case "Leak Detected": // Leak Sensor
       response.push({
         "type": "AlexaInterface",
         "interface": "Alexa.ContactSensor",
@@ -794,6 +791,24 @@ function lookupCapabilities(capability, options, operations, devices) {
           "retrievable": !options.routines
         }
       });
+      break;
+    case "Smoke Detected": // Smoke Sensor
+    case "Carbon Monoxide Detected": // Carbon Monoxide Sensor
+    case "Leak Detected": // Leak Sensor
+      if (options.alexaAlertSensors) {
+        response.push({
+          "type": "AlexaInterface",
+          "interface": "Alexa.ContactSensor",
+          "version": "3",
+          "properties": {
+            "supported": [{
+              "name": "detectionState"
+            }],
+            "proactivelyReported": options.routines,
+            "retrievable": !options.routines
+          }
+        });
+      }
       break;
     case "Programmable Switch Event": // Doorbell
       response.push({

@@ -171,19 +171,21 @@ function _getActions(description, context, devices) {
     case "Leak Detected": // Leak Sensor
       // Publish these sensors as contact sensors so they can trigger Alexa routines
       // Value 1 = detected, Value 0 = not detected
-      reportState.push(messages.reportState("Alexa.ContactSensor", context));
-      hapEvents[JSON.stringify({
-        "deviceID": context.deviceID,
+      if (context.options.alexaAlertSensors) {
+        reportState.push(messages.reportState("Alexa.ContactSensor", context));
+        hapEvents[JSON.stringify({
+          "deviceID": context.deviceID,
 
-        "aid": context.aid,
-        "iid": context.liid
-      })] = {
-        "endpointID": context.endpointID,
-        "friendlyName": context.name,
-        "1": "DETECTED", // Smoke/CO/Leak detected maps to contact open
-        "0": "NOT_DETECTED",
-        "template": "ContactSensor"
-      };
+          "aid": context.aid,
+          "iid": context.liid
+        })] = {
+          "endpointID": context.endpointID,
+          "friendlyName": context.name,
+          "1": "DETECTED", // Smoke/CO/Leak detected maps to contact open
+          "0": "NOT_DETECTED",
+          "template": "ContactSensor"
+        };
+      }
       break;
     case "Programmable Switch Event": // aka Doorbell
       // debug("PSE", context.service, context);
