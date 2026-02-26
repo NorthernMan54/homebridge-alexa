@@ -90,6 +90,67 @@ describe('lib/parse/messages', () => {
       ]);
     });
 
+    test('should return ContactSensor capability for Smoke Detected - Routines false, alexaAlertSensors true', () => {
+      const capability = 'Smoke Detected';
+      const options = { routines: false, alexaAlertSensors: true };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: false,
+            retrievable: true,
+          },
+        },
+      ]);
+    });
+
+    test('should return empty array for Smoke Detected when alexaAlertSensors is false', () => {
+      const capability = 'Smoke Detected';
+      const options = { routines: false, alexaAlertSensors: false };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([]);
+    });
+
+    test('should return ContactSensor capability for Carbon Monoxide Detected - Routines true, alexaAlertSensors true', () => {
+      const capability = 'Carbon Monoxide Detected';
+      const options = { routines: true, alexaAlertSensors: true };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: true,
+            retrievable: false,
+          },
+        },
+      ]);
+    });
+
+    test('should return ContactSensor capability for Leak Detected - Routines false, alexaAlertSensors true', () => {
+      const capability = 'Leak Detected';
+      const options = { routines: false, alexaAlertSensors: true };
+      const result = lookupCapabilities(capability, options, {}, {});
+      expect(result).toEqual([
+        {
+          type: 'AlexaInterface',
+          interface: 'Alexa.ContactSensor',
+          version: '3',
+          properties: {
+            supported: [{ name: 'detectionState' }],
+            proactivelyReported: false,
+            retrievable: true,
+          },
+        },
+      ]);
+    });
+
     // Add more test cases for other capabilities
 
   });
