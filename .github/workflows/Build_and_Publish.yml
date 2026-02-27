@@ -93,9 +93,6 @@ jobs:
     uses: homebridge/.github/.github/workflows/npm-publish-oidc.yml@latest
     with:
       install_cmd: npm ci
-    secrets:
-      # Optional read-only token for installing private dependencies during CI (not used for publishing when using OIDC trusted publishers)
-      NPM_READ_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
 
   publish_test_release:
     permissions:
@@ -110,8 +107,6 @@ jobs:
       npm_version_command: 'pre'
       pre_id: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
       install_cmd: npm ci
-    secrets:
-      NPM_READ_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
 
   publish_github_release:
     needs: [publish_prod_release]
