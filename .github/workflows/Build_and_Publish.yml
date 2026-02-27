@@ -90,11 +90,12 @@ jobs:
     needs: [get_tags, create_documentation]
     name: Publish Release Version
     if: ${{ needs.get_tags.outputs.BRANCH_NAME == 'main' }}
-    uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+    uses: homebridge/.github/.github/workflows/npm-publish-oidc.yml@latest
     with:
       install_cmd: npm ci
     secrets:
-      npm_auth_token: ${{ secrets.npm_token }}
+      # Optional read-only token for installing private dependencies during CI (not used for publishing when using OIDC trusted publishers)
+      NPM_READ_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
 
   publish_test_release:
     permissions:
@@ -102,14 +103,15 @@ jobs:
     needs: [get_tags, create_documentation]
     name: Publish Test Version - ${{ needs.get_tags.outputs.BRANCH_NAME }}
     if: ${{ needs.get_tags.outputs.BRANCH_NAME != 'main' }}
-    uses: homebridge/.github/.github/workflows/npm-publish.yml@latest
+    uses: homebridge/.github/.github/workflows/npm-publish-oidc.yml@latest
     with:
       tag: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
       dynamically_adjust_version: true
       npm_version_command: 'pre'
       pre_id: ${{ needs.get_tags.outputs.TARGET_IMAGE_TAG }}
+      install_cmd: npm ci
     secrets:
-      npm_auth_token: ${{ secrets.npm_token }}
+      NPM_READ_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
 
   publish_github_release:
     needs: [publish_prod_release]
