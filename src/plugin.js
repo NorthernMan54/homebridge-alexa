@@ -49,6 +49,7 @@ class AlexaHome {
       alexaAlertSensors: false,
       deviceCleanup: false,
       debug: false,
+      alexaAlertSensors: false,
     };
 
     Object.assign(this, defaults, config);
