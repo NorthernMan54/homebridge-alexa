@@ -232,6 +232,12 @@
         "type": "boolean",
         "placeholder": false,
         "description": "This option will change the behaviour of the next or skip command of the 'appletv-enhanced' plugin, from skip to select.  This will enable the wording 'Alexa tv skip' to press the select button on the Apple TV remote.  This is useful for skipping adds on YouTube."
+      },
+      "alexaAlertSensors": {
+        "title": "<b>Smoke, Carbon Monoxide and Leak Sensors as Contact Sensors</b>",
+        "type": "boolean",
+        "placeholder": false,
+        "description": "Enables Smoke, Carbon Monoxide and Leak sensors to be published to Alexa as Contact Sensors. This allows these sensors to trigger Alexa routines when used with the 'Routines' option. Defaults to false."
       }
     }
   },
@@ -261,6 +267,7 @@
       "items": [
         "pin",
         "routines",
+        "alexaAlertSensors",
         "deviceCleanup",
         "debug",
         "thermostatTurnOn",

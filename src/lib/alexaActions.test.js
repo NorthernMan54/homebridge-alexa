@@ -1,3 +1,82 @@
+const fs = require('fs');
+const path = require('path');
+
+describe('lib/alexaActions', () => {
+  describe('checkDeviceList', () => {
+    // Helper to load the two functions from the source file without executing the whole module
+    function loadCheckDeviceList() {
+      const filePath = path.join(__dirname, 'alexaActions.js');
+      const content = fs.readFileSync(filePath, 'utf8');
+
+      // Extract verifyDeviceInList
+      const verifyStart = content.indexOf('function verifyDeviceInList');
+      const alexaNext = 'function alexaColorTemperatureController';
+      const verifyEnd = content.indexOf(alexaNext, verifyStart);
+      if (verifyStart === -1 || verifyEnd === -1) {
+        throw new Error('Could not locate verifyDeviceInList in alexaActions.js');
+      }
+      const verifySource = content.substring(verifyStart, verifyEnd).trim();
+
+      // Extract checkDeviceList which appears before verifyDeviceInList
+      const checkStart = content.indexOf('function checkDeviceList');
+      if (checkStart === -1) {
+        throw new Error('Could not locate checkDeviceList in alexaActions.js');
+      }
+      const checkEnd = verifyStart; // up to verify function
+      const checkSource = content.substring(checkStart, checkEnd).trim();
+
+      // Build an isolated evaluator that returns the two functions
+      const wrapper = `${verifySource}\n\n${checkSource}\n\nreturn { verifyDeviceInList, checkDeviceList };`;
+      // eslint-disable-next-line no-new-func
+      const fn = new Function(wrapper);
+      return fn();
+    }
+
+    test('returns same endpoints when deviceList not configured', () => {
+      const { checkDeviceList } = loadCheckDeviceList();
+      const ctx = {}; // no deviceList
+      const endpoints = [{ friendlyName: 'One' }, { friendlyName: 'Two' }];
+      const result = checkDeviceList.call(ctx, endpoints);
+      expect(result).toEqual(endpoints);
+    });
+
+    test('allow mode keeps only listed devices (exact match)', () => {
+      const { checkDeviceList } = loadCheckDeviceList();
+      const ctx = {
+        deviceList: ['Lamp'],
+        deviceListHandling: 'allow',
+        log: () => {}
+      };
+      const endpoints = [{ friendlyName: 'Lamp' }, { friendlyName: 'Fan' }];
+      const result = checkDeviceList.call(ctx, endpoints);
+      expect(result).toEqual([{ friendlyName: 'Lamp' }]);
+    });
+
+    test('allow mode supports regex entries', () => {
+      const { checkDeviceList } = loadCheckDeviceList();
+      const ctx = {
+        deviceList: ['^Lamp'],
+        deviceListHandling: 'allow',
+        log: () => {}
+      };
+      const endpoints = [{ friendlyName: 'Lamp 1' }, { friendlyName: 'Lamp 2' }, { friendlyName: 'Other' }];
+      const result = checkDeviceList.call(ctx, endpoints);
+      expect(result).toEqual([{ friendlyName: 'Lamp 1' }, { friendlyName: 'Lamp 2' }]);
+    });
+
+    test('deny mode removes listed devices', () => {
+      const { checkDeviceList } = loadCheckDeviceList();
+      const ctx = {
+        deviceList: ['ExcludeMe'],
+        deviceListHandling: 'deny',
+        log: () => {}
+      };
+      const endpoints = [{ friendlyName: 'KeepMe' }, { friendlyName: 'ExcludeMe' }];
+      const result = checkDeviceList.call(ctx, endpoints);
+      expect(result).toEqual([{ friendlyName: 'KeepMe' }]);
+    });
+  });
+});
 const { alexaMessage, setHomebridge, destroy, alexaThermostatController } = require('./alexaActions.js');
 
 jest.mock("hap-node-client", () => {
