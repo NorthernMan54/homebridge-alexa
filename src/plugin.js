@@ -46,8 +46,10 @@ class AlexaHome {
       LegacyCloudTransport: false,
       keepalive: 5,
       enhancedSkip: false,
+      alexaAlertSensors: false,
       deviceCleanup: false,
       debug: false,
+      alexaAlertSensors: false,
     };
 
     Object.assign(this, defaults, config);
@@ -124,6 +126,7 @@ class AlexaHome {
       mergeServiceName: this.mergeServiceName,
       routines: this.routines,
       enhancedSkip: this.enhancedSkip,
+      alexaAlertSensors: this.alexaAlertSensors,
     };
 
     this.log(options.filter
