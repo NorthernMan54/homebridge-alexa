@@ -1,7 +1,7 @@
-const { alexaResponse, alexaStateResponse, eventMessage } = require('/Users/sgracey/Code/homebridge-alexa/src/lib/alexaMessages');
-const messages = require('/Users/sgracey/Code/homebridge-alexa/src/lib/parse/messages');
+const { alexaResponse, alexaStateResponse, eventMessage } = require('./alexaMessages');
+const messages = require('./parse/messages');
 
-jest.mock('/Users/sgracey/Code/homebridge-alexa/src/lib/parse/messages');
+jest.mock('./parse/messages');
 
 describe('alexaMessages', () => {
   describe('alexaResponse', () => {
@@ -79,6 +79,50 @@ describe('alexaMessages', () => {
       expect(response.context.properties[0].namespace).toBe('Alexa.PowerController');
       expect(response.context.properties[0].name).toBe('powerState');
       expect(response.context.properties[0].value).toBe('ON');
+    });
+
+    test('should return correct response for Alexa.RangeController SetRangeValue', () => {
+      const message = {
+        directive: {
+          header: {
+            messageId: '123',
+            namespace: 'Alexa.RangeController',
+            name: 'SetRangeValue',
+            instance: 'Blind.Lift'
+          },
+          endpoint: {
+            endpointId: 'endpoint-001'
+          }
+        }
+      };
+      const rangeValue = 50;
+      const response = alexaResponse(message, { characteristics: [{ status: 0 }] }, null, rangeValue);
+      expect(response.context.properties[0].namespace).toBe('Alexa.RangeController');
+      expect(response.context.properties[0].instance).toBe('Blind.Lift');
+      expect(response.context.properties[0].name).toBe('rangeValue');
+      expect(response.context.properties[0].value).toBe(50);
+    });
+
+    test('should return correct response for Alexa.RangeController AdjustRangeValue', () => {
+      const message = {
+        directive: {
+          header: {
+            messageId: '123',
+            namespace: 'Alexa.RangeController',
+            name: 'AdjustRangeValue',
+            instance: 'Blind.Lift'
+          },
+          endpoint: {
+            endpointId: 'endpoint-001'
+          }
+        }
+      };
+      const rangeValue = 75;
+      const response = alexaResponse(message, { characteristics: [{ status: 0 }] }, null, rangeValue);
+      expect(response.context.properties[0].namespace).toBe('Alexa.RangeController');
+      expect(response.context.properties[0].instance).toBe('Blind.Lift');
+      expect(response.context.properties[0].name).toBe('rangeValue');
+      expect(response.context.properties[0].value).toBe(75);
     });
 
     // Add more test cases for other namespaces and scenarios

@@ -2,9 +2,25 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.10.0 (2026-02-28)
+
+## [Version 0.10.0](https://github.com/northernman54/homebridge-alexa/compare/0.9.3...0.10.0)
+
+#### Fixes
+
+- Added new optional Feature - Smoke Detectors as Contact Sensors (#798)
+
+#### Changes
+
+- Dependency Updates
+
 ## 0.9.3 (2025-10-18)
 
 ## [Version 0.9.3](https://github.com/northernman54/homebridge-alexa/compare/0.9.2...0.9.3)
+
+#### Fixes
+
+- Fix for RangeController response property name for window covering state reporting (#786)
 
 #### Changes
 

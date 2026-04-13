@@ -24,6 +24,7 @@ function Homebridge(devices, context) {
     mergeServiceName: context.mergeServiceName,
     thermostatTurnOn: context.thermostatTurnOn,
     enhancedSkip: context.enhancedSkip,
+    alexaAlertSensors: context.alexaAlertSensors,
   };
   this.playback = {};
   devices.accessories.accessories.forEach(function (element) {

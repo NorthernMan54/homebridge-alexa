@@ -1,4 +1,4 @@
-const { stateToProperties } = require('/Users/sgracey/Code/homebridge-alexa/src/lib/parse/messages');
+const { stateToProperties } = require('./messages');
 
 describe('stateToProperties', () => {
   const now = new Date();
