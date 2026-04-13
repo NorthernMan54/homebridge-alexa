@@ -39,6 +39,7 @@ describe('alexaLocal', () => {
       removeAllListeners: jest.fn(),
       end: jest.fn()
     };
+    sleep(1);
 
     mqtt.connect.mockReturnValue(mockClient);
 

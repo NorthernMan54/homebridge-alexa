@@ -4,11 +4,7 @@ const process = require('process');
 const mqtt = require('mqtt');
 const debug = require('debug')('alexaLocal');
 const Bottleneck = require('bottleneck');
-const Validator = require('is-my-json-valid');
 const packageConfig = require('../../package.json');
-const alexaSchema = require('./alexa_smart_home_message_schema.json');
-
-const checkAlexaMessage = Validator(alexaSchema, { verbose: true });
 
 let connection = {};
 let count = 0;
@@ -146,13 +142,14 @@ function handleError(err, options) {
   }
 
   switch (err.code) {
-    case 5:
+    case 5: {
       const errorMessage = process.uptime() < 20
         ? "Login failed. Validate credentials in config.json."
         : "Login failed. Validate configuration in config.json.";
       options.log.error(`ERROR: (homebridge-alexa) ${errorMessage}`);
       connection.client.end({ force: true });
       break;
+    }
     case 'ECONNREFUSED':
       options.log.error("ERROR: Cloud service DDOS Protection triggered. Stop Homebridge for 5-10 minutes and try again.");
       break;

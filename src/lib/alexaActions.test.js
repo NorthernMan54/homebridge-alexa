@@ -1,3 +1,4 @@
+/* global __dirname */
 const fs = require('fs');
 const path = require('path');
 
@@ -27,7 +28,7 @@ describe('lib/alexaActions', () => {
 
       // Build an isolated evaluator that returns the two functions
       const wrapper = `${verifySource}\n\n${checkSource}\n\nreturn { verifyDeviceInList, checkDeviceList };`;
-      // eslint-disable-next-line no-new-func
+
       const fn = new Function(wrapper);
       return fn();
     }
@@ -45,7 +46,7 @@ describe('lib/alexaActions', () => {
       const ctx = {
         deviceList: ['Lamp'],
         deviceListHandling: 'allow',
-        log: () => {}
+        log: () => { }
       };
       const endpoints = [{ friendlyName: 'Lamp' }, { friendlyName: 'Fan' }];
       const result = checkDeviceList.call(ctx, endpoints);
@@ -57,7 +58,7 @@ describe('lib/alexaActions', () => {
       const ctx = {
         deviceList: ['^Lamp'],
         deviceListHandling: 'allow',
-        log: () => {}
+        log: () => { }
       };
       const endpoints = [{ friendlyName: 'Lamp 1' }, { friendlyName: 'Lamp 2' }, { friendlyName: 'Other' }];
       const result = checkDeviceList.call(ctx, endpoints);
@@ -69,7 +70,7 @@ describe('lib/alexaActions', () => {
       const ctx = {
         deviceList: ['ExcludeMe'],
         deviceListHandling: 'deny',
-        log: () => {}
+        log: () => { }
       };
       const endpoints = [{ friendlyName: 'KeepMe' }, { friendlyName: 'ExcludeMe' }];
       const result = checkDeviceList.call(ctx, endpoints);
@@ -394,7 +395,7 @@ const message1 = {
       "cookie": {
         "TurnOn": "{\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":10,\"value\":1}",
         "AdjustPowerLevel": "{\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":11}",
-        "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":11},\{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"ColorController-1\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}]",
+        "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"ColorController-1\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}]",
         "SetColorTemperature": "{\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":13}",
         "BrightnessTurnOn": "true",
         "DecreaseColorTemperature": "{\"deviceID\":\"ColorController-1\",\"aid\":10,\"iid\":13}",

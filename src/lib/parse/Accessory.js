@@ -1,4 +1,4 @@
-var debug = require('debug')('alexa:Accessory');
+// var debug = require('debug')('alexa:Accessory');
 var Service = require('./Service.js').Service;
 var messages = require('./messages.js');
 
@@ -112,8 +112,8 @@ Accessory.prototype.toAlexa = function (context) {
     }
   }
 
-  for (var index in this.services) {
-    var service = this.services[index];
+  for (const index in this.services) {
+    const service = this.services[index];
     if ((this.television && service.service === "Speaker") || service.service === "Television" || service.service === "Input Source") {
       // Skip television accessories
     } else if (service.name === "Alexa" && service.service === "Contact Sensor" && service.info.Manufacturer === "homebridge-alexa") {

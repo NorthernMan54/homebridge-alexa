@@ -1,4 +1,4 @@
-var debug = require('debug')('alexa:Homebridges');
+// var debug = require('debug')('alexa:Homebridges');
 var Homebridge = require('./Homebridge.js').Homebridge;
 // var messageUtil = require('../util/messageUtil');
 var messages = require('./messages');
@@ -29,7 +29,7 @@ function Homebridges(devices, context) {
 
 Homebridges.prototype.toList = function (opt) {
   var list = [];
-  for (var index in this.homebridges) {
+  for (const index in this.homebridges) {
     var homebridge = this.homebridges[index];
     // list.push(homebridge.toList());
     list = list.concat(homebridge.toList(opt));
@@ -42,7 +42,7 @@ Homebridges.prototype.toList = function (opt) {
 
 Homebridges.prototype.toAlexa = function (opt, message) {
   var list = [];
-  for (var index in this.homebridges) {
+  for (const index in this.homebridges) {
     var homebridge = this.homebridges[index];
     // list.push(homebridge.toList());
     list = list.concat(homebridge.toAlexa(opt));
@@ -84,17 +84,17 @@ Homebridges.prototype.toEvents = function (endpoint) {
   var list = [];
   this.homebridges.forEach(function (homebridge) {
     // debug("accessories", homebridge.accessories.length);
-    for (var index in homebridge.accessories) {
+    for (const index in homebridge.accessories) {
       var accessory = homebridge.accessories[index];
       // debug("services", accessory.services.length);
       // accessory.services.forEach(function(service) {
-      for (var index in accessory.services) {
+      for (const index in accessory.services) {
         var service = accessory.services[index];
         // debug("characteristics", service.characteristics.length);
         if (service.name === "Alexa" && service.service === "Contact Sensor" && service.info.Manufacturer === "homebridge-alexa") {
           // Skip the Alexa contact sensors made by the plugin
         } else {
-          for (var index in service.characteristics) {
+          for (const index in service.characteristics) {
             var hapEvents = service.characteristics[index].hapEvents;
             if (Object.keys(hapEvents).length > 0) {
               list = Object.assign(list, hapEvents);
@@ -125,7 +125,7 @@ Homebridges.prototype.toEvents = function (endpoint) {
 
 Homebridges.prototype.findDevice = function (node) {
   var list = [];
-  for (var index in this.homebridges) {
+  for (const index in this.homebridges) {
     var homebridge = this.homebridges[index];
     // list.push(homebridge.toList());
     list = list.concat(homebridge.toList());

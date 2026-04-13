@@ -1,4 +1,4 @@
-var debug = require('debug')('alexa:Characteristic');
+// var debug = require('debug')('alexa:Characteristic');
 var messages = require('./messages.js');
 
 module.exports = {
@@ -286,6 +286,7 @@ function _getActions(description, context, devices) {
         cookie["TurnOn"] = messages.cookieV(context.options.thermostatTurnOn, context);  // Defaults to That command does not work
       }
       cookie["TurnOff"] = messages.cookieV(0, context);	// OFF
+    // falls through
     case "Target Heater-Cooler State":
     case "Target Heater Cooler State":
       reportState.push(messages.reportState("Alexa.ThermostatControllerthermostatMode", context));

@@ -66,7 +66,7 @@ function registerEvents(message) {
 
   var HBMessage = [];
 
-  for (var key in message) {
+  for (const key in message) {
     var endpoint = JSON.parse(key);
     var device = {
       "aid": endpoint.aid,
@@ -86,7 +86,7 @@ function registerEvents(message) {
       };
     }
   }
-  for (var register in HBMessage) {
+  for (const register in HBMessage) {
     // console.log("send", instance, HBMessage[instance]);
     var hbInstance = JSON.parse(register);
     debug("Event Register %s ->", hbInstance.deviceID, HBMessage[register]);
@@ -123,7 +123,7 @@ function alexaDiscovery(message, callback) {
 
     var deleteSeen = [];
 
-    for (var i = 0; i < response.event.payload.endpoints.length; i++) {
+    for (let i = 0; i < response.event.payload.endpoints.length; i++) {
       var endpoint = response.event.payload.endpoints[i];
       if (deleteSeen[endpoint.friendlyName]) {
         this.log("WARNING: Duplicate device name", endpoint.friendlyName);
@@ -221,7 +221,7 @@ function checkDeviceList(endpoints) {
 }
 
 function verifyDeviceInList(deviceList, deviceName) {
-  for (var i = 0, len = deviceList.length; i < len; i++) {
+  for (let i = 0, len = deviceList.length; i < len; i++) {
     if (deviceName === deviceList[i] || deviceName.match(new RegExp(deviceList[i]))) return true;
   }
   return false;
@@ -572,13 +572,13 @@ async function alexaThermostatController(message, callback) {
       // targetSetpoint, lowerSetpoint, upperSetpoint
       // debug("alexaThermostatController - SetTargetTemperature", JSON.stringify(payloads));
       var characteristics = [];
-      for (var index in payloads) {
+      for (const index in payloads) {
         try {
           if (message.directive.endpoint.cookie[index]) {
             haAction = JSON.parse(message.directive.endpoint.cookie[index]);
           } else {
             if (index === "targetSetpoint" && (message.directive.endpoint.cookie['lowerSetpoint'] || message.directive.endpoint.cookie['upperSetpoint'])) {
-              var mode = await retriveThermostatMode(message.directive.endpoint.cookie['ReportState']);
+              let mode = await retriveThermostatMode(message.directive.endpoint.cookie['ReportState']);
               if (mode === 1) {
                 // Mode is Heat
                 haAction = JSON.parse(message.directive.endpoint.cookie['lowerSetpoint']);
@@ -598,7 +598,7 @@ async function alexaThermostatController(message, callback) {
         } catch (e) {
           //         debug("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
           this.log("alexaThermostatController ERROR: '%s' Action: '%s' ", e.message, index, message.directive.endpoint.cookie);
-          var response = alexaMessages.alexaResponse(message, "", e);
+          let response = alexaMessages.alexaResponse(message, "", e);
           response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
           callback(e, response);
           return;
@@ -615,7 +615,7 @@ async function alexaThermostatController(message, callback) {
       }
 
       // debug("alexaThermostatController - characteristics", JSON.stringify(characteristics));
-      var body = {
+      body = {
         "characteristics": characteristics
       };
       homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {
@@ -636,7 +636,7 @@ async function alexaThermostatController(message, callback) {
       var err = {
         message: "Unknown action" + action
       };
-      var response = alexaMessages.alexaResponse(message, "", err);
+      response = alexaMessages.alexaResponse(message, "", err);
       response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
       callback(err, response);
   }
@@ -766,12 +766,13 @@ function alexaRangeController(message, callback) {
         callback(err, response);
       }.bind(this));
       break;
-    default:
+    default: {
       var e = new Error("ERROR: alexaRangeController missing " + action);
       this.log(e.message, message.directive.endpoint.cookie);
-      var response = alexaMessages.alexaResponse(message, "", e);
+      const response = alexaMessages.alexaResponse(message, "", e);
       response.event.payload.type = "INVALID_VALUE"; // The directive contains a value that is not valid for the target endpoint. For example, an invalid heating mode, channel, or program value.
       callback(e, response);
+    }
   }
 }
 
@@ -943,11 +944,11 @@ function alexaStepSpeaker(message, callback) {
         callback(err, response);
       }.bind(this));
       break;
-    case "setmute":
+    case "setmute": {
       // Characteristic.VolumeSelector.INCREMENT = 0;
       // Characteristic.VolumeSelector.DECREMENT = 1;
       const payload = message.directive.payload.mute;
-      var body = {
+      const body = {
         "characteristics": [{
           "aid": haAction.aid,
           "iid": haAction.iid,
@@ -960,6 +961,7 @@ function alexaStepSpeaker(message, callback) {
         callback(err, response);
       }.bind(this));
       break;
+    }
     default:
       this.log.error("Unhandled alexaStepSpeaker Directive", message.directive.header.name);
   }
@@ -1054,7 +1056,7 @@ function alexaMessage(message, callback) {
 
     default:
       this.log("Unhandled alexaMessage Directive", message.directive.header.name);
-      var response = {
+      response = {
         "event": {
           "header": {
             "name": "ErrorResponse",
@@ -1098,7 +1100,7 @@ async function processStatusArray(statusArray, message) {
   }
 }
 
-function _HAPstatusByDeviceID(statusObject, message) {
+function _HAPstatusByDeviceID(statusObject) {
   // debug("_HAPstatusByDeviceID-1", JSON.stringify(statusObject));
   return new Promise((resolve, reject) => {
     homebridge.HAPstatusByDeviceID(statusObject.deviceID, statusObject.body, function (err, status) {

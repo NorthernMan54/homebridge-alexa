@@ -704,7 +704,7 @@ function eventMessage(event, device) {
       console.log("ERROR: homebridge-alexa.alexaMessages Missing device");
     }
   } catch (err) {
-    // console.log("ERROR: homebridge-alexa.alexaMessages.eventMessage", err);
+    debug("ERROR: homebridge-alexa.alexaMessages.eventMessage", err);
   }
   return (message);
 }
