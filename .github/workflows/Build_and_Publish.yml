@@ -114,7 +114,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Create Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
