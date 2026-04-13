@@ -6,13 +6,14 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Version 0.10.0](https://github.com/northernman54/homebridge-alexa/compare/0.9.3...0.10.0)
 
-#### Fixes
+#### New Features
 
 - Added new optional Feature - Smoke Detectors as Contact Sensors (#798)
 
 #### Changes
 
 - Dependency Updates
+- Fixed lint issues #813
 
 ## 0.9.3 (2025-10-18)
 
