@@ -4,6 +4,7 @@ const { alexaLocal: AlexaLocal } = require('./lib/alexaLocal.js');
 const alexaActions = require('./lib/alexaActions.js');
 const { EventEmitter } = require('events');
 const os = require("os");
+const process = require("process");
 const packageConfig = require('../package.json');
 
 let Service, Characteristic;
@@ -49,7 +50,6 @@ class AlexaHome {
       alexaAlertSensors: false,
       deviceCleanup: false,
       debug: false,
-      alexaAlertSensors: false,
     };
 
     Object.assign(this, defaults, config);
@@ -135,7 +135,7 @@ class AlexaHome {
 
     alexaActions.hapDiscovery(options);
 
-    const alexa = new AlexaLocal(options);
+    this.alexa = new AlexaLocal(options);
 
     this.eventBus.on('hapEvent', alexaActions.alexaEvent.bind(this));
 

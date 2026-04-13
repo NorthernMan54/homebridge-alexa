@@ -1,3 +1,4 @@
+/* global Buffer */
 var debug = require('debug')('alexa:Homebridge');
 var Accessory = require('./Accessory.js').Accessory;
 var messages = require('./messages.js');
@@ -48,7 +49,7 @@ function Homebridge(devices, context) {
 
 Homebridge.prototype.toList = function (opt) {
   var list = [];
-  for (var index in this.accessories) {
+  for (const index in this.accessories) {
     var accessory = this.accessories[index];
     list = list.concat(accessory.toList({
       deviceID: this.deviceID,
@@ -69,10 +70,10 @@ Homebridge.prototype.toAlexa = function (opt) {
   // Devices include Apple TV and Yamaha Stereo Playback controls
 
   if (this.playback) { // Homebridge instance contains appleTV's
-    for (var playback in this.playback) {
+    for (const playback in this.playback) {
       var cookie = {};
       var service = "00000098";
-      for (var index in this.accessories) {
+      for (const index in this.accessories) {
         // debug("Checking", index);
         var accessory = this.accessories[index];
         // debug("Checking", accessory);
@@ -80,7 +81,7 @@ Homebridge.prototype.toAlexa = function (opt) {
           // debug("Yamaha", accessory);
           service = "00000113";
           // accessory.services.forEach(function(service) {
-          for (var index in accessory.services) {
+          for (const index in accessory.services) {
             var device = accessory.services[index];
 
             cookie[messages.playbackNameTranslate(device.name)] = device.toCookie("On", {
@@ -131,8 +132,8 @@ Homebridge.prototype.toAlexa = function (opt) {
           } else {
             // Apple TV Remote Plugin
             service = "00000098";
-            for (var index in accessory.services) {
-              var device = accessory.services[index];
+            for (const index in accessory.services) {
+              const device = accessory.services[index];
 
               // debug("name", device.name, playback);
               if (device.name === "Play (" + playback + ")" || device.name === "Pause (" + playback + ")" || device.name === "Right (" + playback + ")" || device.name === "Left (" + playback + ")") {
@@ -208,8 +209,8 @@ Homebridge.prototype.toAlexa = function (opt) {
 
   // Get all the remaining devices
 
-  for (var index in this.accessories) {
-    var accessory = this.accessories[index];
+  for (const index in this.accessories) {
+    const accessory = this.accessories[index];
     if (accessory.playback) {
       // debug("Media device", accessory.name);
     }
