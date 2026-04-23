@@ -189,6 +189,14 @@
           "functionBody": "if (model.deviceListHandling === 'allow' || model.deviceListHandling === 'deny') { return true } else { return false };"
         }
       },
+      "instanceDenylist": {
+        "title": "Homebridge instances to be denied",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^([A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2}$"
+        }
+      },
       "combine": {
         "type": "array",
         "items": {
@@ -276,6 +284,16 @@
           },
           "condition": {
             "functionBody": "return model.deviceListHandling !== 'none';"
+          }
+        },
+        {
+          "key": "instanceDenylist",
+          "type": "array",
+          "items": {
+            "title": "UserName",
+            "description": "username of Homebridge instance you want to ignore",
+            "type": "string",
+	    "placeholder": "Enter homebridge username..."
           }
         }
       ]

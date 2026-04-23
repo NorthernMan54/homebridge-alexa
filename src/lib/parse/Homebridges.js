@@ -15,6 +15,10 @@ function Homebridges(devices, context) {
   // debug("Homebridges", devices);
   this.homebridges = [];
   devices.forEach(function (element) {
+    if (context.instanceDenylist?.find(x => x.toLowerCase() === element.instance.txt.id.toLowerCase())) {
+      context.log(`INFO: InstanceDenyList - deny => ${element.instance.txt.id}`);
+      return;
+    }
     var homebridge = new Homebridge(element, context);
     this.homebridges.push(homebridge);
   }.bind(this));
