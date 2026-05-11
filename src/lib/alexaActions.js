@@ -357,6 +357,7 @@ function alexaInputController(message, callback) {
 
 function alexaPowerController(message, callback) {
   var action = message.directive.header.name;
+  var value;
   try {
     var haAction = JSON.parse(message.directive.endpoint.cookie[action]);
   } catch (e) {
@@ -366,11 +367,18 @@ function alexaPowerController(message, callback) {
     callback(e, response);
     return;
   }
+  if (haAction.value === 1) {
+    value = true;
+  } else if (haAction.value === 0) {
+    value = false;
+  } else {
+    value = haAction.value;
+  }
   var body = {
     "characteristics": [{
       "aid": haAction.aid,
       "iid": haAction.iid,
-      "value": haAction.value
+      "value": value
     }]
   };
   homebridge.HAPcontrolByDeviceID(haAction.deviceID, JSON.stringify(body), function (err, status) {

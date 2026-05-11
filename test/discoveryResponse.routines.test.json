@@ -17,8 +17,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":9,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":3,\"iid\":11}",
             "BrightnessTurnOn": "true",
@@ -84,8 +84,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":9,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"0E:03:4B:B3:AF:4C\",\"aid\":2,\"iid\":11}",
             "BrightnessTurnOn": "true",
@@ -349,8 +349,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":11}]"
@@ -433,8 +433,8 @@
             "SWITCH"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:D3:21:BA:8C:5C\",\"aid\":2,\"iid\":17}]"
           },
           "capabilities": [
@@ -468,8 +468,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":15,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":16}",
             "SetPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":16}",
             "BrightnessTurnOn": "true",
@@ -520,8 +520,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:F4:E9:FC:AD:D1\",\"aid\":2,\"iid\":11}]"
@@ -571,8 +571,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":37,\"iid\":10}]"
           },
           "capabilities": [
@@ -606,8 +606,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":10}]"
           },
           "capabilities": [
@@ -641,8 +641,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":23,\"iid\":16}]"
@@ -692,8 +692,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":31,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -744,8 +744,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":32,\"iid\":12}]"
@@ -795,8 +795,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":29,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -847,8 +847,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":30,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -899,8 +899,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":11,\"iid\":10}]"
           },
           "capabilities": [
@@ -934,8 +934,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":20,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -986,8 +986,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":18,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1038,8 +1038,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":9,\"iid\":10}]"
           },
           "capabilities": [
@@ -1073,8 +1073,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":13,\"iid\":10}]"
           },
           "capabilities": [
@@ -1174,8 +1174,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":5,\"iid\":10}]"
           },
           "capabilities": [
@@ -1209,8 +1209,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":10}]"
           },
           "capabilities": [
@@ -1244,8 +1244,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":26,\"iid\":16}]"
@@ -1295,8 +1295,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":19,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1347,8 +1347,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":28,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1399,8 +1399,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":25,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1500,8 +1500,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":24,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1552,8 +1552,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":16,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1636,8 +1636,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":8,\"iid\":10}]"
           },
           "capabilities": [
@@ -1671,8 +1671,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":22,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1755,8 +1755,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":12,\"iid\":10}]"
           },
           "capabilities": [
@@ -1790,8 +1790,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":12}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":17,\"iid\":12}",
             "BrightnessTurnOn": "true",
@@ -1874,8 +1874,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":2,\"iid\":10}]"
           },
           "capabilities": [
@@ -1909,8 +1909,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":21,\"iid\":10}]"
           },
           "capabilities": [
@@ -1944,8 +1944,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":20,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":22}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":22}",
             "BrightnessTurnOn": "true",
@@ -2011,8 +2011,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":4,\"iid\":10}]"
           },
           "capabilities": [
@@ -2046,8 +2046,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":10,\"iid\":10}]"
           },
           "capabilities": [
@@ -2081,8 +2081,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":3,\"iid\":10}]"
           },
           "capabilities": [
@@ -2182,8 +2182,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":15,\"iid\":10}]"
           },
           "capabilities": [
@@ -2217,8 +2217,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":10}]"
           },
           "capabilities": [
@@ -2252,8 +2252,8 @@
             "FAN"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}",
             "SetPowerLevel": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":14},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":27,\"iid\":16}]"
@@ -2303,8 +2303,8 @@
             "SMARTPLUG"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"1C:22:3D:E3:CF:34\",\"aid\":6,\"iid\":10}]"
           },
           "capabilities": [
@@ -2343,8 +2343,8 @@
             "Stop": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":9}",
             "Next": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":8}",
             "Previous": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":12,\"value\":6}",
-            "TurnOn": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9,\"value\":false}",
             "Active Identifier": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":10}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":20}]",
             "AdjustVolume": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":22}",
@@ -2911,8 +2911,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":12,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":13}",
             "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":48,\"iid\":13}",
             "BrightnessTurnOn": "true",
@@ -3062,8 +3062,8 @@
             "SWITCH"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":39,\"iid\":15}]"
           },
           "capabilities": [
@@ -3163,8 +3163,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":13,\"iid\":11}",
             "BrightnessTurnOn": "true",
@@ -3247,8 +3247,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":2,\"iid\":11}",
             "BrightnessTurnOn": "true",
@@ -3299,8 +3299,8 @@
             "LIGHT"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":10,\"value\":false}",
             "AdjustPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"69:62:B7:AE:38:D4\",\"aid\":45,\"iid\":11}",
             "BrightnessTurnOn": "true",
@@ -3423,8 +3423,8 @@
             "IncreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
             "DecreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
             "SetColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13}",
-            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10,\"value\":false}",
             "SetColor": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}",
             "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":10,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":10,\"iid\":14},\"saturation\":{\"aid\":10,\"iid\":15},\"brightness\":{\"aid\":10,\"iid\":11},\"on\":{\"aid\":10,\"iid\":10}}]"
           },
@@ -3504,8 +3504,8 @@
             "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11}",
             "BrightnessTurnOn": "true",
-            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":11},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":11,\"iid\":10}]"
           },
           "capabilities": [
@@ -3556,8 +3556,8 @@
             "AdjustPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11}",
             "SetPowerLevel": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11}",
             "BrightnessTurnOn": "true",
-            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":11},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":12,\"iid\":10}]"
           },
           "capabilities": [
@@ -3611,8 +3611,8 @@
             "IncreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
             "DecreaseColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
             "SetColorTemperature": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13}",
-            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10,\"value\":false}",
             "SetColor": "{\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":9,\"iid\":14},\"saturation\":{\"aid\":9,\"iid\":15},\"brightness\":{\"aid\":9,\"iid\":11},\"on\":{\"aid\":9,\"iid\":10}}",
             "ReportState": "[{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":11},{\"interface\":\"Alexa.ColorTemperatureController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":13},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"aid\":9,\"iid\":10},{\"interface\":\"Alexa.ColorController\",\"deviceID\":\"CC:22:3D:E3:CF:33\",\"hue\":{\"aid\":9,\"iid\":14},\"saturation\":{\"aid\":9,\"iid\":15},\"brightness\":{\"aid\":9,\"iid\":11},\"on\":{\"aid\":9,\"iid\":10}}]"
           },
@@ -3777,8 +3777,8 @@
             "SWITCH"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:42\",\"aid\":2,\"iid\":10}]"
           },
           "capabilities": [
@@ -3812,8 +3812,8 @@
             "SWITCH"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:43\",\"aid\":2,\"iid\":10}]"
           },
           "capabilities": [
@@ -3847,8 +3847,8 @@
             "SPEAKER"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10,\"value\":false}",
             "AdjustVolume": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}",
             "SetVolume": "{\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"BC:22:3D:E3:CF:44\",\"aid\":2,\"iid\":11}]"
@@ -3956,8 +3956,8 @@
             "SWITCH"
           ],
           "cookie": {
-            "TurnOn": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":1}",
-            "TurnOff": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":0}",
+            "TurnOn": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":true}",
+            "TurnOff": "{\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61,\"value\":false}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"C1:BB:DE:42:A5:39\",\"aid\":1,\"iid\":61}]"
           },
           "capabilities": [

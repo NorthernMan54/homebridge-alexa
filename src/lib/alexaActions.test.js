@@ -78,7 +78,7 @@ describe('lib/alexaActions', () => {
     });
   });
 });
-const { alexaMessage, setHomebridge, destroy, alexaThermostatController } = require('./alexaActions.js');
+const { alexaMessage, setHomebridge, destroy, alexaPowerController, alexaThermostatController } = require('./alexaActions.js');
 
 jest.mock("hap-node-client", () => {
   // console.log('Mock - hap-node-client');
@@ -379,6 +379,74 @@ describe('Controller', () => {
   });
   afterAll(() => {
     destroy();
+  });
+});
+
+describe('alexaPowerController', () => {
+  let callback;
+  let log;
+  let controlMock;
+
+  beforeEach(() => {
+    callback = jest.fn();
+    log = jest.fn();
+    log.error = jest.fn();
+    log.warn = jest.fn();
+    controlMock = jest.fn((deviceID, body, cb) => cb(null, null));
+    setHomebridge({
+      HAPcontrolByDeviceID: controlMock,
+      destroy: jest.fn()
+    });
+  });
+
+  test('coerces 1/0 power values to booleans', () => {
+    const turnOnMessage = {
+      directive: {
+        header: { namespace: 'Alexa.PowerController', name: 'TurnOn' },
+        endpoint: {
+          endpointId: 'endpoint-id',
+          cookie: {
+            TurnOn: JSON.stringify({ deviceID: 'device-on', aid: 1, iid: 2, value: 1 })
+          }
+        }
+      }
+    };
+
+    const turnOffMessage = {
+      directive: {
+        header: { namespace: 'Alexa.PowerController', name: 'TurnOff' },
+        endpoint: {
+          endpointId: 'endpoint-id',
+          cookie: {
+            TurnOff: JSON.stringify({ deviceID: 'device-off', aid: 1, iid: 2, value: 0 })
+          }
+        }
+      }
+    };
+
+    alexaPowerController.call({ log }, turnOnMessage, callback);
+    alexaPowerController.call({ log }, turnOffMessage, callback);
+
+    expect(JSON.parse(controlMock.mock.calls[0][1]).characteristics[0].value).toBe(true);
+    expect(JSON.parse(controlMock.mock.calls[1][1]).characteristics[0].value).toBe(false);
+  });
+
+  test('leaves non-binary power values unchanged', () => {
+    const message = {
+      directive: {
+        header: { namespace: 'Alexa.PowerController', name: 'TurnOn' },
+        endpoint: {
+          endpointId: 'endpoint-id',
+          cookie: {
+            TurnOn: JSON.stringify({ deviceID: 'device-custom', aid: 1, iid: 2, value: 42 })
+          }
+        }
+      }
+    };
+
+    alexaPowerController.call({ log }, message, callback);
+
+    expect(JSON.parse(controlMock.mock.calls[0][1]).characteristics[0].value).toBe(42);
   });
 });
 

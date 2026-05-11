@@ -58,8 +58,8 @@ function _getActions(description, context, devices) {
     case "On": // Accessory On/Off
       // debug("On/Active", context.name);
       reportState.push(messages.reportState("Alexa.PowerController", context));
-      cookie["TurnOn"] = messages.cookieV(1, context);
-      cookie["TurnOff"] = messages.cookieV(0, context);
+      cookie["TurnOn"] = messages.cookieV(true, context);
+      cookie["TurnOff"] = messages.cookieV(false, context);
       break;
     case "Rotation Speed": // RotationSpeed
       reportState.push(messages.reportState("Alexa.PowerLevelController", context));
