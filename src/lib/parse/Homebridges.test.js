@@ -21,6 +21,7 @@ describe('Parse Discovery Response', () => {
       speakers: [
         { manufacturer: 'yamaha-home', name: 'Deck' },
         { manufacturer: 'yamaha-home', name: 'Living' },
+        { manufacturer: 'yamaha-home', name: 'Fire pit' },
         { manufacturer: 'HTTP-IRBlaster', name: 'Stereo' }
       ],
       inputs: false,
@@ -73,6 +74,7 @@ describe('Parse Discovery Response', () => {
       speakers: [
         { manufacturer: 'yamaha-home', name: 'Deck' },
         { manufacturer: 'yamaha-home', name: 'Living' },
+        { manufacturer: 'yamaha-home', name: 'Fire pit' },
         { manufacturer: 'HTTP-IRBlaster', name: 'Stereo' }
       ],
       inputs: false,

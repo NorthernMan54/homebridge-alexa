@@ -196,17 +196,17 @@
         {
           "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1GaXJlIHBpdC0wMDAwMDA0MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
           "friendlyName": "Fire pit",
-          "description": "homebridge Fire pit Fan",
+          "description": "homebridge Fire pit Speaker",
           "manufacturerName": "yamaha-home",
           "displayCategories": [
-            "FAN"
+            "SPEAKER"
           ],
           "cookie": {
             "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10,\"value\":1}",
             "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10,\"value\":0}",
-            "AdjustPowerLevel": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
-            "SetPowerLevel": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
-            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}]"
+            "AdjustVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
+            "SetVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}]"
           },
           "capabilities": [
             {
@@ -230,12 +230,12 @@
             },
             {
               "type": "AlexaInterface",
-              "interface": "Alexa.PowerLevelController",
+              "interface": "Alexa.Speaker",
               "version": "3",
               "properties": {
                 "supported": [
                   {
-                    "name": "powerLevel"
+                    "name": "volume"
                   }
                 ],
                 "proactivelyReported": false,
