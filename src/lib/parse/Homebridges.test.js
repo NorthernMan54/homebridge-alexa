@@ -1,4 +1,5 @@
 var Homebridges = require('./Homebridges.js').Homebridges;
+var fs = require('fs');
 
 describe('Parse Discovery Response', () => {
 
@@ -42,12 +43,14 @@ describe('Parse Discovery Response', () => {
 
 
     const hbDevices = new Homebridges(devices, context);
-    expect(hbDevices.homebridges).toHaveLength(21);
+    expect(hbDevices.homebridges).toHaveLength(22);
 
     const response = hbDevices.toAlexa(context, null);
-    expect(response.event.payload.endpoints).toHaveLength(87);
+    expect(response.event.payload.endpoints).toHaveLength(98);
 
     const discoveryResponse = require('../../../test/discoveryResponse.test.json');
+
+    fs.writeFileSync('test/discoveryResponse.noRoutines.test.result.json', JSON.stringify(response, null, 2));
     expect(response).toEqual(discoveryResponse);
 
   });
@@ -91,12 +94,14 @@ describe('Parse Discovery Response', () => {
     };
 
     const hbDevices = new Homebridges(devices, context);
-    expect(hbDevices.homebridges).toHaveLength(21);
+    expect(hbDevices.homebridges).toHaveLength(22);
 
     const response = hbDevices.toAlexa(context, null);
-    expect(response.event.payload.endpoints).toHaveLength(87);
+    expect(response.event.payload.endpoints).toHaveLength(98);
 
     const discoveryResponse = require('../../../test/discoveryResponse.routines.test.json');
+
+    fs.writeFileSync('test/discoveryResponse.routines.test.result.json', JSON.stringify(response, null, 2));
     expect(response).toEqual(discoveryResponse);
   });
 });

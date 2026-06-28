@@ -19,3 +19,5 @@ gh-md-toc
 test/hbConfig/config.json
 test/hbConfig/homebridge-alexa-discovery.json
 test/hbConfig/homebridge-alexa-endpoints.json
+test/discoveryResponse.noRoutines.test.result.json
+test/discoveryResponse.routines.test.result.json

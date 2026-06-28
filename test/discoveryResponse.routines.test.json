@@ -143,6 +143,439 @@
           ]
         },
         {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1EZWNrLTAwMDAwMDQwLTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Deck",
+          "description": "homebridge Deck Speaker",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SPEAKER"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":13,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":13,\"value\":0}",
+            "AdjustVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":14}",
+            "SetVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":14}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":13},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":14}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.Speaker",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "volume"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1GaXJlIHBpdC0wMDAwMDA0MC0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Fire pit",
+          "description": "homebridge Fire pit Fan",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "FAN"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10,\"value\":0}",
+            "AdjustPowerLevel": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
+            "SetPowerLevel": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.PowerLevelController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerLevelController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerLevel"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1JbnB1dCBBVjEtMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Input AV1",
+          "description": "homebridge Input AV1 Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":4,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":4,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":4,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1JbnB1dCBSYWRpby0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Input Radio",
+          "description": "homebridge Input Radio Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":2,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":2,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":2,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1JbnB1dCBTcG90aWZ5LTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Input Spotify",
+          "description": "homebridge Input Spotify Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":3,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":3,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":3,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1MaXZpbmctMDAwMDAwNDAtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Living",
+          "description": "homebridge Living Speaker",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SPEAKER"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10,\"value\":0}",
+            "AdjustVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}",
+            "SetVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.Speaker",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "volume"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1QYXJ0eSBNb2RlLTAwMDAwMDQ5LTAwMDAtMTAwMC04MDAwLTAwMjZCQjc2NTI5MQ==",
+          "friendlyName": "Party Mode",
+          "description": "homebridge Party Mode Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":5,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":5,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":5,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1QcmVzZXQgMS0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Preset 1",
+          "description": "homebridge Preset 1 Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":9,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":9,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":9,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1QcmVzZXQgMi0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Preset 2",
+          "description": "homebridge Preset 2 Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":10,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":10,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":10,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1QcmVzZXQgMy0wMDAwMDA0OS0wMDAwLTEwMDAtODAwMC0wMDI2QkI3NjUyOTE=",
+          "friendlyName": "Preset 3",
+          "description": "homebridge Preset 3 Switch",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SWITCH"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":11,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":11,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":11,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
+          "endpointId": "MEU6NDg6RDQ6OEE6RDg6QTgtaG9tZWJyaWRnZS15YW1haGEtaG9tZS1ZYW1haGEgUG93ZXItMDAwMDAwNDktMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
+          "friendlyName": "Yamaha Power",
+          "description": "homebridge Yamaha Power Speaker",
+          "manufacturerName": "yamaha-home",
+          "displayCategories": [
+            "SPEAKER"
+          ],
+          "cookie": {
+            "TurnOn": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":10,\"value\":1}",
+            "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":10,\"value\":0}",
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":7,\"iid\":10}]"
+          },
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": true
+              }
+            }
+          ]
+        },
+        {
           "endpointId": "MEU6ODk6QTc6REE6RDM6MjEtaG9tZWJyaWRnZS1EZWZhdWx0LU1hbnVmYWN0dXJlci1TaWRlIGRvb3ItMDAwMDAwODUtMDAwMC0xMDAwLTgwMDAtMDAyNkJCNzY1Mjkx",
           "friendlyName": "Side door",
           "description": "homebridge Side door Motion Sensor",
@@ -2348,6 +2781,7 @@
             "Active Identifier": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":10}",
             "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":9},{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":20}]",
             "AdjustVolume": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":22}",
+            "SetMute": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":19}",
             "Avada Kedavra": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":42,\"iid\":10}",
             "Home": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":69,\"iid\":10}",
             "AirPlay YouTube": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":7567,\"iid\":10}",
@@ -2356,7 +2790,6 @@
             "Spotify": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":236585001,\"iid\":10}",
             "Settings": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":2130633348,\"iid\":10}",
             "Search": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1325395214,\"iid\":10}",
-            "SetMute": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"iid\":19}",
             "Prime Video": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1405852026,\"iid\":10}",
             "Podcasts": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":1155383753,\"iid\":10}",
             "Pluto TV": "{\"deviceID\":\"32:6C:6C:2B:4F:33\",\"aid\":1,\"value\":581251333,\"iid\":10}",
