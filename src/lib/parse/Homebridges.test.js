@@ -13,8 +13,24 @@ describe('Parse Discovery Response', () => {
       beta: false,
       routines: false,
       combine: [
-        { into: 'Living', from: [Array] },
-        { into: 'Deck', from: [Array] }
+        {
+          "into": "Living",
+          "from": [
+            "Yamaha"
+          ]
+        },
+        {
+          "into": "Fire pit",
+          "from": [
+            "Yamaha"
+          ]
+        },
+        {
+          "into": "Deck",
+          "from": [
+            "Yamaha"
+          ]
+        }
       ],
       oldParser: false,
       refresh: 900,
@@ -66,8 +82,24 @@ describe('Parse Discovery Response', () => {
       beta: false,
       routines: true,
       combine: [
-        { into: 'Living', from: [Array] },
-        { into: 'Deck', from: [Array] }
+        {
+          "into": "Living",
+          "from": [
+            "Yamaha"
+          ]
+        },
+        {
+          "into": "Fire pit",
+          "from": [
+            "Yamaha"
+          ]
+        },
+        {
+          "into": "Deck",
+          "from": [
+            "Yamaha"
+          ]
+        }
       ],
       oldParser: false,
       refresh: 900,

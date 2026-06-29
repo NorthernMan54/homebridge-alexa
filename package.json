@@ -15,7 +15,7 @@
     "watch": [],
     "ext": "js",
     "ignore": [],
-    "exec": "~/npm/bin/homebridge -U ./test/hbConfig -T -D -P .",
+    "exec": "~/node_modules/homebridge/bin/homebridge.js -U ./test/hbConfig -T -D -P .",
     "signal": "SIGTERM",
     "env": {
       "NODE_OPTIONS": "--trace-warnings"

@@ -1037,8 +1037,9 @@ function isAppleTV(device) {
 }
 
 function isYamaha(device) {
-  // debug("DEVICE", device);
-  if (device.info.Manufacturer === "yamaha-home" && device.info.Name.substr(0, device.info.Name.indexOf(" ")) === "Spotify" && _yamahaButton(device.name)) {
+  //if (device.info.Manufacturer === "yamaha-home") debug("isYamaha %s - %s", device.info.Name, device.name);
+  if (device.info.Manufacturer === "yamaha-home" && device.info.Name.substr(0, device.info.Name.indexOf(" ")) === "Spotify" && _yamahaButton(device.info.Name)) {
+    debug("isYamaha %s - %s = true", device.info.Name, device.name);
     return true;
   } else {
     return false;
@@ -1046,6 +1047,7 @@ function isYamaha(device) {
 }
 
 function _yamahaButton(name) {
+  debug('_yamahaButton', name);
   switch (name.substr(0, name.lastIndexOf(" "))) {
     // case "Pair":
     case "Skip Fwd":
@@ -1086,8 +1088,10 @@ function atvButton(name) {
 }
 
 function playbackNameTranslate(name) {
-  // debug("split", name.substring(0, name.lastIndexOf(" ")));
-  switch (name.substr(0, name.indexOf('(')).trim()) {
+  // If the name has a parenthesis or a single quote in it, we need to remove it and any trailing spaces
+  const cleanName = name.split('\'')[0].split('(')[0].trim();
+  debug("split %s => %s", name, cleanName);
+  switch (cleanName) {
     case "Menu": // Apple TV
       return "Stop";
     case "Skip Fwd": // Yamaha
@@ -1097,7 +1101,7 @@ function playbackNameTranslate(name) {
     case "Left": // Apple-TV-Remote
       return "Rewind";
     default:
-      return name.substr(0, name.indexOf('(')).trim();
+      return cleanName;
   }
 }
 

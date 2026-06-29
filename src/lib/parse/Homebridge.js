@@ -38,8 +38,10 @@ function Homebridge(devices, context) {
     this.accessories.push(accessory);
     // debug("playback", accessory.name, accessory.playback);
     if (accessory.playback) {
-      var playback = (accessory.name.split("(")[1] ? accessory.name.split("(")[1].split(")")[0] : undefined);
-      // debug("ATVName", playback);
+      // If the name has a parenthesis or a single quote in it, we need to remove it and any trailing spaces
+      const match = accessory.name.match(/'(.+)$/) || accessory.name.match(/\((.+?)\)/);
+      const playback = match ? match[1].trim() : accessory.name.trim();
+      // debug("ATVName \"%s\" -> \"%s\"", accessory.name, playback);
       if (playback && accessory.name.substr(0, accessory.name.indexOf(" ")) !== "Pair") {
         this.playback[playback] = playback;
       }
@@ -69,6 +71,7 @@ Homebridge.prototype.toAlexa = function (opt) {
   // Alexa devices made up of multiple homekit accessories in a single homebridge instance
   // Devices include Apple TV and Yamaha Stereo Playback controls
 
+  // debug('this.playback', this.playback);
   if (this.playback) { // Homebridge instance contains appleTV's
     for (const playback in this.playback) {
       var cookie = {};

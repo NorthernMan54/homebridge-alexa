@@ -206,7 +206,12 @@
             "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10,\"value\":0}",
             "AdjustVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
             "SetVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}",
-            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11}]"
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":12,\"iid\":11},\"{\\\"deviceID\\\":\\\"0E:48:D4:8A:D8:A8\\\",\\\"aid\\\":6,\\\"iid\\\":19,\\\"value\\\":1}\"]",
+            "Play": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":10,\"value\":1}",
+            "Pause": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Stop": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Next": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":16,\"value\":1}",
+            "Rewind": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":19,\"value\":1}"
           },
           "capabilities": [
             {
@@ -241,6 +246,18 @@
                 "proactivelyReported": false,
                 "retrievable": true
               }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PlaybackController",
+              "version": "3",
+              "supportedOperations": [
+                "Play",
+                "Pause",
+                "Stop",
+                "Next",
+                "Rewind"
+              ]
             }
           ]
         },
@@ -362,7 +379,12 @@
             "TurnOff": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10,\"value\":0}",
             "AdjustVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}",
             "SetVolume": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}",
-            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11}]"
+            "ReportState": "[{\"interface\":\"Alexa.PowerController\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":10},{\"interface\":\"Alexa.Speaker\",\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":8,\"iid\":11},\"{\\\"deviceID\\\":\\\"0E:48:D4:8A:D8:A8\\\",\\\"aid\\\":6,\\\"iid\\\":19,\\\"value\\\":1}\"]",
+            "Play": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":10,\"value\":1}",
+            "Pause": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Stop": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Next": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":16,\"value\":1}",
+            "Rewind": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":19,\"value\":1}"
           },
           "capabilities": [
             {
@@ -397,6 +419,18 @@
                 "proactivelyReported": false,
                 "retrievable": true
               }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PlaybackController",
+              "version": "3",
+              "supportedOperations": [
+                "Play",
+                "Pause",
+                "Stop",
+                "Next",
+                "Rewind"
+              ]
             }
           ]
         },
@@ -3784,7 +3818,12 @@
             "MOTION_SENSOR"
           ],
           "cookie": {
-            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"8E:88:AB:7A:D0:54\",\"aid\":1,\"iid\":10}]"
+            "ReportState": "[{\"interface\":\"Alexa.MotionSensor\",\"deviceID\":\"8E:88:AB:7A:D0:54\",\"aid\":1,\"iid\":10},\"{\\\"deviceID\\\":\\\"0E:48:D4:8A:D8:A8\\\",\\\"aid\\\":6,\\\"iid\\\":19,\\\"value\\\":1}\"]",
+            "Play": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":10,\"value\":1}",
+            "Pause": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Stop": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":13,\"value\":1}",
+            "Next": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":16,\"value\":1}",
+            "Rewind": "{\"deviceID\":\"0E:48:D4:8A:D8:A8\",\"aid\":6,\"iid\":19,\"value\":1}"
           },
           "capabilities": [
             {
@@ -3805,6 +3844,18 @@
                 "proactivelyReported": false,
                 "retrievable": true
               }
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PlaybackController",
+              "version": "3",
+              "supportedOperations": [
+                "Play",
+                "Pause",
+                "Stop",
+                "Next",
+                "Rewind"
+              ]
             }
           ]
         },
