@@ -774,7 +774,7 @@ function lookupCapabilities(capability, options, operations, devices) {
             "name": "detectionState"
           }],
           "proactivelyReported": options.routines,
-          "retrievable": !options.routines
+          "retrievable": true
         }
       });
       break;
@@ -791,7 +791,7 @@ function lookupCapabilities(capability, options, operations, devices) {
             "name": "detectionState"
           }],
           "proactivelyReported": options.routines,
-          "retrievable": !options.routines
+          "retrievable": true
         }
       });
       break;
@@ -808,7 +808,7 @@ function lookupCapabilities(capability, options, operations, devices) {
               "name": "detectionState"
             }],
             "proactivelyReported": options.routines,
-            "retrievable": !options.routines
+            "retrievable": true
           }
         });
       }

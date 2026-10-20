@@ -2,13 +2,21 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
-## 0.10.0 (2026-02-28)
+## 0.10.0 (Pending)
 
 ## [Version 0.10.0](https://github.com/northernman54/homebridge-alexa/compare/0.9.3...0.10.0)
 
 #### New Features
 
 - Added new optional Feature - Smoke Detectors as Contact Sensors (#798)
+- Added `instanceDenylist` option to exclude Homebridge instances by their username (MAC address), as in homebridge-gsh (#806)
+
+#### Fixes
+
+- Fix for playback controls on Yamaha Home
+- Motion, Contact, Smoke, Carbon Monoxide and Leak sensors are now always retrievable, so Alexa can query their state when routines are enabled
+- Fixed an error in `sendDeleteReport` failing to log errors, and added a log message when a delete report is sent
+- Limited pending device delete reports to 20 per batch
 
 #### Changes
 

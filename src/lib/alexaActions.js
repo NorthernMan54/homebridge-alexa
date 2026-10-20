@@ -1171,16 +1171,18 @@ let errorReportTimer = null;
 function reportDeviceError(message) {
   const endpointId = message.directive.endpoint.endpointId;
 
-  // Log the error
-  this.log.error("Error: Device not responding, scheduling delete report", endpointId);
-
-  // Add endpointId to the set
-  pendingErrors.add(endpointId);
+  // Add endpointId to the set, unless the set is already full
+  if (pendingErrors.size >= 20) {
+    this.log.error("Error: Device not responding, too many pending delete reports, skipping", endpointId);
+  } else {
+    this.log.error("Error: Device not responding, scheduling delete report", endpointId);
+    pendingErrors.add(endpointId);
+  }
 
   // Start a single timer if not already running
   if (!errorReportTimer) {
     errorReportTimer = setTimeout(() => {
-      sendDeleteReport();
+      sendDeleteReport.call(this);
     }, 30000); // 30-second delay
   }
 }
@@ -1208,8 +1210,9 @@ function sendDeleteReport() {
         }
       }
     });
+    this.log("sendDeleteReport - sent delete report for %s devices", endpoints.length);
   } catch (e) {
-    debug("sendDeleteReport error:", e);
+    this.log.error("sendDeleteReport error:", e);
   } finally {
     pendingErrors.clear();
     errorReportTimer = null; // Reset timer reference
