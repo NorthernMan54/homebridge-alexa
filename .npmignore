@@ -8,3 +8,6 @@ publish.sh
 beta.sh
 
 test/*
+.github
+.eslintrc
+eslint.config.mjs

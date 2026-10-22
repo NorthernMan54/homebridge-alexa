@@ -132,7 +132,6 @@ function stateToProperties(statusObject, hbResponse) {
             "timeOfSample": now.toISOString(),
             "uncertaintyInMilliseconds": 500
           });
-          i = i + 2; // Skip over the 3 color values
           break;
         case "alexa.temperaturesensor":
           properties.push({
@@ -265,8 +264,7 @@ function mergeCookies(into, from) {
         break;
       case "ReportState":
         // debug("merge cookie %s = %s into %s", cookie, from[cookie], into[cookie]);
-        var temp = [];
-        temp = JSON.parse(into[cookie]).concat(JSON.parse(from[cookie]));
+        var temp = JSON.parse(into[cookie]).concat(JSON.parse(from[cookie]));
         into[cookie] = JSON.stringify(temp);
         break;
       default:
