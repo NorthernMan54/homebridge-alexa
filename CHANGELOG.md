@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file. This projec
 - Fix for playback controls on Yamaha Home
 - Motion, Contact, Smoke, Carbon Monoxide and Leak sensors are now always retrievable, so Alexa can query their state when routines are enabled
 - Fixed an error in `sendDeleteReport` failing to log errors, and added a log message when a delete report is sent
-- Limited pending device delete reports to 20 per batch
+- Limited pending device delete reports to 250 per batch
 
 #### Changes
 
