@@ -491,7 +491,7 @@ function alexaChannelController(message, callback) {
       return;
   }
 
-  var channel = message.directive.header.name;
+  var channel;
   if (message.directive.payload.channel.number) {
     channel = message.directive.payload.channel.number;
   } else if (message.directive.payload.channelMetadata.name) {
