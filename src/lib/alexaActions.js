@@ -1172,7 +1172,7 @@ function reportDeviceError(message) {
   const endpointId = message.directive.endpoint.endpointId;
 
   // Add endpointId to the set, unless the set is already full
-  if (pendingErrors.size >= 20) {
+  if (pendingErrors.size >= 250) {
     this.log.error("Error: Device not responding, too many pending delete reports, skipping", endpointId);
   } else {
     this.log.error("Error: Device not responding, scheduling delete report", endpointId);
