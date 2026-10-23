@@ -132,7 +132,6 @@ function stateToProperties(statusObject, hbResponse) {
             "timeOfSample": now.toISOString(),
             "uncertaintyInMilliseconds": 500
           });
-          i = i + 2; // Skip over the 3 color values
           break;
         case "alexa.temperaturesensor":
           properties.push({
@@ -253,7 +252,7 @@ function stateToProperties(statusObject, hbResponse) {
 
 function mergeCookies(into, from) {
   // debug("into", into);
-  for (var cookie in from) {
+  for (const cookie in from) {
     switch (cookie) {
       case "SetMute":
       case "AdjustVolume":
@@ -265,8 +264,7 @@ function mergeCookies(into, from) {
         break;
       case "ReportState":
         // debug("merge cookie %s = %s into %s", cookie, from[cookie], into[cookie]);
-        var temp = [];
-        temp = JSON.parse(into[cookie]).concat(JSON.parse(from[cookie]));
+        var temp = JSON.parse(into[cookie]).concat(JSON.parse(from[cookie]));
         into[cookie] = JSON.stringify(temp);
         break;
       default:
@@ -279,7 +277,7 @@ function mergeInputCookies(into, from) {
   // debug("into", JSON.parse(into['Active Identifier']).iid);
   var inputs = {};
   var activeIdentifier = JSON.parse(into['Active Identifier']).iid;
-  for (var cookie in from) {
+  for (const cookie in from) {
     // debug("mergeInputCookies", cookie, from[cookie]);
     switch (cookie) {
       case "Channel":
@@ -300,7 +298,7 @@ function mergeInputCookies(into, from) {
 }
 
 function mergeCapabilities(into, from) {
-  for (var capability in from) {
+  for (const capability in from) {
     switch (from[capability].interface) {
       case "Alexa.Speaker":
       case "Alexa.StepSpeaker":
@@ -348,13 +346,13 @@ function lookupCapabilities(capability, options, operations, devices) {
         }
       });
       break;
-    case "Input Source":
-      var supported = Object.keys(operations);
-      supported = supported.filter(function (item) {
+    case "Input Source": {
+      let inputSupported = Object.keys(operations);
+      inputSupported = inputSupported.filter(function (item) {
         return item.substring(0, 10) !== 'Station - ';
       });
       var inputs = [];
-      supported.forEach((item, i) => {
+      inputSupported.forEach((item) => {
         inputs.push({
           name: item
         });
@@ -374,41 +372,44 @@ function lookupCapabilities(capability, options, operations, devices) {
         inputs: inputs
       });
       break;
+    }
     case "ThermostatController":
-      // debug("operations", Object.keys(operations));
-      var ops = Object.keys(operations);
-      // debug("Supp", ops);
-      var supported = [];
-      ops.forEach(function (key) {
-        if (key === "thermostatModeOFF" || key === "upperSetpoint" || key === "lowerSetpoint" || key === "targetSetpoint") {
-          if (key.substring(0, 14) === "thermostatMode") {
-            key = "thermostatMode";
+      {
+        // debug("operations", Object.keys(operations));
+        let ops = Object.keys(operations);
+        // debug("Supp", ops);
+        let supported = [];
+        ops.forEach(function (key) {
+          if (key === "thermostatModeOFF" || key === "upperSetpoint" || key === "lowerSetpoint" || key === "targetSetpoint") {
+            if (key.substring(0, 14) === "thermostatMode") {
+              key = "thermostatMode";
+            }
+            supported.push({
+              "name": key
+            });
           }
-          supported.push({
-            "name": key
-          });
-        }
-      });
-      // debug("supported", supported);
-      response.push({
-        "type": "AlexaInterface",
-        "interface": "Alexa.ThermostatController",
-        "version": "3",
-        "properties": {
-          "supported": supported,
-          "proactivelyReported": false,
-          "retrievable": true
-        },
-        "configuration": {
-          "supportsScheduling": false,
-          "supportedModes": [
-            "HEAT",
-            "COOL",
-            "AUTO",
-            "OFF"
-          ]
-        }
-      });
+        });
+        // debug("supported", supported);
+        response.push({
+          "type": "AlexaInterface",
+          "interface": "Alexa.ThermostatController",
+          "version": "3",
+          "properties": {
+            "supported": supported,
+            "proactivelyReported": false,
+            "retrievable": true
+          },
+          "configuration": {
+            "supportsScheduling": false,
+            "supportedModes": [
+              "HEAT",
+              "COOL",
+              "AUTO",
+              "OFF"
+            ]
+          }
+        });
+      }
       break;
     case "Volume":
       response.push({
@@ -771,7 +772,7 @@ function lookupCapabilities(capability, options, operations, devices) {
             "name": "detectionState"
           }],
           "proactivelyReported": options.routines,
-          "retrievable": !options.routines
+          "retrievable": true
         }
       });
       break;
@@ -788,9 +789,27 @@ function lookupCapabilities(capability, options, operations, devices) {
             "name": "detectionState"
           }],
           "proactivelyReported": options.routines,
-          "retrievable": !options.routines
+          "retrievable": true
         }
       });
+      break;
+    case "Smoke Detected": // Smoke Sensor
+    case "Carbon Monoxide Detected": // Carbon Monoxide Sensor
+    case "Leak Detected": // Leak Sensor
+      if (options.alexaAlertSensors) {
+        response.push({
+          "type": "AlexaInterface",
+          "interface": "Alexa.ContactSensor",
+          "version": "3",
+          "properties": {
+            "supported": [{
+              "name": "detectionState"
+            }],
+            "proactivelyReported": options.routines,
+            "retrievable": true
+          }
+        });
+      }
       break;
     case "Programmable Switch Event": // Doorbell
       response.push({
@@ -954,6 +973,9 @@ function lookupDisplayCategory(service) {
       break;
     case "00000080":
     case "00000086": // Occupancy Sensor
+    case "00000087": // Smoke Sensor
+    case "0000007F": // Carbon Monoxide Sensor
+    case "00000083": // Leak Sensor
       category = ["CONTACT_SENSOR"];
       break;
     case "00000121": // Doorbell
@@ -1013,8 +1035,9 @@ function isAppleTV(device) {
 }
 
 function isYamaha(device) {
-  // debug("DEVICE", device);
-  if (device.info.Manufacturer === "yamaha-home" && device.info.Name.substr(0, device.info.Name.indexOf(" ")) === "Spotify" && _yamahaButton(device.name)) {
+  //if (device.info.Manufacturer === "yamaha-home") debug("isYamaha %s - %s", device.info.Name, device.name);
+  if (device.info.Manufacturer === "yamaha-home" && device.info.Name.substr(0, device.info.Name.indexOf(" ")) === "Spotify" && _yamahaButton(device.info.Name)) {
+    debug("isYamaha %s - %s = true", device.info.Name, device.name);
     return true;
   } else {
     return false;
@@ -1022,6 +1045,7 @@ function isYamaha(device) {
 }
 
 function _yamahaButton(name) {
+  debug('_yamahaButton', name);
   switch (name.substr(0, name.lastIndexOf(" "))) {
     // case "Pair":
     case "Skip Fwd":
@@ -1056,14 +1080,16 @@ function atvButton(name) {
         return false;
     }
   } catch (err) {
-    debug('ERROR: atvButton()', name);
+    debug('ERROR: atvButton()', name, err);
     return false;
   }
 }
 
 function playbackNameTranslate(name) {
-  // debug("split", name.substring(0, name.lastIndexOf(" ")));
-  switch (name.substr(0, name.indexOf('(')).trim()) {
+  // If the name has a parenthesis or a single quote in it, we need to remove it and any trailing spaces
+  const cleanName = name.split('\'')[0].split('(')[0].trim();
+  debug("split %s => %s", name, cleanName);
+  switch (cleanName) {
     case "Menu": // Apple TV
       return "Stop";
     case "Skip Fwd": // Yamaha
@@ -1073,7 +1099,7 @@ function playbackNameTranslate(name) {
     case "Left": // Apple-TV-Remote
       return "Rewind";
     default:
-      return name.substr(0, name.indexOf('(')).trim();
+      return cleanName;
   }
 }
 
@@ -1141,7 +1167,7 @@ function combine(options, accessories) {
     var target;
 
     debug("combine", combine);
-    for (var endpoint in accessories.event.payload.endpoints) {
+    for (const endpoint in accessories.event.payload.endpoints) {
       // debug(endpoint);
       // debug("endpoints", combine, accessories.event.payload.endpoints[endpoint].friendlyName);
       if (combine.into === accessories.event.payload.endpoints[endpoint].friendlyName) {
@@ -1184,7 +1210,7 @@ function combine(options, accessories) {
 function _insertChannelCapability(input, cookies, accessories) {
   //
   // debug("Accessories", accessories);
-  for (var endpoint in accessories.event.payload.endpoints) {
+  for (const endpoint in accessories.event.payload.endpoints) {
     if (input.into === accessories.event.payload.endpoints[endpoint].friendlyName) {
       accessories.event.payload.endpoints[endpoint].capabilities.push({
         "type": "AlexaInterface",
@@ -1210,7 +1236,7 @@ function _insertChannelCapability(input, cookies, accessories) {
 
 function _insertInputCapability(input, inputs, cookies, accessories) {
   //
-  for (var endpoint in accessories.event.payload.endpoints) {
+  for (const endpoint in accessories.event.payload.endpoints) {
     if (input.into === accessories.event.payload.endpoints[endpoint].friendlyName) {
       accessories.event.payload.endpoints[endpoint].capabilities.push({
         type: "AlexaInterface",
@@ -1236,7 +1262,7 @@ function _insertInputCapability(input, inputs, cookies, accessories) {
 
 function _getCookie(device, accessories) {
   var cookie = {};
-  for (var endpoint in accessories.event.payload.endpoints) {
+  for (const endpoint in accessories.event.payload.endpoints) {
     if (device.name === accessories.event.payload.endpoints[endpoint].friendlyName &&
       device.manufacturer === accessories.event.payload.endpoints[endpoint].manufacturerName) {
       // debug(accessories.event.payload.endpoints[endpoint].cookie);
@@ -1250,7 +1276,7 @@ function _getCookie(device, accessories) {
 
 function _getChannelCookie(device, accessories) {
   var cookie = {};
-  for (var endpoint in accessories.event.payload.endpoints) {
+  for (const endpoint in accessories.event.payload.endpoints) {
     if (device.name === accessories.event.payload.endpoints[endpoint].friendlyName &&
       device.manufacturer === accessories.event.payload.endpoints[endpoint].manufacturerName) {
       // debug(accessories.event.payload.endpoints[endpoint].cookie);
@@ -1289,7 +1315,7 @@ function _getValue(element, hbResponse) {
 function _getHBValue(element, hbResponse) {
   // debug("_getHBValue", JSON.stringify(element), JSON.stringify(hbResponse));
   var value, status;
-  for (var i in hbResponse) {
+  for (const i in hbResponse) {
     if (hbResponse[i].aid === element.aid && hbResponse[i].iid === element.iid) {
       value = hbResponse[i].value;
       status = hbResponse[i].status;
@@ -1350,7 +1376,7 @@ function _combineAlexaDevices(into, from) {
   from.forEach(function (device) {
     // debug('\nFrom', device.friendlyName);
     // Combine Cookies
-    for (var cookie in device.cookie) {
+    for (const cookie in device.cookie) {
       if (!into.cookie[cookie] && cookie !== 'ReportState') {
         // debug('Combining', device.friendlyName, cookie);
         into.cookie[cookie] = device.cookie[cookie];
@@ -1359,13 +1385,12 @@ function _combineAlexaDevices(into, from) {
         var cookieReportState = JSON.parse(device.cookie[cookie]);
 
         debug("into.cookie[cookie]", into.cookie[cookie]);
+        let before = [];
         if (into.cookie[cookie]) {
-          var before = JSON.parse(into.cookie[cookie]);
-        } else {
-          var before = [];
+          before = JSON.parse(into.cookie[cookie]);
         }
         // debug('Report state before', before);
-        for (var reportState in cookieReportState) {
+        for (const reportState in cookieReportState) {
           debug('Combining Cookie', device.friendlyName, cookie, cookieReportState[reportState].interface);
           if (!_existingCapability(before, cookieReportState[reportState])) {
             before.push(cookieReportState[reportState]);
@@ -1391,7 +1416,7 @@ function _combineAlexaDevices(into, from) {
 
 function _existingCapability(into, from) {
   var found = false;
-  into.forEach((item, i) => {
+  into.forEach((item) => {
     if (item.interface === from.interface) {
       debug("%s === %s", item.interface, from.interface);
       found = true;
@@ -1436,7 +1461,7 @@ function checkEventDeviceList(endpoints) {
   if (this.deviceList && this.deviceList.length > 0 && ['allow', 'deny'].includes(this.deviceListHandling)) {
     debug(`INFO: DeviceList - The following devices are ${this.deviceListHandling} =>`, this.deviceList);
     var response = [];
-    for (var key in endpoints) {
+    for (const key in endpoints) {
       var endpoint = endpoints[key];
       if (this.deviceListHandling === "allow") {
         if (verifyDeviceInList(this.deviceList, endpoint.friendlyName)) {
@@ -1462,7 +1487,7 @@ function checkEventDeviceList(endpoints) {
 }
 
 function verifyDeviceInList(deviceList, deviceName) {
-  for (var i = 0, len = deviceList.length; i < len; i++) {
+  for (let i = 0, len = deviceList.length; i < len; i++) {
     if (deviceName === deviceList[i] || deviceName.match(new RegExp(deviceList[i]))) return true;
   }
   return false;

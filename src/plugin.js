@@ -4,6 +4,7 @@ const { alexaLocal: AlexaLocal } = require('./lib/alexaLocal.js');
 const alexaActions = require('./lib/alexaActions.js');
 const { EventEmitter } = require('events');
 const os = require("os");
+const process = require("process");
 const packageConfig = require('../package.json');
 
 let Service, Characteristic;
@@ -27,6 +28,7 @@ class AlexaHome {
       username: false,
       password: false,
       filter: null,
+      instanceDenylist: null,
       beta: false,
       routines: false,
       combine: false,
@@ -46,6 +48,7 @@ class AlexaHome {
       LegacyCloudTransport: false,
       keepalive: 5,
       enhancedSkip: false,
+      alexaAlertSensors: false,
       deviceCleanup: false,
       debug: false,
     };
@@ -112,6 +115,7 @@ class AlexaHome {
       combine: this.combine,
       speakers: this.speakers,
       filter: this.filter,
+      instanceDenylist: this.instanceDenylist,
       alexaService: null,
       Characteristic,
       inputs: this.inputs,
@@ -124,6 +128,7 @@ class AlexaHome {
       mergeServiceName: this.mergeServiceName,
       routines: this.routines,
       enhancedSkip: this.enhancedSkip,
+      alexaAlertSensors: this.alexaAlertSensors,
     };
 
     this.log(options.filter
@@ -132,7 +137,7 @@ class AlexaHome {
 
     alexaActions.hapDiscovery(options);
 
-    const alexa = new AlexaLocal(options);
+    this.alexa = new AlexaLocal(options);
 
     this.eventBus.on('hapEvent', alexaActions.alexaEvent.bind(this));
 

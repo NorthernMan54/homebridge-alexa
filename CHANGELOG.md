@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.10.0 (2026-10-23)
+
+## [Version 0.10.0](https://github.com/northernman54/homebridge-alexa/compare/0.9.3...0.10.0)
+
+#### New Features
+
+- **Smoke, Carbon Monoxide and Leak sensors as Contact Sensors** (#798, #799) – A new optional setting, `alexaAlertSensors`, sends these sensors to Alexa as Contact Sensors so they can trigger Alexa routines. For example, Alexa can announce which sensor went off. An alert shows as **DETECTED** and a clear sensor as **NOT_DETECTED**. These sensors work only in routines; there are no voice commands for them. Turn on `routines` as well so Alexa gets sensor events as they happen.
+- **`instanceDenylist`** (#806) – Leave out whole Homebridge instances by their username (MAC address, e.g. `0E:12:34:56:78:9A`). This works the same way as in homebridge-gsh. You can set it in the plugin settings in the Homebridge UI.
+
+#### Fixes
+
+- Fixed playback controls on Yamaha Home accessories. Names with parentheses or quotes are now handled correctly.
+- Motion, Contact, Smoke, Carbon Monoxide and Leak sensors can now always be queried, so Alexa can check their state when routines are enabled.
+- `sendDeleteReport` now logs its errors properly, and a log line is written each time a delete report is sent.
+- Each batch of pending device delete reports is now limited to 250.
+
+#### Changes
+
+- Updated dependencies, including `@homebridge/hap-client` 5.3, `mqtt` 5.15, ESLint 10 and `axios`.
+- Fixed lint issues (#813).
+
 ## 0.9.3 (2025-10-18)
 
 ## [Version 0.9.3](https://github.com/northernman54/homebridge-alexa/compare/0.9.2...0.9.3)

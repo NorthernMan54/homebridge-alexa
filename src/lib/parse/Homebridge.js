@@ -1,3 +1,4 @@
+/* global Buffer */
 var debug = require('debug')('alexa:Homebridge');
 var Accessory = require('./Accessory.js').Accessory;
 var messages = require('./messages.js');
@@ -24,6 +25,7 @@ function Homebridge(devices, context) {
     mergeServiceName: context.mergeServiceName,
     thermostatTurnOn: context.thermostatTurnOn,
     enhancedSkip: context.enhancedSkip,
+    alexaAlertSensors: context.alexaAlertSensors,
   };
   this.playback = {};
   devices.accessories.accessories.forEach(function (element) {
@@ -36,8 +38,10 @@ function Homebridge(devices, context) {
     this.accessories.push(accessory);
     // debug("playback", accessory.name, accessory.playback);
     if (accessory.playback) {
-      var playback = (accessory.name.split("(")[1] ? accessory.name.split("(")[1].split(")")[0] : undefined);
-      // debug("ATVName", playback);
+      // If the name has a parenthesis or a single quote in it, we need to remove it and any trailing spaces
+      const match = accessory.name.match(/'(.+)$/) || accessory.name.match(/\((.+?)\)/);
+      const playback = match ? match[1].trim() : accessory.name.trim();
+      // debug("ATVName \"%s\" -> \"%s\"", accessory.name, playback);
       if (playback && accessory.name.substr(0, accessory.name.indexOf(" ")) !== "Pair") {
         this.playback[playback] = playback;
       }
@@ -47,7 +51,7 @@ function Homebridge(devices, context) {
 
 Homebridge.prototype.toList = function (opt) {
   var list = [];
-  for (var index in this.accessories) {
+  for (const index in this.accessories) {
     var accessory = this.accessories[index];
     list = list.concat(accessory.toList({
       deviceID: this.deviceID,
@@ -67,11 +71,12 @@ Homebridge.prototype.toAlexa = function (opt) {
   // Alexa devices made up of multiple homekit accessories in a single homebridge instance
   // Devices include Apple TV and Yamaha Stereo Playback controls
 
+  // debug('this.playback', this.playback);
   if (this.playback) { // Homebridge instance contains appleTV's
-    for (var playback in this.playback) {
+    for (const playback in this.playback) {
       var cookie = {};
       var service = "00000098";
-      for (var index in this.accessories) {
+      for (const index in this.accessories) {
         // debug("Checking", index);
         var accessory = this.accessories[index];
         // debug("Checking", accessory);
@@ -79,7 +84,7 @@ Homebridge.prototype.toAlexa = function (opt) {
           // debug("Yamaha", accessory);
           service = "00000113";
           // accessory.services.forEach(function(service) {
-          for (var index in accessory.services) {
+          for (const index in accessory.services) {
             var device = accessory.services[index];
 
             cookie[messages.playbackNameTranslate(device.name)] = device.toCookie("On", {
@@ -130,8 +135,8 @@ Homebridge.prototype.toAlexa = function (opt) {
           } else {
             // Apple TV Remote Plugin
             service = "00000098";
-            for (var index in accessory.services) {
-              var device = accessory.services[index];
+            for (const index in accessory.services) {
+              const device = accessory.services[index];
 
               // debug("name", device.name, playback);
               if (device.name === "Play (" + playback + ")" || device.name === "Pause (" + playback + ")" || device.name === "Right (" + playback + ")" || device.name === "Left (" + playback + ")") {
@@ -207,8 +212,8 @@ Homebridge.prototype.toAlexa = function (opt) {
 
   // Get all the remaining devices
 
-  for (var index in this.accessories) {
-    var accessory = this.accessories[index];
+  for (const index in this.accessories) {
+    const accessory = this.accessories[index];
     if (accessory.playback) {
       // debug("Media device", accessory.name);
     }

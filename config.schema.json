@@ -189,6 +189,14 @@
           "functionBody": "if (model.deviceListHandling === 'allow' || model.deviceListHandling === 'deny') { return true } else { return false };"
         }
       },
+      "instanceDenylist": {
+        "title": "Homebridge instances to be denied",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^([A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2}$"
+        }
+      },
       "combine": {
         "type": "array",
         "items": {
@@ -232,6 +240,12 @@
         "type": "boolean",
         "placeholder": false,
         "description": "This option will change the behaviour of the next or skip command of the 'appletv-enhanced' plugin, from skip to select.  This will enable the wording 'Alexa tv skip' to press the select button on the Apple TV remote.  This is useful for skipping adds on YouTube."
+      },
+      "alexaAlertSensors": {
+        "title": "<b>Smoke, Carbon Monoxide and Leak Sensors as Contact Sensors</b>",
+        "type": "boolean",
+        "placeholder": false,
+        "description": "Enables Smoke, Carbon Monoxide and Leak sensors to be published to Alexa as Contact Sensors. This allows these sensors to trigger Alexa routines when used with the 'Routines' option. Defaults to false."
       }
     }
   },
@@ -261,6 +275,7 @@
       "items": [
         "pin",
         "routines",
+        "alexaAlertSensors",
         "deviceCleanup",
         "debug",
         "thermostatTurnOn",
@@ -276,6 +291,16 @@
           },
           "condition": {
             "functionBody": "return model.deviceListHandling !== 'none';"
+          }
+        },
+        {
+          "key": "instanceDenylist",
+          "type": "array",
+          "items": {
+            "title": "UserName",
+            "description": "username of Homebridge instance you want to ignore",
+            "type": "string",
+	    "placeholder": "Enter homebridge username..."
           }
         }
       ]

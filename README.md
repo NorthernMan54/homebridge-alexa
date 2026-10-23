@@ -71,6 +71,7 @@ Country availability - The plugin is available in these countries, English (AU),
       * [Bose SoundLink - Change preset](#bose-soundlink---change-preset)
    * [Yamaha Receiver/Spotify control](#yamaha-receiverspotify-control)
    * [Contact and Motion Sensors](#contact-and-motion-sensors)
+   * [Smoke, Carbon Monoxide and Leak Sensors](#smoke-carbon-monoxide-and-leak-sensors)
    * [Door bell devices](#door-bell-devices)
 * [Installation of homebridge-alexa](#installation-of-homebridge-alexa)
 * [Service Availability and Issues](#service-availability-and-issues)
@@ -95,6 +96,7 @@ Country availability - The plugin is available in these countries, English (AU),
 * Support for Temperature, Contact and Motion Sensors.  
 * Support for Occupancy Sensors as a Contact sensor.  
 * Also supports sending real time updates from Contact, Occupancy and Motion sensors to Alexa, for use in routines.
+* Support for Smoke, Carbon Monoxide and Leak sensors as Contact Sensors for Alexa routines (requires `alexaAlertSensors` option to be enabled)
 * Support for Fan2 aka Dyson fans
 * Support for Valves, Sprinklers and Shower Heads (As Alexa doesn't support these, they are Other)
 * Support for more than 100 accessories
@@ -133,6 +135,7 @@ This only supports accessories connected via a homebridge plugin, any 'Homekit' 
 * Fans, Humidifier Dehumidifier and Air Purifiers - Supported as a Switch
 * Valves, Sprinklers and Shower Heads - Supported as a light bulb
 * Occupancy Sensors - Supported as a Contact Sensor
+* Smoke, Carbon Monoxide and Leak Sensors - Supported as a Contact Sensor (requires `alexaAlertSensors` option)
 
 ### Non-Homebridge Devices
 
@@ -314,6 +317,14 @@ These are the remote buttons
 
 * These are only visible to routines, no voice commands are available
 
+## Smoke, Carbon Monoxide and Leak Sensors
+
+* When the `alexaAlertSensors` option is enabled, Smoke, Carbon Monoxide and Leak sensors are published to Alexa as Contact Sensors.
+* These are only visible to routines, no voice commands are available.
+* When a sensor detects an alert (value = 1), Alexa sees the contact as **DETECTED** (open). When clear (value = 0), Alexa sees it as **NOT_DETECTED** (closed).
+* This allows you to create Alexa routines triggered by smoke, CO or leak events, for example to make an Alexa announcement identifying which sensor was triggered.
+* Enable the `routines` option alongside `alexaAlertSensors` to have Alexa proactively receive sensor events for use in routines.
+
 ## Door bell devices
 
 * Their is no voice control of door bells, only the ability to have Alexa announce when the door bell is triggered.  For a sample here is my [Door Bell](https://youtu.be/PhGbc_TO8pk) being rang.
@@ -407,3 +418,4 @@ See [Roadmap](Roadmap.md)
 * jelvs - Validate TV Integration for homebridge-samsung-tizen
 * krocko - bose soundlink preset / channel change
 * pwilms - deviceList feature
+

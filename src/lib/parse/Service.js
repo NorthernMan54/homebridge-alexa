@@ -1,3 +1,4 @@
+/* global Buffer */
 var debug = require('debug')('Alexa:Service');
 var Characteristic = require('./Characteristic.js').Characteristic;
 var messages = require('./messages.js');
@@ -221,6 +222,7 @@ Service.prototype.toAlexa = function (context) {
         break;
       case "Thermostat":
         capabilities = capabilities.concat(messages.lookupCapabilities("Active", context.routines, cookie));
+      // no-fallthrough
       case "Heater Cooler":
         /*
         reportState.push({
@@ -248,7 +250,7 @@ Service.prototype.toAlexa = function (context) {
         break;
     }
   } catch (err) {
-    debug("Warning: Accessory parsing error: %s -> %s", context.name, context.manufacturer);
+    debug("Warning: Accessory parsing error: %s -> %s", context.name, context.manufacturer, err);
   }
 
   cookie["ReportState"] = JSON.stringify(reportState);
