@@ -37,7 +37,7 @@
     "@eslint/js": "^10.0.1",
     "@homebridge/hap-client": "^5.3.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.4.0",
+    "@types/node": "^26.6.5",
     "babel-jest": "^30.2.0",
     "eslint": "^10.0.3",
     "eslint-plugin-format": "^2.0.1",
@@ -55,7 +55,7 @@
     "debug": "4.4.3",
     "hap-node-client": "^0.2.9",
     "is-my-json-valid": "2.20.6",
-    "mqtt": "5.15.0"
+    "mqtt": "5.16.1"
   },
   "author": "NorthernMan54",
   "license": "Apache-2.0",
