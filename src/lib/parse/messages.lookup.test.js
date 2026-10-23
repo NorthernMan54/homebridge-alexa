@@ -84,7 +84,7 @@ describe('lib/parse/messages', () => {
           properties: {
             supported: [{ name: 'detectionState' }],
             proactivelyReported: true,
-            retrievable: false,
+            retrievable: true,
           },
         },
       ]);
@@ -127,7 +127,7 @@ describe('lib/parse/messages', () => {
           properties: {
             supported: [{ name: 'detectionState' }],
             proactivelyReported: true,
-            retrievable: false,
+            retrievable: true,
           },
         },
       ]);
